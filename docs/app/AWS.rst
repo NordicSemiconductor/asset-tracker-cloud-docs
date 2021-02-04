@@ -65,7 +65,7 @@ Version string
 Deploy the web application
 **************************
 
-To build and deploy the web application to the S3 bucket created while setting up the *Asset Tracker Example* in your AWS account, run the following commands:
+To build and deploy the web application to the S3 bucket created while setting up the *Asset Tracker Cloud Example* in your AWS account, run the following commands:
 
 .. code-block:: bash
 

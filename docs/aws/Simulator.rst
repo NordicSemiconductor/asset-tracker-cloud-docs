@@ -4,7 +4,7 @@ Connect using the simulator
 ###########################
 
 The CLI provides a software implementation of Cat Tracker for *testing purposes*.
-This implementation allows to verify that the cloud configuration works, and this feature is also used for testing the Asset Tracker Example using :ref:`aws-continuous-integration`.
+This implementation allows to verify that the cloud configuration works, and this feature is also used for testing the Asset Tracker Cloud Example using :ref:`aws-continuous-integration`.
 
 To connect to a device and control the device using the simulator, complete the following steps:
 
@@ -72,7 +72,7 @@ After executing the above command, copy the connection string printed from ``nod
 Deploying the Device simulator web application
 **********************************************
 
-To build and setup the Device simulator web application to the S3 bucket created when setting up the *Asset Tracker Example* in your AWS account, run the following commands:
+To build and setup the Device simulator web application to the S3 bucket created when setting up the *Asset Tracker Cloud Example* in your AWS account, run the following commands:
 
 .. code-block:: bash
 

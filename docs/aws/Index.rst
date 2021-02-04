@@ -1,9 +1,9 @@
 .. _index_aws:
 
-Asset Tracker Example for AWS
-#############################
+Asset Tracker Cloud Example for AWS
+###################################
 
-The Asset Tracker Example for AWS is a reference implementation of a serverless backend for an IoT product developed using `AWS CDK <https://aws.amazon.com/cdk/>`_ in `TypeScript <https://www.typescriptlang.org/>`_.
+The Asset Tracker Cloud Example for AWS is a reference implementation of a serverless backend for an IoT product developed using `AWS CDK <https://aws.amazon.com/cdk/>`_ in `TypeScript <https://www.typescriptlang.org/>`_.
 
 Documentation
 *************

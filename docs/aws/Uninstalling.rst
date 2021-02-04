@@ -1,9 +1,9 @@
 .. _uninstalling_asset_tracker:
 
-Uninstalling the Asset Tracker Example from AWS
-###############################################
+Uninstalling the Asset Tracker Cloud Example from AWS
+#####################################################
 
-To uninstall the Asset Tracker Example, execute the listed commands.
+To uninstall the Asset Tracker Cloud Example, execute the listed commands.
 
 .. note::
 
@@ -17,7 +17,7 @@ To uninstall the Asset Tracker Example, execute the listed commands.
     node cli purge-iot-user-policy-principals
     node cli purge-cas
     
-    # Delete the Asset Tracker Example Stack 
+    # Delete the Asset Tracker Cloud Example Stack 
     # Note that the action can take around 20 minutes  
     # The CloudFormation distributions especially take a long time to get deleted
     npx cdk destroy '*'

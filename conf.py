@@ -17,7 +17,7 @@
 
 # -- Project information ---------------------------------------------------------------------------------------------
 
-project = 'Asset Tracker Example'
+project = 'Asset Tracker Cloud Example'
 copyright = '2019-2021, Nordic Semiconductor ASA | nordicsemi.no'
 author = 'Nordic Semiconductor ASA | nordicsemi.no'
 

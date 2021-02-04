@@ -1,7 +1,7 @@
 .. _bifra_readme:
 
-Asset Tracker Example
-#####################
+Asset Tracker Cloud Example
+###########################
 
 
 .. image:: https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/workflows/Test%20and%20Release/badge.svg
@@ -32,13 +32,13 @@ Asset Tracker Example
 Vision
 ******
 
-The *Asset Tracker Example* aims to provide a concrete end-to-end example for an ultra-low power cellular IoT product in the asset tracker space, namely a *Cat Tracker*.
+The *Asset Tracker Cloud Example* aims to provide a concrete end-to-end example for an ultra-low power cellular IoT product in the asset tracker space, namely a *Cat Tracker*.
 
 .. figure:: ./docs/logo-with-text.png
-   :alt: Asset Tracker Example: Cat Tracker IoT example
+   :alt: Asset Tracker Cloud Example: Cat Tracker IoT example
 
-The *Asset Tracker Example* enables the developers to set up a real world IoT solution using the respective cloud provider and adapt the example firmware and software quickly for a specific use case.
-The *Asset Tracker Example* aims to provide answers and recommend best practices to the following questions:
+The *Asset Tracker Cloud Example* enables the developers to set up a real world IoT solution using the respective cloud provider and adapt the example firmware and software quickly for a specific use case.
+The *Asset Tracker Cloud Example* aims to provide answers and recommend best practices to the following questions:
 
 * How can you connect Nordic's cellular IoT chips to your cloud provider?
 * How do devices send data into the cloud?*
@@ -55,29 +55,29 @@ The *Asset Tracker Example* aims to provide answers and recommend best practices
 Core principles
 ***************
 
-The *Asset Tracker Example* is built on the following principles:
+The *Asset Tracker Cloud Example* is built on the following principles:
 
 * *Teach by showing*
    
   * All examples are designed to solve a concrete use case (a *Cat Tracker*) instead of providing generic or abstract solutions.
-  * The *Asset Tracker Example* is not a framework, but it is a real application.
+  * The *Asset Tracker Cloud Example* is not a framework, but it is a real application.
 
 * *Err on the side of security*
 
-  * The *Asset Tracker Example* follows the most robust security recommendations of the respective cloud provider.
+  * The *Asset Tracker Cloud Example* follows the most robust security recommendations of the respective cloud provider.
 
 * *Single tenancy*
 
-  * The *Asset Tracker Example* implements a scenario in which all the authenticated users can be trusted to access all the devices.
+  * The *Asset Tracker Cloud Example* implements a scenario in which all the authenticated users can be trusted to access all the devices.
   * It is a typical scenario for cellular IoT products, and it simplifies the onboarding of new devices.
   
 * *Serverless*
 
-  * The *Asset Tracker Example* uses a serverless architecture as much as possible to have near-zero costs for the operation during the development, and to provide horizontal scaling of resources to be used in a production system if needed.
+  * The *Asset Tracker Cloud Example* uses a serverless architecture as much as possible to have near-zero costs for the operation during the development, and to provide horizontal scaling of resources to be used in a production system if needed.
 
 * *Cloud native*
 
-  * The *Asset Tracker Example* examples are designed by following the best practices of the respective cloud provider to reduce development efforts due to abstraction.
+  * The *Asset Tracker Cloud Example* examples are designed by following the best practices of the respective cloud provider to reduce development efforts due to abstraction.
 
 * *Being offline is not an exception*
 
@@ -90,18 +90,18 @@ The *Asset Tracker Example* is built on the following principles:
 
 .. note::
 
-   The *Asset Tracker Example* is not a *multi-cloud* solution.
+   The *Asset Tracker Cloud Example* is not a *multi-cloud* solution.
    The concrete implementation will differ for each cloud provider.
 
-The *Asset Tracker Example* does not aim to provide a solution where you can switch in a seamingless manner between cloud providers.
+The *Asset Tracker Cloud Example* does not aim to provide a solution where you can switch in a seamingless manner between cloud providers.
 Such a solution will require the implementation of additional abstraction layers, which instead of becoming a meaningful benefit for the majority of users, mandate a constant translation between the vendor specific concepts and the abstraction.
-Instead, in the *Asset Tracker Example*, the best practices of the respective cloud-vendor for building a *serverless* IoT solution are followed.
+Instead, in the *Asset Tracker Cloud Example*, the best practices of the respective cloud-vendor for building a *serverless* IoT solution are followed.
 
 Project overview
 ****************
 
-The *Asset Tracker Example* is licensed under the `3-clause BSD license <./LICENSE>`_ (software) and the `Nordic 5-clause BSD license <https://github.com/nrfconnect/sdk-nrf/blob/master/LICENSE>`_ (firmware).
-Below table shows the characteristics of the *Asset Tracker Example* project:
+The *Asset Tracker Cloud Example* is licensed under the `3-clause BSD license <./LICENSE>`_ (software) and the `Nordic 5-clause BSD license <https://github.com/nrfconnect/sdk-nrf/blob/master/LICENSE>`_ (firmware).
+Below table shows the characteristics of the *Asset Tracker Cloud Example* project:
 
 +------------------------------------+----------------------+
 | Characteristic                     | Principle            |
@@ -129,7 +129,7 @@ Below table shows the characteristics of the *Asset Tracker Example* project:
 
 .. note::
 
-   Development progress is managed in the `The Asset Tracker Example Development GitHub Project <https://github.com/orgs/NordicSemiconductor/projects/2>`_.
+   Development progress is managed in the `The Asset Tracker Cloud Example Development GitHub Project <https://github.com/orgs/NordicSemiconductor/projects/2>`_.
 
 System overview and technical considerations
 ********************************************

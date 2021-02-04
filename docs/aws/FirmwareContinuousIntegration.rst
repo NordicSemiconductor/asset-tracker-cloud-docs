@@ -5,7 +5,7 @@ Continuous Integration of Firmware
 
 .. note::
 
-    The AWS implementation of the Asset Tracker Example provides resources to continuously test the firmware using real hardware.
+    The AWS implementation of the Asset Tracker Cloud Example provides resources to continuously test the firmware using real hardware.
 
 Overview
 ********
@@ -31,12 +31,12 @@ The `Firmware CI runner`_ is running on a Raspberry Pi connected to AWS IoT wher
 
 .. note::
 
-    These devices connect to the existing instance of the Asset Tracker Example, so the firmware tests will not set up a new blank Asset Tracker Example AWS environment for every test, but be run against the production environment. This is to ensure that firmware release will work against the existing, working solution. This approach is designed for `trunk-based development <https://thinkinglabs.io/talks/feature-branching-considered-evil.html>`_.
+    These devices connect to the existing instance of the Asset Tracker Cloud Example, so the firmware tests will not set up a new blank Asset Tracker Cloud Example AWS environment for every test, but be run against the production environment. This is to ensure that firmware release will work against the existing, working solution. This approach is designed for `trunk-based development <https://thinkinglabs.io/talks/feature-branching-considered-evil.html>`_.
 
 Preparation
 ***********
 
-Enable the Firmware CI resources of the Asset Tracker Example that allow GitHub Actions to create test devices, and the the `Firmware CI runner`_ to connect by enabling the context switch ``firmware-ci`` when deploying the stack (see :ref:`Getting Started <aws-getting-started>`).
+Enable the Firmware CI resources of the Asset Tracker Cloud Example that allow GitHub Actions to create test devices, and the the `Firmware CI runner`_ to connect by enabling the context switch ``firmware-ci`` when deploying the stack (see :ref:`Getting Started <aws-getting-started>`).
 
 .. code-block:: bash
 
