@@ -17,7 +17,7 @@
 
 # -- Project information ---------------------------------------------------------------------------------------------
 
-project = 'Bifravst'
+project = 'Asset Tracker Example'
 copyright = '2019-2021, Nordic Semiconductor ASA | nordicsemi.no'
 author = 'Nordic Semiconductor ASA | nordicsemi.no'
 
@@ -53,8 +53,8 @@ html_theme_options = {
 # Enable the "Edit in GitHub link within the header of each page.
 html_context = {
     'display_github': True,
-    'github_user': 'bifravst',
-    'github_repo': 'bifravst',
+    'github_user': 'NordicSemiconductor',
+    'github_repo': 'asset-tracker-cloud-docs',
     'github_version': 'saga/'
 }
 

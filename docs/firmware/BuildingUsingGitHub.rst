@@ -4,7 +4,7 @@ Building using GitHub actions
 #############################
 
 Since it is a tedious effort to build the application, you can leverage GitHub Actions (which is free for open-source projects) to build the application for you.
-Using the `provided workflow <https://github.com/bifravst/firmware/blob/saga/.github/workflows/build-and-release.yaml>`_ you can quickly set up building for your application using a fork.
+Using the `provided workflow <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware/blob/saga/.github/workflows/build-and-release.yaml>`_ you can quickly set up building for your application using a fork.
 
 After you have forked the repository, `enable GitHub Actions <https://help.github.com/en/github/automating-your-workflow-with-github-actions/about-github-actions#requesting-to-join-the-limited-public-beta-for-github-actions>`_ and look for the *Actions* tab in your repo, there you will find the the Action runs.
 

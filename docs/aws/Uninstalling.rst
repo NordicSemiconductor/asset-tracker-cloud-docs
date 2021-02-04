@@ -1,9 +1,9 @@
-.. _uninstalling_bifravst:
+.. _uninstalling_asset_tracker:
 
-Uninstalling Bifravst from AWS
-##############################
+Uninstalling the Asset Tracker Example from AWS
+###############################################
 
-To uninstall Bifravst, execute the listed commands.
+To uninstall the Asset Tracker Example, execute the listed commands.
 
 .. note::
 
@@ -11,13 +11,13 @@ To uninstall Bifravst, execute the listed commands.
 
 .. code-block:: bash
 
-    STACK_NAME=bifravst
+    STACK_NAME=asset-tracker
     
     node cli purge-buckets
     node cli purge-iot-user-policy-principals
     node cli purge-cas
     
-    # Delete the Bifravst Stack 
+    # Delete the Asset Tracker Example Stack 
     # Note that the action can take around 20 minutes  
     # The CloudFormation distributions especially take a long time to get deleted
     npx cdk destroy '*'

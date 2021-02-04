@@ -13,7 +13,7 @@ Prepare your system
 
 .. note::
 
-    You can always check out the `GitHub Actions workflow <https://github.com/bifravst/firmware/blob/saga/.github/workflows/build-and-release.yaml>`_ as a reference, which sets up a blank Ubuntu image to build the firmware.
+    You can always check out the `GitHub Actions workflow <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware/blob/saga/.github/workflows/build-and-release.yaml>`_ as a reference, which sets up a blank Ubuntu image to build the firmware.
 
 Follow the `Getting Started Guide <http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html>`_ of the Nordic Connect SDK to set up your system for building the project.
 Especially make sure to follow the instructions on _Installing the *nRF Connect SDK*.
@@ -27,7 +27,7 @@ Create a folder, e.g. ``ncs`` and init the project:
 
     cd ./ncs
     sudo pip3 install -U --pre west
-    west init -m https://github.com/bifravst/firmware --mr saga
+    west init -m https://github.com/NordicSemiconductor/firmware --mr saga
     west update
     sudo pip3 install -r zephyr/scripts/requirements.txt
     sudo pip3 install pc_ble_driver_py

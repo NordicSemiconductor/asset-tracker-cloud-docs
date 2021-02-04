@@ -1,8 +1,8 @@
 Device Data and Configuration
 #############################
 
-The data published by the device and the configuration options are described in detail in the state JSON schema file for `AWS <./state.reported.aws.schema.json>`_, and `Azure <./state.reported.schema.azure.json>`_.
-See `this state JSON document for an AWS example <./state.reported.aws.json>`_, and `this state JSON document for an Azure example <./state.reported.azure.json>`_.
+The data published by the device and the configuration options are described in detail in the state JSON schema file for `AWS <./state.reported.aws.schema.json>`_.
+See `this state JSON document for an AWS example <./state.reported.aws.json>`_.
 
 Sending and receiving this data is different per cloud-operator, see implementation details for :ref:`AWS here <aws-iot-shadow-topics>` .
 
@@ -53,5 +53,5 @@ The device can be put in *active* mode by setting the ``cfg.act`` to ``true``.
 GPS Timeout configuration
 *************************
 
-Since the `firware currently does not support A-GPS <https://github.com/bifravst/firmware/issues/8>`_ depending on the device location acquiring a GPS fix can take a long time.
+Since the `firware currently does not support A-GPS <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware/issues/8>`_ depending on the device location acquiring a GPS fix can take a long time.
 Therefore a timeout of at least 1000 seconds should be chosen.
