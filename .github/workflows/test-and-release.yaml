@@ -61,7 +61,7 @@ jobs:
           git pull
           echo "VERSION=saga" >> $GITHUB_ENV
           RELEASE=`git tag --contains ${{ github.sha }} | tr -d '\n'`
-          if [[ "${{ env.RELEASE }}" == "" ]]; then echo "Version not upgraded."; exit 0; else echo "Updating documentation for version ${{ env.RELEASE }}..."; fi
+          if [[ "$RELEASE" == "" ]]; then echo "Version not upgraded."; exit 0; else echo "Updating documentation for version $RELEASE..."; fi
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
 
       - name: Determine documentation release (maintenance branches)
@@ -71,7 +71,7 @@ jobs:
         run: |
           export VERSION=`git rev-parse --abbrev-ref HEAD | tr -d 'refs/heads/' | tr -d '\n'`
           RELEASE=`git tag --contains ${{ github.sha }} | tr -d '\n'`
-          if [[ "${{ env.RELEASE }}" == "" ]]; then echo "Version not upgraded."; exit 0; else echo "Updating documentation for version ${{ env.RELEASE }}..."; fi
+          if [[ "$RELEASE" == "" ]]; then echo "Version not upgraded."; exit 0; else echo "Updating documentation for version $RELEASE..."; fi
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
 
       - name: Build and publish documentation
