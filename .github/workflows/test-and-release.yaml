@@ -64,9 +64,11 @@ jobs:
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
 
       - name: Determine documentation release (maintenance branches)
-        if: github.ref != 'refs/heads/saga' && github.event_name == 'push'
+        if:
+          github.ref != 'refs/heads/saga' && github.ref != 'refs/heads/gh-pages'
+          && github.event_name == 'push'
         run: |
-          export VERSION=`git rev-parse --abbrev-ref HEAD | tr -d '\n'`
+          export VERSION=`git rev-parse --abbrev-ref HEAD | tr -d 'refs/heads/' | tr -d '\n'`
           RELEASE=`git tag --contains ${{ github.sha }} | tr -d '\n'`
           if [[ "${{ env.RELEASE }}" == "" ]]; then echo "Version not upgraded."; exit 0; else echo "Updating documentation for version ${{ env.RELEASE }}..."; fi
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
