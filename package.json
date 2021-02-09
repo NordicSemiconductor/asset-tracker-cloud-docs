@@ -63,7 +63,12 @@
   },
   "release": {
     "branches": [
-      "saga"
+      "saga",
+      {
+        "name": "v1.5.x",
+        "channel": "v1.5.x",
+        "range": "1.5.x"
+      }
     ],
     "remoteTags": true,
     "plugins": [
