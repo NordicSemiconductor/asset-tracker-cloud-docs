@@ -58,6 +58,7 @@ jobs:
       - name: Determine documentation release (saga)
         if: github.ref == 'refs/heads/saga' && github.event_name == 'push'
         run: |
+          git pull
           echo "VERSION=saga" >> $GITHUB_ENV
           RELEASE=`git tag --contains ${{ github.sha }} | tr -d '\n'`
           if [[ "${{ env.RELEASE }}" == "" ]]; then echo "Version not upgraded."; exit 0; else echo "Updating documentation for version ${{ env.RELEASE }}..."; fi
