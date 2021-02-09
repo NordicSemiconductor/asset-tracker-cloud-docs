@@ -31,6 +31,11 @@ jobs:
       - name: Test
         run: npm test
 
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade --user pip setuptools
+          python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
+
       - name: Build docs
         run: |
           export PATH=$PATH:/home/runner/.local/bin
@@ -71,8 +76,6 @@ jobs:
           env.RELEASE != '' && env.VERSION != '' && github.event_name == 'push'
         run: |
           echo "Updating documentation for version ${{ env.VERSION }} release ${{ env.RELEASE }}...";
-          python3 -m pip install --upgrade --user pip setuptools
-          python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
           export PATH=$PATH:/home/runner/.local/bin
           # Generate Documentation
           make html
