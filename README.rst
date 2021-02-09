@@ -86,7 +86,7 @@ The *Asset Tracker Cloud Example* is built on the following principles:
 
 * *Maximize power saving*
 
-  * The firmware examples should highlight power saving features of the nRF9160 DK because this is critical for developing very small form-factor devices.
+  * The firmware examples should highlight power saving features of the nRF9160 because this is critical for developing very small form-factor devices.
 
 .. note::
 
