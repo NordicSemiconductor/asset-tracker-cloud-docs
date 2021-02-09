@@ -1,4 +1,4 @@
-.. _cell_geolocation:
+.. _app-cellgeolocation:
 
 Cell geolocation
 ################
