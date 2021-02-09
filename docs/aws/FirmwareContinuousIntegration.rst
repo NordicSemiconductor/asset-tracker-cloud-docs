@@ -10,7 +10,7 @@ Continuous Integration of Firmware
 Overview
 ********
 
-Every commit to the `firmware <https://github.com/NordicSemiconductor/firmware>`_
+Every commit to the `firmware <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware>`_
 repo will trigger a CI run.
 The CI run will
 
