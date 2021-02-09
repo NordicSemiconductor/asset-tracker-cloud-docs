@@ -38,24 +38,42 @@ jobs:
           npm i --no-save semantic-release
           npx semantic-release
 
-      - name: Publish Documentation
+      - name: Determine documentation release (saga)
         if: github.ref == 'refs/heads/saga' && github.event_name == 'push'
         run: |
-          export VERSION=`git tag --contains ${{ github.sha }} | tr -d '\n'`
-          if [[ "${VERSION}" == "" ]]; then echo "Version not upgraded."; exit 0; else echo "Updating documentation for version ${VERSION}..."; fi
+          echo "RELEASE=saga" >> $GITHUB_ENV
+          VERSION=`git tag --contains ${{ github.sha }} | tr -d '\n'`
+          if [[ "${{ env.VERSION }}" == "" ]]; then echo "Version not upgraded."; exit 0; else echo "Updating documentation for version ${{ env.VERSION }}..."; fi
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Determine documentation release (maintenance branches)
+        if: github.ref == 'refs/heads/v1.5x' && github.event_name == 'push'
+        run: |
+          export RELEASE=`git rev-parse --abbrev-ref HEAD | tr -d '\n'`
+          echo "RELEASE=$RELEASE" >> $GITHUB_ENV
+          echo "VERSION=$RELEASE" >> $GITHUB_ENV
+
+      - name: Publish Documentation
+        if:
+          env.RELEASE != '' && env.VERSION != '' && github.event_name == 'push'
+        run: |
+          echo "Updating documentation for release ${{ env.RELEASE }}...";
+          echo "Updating documentation for version ${{ env.VERSION }}...";
           python3 -m pip install --upgrade --user pip setuptools
           python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
           export PATH=$PATH:/home/runner/.local/bin
           # Generate Documentation
           make html
+          # Clone gh-pages branch
+          git clone --single-branch --branch gh-pages https://github.com/${GITHUB_REPOSITORY} asset-tracker-docs
+          mv build/html asset-tracker-docs/${{ env.RELEASE }}
           # Publish build
           echo "machine github.com login accesskey password ${GITHUB_TOKEN}" > ~/.netrc
           git config --global user.email "actions@example.com"
           git config --global user.name "GitHub Actions"
-          cd build/html
+          cd asset-tracker-docs
           touch .nojekyll
-          git init
-          git add -A
-          git commit -m "Update documentation to version ${VERSION}"
-          git remote add origin https://github.com/${GITHUB_REPOSITORY}.git
-          git push -f origin HEAD:gh-pages
+          git add .nojekyll
+          git add -A ${{ env.RELEASE }}
+          git commit -m "docs(${{ env.RELEASE }}): update documentation for version ${{ env.VERSION }}"
+          git push
