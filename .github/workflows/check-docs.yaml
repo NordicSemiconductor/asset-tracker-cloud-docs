@@ -20,9 +20,17 @@ jobs:
           export PATH=$PATH:/home/runner/.local/bin
           rstcheck -r ./
 
-      - run: |
+      - name: Build docs
+        run: |
           export PATH=$PATH:/home/runner/.local/bin
-          make html
+          errlog=$(mktemp)
+          make html 2> $errlog
+          if [[ -s "$errlog" ]]; then
+            cat $errlog
+            exit 1
+          else
+              echo "OK"
+          fi
 
       - uses: actions/upload-artifact@v2
         with:

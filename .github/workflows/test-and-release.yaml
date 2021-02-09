@@ -31,6 +31,18 @@ jobs:
       - name: Test
         run: npm test
 
+      - name: Build docs
+        run: |
+          export PATH=$PATH:/home/runner/.local/bin
+          errlog=$(mktemp)
+          make html 2> $errlog
+          if [[ -s "$errlog" ]]; then
+            cat $errlog
+            exit 1
+          else
+              echo "OK"
+          fi
+
       - name: Semantic release
         id: semantic-release
         continue-on-error: true
