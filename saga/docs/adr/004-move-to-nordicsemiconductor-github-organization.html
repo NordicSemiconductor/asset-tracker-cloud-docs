@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Connect using a real device &mdash; Asset Tracker Cloud Example v11.2.1 documentation</title>
+  <title>4. Move to Nordic Semiconductor GitHub organization &mdash; Asset Tracker Cloud Example v11.2.1 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Provisioning the certificate" href="FlashingCertificate.html" />
-    <link rel="prev" title="Continuous Integration of Firmware" href="../aws/FirmwareContinuousIntegration.html" /> 
+    <link rel="next" title="Code of Conduct" href="../../CODE_OF_CONDUCT.html" />
+    <link rel="prev" title="3. Use saga as the name for the main branch" href="003-use-saga-as-the-main-branch.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,17 +92,11 @@
             
             
               <p class="caption"><span class="caption-text">Documentation</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Asset Tracker Cloud Example for AWS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker Firmware</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Connect using a real device</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="FlashingCertificate.html">Provisioning the certificate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Configuration.html">Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FOTA.html">Firmware over-the-air (FOTA)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TroubleShooting.html">Troubleshooting</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
@@ -115,11 +109,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs">GitHub</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=AssetTrackerCloudExample#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">Architecture Decision Records</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="002-use-npm-package-registry.html">2. Use NPM registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="003-use-saga-as-the-main-branch.html">3. Use <code class="docutils literal notranslate"><span class="pre">saga</span></code> as the name for the main branch</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. Move to Nordic Semiconductor GitHub organization</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
 </ul>
 
@@ -169,14 +168,16 @@
     
       <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Connect using a real device</li>
+          <li><a href="README.html">Architecture Decision Records</a> &raquo;</li>
+        
+      <li>4. Move to Nordic Semiconductor GitHub organization</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/devices/Index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/adr/004-move-to-nordicsemiconductor-github-organization.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -190,36 +191,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="connect-using-a-real-device">
-<span id="connect-using-real-device"></span><h1>Connect using a real device<a class="headerlink" href="#connect-using-a-real-device" title="Permalink to this headline">¶</a></h1>
-<p>You can use any of the <a class="reference internal" href="../firmware/Index.html#firmware-supported-boards"><span class="std std-ref">supported development kits</span></a> to connect to your account.</p>
-<p>For the device to connect, you need to complete the following steps:</p>
-<ol class="arabic simple">
-<li><p>Upgrade the modem firmware according to the instructions in the following documentation:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://infocenter.nordicsemi.com/topic/ug_nrf91_dk_gsg/UG/nrf91_DK_gsg/updating_modem_firmware.html">nRF9160 DK modem upgrade</a></p></li>
-<li><p><a class="reference external" href="https://infocenter.nordicsemi.com/topic/ug_nc_programmer/UG/nrf_connect_programmer/ncp_updating_modem_thingy91_intro.html">Thingy:91 modem upgrade</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="FlashingCertificate.html#devices-provisioning-certificate"><span class="std std-ref">Provision the certificate</span></a>.</p></li>
-<li><p>Program the application firmware according to the instructions in the following documentation:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://infocenter.nordicsemi.com/topic/ug_nrf91_dk_gsg/UG/nrf91_DK_gsg/updating_application_firmware.html">nRF9160 DK application firmware update</a></p></li>
-<li><p><a class="reference external" href="https://infocenter.nordicsemi.com/topic/ug_nc_programmer/UG/nrf_connect_programmer/ncp_pgming_thingy91_usb.html">Thingy:91 application firmware update</a></p></li>
-</ul>
-</li>
-</ol>
-<div class="section" id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="FlashingCertificate.html">Provisioning the certificate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="FOTA.html">Firmware over-the-air (FOTA)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TroubleShooting.html">Troubleshooting</a></li>
-</ul>
-</div>
-</div>
+  <div class="section" id="move-to-nordic-semiconductor-github-organization">
+<h1>4. Move to Nordic Semiconductor GitHub organization<a class="headerlink" href="#move-to-nordic-semiconductor-github-organization" title="Permalink to this headline">¶</a></h1>
+<p>In February 2021 the project is moved to the official Nordic Semiconductor GitHub organization (<code class="docutils literal notranslate"><span class="pre">NordicSemiconductor</span></code>) from the <code class="docutils literal notranslate"><span class="pre">bifravst</span></code> GitHub organization.
+This move was cause by the <a class="reference external" href="https://github.com/bifravst/bifravst/issues/56">Bifravst project being promoted to an official Nordic Semiconductor open-source project</a> alongside with the release of the Cat Tracker Firmware in <a class="reference external" href="https://github.com/nrfconnect/sdk-nrf">nRF Connect SDK</a> as <code class="docutils literal notranslate"><span class="pre">asset_tracker_v2</span></code> application.</p>
+<p>This includes a rename of the project to <em>Asset Tracker Cloud Example</em>.</p>
 </div>
 
 
@@ -228,8 +204,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="FlashingCertificate.html" class="btn btn-neutral float-right" title="Provisioning the certificate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../aws/FirmwareContinuousIntegration.html" class="btn btn-neutral float-left" title="Continuous Integration of Firmware" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../CODE_OF_CONDUCT.html" class="btn btn-neutral float-right" title="Code of Conduct" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="003-use-saga-as-the-main-branch.html" class="btn btn-neutral float-left" title="3. Use saga as the name for the main branch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
