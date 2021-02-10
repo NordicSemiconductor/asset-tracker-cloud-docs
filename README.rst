@@ -221,11 +221,11 @@ Below table shows the IoT Cloud vendor survey results:
    :titlesonly:
    :caption: Documentation
 
-   docs/device-cloud-protocol/Index.rst
    docs/aws/Index.rst
    docs/app/Index.rst
    docs/firmware/Index.rst
    docs/devices/Index.rst
+   docs/device-cloud-protocol/Index.rst
 
 .. toctree::
    :titlesonly:

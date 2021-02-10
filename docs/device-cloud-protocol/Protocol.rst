@@ -1,5 +1,5 @@
-Device-Cloud-Protocol
-#####################
+Device-to-Cloud Protocol
+########################
 
 Preface
 *******
