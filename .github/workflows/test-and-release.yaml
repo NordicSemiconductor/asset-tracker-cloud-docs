@@ -70,8 +70,7 @@ jobs:
         run: |
           git pull --ff-only
           export VERSION=`git rev-parse --abbrev-ref HEAD | tr -d 'refs/heads/' | tr -d '\n'`
-          RELEASE=`git describe --abbrev=0 --tags | tr -d '\n'`
-          echo "RELEASE=$RELEASE" >> $GITHUB_ENV
+          echo "RELEASE=${{ github.sha }}" >> $GITHUB_ENV
 
       - name: Build and publish documentation
         if:
