@@ -95,3 +95,8 @@ jobs:
           git add -A ${{ env.VERSION }}
           git commit -m "docs(${{ env.VERSION }}): update documentation for release ${{ env.RELEASE }}"
           git push
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: asset-tracker-docs-${{ github.sha }}
+          path: build/html/
