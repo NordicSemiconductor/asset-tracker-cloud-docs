@@ -25,6 +25,6 @@ Documentation
    :titlesonly:
 
    FlashingCertificate.rst
-   TroubleShooting.rst
+   Configuration.rst
    FOTA.rst
-   PDP.rst
+   TroubleShooting.rst
