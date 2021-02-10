@@ -85,16 +85,20 @@ jobs:
           git clone --single-branch --branch gh-pages https://github.com/${GITHUB_REPOSITORY} asset-tracker-docs
           mkdir -p asset-tracker-docs/${{ env.VERSION }}
           cp -r build/html/* asset-tracker-docs/${{ env.VERSION }}
-          # Publish build
-          echo "machine github.com login accesskey password ${GITHUB_TOKEN}" > ~/.netrc
-          git config --global user.email "actions@example.com"
-          git config --global user.name "GitHub Actions"
-          cd asset-tracker-docs
-          touch .nojekyll
-          git add .nojekyll
-          git add -A ${{ env.VERSION }}
-          git commit -m "docs(${{ env.VERSION }}): update documentation for release ${{ env.RELEASE }}"
-          git push
+          if [[ `git status --porcelain` ]]; then
+            # Publish build
+            echo "machine github.com login accesskey password ${GITHUB_TOKEN}" > ~/.netrc
+            git config --global user.email "actions@example.com"
+            git config --global user.name "GitHub Actions"
+            cd asset-tracker-docs
+            touch .nojekyll
+            git add .nojekyll
+            git add -A ${{ env.VERSION }}
+            git commit -m "docs(${{ env.VERSION }}): update documentation for release ${{ env.RELEASE }}"
+            git push
+          else
+            echo "Nothing to commit."
+          fi
 
       - uses: actions/upload-artifact@v2
         with:
