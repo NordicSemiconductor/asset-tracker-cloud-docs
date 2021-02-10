@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Device-Cloud-Protocol &mdash; Asset Tracker Cloud Example v11.1.0 documentation</title>
+  <title>Device-to-Cloud Protocol &mdash; Asset Tracker Cloud Example v11.1.1 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Device-Cloud-Protocol" href="Protocol.html" />
-    <link rel="prev" title="Asset Tracker Cloud Example" href="../../README.html" /> 
+    <link rel="next" title="Device-to-Cloud Protocol" href="Protocol.html" />
+    <link rel="prev" title="Packet Data Protocol AT command (+CGDCONT)" href="../devices/PDP.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -93,15 +93,15 @@
             
               <p class="caption"><span class="caption-text">Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Device-Cloud-Protocol</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Protocol.html">Device-Cloud-Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Asset Tracker Cloud Example for AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Device-to-Cloud Protocol</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Protocol.html">Device-to-Cloud Protocol</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SensorDataAndConfiguration.html">Device Data and Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Asset Tracker Cloud Example for AWS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
 <ul>
@@ -115,7 +115,7 @@
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=AssetTrackerExample#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=AssetTrackerCloudExample#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
@@ -167,7 +167,7 @@
     
       <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Device-Cloud-Protocol</li>
+      <li>Device-to-Cloud Protocol</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -188,11 +188,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="device-cloud-protocol">
-<span id="id1"></span><h1>Device-Cloud-Protocol<a class="headerlink" href="#device-cloud-protocol" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="device-to-cloud-protocol">
+<span id="device-cloud-protocol"></span><h1>Device-to-Cloud Protocol<a class="headerlink" href="#device-to-cloud-protocol" title="Permalink to this headline">¶</a></h1>
+<p>The <em>Asset Tracker Cloud Example</em> uses MQTT and JSON as its main communication protocol between the device and the cloud.
+This sections documents the protocol and the considerations we made when selecting it.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Protocol.html">Device-Cloud-Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Protocol.html">Device-to-Cloud Protocol</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SensorDataAndConfiguration.html">Device Data and Configuration</a></li>
 </ul>
 </div>
@@ -204,8 +206,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Protocol.html" class="btn btn-neutral float-right" title="Device-Cloud-Protocol" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../../README.html" class="btn btn-neutral float-left" title="Asset Tracker Cloud Example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Protocol.html" class="btn btn-neutral float-right" title="Device-to-Cloud Protocol" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../devices/PDP.html" class="btn btn-neutral float-left" title="Packet Data Protocol AT command (+CGDCONT)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
