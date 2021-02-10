@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Unwired Labs API &mdash; Asset Tracker Cloud Example v11.0.2 documentation</title>
+  <title>Unwired Labs API &mdash; Asset Tracker Cloud Example v11.1.0 documentation</title>
   
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                v11.0.2
+                saga
               </div>
             
           
@@ -93,6 +93,7 @@
             
               <p class="caption"><span class="caption-text">Documentation</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-Cloud-Protocol</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Index.html">Asset Tracker Cloud Example for AWS</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="GettingStarted.html">Getting started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
@@ -110,7 +111,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
@@ -202,7 +203,7 @@
             
   <div class="section" id="unwired-labs-api">
 <span id="aws-unwired-labs-api"></span><h1>Unwired Labs API<a class="headerlink" href="#unwired-labs-api" title="Permalink to this headline">¶</a></h1>
-<p>You can enable the <span class="xref std std-ref">cell geolocation lookup</span> for the application using <a class="reference external" href="https://unwiredlabs.com/">Unwired Labs’</a> geolocation API in your deployment.</p>
+<p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for the application using <a class="reference external" href="https://unwiredlabs.com/">Unwired Labs’</a> geolocation API in your deployment.</p>
 <p>To use Unwired Labs’ geolocation API, store your API key as an SSM parameter and re-deploy the stack as shown:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aws ssm put-parameter --name /asset-tracker/cellGeoLocation/unwiredlabs/apiKey <span class="se">\</span>
     --type String --value <span class="s2">&quot;&lt;API Key&gt;&quot;</span>

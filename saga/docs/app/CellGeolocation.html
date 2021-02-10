@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Cell geolocation &mdash; Asset Tracker Cloud Example v11.0.2 documentation</title>
+  <title>Cell geolocation &mdash; Asset Tracker Cloud Example v11.1.0 documentation</title>
   
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                v11.0.2
+                saga
               </div>
             
           
@@ -93,6 +93,7 @@
             
               <p class="caption"><span class="caption-text">Documentation</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-Cloud-Protocol</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Asset Tracker Cloud Example for AWS</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Index.html">Cat Tracker Web Application</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="GettingStarted.html">Getting started</a></li>
@@ -102,7 +103,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Customizing.html">Customizing the Cat Tracker web application</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
@@ -193,7 +194,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="cell-geolocation">
-<span id="id1"></span><h1>Cell geolocation<a class="headerlink" href="#cell-geolocation" title="Permalink to this headline">¶</a></h1>
+<span id="app-cellgeolocation"></span><h1>Cell geolocation<a class="headerlink" href="#cell-geolocation" title="Permalink to this headline">¶</a></h1>
 <p>If cell geolocation is implemented, the devices can be shown on the map based on the location of their cell, even before obtaining a GPS fix.
 It allows to locate devices within a radius of a few kilometers, which can be beneficial depending on your use case.
 It can be useful in the case of tracking assets like parcels, where the approximate location can be combined with known points of interest (for example, warehouses and ports), to know if a shipment has arrived at the destination.</p>
@@ -201,9 +202,9 @@ It can be useful in the case of tracking assets like parcels, where the approxim
 <h2>Locating cells based on device data<a class="headerlink" href="#locating-cells-based-on-device-data" title="Permalink to this headline">¶</a></h2>
 <p>GPS position fixes that are acquired by the devices and the cell information (cell id, area id, MCC/MNC) of these devices are stored together and it is used to <a class="reference external" href="https://github.com/NordicSemiconductor/cell-geolocation-helpers#cellfromgeolocations">calculate the location of the cell</a>.</p>
 <p>The following image shows the location calculation of a device using the device geolocation data:</p>
-<div class="figure align-default" id="id2">
+<div class="figure align-default" id="id1">
 <img alt="Calculating the location of a cell using the device geolocation data" src="https://github.com/NordicSemiconductor/cell-geolocation-helpers/raw/saga/map.gif" />
-<p class="caption"><span class="caption-text">Calculating the location of a cell using the device geolocation data</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Calculating the location of a cell using the device geolocation data</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>If there is no device geolocation for the cell from your own devices, third-party services like <a class="reference external" href="https://unwiredlabs.com/">Unwired Labs</a> or <a class="reference external" href="https://rxnetworks.com/location.io#!RT-GNSS">RXNetworks</a> provide a database of cell geolocations.</p>
 </div>

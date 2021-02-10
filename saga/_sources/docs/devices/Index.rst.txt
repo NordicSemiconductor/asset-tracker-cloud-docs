@@ -27,3 +27,4 @@ Documentation
    FlashingCertificate.rst
    TroubleShooting.rst
    FOTA.rst
+   PDP.rst
