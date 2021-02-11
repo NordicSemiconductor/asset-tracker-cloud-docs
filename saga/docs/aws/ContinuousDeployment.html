@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous deployment &mdash; Asset Tracker Cloud Example v11.2.1 documentation</title>
+  <title>Continuous deployment &mdash; Asset Tracker Cloud Example v11.3.0 documentation</title>
   
 
   
@@ -224,8 +224,7 @@ The CodeBuild project upgrades the web application deployment on the S3 bucket.<
 <p>It is recommended to use a separate GitHub account instead of your personal GitHub account.</p>
 </div>
 <p>You need to store this token in <a class="reference external" href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html">AWS ParameterStore</a> and it is a manual <em>one-time</em> step done through AWS CLI  by using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aws ssm put-parameter --name /codebuild/github-token <span class="se">\</span>
-    --type String --value <span class="s2">&quot;&lt;Github Token&gt;&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli configure-api codebuild github token <span class="s2">&quot;&lt;Github Token&gt;&quot;</span>
 </pre></div>
 </div>
 </div>
