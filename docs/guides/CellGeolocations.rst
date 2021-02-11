@@ -25,7 +25,7 @@ This is sufficient to provide the GPS module with the data it needs for a quick 
 
 .. note::
 
-    `AGPS is currently not implemented in the Cat Tracker Firmware <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware/issues/8>`_.
+    `AGPS is currently not implemented in the Cat Tracker Firmware <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/9>`_.
 
 Geolocating cells
 *****************

@@ -21,7 +21,7 @@ LTS <https://www.microsoft.com/nb-no/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1>`_.
 
 .. note::
 
-   Windows is not included in the continuous integration tests, and hence if you encounter issues, you can open an `issue in the Asset Tracker Cloud Example for AWS project <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/issues/new>`_ 
+   Windows is not included in the continuous integration tests, and hence if you encounter issues, you can vote for  `the issue in the Asset Tracker Cloud Example for AWS project discussion <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/21>`_ 
 
 Clone the project and install dependencies
 ******************************************
@@ -103,7 +103,7 @@ The following commands set up the necessary resources in your AWS account:
     npx cdk bootstrap
     npx cdk deploy '*'
     # This is a fix for a bug with AWS CloudFormation and HTTP APIs
-    # See https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/issues/455
+    # See https://github.com/bifravst/aws/issues/455
     node dist/cdk/helper/addFakeRoute.js
 
 The AWS CDK will provide a list of permission changes to your account, and you need to review them carefully whenever you make changes to the setup.
