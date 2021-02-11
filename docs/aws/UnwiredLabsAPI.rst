@@ -9,8 +9,7 @@ To use Unwired Labs' geolocation API, store your API key as an SSM parameter and
 
 .. code-block:: bash
 
-    aws ssm put-parameter --name /asset-tracker/cellGeoLocation/unwiredlabs/apiKey \
-        --type String --value "<API Key>"
+    node cli configure-api cellGeoLocation unwiredlabs apiKey "<API Key>"
     npx cdk deploy '*'
 
 This will update the StateMachine, which resolves cells from devices to use the Unwired Labs' API as a resolver.
