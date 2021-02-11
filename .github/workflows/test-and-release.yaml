@@ -1,12 +1,16 @@
 name: Test and Release
 
-on: push
+on:
+  push:
+    branches:
+      - saga
+      - "v*"
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  tests:
+  build:
     runs-on: ubuntu-latest
 
     steps:
