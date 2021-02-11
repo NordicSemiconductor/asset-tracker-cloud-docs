@@ -47,11 +47,6 @@ The *Asset Tracker Cloud Example* aims to provide answers and recommend best pra
 * How can you upgrade the application firmware of your devices while they are deployed in the field?
 * How can you develop a cellular IoT product that maximizes battery life, minimizes data usage, and handles unreliable connectivity gracefully?
 
-.. note ::
-
-   In the coming weeks, we will establish the best path to provide this project through nRF Connect SDK, Nordic Semiconductor Infocenter and other established channels.
-   For more information, see the `GitHub issue <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues/56>`_.
-
 Core principles
 ***************
 
