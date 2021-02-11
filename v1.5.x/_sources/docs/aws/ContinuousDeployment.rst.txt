@@ -34,8 +34,7 @@ You need to store this token in `AWS ParameterStore <https://docs.aws.amazon.com
 
 .. code-block:: bash
 
-    aws ssm put-parameter --name /codebuild/github-token \
-        --type String --value "<Github Token>"
+    node cli configure-api codebuild github token "<Github Token>"
 
 Enable continuous deployment
 ****************************

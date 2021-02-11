@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Unwired Labs API &mdash; Asset Tracker Cloud Example 02a814776c24595bb1d8d13d8753529b2a213ffe documentation</title>
+  <title>Unwired Labs API &mdash; Asset Tracker Cloud Example 74a83321c054980944f1131340ddeb12c41660cf documentation</title>
   
 
   
@@ -205,8 +205,7 @@
 <span id="aws-unwired-labs-api"></span><h1>Unwired Labs API<a class="headerlink" href="#unwired-labs-api" title="Permalink to this headline">¶</a></h1>
 <p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for the application using <a class="reference external" href="https://unwiredlabs.com/">Unwired Labs’</a> geolocation API in your deployment.</p>
 <p>To use Unwired Labs’ geolocation API, store your API key as an SSM parameter and re-deploy the stack as shown:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aws ssm put-parameter --name /asset-tracker/cellGeoLocation/unwiredlabs/apiKey <span class="se">\</span>
-    --type String --value <span class="s2">&quot;&lt;API Key&gt;&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli configure-api cellGeoLocation unwiredlabs apiKey <span class="s2">&quot;&lt;API Key&gt;&quot;</span>
 npx cdk deploy <span class="s1">&#39;*&#39;</span>
 </pre></div>
 </div>
@@ -215,7 +214,7 @@ npx cdk deploy <span class="s1">&#39;*&#39;</span>
 <p class="admonition-title">Note</p>
 <p>Unwired Labs’ LocationAPI is free for low volumes.
 However, <a class="reference external" href="https://opencellid.org/">opencellid.org</a> allows to use the underlying dataset for free.
-If you find it relevant, vote in the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/issues/120">Integrate OpenCelliD data</a> issue.</p>
+If you find it relevant, vote in the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/5">Integrate OpenCelliD data</a> issue.</p>
 </div>
 </div>
 
