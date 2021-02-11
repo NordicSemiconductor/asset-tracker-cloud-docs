@@ -95,7 +95,7 @@ Instead, in the *Asset Tracker Cloud Example*, the best practices of the respect
 Project overview
 ****************
 
-The *Asset Tracker Cloud Example* is licensed under the `3-clause BSD license <./LICENSE>`_ (software) and the `Nordic 5-clause BSD license <https://github.com/nrfconnect/sdk-nrf/blob/master/LICENSE>`_ (firmware).
+The *Asset Tracker Cloud Example* is licensed under the `3-clause BSD license <./LICENSE>`_ (software) and the `Nordic 5-clause license <https://github.com/nrfconnect/sdk-nrf/blob/master/LICENSE>`_ (firmware).
 Below table shows the characteristics of the *Asset Tracker Cloud Example* project:
 
 +------------------------------------+----------------------+
