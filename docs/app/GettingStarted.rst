@@ -26,18 +26,14 @@ Clone the latest version of the `Cat Tracker Web Application <https://github.com
     cd asset-tracker-app
     npm ci
 
-Set the environment ``EXTEND_ESLINT`` to ``true`` (It is needed for Create React App to pick up the `custom eslint configuration <https://create-react-app.dev/docs/setting-up-your-editor/#experimental-extending-the-eslint-config>`_).
-
-The recommended workflow is to use a `direnv <https://direnv.net/>`_ plugin for your shell, which locates the environment variables in a :file:`.envrc` file in the project folder and automatically exports them.
-
-Create a new :file:`.envrc` file in the project folder and add these environment variables by running the following command:
-
+Create a new :file:`.envrc` file (:ref:`used with direnv <about-direnv>`) in the project folder and add these environment variables (this is needed so *Create React App* picks up the `custom eslint configuration <https://create-react-app.dev/docs/setting-up-your-editor/#experimental-extending-the-eslint-config>`_):
 
 .. code-block:: bash
 
+    # add to .envrc
     export EXTEND_ESLINT=true
 
-Run the following command to allow the changed file:
+Run the following command to allow the changed ``.envrc`` file:
 
 .. code-block:: bash
 
