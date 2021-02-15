@@ -24,7 +24,7 @@ Documentation
 .. toctree::
    :titlesonly:
 
-   FlashingCertificate.rst
+   FlashingCertificate/Index.rst
    Configuration.rst
    FOTA.rst
    TroubleShooting.rst

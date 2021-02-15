@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Core principles &mdash; Asset Tracker Cloud Example 55d0ab73f93e844ae7afe6a7a66441bdbbc54ac2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="System overview and technical considerations" href="SystemOverview.html" />
+    <link rel="prev" title="Project Overview" href="Index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../README.html">
+          
+
+          
+            
+            <img src="../../_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v1.5.x
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Project Overview</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Core principles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SystemOverview.html">System overview and technical considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SupportedCloudProviders.html">Supported cloud providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="License.html">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Asset Tracker Cloud Example for AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=AssetTrackerCloudExample#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../README.html">Asset Tracker Cloud Example</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Index.html">Project Overview</a> &raquo;</li>
+        
+      <li>Core principles</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v1.5.x/docs/project/CorePrinciples.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="core-principles">
+<span id="id1"></span><h1>Core principles<a class="headerlink" href="#core-principles" title="Permalink to this headline">¶</a></h1>
+<p>The <em>Asset Tracker Cloud Example</em> is built on the following principles:</p>
+<div class="section" id="teach-by-showing">
+<h2>Teach by showing<a class="headerlink" href="#teach-by-showing" title="Permalink to this headline">¶</a></h2>
+<p>All examples are designed to solve a concrete use case (a <em>Cat Tracker</em>) instead of providing generic or abstract solutions.
+It is not a framework, but a real application.</p>
+</div>
+<div class="section" id="err-on-the-side-of-security">
+<h2>Err on the side of security<a class="headerlink" href="#err-on-the-side-of-security" title="Permalink to this headline">¶</a></h2>
+<p>It follows the most robust security recommendations of the respective cloud provider.</p>
+</div>
+<div class="section" id="single-tenancy">
+<h2>Single tenancy<a class="headerlink" href="#single-tenancy" title="Permalink to this headline">¶</a></h2>
+<p>It implements a scenario in which all the authenticated users can be trusted to access all the devices.
+This is a typical scenario for cellular IoT products, and it simplifies the onboarding of new devices.</p>
+</div>
+<div class="section" id="serverless">
+<h2>Serverless<a class="headerlink" href="#serverless" title="Permalink to this headline">¶</a></h2>
+<p>It uses a serverless architecture as much as possible to have near-zero costs for the operation during the development, and to provide horizontal scaling of resources to be used in a production system if needed.</p>
+</div>
+<div class="section" id="cloud-native">
+<h2>Cloud native<a class="headerlink" href="#cloud-native" title="Permalink to this headline">¶</a></h2>
+<p>It follows the best practices of the respective cloud provider to reduce development efforts due to abstraction and offer the best integration into the cloud provider’s ecosystem.</p>
+</div>
+<div class="section" id="being-offline-is-not-an-exception">
+<h2>Being offline is not an exception<a class="headerlink" href="#being-offline-is-not-an-exception" title="Permalink to this headline">¶</a></h2>
+<p>Highly mobile cellular IoT products need to handle unreliable connections gracefully, by implementing mechanisms to retry the failed sending of data.
+This also means that the sensor measurements need to be timestamped when they are created, and not when they arrive at the cloud.</p>
+</div>
+<div class="section" id="maximize-power-saving">
+<h2>Maximize power saving<a class="headerlink" href="#maximize-power-saving" title="Permalink to this headline">¶</a></h2>
+<p>The firmware examples highlight power saving features of the nRF9160 since this is critical aspect for developing small form-factor devices that need to run for years on on a single battery charge.</p>
+<dl class="simple">
+<dt>This means more specifically:</dt><dd><ul class="simple">
+<li><p>power-saving is used as much as possible in all operation states of the device</p></li>
+<li><p>the least amount of data is sent to the cloud (optimize for message size)</p></li>
+<li><p>data is encoded in a way that is most efficient for the device (optimize for computation cycles)</p></li>
+<li><p>all computation that is done one the device must only be possible on the device</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="SystemOverview.html" class="btn btn-neutral float-right" title="System overview and technical considerations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Index.html" class="btn btn-neutral float-left" title="Project Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
