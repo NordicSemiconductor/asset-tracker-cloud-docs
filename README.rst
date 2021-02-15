@@ -63,7 +63,7 @@ The *Asset Tracker Cloud Example* aims to provide a concrete end-to-end example 
    docs/adr/README.rst
    CODE_OF_CONDUCT.rst
 
-.. admonition:: Acknowledgments
+.. admonition:: Acknowledgements
 
    *Pin Icon* created by Nun from the Noun Project. 
    *Cat Icon* created by Focus Lab from the Noun Project. 
