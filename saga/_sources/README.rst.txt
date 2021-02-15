@@ -52,6 +52,8 @@ The *Asset Tracker Cloud Example* aims to provide a concrete end-to-end example 
    docs/guides/CloudDifferences.rst
    docs/guides/ETSI-EN-303-645.rst
    docs/guides/Versioning.rst
+   docs/guides/SystemRequirements.rst
+   docs/guides/Direnv.rst
 
 .. toctree::
    :titlesonly:

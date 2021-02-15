@@ -16,7 +16,6 @@ The *Asset Tracker Cloud Example* aims to provide answers and recommend best pra
 * How to upgrade the application firmware of devices while they are deployed in the field?
 * How to develop a cellular IoT product that maximizes battery life, minimizes data usage, and handles unreliable connectivity gracefully?
 
-
 .. note::
 
    Development progress is managed in the `The Asset Tracker Cloud Example Development GitHub Project <https://github.com/orgs/NordicSemiconductor/projects/2>`_.

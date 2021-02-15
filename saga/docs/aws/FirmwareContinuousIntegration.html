@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous Integration of Firmware &mdash; Asset Tracker Cloud Example v11.3.3 documentation</title>
+  <title>Continuous Integration of Firmware &mdash; Asset Tracker Cloud Example v11.3.4 documentation</title>
   
 
   
@@ -116,6 +116,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/SystemRequirements.html">System requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
@@ -229,7 +231,7 @@ b.  or a stop condition is reached (wait for a log output to match a string)</p>
 </div>
 <div class="section" id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
-<p>Enable the Firmware CI resources of the Asset Tracker Cloud Example that allow GitHub Actions to create test devices, and the the <a class="reference external" href="https://github.com/NordicSemiconductor/firmware-ci-runner-aws">Firmware CI runner</a> to connect by enabling the context switch <code class="docutils literal notranslate"><span class="pre">firmware-ci</span></code> when deploying the stack (see <a class="reference internal" href="GettingStarted.html#aws-getting-started"><span class="std std-ref">Getting Started</span></a>).</p>
+<p>Enable the Firmware CI resources of the Asset Tracker Cloud Example that allow GitHub Actions to create test devices, and the the <a class="reference external" href="https://github.com/NordicSemiconductor/firmware-ci-runner-aws">Firmware CI runner</a> to connect by enabling the context switch <code class="docutils literal notranslate"><span class="pre">firmware-ci</span></code> when deploying the stack (see <a class="reference internal" href="GettingStarted/Index.html#aws-getting-started"><span class="std std-ref">Getting Started</span></a>).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;firmware-ci=1&quot;</span> &gt;&gt; context.cfg
 npx cdk deploy <span class="s1">&#39;*&#39;</span>
 </pre></div>

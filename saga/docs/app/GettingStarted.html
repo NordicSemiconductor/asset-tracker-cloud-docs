@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Getting started &mdash; Asset Tracker Cloud Example v11.3.3 documentation</title>
+  <title>Getting started &mdash; Asset Tracker Cloud Example v11.3.4 documentation</title>
   
 
   
@@ -116,6 +116,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/SystemRequirements.html">System requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
@@ -215,13 +217,12 @@
 npm ci
 </pre></div>
 </div>
-<p>Set the environment <code class="docutils literal notranslate"><span class="pre">EXTEND_ESLINT</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code> (It is needed for Create React App to pick up the <a class="reference external" href="https://create-react-app.dev/docs/setting-up-your-editor/#experimental-extending-the-eslint-config">custom eslint configuration</a>).</p>
-<p>The recommended workflow is to use a <a class="reference external" href="https://direnv.net/">direnv</a> plugin for your shell, which locates the environment variables in a <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file in the project folder and automatically exports them.</p>
-<p>Create a new <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file in the project folder and add these environment variables by running the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">EXTEND_ESLINT</span><span class="o">=</span><span class="nb">true</span>
+<p>Create a new <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file (<a class="reference internal" href="../guides/Direnv.html#about-direnv"><span class="std std-ref">used with direnv</span></a>) in the project folder and add these environment variables (this is needed so <em>Create React App</em> picks up the <a class="reference external" href="https://create-react-app.dev/docs/setting-up-your-editor/#experimental-extending-the-eslint-config">custom eslint configuration</a>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
+<span class="nb">export</span> <span class="nv">EXTEND_ESLINT</span><span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </div>
-<p>Run the following command to allow the changed file:</p>
+<p>Run the following command to allow the changed <code class="docutils literal notranslate"><span class="pre">.envrc</span></code> file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>direnv allow
 </pre></div>
 </div>
