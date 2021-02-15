@@ -1,8 +1,7 @@
-.. _bifra_readme:
+.. _readme:
 
 Asset Tracker Cloud Example
 ###########################
-
 
 .. image:: https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/workflows/Test%20and%20Release/badge.svg
    :alt: GitHub Actions
@@ -36,6 +35,7 @@ The *Asset Tracker Cloud Example* aims to provide a concrete end-to-end example 
    :caption: Documentation
 
    docs/project/Index.rst
+   docs/GettingStarted.rst
    docs/aws/Index.rst
    docs/app/Index.rst
    docs/firmware/Index.rst
@@ -63,11 +63,10 @@ The *Asset Tracker Cloud Example* aims to provide a concrete end-to-end example 
    docs/adr/README.rst
    CODE_OF_CONDUCT.rst
 
-Acknowledgments
-***************
+.. admonition:: Acknowledgments
 
-Pin Icon created by Nun from the Noun Project. 
-Cat Icon created by Focus Lab from the Noun Project. 
-Amazon Web Services, the AWS logo are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries. 
-Google and the Google logo are registered trademarks of Google LLC. 
-Microsoft and Azure are registered trademarks of Microsoft Corporation in the United States and/or other countries.
+   *Pin Icon* created by Nun from the Noun Project. 
+   *Cat Icon* created by Focus Lab from the Noun Project. 
+   *Amazon Web Services*, the AWS logo are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries. 
+   *Google* and the Google logo are registered trademarks of Google LLC. 
+   *Microsoft* and *Azure* are registered trademarks of Microsoft Corporation in the United States and/or other countries.
