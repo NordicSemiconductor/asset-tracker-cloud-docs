@@ -99,6 +99,7 @@ jobs:
             git add .nojekyll
             git add -A ${{ env.VERSION }}
             git commit -m "docs(${{ env.VERSION }}): update documentation for release ${{ env.RELEASE }}"
+            git pull --ff-only
             git push
           else
             echo "Nothing to commit."
