@@ -11,7 +11,7 @@ Documentation
 .. toctree::
    :titlesonly:
 
-   GettingStarted.rst
+   GettingStarted/Index.rst
    Upgrading.rst
    DeviceCredentials.rst
    Simulator.rst
