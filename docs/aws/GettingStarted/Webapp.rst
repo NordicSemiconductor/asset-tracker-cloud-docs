@@ -1,22 +1,26 @@
-.. _app-aws:
+.. _aws-getting-started-app:
 
-Deploying Cat Tracker to AWS
-############################
+Deploying the *Cat Tracker web application*
+###########################################
 
-To deploy the Cat Tracker web application to AWS, complete the following steps:
+To deploy the *Cat Tracker web application* to AWS, complete the following steps:
 
-1. Configure the web application
+1. Clone the web application
+#. Configure the web application
 #. Deploy the web application
 #. Register a new user
 
-.. note::
+Clone the web application
+*************************
 
-    Before you start deploying, make sure that you have :ref:`set up the necessary AWS resources <aws-getting-started>`.
+.. include:: ../../app/GettingStarted.rst
+   :start-after: clone_web_app_start
+   :end-before: clone_web_app_end
 
 Configure the web application
 *****************************
 
-.. include:: ConfigureWebApp.rst
+.. include:: ../../app/ConfigureWebApp.rst
    :start-after: configure_web_app_start
    :end-before: configure_web_app_end
 

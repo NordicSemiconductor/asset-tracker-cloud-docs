@@ -18,4 +18,5 @@ Then complete the following steps:
    AWSCredentials.rst
    Deploy.rst
    FirmwareConfiguration.rst
-   NextSteps.rst
+   DeviceCredentials.rst
+   Webapp.rst

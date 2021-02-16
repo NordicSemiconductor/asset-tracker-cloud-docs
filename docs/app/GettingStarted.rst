@@ -18,6 +18,8 @@ If you are using Windows, we recommend using the `Windows Subsystem for Linux <h
 Clone the project and install the dependencies
 **********************************************
 
+.. clone_web_app_start
+
 Clone the latest version of the `Cat Tracker Web Application <https://github.com/NordicSemiconductor/app>`_ project and install the dependencies:
 
 .. code-block:: bash
@@ -38,3 +40,5 @@ Run the following command to allow the changed ``.envrc`` file:
 .. code-block:: bash
 
     direnv allow
+
+.. clone_web_app_end

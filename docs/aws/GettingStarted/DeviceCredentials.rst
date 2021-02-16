@@ -28,13 +28,7 @@ Run the following script to generate and register a CA certificate in your AWS a
 
     node cli create-ca
 
-.. create_dev_cert:
-
 Generate a device certificate
 *****************************
 
-Run the following script to generate a certificate for a new device:
-
-.. code-block:: bash
-
-    node cli create-device-cert
+Follow the instructions in :ref:`Connect using a real device <devices-provisioning-certificate>` to create a device certificate and provision it.
