@@ -12,6 +12,8 @@ Use the CLI to provision the device certificates:
 .. code-block:: bash
 
     node cli flash "<imei>"
+    # default secTag is 42
+    # pass --help to see additional options, e.g. pass how to use a different secTag
 
 Provisioning of the certificate using CLI also results in the following actions:
 
