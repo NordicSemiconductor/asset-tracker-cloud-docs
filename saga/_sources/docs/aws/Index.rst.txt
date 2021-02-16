@@ -13,7 +13,6 @@ Documentation
 
    GettingStarted/Index.rst
    Upgrading.rst
-   DeviceCredentials.rst
    Simulator.rst
    ContinuousDeployment.rst
    Authentication.rst

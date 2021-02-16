@@ -12,8 +12,5 @@ Documentation
 .. toctree::
    :titlesonly:
 
-   GettingStarted.rst
-   Upgrading.rst
-   AWS.rst
-   CellGeolocation.rst
    Customizing.rst
+   CellGeolocation.rst

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Authentication &mdash; Asset Tracker Cloud Example v11.4.3 documentation</title>
+  <title>Authentication &mdash; Asset Tracker Cloud Example v11.5.0 documentation</title>
   
 
   
@@ -98,7 +98,6 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Index.html">Asset Tracker Cloud Example for AWS</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="GettingStarted/Index.html">Getting started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Authentication</a></li>
@@ -207,7 +206,7 @@
             
   <div class="section" id="authentication">
 <span id="authentication-readme"></span><h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h1>
-<p>The <a class="reference internal" href="../app/AWS.html#app-aws"><span class="std std-ref">Cat Tracker Web Application</span></a> on AWS connects to the <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-connect-devices.html">AWS IoT broker</a> using WebSockets, and the authentication is done through <a class="reference external" href="https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html">AWS Cognito</a>.</p>
+<p>The <a class="reference internal" href="GettingStarted/Webapp.html#aws-getting-started-app"><span class="std std-ref">Cat Tracker Web Application</span></a> on AWS connects to the <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-connect-devices.html">AWS IoT broker</a> using WebSockets, and the authentication is done through <a class="reference external" href="https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html">AWS Cognito</a>.</p>
 <p>See the AWS documentation on <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/cognito-identities.html">Amazon Cognito identities</a> and <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/pub-sub-policy.html#pub-sub-policy-cognito">Policies for HTTP and WebSocket clients</a> for more information.</p>
 <p>A user authenticated via Amazon Cognito needs the following policies to access AWS IoT:</p>
 <ul class="simple">
