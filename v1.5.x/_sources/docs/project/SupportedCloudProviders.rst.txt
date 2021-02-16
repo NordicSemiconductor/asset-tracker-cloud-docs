@@ -27,7 +27,9 @@ For more information see `Leshan LwM2M AWS IoT Gateway <https://github.com/coder
 IoT Cloud vendor survey results
 ===============================
 
-Below table shows the IoT Cloud vendor survey results:
+Below table shows the IoT Cloud vendor survey results: "Which cloud provider to you plan to use in the future?".
+
+To allow comparison between years and surveys ``100%`` in the chart is the most answers given for a specific cloud provider, while those with less answers are provide in percent relative to the number of most answers per year.
 
 +------------+------------------------+------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 |            | Nordic internal (2019) | Nordic internal (2020) | `Eclipse Foundation (2019) <https://iot.eclipse.org/community/resources/iot-surveys/assets/iot-comm-adoption-survey-2019.pdf>`_ |
