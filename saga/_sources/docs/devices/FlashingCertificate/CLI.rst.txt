@@ -13,7 +13,7 @@ Use the CLI to provision the device certificates:
 
     node cli flash "<imei>"
     # default secTag is 42
-    # pass --help to see additional options, e.g. pass how to use a different secTag
+    # pass --help to see additional options, e.g. how to use a different secTag
 
 Provisioning of the certificate using CLI also results in the following actions:
 
