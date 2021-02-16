@@ -17,4 +17,5 @@ Then complete the following steps:
    Clone.rst
    AWSCredentials.rst
    Deploy.rst
+   FirmwareConfiguration.rst
    NextSteps.rst
