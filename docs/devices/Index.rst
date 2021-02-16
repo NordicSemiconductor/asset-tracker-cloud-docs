@@ -25,6 +25,5 @@ Documentation
    :titlesonly:
 
    FlashingCertificate/Index.rst
-   Configuration.rst
    FOTA.rst
    TroubleShooting.rst
