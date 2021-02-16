@@ -62,7 +62,7 @@ Following is an example for the contents of the :file:`.env.local` file:
 Version string
 ==============
 
-.. include:: ConfigureWebApp.rst
+.. include:: ../../app/ConfigureWebApp.rst
    :start-after: provide_versionstring_start
    :end-before: provide_versionstring_end
 
