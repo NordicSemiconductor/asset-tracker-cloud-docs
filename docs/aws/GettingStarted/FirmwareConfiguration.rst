@@ -1,7 +1,7 @@
 .. _firmware-configuration:
 
-Configuration
-#############
+Firmware configuration
+######################
 
 Run this command to print the MQTT endpoint your devices will connect to:
 
