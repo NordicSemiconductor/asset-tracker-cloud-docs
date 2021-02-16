@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Troubleshooting &mdash; Asset Tracker Cloud Example v11.3.4 documentation</title>
+  <title>Troubleshooting &mdash; Asset Tracker Cloud Example v11.3.5 documentation</title>
   
 
   
@@ -100,7 +100,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker Firmware</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Index.html">Connect using a real device</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="FlashingCertificate/Index.html">Provisioning the certificate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Configuration.html">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="FOTA.html">Firmware over-the-air (FOTA)</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Troubleshooting</a></li>
 </ul>
@@ -220,6 +219,11 @@ For more details, see the <a class="reference external" href="https://devzone.no
 <p>A solution is to switch to a SIM card that grants PSM.</p>
 <p>Another solution is to use assisted GPS (A-GPS) to speed up the time to fix.
 Currently there is no support for <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/9">A-GPS in the Asset Tracker Cloud Example</a>.</p>
+</div>
+<div class="section" id="gps-timeout-configuration">
+<h3>GPS Timeout configuration<a class="headerlink" href="#gps-timeout-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Since the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/9">firware currently does not support A-GPS</a> depending on the device location acquiring a GPS fix can take a long time.
+Therefore a timeout of at least 1000 seconds should be chosen in the web application.</p>
 </div>
 </div>
 </div>
