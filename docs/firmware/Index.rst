@@ -23,6 +23,7 @@ Documentation
 .. toctree::
    :titlesonly:
 
+   Configuration.rst
    UsingPrebuildImages.rst
    BuildingUsingDocker.rst
    BuildingUsingLocalSystem.rst
