@@ -20,11 +20,11 @@ Clone the project and install the dependencies
 
 .. clone_web_app_start
 
-Clone the latest version of the `Cat Tracker Web Application <https://github.com/NordicSemiconductor/app>`_ project and install the dependencies:
+Clone the latest version of the `Cat Tracker Web Application <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js>`_ project and install the dependencies:
 
 .. code-block:: bash
 
-    git clone https://github.com/NordicSemiconductor/app.git asset-tracker-app
+    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git asset-tracker-app
     cd asset-tracker-app
     npm ci
 
