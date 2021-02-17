@@ -14,7 +14,7 @@ GPS position fixes that are acquired by the devices and the cell information (ce
 
 The following image shows the location calculation of a device using the device geolocation data:
 
-.. figure:: https://github.com/NordicSemiconductor/cell-geolocation-helpers/raw/saga/map.gif
+.. figure:: ./images/map.gif
    :alt: Calculating the location of a cell using the device geolocation data
     
    Calculating the location of a cell using the device geolocation data
