@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Troubleshooting &mdash; Asset Tracker Cloud Example v11.5.2 documentation</title>
+  <title>Troubleshooting &mdash; Asset Tracker Cloud Example v11.6.0 documentation</title>
   
 
   
@@ -216,8 +216,9 @@
 <p>This error occurs if the network provider does not grant Power Saving Mode (PSM) and the GPS takes a long time to acquire a fix.
 For more details, see the <a class="reference external" href="https://devzone.nordicsemi.com/f/nordic-q-a/51962/gps-and-lte-issue/210272#210272">DevZone post related to GPS and LTE issue</a>.</p>
 <p>A solution is to switch to a SIM card that grants PSM.</p>
-<p>Another solution is to use assisted GPS (A-GPS) to speed up the time to fix.
-Currently there is no support for <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/9">A-GPS in the Asset Tracker Cloud Example</a>.</p>
+<p>Another solution is to use assisted GPS (A-GPS) to speed up the time to fix.</p>
+<p>One form of A-GPS is using SUPL and it can be optionally enabled in the firmware using the <a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/include/supl_os_client.html">supl_client</a>.
+The <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware/pull/9">Asset Tracker Cloud Firmware project</a> optionally supports building fimrware images with SUPL enabled.</p>
 </div>
 <div class="section" id="gps-timeout-configuration">
 <h3>GPS Timeout configuration<a class="headerlink" href="#gps-timeout-configuration" title="Permalink to this headline">¶</a></h3>

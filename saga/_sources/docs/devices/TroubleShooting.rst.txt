@@ -30,7 +30,9 @@ For more details, see the `DevZone post related to GPS and LTE issue <https://de
 A solution is to switch to a SIM card that grants PSM.
 
 Another solution is to use assisted GPS (A-GPS) to speed up the time to fix.
-Currently there is no support for `A-GPS in the Asset Tracker Cloud Example <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/9>`_.
+
+One form of A-GPS is using SUPL and it can be optionally enabled in the firmware using the `supl_client <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/include/supl_os_client.html>`_.
+The `Asset Tracker Cloud Firmware project <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware/pull/9>`_ optionally supports building fimrware images with SUPL enabled.
 
 GPS Timeout configuration
 =========================
