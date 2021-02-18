@@ -1,7 +1,7 @@
 Device Data and Configuration
 #############################
 
-The data published by the device and the configuration options are described in detail in the state JSON schema file for `AWS <./state.reported.aws.schema.json>`_.
+The data published by the device and the configuration options are described in detail in the `state JSON schema file for AWS <./state.reported.aws.schema.json>`_.
 See `this state JSON document for an AWS example <./state.reported.aws.json>`_.
 
 Sending and receiving this data is different per cloud-operator, see implementation details for :ref:`AWS here <aws-iot-shadow-topics>` .
