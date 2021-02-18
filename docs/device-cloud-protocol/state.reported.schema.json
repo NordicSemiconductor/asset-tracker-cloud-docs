@@ -145,7 +145,7 @@
               "type": "string",
               "description": "Network mode",
               "minLength": 1,
-              "examples": ["NB-IoT GPS"]
+              "examples": ["LTE-M", "NB-IoT GPS"]
             },
             "iccid": {
               "type": "string",
