@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Connect using the simulator &mdash; Asset Tracker Cloud Example v11.6.1 documentation</title>
+  <title>Connect using the simulator &mdash; Asset Tracker Cloud Example v12.0.0 documentation</title>
   
 
   
@@ -242,8 +242,8 @@ For the link to work, either enable <a class="reference internal" href="Continuo
 <div class="section" id="clone-the-project-and-install-the-dependencies">
 <h3>Clone the project and install the dependencies<a class="headerlink" href="#clone-the-project-and-install-the-dependencies" title="Permalink to this headline">¶</a></h3>
 <p>Clone the latest version of the <a class="reference external" href="https://github.com/NordicSemiconductor/device-ui">device-ui</a> project and install the dependencies:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/device-ui.git asset-tracker-device-ui
-<span class="nb">cd</span> asset-tracker-device-ui
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/device-ui.git cat-tracker-device-ui
+<span class="nb">cd</span> cat-tracker-device-ui
 npm ci
 </pre></div>
 </div>
@@ -260,7 +260,7 @@ npm ci
 <div class="section" id="deploying-the-device-simulator-web-application">
 <span id="deploy-dev-sim-web-app"></span><h2>Deploying the Device simulator web application<a class="headerlink" href="#deploying-the-device-simulator-web-application" title="Permalink to this headline">¶</a></h2>
 <p>To build and setup the Device simulator web application to the S3 bucket created when setting up the <em>Asset Tracker Cloud Example</em> in your AWS account, run the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="k">$(</span><span class="nb">cd</span> ../asset-tracker-aws <span class="o">&amp;&amp;</span> node cli device-ui-config <span class="p">|</span> xargs<span class="k">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="k">$(</span><span class="nb">cd</span> ../cat-tracker-aws <span class="o">&amp;&amp;</span> node cli device-ui-config <span class="p">|</span> xargs<span class="k">)</span>
 npm run build
 aws s3 cp build s3://<span class="nv">$SNOWPACK_PUBLIC_DEVICE_UI_BUCKET_NAME</span> <span class="se">\</span>
 --recursive --metadata-directive REPLACE <span class="se">\</span>

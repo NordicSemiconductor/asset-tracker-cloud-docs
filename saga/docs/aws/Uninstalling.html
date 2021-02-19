@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Uninstalling the Asset Tracker Cloud Example from AWS &mdash; Asset Tracker Cloud Example v11.6.1 documentation</title>
+  <title>Uninstalling the Asset Tracker Cloud Example from AWS &mdash; Asset Tracker Cloud Example v12.0.0 documentation</title>
   
 
   
@@ -211,9 +211,7 @@
 <p class="admonition-title">Note</p>
 <p>The commands must be executed with care since they are destructive.</p>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">STACK_NAME</span><span class="o">=</span>asset-tracker
-
-node cli purge-buckets
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli purge-buckets
 node cli purge-iot-user-policy-principals
 node cli purge-cas
 
@@ -223,7 +221,7 @@ node cli purge-cas
 npx cdk destroy <span class="s1">&#39;*&#39;</span>
 
 <span class="c1"># Delete the Source Code Stack</span>
-<span class="nv">SOURCE_CODE_BUCKET</span><span class="o">=</span><span class="sb">`</span>aws cloudformation describe-stacks --stack-name <span class="nv">$STACK_NAME</span>-sourcecode <span class="p">|</span> jq -r <span class="s1">&#39;.Stacks[0].Outputs[] | select(.OutputKey == &quot;bucketName&quot;) | .OutputValue&#39;</span><span class="sb">`</span>
+<span class="nv">SOURCE_CODE_BUCKET</span><span class="o">=</span><span class="sb">`</span>aws cloudformation describe-stacks --stack-name <span class="si">${</span><span class="nv">STACK_NAME</span><span class="k">:-</span><span class="nv">cat</span><span class="p">-tracker</span><span class="si">}</span>-sourcecode <span class="p">|</span> jq -r <span class="s1">&#39;.Stacks[0].Outputs[] | select(.OutputKey == &quot;bucketName&quot;) | .OutputValue&#39;</span><span class="sb">`</span>
 aws s3 rb s3://<span class="nv">$SOURCE_CODE_BUCKET</span> --force
 npx cdk -a <span class="s1">&#39;node dist/cdk/cloudformation-sourcecode.js&#39;</span> destroy <span class="s1">&#39;*&#39;</span>
 </pre></div>

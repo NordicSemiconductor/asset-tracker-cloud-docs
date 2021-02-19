@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Limiting the Shadow Document size &mdash; Asset Tracker Cloud Example v12.0.0 documentation</title>
+  <title>Clone the project and install the dependencies &mdash; Asset Tracker Cloud Example v12.0.0 documentation</title>
   
 
   
@@ -37,9 +37,7 @@
 
     
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Storage of historical data" href="HistoricalData.html" />
-    <link rel="prev" title="AWS IoT Shadow and Topics" href="IoTShadowAndTopics.html" /> 
+    <link rel="search" title="Search" href="../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,25 +90,11 @@
             
             
               <p class="caption"><span class="caption-text">Documentation</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Asset Tracker Cloud Example for AWS</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="GettingStarted/Index.html">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Authentication.html">Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">AWS IoT Shadow and Topics</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Limiting the Shadow Document size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="HistoricalData.html">Storage of historical data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ContinuousIntegration.html">Continuous integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="UnwiredLabsAPI.html">Unwired Labs API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Uninstalling.html">Uninstalling the Asset Tracker Cloud Example from AWS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SNI.html">SNI</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Asset Tracker Cloud Example for AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Index.html">Cat Tracker Web Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
@@ -181,16 +165,14 @@
     
       <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="Index.html">Asset Tracker Cloud Example for AWS</a> &raquo;</li>
-        
-      <li>Limiting the Shadow Document size</li>
+      <li>Clone the project and install the dependencies</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/aws/LimitingShadowDocumentSize.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/app/Includes.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -204,32 +186,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="limiting-the-shadow-document-size">
-<span id="limit-shadow-size"></span><h1>Limiting the Shadow Document size<a class="headerlink" href="#limiting-the-shadow-document-size" title="Permalink to this headline">¶</a></h1>
-<p>The nRF9160 DK has a size limit of 2303 bytes for receiving TLS packages.
-See the following contents of the <code class="file docutils literal notranslate"><span class="pre">mfw_nrf9160_1.2.0_release_notes.txt</span></code> file in <a class="reference external" href="https://www.nordicsemi.com/-/media/Software-and-other-downloads/Dev-Kits/nRF9160-DK/nRF9160-modem-FW/mfwnrf9160120.zip">nRF9160 modem firmware binaries (v1.2.0)</a> for reference.</p>
-<div class="figure align-default" id="id1">
-<img alt="nRF9160 Modem firmware 1.2.0 release notes content" src="../../_images/mfw_1.2.0_release_notes.png" />
-<p class="caption"><span class="caption-text">nRF9160 Modem firmware 1.2.0 release notes content</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-<p>The <em>Asset Tracker Cloud Example</em> sets up an IoT rule, which only publishes the <code class="docutils literal notranslate"><span class="pre">cfg</span></code> section of the <a class="reference external" href="../firmware/state.reported.aws.json">shadow document</a> to a separate topic <code class="docutils literal notranslate"><span class="pre">$aws/things/&lt;thing</span> <span class="pre">name&gt;/shadow/get/accepted/desired/cfg</span></code> when devices receive their state after publishing an empty message to <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#get-pub-sub-topic">$aws/things/&lt;thing name&gt;/shadow/get</a>.</p>
-<p>The published object might be empty as shown, if the device has no shadow or if the configuration is not set:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+  <div class="section" id="clone-the-project-and-install-the-dependencies">
+<h1>Clone the project and install the dependencies<a class="headerlink" href="#clone-the-project-and-install-the-dependencies" title="Permalink to this headline">¶</a></h1>
+<p>Clone the latest version of the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js">Cat Tracker Web Application</a> project and install the dependencies:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git cat-tracker-app
+<span class="nb">cd</span> cat-tracker-app
+npm ci
 </pre></div>
 </div>
-<p>Otherwise, the message will contain one top-level key <code class="docutils literal notranslate"><span class="pre">cfg</span></code> and the desired device configuration as shown:</p>
-<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;cfg&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;gpst&quot;</span><span class="p">:</span> <span class="mi">720</span><span class="p">,</span>
-    <span class="nt">&quot;celt&quot;</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span>
-    <span class="nt">&quot;act&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;actwt&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
-    <span class="nt">&quot;mvres&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
-    <span class="nt">&quot;mvt&quot;</span><span class="p">:</span> <span class="mi">3600</span><span class="p">,</span>
-    <span class="nt">&quot;acct&quot;</span><span class="p">:</span> <span class="mf">1.2</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<p>The web application needs to be configured to be able to run with your account.</p>
+<p>As a first step, you need to create a file called <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code>, which <a class="reference external" href="https://create-react-app.dev/docs/adding-custom-environment-variables/">Create React App</a> uses to make the settings in the file available as environment variables during build-time.</p>
+<div class="section" id="version-string">
+<h2>Version string<a class="headerlink" href="#version-string" title="Permalink to this headline">¶</a></h2>
+<p>Run the following command to provide the version to the application:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">REACT_APP_VERSION</span><span class="o">=</span><span class="sb">`</span>git describe --tags <span class="k">$(</span>git rev-list --tags --max-count<span class="o">=</span><span class="m">1</span><span class="k">)</span><span class="sb">`</span> &gt;&gt; .env.local
 </pre></div>
+</div>
 </div>
 </div>
 
@@ -238,10 +210,6 @@ See the following contents of the <code class="file docutils literal notranslate
            
           </div>
           <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="HistoricalData.html" class="btn btn-neutral float-right" title="Storage of historical data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="IoTShadowAndTopics.html" class="btn btn-neutral float-left" title="AWS IoT Shadow and Topics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
 
   <hr/>
 

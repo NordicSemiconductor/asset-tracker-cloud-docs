@@ -71,7 +71,7 @@ Configure these as secrets on the firmware GitHub repository:
  - ``AWS_ACCESS_KEY_ID`` (as printed above)
  - ``AWS_SECRET_ACCESS_KEY`` (as printed above)
  - ``AWS_REGION`` (as printed above)
- - ``STACK_NAME`` (the stack name of your production environment, usually ``asset-tracker``)
+ - ``STACK_NAME`` (the stack name of your production environment, usually ``cat-tracker``)
  - ``DEVICE_ID`` (the created Firmwer CI runner device, e.g. ``firmware-ci-3c431c57-e524-4010-b269-371cb53538b6``)
 
 Firmware CI runner setup
