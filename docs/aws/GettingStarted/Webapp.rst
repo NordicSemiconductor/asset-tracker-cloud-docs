@@ -10,29 +10,25 @@ To deploy the *Cat Tracker web application* to AWS, complete the following steps
 #. Deploy the web application
 #. Register a new user
 
-Clone the web application
-*************************
-
-.. include:: ../../app/GettingStarted.rst
+.. include:: ../../app/Includes.rst
    :start-after: clone_web_app_start
    :end-before: clone_web_app_end
 
-Configure the web application
-*****************************
-
-.. include:: ../../app/ConfigureWebApp.rst
+.. include:: ../../app/Includes.rst
    :start-after: configure_web_app_start
    :end-before: configure_web_app_end
 
-Configure the IDs of your AWS resources
-=======================================
+Run-time configuration
+======================
 
 The web application requires the IDs of the AWS resources that were created during the setup of the stack.
 Run the following command in the :file:`cat-tracker-app` directory to copy the output that contain the IDs to the :file:`.env.local` file:
 
 .. code-block:: bash
 
-    node ../cat-tracker-aws/cli react-config > .env.local
+   cd ../cat-tracker-aws
+   node cli react-config > ../cat-tracker-app/.env.local
+   cd ../cat-tracker-app
 
 Example for :file:`.env.local`
 ------------------------------
@@ -59,10 +55,7 @@ Following is an example for the contents of the :file:`.env.local` file:
     REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP=EGNO6F61DSJ5Y
     REACT_APP_VERSION=v3.6.1
 
-Version string
-==============
-
-.. include:: ../../app/ConfigureWebApp.rst
+.. include:: ../../app/Includes.rst
    :start-after: provide_versionstring_start
    :end-before: provide_versionstring_end
 
@@ -75,21 +68,31 @@ To build and deploy the web application to the S3 bucket created while setting u
 
     export $(cat .env.local | xargs)
     export EXTEND_ESLINT=true
+    export PUBLIC_URL="https://$REACT_APP_WEB_APP_DOMAIN_NAME"
     npm run build
     aws s3 cp build s3://$REACT_APP_WEB_APP_BUCKET_NAME \
-    --recursive --metadata-directive REPLACE \
-    --cache-control 'public,max-age=600' --expires ''
+      --recursive --metadata-directive REPLACE \
+      --cache-control 'public,max-age=600' --expires ''
     aws cloudfront create-invalidation --distribution-id \
-    $REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP --paths /,/index.html
-    echo "Done. Now open https://$REACT_APP_WEB_APP_DOMAIN_NAME/ to view the web app."
+      $REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP --paths /,/index.html
+    echo "Done. Now open $PUBLIC_URL to view the web app."
 
-After running the commands, you can open the domain name printed in ``REACT_APP_WEB_APP_DOMAIN_NAME`` to view the web application.
+After running the commands, you can open the domain name printed in ``REACT_APP_WEB_APP_DOMAIN_NAME`` in your browser to view the web application.
 
 Register a new user
 *******************
 
-Since there are no predefined user accounts in the user pool, you need to register a new user.
-
 .. note::
 
    The user pool is configured to use the email address as the username.
+
+Since there are no predefined user accounts in the user pool, you need to register a new user.
+Open the application in the browser and you will see the login form.
+
+.. figure:: ../../app/images/create-account.png
+   :alt: Login form of the web application
+
+Click :guilabel:`Create Account` and fill in your email and a password.
+You will receive an email with a confirmation code which needs to be entered in order to confirm your email address.
+Once you have confirmed your email address you can log-in with your email address and your password.
+

@@ -1,4 +1,17 @@
-.. _app-configuration:
+.. clone_web_app_start
+
+Clone the project and install the dependencies
+**********************************************
+
+Clone the latest version of the `Cat Tracker Web Application <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js>`_ project and install the dependencies:
+
+.. code-block:: bash
+
+    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git cat-tracker-app
+    cd cat-tracker-app
+    npm ci
+
+.. clone_web_app_end
 
 .. configure_web_app_start
 
@@ -9,6 +22,9 @@ As a first step, you need to create a file called :file:`.env.local`, which `Cre
 .. configure_web_app_end
 
 .. provide_versionstring_start
+
+Version string
+--------------
 
 Run the following command to provide the version to the application:
 
