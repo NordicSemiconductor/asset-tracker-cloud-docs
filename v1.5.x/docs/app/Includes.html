@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Cloud connectivity and protocols for the Internet of Things &mdash; Asset Tracker Cloud Example 39f0349120781eebfe2a47e9b0c94f5a4117de1a documentation</title>
+  <title>Clone the project and install the dependencies &mdash; Asset Tracker Cloud Example 39f0349120781eebfe2a47e9b0c94f5a4117de1a documentation</title>
   
 
   
@@ -37,9 +37,7 @@
 
     
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Cloud Differences" href="CloudDifferences.html" />
-    <link rel="prev" title="Cell Geolocations" href="CellGeolocations.html" /> 
+    <link rel="search" title="Search" href="../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,21 +94,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Asset Tracker Cloud Example for AWS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Index.html">Cat Tracker Web Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CellGeolocations.html">Cell Geolocations</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Versioning.html">Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Direnv.html">About <em>direnv</em></a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/SystemRequirements.html">System requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
@@ -167,14 +165,14 @@
     
       <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Cloud connectivity and protocols for the Internet of Things</li>
+      <li>Clone the project and install the dependencies</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v1.5.x/docs/guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v1.5.x/docs/app/Includes.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -188,16 +186,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="cloud-connectivity-and-protocols-for-the-internet-of-things">
-<h1>Cloud connectivity and protocols for the Internet of Things<a class="headerlink" href="#cloud-connectivity-and-protocols-for-the-internet-of-things" title="Permalink to this headline">¶</a></h1>
-<p>This <a class="reference external" href="https://www.nordicsemi.com/Events/Webinars">Nordic Semiconductor Tech Webinar</a> should be interesting to everyone who wants to get an introduction to protocols to consider when developing a cellular IoT product.</p>
-<p>It provides an overview over the important factors that need to be considered when it comes to picking the right solution for sending your products’ data to the cloud.</p>
-<div class="figure align-default" id="id1">
-<a class="reference external image-reference" href="https://www.youtube.com/watch?v=pNaBB_OFbgg"><img alt="../../_images/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.jpg" src="../../_images/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.jpg" /></a>
-<p class="caption"><span class="caption-text">Watch the recording on YouTube</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+  <div class="section" id="clone-the-project-and-install-the-dependencies">
+<h1>Clone the project and install the dependencies<a class="headerlink" href="#clone-the-project-and-install-the-dependencies" title="Permalink to this headline">¶</a></h1>
+<p>Clone the latest version of the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js">Cat Tracker Web Application</a> project and install the dependencies:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git cat-tracker-app
+<span class="nb">cd</span> cat-tracker-app
+npm ci
+</pre></div>
 </div>
-<p>The full recording including Q&amp;A is available <a class="reference external" href="https://webinars.nordicsemi.com/cloud-connectivity-and-protocols-5">here</a>.</p>
-<p>Slides are available <a class="reference external" href="https://coderbyheart.github.io/nordicwebinar2020/index.html">interactive, browser-based</a> or as a <a class="reference external" href="https://devzone.nordicsemi.com/cfs-file/__key/support-attachments/beef5d1b77644c448dabff31668f3a47-cfd384f9b1874d3caf1df02c9677eca4/7065.Cloud-connectivity-and-protocols-for-the-Internet-of-Things-_2D00_-Notes.pdf">PDF with all notes</a>.</p>
+<p>The web application needs to be configured to be able to run with your account.</p>
+<p>As a first step, you need to create a file called <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code>, which <a class="reference external" href="https://create-react-app.dev/docs/adding-custom-environment-variables/">Create React App</a> uses to make the settings in the file available as environment variables during build-time.</p>
+<div class="section" id="version-string">
+<h2>Version string<a class="headerlink" href="#version-string" title="Permalink to this headline">¶</a></h2>
+<p>Run the following command to provide the version to the application:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">REACT_APP_VERSION</span><span class="o">=</span><span class="sb">`</span>git describe --tags <span class="k">$(</span>git rev-list --tags --max-count<span class="o">=</span><span class="m">1</span><span class="k">)</span><span class="sb">`</span> &gt;&gt; .env.local
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -205,10 +210,6 @@
            
           </div>
           <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="CloudDifferences.html" class="btn btn-neutral float-right" title="Cloud Differences" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="CellGeolocations.html" class="btn btn-neutral float-left" title="Cell Geolocations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
 
   <hr/>
 

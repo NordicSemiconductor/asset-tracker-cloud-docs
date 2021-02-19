@@ -7,7 +7,7 @@ Clone the latest version of the the `Asset Tracker Cloud Example for AWS <https:
 
 .. code-block:: bash
 
-    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js.git asset-tracker-aws 
-    cd asset-tracker-aws 
+    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js.git cat-tracker-aws 
+    cd cat-tracker-aws 
     npm ci
     npx tsc

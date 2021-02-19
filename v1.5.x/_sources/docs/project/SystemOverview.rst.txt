@@ -21,7 +21,7 @@ JavaScript is the most popular language according to the `2019 Stack Overflow su
 Most of the cloud providers provide their SDKs in JavaScript.
 
 It provides tools to configure the developer's cloud account for use with the developer's devices and the single-page application (SPA).
-After the cloud account has been configured, it provides the resources necessary for the asset trackers to connect to the message broker and to send and receive messages.
+After the cloud account has been configured, it provides the resources necessary for the cat trackers to connect to the message broker and to send and receive messages.
 It also provides the appropriate APIs for the SPA to interact with the developer's devices.
 
 The mobile-first SPA is developed using `create-react-app <https://github.com/facebook/create-react-app>`_ and it provides a reference implementation of a user interface to control and interact with the devices.
