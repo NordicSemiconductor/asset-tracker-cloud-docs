@@ -11,8 +11,6 @@ To uninstall the Asset Tracker Cloud Example, execute the listed commands.
 
 .. code-block:: bash
 
-    STACK_NAME=asset-tracker
-    
     node cli purge-buckets
     node cli purge-iot-user-policy-principals
     node cli purge-cas
@@ -23,6 +21,6 @@ To uninstall the Asset Tracker Cloud Example, execute the listed commands.
     npx cdk destroy '*'
     
     # Delete the Source Code Stack 
-    SOURCE_CODE_BUCKET=`aws cloudformation describe-stacks --stack-name $STACK_NAME-sourcecode | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "bucketName") | .OutputValue'` 
+    SOURCE_CODE_BUCKET=`aws cloudformation describe-stacks --stack-name ${STACK_NAME:-cat-tracker}-sourcecode | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "bucketName") | .OutputValue'` 
     aws s3 rb s3://$SOURCE_CODE_BUCKET --force
     npx cdk -a 'node dist/cdk/cloudformation-sourcecode.js' destroy '*'

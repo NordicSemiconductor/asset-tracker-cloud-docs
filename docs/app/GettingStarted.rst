@@ -24,8 +24,8 @@ Clone the latest version of the `Cat Tracker Web Application <https://github.com
 
 .. code-block:: bash
 
-    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git asset-tracker-app
-    cd asset-tracker-app
+    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git cat-tracker-app
+    cd cat-tracker-app
     npm ci
 
 Create a new :file:`.envrc` file (:ref:`used with direnv <about-direnv>`) in the project folder and add these environment variables (this is needed so *Create React App* picks up the `custom eslint configuration <https://create-react-app.dev/docs/setting-up-your-editor/#experimental-extending-the-eslint-config>`_):

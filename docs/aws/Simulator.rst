@@ -52,8 +52,8 @@ Clone the latest version of the `device-ui`_ project and install the dependencie
 
 .. code-block:: bash
 
-    git clone https://github.com/NordicSemiconductor/device-ui.git asset-tracker-device-ui
-    cd asset-tracker-device-ui
+    git clone https://github.com/NordicSemiconductor/device-ui.git cat-tracker-device-ui
+    cd cat-tracker-device-ui
     npm ci
 
 Run the Device simulator web application
@@ -76,7 +76,7 @@ To build and setup the Device simulator web application to the S3 bucket created
 
 .. code-block:: bash
 
-    export $(cd ../asset-tracker-aws && node cli device-ui-config | xargs) 
+    export $(cd ../cat-tracker-aws && node cli device-ui-config | xargs) 
     npm run build
     aws s3 cp build s3://$SNOWPACK_PUBLIC_DEVICE_UI_BUCKET_NAME \
     --recursive --metadata-directive REPLACE \
