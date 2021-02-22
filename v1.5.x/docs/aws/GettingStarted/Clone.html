@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Clone the project and install dependencies &mdash; Asset Tracker Cloud Example 39f0349120781eebfe2a47e9b0c94f5a4117de1a documentation</title>
+  <title>Clone the project and install dependencies &mdash; Asset Tracker Cloud Example 553badd233b8b03939ad9c99f15390a956504dce documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Provide your AWS credentials" href="AWSCredentials.html" />
-    <link rel="prev" title="Getting started" href="Index.html" /> 
+    <link rel="next" title="Install the Asset Tracker Cloud Example into your AWS account" href="Deploy.html" />
+    <link rel="prev" title="Provide your AWS credentials" href="AWSCredentials.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,12 +97,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../Index.html">Asset Tracker Cloud Example for AWS</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="Index.html">Getting started</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Clone the project and install dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkingDirectory.html">Create the working directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AWSCredentials.html">Provide your AWS credentials</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Clone the project and install dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Deploy.html">Install the <em>Asset Tracker Cloud Example</em> into your AWS account</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FirmwareConfiguration.html">Firmware configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Webapp.html">Deploying the <em>Cat Tracker web application</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="FirmwareConfiguration.html">Configure the <em>Cat Tracker firmware</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Create device credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Flashing.html">Flashing device firmware and credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Webapp.html">Deploy the <em>Cat Tracker web application</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="NextSteps.html">Next steps</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Upgrading.html">Upgrading an existing installation</a></li>
@@ -218,8 +221,13 @@
 <span id="aws-getting-started-clone"></span><h1>Clone the project and install dependencies<a class="headerlink" href="#clone-the-project-and-install-dependencies" title="Permalink to this headline">¶</a></h1>
 <p>Clone the latest version of the the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js">Asset Tracker Cloud Example for AWS</a> project and install the dependencies using the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js.git cat-tracker-aws
+
 <span class="nb">cd</span> cat-tracker-aws
+
+<span class="c1"># Install the dependencies</span>
 npm ci
+
+<span class="c1"># Compile the TypeScript source</span>
 npx tsc
 </pre></div>
 </div>
@@ -231,8 +239,8 @@ npx tsc
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="AWSCredentials.html" class="btn btn-neutral float-right" title="Provide your AWS credentials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="Index.html" class="btn btn-neutral float-left" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Deploy.html" class="btn btn-neutral float-right" title="Install the Asset Tracker Cloud Example into your AWS account" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="AWSCredentials.html" class="btn btn-neutral float-left" title="Provide your AWS credentials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

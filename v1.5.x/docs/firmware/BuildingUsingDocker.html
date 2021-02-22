@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Building using Docker &mdash; Asset Tracker Cloud Example 39f0349120781eebfe2a47e9b0c94f5a4117de1a documentation</title>
+  <title>Building using Docker &mdash; Asset Tracker Cloud Example 553badd233b8b03939ad9c99f15390a956504dce documentation</title>
   
 
   
@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Building using your local system" href="BuildingUsingLocalSystem.html" />
-    <link rel="prev" title="Using pre-build images" href="UsingPrebuildImages.html" /> 
+    <link rel="prev" title="Cat Tracker Firmware" href="Index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,7 +98,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Asset Tracker Cloud Example for AWS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Index.html">Cat Tracker Firmware</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="UsingPrebuildImages.html">Using pre-build images</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Building using Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BuildingUsingLocalSystem.html">Building using your local system</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BuildingUsingGitHub.html">Building using GitHub actions</a></li>
@@ -207,26 +206,24 @@
 Install <a class="reference external" href="https://www.docker.com/">Docker</a> and use it to contain all dependencies in the image, without needing to install them in your system.</p>
 <p>The docker image is not intended to be shared, but to simplify building locally.
 It is used to cache all dependencies so you can build and develop locally without needing to install dependencies directly in your system.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/firmware
-<span class="nb">cd</span> firmware
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware cat-tracker-firmware
+<span class="nb">cd</span> cat-tracker-firmware
 docker build -t asset-tracker-firmware-docker .
-<span class="nv">BROKER_HOSTNAME</span><span class="o">=</span><span class="sb">`</span>aws iot describe-endpoint --endpoint-type iot:Data-ATS <span class="p">|</span> jq -r <span class="s1">&#39;.endpointAddress&#39;</span><span class="sb">`</span>
-<span class="nb">echo</span> <span class="s2">&quot;CONFIG_AWS_IOT_BROKER_HOST_NAME=\&quot;</span><span class="si">${</span><span class="nv">BROKER_HOSTNAME</span><span class="si">}</span><span class="s2">\&quot;&quot;</span> &gt;&gt; prj_nrf9160dk_nrf9160ns.conf
-<span class="nb">echo</span> <span class="s2">&quot;CONFIG_AWS_IOT_BROKER_HOST_NAME=\&quot;</span><span class="si">${</span><span class="nv">BROKER_HOSTNAME</span><span class="si">}</span><span class="s2">\&quot;&quot;</span> &gt;&gt; prj_thingy91_nrf9160ns.conf
 </pre></div>
 </div>
+<p>Now edit the value of <code class="docutils literal notranslate"><span class="pre">CONFIG_AWS_IOT_BROKER_HOST_NAME</span></code> in <code class="file docutils literal notranslate"><span class="pre">prj.conf</span></code> and provide your broker hostname.</p>
 <div class="section" id="building">
 <h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="thingy-91-pca20035">
 <h3>Thingy:91 (<code class="docutils literal notranslate"><span class="pre">PCA20035</span></code>)<a class="headerlink" href="#thingy-91-pca20035" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c <span class="s1">&#39;cd /workdir/ncs/firmware; west build -p always -b thingy91_nrf9160ns&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c <span class="s1">&#39;cd /workdir/ncs/firmware; west build -p always -b thingy91_nrf9160ns -- -DOVERLAY_CONFIG=&quot;overlay-debug.conf;asset-tracker-cloud-firmware.conf&quot;&#39;</span>
 ls -la build/zephyr/merged.hex
 </pre></div>
 </div>
 </div>
 <div class="section" id="nrf9160-dk-pca10090">
 <h3>nRF9160 DK (<code class="docutils literal notranslate"><span class="pre">PCA10090</span></code>)<a class="headerlink" href="#nrf9160-dk-pca10090" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c <span class="s1">&#39;cd /workdir/ncs/firmware; west build -p always -b nrf9160dk_nrf9160ns&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c <span class="s1">&#39;cd /workdir/ncs/firmware; west build -p always -b nrf9160dk_nrf9160ns -- -DOVERLAY_CONFIG=&quot;overlay-debug.conf;asset-tracker-cloud-firmware.conf&quot;&#39;</span>
 ls -la build/zephyr/merged.hex
 </pre></div>
 </div>
@@ -234,7 +231,7 @@ ls -la build/zephyr/merged.hex
 </div>
 <div class="section" id="location-of-the-hex-file">
 <h2>Location of the HEX file<a class="headerlink" href="#location-of-the-hex-file" title="Permalink to this headline">¶</a></h2>
-<p>The built HEX file will be located in <code class="docutils literal notranslate"><span class="pre">ncs/nrf/build/zephyr/merged.hex</span></code>.</p>
+<p>The built HEX file will be located in <code class="file docutils literal notranslate"><span class="pre">build/zephyr/merged.hex</span></code>.</p>
 </div>
 </div>
 
@@ -245,7 +242,7 @@ ls -la build/zephyr/merged.hex
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="BuildingUsingLocalSystem.html" class="btn btn-neutral float-right" title="Building using your local system" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="UsingPrebuildImages.html" class="btn btn-neutral float-left" title="Using pre-build images" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Index.html" class="btn btn-neutral float-left" title="Cat Tracker Firmware" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
