@@ -21,8 +21,8 @@ Use the CLI to provision the device certificates:
 
 Provisioning of the certificate using CLI also results in the following actions:
 
-1. Programming the AT client sample onto device
-#. Provisioning the device certificates
-#. Programming of the firmware to the device
+1. Programming the `AT client sample <https://github.com/NordicSemiconductor/at_client-hex>`_ onto device
+#. Provisioning the device credentials created :ref:`in the previous step <aws-device-credentials>`
+#. Programming of the firmware that you have :ref:`configured and built before <firmware-configuration>` to the device
 
 .. body_end

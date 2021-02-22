@@ -7,7 +7,7 @@ Flashing device firmware and credentials
    :start-after: body_start
    :end-before: body_end
 
-After flashing the device will reboot and connect to the AWS broker, eventually reporting its state to the cloud:
+After flashing, the device will reboot and connect to the AWS broker, eventually reporting its state to the cloud:
 
 .. code-block::
 

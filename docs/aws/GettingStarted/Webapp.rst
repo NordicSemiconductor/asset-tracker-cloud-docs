@@ -10,16 +10,18 @@ To deploy the *Cat Tracker web application* to AWS, complete the following steps
 #. Deploy the web application
 #. Register a new user
 
+We start again in our working directory :file:`~/cat-tracker`.
+
 .. include:: ../../app/Includes.rst
    :start-after: clone_web_app_start
    :end-before: clone_web_app_end
 
+Run-time configuration
+======================
+
 .. include:: ../../app/Includes.rst
    :start-after: configure_web_app_start
    :end-before: configure_web_app_end
-
-Run-time configuration
-======================
 
 The web application requires the IDs of the AWS resources that were created during the setup of the stack.
 Run the following command in the :file:`cat-tracker-app` directory to copy the output that contain the IDs to the :file:`.env.local` file:
@@ -75,6 +77,7 @@ To build and deploy the web application to the S3 bucket created while setting u
       --cache-control 'public,max-age=600' --expires ''
     aws cloudfront create-invalidation --distribution-id \
       $REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP --paths /,/index.html
+    echo ""
     echo "Done. Now open $PUBLIC_URL to view the web app."
 
 After running the commands, you can open the domain name printed in ``REACT_APP_WEB_APP_DOMAIN_NAME`` in your browser to view the web application.
@@ -95,3 +98,8 @@ Open the application in the browser and you will see the login form.
 Click :guilabel:`Create Account` and fill in your email and a password.
 You will receive an email with a confirmation code which needs to be entered in order to confirm your email address.
 Once you have confirmed your email address you can log-in with your email address and your password.
+
+Viewing your device
+*******************
+
+Your device that you previously provisioned should show up in the list of cats.

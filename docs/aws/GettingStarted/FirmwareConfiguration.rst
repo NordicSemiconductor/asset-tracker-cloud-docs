@@ -19,3 +19,5 @@ Use this as the value for the ``CONFIG_AWS_IOT_BROKER_HOST_NAME`` configuration 
 Use ``42`` as the value for ``CONFIG_AWS_IOT_SEC_TAG``.
 
 Now, you can compile the firmware either :ref:`using Docker <firmware-building-docker>` or :ref:`tradionally using your own development environment <firmware-building>`.
+
+After you are done compiling the firmware, return here and continue on the next page.

@@ -15,10 +15,12 @@ Then complete the following steps:
 .. toctree::
    :titlesonly:
 
-   Clone.rst
+   WorkingDirectory.rst
    AWSCredentials.rst
+   Clone.rst
    Deploy.rst
    FirmwareConfiguration.rst
    DeviceCredentials.rst
    Flashing.rst
    Webapp.rst
+   NextSteps.rst
