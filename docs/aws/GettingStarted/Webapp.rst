@@ -1,7 +1,7 @@
 .. _aws-getting-started-app:
 
-Deploying the *Cat Tracker web application*
-###########################################
+Deploy the *Cat Tracker web application*
+########################################
 
 To deploy the *Cat Tracker web application* to AWS, complete the following steps:
 
@@ -95,4 +95,3 @@ Open the application in the browser and you will see the login form.
 Click :guilabel:`Create Account` and fill in your email and a password.
 You will receive an email with a confirmation code which needs to be entered in order to confirm your email address.
 Once you have confirmed your email address you can log-in with your email address and your password.
-

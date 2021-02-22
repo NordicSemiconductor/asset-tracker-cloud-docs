@@ -5,6 +5,7 @@ Getting started
 
 Before you start the setup of the *Asset Tracker Cloud Example* on AWS, ensure that:
 
+ * you have one of the `supported boards <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html#requirements>`_
  * your system fullfills the :ref:`necessary system requirements <system-requirements>`
  * you have installed a :ref:`direnv <about-direnv>` plugin for your shell
  * you have an AWS Account and *AdministratorAccess*, if not `here is how you create and activate a new AWS account <https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/>`_
@@ -19,4 +20,5 @@ Then complete the following steps:
    Deploy.rst
    FirmwareConfiguration.rst
    DeviceCredentials.rst
+   Flashing.rst
    Webapp.rst

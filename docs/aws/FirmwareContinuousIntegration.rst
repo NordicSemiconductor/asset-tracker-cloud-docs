@@ -80,11 +80,11 @@ Firmware CI runner setup
 #.  Download `JLink <https://www.segger.com/downloads/jlink/>`_ for your platform.
     Use the path to the folder (e.g. ``~/JLink_Linux_V686_arm64/``) further down.
 
-#.  Install `firmware-ci-runner-aws <https://github.com/NordicSemiconductor/firmware-ci-runner-aws.git>`_:
+#.  Install `firmware-ci-runner-aws <https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git>`_:
 
     .. code-block:: bash
 
-        git clone https://github.com/NordicSemiconductor/firmware-ci-runner-aws.git
+        git clone https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git
         cd firmware-ci-runner-aws
         npm ci
         npx tsc
@@ -114,4 +114,4 @@ Firmware CI runner setup
 
 The Firmware CI will now process all schedule jobs one after another.
 
-.. _Firmware CI runner: https://github.com/NordicSemiconductor/firmware-ci-runner-aws
+.. _Firmware CI runner: https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js
