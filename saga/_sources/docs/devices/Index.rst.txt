@@ -3,7 +3,7 @@
 Connect using a real device
 ###########################
 
-You can use any of the :ref:`supported development kits <firmware-supported-boards>` to connect to your account.
+You can use any of the `supported development kits <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html#requirements>`_ to connect to your account.
 
 For the device to connect, you need to complete the following steps:
 

@@ -15,12 +15,11 @@ It is used to cache all dependencies so you can build and develop locally withou
 
 .. code-block:: bash
 
-    git clone https://github.com/NordicSemiconductor/firmware
-    cd firmware
+    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware cat-tracker-firmware
+    cd cat-tracker-firmware
     docker build -t asset-tracker-firmware-docker .
-    BROKER_HOSTNAME=`aws iot describe-endpoint --endpoint-type iot:Data-ATS | jq -r '.endpointAddress'`
-    echo "CONFIG_AWS_IOT_BROKER_HOST_NAME=\"${BROKER_HOSTNAME}\"" >> prj_nrf9160dk_nrf9160ns.conf
-    echo "CONFIG_AWS_IOT_BROKER_HOST_NAME=\"${BROKER_HOSTNAME}\"" >> prj_thingy91_nrf9160ns.conf
+
+Now edit the value of ``CONFIG_AWS_IOT_BROKER_HOST_NAME`` in :file:`prj.conf` and provide your broker hostname.
 
 Building
 ********
@@ -30,7 +29,7 @@ Thingy:91 (``PCA20035``)
 
 .. code-block:: bash
 
-    docker run --rm -v ${PWD}:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b thingy91_nrf9160ns'
+    docker run --rm -v ${PWD}:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b thingy91_nrf9160ns -- -DOVERLAY_CONFIG="overlay-debug.conf;asset-tracker-cloud-firmware.conf"'
     ls -la build/zephyr/merged.hex
 
 nRF9160 DK (``PCA10090``)
@@ -38,10 +37,10 @@ nRF9160 DK (``PCA10090``)
 
 .. code-block:: bash
 
-    docker run --rm -v ${PWD}:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b nrf9160dk_nrf9160ns'
+    docker run --rm -v ${PWD}:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b nrf9160dk_nrf9160ns -- -DOVERLAY_CONFIG="overlay-debug.conf;asset-tracker-cloud-firmware.conf"'
     ls -la build/zephyr/merged.hex
 
 Location of the HEX file
 ************************
 
-The built HEX file will be located in ``ncs/nrf/build/zephyr/merged.hex``.
+The built HEX file will be located in :file:`build/zephyr/merged.hex`.

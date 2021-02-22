@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Automate building of HEX files for your nRF Connect SDK application &mdash; Asset Tracker Cloud Example v12.0.0 documentation</title>
+  <title>Automate building of HEX files for your nRF Connect SDK application &mdash; Asset Tracker Cloud Example v12.1.0 documentation</title>
   
 
   
@@ -204,7 +204,7 @@
 <p>Not only does that mean you can provide up-to-date HEX files with zero effort, but using a CI runner allows you to automate your software releases using a project called <a class="reference external" href="https://github.com/semantic-release/semantic-release">semantic release</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>By default <code class="docutils literal notranslate"><span class="pre">semantic-release</span></code> will get the <code class="docutils literal notranslate"><span class="pre">reposityUrl</span></code> it uses to  determine the changes between releases from the <code class="docutils literal notranslate"><span class="pre">package.json</span></code> which after forking the <code class="docutils literal notranslate"><span class="pre">firmware</span></code> repo will still point to <code class="docutils literal notranslate"><span class="pre">https://github.com/NordicSemiconductor/firmware.git</span></code>.
+<p>By default <code class="docutils literal notranslate"><span class="pre">semantic-release</span></code> will get the <code class="docutils literal notranslate"><span class="pre">reposityUrl</span></code> it uses to  determine the changes between releases from the <code class="docutils literal notranslate"><span class="pre">package.json</span></code> which after forking the <code class="docutils literal notranslate"><span class="pre">firmware</span></code> repo will still point to <code class="docutils literal notranslate"><span class="pre">https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware.git</span></code>.
 Either, update that to the URL of  your fork, or <a class="reference external" href="https://semantic-release.gitbook.io/semantic-release/usage/configuration#repositoryurl">provide it as an argument</a> to the <code class="docutils literal notranslate"><span class="pre">semantic-release</span></code> CLI.</p>
 </div>
 <p><a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware/blob/saga/.github/workflows/build-and-release.yaml">Here is the workflow definition for GitHub Actions</a> which automatically builds HEX files and attaches them to the GitHub release.</p>

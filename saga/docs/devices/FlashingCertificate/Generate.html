@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Generating a certificate &mdash; Asset Tracker Cloud Example v12.0.0 documentation</title>
+  <title>Generating a certificate &mdash; Asset Tracker Cloud Example v12.1.0 documentation</title>
   
 
   
@@ -205,9 +205,11 @@
 <span id="devices-provisioning-certificate-generate"></span><h1>Generating a certificate<a class="headerlink" href="#generating-a-certificate" title="Permalink to this headline">¶</a></h1>
 <p>You can use the CLI to generate a certificate for your device.
 The firmware will use the IMEI of the device as the MQTT client ID.
-You can get the IMEI of your device using the AT command <code class="docutils literal notranslate"><span class="pre">AT+CGSN</span></code>.</p>
+You can get the IMEI of your device using the AT command <code class="docutils literal notranslate"><span class="pre">AT+CGSN</span></code>.
+The IMEI is also typically printed on a sticker on the device.</p>
 <p>Following is the output of the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">352656100248049</span> <span class="n">OK</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># AT+CGSN</span>
+<span class="mi">352656100248049</span> <span class="n">OK</span>
 </pre></div>
 </div>
 <p>Use the IMEI when generating the certificate:</p>

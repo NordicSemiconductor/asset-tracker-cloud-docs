@@ -1,7 +1,7 @@
 .. _aws-device-credentials:
 
-Device credentials
-##################
+Create device credentials
+#########################
 
 On AWS devices, you can connect to IoT core using `TLS version 1.2 <https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html>`_ and `Elliptic Curve Cryptography (ECC) based certificates <https://aws.amazon.com/blogs/iot/elliptic-curve-cryptography-and-forward-secrecy-support-in-aws-iot-3/>`_.
 
@@ -31,4 +31,6 @@ Run the following script to generate and register a CA certificate in your AWS a
 Generate a device certificate
 *****************************
 
-Follow the instructions in :ref:`Connect using a real device <devices-provisioning-certificate>` to create a device certificate and provision it.
+.. include:: ../../devices/FlashingCertificate/Generate.rst
+   :start-after: body_start
+   :end-before: body_end

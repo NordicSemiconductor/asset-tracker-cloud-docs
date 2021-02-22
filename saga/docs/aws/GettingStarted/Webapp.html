@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploying the Cat Tracker web application &mdash; Asset Tracker Cloud Example v12.0.0 documentation</title>
+  <title>Deploy the Cat Tracker web application &mdash; Asset Tracker Cloud Example v12.1.0 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Upgrading an existing installation" href="../Upgrading.html" />
-    <link rel="prev" title="Device credentials" href="DeviceCredentials.html" /> 
+    <link rel="next" title="Next steps" href="NextSteps.html" />
+    <link rel="prev" title="Flashing device firmware and credentials" href="Flashing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,12 +97,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../Index.html">Asset Tracker Cloud Example for AWS</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="Index.html">Getting started</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Clone.html">Clone the project and install dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkingDirectory.html">Create the working directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AWSCredentials.html">Provide your AWS credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Clone.html">Clone the project and install dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Deploy.html">Install the <em>Asset Tracker Cloud Example</em> into your AWS account</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FirmwareConfiguration.html">Firmware configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Deploying the <em>Cat Tracker web application</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="FirmwareConfiguration.html">Configure the <em>Cat Tracker firmware</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Create device credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Flashing.html">Flashing device firmware and credentials</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Deploy the <em>Cat Tracker web application</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="NextSteps.html">Next steps</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Upgrading.html">Upgrading an existing installation</a></li>
@@ -193,7 +196,7 @@
         
           <li><a href="Index.html">Getting started</a> &raquo;</li>
         
-      <li>Deploying the <em>Cat Tracker web application</em></li>
+      <li>Deploy the <em>Cat Tracker web application</em></li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -214,8 +217,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="deploying-the-cat-tracker-web-application">
-<span id="aws-getting-started-app"></span><h1>Deploying the <em>Cat Tracker web application</em><a class="headerlink" href="#deploying-the-cat-tracker-web-application" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="deploy-the-cat-tracker-web-application">
+<span id="aws-getting-started-app"></span><h1>Deploy the <em>Cat Tracker web application</em><a class="headerlink" href="#deploy-the-cat-tracker-web-application" title="Permalink to this headline">¶</a></h1>
 <p>To deploy the <em>Cat Tracker web application</em> to AWS, complete the following steps:</p>
 <ol class="arabic simple">
 <li><p>Clone the web application</p></li>
@@ -223,6 +226,7 @@
 <li><p>Deploy the web application</p></li>
 <li><p>Register a new user</p></li>
 </ol>
+<p>We start again in our working directory <code class="file docutils literal notranslate"><span class="pre">~/cat-tracker</span></code>.</p>
 <div class="section" id="clone-the-project-and-install-the-dependencies">
 <h2>Clone the project and install the dependencies<a class="headerlink" href="#clone-the-project-and-install-the-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>Clone the latest version of the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js">Cat Tracker Web Application</a> project and install the dependencies:</p>
@@ -231,10 +235,10 @@
 npm ci
 </pre></div>
 </div>
-<p>The web application needs to be configured to be able to run with your account.</p>
-<p>As a first step, you need to create a file called <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code>, which <a class="reference external" href="https://create-react-app.dev/docs/adding-custom-environment-variables/">Create React App</a> uses to make the settings in the file available as environment variables during build-time.</p>
 <div class="section" id="run-time-configuration">
 <h3>Run-time configuration<a class="headerlink" href="#run-time-configuration" title="Permalink to this headline">¶</a></h3>
+<p>The web application needs to be configured to be able to run with your account.
+You need to create a file called <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code>, which <a class="reference external" href="https://create-react-app.dev/docs/adding-custom-environment-variables/">Create React App</a> uses to make the settings in the file available as environment variables during build-time.</p>
 <p>The web application requires the IDs of the AWS resources that were created during the setup of the stack.
 Run the following command in the <code class="file docutils literal notranslate"><span class="pre">cat-tracker-app</span></code> directory to copy the output that contain the IDs to the <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code> file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../cat-tracker-aws
@@ -286,6 +290,7 @@ aws s3 cp build s3://<span class="nv">$REACT_APP_WEB_APP_BUCKET_NAME</span> <spa
   --cache-control <span class="s1">&#39;public,max-age=600&#39;</span> --expires <span class="s1">&#39;&#39;</span>
 aws cloudfront create-invalidation --distribution-id <span class="se">\</span>
   <span class="nv">$REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP</span> --paths /,/index.html
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
 <span class="nb">echo</span> <span class="s2">&quot;Done. Now open </span><span class="nv">$PUBLIC_URL</span><span class="s2"> to view the web app.&quot;</span>
 </pre></div>
 </div>
@@ -306,6 +311,10 @@ Open the application in the browser and you will see the login form.</p>
 You will receive an email with a confirmation code which needs to be entered in order to confirm your email address.
 Once you have confirmed your email address you can log-in with your email address and your password.</p>
 </div>
+<div class="section" id="viewing-your-device">
+<h2>Viewing your device<a class="headerlink" href="#viewing-your-device" title="Permalink to this headline">¶</a></h2>
+<p>Your device that you previously provisioned should show up in the list of cats.</p>
+</div>
 </div>
 
 
@@ -314,8 +323,8 @@ Once you have confirmed your email address you can log-in with your email addres
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../Upgrading.html" class="btn btn-neutral float-right" title="Upgrading an existing installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="DeviceCredentials.html" class="btn btn-neutral float-left" title="Device credentials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NextSteps.html" class="btn btn-neutral float-right" title="Next steps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Flashing.html" class="btn btn-neutral float-left" title="Flashing device firmware and credentials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

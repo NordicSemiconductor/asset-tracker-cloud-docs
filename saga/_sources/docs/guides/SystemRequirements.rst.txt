@@ -3,7 +3,7 @@
 System requirements
 ###################
 
-You need a development environment with `Git <https://git-scm.com/>`_, and the `upcoming LTS release candidate of Node.js <https://nodejs.org/en/about/releases/>`_ (current release is version 14).
+You need a development environment with `Git <https://git-scm.com/>`_, and the `LTS release candidate of Node.js <https://nodejs.org/en/about/releases/>`_ (current LTS release is version 14).
 
 If you are using Windows, use the `Windows Subsystem for Linux <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_ with `Ubuntu 18.04
 LTS <https://www.microsoft.com/nb-no/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1>`_.

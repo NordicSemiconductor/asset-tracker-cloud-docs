@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Install the Asset Tracker Cloud Example into your AWS account &mdash; Asset Tracker Cloud Example v12.0.0 documentation</title>
+  <title>Install the Asset Tracker Cloud Example into your AWS account &mdash; Asset Tracker Cloud Example v12.1.0 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Firmware configuration" href="FirmwareConfiguration.html" />
-    <link rel="prev" title="Provide your AWS credentials" href="AWSCredentials.html" /> 
+    <link rel="next" title="Configure the Cat Tracker firmware" href="FirmwareConfiguration.html" />
+    <link rel="prev" title="Clone the project and install dependencies" href="Clone.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,12 +97,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../Index.html">Asset Tracker Cloud Example for AWS</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="Index.html">Getting started</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Clone.html">Clone the project and install dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkingDirectory.html">Create the working directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AWSCredentials.html">Provide your AWS credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Clone.html">Clone the project and install dependencies</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Install the <em>Asset Tracker Cloud Example</em> into your AWS account</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FirmwareConfiguration.html">Firmware configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Webapp.html">Deploying the <em>Cat Tracker web application</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="FirmwareConfiguration.html">Configure the <em>Cat Tracker firmware</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Create device credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Flashing.html">Flashing device firmware and credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Webapp.html">Deploy the <em>Cat Tracker web application</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="NextSteps.html">Next steps</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Upgrading.html">Upgrading an existing installation</a></li>
@@ -224,6 +227,10 @@ npx cdk -a <span class="s1">&#39;node dist/cdk/cloudformation-sourcecode.js&#39;
 npx cdk bootstrap
 
 <span class="c1"># Deploy the example (see Note below)</span>
+<span class="c1">#   It will prompt:</span>
+<span class="c1">#     Do you wish to deploy these changes (y/n)?</span>
+<span class="c1">#   twice (the first is for the main stack, and the second is when deploying the web application stack)</span>
+<span class="c1">#   Both need to be confirmed with &#39;y&#39;</span>
 npx cdk deploy <span class="s1">&#39;*&#39;</span>
 
 <span class="c1"># This is a fix for a bug with AWS CloudFormation and HTTP APIs</span>
@@ -231,14 +238,16 @@ npx cdk deploy <span class="s1">&#39;*&#39;</span>
 node dist/cdk/helper/addFakeRoute.js
 </pre></div>
 </div>
+<p>The <em>initial</em> deployment will take a few minutes, because it sets up a <a class="reference external" href="https://aws.amazon.com/cloudfront/">CloudFront</a> distribution for the web application.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The AWS CDK will provide a list of permission changes to your account, and you need to review them carefully whenever you make changes to the setup.
 However, this step is not mandatory, and skipping it is safe since the deploy is happening in a blank account.
-You can skip it by using the following command:</p>
+You can skip it in the future by passing <code class="docutils literal notranslate"><span class="pre">--require-approval</span> <span class="pre">never</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npx cdk deploy <span class="s1">&#39;*&#39;</span> --require-approval never
 </pre></div>
 </div>
+<p>This should only be done in standalone accounts for development purposes.</p>
 </div>
 </div>
 
@@ -248,8 +257,8 @@ You can skip it by using the following command:</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="FirmwareConfiguration.html" class="btn btn-neutral float-right" title="Firmware configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="AWSCredentials.html" class="btn btn-neutral float-left" title="Provide your AWS credentials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="FirmwareConfiguration.html" class="btn btn-neutral float-right" title="Configure the Cat Tracker firmware" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Clone.html" class="btn btn-neutral float-left" title="Clone the project and install dependencies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
