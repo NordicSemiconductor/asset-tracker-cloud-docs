@@ -24,3 +24,11 @@ Then complete the following steps:
    Flashing.rst
    Webapp.rst
    NextSteps.rst
+
+This *Getting started guide* has also been recorded as a video:
+
+.. figure:: ./images/getting-started-video.png
+   :alt: Quick Start: Asset Tracker Cloud Example for AWS (Video)
+   :target: https://www.youtube.com/watch?v=u4aFUV9bBeI
+    
+   Quick Start: Asset Tracker Cloud Example for AWS (Video)
