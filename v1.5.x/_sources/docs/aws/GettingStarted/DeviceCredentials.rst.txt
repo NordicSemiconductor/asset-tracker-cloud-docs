@@ -26,6 +26,7 @@ Run the following script to generate and register a CA certificate in your AWS a
 
 .. code-block:: bash
 
+    cd ~/cat-tracker/cat-tracker-aws
     node cli create-ca
 
 Generate a device certificate
