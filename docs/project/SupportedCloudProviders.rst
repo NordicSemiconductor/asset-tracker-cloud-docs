@@ -7,7 +7,7 @@ Supported cloud providers
 
    The *Asset Tracker Cloud Example* is not a *multi-cloud* solution.
    The concrete implementation will differ for each cloud provider.
-   It does not aim to provide a solution where you can switch in a seamingless manner between cloud providers.
+   It does not aim to provide a solution where you can switch in a seamlessmanner between cloud providers.
    Such a solution will require the implementation of additional abstraction layers, which instead of becoming a meaningful benefit for the majority of users, mandate a constant translation between the vendor specific concepts and the abstraction.
    Instead, the best practices of the respective cloud-vendor for building a *serverless* IoT solution are followed.
 

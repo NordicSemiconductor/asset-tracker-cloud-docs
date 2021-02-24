@@ -6,7 +6,7 @@ Project Overview
 .. figure:: ../logo-with-text.png
    :alt: Cat Tracker Logo
 
-The *Asset Tracker Cloud Example* enables developers to set up a real world IoT solution using one of the supported cloud provider and adapt the example firmware and software to fit their use case.
+The *Asset Tracker Cloud Example* enables developers to set up a real world IoT solution using one of the supported cloud providers and adapt the example firmware and software to fit their use case.
 The *Asset Tracker Cloud Example* aims to provide answers and recommend best practices to the following questions:
 
 * How to connect Nordic's cellular IoT chips to a specific cloud provider?
