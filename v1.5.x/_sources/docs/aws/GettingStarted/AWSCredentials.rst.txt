@@ -11,8 +11,6 @@ To set up the Asset Tracker Cloud Example on AWS, you must first set up a new AW
    After you have registered your personal account, sign up for `AWS Organizations <https://aws.amazon.com/organizations/>`_ and create a sub-account for the Asset Tracker Cloud Example.
    You can have many sub-accounts, without extra costs.
    
-   `Here is a video guide on how to set up a blank sub account. <https://www.youtube.com/watch?v=OEhcUsYNVuk>`_
-
 To setup a new AWS account and provide credentials, complete the following steps:
 
 1.  Navigate to your `IAM console <https://console.aws.amazon.com/iam/home?region=us-east-1#/home>`_ and add a new user for `programmatic access <https://wa.aws.amazon.com/wat.question.SEC_3.en.html>`_.
