@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>The four kinds of data &mdash; Asset Tracker Cloud Example 4879e2beb219d6662003d27367c70911fe1a55a3 documentation</title>
+  <title>The four kinds of data &mdash; Asset Tracker Cloud Example 02b6db0bc363a6770b462da368c2fee2d6b5fe1b documentation</title>
   
 
   
@@ -53,12 +53,9 @@
           
 
           
-            <a href="../../index.html">
+            <a href="../../index.html" class="icon icon-home"> Asset Tracker Cloud Example
           
 
-          
-            
-            <img src="../../_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
           
           </a>
 
@@ -96,8 +93,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Asset Tracker Cloud Example for AWS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Asset Tracker v2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Index.html">Device-to-Cloud Protocol</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="TransportAndData.html">Transport and Data Protocol</a></li>
@@ -209,7 +206,7 @@
 </div>
 <div class="section" id="device-state">
 <h2>1. Device State<a class="headerlink" href="#device-state" title="Permalink to this headline">¶</a></h2>
-<p>The Cat Tracker example needs to communicate with the cloud in order to send position updates and information about it’s health, first an foremost is the battery level a critical health indicator.
+<p>The firmware needs to communicate with the cloud in order to send position updates and information about it’s health, first an foremost is the battery level a critical health indicator.
 This data is considered the <strong>device state</strong>.
 Because we want to always be able to quickly see the latest state of the device, a <em>digital twin</em> is used to store this state on the cloud side: whenever the device sends an update, the digital twin is updated.
 This allows the web application to access the most recent device state immediately without needing to wait for the device to connect and publish its state.</p>
@@ -217,7 +214,7 @@ This allows the web application to access the most recent device state immediate
 It might even not be favorable to be connected all the time—wireless communication is relatively expensive consumes a lot of energy and therefore increases the power consumption.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <em>Cat Tracker</em> example is optimized for ultra low power consumption, we want to turn off the modem as quickly as possible and keep it off as long as possible.</p>
+<p>The firmware is optimized for ultra low power consumption, we want to turn off the modem as quickly as possible and keep it off as long as possible.</p>
 </div>
 <p>This is achieved by making the device smart and allowing it to decide based on the situation whether it should try to send data.</p>
 <p>In <em>passive</em> mode, data is sent when movement is detected: the accelerometer <em>wakes up</em> the application thread which then tries to acquire a GPS fix and a cellular connection.

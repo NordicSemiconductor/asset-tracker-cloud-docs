@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Device Data and Configuration &mdash; Asset Tracker Cloud Example 4879e2beb219d6662003d27367c70911fe1a55a3 documentation</title>
+  <title>Device Data and Configuration &mdash; Asset Tracker Cloud Example 02b6db0bc363a6770b462da368c2fee2d6b5fe1b documentation</title>
   
 
   
@@ -53,12 +53,9 @@
           
 
           
-            <a href="../../index.html">
+            <a href="../../index.html" class="icon icon-home"> Asset Tracker Cloud Example
           
 
-          
-            
-            <img src="../../_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
           
           </a>
 
@@ -96,8 +93,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Asset Tracker Cloud Example for AWS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Asset Tracker v2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Index.html">Device-to-Cloud Protocol</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="TransportAndData.html">Transport and Data Protocol</a></li>
@@ -205,7 +202,7 @@ See <a class="reference external" href="./state.reported.aws.json">this state JS
 <h2>State vs Messages<a class="headerlink" href="#state-vs-messages" title="Permalink to this headline">¶</a></h2>
 <p>Most data is stored in the digital twin of the device, this is useful to be able to quickly query the last known data from the device.
 However some data does not fit well into this model, e.g. because of its ephemeral nature.
-In the Cat Tracker example we send the button pushes as a message and do not store it in the digital twin; after all it is a UI element and it in case of push buttons has no <em>state</em> which could be restored on the device or persists over a longer time.</p>
+Button pushes are sent as a message and are not stored in the digital twin; after all it is a UI element and in case of push buttons has no <em>state</em> which could be restored on the device or persists over a longer time.</p>
 <p>The messages published by the device are described in detail in <a class="reference external" href="./messages.schema.json">the messages JSON schema file</a>.
 See <a class="reference external" href="./message.json">this messages JSON document example</a> for an example device state.</p>
 </div>

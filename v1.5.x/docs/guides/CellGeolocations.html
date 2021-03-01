@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Cell Geolocations &mdash; Asset Tracker Cloud Example 4879e2beb219d6662003d27367c70911fe1a55a3 documentation</title>
+  <title>Cell Geolocations &mdash; Asset Tracker Cloud Example 02b6db0bc363a6770b462da368c2fee2d6b5fe1b documentation</title>
   
 
   
@@ -53,12 +53,9 @@
           
 
           
-            <a href="../../index.html">
+            <a href="../../index.html" class="icon icon-home"> Asset Tracker Cloud Example
           
 
-          
-            
-            <img src="../../_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
           
           </a>
 
@@ -96,8 +93,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Asset Tracker Cloud Example for AWS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Asset Tracker v2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
 </ul>
@@ -192,17 +189,18 @@
   <div class="section" id="cell-geolocations">
 <h1>Cell Geolocations<a class="headerlink" href="#cell-geolocations" title="Permalink to this headline">¶</a></h1>
 <p>Locating a device is an important aspect of any IoT solution.
-In case of the Cat Tracker, it’s one of the primary functions. But acquiring a GPS fix is sometimes not possible, e.g. when the device is indoors.
+In case of an asset tracker (like the Cat Tracker), it’s one of the primary functions.
+But acquiring a GPS fix is sometimes not possible, e.g. when the device is indoors.
 In these situation other data can be used to approximate the device’s location.
 If the device has a cellular connection, the id of the cell(s) the device modem is communicating with can be used to triangulate its location.
 Smartphones use this technique (and even combine data from other wireless networks) to quickly estimate a location down to a few meters.
 Knowing roughly <em>where</em> the device is, is then used by the GPS module to speed up the time to the first GPS fix since it can limit the number of GPS sattelites it queries to the ones that should currently be visible on the sky.</p>
 <p>Smartphones however are multiple orders of magnitudes more powerful <em>and</em> there is a concrete need to have location information <em>on the device</em> quickly (e.g. for showing the user’s location in a navigation application while the device is indoors).
 Smartphones have location-dependend features, while most IoT devices wont have them.
-For example the Cat Tracker has no feature that depends on a location, it will only <em>report</em> the location to the cloud backend, and it’s the mobile app which is visualizing the Cat Tracker’s location tha has a need to <em>know</em> the device location.</p>
+For example the Cat Tracker has no feature that depends on a location, it will only <em>report</em> the location to the cloud backend, and it’s the mobile app which is visualizing the Cat Tracker’s location has a need to <em>know</em> the device location.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Since it is much more efficient to resolve cell geolocations on the cloud it’s the cloud backends responsibility.</p>
+<p>Since it is much more efficient to resolve cell geolocations on the cloud it’s the cloud backend’s responsibility.</p>
 </div>
 <div class="section" id="assisted-gps-agps">
 <h2>Assisted GPS (AGPS)<a class="headerlink" href="#assisted-gps-agps" title="Permalink to this headline">¶</a></h2>
@@ -211,7 +209,7 @@ But there is no need to have complex location triangulation based on mobile netw
 This is sufficient to provide the GPS module with the data it needs for a quick GPS fix.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/9">AGPS is currently not implemented in the Cat Tracker Firmware</a>.</p>
+<p><a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/9">AGPS is currently not implemented in the Asset Tracker v2</a>.</p>
 </div>
 </div>
 <div class="section" id="geolocating-cells">

@@ -43,8 +43,6 @@ The *Asset Tracker Cloud Example* aims to provide a concrete end-to-end example 
 
 .. admonition:: Acknowledgements
 
-   *Pin Icon* created by Nun from the Noun Project. 
-   *Cat Icon* created by Focus Lab from the Noun Project. 
    *Amazon Web Services*, the AWS logo are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries. 
    *Google* and the Google logo are registered trademarks of Google LLC. 
    *Microsoft* and *Azure* are registered trademarks of Microsoft Corporation in the United States and/or other countries.

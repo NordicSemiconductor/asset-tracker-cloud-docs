@@ -16,7 +16,7 @@ This sections will provide a general introduction in the way devices communicati
 1. Device State
 ***************
 
-The Cat Tracker example needs to communicate with the cloud in order to send position updates and information about it's health, first an foremost is the battery level a critical health indicator.
+The firmware needs to communicate with the cloud in order to send position updates and information about it's health, first an foremost is the battery level a critical health indicator.
 This data is considered the **device state**.
 Because we want to always be able to quickly see the latest state of the device, a *digital twin* is used to store this state on the cloud side: whenever the device sends an update, the digital twin is updated.
 This allows the web application to access the most recent device state immediately without needing to wait for the device to connect and publish its state.
@@ -26,7 +26,7 @@ It might even not be favorable to be connected all the time---wireless communica
 
 .. note::
 
-    The *Cat Tracker* example is optimized for ultra low power consumption, we want to turn off the modem as quickly as possible and keep it off as long as possible.
+    The firmware is optimized for ultra low power consumption, we want to turn off the modem as quickly as possible and keep it off as long as possible.
 
 This is achieved by making the device smart and allowing it to decide based on the situation whether it should try to send data.
 
