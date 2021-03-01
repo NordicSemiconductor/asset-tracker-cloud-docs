@@ -55,9 +55,9 @@ html_context = {
     'display_github': True,
     'github_user': 'NordicSemiconductor',
     'github_repo': 'asset-tracker-cloud-docs',
-    'github_version': 'saga/'
+    'github_version': 'saga'
 }
 
 html_logo = 'docs/logo-with-text-white.svg'
 
-master_doc = 'README'
+master_doc = 'index'

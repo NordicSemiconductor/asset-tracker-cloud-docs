@@ -16,5 +16,4 @@ VERSION ?= saga
 
 html: Makefile
 	sphinx-build -M html ./ build -D release=${RELEASE} -D version=${VERSION} -A github_version=${VERSION}/
-	cp build/html/README.html build/html/index.html
 	find docs -type f -name \*.json | xargs -I@ cp -v @ build/html/@
