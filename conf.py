@@ -58,6 +58,4 @@ html_context = {
     'github_version': 'saga'
 }
 
-html_logo = 'docs/logo-with-text-white.svg'
-
 master_doc = 'index'

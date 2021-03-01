@@ -3,7 +3,7 @@
 Connect using the simulator
 ###########################
 
-The CLI provides a software implementation of Cat Tracker for *testing purposes*.
+The CLI provides a software implementation of the firmware for *testing purposes*.
 This implementation allows to verify that the cloud configuration works, and this feature is also used for testing the Asset Tracker Cloud Example using :ref:`aws-continuous-integration`.
 
 To connect to a device and control the device using the simulator, complete the following steps:

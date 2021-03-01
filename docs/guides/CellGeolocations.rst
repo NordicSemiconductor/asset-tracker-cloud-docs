@@ -2,7 +2,8 @@ Cell Geolocations
 #################
 
 Locating a device is an important aspect of any IoT solution.
-In case of the Cat Tracker, it's one of the primary functions. But acquiring a GPS fix is sometimes not possible, e.g. when the device is indoors.
+In case of an asset tracker (like the Cat Tracker), it's one of the primary functions.
+But acquiring a GPS fix is sometimes not possible, e.g. when the device is indoors.
 In these situation other data can be used to approximate the device's location.
 If the device has a cellular connection, the id of the cell(s) the device modem is communicating with can be used to triangulate its location.
 Smartphones use this technique (and even combine data from other wireless networks) to quickly estimate a location down to a few meters.
@@ -10,11 +11,11 @@ Knowing roughly *where* the device is, is then used by the GPS module to speed u
 
 Smartphones however are multiple orders of magnitudes more powerful *and* there is a concrete need to have location information *on the device* quickly (e.g. for showing the user's location in a navigation application while the device is indoors).
 Smartphones have location-dependend features, while most IoT devices wont have them.
-For example the Cat Tracker has no feature that depends on a location, it will only *report* the location to the cloud backend, and it's the mobile app which is visualizing the Cat Tracker's location tha has a need to *know* the device location.
+For example the Cat Tracker has no feature that depends on a location, it will only *report* the location to the cloud backend, and it's the mobile app which is visualizing the Cat Tracker's location has a need to *know* the device location.
 
 .. note::
 
-    Since it is much more efficient to resolve cell geolocations on the cloud it's the cloud backends responsibility.
+    Since it is much more efficient to resolve cell geolocations on the cloud it's the cloud backend's responsibility.
 
 Assisted GPS (AGPS)
 *******************
@@ -25,7 +26,7 @@ This is sufficient to provide the GPS module with the data it needs for a quick 
 
 .. note::
 
-    `AGPS is currently not implemented in the Cat Tracker Firmware <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/9>`_.
+    `AGPS is currently not implemented in the Asset Tracker v2 <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/9>`_.
 
 Geolocating cells
 *****************

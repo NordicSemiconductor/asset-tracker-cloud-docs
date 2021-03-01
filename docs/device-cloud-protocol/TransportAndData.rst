@@ -23,7 +23,7 @@ Especially during development its verbosity is valuable.
 Possible Optimizations
 ======================
 
-As a data- and power-optimization technique it is recommended to look into denser data protocols, especially since the majority of IoT applications (like in the Cat Tracker example) will always send data in the same structure, only the values change.
+As a data- and power-optimization technique it is recommended to look into denser data protocols, especially since the majority of IoT applications (like in this example) will always send data in the same structure, only the values change.
 
 Consider the GPS message:
 

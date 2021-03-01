@@ -3,7 +3,7 @@
 Device-to-Cloud Protocol
 ########################
 
-This sections documents the protocol and the considerations we made when selecting the device-to-cloud protocol for the Cat Tracker.
+This sections documents the protocol and the considerations we made when selecting the device-to-cloud protocol.
 
 .. note::
 
