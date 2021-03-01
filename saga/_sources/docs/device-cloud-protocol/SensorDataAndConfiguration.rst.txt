@@ -11,7 +11,7 @@ State vs Messages
 
 Most data is stored in the digital twin of the device, this is useful to be able to quickly query the last known data from the device.
 However some data does not fit well into this model, e.g. because of its ephemeral nature.
-In the Cat Tracker example we send the button pushes as a message and do not store it in the digital twin; after all it is a UI element and it in case of push buttons has no *state* which could be restored on the device or persists over a longer time.
+Button pushes are sent as a message and are not stored in the digital twin; after all it is a UI element and in case of push buttons has no *state* which could be restored on the device or persists over a longer time.
 
 The messages published by the device are described in detail in `the messages JSON schema file <./messages.schema.json>`_.
 See `this messages JSON document example <./message.json>`_ for an example device state.

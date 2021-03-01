@@ -1,10 +1,11 @@
 .. _firmware:
 
-Cat Tracker Firmware
-####################
+Asset Tracker v2
+################
 
-The Cat Tracker firmware is a reference application developed using the `nRF Connect SDK <https://github.com/nrfconnect/sdk-nrf>`_.
-See the `Cat Tracker firmware GitHub repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware>`_ for the source code for the Cat Tracker application.
+The Asset Tracker v2 is a reference application developed using the `nRF Connect SDK <https://github.com/nrfconnect/sdk-nrf>`_.
+It is compatible with the :ref:`Asset Tracker Cloud Example for AWS <index_aws>`.
+See the `GitHub repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware>`_ for the source code.
 
 Documentation
 *************
