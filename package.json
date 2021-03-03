@@ -24,7 +24,6 @@
   ],
   "author": "Nordic Semiconductor ASA | nordicsemi.no",
   "license": "BSD-3-Clause",
-  "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "12.0.1",
     "@commitlint/config-angular": "12.0.1",
@@ -59,7 +58,7 @@
   },
   "engines": {
     "node": ">=14.0.0",
-    "npm": ">=6.0.0"
+    "npm": ">=7.0.0"
   },
   "release": {
     "branches": [
