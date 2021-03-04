@@ -5,7 +5,7 @@ Configure the firmware
 
 .. note::
 
-    Below are the *mandatory* steps to configure the :ref:`firmware <firmware>`.
+    Below are the *mandatory* steps to configure the :ref:`firmware <firmware-index>`.
     All available configuration options are documented in the `asset_tracker_v2 application documentation <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html>`_.
 
 Run this command to print the MQTT endpoint your devices will connect to:

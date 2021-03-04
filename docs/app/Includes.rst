@@ -7,8 +7,8 @@ Clone the latest version of the `Cat Tracker web application <https://github.com
 
 .. code-block:: bash
 
-    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git cat-tracker-app
-    cd cat-tracker-app
+    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git cat-tracker-web-app
+    cd cat-tracker-web-app
     npm ci
 
 .. clone_web_app_end

@@ -6,6 +6,6 @@ We start with a blank directory:
 
 .. code-block:: bash
 
-    mkdir cat-tracker
-    cd cat-tracker
-    # ~/cat-tracker
+    mkdir nrf-asset-tracker
+    cd nrf-asset-tracker
+    # ~/nrf-asset-tracker

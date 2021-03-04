@@ -1,7 +1,7 @@
 Transport and Data Protocol
 ###########################
 
-The *Asset Tracker Cloud Example* uses LTE-m, MQTT and JSON as its main communication protocol between the device and the cloud. 
+The *nRF Asset Tracker* uses LTE-m, MQTT and JSON as its main communication protocol between the device and the cloud. 
 
 LTE-m for the cellular connection
 *********************************
@@ -11,12 +11,12 @@ The firmware is configured to operate in LTE-m mode to connect to the cellular n
 MQTT as the transport protocol
 ******************************
 
-The Asset Tracker Cloud Example uses MQTT to connect the device to the cloud provider. MQTT is the default protocol for IoT at the cloud providers this example currently focuses on: AWS, Microsoft Azure, and Google Cloud.
+The nRF Asset Tracker uses MQTT to connect the device to the cloud provider. MQTT is the default protocol for IoT at the cloud providers this example currently focuses on: AWS, Microsoft Azure, and Google Cloud.
 
 JSON as the data format
 ***********************
 
-The Asset Tracker Cloud Example uses JSON to represent all transferred data.
+The nRF Asset Tracker uses JSON to represent all transferred data.
 If offers very good support in tooling and is human readable.
 Especially during development its verbosity is valuable.
 
