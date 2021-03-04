@@ -1,7 +1,7 @@
 {
   "name": "@nordicsemiconductor/asset-tracker-cloud-docs",
   "version": "0.0.0-development",
-  "description": "The Asset Tracker Cloud Example aims to provide a concrete end-to-end example for an IoT product in the asset tracker space, a Cat Tracker.",
+  "description": "The nRF Asset Tracker aims to provide a concrete end-to-end example for an IoT product in the asset tracker space, a Cat Tracker.",
   "scripts": {
     "test": "jest",
     "postinstall": "husky install",
@@ -19,7 +19,7 @@
   "keywords": [
     "Cloud",
     "IoT",
-    "Asset Tracker Cloud Example",
+    "nRF Asset Tracker",
     "Nordic Semiconductor"
   ],
   "author": "Nordic Semiconductor ASA | nordicsemi.no",

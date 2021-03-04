@@ -3,9 +3,9 @@ Contributing
 
 .. note::
 
-    We maintain this guide for those of you who are curious to find out how to get started contributing to the *Asset Tracker Cloud Example* code base.
+    We maintain this guide for those of you who are curious to find out how to get started contributing to the *nRF Asset Tracker* code base.
 
-Thanks so much for your interest in contributing to the *Asset Tracker Cloud Example*! We really appreciate your help. **We look forward to working with you!**
+Thanks so much for your interest in contributing to the *nRF Asset Tracker*! We really appreciate your help. **We look forward to working with you!**
 
 But first, please read our :ref:`Code of Conduct <code-of-conduct>`.
 
@@ -20,5 +20,5 @@ Issues tagged with `good first issues <https://github.com/orgs/NordicSemiconduct
 Improving documentation
 ***********************
 
-`The Asset Tracker Cloud Example documention <https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/>`_ can always be improved.
+`The nRF Asset Tracker documention <https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/>`_ can always be improved.
 If you find something to improve, even something small like a typo, please do not hesitate to open a new PR.

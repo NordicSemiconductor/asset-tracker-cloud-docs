@@ -2,7 +2,7 @@
 The four kinds of data
 ######################
 
-This sections will provide a general introduction in the way devices communication with the cloud in the Asset Tracker Cloud Example project.
+This section provides a general introduction on the communication of the devices with the cloud in the nRF Asset Tracker project.
 
 .. note::
 
@@ -119,7 +119,7 @@ Firmware upgrades are so large compared to other messages that the device may su
 Summary
 *******
 
-The *Asset Tracker Cloud Example* aims to provide robust reference implementations for these four kinds of device data.
+The *nRF Asset Tracker* aims to provide robust reference implementations for these four kinds of device data.
 While the concrete implementation will differ per cloud provider, the general building blocks (state, configuration, batched past state, firmware upgrades) will be the same.
 
 +-------------------------------------+-------------------------+------------------+-----------+-----------------+

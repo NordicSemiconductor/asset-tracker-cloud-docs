@@ -1,7 +1,7 @@
 .. _aws-getting-started-deploy:
 
-Install the *Asset Tracker Cloud Example* into your AWS account
-###############################################################
+Install the *nRF Asset Tracker* into your AWS account
+#####################################################
 
 The following commands set up the necessary resources in your AWS account:
 
