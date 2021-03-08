@@ -7,7 +7,8 @@ To set up the *Asset Tracker Cloud Example* on AWS, you must first provide the A
 
 .. note::
 
-   `It is recommended <https://aws.amazon.com/organizations/getting-started/best-practices/>`_ to install these resources in a blank AWS account to clearly separate them from your other projects.
+   It is recommended to install these resources in a blank AWS account to clearly separate them from your other projects.
+   See the `best practices for setting up your multi-account AWS environment <https://aws.amazon.com/organizations/getting-started/best-practices/>`_.
    After you have registered your personal account, sign up for `AWS Organizations <https://aws.amazon.com/organizations/>`_ and create an account for the *Asset Tracker Cloud Example*.
    You can have many accounts, without extra costs.
    
@@ -50,4 +51,3 @@ To provide the AWS credentials to the *Asset Tracker Cloud Example*, complete th
     .. code-block:: bash
 
       direnv allow
-
