@@ -18,8 +18,8 @@ To provision the certificate using LTE Link Monitor, complete the following step
 
    For programming, use the following files:
  
-   *   Thingy:91 -  `thingy91_at_client_increased_buf.hex <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex>`_
-   *   nRF9160 DK - `91dk_at_client_increased_buf.hex <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/releases/download/v5.9.2/91dk_at_client_increased_buf.hex>`_
+   *   Thingy:91 -  `thingy91_at_client_increased_buf.hex <https://nordicsemiconductor.github.io/at_client-hex/at_client-thingy91_nrf9160ns.hex>`_
+   *   nRF9160 DK - `91dk_at_client_increased_buf.hex <https://nordicsemiconductor.github.io/at_client-hex/at_client-nrf9160dk_nrf9160ns.hex>`_
 
    For instructions, see the following documentation:
 

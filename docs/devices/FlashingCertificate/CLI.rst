@@ -5,6 +5,11 @@ Provisioning using the CLI
 
 .. body_start
 
+.. warning::
+
+    Flashing using the CLI is not supported on WSL 2 right now because `it lacks support for serial devices <https://github.com/microsoft/WSL/issues/4322>`_.
+    Instead, :ref:`use nRF Connect for Desktop to provision your certificates <devices-provisioning-certificate-desktop>` and then follow the same instructions to flash your firmware as well.
+
 .. note::
 
    To provision the device certificate using CLI, you must have `Segger JLink <https://www.segger.com/downloads/jlink/>`_ installed in your path.
