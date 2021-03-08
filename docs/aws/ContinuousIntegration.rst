@@ -37,7 +37,7 @@ Providing the environment variables in GitHub
 
     It is recommended to run the tests in a separate, blank account.
 
-In order to run the end-to-end tests using GitHub Actions, provide the following `environment variables <https://docs.github.com/en/actions/reference/environment-variables>`_:
+To run the end-to-end tests using GitHub Actions, provide the following `environment variables <https://docs.github.com/en/actions/reference/environment-variables>`_:
 
 * ``GITHUB_TOKEN`` - A GitHub token (used with `semantic-release <https://github.com/semantic-release/semantic-release>`_)
 * ``AWS_ACCESS_KEY_ID`` - Access key id of the user, which is used to run the tests
