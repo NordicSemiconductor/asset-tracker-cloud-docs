@@ -30,18 +30,18 @@ You can run the following test during development:
 
     npm run test:e2e
 
-Setting up the AWS account and providing the environment variables in GitHub
-****************************************************************************
+Providing the environment variables in GitHub
+*********************************************
 
-In order to run the end-to-end tests, an AWS Account needs to be set up.
-It is recommended to run the tests in a separate, blank account.
+.. note::
 
-Provide the following environment variables for GitHub Actions of the project:
+    It is recommended to run the tests in a separate, blank account.
+
+In order to run the end-to-end tests using GitHub Actions, provide the following `environment variables <https://docs.github.com/en/actions/reference/environment-variables>`_:
 
 * ``GITHUB_TOKEN`` - A GitHub token (used with `semantic-release <https://github.com/semantic-release/semantic-release>`_)
 * ``AWS_ACCESS_KEY_ID`` - Access key id of the user, which is used to run the tests
 * ``AWS_SECRET_ACCESS_KEY`` - Secret access key of the user
-
 
 Known issues
 ************

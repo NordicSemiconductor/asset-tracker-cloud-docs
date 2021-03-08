@@ -3,15 +3,15 @@
 Provide your AWS credentials
 ############################
 
-To set up the Asset Tracker Cloud Example on AWS, you must first set up a new AWS account and provide the AWS credentials.
+To set up the *Asset Tracker Cloud Example* on AWS, you must first provide the AWS credentials.
 
 .. note::
 
-   It is recommended to install these resources in a blank AWS account to clearly separate them from your other projects.
-   After you have registered your personal account, sign up for `AWS Organizations <https://aws.amazon.com/organizations/>`_ and create an account for the Asset Tracker Cloud Example.
+   `It is recommended <https://aws.amazon.com/organizations/getting-started/best-practices/>`_ to install these resources in a blank AWS account to clearly separate them from your other projects.
+   After you have registered your personal account, sign up for `AWS Organizations <https://aws.amazon.com/organizations/>`_ and create an account for the *Asset Tracker Cloud Example*.
    You can have many accounts, without extra costs.
    
-To setup a new AWS account and provide credentials, complete the following steps:
+To provide the AWS credentials to the *Asset Tracker Cloud Example*, complete the following steps:
 
 1.  Navigate to your `IAM console <https://console.aws.amazon.com/iam/home?region=us-east-1#/home>`_ and add a new user for `programmatic access <https://wa.aws.amazon.com/wat.question.SEC_3.en.html>`_.
 
