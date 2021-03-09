@@ -25,10 +25,10 @@ If you already have an installation and you want to upgrade to the latest releas
 
 #. Pull in the changes and perform the update:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-    git pull
-    npm ci
+       git pull
+       npm ci
 
 Publishing the upgraded *Cat Tracker web application* to AWS
 ------------------------------------------------------------
