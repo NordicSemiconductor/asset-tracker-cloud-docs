@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Upgrading an existing installation &mdash; Asset Tracker Cloud Example 1c21a7deb7914b547791f76e6c2b75d7f43ba2f0 documentation</title>
+  <title>Upgrading an existing installation &mdash; Asset Tracker Cloud Example 35ce7cb3ceb78a908b5c06a3785f16141b0bef23 documentation</title>
   
 
   
@@ -38,7 +38,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Connect using the simulator" href="Simulator.html" />
+    <link rel="next" title="Uninstalling the Asset Tracker Cloud Example from AWS" href="Uninstalling.html" />
     <link rel="prev" title="Next steps" href="GettingStarted/NextSteps.html" /> 
 </head>
 
@@ -95,6 +95,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Index.html">Asset Tracker Cloud Example for AWS</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="GettingStarted/Index.html">Getting started</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Uninstalling.html">Uninstalling the Asset Tracker Cloud Example from AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Authentication.html">Authentication</a></li>
@@ -103,7 +104,6 @@
 <li class="toctree-l2"><a class="reference internal" href="HistoricalData.html">Storage of historical data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ContinuousIntegration.html">Continuous integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="UnwiredLabsAPI.html">Unwired Labs API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Uninstalling.html">Uninstalling the Asset Tracker Cloud Example from AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SNI.html">SNI</a></li>
 </ul>
 </li>
@@ -205,21 +205,31 @@
   <div class="section" id="upgrading-an-existing-installation">
 <span id="upgrading"></span><h1>Upgrading an existing installation<a class="headerlink" href="#upgrading-an-existing-installation" title="Permalink to this headline">¶</a></h1>
 <p>If you already have an installation and you want to upgrade to the latest release, perform the following steps:</p>
+<ol class="arabic">
+<li><p>See the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/releases">release notes for the nRF Asset Tracker for AWS</a> and pay close attention to <em>Breaking Changes</em>.</p></li>
+<li><p>Pull in the changes and perform the update:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git pull
 npm ci
 npx tsc
 npx cdk deploy <span class="s1">&#39;*&#39;</span>
 </pre></div>
 </div>
+</li>
+</ol>
 <div class="section" id="upgrading-an-existing-cat-tracker-web-application-installation">
 <h2>Upgrading an existing <em>Cat Tracker web application</em> installation<a class="headerlink" href="#upgrading-an-existing-cat-tracker-web-application-installation" title="Permalink to this headline">¶</a></h2>
-<p>If you already have an installation and you want to upgrade to the latest release, run the following commands:</p>
+<p>If you already have an installation and you want to upgrade to the latest release, perform the following steps:</p>
+<ol class="arabic">
+<li><p>See the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js/releases">release notes for the Cat Tracker web application</a> and pay close attention to <em>Breaking Changes</em>.</p></li>
+<li><p>Pull in the changes and perform the update:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git pull
 npm ci
 </pre></div>
 </div>
-<div class="section" id="publishing-the-upgrade-to-aws">
-<h3>Publishing the upgrade to AWS<a class="headerlink" href="#publishing-the-upgrade-to-aws" title="Permalink to this headline">¶</a></h3>
+</li>
+</ol>
+<div class="section" id="publishing-the-upgraded-cat-tracker-web-application-to-aws">
+<h3>Publishing the upgraded <em>Cat Tracker web application</em> to AWS<a class="headerlink" href="#publishing-the-upgraded-cat-tracker-web-application-to-aws" title="Permalink to this headline">¶</a></h3>
 <p>If you want to publish the upgrade to AWS, perform the steps for the initial installation as described in <a class="reference internal" href="GettingStarted/Webapp.html#aws-getting-started-app"><span class="std std-ref">Deploy the Cat Tracker web application</span></a>.</p>
 </div>
 </div>
@@ -231,7 +241,7 @@ npm ci
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Simulator.html" class="btn btn-neutral float-right" title="Connect using the simulator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Uninstalling.html" class="btn btn-neutral float-right" title="Uninstalling the Asset Tracker Cloud Example from AWS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="GettingStarted/NextSteps.html" class="btn btn-neutral float-left" title="Next steps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

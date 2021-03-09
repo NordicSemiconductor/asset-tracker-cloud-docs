@@ -13,6 +13,7 @@ Documentation
 
    GettingStarted/Index.rst
    Upgrading.rst
+   Uninstalling.rst
    Simulator.rst
    ContinuousDeployment.rst
    Authentication.rst
@@ -21,5 +22,4 @@ Documentation
    HistoricalData.rst
    ContinuousIntegration.rst
    UnwiredLabsAPI.rst
-   Uninstalling.rst
    SNI.rst
