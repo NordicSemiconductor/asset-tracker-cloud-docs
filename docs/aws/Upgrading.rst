@@ -5,7 +5,7 @@ Upgrading an existing installation
 
 If you already have an installation and you want to upgrade to the latest release, perform the following steps:
 
-1. Review the `release notes for the nRF Asset Tracker for AWS <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/releases>`_ and pay close attention to **Breaking Changes**.
+1. See the `release notes for the nRF Asset Tracker for AWS <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/releases>`_ and pay close attention to *Breaking Changes*.
 
 #. Pull in the changes and perform the update:
 
