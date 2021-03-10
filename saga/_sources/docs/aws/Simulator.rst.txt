@@ -4,7 +4,7 @@ Connect using the simulator
 ###########################
 
 The CLI provides a software implementation of the firmware for *testing purposes*.
-This implementation allows to verify that the cloud configuration works, and this feature is also used for testing the Asset Tracker Cloud Example using :ref:`aws-continuous-integration`.
+This implementation allows to verify that the cloud configuration works, and this feature is also used for testing the nRF Asset Tracker using :ref:`aws-continuous-integration`.
 
 To connect to a device and control the device using the simulator, complete the following steps:
 
@@ -72,11 +72,11 @@ After executing the above command, copy the connection string printed from ``nod
 Deploying the Device simulator web application
 **********************************************
 
-To build and setup the Device simulator web application to the S3 bucket created when setting up the *Asset Tracker Cloud Example* in your AWS account, run the following commands:
+To build and setup the Device simulator web application to the S3 bucket created when setting up the *nRF Asset Tracker* in your AWS account, run the following commands:
 
 .. code-block:: bash
 
-    export $(cd ../cat-tracker-aws && node cli device-ui-config | xargs) 
+    export $(cd ../aws && node cli device-ui-config | xargs) 
     npm run build
     aws s3 cp build s3://$SNOWPACK_PUBLIC_DEVICE_UI_BUCKET_NAME \
     --recursive --metadata-directive REPLACE \

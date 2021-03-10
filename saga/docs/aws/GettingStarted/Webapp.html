@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploy the Cat Tracker web application &mdash; Asset Tracker Cloud Example v12.3.1 documentation</title>
+  <title>Deploy the Cat Tracker web application &mdash; nRF Asset Tracker v13.0.0 documentation</title>
   
 
   
@@ -53,7 +53,7 @@
           
 
           
-            <a href="../../../index.html" class="icon icon-home"> Asset Tracker Cloud Example
+            <a href="../../../index.html" class="icon icon-home"> nRF Asset Tracker
           
 
           
@@ -92,12 +92,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../GettingStarted.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../Index.html">Asset Tracker Cloud Example for AWS</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../Index.html">AWS cloud components</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="Index.html">Getting started</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="WorkingDirectory.html">Create the working directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AWSCredentials.html">Provide your AWS credentials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Clone.html">Clone the project and install dependencies</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Deploy.html">Install the <em>Asset Tracker Cloud Example</em> into your AWS account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Deploy.html">Install the <em>nRF Asset Tracker</em> into your AWS account</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FirmwareConfiguration.html">Configure the firmware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Create device credentials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Flashing.html">Flashing device firmware and credentials</a></li>
@@ -106,7 +106,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Upgrading.html">Upgrading an existing installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Uninstalling.html">Uninstalling the Asset Tracker Cloud Example from AWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Uninstalling.html">Uninstalling the nRF Asset Tracker from AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ContinuousDeployment.html">Continuous deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Authentication.html">Authentication</a></li>
@@ -119,7 +119,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../app/Index.html">Cat Tracker web application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../firmware/Index.html">Asset Tracker v2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
 </ul>
@@ -137,7 +137,7 @@
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+asset-tracker-cloud&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=AssetTrackerCloudExample#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
@@ -157,7 +157,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Asset Tracker Cloud Example</a>
+          <a href="../../../index.html">nRF Asset Tracker</a>
         
       </nav>
 
@@ -190,7 +190,7 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../Index.html">Asset Tracker Cloud Example for AWS</a> &raquo;</li>
+          <li><a href="../Index.html">AWS cloud components</a> &raquo;</li>
         
           <li><a href="Index.html">Getting started</a> &raquo;</li>
         
@@ -224,12 +224,12 @@
 <li><p>Deploy the web application</p></li>
 <li><p>Register a new user</p></li>
 </ol>
-<p>We start again in our working directory <code class="file docutils literal notranslate"><span class="pre">~/cat-tracker</span></code>.</p>
+<p>We start again in our working directory <code class="file docutils literal notranslate"><span class="pre">~/nrf-asset-tracker</span></code>.</p>
 <div class="section" id="clone-the-project-and-install-the-dependencies">
 <h2>Clone the project and install the dependencies<a class="headerlink" href="#clone-the-project-and-install-the-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>Clone the latest version of the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js">Cat Tracker web application</a> project and install the dependencies:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git cat-tracker-app
-<span class="nb">cd</span> cat-tracker-app
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git cat-tracker-web-app
+<span class="nb">cd</span> cat-tracker-web-app
 npm ci
 </pre></div>
 </div>
@@ -238,10 +238,10 @@ npm ci
 <p>The web application needs to be configured to be able to run with your account.
 You need to create a file called <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code>, which <a class="reference external" href="https://create-react-app.dev/docs/adding-custom-environment-variables/">Create React App</a> uses to make the settings in the file available as environment variables during build-time.</p>
 <p>The web application requires the IDs of the AWS resources that were created during the setup of the stack.
-Run the following command in the <code class="file docutils literal notranslate"><span class="pre">cat-tracker-app</span></code> directory to copy the output that contain the IDs to the <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code> file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../cat-tracker-aws
-node cli react-config &gt; ../cat-tracker-app/.env.local
-<span class="nb">cd</span> ../cat-tracker-app
+Run the following command in the <code class="file docutils literal notranslate"><span class="pre">cat-tracker-web-app</span></code> directory to copy the output that contain the IDs to the <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../aws
+node cli react-config &gt; ../cat-tracker-web-app/.env.local
+<span class="nb">cd</span> ../cat-tracker-web-app
 </pre></div>
 </div>
 <div class="section" id="example-for-env-local">
@@ -249,19 +249,19 @@ node cli react-config &gt; ../cat-tracker-app/.env.local
 <p>Following is an example for the contents of the <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code> file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">REACT_APP_REGION</span><span class="o">=</span>eu-west-1
 <span class="nv">REACT_APP_HISTORICALDATA_TABLE_INFO</span><span class="o">=</span>historicalDatadb40B23029-Qzk2Jrr88tOy<span class="p">|</span>historicalDatatableD9D795E1-zdSByjtTqoAE
-<span class="nv">REACT_APP_USER_IOT_POLICY_ARN</span><span class="o">=</span>arn:aws:iot:eu-west-1:249963682018:policy/cat-tracker-userIotPolicy-OMYBF5CI5Q6A
-<span class="nv">REACT_APP_DFU_BUCKET_NAME</span><span class="o">=</span>cat-tracker-dfustoragebucket2cc839ff-qz8k9bslldrf
-<span class="nv">REACT_APP_JITP_ROLE_ARN</span><span class="o">=</span>arn:aws:iam::249963682018:role/cat-tracker-iotJitpRole7B509A5D-5Y6BQY6KD9TX
+<span class="nv">REACT_APP_USER_IOT_POLICY_ARN</span><span class="o">=</span>arn:aws:iot:eu-west-1:249963682018:policy/nrf-asset-tracker-userIotPolicy-OMYBF5CI5Q6A
+<span class="nv">REACT_APP_DFU_BUCKET_NAME</span><span class="o">=</span>nrf-asset-tracker-dfustoragebucket2cc839ff-qz8k9bslldrf
+<span class="nv">REACT_APP_JITP_ROLE_ARN</span><span class="o">=</span>arn:aws:iam::249963682018:role/nrf-asset-tracker-iotJitpRole7B509A5D-5Y6BQY6KD9TX
 <span class="nv">REACT_APP_THING_GROUP_NAME</span><span class="o">=</span>assetTrackerThings
-<span class="nv">REACT_APP_AVATAR_BUCKET_NAME</span><span class="o">=</span>cat-tracker-avatarsbucket8221a59f-1usxf1qi1qj1r
+<span class="nv">REACT_APP_AVATAR_BUCKET_NAME</span><span class="o">=</span>nrf-asset-tracker-avatarsbucket8221a59f-1usxf1qi1qj1r
 <span class="nv">REACT_APP_USER_POOL_CLIENT_ID</span><span class="o">=</span>1rh4eacmu5c5ppq2pspnq8tcu5
 <span class="nv">REACT_APP_MQTT_ENDPOINT</span><span class="o">=</span>a3g4yd69u8cu7b-ats.iot.eu-west-1.amazonaws.com
 <span class="nv">REACT_APP_DEVELOPER_PROVIDER_NAME</span><span class="o">=</span>developerAuthenticated
-<span class="nv">REACT_APP_THING_POLICY_ARN</span><span class="o">=</span>arn:aws:iot:eu-west-1:249963682018:policy/cat-tracker-thingPolicy-1GR1TP3RXOO0G
+<span class="nv">REACT_APP_THING_POLICY_ARN</span><span class="o">=</span>arn:aws:iot:eu-west-1:249963682018:policy/nrf-asset-tracker-thingPolicy-1GR1TP3RXOO0G
 <span class="nv">REACT_APP_USER_POOL_ID</span><span class="o">=</span>eu-west-1_FiY6h4xjd
 <span class="nv">REACT_APP_IDENTITY_POOL_ID</span><span class="o">=</span>eu-west-1:52cc8188-ec90-47d7-b3ee-634187fa6413
 <span class="nv">REACT_APP_WEB_APP_DOMAIN_NAME</span><span class="o">=</span>d250wnpv81c7q9.cloudfront.net
-<span class="nv">REACT_APP_WEB_APP_BUCKET_NAME</span><span class="o">=</span>cat-tracker-webapps-webapphostingbucketc58d3c2b-1or3is1vmmq5q
+<span class="nv">REACT_APP_WEB_APP_BUCKET_NAME</span><span class="o">=</span>nrf-asset-tracker-webapps-webapphostingbucketc58d3c2b-1or3is1vmmq5q
 <span class="nv">REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP</span><span class="o">=</span>EGNO6F61DSJ5Y
 <span class="nv">REACT_APP_VERSION</span><span class="o">=</span>v3.6.1
 </pre></div>
@@ -278,7 +278,7 @@ node cli react-config &gt; ../cat-tracker-app/.env.local
 </div>
 <div class="section" id="deploy-the-web-application">
 <h2>Deploy the web application<a class="headerlink" href="#deploy-the-web-application" title="Permalink to this headline">¶</a></h2>
-<p>To build and deploy the web application to the S3 bucket created while setting up the <em>Asset Tracker Cloud Example</em> in your AWS account, run the following commands:</p>
+<p>To build and deploy the web application to the S3 bucket created while setting up the <em>nRF Asset Tracker</em> in your AWS account, run the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="k">$(</span>cat .env.local <span class="p">|</span> xargs<span class="k">)</span>
 <span class="nb">export</span> <span class="nv">EXTEND_ESLINT</span><span class="o">=</span><span class="nb">true</span>
 <span class="nb">export</span> <span class="nv">PUBLIC_URL</span><span class="o">=</span><span class="s2">&quot;https://</span><span class="nv">$REACT_APP_WEB_APP_DOMAIN_NAME</span><span class="s2">&quot;</span>

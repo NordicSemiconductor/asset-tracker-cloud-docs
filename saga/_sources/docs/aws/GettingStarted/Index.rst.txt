@@ -3,7 +3,7 @@
 Getting started
 ###############
 
-Before you start the setup of the *Asset Tracker Cloud Example* on AWS, ensure that:
+Before you start the setup of the *nRF Asset Tracker* on AWS, ensure that:
 
  * you have one of the `supported boards <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html#requirements>`_
  * your system fullfills the :ref:`necessary system requirements <system-requirements>`

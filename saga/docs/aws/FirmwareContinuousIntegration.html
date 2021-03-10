@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous Integration of Firmware &mdash; Asset Tracker Cloud Example v12.3.1 documentation</title>
+  <title>Continuous Integration of Firmware &mdash; nRF Asset Tracker v13.0.0 documentation</title>
   
 
   
@@ -53,7 +53,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Asset Tracker Cloud Example
+            <a href="../../index.html" class="icon icon-home"> nRF Asset Tracker
           
 
           
@@ -92,11 +92,11 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Index.html">Asset Tracker Cloud Example for AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Index.html">AWS cloud components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../firmware/Index.html">Asset Tracker v2</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../firmware/BuildingUsingDocker.html">Building using Docker</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../firmware/Index.html">Firmware</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../firmware/BuildingUsingLocalSystem.html">Building using your local system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../firmware/BuildingUsingDocker.html">Building using Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../firmware/BuildingUsingGitHub.html">Building using GitHub actions</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Continuous Integration of Firmware</a></li>
 </ul>
@@ -118,7 +118,7 @@
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+asset-tracker-cloud&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=AssetTrackerCloudExample#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
@@ -138,7 +138,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Asset Tracker Cloud Example</a>
+          <a href="../../index.html">nRF Asset Tracker</a>
         
       </nav>
 
@@ -171,7 +171,7 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../firmware/Index.html">Asset Tracker v2</a> &raquo;</li>
+          <li><a href="../firmware/Index.html">Firmware</a> &raquo;</li>
         
       <li>Continuous Integration of Firmware</li>
     
@@ -198,7 +198,7 @@
 <span id="aws-firmware-ci"></span><h1>Continuous Integration of Firmware<a class="headerlink" href="#continuous-integration-of-firmware" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The AWS implementation of the Asset Tracker Cloud Example provides resources to continuously test the firmware using real hardware.</p>
+<p>The AWS implementation of the nRF Asset Tracker provides resources to continuously test the firmware using real hardware.</p>
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
@@ -223,12 +223,12 @@ b.  or a stop condition is reached (wait for a log output to match a string)</p>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>These devices connect to the existing instance of the Asset Tracker Cloud Example, so the firmware tests will not set up a new blank Asset Tracker Cloud Example AWS environment for every test, but be run against the production environment. This is to ensure that firmware release will work against the existing, working solution. This approach is designed for <a class="reference external" href="https://thinkinglabs.io/talks/feature-branching-considered-evil.html">trunk-based development</a>.</p>
+<p>These devices connect to the existing instance of the nRF Asset Tracker, so the firmware tests will not set up a new blank nRF Asset Tracker AWS environment for every test, but be run against the production environment. This is to ensure that firmware release will work against the existing, working solution. This approach is designed for <a class="reference external" href="https://thinkinglabs.io/talks/feature-branching-considered-evil.html">trunk-based development</a>.</p>
 </div>
 </div>
 <div class="section" id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
-<p>Enable the Firmware CI resources of the Asset Tracker Cloud Example that allow GitHub Actions to create test devices, and the the <a class="reference external" href="https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js">Firmware CI runner</a> to connect by enabling the context switch <code class="docutils literal notranslate"><span class="pre">firmware-ci</span></code> when deploying the stack (see <a class="reference internal" href="GettingStarted/Index.html#aws-getting-started"><span class="std std-ref">Getting Started</span></a>).</p>
+<p>Enable the Firmware CI resources of the nRF Asset Tracker that allow GitHub Actions to create test devices, and the the <a class="reference external" href="https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js">Firmware CI runner</a> to connect by enabling the context switch <code class="docutils literal notranslate"><span class="pre">firmware-ci</span></code> when deploying the stack (see <a class="reference internal" href="GettingStarted/Index.html#aws-getting-started"><span class="std std-ref">Getting Started</span></a>).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;firmware-ci=1&quot;</span> &gt;&gt; context.cfg
 npx cdk deploy <span class="s1">&#39;*&#39;</span>
 </pre></div>
@@ -256,7 +256,7 @@ Secret Access Key: <span class="s2">&quot;&lt;AWS Secret Access Key&gt;&quot;</s
 <li><p><code class="docutils literal notranslate"><span class="pre">AWS_ACCESS_KEY_ID</span></code> (as printed above)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">AWS_SECRET_ACCESS_KEY</span></code> (as printed above)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">AWS_REGION</span></code> (as printed above)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">STACK_NAME</span></code> (the stack name of your production environment, usually <code class="docutils literal notranslate"><span class="pre">cat-tracker</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STACK_NAME</span></code> (the stack name of your production environment, usually <code class="docutils literal notranslate"><span class="pre">nrf-asset-tracker</span></code>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">DEVICE_ID</span></code> (the created Firmwer CI runner device, e.g. <code class="docutils literal notranslate"><span class="pre">firmware-ci-3c431c57-e524-4010-b269-371cb53538b6</span></code>)</p></li>
 </ul>
 </div></blockquote>
