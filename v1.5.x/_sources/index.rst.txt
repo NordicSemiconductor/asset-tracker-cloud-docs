@@ -34,7 +34,7 @@ The *nRF Asset Tracker* aims to provide a concrete end-to-end example for an ult
    :titlesonly:
    :caption: Resources
 
-   GitHub <https://github.com/search?q=org%3ANordicSemiconductor+asset-tracker-cloud&type=repositories>
+   GitHub <https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&type=repositories>
    DevZone <https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc>
    docs/Support.rst
    docs/adr/README.rst
