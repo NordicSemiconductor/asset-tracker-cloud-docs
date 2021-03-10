@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Uninstalling the Asset Tracker Cloud Example from AWS &mdash; Asset Tracker Cloud Example 66c1545941bb71371ff097981125e8fbc0fb6cf6 documentation</title>
+  <title>Uninstalling the nRF Asset Tracker from AWS &mdash; nRF Asset Tracker 14a16a9c79ce0cffe1a9eae4aeee2f044c30acdb documentation</title>
   
 
   
@@ -53,7 +53,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Asset Tracker Cloud Example
+            <a href="../../index.html" class="icon icon-home"> nRF Asset Tracker
           
 
           
@@ -92,10 +92,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Asset Tracker Cloud Example for AWS</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">AWS cloud components</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="GettingStarted/Index.html">Getting started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Uninstalling the Asset Tracker Cloud Example from AWS</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Uninstalling the nRF Asset Tracker from AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Authentication.html">Authentication</a></li>
@@ -108,7 +108,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Asset Tracker v2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
 </ul>
@@ -126,7 +126,7 @@
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+asset-tracker-cloud&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=AssetTrackerCloudExample#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
@@ -146,7 +146,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Asset Tracker Cloud Example</a>
+          <a href="../../index.html">nRF Asset Tracker</a>
         
       </nav>
 
@@ -179,9 +179,9 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="Index.html">Asset Tracker Cloud Example for AWS</a> &raquo;</li>
+          <li><a href="Index.html">AWS cloud components</a> &raquo;</li>
         
-      <li>Uninstalling the Asset Tracker Cloud Example from AWS</li>
+      <li>Uninstalling the nRF Asset Tracker from AWS</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -202,9 +202,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="uninstalling-the-asset-tracker-cloud-example-from-aws">
-<span id="uninstalling-asset-tracker"></span><h1>Uninstalling the Asset Tracker Cloud Example from AWS<a class="headerlink" href="#uninstalling-the-asset-tracker-cloud-example-from-aws" title="Permalink to this headline">¶</a></h1>
-<p>To uninstall the Asset Tracker Cloud Example, execute the listed commands.</p>
+  <div class="section" id="uninstalling-the-nrf-asset-tracker-from-aws">
+<span id="uninstalling-asset-tracker"></span><h1>Uninstalling the nRF Asset Tracker from AWS<a class="headerlink" href="#uninstalling-the-nrf-asset-tracker-from-aws" title="Permalink to this headline">¶</a></h1>
+<p>To uninstall the nRF Asset Tracker, execute the listed commands.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The commands must be executed with care since they are destructive.</p>
@@ -213,13 +213,13 @@
 node cli purge-iot-user-policy-principals
 node cli purge-cas
 
-<span class="c1"># Delete the Asset Tracker Cloud Example Stack</span>
+<span class="c1"># Delete the nRF Asset Tracker Stack</span>
 <span class="c1"># Note that the action can take around 20 minutes</span>
 <span class="c1"># The CloudFormation distributions especially take a long time to get deleted</span>
 npx cdk destroy <span class="s1">&#39;*&#39;</span>
 
 <span class="c1"># Delete the Source Code Stack</span>
-<span class="nv">SOURCE_CODE_BUCKET</span><span class="o">=</span><span class="sb">`</span>aws cloudformation describe-stacks --stack-name <span class="si">${</span><span class="nv">STACK_NAME</span><span class="k">:-</span><span class="nv">cat</span><span class="p">-tracker</span><span class="si">}</span>-sourcecode <span class="p">|</span> jq -r <span class="s1">&#39;.Stacks[0].Outputs[] | select(.OutputKey == &quot;bucketName&quot;) | .OutputValue&#39;</span><span class="sb">`</span>
+<span class="nv">SOURCE_CODE_BUCKET</span><span class="o">=</span><span class="sb">`</span>aws cloudformation describe-stacks --stack-name <span class="si">${</span><span class="nv">STACK_NAME</span><span class="k">:-</span><span class="nv">nrf</span><span class="p">-asset-tracker</span><span class="si">}</span>-sourcecode <span class="p">|</span> jq -r <span class="s1">&#39;.Stacks[0].Outputs[] | select(.OutputKey == &quot;bucketName&quot;) | .OutputValue&#39;</span><span class="sb">`</span>
 aws s3 rb s3://<span class="nv">$SOURCE_CODE_BUCKET</span> --force
 npx cdk -a <span class="s1">&#39;node dist/cdk/cloudformation-sourcecode.js&#39;</span> destroy <span class="s1">&#39;*&#39;</span>
 </pre></div>

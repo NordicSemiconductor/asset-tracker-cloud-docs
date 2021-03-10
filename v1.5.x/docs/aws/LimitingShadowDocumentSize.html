@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Limiting the Shadow Document size &mdash; Asset Tracker Cloud Example 66c1545941bb71371ff097981125e8fbc0fb6cf6 documentation</title>
+  <title>Limiting the Shadow Document size &mdash; nRF Asset Tracker 14a16a9c79ce0cffe1a9eae4aeee2f044c30acdb documentation</title>
   
 
   
@@ -53,7 +53,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Asset Tracker Cloud Example
+            <a href="../../index.html" class="icon icon-home"> nRF Asset Tracker
           
 
           
@@ -92,10 +92,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Asset Tracker Cloud Example for AWS</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">AWS cloud components</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="GettingStarted/Index.html">Getting started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Uninstalling.html">Uninstalling the Asset Tracker Cloud Example from AWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Uninstalling.html">Uninstalling the nRF Asset Tracker from AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Authentication.html">Authentication</a></li>
@@ -108,7 +108,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Asset Tracker v2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
 </ul>
@@ -126,7 +126,7 @@
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+asset-tracker-cloud&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=AssetTrackerCloudExample#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
@@ -146,7 +146,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Asset Tracker Cloud Example</a>
+          <a href="../../index.html">nRF Asset Tracker</a>
         
       </nav>
 
@@ -179,7 +179,7 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="Index.html">Asset Tracker Cloud Example for AWS</a> &raquo;</li>
+          <li><a href="Index.html">AWS cloud components</a> &raquo;</li>
         
       <li>Limiting the Shadow Document size</li>
     
@@ -210,7 +210,7 @@ See the following contents of the <code class="file docutils literal notranslate
 <img alt="nRF9160 Modem firmware 1.2.0 release notes content" src="../../_images/mfw_1.2.0_release_notes.png" />
 <p class="caption"><span class="caption-text">nRF9160 Modem firmware 1.2.0 release notes content</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>The <em>Asset Tracker Cloud Example</em> sets up an IoT rule, which only publishes the <code class="docutils literal notranslate"><span class="pre">cfg</span></code> section of the <a class="reference external" href="../firmware/state.reported.aws.json">shadow document</a> to a separate topic <code class="docutils literal notranslate"><span class="pre">$aws/things/&lt;thing</span> <span class="pre">name&gt;/shadow/get/accepted/desired/cfg</span></code> when devices receive their state after publishing an empty message to <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#get-pub-sub-topic">$aws/things/&lt;thing name&gt;/shadow/get</a>.</p>
+<p>The <em>nRF Asset Tracker</em> sets up an IoT rule, which only publishes the <code class="docutils literal notranslate"><span class="pre">cfg</span></code> section of the <a class="reference external" href="../firmware/state.reported.aws.json">shadow document</a> to a separate topic <code class="docutils literal notranslate"><span class="pre">$aws/things/&lt;thing</span> <span class="pre">name&gt;/shadow/get/accepted/desired/cfg</span></code> when devices receive their state after publishing an empty message to <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#get-pub-sub-topic">$aws/things/&lt;thing name&gt;/shadow/get</a>.</p>
 <p>The published object might be empty as shown, if the device has no shadow or if the configuration is not set:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
 </pre></div>

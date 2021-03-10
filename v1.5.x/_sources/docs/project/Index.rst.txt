@@ -3,8 +3,8 @@
 Project Overview
 ################
 
-The *Asset Tracker Cloud Example* enables developers to set up a real world IoT solution using one of the supported cloud providers and adapt the example firmware and software to fit their use case.
-The *Asset Tracker Cloud Example* aims to provide answers and recommend best practices to the following questions:
+The *nRF Asset Tracker* enables developers to set up a real world IoT solution using one of the supported cloud providers and adapt the example firmware and software to fit their use case.
+The *nRF Asset Tracker* aims to provide answers and recommend best practices to the following questions:
 
 * How to connect Nordic's cellular IoT chips to a specific cloud provider?
 * How do devices send data into the cloud?
@@ -15,7 +15,7 @@ The *Asset Tracker Cloud Example* aims to provide answers and recommend best pra
 
 .. note::
 
-   Development progress is managed in the `The Asset Tracker Cloud Example Development GitHub Project <https://github.com/orgs/NordicSemiconductor/projects/2>`_.
+   Development progress is managed in the `The nRF Asset Tracker Development GitHub Project <https://github.com/orgs/NordicSemiconductor/projects/2>`_.
 
 .. toctree::
    :titlesonly:

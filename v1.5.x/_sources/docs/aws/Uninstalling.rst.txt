@@ -1,9 +1,9 @@
 .. _uninstalling_asset_tracker:
 
-Uninstalling the Asset Tracker Cloud Example from AWS
-#####################################################
+Uninstalling the nRF Asset Tracker from AWS
+###########################################
 
-To uninstall the Asset Tracker Cloud Example, execute the listed commands.
+To uninstall the nRF Asset Tracker, execute the listed commands.
 
 .. note::
 
@@ -15,12 +15,12 @@ To uninstall the Asset Tracker Cloud Example, execute the listed commands.
     node cli purge-iot-user-policy-principals
     node cli purge-cas
     
-    # Delete the Asset Tracker Cloud Example Stack 
+    # Delete the nRF Asset Tracker Stack 
     # Note that the action can take around 20 minutes  
     # The CloudFormation distributions especially take a long time to get deleted
     npx cdk destroy '*'
     
     # Delete the Source Code Stack 
-    SOURCE_CODE_BUCKET=`aws cloudformation describe-stacks --stack-name ${STACK_NAME:-cat-tracker}-sourcecode | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "bucketName") | .OutputValue'` 
+    SOURCE_CODE_BUCKET=`aws cloudformation describe-stacks --stack-name ${STACK_NAME:-nrf-asset-tracker}-sourcecode | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "bucketName") | .OutputValue'` 
     aws s3 rb s3://$SOURCE_CODE_BUCKET --force
     npx cdk -a 'node dist/cdk/cloudformation-sourcecode.js' destroy '*'

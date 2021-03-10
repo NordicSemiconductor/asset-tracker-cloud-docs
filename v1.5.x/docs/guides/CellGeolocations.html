@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Cell Geolocations &mdash; Asset Tracker Cloud Example 66c1545941bb71371ff097981125e8fbc0fb6cf6 documentation</title>
+  <title>Cell Geolocations &mdash; nRF Asset Tracker 14a16a9c79ce0cffe1a9eae4aeee2f044c30acdb documentation</title>
   
 
   
@@ -53,7 +53,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Asset Tracker Cloud Example
+            <a href="../../index.html" class="icon icon-home"> nRF Asset Tracker
           
 
           
@@ -92,9 +92,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Asset Tracker Cloud Example for AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Asset Tracker v2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
 </ul>
@@ -112,7 +112,7 @@
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+asset-tracker-cloud&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=AssetTrackerCloudExample#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
@@ -132,7 +132,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Asset Tracker Cloud Example</a>
+          <a href="../../index.html">nRF Asset Tracker</a>
         
       </nav>
 
@@ -224,15 +224,15 @@ If many devices are closely located it saves a lot of resource because a cell’
 This should also be the preferred aproach when developing an IoT product that has location-specific features that can rely on the aproximate location of cell towers to operate.
 If a device knows its cell tower it is mormally safe to assume that it has an internet connection in order to request the approximate location from the cloud.
 This allows to offload expensive calculations to the cloud and reduce the resource usage on the device.</p>
-<p>In the Asset Tracker Cloud Example every time a device reports a GPS fix, that position is stored together with the cell id.
+<p>In the nRF Asset Tracker every time a device reports a GPS fix, that position is stored together with the cell id.
 Over time this builds a cell location database that is independet from a third party API and up to date.
-It is used as the primary mean of geolocation cells in the Asset Tracker Cloud Example.
+It is used as the primary means of geolocating cells in the nRF Asset Tracker.
 Only if a cell has not previously been geolocated by a device will the third-party API be called, <strong>if it is enabled</strong>.</p>
 </div>
 <div class="section" id="geolocating-cells-using-third-party-apis">
 <h3>Geolocating cells using third-party APIs<a class="headerlink" href="#geolocating-cells-using-third-party-apis" title="Permalink to this headline">¶</a></h3>
 <p>Third-party APIs and services like <a class="reference external" href="https://unwiredlabs.com/">UnwiredLabs</a> and <a class="reference external" href="https://www.cellmapper.net/">CellMapper</a> have a database of cell tower locations and provide an API to query against them.
-The Asset Tracker Cloud Example implements the optional resolution on the cloud side using <em>UnwiredLabs</em> on <a class="reference internal" href="../aws/UnwiredLabsAPI.html#aws-unwired-labs-api"><span class="std std-ref">AWS</span></a>  for cell that have not been geolocation by devices.</p>
+The nRF Asset Tracker implements the optional resolution on the cloud side using <em>UnwiredLabs</em> on <a class="reference internal" href="../aws/UnwiredLabsAPI.html#aws-unwired-labs-api"><span class="std std-ref">AWS</span></a> for the cells that have not been geolocated by the devices.</p>
 </div>
 </div>
 </div>

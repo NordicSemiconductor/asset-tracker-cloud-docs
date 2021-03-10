@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Building using Docker &mdash; Asset Tracker Cloud Example 66c1545941bb71371ff097981125e8fbc0fb6cf6 documentation</title>
+  <title>Building using Docker &mdash; nRF Asset Tracker 14a16a9c79ce0cffe1a9eae4aeee2f044c30acdb documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Building using your local system" href="BuildingUsingLocalSystem.html" />
-    <link rel="prev" title="Asset Tracker v2" href="Index.html" /> 
+    <link rel="next" title="Building using GitHub actions" href="BuildingUsingGitHub.html" />
+    <link rel="prev" title="Building using your local system" href="BuildingUsingLocalSystem.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -53,7 +53,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Asset Tracker Cloud Example
+            <a href="../../index.html" class="icon icon-home"> nRF Asset Tracker
           
 
           
@@ -92,11 +92,11 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Asset Tracker Cloud Example for AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Asset Tracker v2</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Building using Docker</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Firmware</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="BuildingUsingLocalSystem.html">Building using your local system</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Building using Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BuildingUsingGitHub.html">Building using GitHub actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../aws/FirmwareContinuousIntegration.html">Continuous Integration of Firmware</a></li>
 </ul>
@@ -118,7 +118,7 @@
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+asset-tracker-cloud&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=AssetTrackerCloudExample#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
@@ -138,7 +138,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Asset Tracker Cloud Example</a>
+          <a href="../../index.html">nRF Asset Tracker</a>
         
       </nav>
 
@@ -171,7 +171,7 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="Index.html">Asset Tracker v2</a> &raquo;</li>
+          <li><a href="Index.html">Firmware</a> &raquo;</li>
         
       <li>Building using Docker</li>
     
@@ -198,14 +198,15 @@
 <span id="firmware-building-docker"></span><h1>Building using Docker<a class="headerlink" href="#building-using-docker" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Read more about this aproach <a class="reference external" href="https://github.com/coderbyheart/fw-nrfconnect-nrf-docker">here</a>.</p>
+<p>Read more about this aproach <a class="reference external" href="https://devzone.nordicsemi.com/nordic/nrf-connect-sdk-guides/b/getting-started/posts/build-ncs-application-firmware-images-using-docker">here</a>.</p>
 </div>
 <p>This is the simplest way to build the project on your local system.
 Install <a class="reference external" href="https://www.docker.com/">Docker</a> and use it to contain all dependencies in the image, without needing to install them in your system.</p>
 <p>The docker image is not intended to be shared, but to simplify building locally.
 It is used to cache all dependencies so you can build and develop locally without needing to install dependencies directly in your system.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware cat-tracker-firmware
-<span class="nb">cd</span> cat-tracker-firmware
+<p>The Docker image is also use to automate building of HEX files <a class="reference internal" href="BuildingUsingGitHub.html#firmware-building-github-actions"><span class="std std-ref">using GitHub Actions</span></a> which is used to <a class="reference internal" href="../guides/AutomateHEXFileBuilding.html#guides-automate-hexfile-building"><span class="std std-ref">continuously deliver firmware builds</span></a> in the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware">out-of-tree example repository</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware nrf-asset-tracker-firmware
+<span class="nb">cd</span> nrf-asset-tracker-firmware
 docker build -t asset-tracker-firmware-docker .
 </pre></div>
 </div>
@@ -239,8 +240,8 @@ ls -la build/zephyr/merged.hex
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="BuildingUsingLocalSystem.html" class="btn btn-neutral float-right" title="Building using your local system" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="Index.html" class="btn btn-neutral float-left" title="Asset Tracker v2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="BuildingUsingGitHub.html" class="btn btn-neutral float-right" title="Building using GitHub actions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="BuildingUsingLocalSystem.html" class="btn btn-neutral float-left" title="Building using your local system" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

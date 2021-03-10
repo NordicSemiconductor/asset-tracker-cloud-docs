@@ -1,9 +1,9 @@
 .. _readme:
 
-Asset Tracker Cloud Example Documentation
-#########################################
+nRF Asset Tracker Documentation
+###############################
 
-The *Asset Tracker Cloud Example* aims to provide a concrete end-to-end example for an ultra-low power cellular IoT product in the asset tracker space, specifically a *Cat Tracker*.
+The *nRF Asset Tracker* aims to provide a concrete end-to-end example for an ultra-low power cellular IoT product in the asset tracker space, specifically a *Cat Tracker*.
 
 .. toctree::
    :titlesonly:
@@ -35,7 +35,7 @@ The *Asset Tracker Cloud Example* aims to provide a concrete end-to-end example 
    :caption: Resources
 
    GitHub <https://github.com/search?q=org%3ANordicSemiconductor+asset-tracker-cloud&type=repositories>
-   DevZone <https://devzone.nordicsemi.com/search?q=AssetTrackerCloudExample#serpsort=date%20desc>
+   DevZone <https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc>
    docs/Support.rst
    docs/adr/README.rst
    CODE_OF_CONDUCT.rst

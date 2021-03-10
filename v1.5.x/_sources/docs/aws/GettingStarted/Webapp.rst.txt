@@ -10,7 +10,7 @@ To deploy the *Cat Tracker web application* to AWS, complete the following steps
 #. Deploy the web application
 #. Register a new user
 
-We start again in our working directory :file:`~/cat-tracker`.
+We start again in our working directory :file:`~/nrf-asset-tracker`.
 
 .. include:: ../../app/Includes.rst
    :start-after: clone_web_app_start
@@ -24,13 +24,13 @@ Run-time configuration
    :end-before: configure_web_app_end
 
 The web application requires the IDs of the AWS resources that were created during the setup of the stack.
-Run the following command in the :file:`cat-tracker-app` directory to copy the output that contain the IDs to the :file:`.env.local` file:
+Run the following command in the :file:`cat-tracker-web-app` directory to copy the output that contain the IDs to the :file:`.env.local` file:
 
 .. code-block:: bash
 
-   cd ../cat-tracker-aws
-   node cli react-config > ../cat-tracker-app/.env.local
-   cd ../cat-tracker-app
+   cd ../aws
+   node cli react-config > ../cat-tracker-web-app/.env.local
+   cd ../cat-tracker-web-app
 
 Example for :file:`.env.local`
 ------------------------------
@@ -41,19 +41,19 @@ Following is an example for the contents of the :file:`.env.local` file:
 
     REACT_APP_REGION=eu-west-1
     REACT_APP_HISTORICALDATA_TABLE_INFO=historicalDatadb40B23029-Qzk2Jrr88tOy|historicalDatatableD9D795E1-zdSByjtTqoAE
-    REACT_APP_USER_IOT_POLICY_ARN=arn:aws:iot:eu-west-1:249963682018:policy/cat-tracker-userIotPolicy-OMYBF5CI5Q6A
-    REACT_APP_DFU_BUCKET_NAME=cat-tracker-dfustoragebucket2cc839ff-qz8k9bslldrf
-    REACT_APP_JITP_ROLE_ARN=arn:aws:iam::249963682018:role/cat-tracker-iotJitpRole7B509A5D-5Y6BQY6KD9TX
+    REACT_APP_USER_IOT_POLICY_ARN=arn:aws:iot:eu-west-1:249963682018:policy/nrf-asset-tracker-userIotPolicy-OMYBF5CI5Q6A
+    REACT_APP_DFU_BUCKET_NAME=nrf-asset-tracker-dfustoragebucket2cc839ff-qz8k9bslldrf
+    REACT_APP_JITP_ROLE_ARN=arn:aws:iam::249963682018:role/nrf-asset-tracker-iotJitpRole7B509A5D-5Y6BQY6KD9TX
     REACT_APP_THING_GROUP_NAME=assetTrackerThings
-    REACT_APP_AVATAR_BUCKET_NAME=cat-tracker-avatarsbucket8221a59f-1usxf1qi1qj1r
+    REACT_APP_AVATAR_BUCKET_NAME=nrf-asset-tracker-avatarsbucket8221a59f-1usxf1qi1qj1r
     REACT_APP_USER_POOL_CLIENT_ID=1rh4eacmu5c5ppq2pspnq8tcu5
     REACT_APP_MQTT_ENDPOINT=a3g4yd69u8cu7b-ats.iot.eu-west-1.amazonaws.com
     REACT_APP_DEVELOPER_PROVIDER_NAME=developerAuthenticated
-    REACT_APP_THING_POLICY_ARN=arn:aws:iot:eu-west-1:249963682018:policy/cat-tracker-thingPolicy-1GR1TP3RXOO0G
+    REACT_APP_THING_POLICY_ARN=arn:aws:iot:eu-west-1:249963682018:policy/nrf-asset-tracker-thingPolicy-1GR1TP3RXOO0G
     REACT_APP_USER_POOL_ID=eu-west-1_FiY6h4xjd
     REACT_APP_IDENTITY_POOL_ID=eu-west-1:52cc8188-ec90-47d7-b3ee-634187fa6413
     REACT_APP_WEB_APP_DOMAIN_NAME=d250wnpv81c7q9.cloudfront.net
-    REACT_APP_WEB_APP_BUCKET_NAME=cat-tracker-webapps-webapphostingbucketc58d3c2b-1or3is1vmmq5q
+    REACT_APP_WEB_APP_BUCKET_NAME=nrf-asset-tracker-webapps-webapphostingbucketc58d3c2b-1or3is1vmmq5q
     REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP=EGNO6F61DSJ5Y
     REACT_APP_VERSION=v3.6.1
 
@@ -64,7 +64,7 @@ Following is an example for the contents of the :file:`.env.local` file:
 Deploy the web application
 **************************
 
-To build and deploy the web application to the S3 bucket created while setting up the *Asset Tracker Cloud Example* in your AWS account, run the following commands:
+To build and deploy the web application to the S3 bucket created while setting up the *nRF Asset Tracker* in your AWS account, run the following commands:
 
 .. code-block:: bash
 
