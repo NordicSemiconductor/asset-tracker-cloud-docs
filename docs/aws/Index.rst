@@ -13,6 +13,7 @@ It is developed using `AWS CDK <https://aws.amazon.com/cdk/>`_ in `TypeScript <h
    GettingStarted/Index.rst
    Upgrading.rst
    Uninstalling.rst
+   Customization/Index.rst
    Simulator.rst
    ContinuousDeployment.rst
    Authentication.rst
