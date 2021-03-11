@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Connect using the simulator &mdash; nRF Asset Tracker baeee70b7ff82b1c8a894cbae932099d23def37e documentation</title>
+  <title>Connect using the simulator &mdash; nRF Asset Tracker a317a14b25fcba917c0bf2c5b64201459c5242ed documentation</title>
   
 
   
@@ -217,7 +217,7 @@ This implementation allows to verify that the cloud configuration works, and thi
 </pre></div>
 </div>
 <p>As the next step, you can run a simulated device using the generated certificate by running the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli connect <span class="s2">&quot;&lt;id of your device&gt;&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm <span class="nb">exec</span> -- @nordicsemiconductor/asset-tracker-cloud-device-simulator-aws <span class="s2">&quot;&lt;/path/to/certificate.json&gt;&quot;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -252,7 +252,7 @@ npm ci
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm run
 </pre></div>
 </div>
-<p>After executing the above command, copy the connection string printed from <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">cli</span> <span class="pre">connect</span> <span class="pre">&quot;&lt;id</span> <span class="pre">of</span> <span class="pre">your</span> <span class="pre">device&gt;&quot;</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">?endpoint=http%3A%2F%2Flocalhost%3A23719</span></code>) and append it to the browser address. (for example, <code class="docutils literal notranslate"><span class="pre">http://localhost:8080/?endpoint=http%3A%2F%2Flocalhost%3A23719</span></code>).</p>
+<p>After executing the above command, copy the connection string printed from <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">exec</span> <span class="pre">--</span> <span class="pre">&#64;nordicsemiconductor/asset-tracker-cloud-device-simulator-aws</span> <span class="pre">&quot;&lt;/path/to/certificate.json&gt;&quot;</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">?endpoint=http%3A%2F%2Flocalhost%3A23719</span></code>) and append it to the browser address. (for example, <code class="docutils literal notranslate"><span class="pre">http://localhost:8080/?endpoint=http%3A%2F%2Flocalhost%3A23719</span></code>).</p>
 </div>
 </div>
 <div class="section" id="deploying-the-device-simulator-web-application">
