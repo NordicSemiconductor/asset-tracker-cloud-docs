@@ -13,6 +13,8 @@ For the device to connect, you need to complete the following steps:
    * `Thingy:91 modem upgrade <https://infocenter.nordicsemi.com/topic/ug_nc_programmer/UG/nrf_connect_programmer/ncp_updating_modem_thingy91_intro.html>`_
 
 #. :ref:`Provision the certificate <devices-provisioning-certificate>`.
+
+   .. _program-the-firmware:
 #. Program the application firmware according to the instructions in the following documentation:
 
    * `nRF9160 DK application firmware update <https://infocenter.nordicsemi.com/topic/ug_nrf91_dk_gsg/UG/nrf91_DK_gsg/updating_application_firmware.html>`_

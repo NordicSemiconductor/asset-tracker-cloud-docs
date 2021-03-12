@@ -7,7 +7,12 @@ Provisioning using the CLI
 
 .. note::
 
-   To provision the device certificate using CLI, you must have `Segger JLink <https://www.segger.com/downloads/jlink/>`_ installed in your path.
+   Provisioning the certificates and programming the firmware through CLI are not currently supported on WSL 2 since it lacks support for serial devices. 
+   For more information, see the `issue on WSL2 <https://github.com/microsoft/WSL/issues/4322>`_.
+   Instead, :ref:`use nRF Connect for Desktop to provision your certificates <devices-provisioning-certificate-desktop>` and then :ref:`program the firmware <program-the-firmware>`.
+
+   
+To provision the device certificate using CLI, you must have `Segger JLink <https://www.segger.com/downloads/jlink/>`_ installed in your path.
 
 Use the CLI to provision the device certificates:
 
