@@ -22,7 +22,7 @@ As the next step, you can run a simulated device using the generated certificate
 
 .. code-block:: bash
 
-    node cli connect "<id of your device>"
+    npm exec -- @nordicsemiconductor/asset-tracker-cloud-device-simulator-aws "</path/to/certificate.json>"
 
 .. note::
 
@@ -65,7 +65,7 @@ You can run the Device simulator web application by using the following command:
 
     npm run
 
-After executing the above command, copy the connection string printed from ``node cli connect "<id of your device>"`` (e.g. ``?endpoint=http%3A%2F%2Flocalhost%3A23719``) and append it to the browser address. (for example, ``http://localhost:8080/?endpoint=http%3A%2F%2Flocalhost%3A23719``).
+After executing the above command, copy the connection string printed from ``npm exec -- @nordicsemiconductor/asset-tracker-cloud-device-simulator-aws "</path/to/certificate.json>"`` (e.g. ``?endpoint=http%3A%2F%2Flocalhost%3A23719``) and append it to the browser address. (for example, ``http://localhost:8080/?endpoint=http%3A%2F%2Flocalhost%3A23719``).
 
 .. _deploy_dev_sim_web_app:
 

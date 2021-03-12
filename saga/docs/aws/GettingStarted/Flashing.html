@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Flashing device firmware and credentials &mdash; nRF Asset Tracker v13.0.1 documentation</title>
+  <title>Flashing device firmware and credentials &mdash; nRF Asset Tracker v13.0.3 documentation</title>
   
 
   
@@ -219,8 +219,11 @@
 <span id="aws-flashing"></span><h1>Flashing device firmware and credentials<a class="headerlink" href="#flashing-device-firmware-and-credentials" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To provision the device certificate using CLI, you must have <a class="reference external" href="https://www.segger.com/downloads/jlink/">Segger JLink</a> installed in your path.</p>
+<p>Provisioning the certificates and programming the firmware through CLI are not currently supported on WSL 2 since it lacks support for serial devices.
+For more information, see the <a class="reference external" href="https://github.com/microsoft/WSL/issues/4322">issue on WSL2</a>.
+Instead, <a class="reference internal" href="../../devices/FlashingCertificate/Desktop.html#devices-provisioning-certificate-desktop"><span class="std std-ref">use nRF Connect for Desktop to provision your certificates</span></a> and then <a class="reference internal" href="../../devices/Index.html#program-the-firmware"><span class="std std-ref">program the firmware</span></a>.</p>
 </div>
+<p>To provision the device certificate using CLI, you must have <a class="reference external" href="https://www.segger.com/downloads/jlink/">Segger JLink</a> installed in your path.</p>
 <p>Use the CLI to provision the device certificates:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli flash <span class="s2">&quot;&lt;imei&gt;&quot;</span> -f /path/to/firmware.hex
 <span class="c1"># default secTag is 42</span>

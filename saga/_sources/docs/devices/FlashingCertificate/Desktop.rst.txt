@@ -18,13 +18,10 @@ To provision the certificate using LTE Link Monitor, complete the following step
 
    For programming, use the following files:
  
-   *   Thingy:91 -  `thingy91_at_client_increased_buf.hex <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex>`_
-   *   nRF9160 DK - `91dk_at_client_increased_buf.hex <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/releases/download/v5.9.2/91dk_at_client_increased_buf.hex>`_
+   *   Thingy:91 -  `thingy91_at_client_increased_buf.hex <https://nordicsemiconductor.github.io/at_client-hex/at_client-thingy91_nrf9160ns.hex>`_
+   *   nRF9160 DK - `91dk_at_client_increased_buf.hex <https://nordicsemiconductor.github.io/at_client-hex/at_client-nrf9160dk_nrf9160ns.hex>`_
 
-   For instructions, see the following documentation:
-
-   *  `Programming the Thingy:91 <https://infocenter.nordicsemi.com/topic/ug_nc_programmer/UG/nrf_connect_programmer/ncp_pgming_thingy91_usb.html>`_
-   *  `Programming the nRF9160 DK <https://infocenter.nordicsemi.com/topic/ug_nc_programmer/UG/common/ncp_programming_applications_nrf9160dk.html>`_
+   For instructions, see :ref:`programming the firmware <program-the-firmware>`.
 
    .. important::
 
