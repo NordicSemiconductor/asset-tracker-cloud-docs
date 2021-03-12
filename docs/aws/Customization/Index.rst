@@ -1,4 +1,4 @@
-.. _app-customization:
+.. _aws-customization:
 
 Customization
 #############
@@ -18,3 +18,4 @@ Then complete the following steps:
    RunSimulator.rst
    CustomizeSimulator.rst
    CustomizeWebApp.rst
+   Finish.rst

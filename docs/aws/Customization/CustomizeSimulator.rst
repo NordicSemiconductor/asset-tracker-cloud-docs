@@ -1,4 +1,4 @@
-.. _app-customization-customize-device-simulator-ui:
+.. _aws-customization-customize-device-simulator-ui:
 
 Customize the device simulator UI
 #################################
@@ -29,17 +29,9 @@ The running device simulator will the send a message like this to the cloud:
         ]
     }
 
-
-
 .. admonition:: Maintaining a fork
 
-    In case you want to persist the changes to the device simulator UI in your own repository, you may want to remove all the tags before pushing your modified version:
-    
-    .. code-block:: bash
-    
-        git tag -d `git tag | grep -E '.'`
-    
-    Add the source repository as ``upstream`` so you can later pull in changes: 
+    In case you want to persist the changes to the device simulator UI in your own repository, add the source repository as ``upstream`` so you can later pull in changes: 
     
     .. code-block:: bash
     

@@ -1,4 +1,4 @@
-.. _app-customization-run-device-simulator-ui:
+.. _aws-customization-run-device-simulator-ui:
 
 Run the device simulator UI
 ###########################
