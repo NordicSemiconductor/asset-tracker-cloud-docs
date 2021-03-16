@@ -87,6 +87,7 @@ jobs:
           make html
           # Clone gh-pages branch
           git clone --single-branch --branch gh-pages https://github.com/${GITHUB_REPOSITORY} asset-tracker-docs
+          git -C asset-tracker-docs rm -r ${{ env.VERSION }}/\*
           mkdir -p asset-tracker-docs/${{ env.VERSION }}
           cp -r build/html/* asset-tracker-docs/${{ env.VERSION }}
           cd asset-tracker-docs
