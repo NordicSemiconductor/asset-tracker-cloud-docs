@@ -4,6 +4,17 @@ Project Overview
 ################
 
 The *nRF Asset Tracker* enables developers to set up a real world IoT solution using one of the supported cloud providers and adapt the example firmware and software to fit their use case.
+
+.. developer_xp_warning_start
+
+.. warning::
+
+   Developers are expected to have prior experience in developing solutions with the respective cloud provider.
+   The *nRF Asset Tracker* is designed for developers who want a headstart on how to set up their cloud provider for our devices, but then want to modify the solution to their needs.
+   This is not a turn-key software-as-a-service solution, it comes with additional costs and you should expect future maintenance efforts.
+
+.. developer_xp_warning_end
+
 The *nRF Asset Tracker* aims to provide answers and recommend best practices to the following questions:
 
 * How to connect Nordic's cellular IoT chips to a specific cloud provider?
