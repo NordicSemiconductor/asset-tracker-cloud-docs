@@ -1,0 +1,4 @@
+{
+  "name": "nRF Asset Tracker Documentation",
+  "image": "node:15-alpine"
+}
