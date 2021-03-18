@@ -12,7 +12,7 @@ To set up the *nRF Asset Tracker* on AWS, you must first provide the AWS credent
    After you have registered your personal account, sign up for `AWS Organizations <https://aws.amazon.com/organizations/>`_ and create an account for the *nRF Asset Tracker*.
    You can have many accounts, without extra costs.
    
-To provide the AWS credentials to the *Asset Tracker Cloud Example*, complete the following steps:
+To provide the AWS credentials to the *nRF Asset Tracker*, complete the following steps:
 
 1.  Navigate to your `IAM console <https://console.aws.amazon.com/iam/home?region=us-east-1#/home>`_ and add a new user for `programmatic access <https://wa.aws.amazon.com/wat.question.SEC_3.en.html>`_.
 
