@@ -32,7 +32,7 @@ A solution is to switch to a SIM card that grants PSM.
 Another solution is to use assisted GPS (A-GPS) to speed up the time to fix.
 
 One form of A-GPS is using SUPL and it can be optionally enabled in the firmware using the `supl_client <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/include/supl_os_client.html>`_.
-The `Asset Tracker Cloud Firmware project <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware/pull/9>`_ optionally supports building fimrware images with SUPL enabled.
+The `nRF Asset Tracker Firmware project <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware/pull/9>`_ optionally supports building fimrware images with SUPL enabled.
 
 .. warning::
 
