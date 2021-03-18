@@ -10,7 +10,7 @@ To set up the *nRF Asset Tracker* on AWS, you must first provide the AWS credent
    It is recommended to install these resources in a blank AWS account to clearly separate them from your other projects.
    See the `best practices for setting up your multi-account AWS environment <https://aws.amazon.com/organizations/getting-started/best-practices/>`_.
    After you have registered your personal account, sign up for `AWS Organizations <https://aws.amazon.com/organizations/>`_ and create an account for the *nRF Asset Tracker*.
-   You can have many accounts, without extra costs.
+   You can have many accounts without extra costs.
    
 To provide the AWS credentials to the *nRF Asset Tracker*, complete the following steps:
 
@@ -20,7 +20,7 @@ To provide the AWS credentials to the *nRF Asset Tracker*, complete the followin
 
     .. note::
 
-       This action will create a user with full access rights to the account, and therefore it must only be created in an account dedicated for the nRF Asset Tracker.
+       This action will create a user with full access rights to the account, and therefore it must only be created in an account dedicated for the *nRF Asset Tracker*.
 
 #.  Create *Security credentials* for the user.
 
@@ -51,3 +51,4 @@ To provide the AWS credentials to the *nRF Asset Tracker*, complete the followin
     .. code-block:: bash
 
       direnv allow
+

@@ -19,7 +19,7 @@ The published object might be empty as shown, if the device has no shadow or if 
 
     {}
 
-Otherwise, the message will contain one top-level key ``cfg`` and the desired device configuration as shown:
+Otherwise, the message will contain a top-level key ``cfg`` and the desired device configuration as shown below:
 
 .. literalinclude:: ./desired-cfg.json
   :language: JSON

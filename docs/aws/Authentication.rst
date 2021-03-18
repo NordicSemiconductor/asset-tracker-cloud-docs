@@ -22,7 +22,7 @@ If one of the policies prohibit an action, the action is considered to be unauth
 Example
 *******
 
-See below for an example of the authentication process with the specified policies:
+Following is an example of the authentication process with the specified policies:
 
 IAM policy on the authenticated role:
 

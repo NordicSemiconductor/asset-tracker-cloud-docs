@@ -1,19 +1,16 @@
 .. _firmware-building-docker:
 
-Building using Docker
-#####################
+Building the project using Docker
+#################################
 
-.. note::
+Building using Docker is the simplest way to build the project on your local system.
+If you install `Docker <https://www.docker.com/>`_ , it will contain all the dependencies in the image, and prevents the need to install them separately in your system.
 
-    Read more about this aproach `here <https://devzone.nordicsemi.com/nordic/nrf-connect-sdk-guides/b/getting-started/posts/build-ncs-application-firmware-images-using-docker>`_.
+The Docker image is not intended to be shared, but to simplify the local building of project.
 
-This is the simplest way to build the project on your local system.
-Install `Docker <https://www.docker.com/>`_ and use it to contain all dependencies in the image, without needing to install them in your system.
+The Docker image is also used to automate the building of HEX files :ref:`using GitHub Actions <firmware-building-github-actions>`, which is used to :ref:`continuously deliver the firmware builds <guides-automate-hexfile-building>` in the `out-of-tree example repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware>`_.
 
-The docker image is not intended to be shared, but to simplify building locally.
-It is used to cache all dependencies so you can build and develop locally without needing to install dependencies directly in your system.
-
-The Docker image is also use to automate building of HEX files :ref:`using GitHub Actions <firmware-building-github-actions>` which is used to :ref:`continuously deliver firmware builds <guides-automate-hexfile-building>` in the `out-of-tree example repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware>`_.
+To build the project using Docker, run the following commands:
 
 .. code-block:: bash
 
@@ -21,10 +18,17 @@ The Docker image is also use to automate building of HEX files :ref:`using GitHu
     cd nrf-asset-tracker-firmware
     docker build -t asset-tracker-firmware-docker .
 
-Now edit the value of ``CONFIG_AWS_IOT_BROKER_HOST_NAME`` in :file:`prj.conf` and provide your broker hostname.
+Edit the value of ``CONFIG_AWS_IOT_BROKER_HOST_NAME`` in :file:`prj.conf` and provide your broker hostname.
 
-Building
-********
+.. note::
+
+    See `Building nRF Connect SDK applications with Docker <https://devzone.nordicsemi.com/nordic/nrf-connect-sdk-guides/b/getting-started/posts/build-ncs-application-firmware-images-using-docker>`_ for more information.
+
+Build the project
+*****************
+
+Build the project for your nRF9160-based device using the specified commands.
+
 
 Thingy:91 (``PCA20035``)
 ========================

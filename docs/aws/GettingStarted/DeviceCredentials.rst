@@ -5,7 +5,7 @@ Create device credentials
 
 On AWS devices, you can connect to IoT core using `TLS version 1.2 <https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html>`_ and `Elliptic Curve Cryptography (ECC) based certificates <https://aws.amazon.com/blogs/iot/elliptic-curve-cryptography-and-forward-secrecy-support-in-aws-iot-3/>`_.
 
-For creating device credentials, you have to generate the following certificates:
+For creating device credentials, you must generate the following certificates:
 
 * CA certificate
 * Device certificate
@@ -18,7 +18,7 @@ If you have a directory called :file:`certificates` with a :file:`rootCA.pem` fi
 
 .. note::
 
-   Note that this action will create a user with full access rights to the account, and therefore it must be created only in an account dedicated for the *nRF Asset Tracker*.
+   Generation of the CA certificate will create a user with full access rights to the account, and therefore it must be created only in an account dedicated for the *nRF Asset Tracker*.
 
 It is recommended to use your `own Certificate Authority (CA) <https://docs.aws.amazon.com/iot/latest/developerguide/device-certs-your-own.html>`_ to create certificates for your devices since it allows generating *device certificates* offline.
 

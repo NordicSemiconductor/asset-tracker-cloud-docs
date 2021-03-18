@@ -1,9 +1,9 @@
 .. _uninstalling_asset_tracker:
 
-Uninstalling the nRF Asset Tracker from AWS
-###########################################
+Uninstalling the *nRF Asset Tracker* from AWS
+#############################################
 
-To uninstall the nRF Asset Tracker, execute the listed commands.
+To uninstall the *nRF Asset Tracker*, execute the listed commands.
 
 .. note::
 

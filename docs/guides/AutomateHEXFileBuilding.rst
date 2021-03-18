@@ -5,9 +5,9 @@ Automate building of HEX files for your nRF Connect SDK application
 
 .. note::
 
-    This guide was originally published `on the {DevZone blog <https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/automate-building-of-hex-files-for-your-nrf-connect-sdk-application-using-circleci>`_.
+    This guide was originally published `on the DevZone blog <https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/automate-building-of-hex-files-for-your-nrf-connect-sdk-application-using-circleci>`_.
 
-Continuous delivery is in important aspect of short time to market and since the nRF9160 `supports firmware over the air upgrades <https://github.com/nrfconnect/sdk-nrf/tree/master/samples/nrf9160/aws_fota>`_ we want to ship a new firmware to our development boards every time we change the application.
+Continuous delivery is an important aspect of short Time to market and since the nRF9160 DK supports `firmware over the air upgrades <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/aws_fota/README.html?highlight=aws%20fota>`_ we want to ship a new firmware to our development kits every time we change the application.
 
 .. figure:: ./images/github-release-with-hex-files.png
    
@@ -22,11 +22,11 @@ Not only does that mean you can provide up-to-date HEX files with zero effort, b
 .. note::
 
     By default ``semantic-release`` will get the ``reposityUrl`` it uses to  determine the changes between releases from the ``package.json`` which after forking the ``firmware`` repo will still point to ``https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware.git``. 
-    Either, update that to the URL of  your fork, or `provide it as an argument <https://semantic-release.gitbook.io/semantic-release/usage/configuration#repositoryurl>`_ to the ``semantic-release`` CLI.
+    Either update that to the URL of your fork, or `provide it as an argument <https://semantic-release.gitbook.io/semantic-release/usage/configuration#repositoryurl>`_ to the ``semantic-release`` CLI.
 
-`Here is the workflow definition for GitHub Actions <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware/blob/saga/.github/workflows/build-and-release.yaml>`_ which automatically builds HEX files and attaches them to the GitHub release.
+The `workflow definition for GitHub Actions <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware/blob/saga/.github/workflows/build-and-release.yaml>`_  automatically builds HEX files and attaches them to the GitHub release.
 
-Following this example, all developers need to do format their commit messages following a certain schema (you can read more in detail about this process :ref:`here <guides-versionining-how-to-release-a-new-version-of-a-package>` to trigger a new release.
+Following this example, all developers need to do is to format their commit messages following a certain schema (for more information see :ref:`guides-versionining-how-to-release-a-new-version-of-a-package`) to trigger a new release.
 
 .. figure:: ./images/github-releases.png
 

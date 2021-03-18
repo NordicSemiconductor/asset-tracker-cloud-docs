@@ -1,13 +1,13 @@
 .. _aws-flashing:
 
-Flashing device firmware and credentials
-########################################
+Program the device firmware and provision the credentials
+#########################################################
 
 .. include:: ../../devices/FlashingCertificate/CLI.rst
    :start-after: body_start
    :end-before: body_end
 
-After flashing, the device will reboot and connect to the AWS broker, eventually reporting its state to the cloud:
+After the programming of the firmware, the device reboots and connects to the AWS broker, and eventually reports its state to the cloud:
 
 .. code-block::
 

@@ -27,10 +27,10 @@ Unwired Labs' API
 The Unwired Labs' geolocation API is a commercial third-party solution that provides an API for resolving cell information to geolocation.
 This is an optional feature, which you can enable.
 
-In this way it is possible to calculate the rough location of a device as soon as it sends the roaming information to the cloud.
+In this way, it is possible to calculate the rough location of a device as soon as it sends the roaming information to the cloud.
 The API provides the geolocation of nearly every cell tower and by using this information, devices can be located within a few kilometers around the location of the cell tower.
 
-Note that cellular signals can travel many kilometers and `our tests <https://www.youtube.com/watch?v=p1_0OAlTcuY>`_ show that a range of 10 km and more is possible in certain conditions.
+Note that cellular signals can travel many kilometers and `the tests <https://www.youtube.com/watch?v=p1_0OAlTcuY>`_ show that a range of 10 km and more is possible in certain conditions.
 
 Follow the configuration guide in the respective implementation to enable Unwired Labs' geolocation API:
 

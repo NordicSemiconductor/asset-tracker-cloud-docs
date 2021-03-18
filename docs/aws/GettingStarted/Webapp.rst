@@ -10,7 +10,7 @@ To deploy the *Cat Tracker web application* to AWS, complete the following steps
 #. Deploy the web application
 #. Register a new user
 
-We start again in our working directory :file:`~/nrf-asset-tracker`.
+Before starting, navigate to the working directory :file:`~/nrf-asset-tracker`.
 
 .. include:: ../../app/Includes.rst
    :start-after: clone_web_app_start
@@ -90,16 +90,16 @@ Register a new user
    The user pool is configured to use the email address as the username.
 
 Since there are no predefined user accounts in the user pool, you need to register a new user.
-Open the application in the browser and you will see the login form.
+Open the application in the browser.
 
 .. figure:: ../../app/images/create-account.png
    :alt: Login form of the web application
 
-Click :guilabel:`Create Account` and fill in your email and a password.
-You will receive an email with a confirmation code which needs to be entered in order to confirm your email address.
-Once you have confirmed your email address you can log-in with your email address and your password.
+In the login form, Click :guilabel:`Create Account` and fill in your email and a password.
+You will receive an email with a confirmation code, which needs to be entered to confirm your email address.
+Once you have confirmed your email address, you can login with your email address and your password.
 
-Viewing your device
-*******************
+View your device
+****************
 
-Your device that you previously provisioned should show up in the list of cats.
+After logging in, your device that was provisioned previously shows up in the list of cats.

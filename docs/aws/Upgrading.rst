@@ -33,4 +33,4 @@ If you already have an installation and you want to upgrade to the latest releas
 Publishing the upgraded *Cat Tracker web application* to AWS
 ------------------------------------------------------------
 
-If you want to publish the upgrade to AWS, perform the steps for the initial installation as described in :ref:`aws-getting-started-app`.
+If you want to publish the upgrade to AWS, perform the steps for the initial installation as described in :ref:`Deploying the Cat Tracker web application <aws-getting-started-app>`.

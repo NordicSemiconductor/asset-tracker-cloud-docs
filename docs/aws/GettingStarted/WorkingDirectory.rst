@@ -1,8 +1,9 @@
+.. _aws-create-the-working-dir:
 
 Create the working directory
 ############################
 
-We start with a blank directory:
+Create an empty directory by running the following commands:
 
 .. code-block:: bash
 

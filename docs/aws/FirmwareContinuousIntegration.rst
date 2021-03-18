@@ -1,117 +1,123 @@
 .. _aws-firmware-ci:
 
-Continuous Integration of Firmware
+Continuous integration of firmware
 ##################################
 
-.. note::
 
-    The AWS implementation of the nRF Asset Tracker provides resources to continuously test the firmware using real hardware.
+The AWS implementation of the *nRF Asset Tracker* provides the resources for continuous testing of the firmware using real hardware.
 
 Overview
 ********
 
-Every commit to the `firmware <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware>`_
-repo will trigger a CI run.
-The CI run will
+Every commit to the `firmware repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware>`_ will trigger a CI run.
+The CI run results in the following actions:
 
-#.  create a new device and credentials on AWS IoT
-#.  build a firmware that has the device ID hardcoded for the MQTT client ID
-#.  create an AWS IoT job with the firmware and the credentials, which is picked up by a the `Firmware CI runner`_ (see below)
-#.  observe the firmware CI run until it finishes
-#.  download the log result from S3
-#.  run assertions against the log result
+1. Creating a new device and credentials on AWS IoT.
+#. Building a firmware that has the device ID hardcoded for the MQTT client ID.
+#. Creating an AWS IoT job with the firmware and the credentials, which is selected by the `Firmware CI runner <https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js>`_. See :ref:`firmware_ci_runner_setup`.
+#. Observing the firmware CI run until completion.
+#. Downloading the log result from Amazon S3 bucket.
+#. Running assertions against the log result.
 
-The `Firmware CI runner`_ is running on a Raspberry Pi connected to AWS IoT where it receives jobs to execute:
+The Firmware CI runner is running on a Raspberry Pi connected to AWS IoT, where it receives the jobs to execute.
+Following are the actions performed by the Firmware CI runner:
 
-#.  it flashes the firmware and optional credentials using the connected debugger to the connected nRF9160 DK or Thingy:91
-#.  it then collects all log output until
-    a.  a timeout is reached
-    b.  or a stop condition is reached (wait for a log output to match a string)
-#.  it uploads the logs to S3
+1. Programming the firmware and the optional credentials using the connected debugger to the connected nRF9160 DK or Thingy:91.
+#. Collecting all the log output until one of the following conditions occur:
+
+   a. A timeout is reached
+   #. A stop condition is reached. (Wait for a log output to match a string.)
+#. Uploading the logs to S3 bucket
 
 .. note::
 
-    These devices connect to the existing instance of the nRF Asset Tracker, so the firmware tests will not set up a new blank nRF Asset Tracker AWS environment for every test, but be run against the production environment. This is to ensure that firmware release will work against the existing, working solution. This approach is designed for `trunk-based development <https://thinkinglabs.io/talks/feature-branching-considered-evil.html>`_.
+   These devices connect to the existing instance of the *nRF Asset Tracker*, so the firmware tests will not set up a new empty nRF Asset Tracker AWS environment for every test.
+   It runs against the production environment.
+   This is to ensure that the firmware release will work with the existing solution.
+   This approach is designed for `trunk-based development <https://thinkinglabs.io/talks/feature-branching-considered-evil.html>`_.
 
 Preparation
 ***********
 
-Enable the Firmware CI resources of the nRF Asset Tracker that allow GitHub Actions to create test devices, and the the `Firmware CI runner`_ to connect by enabling the context switch ``firmware-ci`` when deploying the stack (see :ref:`Getting Started <aws-getting-started>`).
+Enable the Firmware CI resources of the *nRF Asset Tracker* that allow GitHub Actions to create test devices.
+Also enable the Firmware CI runner to connect by enabling the context switch ``firmware-ci`` when deploying the stack (see :ref:`Getting Started <aws-getting-started>`).
 
 .. code-block:: bash
 
-    echo "firmware-ci=1" >> context.cfg
-    npx cdk deploy '*'
+   echo "firmware-ci=1" >> context.cfg
+   npx cdk deploy '*'
 
-Print the AWS Key for the CI runner on GitHub Actions using this command:
+Print the AWS Key for the CI runner on GitHub Actions using the following command:
 
 .. code-block:: bash
 
-    node cli firmware-ci -s
+   node cli firmware-ci -s
     
-    Region: "<Region>"
-    Bucket name: "<Bucket name>"
-    Access Key ID: "<AWS Access Key ID>"
-    Secret Access Key: "<AWS Secret Access Key>"
+   Region: "<Region>"
+   Bucket name: "<Bucket name>"
+   Access Key ID: "<AWS Access Key ID>"
+   Secret Access Key: "<AWS Secret Access Key>"
 
-Now you can create a new IoT Thing to be used for a Firmware CI runner (see below):
-
-.. code-block:: bash
-
-    node cli firmware-ci -c
-
-You can delete a device using this command:
+At this stage, you can create a new IoT Thing to be used for a Firmware CI runner, by running the following command:
 
 .. code-block:: bash
 
-    node cli firmware-ci -r "<deviceId>"
+   node cli firmware-ci -c
 
-Configure these as secrets on the firmware GitHub repository:
+See :ref:`firmware_ci_runner_setup`.
 
- - ``AWS_ACCESS_KEY_ID`` (as printed above)
- - ``AWS_SECRET_ACCESS_KEY`` (as printed above)
- - ``AWS_REGION`` (as printed above)
- - ``STACK_NAME`` (the stack name of your production environment, usually ``nrf-asset-tracker``)
- - ``DEVICE_ID`` (the created Firmwer CI runner device, e.g. ``firmware-ci-3c431c57-e524-4010-b269-371cb53538b6``)
+You can delete a device using the following command:
+
+.. code-block:: bash
+
+   node cli firmware-ci -r "<deviceId>"
+
+Configure the following parameters as secrets on the firmware GitHub repository:
+
+* ``AWS_ACCESS_KEY_ID`` (as printed in step 2)
+* ``AWS_SECRET_ACCESS_KEY`` (as printed in step 2)
+* ``AWS_REGION`` (as printed in step 2)
+* ``STACK_NAME`` (the stack name of your production environment, usually ``nrf-asset-tracker``)
+* ``DEVICE_ID`` (the created Firmware CI runner device, for example, ``firmware-ci-3c431c57-e524-4010-b269-371cb53538b6``)
+
+.. _firmware_ci_runner_setup:
 
 Firmware CI runner setup
 ************************
 
-#.  Download `JLink <https://www.segger.com/downloads/jlink/>`_ for your platform.
-    Use the path to the folder (e.g. ``~/JLink_Linux_V686_arm64/``) further down.
+To set up Firmware CI runner, complete the following steps:
 
-#.  Install `firmware-ci-runner-aws <https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git>`_:
+1. Download `JLink <https://www.segger.com/downloads/jlink/>`_ for your platform.
+#. Install `firmware-ci-runner-aws <https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git>`_ by running the following commands:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        git clone https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git
-        cd firmware-ci-runner-aws
-        npm ci
-        npx tsc
+      git clone https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git
+      cd firmware-ci-runner-aws
+      npm ci
+      npx tsc
 
-#.  Now provide these environment variables:
+#. Provide the following environment variables. Use the path to the JLink folder (for example, :file:`~/JLink_Linux_V686_arm64/`) that is created during the installation in step 1:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        export AWS_ACCESS_KEY_ID="<AWS Access Key ID printed above>"
-        export AWS_SECRET_ACCESS_KEY="<AWS Secret Access Key printed above>"
-        export REGION="<Region printed above>"
-        export BUCKET_NAME="<Bucket name printed above>"
-        export PATH="<Path to JLINK>":$PATH
+      export AWS_ACCESS_KEY_ID="<AWS Access Key ID printed above>"
+      export AWS_SECRET_ACCESS_KEY="<AWS Secret Access Key printed above>"
+      export REGION="<Region printed above>"
+      export BUCKET_NAME="<Bucket name printed above>"
+      export PATH="<Path to JLINK>":$PATH
 
-    The recommended workflow is to use a `direnv <https://direnv.net/>`_ plugin for your shell which will automatically export the environment variables it finds in a ``.envrc`` file in the project folder:
-    Create a new file ``.envrc`` in the project folder and add the credentials that are presented to you after you have created the new user.
+   The recommended workflow is to use a `direnv <https://direnv.net/>`_ plugin for your shell, which locates the environment variables in a :file:`.envrc` file in the project folder and automatically exports them.
+   Create a new file :file:`.envrc` in the project folder and add the credentials that are provided to you after you have created the new user.
 
-#.  Copy over the JSON file containing the certificate
+#. Copy the JSON file containing the certificate.
 
-#.  Run:
+#. Run the following command:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        node cli run "<device>" "<path to certificate.json>"
+      node cli run "<device>" "<path to certificate.json>"
 
-    ``<device>`` is the Linux file where the device is connected to, e.g. ``/dev/ttyACM0``.
+   :file:`<device>` is the Linux file where the device is connected to, for example, ``/dev/ttyACM0``.
 
-The Firmware CI will now process all schedule jobs one after another.
-
-.. _Firmware CI runner: https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js
+The Firmware CI starts to process all the scheduled jobs one after another.

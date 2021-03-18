@@ -13,7 +13,7 @@ The following commands set up the necessary resources in your AWS account:
     # One-time operation to support large CloudFormation templates in CDK
     npx cdk bootstrap
     
-    # Deploy the example (see Note below)
+    # Deploy the example (see the note below)
     #   It will prompt:
     #     Do you wish to deploy these changes (y/n)?
     #   twice (the first is for the main stack, and the second is when deploying the web application stack)
@@ -24,16 +24,11 @@ The following commands set up the necessary resources in your AWS account:
     # See https://github.com/bifravst/aws/issues/455
     node dist/cdk/helper/addFakeRoute.js
 
-The *initial* deployment will take a few minutes, because it sets up a `CloudFront <https://aws.amazon.com/cloudfront/>`_ distribution for the web application.
+The *initial* deployment will take a few minutes because it sets up a `CloudFront <https://aws.amazon.com/cloudfront/>`_ distribution for the web application.
 
 .. note::
 
     The AWS CDK will provide a list of permission changes to your account, and you need to review them carefully whenever you make changes to the setup.
-    However, this step is not mandatory, and skipping it is safe since the deploy is happening in a blank account.
-    You can skip it in the future by passing ``--require-approval never``:
-
-    .. code-block:: bash
-
-        npx cdk deploy '*' --require-approval never
-
-    This should only be done in standalone accounts for development purposes.
+    However, this step is not mandatory, and it is safe to skip since the deployment happens in a blank account.
+    To skip this step in future, run ``npx cdk deploy '*' --require-approval never``.
+    This must be done only in standalone accounts for development purposes.
