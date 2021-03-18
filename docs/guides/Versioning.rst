@@ -3,7 +3,11 @@
 Versioning
 ##########
 
-`Semantic-release <https://github.com/semantic-release/semantic-release>`_ is used to automatically determine the next version of the project and publish a release in the GitHub project as well as release it to the ``@NordicSemiconductor`` npm organization .
+.. contents::
+   :local:
+   :depth: 2
+
+The `semantic-release <https://github.com/semantic-release/semantic-release>`_ tool is used to automatically determine the next version of the project and publish a release in the GitHub project as well as release it to the ``@NordicSemiconductor`` npm organization .
 
 The next version is determined by scanning the commit messages.
 The commit messages must follow the `Angular commit message rules <https://github.com/semantic-release/semantic-release#commit-message-format>`_, and in every library `a hook <https://github.com/marionebl/commitlint>`_ will check the commit messages against these rules.
@@ -97,7 +101,7 @@ This can happen in the following conditions:
 * Method names and arguments are renamed
 * Previously optional arguments become mandatory
 * Arguments are removed
-* Classes get renamed.
+* Classes are renamed
 
 Even if the change is very small, as soon as you break the library's *contract* (its public API), it is a breaking change according to `Semantic Versioning 2.0.0  <https://semver.org/#spec-item-8>`_.
 

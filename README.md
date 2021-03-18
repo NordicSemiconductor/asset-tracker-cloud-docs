@@ -8,9 +8,9 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier/)
 [![ESLint: TypeScript](https://img.shields.io/badge/ESLint-TypeScript-blue.svg)](https://github.com/typescript-eslint/typescript-eslint)
 
-The _nRF Asset Tracker_ aims to provide a concrete end-to-end example for an
+The nRF Asset Tracker aims to provide a concrete end-to-end example for an
 ultra-low power cellular IoT product in the asset tracker space, specifically a
-_Cat Tracker_.
+Cat Tracker.
 
 > :information_source:
 > [Read the complete nRF Asset Tracker documentation](https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/).

@@ -3,8 +3,12 @@
 Connect using the simulator
 ###########################
 
+.. contents::
+   :local:
+   :depth: 2
+
 The CLI provides a software implementation of the firmware for *testing purposes*.
-This implementation allows to verify that the cloud configuration works, and this feature is also used for testing the *nRF Asset Tracker* using :ref:`aws-continuous-integration`.
+This implementation allows to verify that the cloud configuration works, and this feature is also used for testing the nRF Asset Tracker using :ref:`aws-continuous-integration`.
 
 To connect to a device and control the device using the simulator, complete the following steps:
 
@@ -66,12 +70,13 @@ You can run the Device simulator web application by using the following command:
     npm run
 
 After executing the above command, copy the connection string printed from ``npm exec -- @nordicsemiconductor/asset-tracker-cloud-device-simulator-aws "</path/to/certificate.json>"`` (for example, ``?endpoint=http%3A%2F%2Flocalhost%3A23719``) and append it to the browser address. (for example, ``http://localhost:8080/?endpoint=http%3A%2F%2Flocalhost%3A23719``).
+
 .. _deploy_dev_sim_web_app:
 
 Deploying the Device simulator web application
 **********************************************
 
-To build and setup the Device simulator web application to the S3 bucket created when setting up the *nRF Asset Tracker* in your AWS account, run the following commands:
+To build and setup the Device simulator web application to the S3 bucket created when setting up the nRF Asset Tracker in your AWS account, run the following commands:
 
 .. code-block:: bash
 

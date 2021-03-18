@@ -1,6 +1,10 @@
 Cell geolocations
 #################
 
+.. contents::
+   :local:
+   :depth: 2
+
 Locating a device is an important aspect of any IoT solution.
 It is one of the primary functions in the case of an asset tracker (like the Cat Tracker).
 But sometimes, acquiring a GPS fix is not possible, for example, when the device is indoors.
@@ -49,13 +53,13 @@ This must be the preferred approach when developing an IoT product that has loca
 If a device knows its cell tower, it is normally safe to assume that it has an internet connection to request the approximate location from the cloud.
 This allows to offload expensive calculations to the cloud and reduce the resource usage on the device.
 
-In the *nRF Asset Tracker*, whenever a device reports a GPS fix, the position is stored together with the cell ID.
+In the nRF Asset Tracker, whenever a device reports a GPS fix, the position is stored together with the cell ID.
 Over time, an up-to-date cell location database that is independent from a third-party API is built.
-This database is used as the primary means of geolocating cells in the *nRF Asset Tracker*.
+This database is used as the primary means of geolocating cells in the nRF Asset Tracker.
 The third-party API will be called (*if it is enabled*) only if a cell has not been geolocated by a device previously.
 
 Geolocating cells using third-party APIs
 ========================================
 
 Third-party APIs and services like `UnwiredLabs <https://unwiredlabs.com/>`_ and `CellMapper <https://www.cellmapper.net/>`_ have a database of cell tower locations and provide an API to query against these locations.
-The *nRF Asset Tracker* implements the optional resolution on the cloud side using :ref:`UnwiredLabs on AWS <aws-unwired-labs-api>` for the cells that have not been geolocated by the devices.
+The nRF Asset Tracker implements the optional resolution on the cloud side using :ref:`UnwiredLabs on AWS <aws-unwired-labs-api>` for the cells that have not been geolocated by the devices.

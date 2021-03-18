@@ -3,6 +3,10 @@
 Continuous integration
 ######################
 
+.. contents::
+   :local:
+   :depth: 2
+
 Continuous integration involves the following actions:
 
 * Every change to the project is tested against an AWS account.
@@ -16,7 +20,7 @@ Since the BDD tests are purely testing based on the public API of the project (w
 
 .. note::
 
-    This is an advanced topic that is closely tied with the further development and customization of the *nRF Asset Tracker* for specific purposes.
+    This is an advanced topic that is closely tied with the further development and customization of the nRF Asset Tracker for your purposes.
     See the `GitHub project page of the nRF Asset Tracker for AWS <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/>`_ for an implementation of the process outlined in this section.
 
 The project also provides an easily understandable description of the available (and implemented) features, in a single folder called `features <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/tree/saga/features>`_.

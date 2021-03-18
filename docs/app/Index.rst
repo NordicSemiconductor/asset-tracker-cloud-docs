@@ -9,10 +9,8 @@ The `source code for the web application <https://github.com/NordicSemiconductor
 
 To learn more about customizing the Cat Tracker web application, see the `Getting started guide on Create React App <https://create-react-app.dev/docs/getting-started/>`_.
 
-Documentation
-*************
-
 .. toctree::
    :titlesonly:
+   :caption: Subpages:
 
    CellGeolocation.rst

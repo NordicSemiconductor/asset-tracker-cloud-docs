@@ -7,7 +7,6 @@ Getting started
    :start-after: developer_xp_warning_start
    :end-before: developer_xp_warning_end
 
-
 Before you start the setup of the nRF Asset Tracker on AWS, ensure that you have the following prerequisites:
 
 * One of the `supported development kits  <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html#requirements>`_.

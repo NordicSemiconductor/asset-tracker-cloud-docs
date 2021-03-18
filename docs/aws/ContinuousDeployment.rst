@@ -3,6 +3,10 @@
 Continuous deployment
 #####################
 
+.. contents::
+   :local:
+   :depth: 2
+
 You can enable continuous deployment of the changes in your source repository to an AWS account.
 
 .. note::
@@ -15,7 +19,7 @@ After forking, make sure to update the ``repository.url`` in the :file:`package.
 
 This sets up an AWS CodePipeline, which triggers a CodeBuild project for every push to the :file:`saga` branch.
 You can configure the branch in the ``deploy.branch`` property of the :file:`package.json` file.
-The CodeBuild project upgrades the CloudFormation stack, which contains the *nRF Asset Tracker* resources.
+The CodeBuild project upgrades the CloudFormation stack, which contains the nRF Asset Tracker resources.
 
 A second CodePipeline will be set up for the web application, which triggers a CodeBuild project for every push to the :file:`saga` branch.
 You can configure the repository URL and the branch for the web app in the ``deploy.webApp`` property of the :file:`package.json` file.
@@ -46,7 +50,7 @@ After providing the GitHub credentials, you can set up the continuous deployment
     echo "cd=1" >> context.cfg
     npx cdk deploy '*'
 
-Check the status of the Continuous Deployment
+Check the status of the Continuous deployment
 *********************************************
 
 If you want to check the status of the continuous deployment after you have made the changes, use the following CLI command:

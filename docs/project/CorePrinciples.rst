@@ -3,9 +3,9 @@
 Core principles
 ###############
 
-The *nRF Asset Tracker* is built on the following principles:
+The nRF Asset Tracker is built on the following principles:
 
-* *Teach by showing* - All the examples are designed to solve a concrete use case (a *Cat Tracker*) instead of providing generic or abstract solutions.
+* *Teach by showing* - All the examples are designed to solve a concrete use case (a Cat Tracker) instead of providing generic or abstract solutions.
   It is not a framework, but a real application.
 * *Err on the side of security* - It follows the most robust security recommendations of the respective cloud provider.
 * *Single tenancy* - It implements a scenario in which all the authenticated users can be trusted to access all the devices.
@@ -16,8 +16,7 @@ The *nRF Asset Tracker* is built on the following principles:
   This also means that the sensor measurements need to be timestamped when they are created, and not when they arrive at the cloud.
 * *Maximize power saving* - The firmware examples highlight the power saving features of the nRF9160 since this is a critical aspect for developing small form-factor devices that need to run on the battery charge of a single battery cell for years.
 
-These principles imply the following facts:
-
-1. Power saving is used as much as possible in all the operating states of the device. All the necessary computation that can be done on the device must be done on the device itself.
-#. The least amount of data is sent to the cloud (optimize for message size).
-#. Data is encoded in the most efficient way for the device (optimize for computation cycles).
+  * Power saving is used as much as possible in all the operating states of the device.
+  * All the necessary computation that can be done on the device must be done on the device itself.
+  * The least amount of data is sent to the cloud (optimize for message size).
+  * Data is encoded in the most efficient way for the device (optimize for computation cycles).

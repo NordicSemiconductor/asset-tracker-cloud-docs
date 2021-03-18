@@ -3,11 +3,11 @@
 nRF Asset Tracker
 #################
 
-The *nRF Asset Tracker* aims to provide a concrete end-to-end example for an ultra-low power cellular IoT product in the asset tracker space, specifically a *Cat Tracker*.
+The nRF Asset Tracker aims to provide a concrete end-to-end example for an ultra-low power cellular IoT product in the asset tracker space, specifically a Cat Tracker.
 
 .. toctree::
    :titlesonly:
-   :caption: Documentation
+   :caption: Contents:
 
    docs/project/Index.rst
    docs/GettingStarted.rst
@@ -31,7 +31,6 @@ The *nRF Asset Tracker* aims to provide a concrete end-to-end example for an ult
 
 Acknowledgements
 ****************
-
 
 *Amazon Web Services*, the AWS logo are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries. 
 *Google* and the Google logo are registered trademarks of Google LLC. 

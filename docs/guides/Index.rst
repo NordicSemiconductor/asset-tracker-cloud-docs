@@ -5,6 +5,7 @@ Guides
 
 .. toctree::
    :titlesonly:
+   :caption: Subpages:
 
    device-cloud-protocol/Index.rst
    AutomateHEXFileBuilding.rst

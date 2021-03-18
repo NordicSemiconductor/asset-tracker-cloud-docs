@@ -3,12 +3,16 @@
 System overview and technical considerations
 ############################################
 
+.. contents::
+   :local:
+   :depth: 2
+
 Devices connect to the message broker using TLS over TCP.
 The messaging protocol is JSON over MQTT.
 The TLS certificates are generated offline by the developer to simplify the provisioning during production.
 
-Overview of system components:
-==============================
+Overview of system components
+=============================
 
 .. figure:: ./system-overview.jpg
    :alt: System overview
@@ -17,7 +21,7 @@ Overview of system components:
 
 The cloud and the web application are developed using `TypeScript <https://www.typescriptlang.org/>`_ (a typed superset of JavaScript).
 JavaScript is the most popular language according to the `2019 Stack Overflow survey <https://insights.stackoverflow.com/survey/2019#technology>`_.
-Most of the cloud providers provide the SDKs in JavaScript.
+Most of the cloud providers provide their SDKs in JavaScript.
 
 It provides the tools to configure the developer's cloud account for use with the developer's devices and the single-page application (SPA).
 After the cloud account has been configured, it provides the necessary resources for the trackers to connect to the message broker and to send and receive messages.

@@ -3,6 +3,10 @@
 Building the project using Docker
 #################################
 
+.. contents::
+   :local:
+   :depth: 2
+
 Building using Docker is the simplest way to build the project on your local system.
 If you install `Docker <https://www.docker.com/>`_ , it will contain all the dependencies in the image, and prevents the need to install them separately in your system.
 

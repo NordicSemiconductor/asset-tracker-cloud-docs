@@ -3,6 +3,10 @@
 Cell geolocation
 ################
 
+.. contents::
+   :local:
+   :depth: 2
+
 If cell geolocation is implemented, the devices can be shown on the map based on the location of their cell, even before obtaining a GPS fix.
 It allows to locate devices within a radius of a few kilometers, which can be beneficial depending on your use case.
 It can be useful in the case of tracking assets like parcels, where the approximate location can be combined with known points of interest (for example, warehouses and ports), to know if a shipment has arrived at the destination.

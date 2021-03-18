@@ -11,4 +11,4 @@ LTS <https://www.microsoft.com/nb-no/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1>`_.
 
 .. note::
 
-   Windows is not included in the continuous integration tests, and hence if you encounter issues, you can vote in the `nRF Asset Tracker project discussion <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/21>`_ .
+   Windows is not included in the continuous integration tests, and hence if you encounter issues, you can vote in the `nRF Asset Tracker project discussion <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/21>`_.

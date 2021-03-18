@@ -3,13 +3,17 @@
 Four kinds of data
 ##################
 
-This section provides a general introduction about the device communication with the cloud in the *nRF Asset Tracker* project.
+.. contents::
+   :local:
+   :depth: 2
+
+This section provides a general introduction about the device communication with the cloud in the nRF Asset Tracker project.
 This is also available as a stand-alone `blog post on DevZone <https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/the-four-kinds-of-data-you-need-to-consider-when-developing-an-iot-product>`_.
 
 .. figure:: ./images/data-protocols.jpg
    :alt: Data protocols
 
-    Data protocols
+   Data protocols
 
 Following are the four types of data that is used in the communication of the device with the cloud:
 
@@ -137,7 +141,7 @@ Hence, to conserve resources, the device might suspend all the other operations 
 Summary
 *******
 
-The *nRF Asset Tracker* aims to provide robust reference implementations for the four kinds of device data.
+The nRF Asset Tracker aims to provide robust reference implementations for the four kinds of device data.
 Even though the concrete implementation differs for each cloud provider, the general building blocks (state, configuration, batched past state, firmware upgrades) will be the same.
 
 +-------------------------------------+-------------------------+------------------+-----------+-------------------+

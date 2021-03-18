@@ -1,9 +1,13 @@
 .. _aws-getting-started-app:
 
-Deploy the *Cat Tracker web application*
-########################################
+Deploy the Cat Tracker web application
+######################################
 
-To deploy the *Cat Tracker web application* to AWS, complete the following steps:
+.. contents::
+   :local:
+   :depth: 2
+
+To deploy the Cat Tracker web application to AWS, complete the following steps:
 
 1. Clone the web application
 #. Configure the web application
@@ -64,7 +68,7 @@ Following is an example for the contents of the :file:`.env.local` file:
 Deploy the web application
 **************************
 
-To build and deploy the web application to the S3 bucket created while setting up the *nRF Asset Tracker* in your AWS account, run the following commands:
+To build and deploy the web application to the S3 bucket created while setting up the nRF Asset Tracker in your AWS account, run the following commands:
 
 .. code-block:: bash
 

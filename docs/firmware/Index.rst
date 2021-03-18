@@ -8,11 +8,9 @@ It is compatible with the :ref:`nRF Asset Tracker for AWS <index_aws>`.
 
 The `firmware GitHub repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware>`_ provides an example for using the application as an out-of-tree development copy, which optionally enables the SUPL client.
 
-Documentation
-*************
-
 .. toctree::
    :titlesonly:
+   :caption: Subpages:
 
    BuildingUsingLocalSystem.rst
    BuildingUsingDocker.rst

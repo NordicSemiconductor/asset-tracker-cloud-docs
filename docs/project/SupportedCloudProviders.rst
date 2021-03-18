@@ -3,6 +3,13 @@
 Supported cloud providers
 #########################
 
+The nRF Asset Tracker is not a *multi-cloud* solution.
+The concrete implementation will differ for each cloud provider.
+This solution does not aim to provide a solution where you can switch in a seamless manner between cloud providers.   
+A multi-cloud solution with a functionality of switching between the clouds will require the implementation of additional abstraction layers.
+Also, it can mandate a constant translation between the vendor-specific concepts and the abstraction instead of becoming a meaningful benefit for the majority of users.
+Hence, in this project, the best practices of the respective cloud vendor for building a *serverless* IoT solution are followed.
+
 See the below table for a list of supported cloud providers:
 
 +-----------------------+-----------------------------------------------+-------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
@@ -12,17 +19,6 @@ See the below table for a list of supported cloud providers:
 +-----------------------+-----------------------------------------------+-------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 | NB-IoT: UDP and LWM2M | In consideration                              | In consideration                                                                                |                                                             |
 +-----------------------+-----------------------------------------------+-------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
-
-.. note::
-
-   The *nRF Asset Tracker* is not a *multi-cloud* solution.
-   The concrete implementation will differ for each cloud provider.
-   This solution does not aim to provide a solution where you can switch in a seamless manner between cloud providers.
-
-   
-A multi-cloud solution with a functionality of switching between the clouds will require the implementation of additional abstraction layers.
-Also, it can mandate a constant translation between the vendor-specific concepts and the abstraction instead of becoming a meaningful benefit for the majority of users.
-Hence, in this project, the best practices of the respective cloud vendor for building a *serverless* IoT solution are followed.
 
 In the case of cloud providers without native UDP and LWM2M support, the option of using a bridge such as `Eclipse Californium <https://github.com/eclipse/californium>`_, was evaluated.
 For more information, see `Leshan LwM2M AWS IoT Gateway <https://github.com/coderbyheart/leshan-aws>`_.

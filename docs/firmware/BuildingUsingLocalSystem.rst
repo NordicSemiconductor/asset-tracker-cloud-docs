@@ -3,6 +3,10 @@
 Building the project using your local system
 ############################################
 
+.. contents::
+   :local:
+   :depth: 2
+
 Before building the project using your local system, complete the following steps:
 
 1. Prepare your system

@@ -3,6 +3,10 @@
 AWS IoT Shadow and Topics
 #########################
 
+.. contents::
+   :local:
+   :depth: 2
+
 On AWS, the `IoT Shadow <https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html>`_ is used to send device data and configuration through the JSON shadow documents.
 A shadow document describes the different states of the device through a state property.
 Following are some examples of device states:

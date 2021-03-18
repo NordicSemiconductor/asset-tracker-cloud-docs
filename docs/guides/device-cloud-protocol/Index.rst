@@ -10,11 +10,9 @@ Reducing modem uptime and minimizing the total amount of transferred data result
 
 To maximize the advantages of the solution, it is recommended to revisit the described principles and customize them to your specific needs.
 
-Documentation
-*************
-
 .. toctree::
    :titlesonly:
+   :caption: Subpages:
 
    TransportAndData.rst
    FourKindsOfData.rst

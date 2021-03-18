@@ -3,6 +3,9 @@
 Continuous integration of firmware
 ##################################
 
+.. contents::
+   :local:
+   :depth: 2
 
 The AWS implementation of the *nRF Asset Tracker* provides the resources for continuous testing of the firmware using real hardware.
 
@@ -31,7 +34,7 @@ Following are the actions performed by the Firmware CI runner:
 
 .. note::
 
-   These devices connect to the existing instance of the *nRF Asset Tracker*, so the firmware tests will not set up a new empty nRF Asset Tracker AWS environment for every test.
+   These devices connect to the existing instance of the nRF Asset Tracker, so the firmware tests will not set up a new empty nRF Asset Tracker AWS environment for every test.
    It runs against the production environment.
    This is to ensure that the firmware release will work with the existing solution.
    This approach is designed for `trunk-based development <https://thinkinglabs.io/talks/feature-branching-considered-evil.html>`_.
@@ -39,7 +42,7 @@ Following are the actions performed by the Firmware CI runner:
 Preparation
 ***********
 
-Enable the Firmware CI resources of the *nRF Asset Tracker* that allow GitHub Actions to create test devices.
+Enable the Firmware CI resources of the nRF Asset Tracker that allow GitHub Actions to create test devices.
 Also enable the Firmware CI runner to connect by enabling the context switch ``firmware-ci`` when deploying the stack (see :ref:`Getting Started <aws-getting-started>`).
 
 .. code-block:: bash
@@ -64,8 +67,6 @@ At this stage, you can create a new IoT Thing to be used for a Firmware CI runne
 
    node cli firmware-ci -c
 
-See :ref:`firmware_ci_runner_setup`.
-
 You can delete a device using the following command:
 
 .. code-block:: bash
@@ -74,9 +75,9 @@ You can delete a device using the following command:
 
 Configure the following parameters as secrets on the firmware GitHub repository:
 
-* ``AWS_ACCESS_KEY_ID`` (as printed in step 2)
-* ``AWS_SECRET_ACCESS_KEY`` (as printed in step 2)
-* ``AWS_REGION`` (as printed in step 2)
+* ``AWS_ACCESS_KEY_ID`` (as printed above)
+* ``AWS_SECRET_ACCESS_KEY`` (as printed above)
+* ``AWS_REGION`` (as printed above)
 * ``STACK_NAME`` (the stack name of your production environment, usually ``nrf-asset-tracker``)
 * ``DEVICE_ID`` (the created Firmware CI runner device, for example, ``firmware-ci-3c431c57-e524-4010-b269-371cb53538b6``)
 

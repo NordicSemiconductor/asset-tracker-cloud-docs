@@ -1,6 +1,10 @@
 Troubleshooting
 ###############
 
+.. contents::
+   :local:
+   :depth: 2
+
 Following are some of the common errors and the related information.
 
 Connection
