@@ -27,10 +27,11 @@ The nRF Asset Tracker aims to provide answers and recommend best practices to th
 
 .. note::
 
-   Development progress is managed in the `nRF Asset Tracker Development GitHub Project <https://github.com/orgs/NordicSemiconductor/projects/2>`_.
+   Development progress is managed in the `nRF Asset Tracker development GitHub project <https://github.com/orgs/NordicSemiconductor/projects/2>`_.
 
 .. toctree::
    :titlesonly:
+   :caption: Subpages:
 
    CorePrinciples.rst
    SystemOverview.rst
