@@ -3,6 +3,10 @@
 Getting started
 ###############
 
+.. include:: ../../project/Index.rst
+   :start-after: developer_xp_warning_start
+   :end-before: developer_xp_warning_end
+
 Before you start the setup of the *nRF Asset Tracker* on AWS, ensure that:
 
  * you have one of the `supported boards <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html#requirements>`_
