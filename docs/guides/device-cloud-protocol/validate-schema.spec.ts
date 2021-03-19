@@ -5,7 +5,13 @@ import * as glob from 'glob'
 
 const f = (name: string): string =>
 	readFileSync(
-		path.resolve(process.cwd(), 'docs', 'device-cloud-protocol', name),
+		path.resolve(
+			process.cwd(),
+			'docs',
+			'guides',
+			'device-cloud-protocol',
+			name,
+		),
 		'utf-8',
 	)
 
@@ -18,6 +24,7 @@ describe('schemas', () => {
 					`${path.resolve(
 						process.cwd(),
 						'docs',
+						'guides',
 						'device-cloud-protocol',
 					)}/*.schema.json`,
 				)
@@ -28,7 +35,7 @@ describe('schemas', () => {
 	describe('state.reported.aws.schema.json', () => {
 		it('should validate state.reported.aws.json', async () => {
 			const validate = ajv.getSchema(
-				'https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/device-cloud-protocol/state.reported.aws.schema.json',
+				'https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/guides/device-cloud-protocol/state.reported.aws.schema.json',
 			)
 			expect(validate).toBeDefined()
 			const state = f('state.reported.aws.json')
@@ -41,7 +48,7 @@ describe('schemas', () => {
 	describe('messages.schema.json', () => {
 		it('should validate message.json', async () => {
 			const validate = ajv.getSchema(
-				'https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/device-cloud-protocol/messages.schema.json',
+				'https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/guides/device-cloud-protocol/messages.schema.json',
 			)
 			expect(validate).toBeDefined()
 			const message = f('message.json')
@@ -54,7 +61,7 @@ describe('schemas', () => {
 	describe('batch.schema.json', () => {
 		it('should validate batch-message.json', async () => {
 			const validate = ajv.getSchema(
-				'https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/device-cloud-protocol/batch.schema.json',
+				'https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/guides/device-cloud-protocol/batch.schema.json',
 			)
 			expect(validate).toBeDefined()
 			const state = f('batch-message.json')
