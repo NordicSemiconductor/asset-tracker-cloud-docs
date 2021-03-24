@@ -7,7 +7,7 @@ Continuous integration of firmware
    :local:
    :depth: 2
 
-The AWS implementation of the *nRF Asset Tracker* provides the resources for continuous testing of the firmware using real hardware.
+The AWS implementation of the nRF Asset Tracker provides the resources for continuous testing of the firmware using real hardware.
 
 Overview
 ********
