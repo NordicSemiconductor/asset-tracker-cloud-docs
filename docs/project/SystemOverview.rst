@@ -11,13 +11,10 @@ Devices connect to the message broker using TLS over TCP.
 The messaging protocol is JSON over MQTT.
 The TLS certificates are generated offline by the developer to simplify the provisioning during production.
 
-Overview of system components
-=============================
-
 .. figure:: ./system-overview.jpg
    :alt: System overview
 
-   System overview
+   Overview of system components
 
 The cloud and the web application are developed using `TypeScript <https://www.typescriptlang.org/>`_ (a typed superset of JavaScript).
 JavaScript is the most popular language according to the `2019 Stack Overflow survey <https://insights.stackoverflow.com/survey/2019#technology>`_.
