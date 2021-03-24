@@ -9,6 +9,6 @@ Program the device firmware and provision the credentials
 
 After the programming of the firmware, the device reboots and connects to the AWS broker, and eventually reports its state to the cloud:
 
-.. code-block::
+.. code-block:: bash
 
    [00:00:35.591,644] <inf> event_manager: CLOUD_EVT_CONNECTED
