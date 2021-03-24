@@ -36,4 +36,5 @@ The nRF Asset Tracker aims to provide answers and recommend best practices to th
    CorePrinciples.rst
    SystemOverview.rst
    SupportedCloudProviders.rst
+   SystemRequirements.rst
    License.rst

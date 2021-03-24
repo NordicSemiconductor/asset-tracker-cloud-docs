@@ -13,6 +13,5 @@ Guides
    CloudDifferences.rst
    ETSI-EN-303-645.rst
    Versioning.rst
-   SystemRequirements.rst
    Direnv.rst
    
