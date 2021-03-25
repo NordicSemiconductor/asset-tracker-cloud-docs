@@ -108,6 +108,11 @@ jobs:
           echo "RELEASE=${{ github.sha }}" >> $GITHUB_ENV
           echo "AUDIENCE=release" >> $GITHUB_ENV
 
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade --user pip setuptools
+          python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
+
       - name: Build documentation
         if:
           env.RELEASE != '' && env.VERSION != '' && github.event_name == 'push'
