@@ -4,7 +4,7 @@ Customize the device simulator UI
 #################################
 
 It's now time to implement to logic to generate the heart rate monitoring data.
-The actual firmware will eventually sample the heartrate in a given interval (e.g. once very minute), and send it to the cloud using a :ref:`batch message <batch>`.
+The actual firmware will eventually sample the heartrate in a given interval (e.g. once very minute), and send it to the cloud using a :ref:`batch message <batch-messages>`.
 Therefore we modify the device simulator UI:
 
 - add a slider for the heart rate reading between 140 and 220 (which are consider normal cat heart rates)
