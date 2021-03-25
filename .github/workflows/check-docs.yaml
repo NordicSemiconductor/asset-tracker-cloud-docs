@@ -3,7 +3,46 @@ name: PR checks
 on: pull_request
 
 jobs:
-  pr:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        audience: [all, azure]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade --user pip setuptools
+          python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
+
+      - run: |
+          export PATH=$PATH:/home/runner/.local/bin
+          rstcheck -r ./
+
+      - name: Build docs
+        run: |
+          export PATH=$PATH:/home/runner/.local/bin
+          errlog=$(mktemp)
+          export AUDIENCE=${{ matrix.audience }}
+          make html 2> $errlog
+          if [[ -s "$errlog" ]]; then
+            cat $errlog
+            exit 1
+          else
+              echo "OK"
+          fi
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: asset-tracker-docs-${{ matrix.audience }}-${{ github.sha }}
+          path: build/html/
+
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,29 +68,3 @@ jobs:
 
       - name: Test
         run: npm test
-
-      - name: Install dependencies
-        run: |
-          python3 -m pip install --upgrade --user pip setuptools
-          python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
-
-      - run: |
-          export PATH=$PATH:/home/runner/.local/bin
-          rstcheck -r ./
-
-      - name: Build docs
-        run: |
-          export PATH=$PATH:/home/runner/.local/bin
-          errlog=$(mktemp)
-          make html 2> $errlog
-          if [[ -s "$errlog" ]]; then
-            cat $errlog
-            exit 1
-          else
-              echo "OK"
-          fi
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: asset-tracker-docs-${{ github.sha }}
-          path: build/html/

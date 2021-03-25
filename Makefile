@@ -13,7 +13,9 @@ docs/firmware/images/%.svg: docs/firmware/images/%.sequence
 
 RELEASE ?= 0.0.0-development
 VERSION ?= saga
+AUDIENCE ?= release
 
 html: Makefile
-	sphinx-build -M html ./ build -D release=${RELEASE} -D version=${VERSION} -A github_version=${VERSION}/
+	sphinx-build -M html ./ build -D release=${RELEASE} -D version=${VERSION} -A github_version=${VERSION}/ -t ${AUDIENCE}
 	find docs -type f -name \*.json | xargs -I@ cp -v @ build/html/@
+

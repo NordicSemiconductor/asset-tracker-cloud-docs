@@ -5,12 +5,46 @@ on:
     branches:
       - saga
       - "v*"
+      - "!gh-pages"
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        audience: [release, saga]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade --user pip setuptools
+          python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
+
+      - name: Build docs
+        run: |
+          export PATH=$PATH:/home/runner/.local/bin
+          errlog=$(mktemp)
+          export AUDIENCE=${{ matrix.audience }}
+          make html 2> $errlog
+          if [[ -s "$errlog" ]]; then
+            cat $errlog
+            exit 1
+          else
+              echo "OK"
+          fi
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: asset-tracker-docs-${{ matrix.audience }}-${{ github.sha }}
+          path: build/html/
+
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -35,30 +69,24 @@ jobs:
       - name: Test
         run: npm test
 
-      - name: Install dependencies
-        run: |
-          python3 -m pip install --upgrade --user pip setuptools
-          python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
-
-      - name: Build docs
-        run: |
-          export PATH=$PATH:/home/runner/.local/bin
-          errlog=$(mktemp)
-          make html 2> $errlog
-          if [[ -s "$errlog" ]]; then
-            cat $errlog
-            exit 1
-          else
-              echo "OK"
-          fi
-
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    needs: [build, test]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
       - name: Semantic release
         id: semantic-release
         continue-on-error: true
-        run: |
-          npm i --no-save semantic-release
-          npx semantic-release
+        run: npx semantic-release
 
+  publish:
+    runs-on: ubuntu-latest
+
+    needs: [build, test, release]
+
+    steps:
       - name: Determine documentation release (saga)
         if: github.ref == 'refs/heads/saga' && github.event_name == 'push'
         run: |
@@ -66,16 +94,16 @@ jobs:
           echo "VERSION=saga" >> $GITHUB_ENV
           RELEASE=`git describe --abbrev=0 --tags | tr -d '\n'`
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
+          echo "AUDIENCE=saga" >> $GITHUB_ENV
 
       - name: Determine documentation release (maintenance branches)
-        if:
-          github.ref != 'refs/heads/saga' && github.ref != 'refs/heads/gh-pages'
-          && github.event_name == 'push'
+        if: github.ref != 'refs/heads/saga' && github.event_name == 'push'
         run: |
           git pull --ff-only
           VERSION=`git rev-parse --abbrev-ref HEAD | tr -d 'refs/heads/' | tr -d '\n'`
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "RELEASE=${{ github.sha }}" >> $GITHUB_ENV
+          echo "AUDIENCE=release" >> $GITHUB_ENV
 
       - name: Build documentation
         if:
@@ -111,8 +139,3 @@ jobs:
           git commit -m "docs(${{ env.VERSION }}): update documentation for release ${{ env.RELEASE }}"
           git pull --ff-only
           git push
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: asset-tracker-docs-${{ github.sha }}
-          path: build/html/
