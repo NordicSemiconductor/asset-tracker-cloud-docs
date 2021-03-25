@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
 
   
   
@@ -88,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
@@ -110,27 +111,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
             
@@ -204,21 +193,21 @@
             
   <div class="section" id="sni">
 <span id="sni-readme"></span><h1>SNI<a class="headerlink" href="#sni" title="Permalink to this headline">¶</a></h1>
-<p>The <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html">Transport security in AWS IoT</a> documentation mentions that the Server Name Indication (SNI) extension is required for TLS, both in the case of MQTT and HTTPS.</p>
+<p>According to the <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html">Transport security in AWS IoT</a> documentation, the Server Name Indication (SNI) extension is required for TLS, both in the case of MQTT and HTTPS.</p>
 <p>However, the following facts must be noted:</p>
 <ul class="simple">
-<li><p>SNI is required when connecting using a certificate that is created using the IoT console or the <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificateWithoutCA.html">RegisterCertificateWithoutCA</a> api, which registers the certificate with <code class="docutils literal notranslate"><span class="pre">certificateMode</span></code> <code class="docutils literal notranslate"><span class="pre">SNI_ONLY</span></code>.</p>
+<li><p>SNI is required when connecting using a certificate that is created using the IoT console or the <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificateWithoutCA.html">RegisterCertificateWithoutCA</a> API, which registers the certificate with <code class="docutils literal notranslate"><span class="pre">certificateMode</span></code> <code class="docutils literal notranslate"><span class="pre">SNI_ONLY</span></code>.</p>
 <ul>
 <li><p>The devices that are currently connected to AWS IoT through MQTT and not using SNI will not be affected and such devices will continue to work with AWS IoT.</p></li>
 </ul>
 </li>
-<li><p>SNI is not required when connecting to AWS IoT using MQTT, when using a CA certificate.</p>
+<li><p>SNI is not required when connecting to AWS IoT through MQTT, using a CA certificate.</p>
 <ul>
 <li><p>AWS IoT uses the certificates provided in the TLS connection of MQTT to route the request to the right account using the CA certificate and not to the endpoint.
 This also means that when using a wrong account endpoint to connect to AWS IoT with a certificate that does not belong to that account endpoint, the request will be routed to the correct account endpoint.</p></li>
 </ul>
 </li>
-<li><p>HTTP is handled separately and different from MQTT and it requires that the SNI bit is set.</p></li>
+<li><p>HTTP is handled separately and differently from MQTT and it requires that the SNI bit is set.</p></li>
 <li><p>New features such as <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#multiple-account-cert">Multi-Account registration</a> and <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-configurable.html">Configurable endpoints</a>, require SNI bits in MQTT connection.
 The SNI bit is significant when using these features and it is used by AWS IoT to route the request properly.</p></li>
 </ul>

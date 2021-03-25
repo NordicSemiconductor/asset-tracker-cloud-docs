@@ -3,17 +3,17 @@
 Provisioning the certificate
 ############################
 
-You need to generate and provision certificates to your device.
+To connect your device, you need to complete the following steps:
+
+* :ref:`Generate the certificates <devices-provisioning-certificate-generate>`
+* Provision the certificates to your device
+
+  * Using CLI
+  * Using nRF Connect for Desktop
 
 .. toctree::
    :titlesonly:
-
-   Generate.rst
-
-Provisioning the certificates can be done in the following ways:
-
-.. toctree::
-   :titlesonly:
+   :caption: Subpages:
 
    CLI.rst
    Desktop.rst

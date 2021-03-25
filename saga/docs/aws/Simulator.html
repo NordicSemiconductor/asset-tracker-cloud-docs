@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
 
   
   
@@ -88,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
@@ -110,27 +111,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
             
@@ -204,6 +193,17 @@
             
   <div class="section" id="connect-using-the-simulator">
 <span id="simulator"></span><h1>Connect using the simulator<a class="headerlink" href="#connect-using-the-simulator" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#using-the-device-simulator-web-application" id="id2">Using the Device simulator web application</a></p>
+<ul>
+<li><p><a class="reference internal" href="#clone-the-project-and-install-the-dependencies" id="id3">Clone the project and install the dependencies</a></p></li>
+<li><p><a class="reference internal" href="#run-the-device-simulator-web-application" id="id4">Run the Device simulator web application</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#deploying-the-device-simulator-web-application" id="id5">Deploying the Device simulator web application</a></p></li>
+</ul>
+</div>
 <p>The CLI provides a software implementation of the firmware for <em>testing purposes</em>.
 This implementation allows to verify that the cloud configuration works, and this feature is also used for testing the nRF Asset Tracker using <a class="reference internal" href="ContinuousIntegration.html#aws-continuous-integration"><span class="std std-ref">Continuous integration</span></a>.</p>
 <p>To connect to a device and control the device using the simulator, complete the following steps:</p>
@@ -226,7 +226,7 @@ This implementation allows to verify that the cloud configuration works, and thi
 For the link to work, either enable <a class="reference internal" href="ContinuousDeployment.html#aws-continuous-deployment"><span class="std std-ref">Continuous deployment</span></a>, or manually deploy the Device simulator web application as described in <a class="reference internal" href="#deploy-dev-sim-web-app"><span class="std std-ref">Deploying the Device simulator web application</span></a>.</p>
 </div>
 <div class="section" id="using-the-device-simulator-web-application">
-<h2>Using the Device simulator web application<a class="headerlink" href="#using-the-device-simulator-web-application" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Using the Device simulator web application</a><a class="headerlink" href="#using-the-device-simulator-web-application" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://github.com/NordicSemiconductor/device-ui">device-ui</a> provides a browser-based UI to control the simulated device.</p>
 <div class="figure align-default" id="id1">
 <img alt="Device simulator web application" src="../../_images/device-simulator.png" />
@@ -238,7 +238,7 @@ For the link to work, either enable <a class="reference internal" href="Continuo
 <li><p>Run the Device simulator web application</p></li>
 </ul>
 <div class="section" id="clone-the-project-and-install-the-dependencies">
-<h3>Clone the project and install the dependencies<a class="headerlink" href="#clone-the-project-and-install-the-dependencies" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id3">Clone the project and install the dependencies</a><a class="headerlink" href="#clone-the-project-and-install-the-dependencies" title="Permalink to this headline">¶</a></h3>
 <p>Clone the latest version of the <a class="reference external" href="https://github.com/NordicSemiconductor/device-ui">device-ui</a> project and install the dependencies:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/device-ui.git cat-tracker-device-ui
 <span class="nb">cd</span> cat-tracker-device-ui
@@ -247,17 +247,17 @@ npm ci
 </div>
 </div>
 <div class="section" id="run-the-device-simulator-web-application">
-<h3>Run the Device simulator web application<a class="headerlink" href="#run-the-device-simulator-web-application" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id4">Run the Device simulator web application</a><a class="headerlink" href="#run-the-device-simulator-web-application" title="Permalink to this headline">¶</a></h3>
 <p>You can run the Device simulator web application by using the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm run
 </pre></div>
 </div>
-<p>After executing the above command, copy the connection string printed from <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">exec</span> <span class="pre">--</span> <span class="pre">&#64;nordicsemiconductor/asset-tracker-cloud-device-simulator-aws</span> <span class="pre">&quot;&lt;/path/to/certificate.json&gt;&quot;</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">?endpoint=http%3A%2F%2Flocalhost%3A23719</span></code>) and append it to the browser address. (for example, <code class="docutils literal notranslate"><span class="pre">http://localhost:8080/?endpoint=http%3A%2F%2Flocalhost%3A23719</span></code>).</p>
+<p>After executing the above command, copy the connection string printed from <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">exec</span> <span class="pre">--</span> <span class="pre">&#64;nordicsemiconductor/asset-tracker-cloud-device-simulator-aws</span> <span class="pre">&quot;&lt;/path/to/certificate.json&gt;&quot;</span></code> (for example, <code class="docutils literal notranslate"><span class="pre">?endpoint=http%3A%2F%2Flocalhost%3A23719</span></code>) and append it to the browser address. (for example, <code class="docutils literal notranslate"><span class="pre">http://localhost:8080/?endpoint=http%3A%2F%2Flocalhost%3A23719</span></code>).</p>
 </div>
 </div>
 <div class="section" id="deploying-the-device-simulator-web-application">
-<span id="deploy-dev-sim-web-app"></span><h2>Deploying the Device simulator web application<a class="headerlink" href="#deploying-the-device-simulator-web-application" title="Permalink to this headline">¶</a></h2>
-<p>To build and setup the Device simulator web application to the S3 bucket created when setting up the <em>nRF Asset Tracker</em> in your AWS account, run the following commands:</p>
+<span id="deploy-dev-sim-web-app"></span><h2><a class="toc-backref" href="#id5">Deploying the Device simulator web application</a><a class="headerlink" href="#deploying-the-device-simulator-web-application" title="Permalink to this headline">¶</a></h2>
+<p>To build and setup the Device simulator web application to the S3 bucket created when setting up the nRF Asset Tracker in your AWS account, run the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="k">$(</span><span class="nb">cd</span> ../aws <span class="o">&amp;&amp;</span> node cli device-ui-config <span class="p">|</span> xargs<span class="k">)</span>
 npm run build
 aws s3 cp build s3://<span class="nv">$SNOWPACK_PUBLIC_DEVICE_UI_BUCKET_NAME</span> <span class="se">\</span>

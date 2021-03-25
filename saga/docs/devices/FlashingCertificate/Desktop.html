@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
 
   
   
@@ -88,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../GettingStarted.html">Getting Started</a></li>
@@ -97,7 +98,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../Index.html">Connect using a real device</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="Index.html">Provisioning the certificate</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Generate.html">Generating a certificate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="CLI.html">Provisioning using the CLI</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Provisioning using nRF Connect for Desktop</a></li>
 </ul>
@@ -105,27 +105,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../TroubleShooting.html">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/CellGeolocations.html">Cell Geolocations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/Versioning.html">Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
             
@@ -201,7 +189,7 @@
             
   <div class="section" id="provisioning-using-nrf-connect-for-desktop">
 <span id="devices-provisioning-certificate-desktop"></span><h1>Provisioning using nRF Connect for Desktop<a class="headerlink" href="#provisioning-using-nrf-connect-for-desktop" title="Permalink to this headline">¶</a></h1>
-<p>You can use the <code class="file docutils literal notranslate"><span class="pre">certificates/device-&lt;deviceId&gt;.json</span></code> file with <em>Certificate Manager</em> in <a class="reference external" href="https://infocenter.nordicsemi.com/topic/ug_link_monitor/UG/link_monitor/lm_intro.html">LTE Link Monitor</a>, which is an application implemented as part of <a class="reference external" href="https://infocenter.nordicsemi.com/topic/struct_nrftools/struct/nrftools_nrfconnect.html">nRF Connect for Desktop</a>, to provision the certificate to the device.</p>
+<p>You can use the <code class="file docutils literal notranslate"><span class="pre">certificates/device-&lt;deviceId&gt;.json</span></code> file with <em>Certificate Manager</em> in <a class="reference external" href="https://infocenter.nordicsemi.com/topic/ug_link_monitor/UG/link_monitor/lm_intro.html">LTE Link Monitor</a> (an application implemented as part of <a class="reference external" href="https://infocenter.nordicsemi.com/topic/struct_nrftools/struct/nrftools_nrfconnect.html">nRF Connect for Desktop</a>), to provision the certificate to the device.</p>
 <p><em>Certificate Manager</em> uses AT commands to write the certificate information to the secure storage of the modem and you need to program your device with a firmware that has the AT command host enabled.</p>
 <p>To provision the certificate using LTE Link Monitor, complete the following steps:</p>
 <ol class="arabic">
@@ -216,8 +204,8 @@
 <li><p>nRF9160 DK - <a class="reference external" href="https://nordicsemiconductor.github.io/at_client-hex/at_client-nrf9160dk_nrf9160ns.hex">91dk_at_client_increased_buf.hex</a></p></li>
 </ul>
 <p>For instructions, see <a class="reference internal" href="../Index.html#program-the-firmware"><span class="std std-ref">programming the firmware</span></a>.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Make sure that the selected device is directly connected and not connected via the debugger.</p>
 </div>
 </li>

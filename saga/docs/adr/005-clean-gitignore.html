@@ -7,12 +7,13 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5. Clean .gitignore &mdash; nRF Asset Tracker v13.1.0 documentation</title>
+  <title>ADR 005: Clean .gitignore &mdash; nRF Asset Tracker v13.1.0 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
 
   
   
@@ -39,7 +40,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Code of Conduct" href="../../CODE_OF_CONDUCT.html" />
-    <link rel="prev" title="4. Move to Nordic Semiconductor GitHub organization" href="004-move-to-nordicsemiconductor-github-organization.html" /> 
+    <link rel="prev" title="ADR 004: Move to Nordic Semiconductor GitHub organization" href="004-move-to-nordicsemiconductor-github-organization.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
@@ -96,33 +97,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="README.html">Architecture Decision Records</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="002-use-npm-package-registry.html">2. Use NPM registry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="003-use-saga-as-the-main-branch.html">3. Use <code class="docutils literal notranslate"><span class="pre">saga</span></code> as the name for the main branch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="004-move-to-nordicsemiconductor-github-organization.html">4. Move to Nordic Semiconductor GitHub organization</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5. Clean <code class="file docutils literal notranslate"><span class="pre">.gitignore</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="002-use-npm-package-registry.html">ADR 002: Use NPM registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="003-use-saga-as-the-main-branch.html">ADR 003: Use <code class="docutils literal notranslate"><span class="pre">saga</span></code> as the name for the main branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="004-move-to-nordicsemiconductor-github-organization.html">ADR 004: Move to Nordic Semiconductor GitHub organization</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ADR 005: Clean <code class="file docutils literal notranslate"><span class="pre">.gitignore</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
             
@@ -173,7 +162,7 @@
         
           <li><a href="README.html">Architecture Decision Records</a> &raquo;</li>
         
-      <li>5. Clean <code class="file docutils literal notranslate"><span class="pre">.gitignore</span></code></li>
+      <li>ADR 005: Clean <code class="file docutils literal notranslate"><span class="pre">.gitignore</span></code></li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -194,13 +183,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="clean-gitignore">
-<h1>5. Clean <code class="file docutils literal notranslate"><span class="pre">.gitignore</span></code><a class="headerlink" href="#clean-gitignore" title="Permalink to this headline">¶</a></h1>
-<p>A <code class="file docutils literal notranslate"><span class="pre">.gitignore</span></code> in a project should only cover artifacts caused by the contained
-source code, not those caused by the personal choice of editor and/or
-environment of a developer.</p>
-<p>This is explained in detail
-<a class="reference external" href="https://github.com/coderbyheart/first-principles/issues/30">here</a>.</p>
+  <div class="section" id="adr-005-clean-gitignore">
+<span id="adr-05-clean-gitignore"></span><h1>ADR 005: Clean <code class="file docutils literal notranslate"><span class="pre">.gitignore</span></code><a class="headerlink" href="#adr-005-clean-gitignore" title="Permalink to this headline">¶</a></h1>
+<p>A <code class="file docutils literal notranslate"><span class="pre">.gitignore</span></code> file in a project must only cover the artifacts caused by the contained source code and not those caused by the personal choice of editor or the environment of a developer.</p>
+<p>This is explained in detail in the <a class="reference external" href="https://github.com/coderbyheart/first-principles/issues/30">Clean .gitignore files issue</a>.</p>
 </div>
 
 
@@ -210,7 +196,7 @@ environment of a developer.</p>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="../../CODE_OF_CONDUCT.html" class="btn btn-neutral float-right" title="Code of Conduct" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="004-move-to-nordicsemiconductor-github-organization.html" class="btn btn-neutral float-left" title="4. Move to Nordic Semiconductor GitHub organization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="004-move-to-nordicsemiconductor-github-organization.html" class="btn btn-neutral float-left" title="ADR 004: Move to Nordic Semiconductor GitHub organization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

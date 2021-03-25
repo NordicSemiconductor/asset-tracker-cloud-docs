@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
 
   
   
@@ -38,8 +39,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Cloud Differences" href="CloudDifferences.html" />
-    <link rel="prev" title="Cell Geolocations" href="CellGeolocations.html" /> 
+    <link rel="next" title="Cloud differences" href="CloudDifferences.html" />
+    <link rel="prev" title="Cell geolocations" href="CellGeolocations.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
@@ -96,27 +97,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CellGeolocations.html">Cell Geolocations</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Versioning.html">Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
-<ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CellGeolocations.html">Cell geolocations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CloudDifferences.html">Cloud differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETSI-EN-303-645.html">Cyber security for consumer Internet of Things: baseline requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Versioning.html">Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Direnv.html">direnv</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
             
@@ -165,6 +164,8 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
+          <li><a href="Index.html">Guides</a> &raquo;</li>
+        
       <li>Cloud connectivity and protocols for the Internet of Things</li>
     
     
@@ -188,14 +189,13 @@
             
   <div class="section" id="cloud-connectivity-and-protocols-for-the-internet-of-things">
 <h1>Cloud connectivity and protocols for the Internet of Things<a class="headerlink" href="#cloud-connectivity-and-protocols-for-the-internet-of-things" title="Permalink to this headline">¶</a></h1>
-<p>This <a class="reference external" href="https://www.nordicsemi.com/Events/Webinars">Nordic Semiconductor Tech Webinar</a> should be interesting to everyone who wants to get an introduction to protocols to consider when developing a cellular IoT product.</p>
-<p>It provides an overview over the important factors that need to be considered when it comes to picking the right solution for sending your products’ data to the cloud.</p>
+<p>The <a class="reference external" href="https://webinars.nordicsemi.com/cloud-connectivity-and-protocols-5">Nordic Semiconductor Tech Webinar on Cloud connectivity and protocols for IoT</a> provides an introduction to the protocols that must be considered when developing a cellular IoT product.</p>
+<p>It provides an overview over the important factors that need to be considered when choosing the right solution for sending your product’s data to the cloud.</p>
 <div class="figure align-default" id="id1">
 <a class="reference external image-reference" href="https://www.youtube.com/watch?v=pNaBB_OFbgg"><img alt="../../_images/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.jpg" src="../../_images/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.jpg" /></a>
 <p class="caption"><span class="caption-text">Watch the recording on YouTube</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>The full recording including Q&amp;A is available <a class="reference external" href="https://webinars.nordicsemi.com/cloud-connectivity-and-protocols-5">here</a>.</p>
-<p>Slides are available <a class="reference external" href="https://coderbyheart.github.io/nordicwebinar2020/index.html">interactive, browser-based</a> or as a <a class="reference external" href="https://devzone.nordicsemi.com/cfs-file/__key/support-attachments/beef5d1b77644c448dabff31668f3a47-cfd384f9b1874d3caf1df02c9677eca4/7065.Cloud-connectivity-and-protocols-for-the-Internet-of-Things-_2D00_-Notes.pdf">PDF with all notes</a>.</p>
+<p>It is also available as an interactive, browser-based <a class="reference external" href="https://coderbyheart.github.io/nordicwebinar2020/index.html">presentation</a> and as a <a class="reference external" href="https://devzone.nordicsemi.com/cfs-file/__key/support-attachments/beef5d1b77644c448dabff31668f3a47-cfd384f9b1874d3caf1df02c9677eca4/7065.Cloud-connectivity-and-protocols-for-the-Internet-of-Things-_2D00_-Notes.pdf">PDF including the notes</a>.</p>
 </div>
 
 
@@ -204,8 +204,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="CloudDifferences.html" class="btn btn-neutral float-right" title="Cloud Differences" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="CellGeolocations.html" class="btn btn-neutral float-left" title="Cell Geolocations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="CloudDifferences.html" class="btn btn-neutral float-right" title="Cloud differences" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="CellGeolocations.html" class="btn btn-neutral float-left" title="Cell geolocations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

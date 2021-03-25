@@ -5,7 +5,7 @@ Unwired Labs API
 
 You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for the application using `Unwired Labs' <https://unwiredlabs.com/>`_ geolocation API in your deployment.
 
-To use Unwired Labs' geolocation API, store your API key as an SSM parameter and re-deploy the stack as shown:
+To use Unwired Labs' geolocation API, store your API key as an SSM parameter and redeploy the stack using the following commands:
 
 .. code-block:: bash
 

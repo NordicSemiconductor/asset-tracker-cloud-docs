@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
 
   
   
@@ -39,7 +40,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Firmware" href="../firmware/Index.html" />
-    <link rel="prev" title="Customizing the Cat Tracker web application" href="Customizing.html" /> 
+    <link rel="prev" title="Cat Tracker web application" href="Index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,39 +89,26 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Index.html">Cat Tracker web application</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Customizing.html">Customizing the Cat Tracker web application</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Cell geolocation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
             
@@ -194,11 +182,17 @@
             
   <div class="section" id="cell-geolocation">
 <span id="app-cellgeolocation"></span><h1>Cell geolocation<a class="headerlink" href="#cell-geolocation" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#locating-cells-based-on-device-data" id="id2">Locating cells based on device data</a></p></li>
+<li><p><a class="reference internal" href="#unwired-labs-api" id="id3">Unwired Labs’ API</a></p></li>
+</ul>
+</div>
 <p>If cell geolocation is implemented, the devices can be shown on the map based on the location of their cell, even before obtaining a GPS fix.
 It allows to locate devices within a radius of a few kilometers, which can be beneficial depending on your use case.
 It can be useful in the case of tracking assets like parcels, where the approximate location can be combined with known points of interest (for example, warehouses and ports), to know if a shipment has arrived at the destination.</p>
 <div class="section" id="locating-cells-based-on-device-data">
-<h2>Locating cells based on device data<a class="headerlink" href="#locating-cells-based-on-device-data" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Locating cells based on device data</a><a class="headerlink" href="#locating-cells-based-on-device-data" title="Permalink to this headline">¶</a></h2>
 <p>GPS position fixes that are acquired by the devices and the cell information (cell id, area id, MCC/MNC) of these devices are stored together and it is used to <a class="reference external" href="https://github.com/NordicSemiconductor/cell-geolocation-helpers#cellfromgeolocations">calculate the location of the cell</a>.</p>
 <p>The following image shows the location calculation of a device using the device geolocation data:</p>
 <div class="figure align-default" id="id1">
@@ -208,12 +202,12 @@ It can be useful in the case of tracking assets like parcels, where the approxim
 <p>If there is no device geolocation for the cell from your own devices, third-party services like <a class="reference external" href="https://unwiredlabs.com/">Unwired Labs</a> or <a class="reference external" href="https://rxnetworks.com/location.io#!RT-GNSS">RXNetworks</a> provide a database of cell geolocations.</p>
 </div>
 <div class="section" id="unwired-labs-api">
-<h2>Unwired Labs’ API<a class="headerlink" href="#unwired-labs-api" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">Unwired Labs’ API</a><a class="headerlink" href="#unwired-labs-api" title="Permalink to this headline">¶</a></h2>
 <p>The Unwired Labs’ geolocation API is a commercial third-party solution that provides an API for resolving cell information to geolocation.
 This is an optional feature, which you can enable.</p>
-<p>In this way it is possible to calculate the rough location of a device as soon as it sends the roaming information to the cloud.
+<p>In this way, it is possible to calculate the rough location of a device as soon as it sends the roaming information to the cloud.
 The API provides the geolocation of nearly every cell tower and by using this information, devices can be located within a few kilometers around the location of the cell tower.</p>
-<p>Note that cellular signals can travel many kilometers and <a class="reference external" href="https://www.youtube.com/watch?v=p1_0OAlTcuY">our tests</a> show that a range of 10 km and more is possible in certain conditions.</p>
+<p>Note that cellular signals can travel many kilometers and <a class="reference external" href="https://www.youtube.com/watch?v=p1_0OAlTcuY">the tests</a> show that a range of 10 km and more is possible in certain conditions.</p>
 <p>Follow the configuration guide in the respective implementation to enable Unwired Labs’ geolocation API:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../aws/UnwiredLabsAPI.html#aws-unwired-labs-api"><span class="std std-ref">AWS</span></a></p></li>
@@ -228,7 +222,7 @@ The API provides the geolocation of nearly every cell tower and by using this in
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="../firmware/Index.html" class="btn btn-neutral float-right" title="Firmware" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="Customizing.html" class="btn btn-neutral float-left" title="Customizing the Cat Tracker web application" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Index.html" class="btn btn-neutral float-left" title="Cat Tracker web application" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

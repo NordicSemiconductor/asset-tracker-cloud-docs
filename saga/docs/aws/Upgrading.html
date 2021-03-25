@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
 
   
   
@@ -88,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
@@ -110,27 +111,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
             
@@ -204,6 +193,15 @@
             
   <div class="section" id="upgrading-an-existing-installation">
 <span id="upgrading"></span><h1>Upgrading an existing installation<a class="headerlink" href="#upgrading-an-existing-installation" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#upgrading-an-existing-cat-tracker-web-application-installation" id="id1">Upgrading an existing Cat Tracker web application installation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#publishing-the-upgraded-cat-tracker-web-application-to-aws" id="id2">Publishing the upgraded Cat Tracker web application to AWS</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
 <p>If you already have an installation and you want to upgrade to the latest release, perform the following steps:</p>
 <ol class="arabic">
 <li><p>See the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/releases">release notes for the nRF Asset Tracker for AWS</a> and pay close attention to <em>Breaking Changes</em>.</p></li>
@@ -217,7 +215,7 @@ npx cdk deploy <span class="s1">&#39;*&#39;</span>
 </li>
 </ol>
 <div class="section" id="upgrading-an-existing-cat-tracker-web-application-installation">
-<h2>Upgrading an existing <em>Cat Tracker web application</em> installation<a class="headerlink" href="#upgrading-an-existing-cat-tracker-web-application-installation" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">Upgrading an existing Cat Tracker web application installation</a><a class="headerlink" href="#upgrading-an-existing-cat-tracker-web-application-installation" title="Permalink to this headline">¶</a></h2>
 <p>If you already have an installation and you want to upgrade to the latest release, perform the following steps:</p>
 <ol class="arabic">
 <li><p>See the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js/releases">release notes for the Cat Tracker web application</a> and pay close attention to <em>Breaking Changes</em>.</p></li>
@@ -229,8 +227,8 @@ npm ci
 </li>
 </ol>
 <div class="section" id="publishing-the-upgraded-cat-tracker-web-application-to-aws">
-<h3>Publishing the upgraded <em>Cat Tracker web application</em> to AWS<a class="headerlink" href="#publishing-the-upgraded-cat-tracker-web-application-to-aws" title="Permalink to this headline">¶</a></h3>
-<p>If you want to publish the upgrade to AWS, perform the steps for the initial installation as described in <a class="reference internal" href="GettingStarted/Webapp.html#aws-getting-started-app"><span class="std std-ref">Deploy the Cat Tracker web application</span></a>.</p>
+<h3><a class="toc-backref" href="#id2">Publishing the upgraded Cat Tracker web application to AWS</a><a class="headerlink" href="#publishing-the-upgraded-cat-tracker-web-application-to-aws" title="Permalink to this headline">¶</a></h3>
+<p>If you want to publish the upgrade to AWS, perform the steps for the initial installation as described in <a class="reference internal" href="GettingStarted/Webapp.html#aws-getting-started-app"><span class="std std-ref">Deploying the Cat Tracker web application</span></a>.</p>
 </div>
 </div>
 </div>

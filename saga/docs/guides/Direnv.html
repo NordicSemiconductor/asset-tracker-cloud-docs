@@ -7,12 +7,13 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>About direnv &mdash; nRF Asset Tracker v13.1.0 documentation</title>
+  <title>direnv &mdash; nRF Asset Tracker v13.1.0 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
 
   
   
@@ -39,7 +40,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Support" href="../Support.html" />
-    <link rel="prev" title="System requirements" href="SystemRequirements.html" /> 
+    <link rel="prev" title="Versioning" href="Versioning.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
@@ -96,27 +97,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CellGeolocations.html">Cell Geolocations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Versioning.html">Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
-<ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CellGeolocations.html">Cell geolocations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CloudDifferences.html">Cloud differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETSI-EN-303-645.html">Cyber security for consumer Internet of Things: baseline requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Versioning.html">Versioning</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">direnv</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
             
@@ -165,7 +164,9 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>About <em>direnv</em></li>
+          <li><a href="Index.html">Guides</a> &raquo;</li>
+        
+      <li>direnv</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -186,13 +187,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="about-direnv">
-<span id="id1"></span><h1>About <em>direnv</em><a class="headerlink" href="#about-direnv" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://direnv.net/">direnv</a> locates environment variables in a <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file in the current folder and automatically exports them. It is available as a plugin for most shells.</p>
-<p>It is used to store credentials and other configuration settings throughout this documentation.</p>
+  <div class="section" id="direnv">
+<span id="about-direnv"></span><h1>direnv<a class="headerlink" href="#direnv" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://direnv.net/">direnv</a> extension locates the environment variables in a <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file in the current folder and automatically exports them.
+It is available as a plugin for most of the shells.</p>
+<p>It is used to store the credentials and other configuration settings in nRF Asset Tracker.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You should add <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> files to your global <a class="reference external" href="https://help.github.com/en/github/using-git/ignoring-files#create-a-global-gitignore">.gitignore file</a>.</p>
+<p>You must add <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> files to your global <a class="reference external" href="https://help.github.com/en/github/using-git/ignoring-files#create-a-global-gitignore">.gitignore file</a>.</p>
 </div>
 </div>
 
@@ -203,7 +205,7 @@
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="../Support.html" class="btn btn-neutral float-right" title="Support" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="SystemRequirements.html" class="btn btn-neutral float-left" title="System requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Versioning.html" class="btn btn-neutral float-left" title="Versioning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
 
   
   
@@ -88,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../GettingStarted.html">Getting Started</a></li>
@@ -96,12 +97,12 @@
 <li class="toctree-l2 current"><a class="reference internal" href="Index.html">Getting started</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Create the working directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AWSCredentials.html">Provide your AWS credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Clone.html">Clone the project and install dependencies</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Deploy.html">Install the <em>nRF Asset Tracker</em> into your AWS account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Clone.html">Clone the project and install the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Deploy.html">Install the nRF Asset Tracker into your AWS account</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FirmwareConfiguration.html">Configure the firmware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Create device credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Flashing.html">Flashing device firmware and credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Webapp.html">Deploy the <em>Cat Tracker web application</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Flashing.html">Program the device firmware and provision the credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Webapp.html">Deploy the Cat Tracker web application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="NextSteps.html">Next steps</a></li>
 </ul>
 </li>
@@ -121,27 +122,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../devices/Index.html">Connect using a real device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/CellGeolocations.html">Cell Geolocations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/Versioning.html">Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
             
@@ -216,8 +205,8 @@
            <div itemprop="articleBody">
             
   <div class="section" id="create-the-working-directory">
-<h1>Create the working directory<a class="headerlink" href="#create-the-working-directory" title="Permalink to this headline">¶</a></h1>
-<p>We start with a blank directory:</p>
+<span id="aws-create-the-working-dir"></span><h1>Create the working directory<a class="headerlink" href="#create-the-working-directory" title="Permalink to this headline">¶</a></h1>
+<p>Create an empty directory by running the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir nrf-asset-tracker
 <span class="nb">cd</span> nrf-asset-tracker
 <span class="c1"># ~/nrf-asset-tracker</span>

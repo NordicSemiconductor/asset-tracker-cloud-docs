@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/device-cloud-protocol/state.reported.schema.json",
+  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/guides/device-cloud-protocol/state.reported.schema.json",
   "title": "Asset Tracker v2 Device Data and Configuration",
   "description": "Describes the data published by the device and its configuration options.",
   "type": "object",
   "properties": {
     "cfg": {
-      "$ref": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/device-cloud-protocol/cfg.schema.json"
+      "$ref": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/guides/device-cloud-protocol/cfg.schema.json"
     },
     "bat": {
       "description": "Battery reading in millivolt",

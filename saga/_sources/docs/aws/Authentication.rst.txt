@@ -3,6 +3,10 @@
 Authentication
 ##############
 
+.. contents::
+   :local:
+   :depth: 2
+
 The :ref:`Cat Tracker web application <aws-getting-started-app>` on AWS connects to the `AWS IoT broker <https://docs.aws.amazon.com/iot/latest/developerguide/iot-connect-devices.html>`_ using WebSockets, and the authentication is done through `AWS Cognito <https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html>`_.
 
 See the AWS documentation on `Amazon Cognito identities <https://docs.aws.amazon.com/iot/latest/developerguide/cognito-identities.html>`_ and `Policies for HTTP and WebSocket clients <https://docs.aws.amazon.com/iot/latest/developerguide/pub-sub-policy.html#pub-sub-policy-cognito>`_ for more information.
@@ -22,7 +26,7 @@ If one of the policies prohibit an action, the action is considered to be unauth
 Example
 *******
 
-See below for an example of the authentication process with the specified policies:
+Following is an example of the authentication process with the specified policies:
 
 IAM policy on the authenticated role:
 

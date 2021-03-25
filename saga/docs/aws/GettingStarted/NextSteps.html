@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
 
   
   
@@ -88,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../GettingStarted.html">Getting Started</a></li>
@@ -96,12 +97,12 @@
 <li class="toctree-l2 current"><a class="reference internal" href="Index.html">Getting started</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="WorkingDirectory.html">Create the working directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AWSCredentials.html">Provide your AWS credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Clone.html">Clone the project and install dependencies</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Deploy.html">Install the <em>nRF Asset Tracker</em> into your AWS account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Clone.html">Clone the project and install the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Deploy.html">Install the nRF Asset Tracker into your AWS account</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FirmwareConfiguration.html">Configure the firmware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Create device credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Flashing.html">Flashing device firmware and credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Webapp.html">Deploy the <em>Cat Tracker web application</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Flashing.html">Program the device firmware and provision the credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Webapp.html">Deploy the Cat Tracker web application</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Next steps</a></li>
 </ul>
 </li>
@@ -121,27 +122,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../devices/Index.html">Connect using a real device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/CellGeolocations.html">Cell Geolocations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/Versioning.html">Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../guides/Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
             
@@ -216,22 +205,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="next-steps">
-<h1>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h1>
-<p><em>Congratulations!</em> You have finished the initial set-up of the <em>nRF Asset Tracker</em> cloud components.</p>
-<p>This is all you need to do for now, some next interesting topics are:</p>
-<ul>
-<li><p>enabling <a class="reference internal" href="../UnwiredLabsAPI.html#aws-unwired-labs-api"><span class="std std-ref">Cell Geolocation</span></a></p></li>
-<li><p>once you start modifying the firmware you should</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>set up <a class="reference internal" href="../ContinuousDeployment.html#aws-continuous-deployment"><span class="std std-ref">Continuous deployment</span></a></p></li>
-<li><p>and <a class="reference internal" href="../ContinuousIntegration.html#aws-continuous-integration"><span class="std std-ref">Continuous integration of the cloud resources</span></a>,</p></li>
-<li><p>and even more advanced <a class="reference internal" href="../FirmwareContinuousIntegration.html#aws-firmware-ci"><span class="std std-ref">of the firmware</span></a>.</p></li>
+<span id="aws-next-steps"></span><h1>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h1>
+<p>At this stage, you have completed the initial setup of the nRF Asset Tracker.
+An interesting topic to explore is enabling <a class="reference internal" href="../UnwiredLabsAPI.html#aws-unwired-labs-api"><span class="std std-ref">Cell Geolocation</span></a>.</p>
+<p>Once you start modifying the firmware, you can also look into the following topics:</p>
+<ul class="simple">
+<li><p>Setting up <a class="reference internal" href="../ContinuousDeployment.html#aws-continuous-deployment"><span class="std std-ref">Continuous deployment</span></a></p></li>
+<li><p>Performing <a class="reference internal" href="../ContinuousIntegration.html#aws-continuous-integration"><span class="std std-ref">Continuous integration of the cloud resources</span></a></p></li>
+<li><p>Performing advanced <a class="reference internal" href="../FirmwareContinuousIntegration.html#aws-firmware-ci"><span class="std std-ref">Continuous integration of firmware</span></a></p></li>
 </ul>
-</div></blockquote>
-</li>
-</ul>
-<p>If you have feedback on how to improve this <em>Getting Started Guide</em>, please get in touch and share your ideas <a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">on {DevZone</a> or <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs">on GitHub</a> … we monitor these forums closely.</p>
+<p>If you have feedback on improving this <em>Getting Started Guide</em>, share your ideas in <a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a> or in the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs">GitHub repository</a>.</p>
 </div>
 
 

@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
 
   
   
@@ -38,8 +39,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="System requirements" href="SystemRequirements.html" />
-    <link rel="prev" title="Cyber Security for Consumer Internet of Things: Baseline Requirements" href="ETSI-EN-303-645.html" /> 
+    <link rel="next" title="direnv" href="Direnv.html" />
+    <link rel="prev" title="Cyber security for consumer Internet of Things: baseline requirements" href="ETSI-EN-303-645.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
@@ -96,27 +97,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CellGeolocations.html">Cell Geolocations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
-<ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CellGeolocations.html">Cell geolocations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CloudDifferences.html">Cloud differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETSI-EN-303-645.html">Cyber security for consumer Internet of Things: baseline requirements</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Direnv.html">direnv</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
             
@@ -165,6 +164,8 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
+          <li><a href="Index.html">Guides</a> &raquo;</li>
+        
       <li>Versioning</li>
     
     
@@ -187,114 +188,134 @@
            <div itemprop="articleBody">
             
   <div class="section" id="versioning">
-<h1>Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h1>
-<p>We use <a class="reference external" href="https://github.com/semantic-release/semantic-release">semantic-release</a> to automatically determine the next version of a project <strong>and</strong> publish a release in the GitHub project as well as release it to our npm organization <code class="docutils literal notranslate"><span class="pre">&#64;NordicSemiconductor</span></code>.</p>
+<span id="id1"></span><h1>Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#releasing-a-new-version-of-a-package" id="id2">Releasing a new version of a package</a></p>
+<ul>
+<li><p><a class="reference internal" href="#patch-release-fix-2-3-4-2-3-5" id="id3">Patch release (<code class="docutils literal notranslate"><span class="pre">fix</span></code>) <code class="docutils literal notranslate"><span class="pre">2.3.4</span> <span class="pre">-&gt;</span> <span class="pre">2.3.5</span></code></a></p></li>
+<li><p><a class="reference internal" href="#feature-release-feat-2-3-4-2-4-0" id="id4">Feature release (<code class="docutils literal notranslate"><span class="pre">feat</span></code>) <code class="docutils literal notranslate"><span class="pre">2.3.4</span> <span class="pre">-&gt;</span> <span class="pre">2.4.0</span></code></a></p></li>
+<li><p><a class="reference internal" href="#breaking-release-breaking-change-2-3-4-3-0-0" id="id5">Breaking Release (<code class="docutils literal notranslate"><span class="pre">BREAKING</span> <span class="pre">CHANGE:</span></code>) <code class="docutils literal notranslate"><span class="pre">2.3.4</span> <span class="pre">-&gt;</span> <span class="pre">3.0.0</span></code></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#typical-changes" id="id6">Typical changes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#updating-the-dependencies" id="id7">Updating the dependencies</a></p></li>
+<li><p><a class="reference internal" href="#refactoring" id="id8">Refactoring</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#publishing-the-releases" id="id9">Publishing the releases</a></p></li>
+</ul>
+</div>
+<p>The <a class="reference external" href="https://github.com/semantic-release/semantic-release">semantic-release</a> tool is used to automatically determine the next version of the project and publish a release in the GitHub project as well as release it to the <code class="docutils literal notranslate"><span class="pre">&#64;NordicSemiconductor</span></code> npm organization .</p>
 <p>The next version is determined by scanning the commit messages.
-They must follow <a class="reference external" href="https://github.com/semantic-release/semantic-release#commit-message-format">the Angular commit message rules</a>, and in every library <a class="reference external" href="https://github.com/marionebl/commitlint">a hook</a> will check commit messages against these rules.</p>
+The commit messages must follow the <a class="reference external" href="https://github.com/semantic-release/semantic-release#commit-message-format">Angular commit message rules</a>, and in every library <a class="reference external" href="https://github.com/marionebl/commitlint">a hook</a> will check the commit messages against these rules.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">package.json</span></code> of a project should only contain <code class="docutils literal notranslate"><span class="pre">0.0.0-development</span></code> as  the <code class="docutils literal notranslate"><span class="pre">version</span></code> property, semantic-release will ignore the value.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">package.json</span></code> of a project must contain only <code class="docutils literal notranslate"><span class="pre">0.0.0-development</span></code> as  the <code class="docutils literal notranslate"><span class="pre">version</span></code> property.
+Semantic-release will ignore the value.
+Only the published package on npm will contain the correct version number.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Only the published package on npm will contain the correct version number.</p>
-</div>
-<div class="section" id="how-to-release-a-new-version-of-a-package">
-<span id="guides-versionining-how-to-release-a-new-version-of-a-package"></span><h2>How to release a new version of a package<a class="headerlink" href="#how-to-release-a-new-version-of-a-package" title="Permalink to this headline">¶</a></h2>
-<p>Let’s assume we have a library, which has the npm version <code class="docutils literal notranslate"><span class="pre">2.3.4</span></code>.</p>
-<p>A new version will be publish by the respective project’s CI run.
-All you have to do, is use commit messages that follow the <a class="reference external" href="https://github.com/semantic-release/semantic-release#commit-message-format">schema describe here</a>.</p>
-<p>There are three commit messages that will trigger a release:</p>
-<p>Patch release:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">commit</span> <span class="n">message</span><span class="o">&gt;</span>
+<div class="section" id="releasing-a-new-version-of-a-package">
+<span id="guides-versionining-how-to-release-a-new-version-of-a-package"></span><h2><a class="toc-backref" href="#id2">Releasing a new version of a package</a><a class="headerlink" href="#releasing-a-new-version-of-a-package" title="Permalink to this headline">¶</a></h2>
+<p>Consider the example of a library, which has the npm version <code class="docutils literal notranslate"><span class="pre">2.3.4</span></code>.</p>
+<p>A new version will be published by the respective project’s CI run.
+Use the commit messages that follow the <a class="reference external" href="https://github.com/semantic-release/semantic-release#commit-message-format">schema for the commit message</a>.</p>
+<p>Following are the three commit messages that triggers a release:</p>
+<ul>
+<li><p>Patch release</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fix: &lt;commit message&gt;
 </pre></div>
 </div>
-<p>Feature release:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">feat</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">commit</span> <span class="n">message</span><span class="o">&gt;</span>
+</li>
+<li><p>Feature release</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>feat: &lt;commit message&gt;
 </pre></div>
 </div>
-<p>Breaking Release:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">scope</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">commit</span> <span class="n">message</span><span class="o">&gt;</span>
+</li>
+<li><p>Breaking Release</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;scope&gt;: &lt;commit message&gt;
 
-<span class="n">BREAKING</span> <span class="n">CHANGE</span><span class="p">:</span>
+BREAKING CHANGE:
 
-<span class="o">&lt;</span><span class="n">description</span> <span class="n">of</span> <span class="n">breaking</span> <span class="n">change</span><span class="o">&gt;</span>
+&lt;description of breaking change&gt;
 </pre></div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Note that <strong>any other</strong> commit message format <strong>will not trigger</strong> a release.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A commit message of a different format <em>will not trigger</em> a release.</p>
 </div>
 <div class="section" id="patch-release-fix-2-3-4-2-3-5">
-<h3>Patch release (<code class="docutils literal notranslate"><span class="pre">fix</span></code>) <code class="docutils literal notranslate"><span class="pre">2.3.4</span> <span class="pre">-&gt;</span> <span class="pre">2.3.5</span></code> 🐞<a class="headerlink" href="#patch-release-fix-2-3-4-2-3-5" title="Permalink to this headline">¶</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A fix is a change to the implementation which removes a bug <strong>without changing the public API</strong> (method names and signatures, exports) of the library.
-The consumer of the library must not need to change their implementation when installing the fixed version.</p>
-</div>
-<p>To release a fix (which will update the version from <code class="docutils literal notranslate"><span class="pre">2.3.4</span></code> to <code class="docutils literal notranslate"><span class="pre">2.3.5</span></code>, use the type <code class="docutils literal notranslate"><span class="pre">fix</span></code> in the commit message:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">commit</span> <span class="n">message</span><span class="o">&gt;</span>
+<h3><a class="toc-backref" href="#id3">Patch release (<code class="docutils literal notranslate"><span class="pre">fix</span></code>) <code class="docutils literal notranslate"><span class="pre">2.3.4</span> <span class="pre">-&gt;</span> <span class="pre">2.3.5</span></code></a><a class="headerlink" href="#patch-release-fix-2-3-4-2-3-5" title="Permalink to this headline">¶</a></h3>
+<p>A fix is a change to the implementation, which removes a bug <em>without changing the public API</em> (method names and signatures, exports) of the library.
+The consumer of the library need not change their implementation when installing the fixed version.</p>
+<p>To release a fix (which will update the version from <code class="docutils literal notranslate"><span class="pre">2.3.4</span></code> to <code class="docutils literal notranslate"><span class="pre">2.3.5</span></code>), use the type <code class="docutils literal notranslate"><span class="pre">fix</span></code> in the commit message:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fix: &lt;commit message&gt;
 </pre></div>
 </div>
-<p>You can optionally add a scope, which is a lowercase string used to identify the affected <em>component</em>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span><span class="p">(</span><span class="o">&lt;</span><span class="n">scope</span><span class="o">&gt;</span><span class="p">):</span> <span class="o">&lt;</span><span class="n">commit</span> <span class="n">message</span><span class="o">&gt;</span>
+<p>You can optionally add a scope, which is a lowercase string that is used to identify the affected <em>component</em>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fix<span class="o">(</span>&lt;scope&gt;<span class="o">)</span>: &lt;commit message&gt;
 </pre></div>
 </div>
-<p>Scopes are useful when the project is rather big.</p>
+<p>Scopes are useful when the project is big.</p>
 </div>
 <div class="section" id="feature-release-feat-2-3-4-2-4-0">
-<h3>Feature release (<code class="docutils literal notranslate"><span class="pre">feat</span></code>) <code class="docutils literal notranslate"><span class="pre">2.3.4</span> <span class="pre">-&gt;</span> <span class="pre">2.4.0</span></code> 🚀<a class="headerlink" href="#feature-release-feat-2-3-4-2-4-0" title="Permalink to this headline">¶</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A feature is a change to the implementation of a library which adds additional functionality <strong>without changing the public API</strong> of the library.
-You may add new exports, methods and even extra, optional method arguments, but the consumer of the library must not need to change their implementation when installing the library with the new feature.</p>
-</div>
-<p>To release a feature (which will update the version from <code class="docutils literal notranslate"><span class="pre">2.3.4</span></code> to <code class="docutils literal notranslate"><span class="pre">2.4.0</span></code>, use the type <code class="docutils literal notranslate"><span class="pre">feat</span></code> in the commit message:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">feat</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">commit</span> <span class="n">message</span><span class="o">&gt;</span>
+<h3><a class="toc-backref" href="#id4">Feature release (<code class="docutils literal notranslate"><span class="pre">feat</span></code>) <code class="docutils literal notranslate"><span class="pre">2.3.4</span> <span class="pre">-&gt;</span> <span class="pre">2.4.0</span></code></a><a class="headerlink" href="#feature-release-feat-2-3-4-2-4-0" title="Permalink to this headline">¶</a></h3>
+<p>A feature is a change to the implementation of a library which adds additional functionality <em>without changing the public API</em> of the library.</p>
+<p>You may add new exports, methods and extra method arguments that are optional, but the consumer of the library need not change their implementation when installing the library with the new feature.</p>
+<p>To release a feature (which will update the version from <code class="docutils literal notranslate"><span class="pre">2.3.4</span></code> to <code class="docutils literal notranslate"><span class="pre">2.4.0</span></code>), use the type <code class="docutils literal notranslate"><span class="pre">feat</span></code> in the commit message:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>feat: &lt;commit message&gt;
 </pre></div>
 </div>
 <p>You can optionally add a scope as well.</p>
 </div>
 <div class="section" id="breaking-release-breaking-change-2-3-4-3-0-0">
-<h3>Breaking Release (<code class="docutils literal notranslate"><span class="pre">BREAKING</span> <span class="pre">CHANGE:</span></code>) <code class="docutils literal notranslate"><span class="pre">2.3.4</span> <span class="pre">-&gt;</span> <span class="pre">3.0.0</span></code> 🚨<a class="headerlink" href="#breaking-release-breaking-change-2-3-4-3-0-0" title="Permalink to this headline">¶</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Every time the public API of the library changes in a way that requires the consumer to update their implementation <strong>you must mark the change as breaking</strong>.
-This can happen if method names and arguments are renamed, previously optional arguments become required, arguments get removed, classes get renamed.
-Even if the change is very small, as soon as you are breaking the library’s <em>contract</em> (its public API) it is considered a breaking change, <a class="reference external" href="https://semver.org/#spec-item-8">according to semver</a>.</p>
-</div>
-<p>To release a breaking release (which will update the version from <code class="docutils literal notranslate"><span class="pre">2.3.4</span></code> to <code class="docutils literal notranslate"><span class="pre">3.0.0</span></code>, use the text <code class="code docutils literal notranslate"><span class="pre">BREAKING</span> <span class="pre">CHANGE:</span></code> (followed by a space of two new-lines) in the commit message:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">refactor</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">commit</span> <span class="n">message</span><span class="o">&gt;</span>
+<h3><a class="toc-backref" href="#id5">Breaking Release (<code class="docutils literal notranslate"><span class="pre">BREAKING</span> <span class="pre">CHANGE:</span></code>) <code class="docutils literal notranslate"><span class="pre">2.3.4</span> <span class="pre">-&gt;</span> <span class="pre">3.0.0</span></code></a><a class="headerlink" href="#breaking-release-breaking-change-2-3-4-3-0-0" title="Permalink to this headline">¶</a></h3>
+<p>Whenever the public API of the library changes in a way that requires the consumer to update their implementation, <em>you must mark the change as breaking</em>.
+This can happen in the following conditions:</p>
+<ul class="simple">
+<li><p>Method names and arguments are renamed</p></li>
+<li><p>Previously optional arguments become mandatory</p></li>
+<li><p>Arguments are removed</p></li>
+<li><p>Classes are renamed</p></li>
+</ul>
+<p>Even if the change is very small, as soon as you break the library’s <em>contract</em> (its public API), it is a breaking change according to <a class="reference external" href="https://semver.org/#spec-item-8">Semantic Versioning 2.0.0</a>.</p>
+<p>To do a breaking release (which will update the version from <code class="docutils literal notranslate"><span class="pre">2.3.4</span></code> to <code class="docutils literal notranslate"><span class="pre">3.0.0</span></code>), use the text <code class="code docutils literal notranslate"><span class="pre">BREAKING</span> <span class="pre">CHANGE:</span></code> (followed by a space of two new lines) in the commit message:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>refactor: &lt;commit message&gt;
 
-<span class="n">BREAKING</span> <span class="n">CHANGE</span><span class="p">:</span>
+BREAKING CHANGE:
 
-<span class="o">&lt;</span><span class="n">description</span> <span class="n">of</span> <span class="n">breaking</span> <span class="n">change</span><span class="o">&gt;</span>
+&lt;description of breaking change&gt;
 </pre></div>
 </div>
 <p>You can optionally add a scope as well.</p>
-<p>Not that in the case of a breaking release the message type (here <code class="docutils literal notranslate"><span class="pre">refactor</span></code>) can be any valid type.</p>
+<p>Note that in the case of a breaking release, the message type (<code class="docutils literal notranslate"><span class="pre">refactor</span></code> in the example) can be any valid type.</p>
 </div>
 </div>
 <div class="section" id="typical-changes">
-<h2>Typical changes<a class="headerlink" href="#typical-changes" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="updated-dependencies">
-<h3>Updated dependencies<a class="headerlink" href="#updated-dependencies" title="Permalink to this headline">¶</a></h3>
-<p>If you are manually updating dependencies in a library, you should commit the change as a fix, so that consumers are also using the updated dependencies.</p>
+<h2><a class="toc-backref" href="#id6">Typical changes</a><a class="headerlink" href="#typical-changes" title="Permalink to this headline">¶</a></h2>
+<p>Some of the typical changes that you make on the repository are updating the dependencies or refactoring.</p>
+<div class="section" id="updating-the-dependencies">
+<h3><a class="toc-backref" href="#id7">Updating the dependencies</a><a class="headerlink" href="#updating-the-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>If you are manually updating the dependencies in a library, you must commit the change as a fix, so that the consumers also use the updated dependencies.</p>
 </div>
 <div class="section" id="refactoring">
-<h3>Refactoring<a class="headerlink" href="#refactoring" title="Permalink to this headline">¶</a></h3>
-<p>If you do a pure refactoring of a library without changing the features and the public API <strong>but</strong> want to use the refactored version in your consumers, commit the refactoring as a feature.
-After all, you are improving the library which qualifies as a feature, e.g. it could be a performance-improvement.</p>
+<h3><a class="toc-backref" href="#id8">Refactoring</a><a class="headerlink" href="#refactoring" title="Permalink to this headline">¶</a></h3>
+<p>If you perform a pure refactoring of a library without changing the features and the public API and if you require the refactored version in your consumers, commit the refactoring as a feature.
+In this case you are improving the library, which qualifies as a feature.
+For example, a performance improvement can be a feature.</p>
 </div>
 </div>
-<div class="section" id="how-releases-are-published">
-<h2>How releases are published<a class="headerlink" href="#how-releases-are-published" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="publishing-the-releases">
+<h2><a class="toc-backref" href="#id9">Publishing the releases</a><a class="headerlink" href="#publishing-the-releases" title="Permalink to this headline">¶</a></h2>
 <p>After you have pushed your changes to the remote repository, a job will be run on the CI runner.
-If the job completes successfully (e.g. if all tests pass and the linter does not report any errors), <code class="docutils literal notranslate"><span class="pre">semantic-release</span></code> will determine the next version to be released.</p>
-<p>The <em>“highest”</em> commit will <em>win</em> (<code class="docutils literal notranslate"><span class="pre">fix</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">feat</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">breaking</span> <span class="pre">change</span></code>).
-This means if the list of commit messages since the last release contains <em>only</em> fixes, the patch version will be incremented (<code class="code docutils literal notranslate"><span class="pre">2.3.4</span> <span class="pre">-&gt;</span> <span class="pre">2.3.5</span></code>).
+If the job completes successfully (for example, if all the tests pass and the linter does not report any errors), <code class="docutils literal notranslate"><span class="pre">semantic-release</span></code> will determine the next version to be released.</p>
+<p>The <em>highest</em> commit takes <em>precedence</em> (<code class="docutils literal notranslate"><span class="pre">fix</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">feat</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">breaking</span> <span class="pre">change</span></code>).
+This means that if the list of commit messages since the last release contains <em>only</em> fixes, the patch version will be incremented (<code class="code docutils literal notranslate"><span class="pre">2.3.4</span> <span class="pre">-&gt;</span> <span class="pre">2.3.5</span></code>).
 If the list of commits contains at least one new feature, then the minor version will be incremented and the patch version will be set to <code class="docutils literal notranslate"><span class="pre">0</span></code> (<code class="docutils literal notranslate"><span class="pre">2.3.4</span> <span class="pre">-&gt;</span> <span class="pre">2.4.0</span></code>).
-If the list of commits contains at least one breaking change, then the major version will be incremented and the minor and patch versions will be set to <code class="docutils literal notranslate"><span class="pre">0</span></code> (<code class="docutils literal notranslate"><span class="pre">2.3.4</span> <span class="pre">-&gt;</span> <span class="pre">3.0.0</span></code>).</p>
+If the list of commits contains at least one breaking change, then the major version will be incremented, and the minor and patch versions will be set to <code class="docutils literal notranslate"><span class="pre">0</span></code> (<code class="docutils literal notranslate"><span class="pre">2.3.4</span> <span class="pre">-&gt;</span> <span class="pre">3.0.0</span></code>).</p>
 </div>
 </div>
 
@@ -304,8 +325,8 @@ If the list of commits contains at least one breaking change, then the major ver
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="SystemRequirements.html" class="btn btn-neutral float-right" title="System requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="ETSI-EN-303-645.html" class="btn btn-neutral float-left" title="Cyber Security for Consumer Internet of Things: Baseline Requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Direnv.html" class="btn btn-neutral float-right" title="direnv" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ETSI-EN-303-645.html" class="btn btn-neutral float-left" title="Cyber security for consumer Internet of Things: baseline requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
