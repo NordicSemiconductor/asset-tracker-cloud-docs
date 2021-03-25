@@ -5,32 +5,17 @@ nRF Asset Tracker
 
 The nRF Asset Tracker aims to provide a concrete end-to-end example for an ultra-low power cellular IoT product in the asset tracker space, specifically a Cat Tracker.
 
-.. only:: not azure
+.. toctree::
+   :titlesonly:
+   :caption: Contents:
 
-   .. toctree::
-      :titlesonly:
-      :caption: Contents:
-
-      docs/project/Index.rst
-      docs/GettingStarted.rst
-      docs/aws/Index.rst
-      docs/app/Index.rst
-      docs/firmware/Index.rst
-      docs/devices/Index.rst
-
-.. only:: azure
-
-   .. toctree::
-      :titlesonly:
-      :caption: Contents:
-
-      docs/project/Index.rst
-      docs/GettingStarted.rst
-      docs/aws/Index.rst
-      docs/azure/Index.rst
-      docs/app/Index.rst
-      docs/firmware/Index.rst
-      docs/devices/Index.rst
+   docs/project/Index.rst
+   docs/GettingStarted.rst
+   docs/aws/Index.rst
+   docs/azure/Index.rst
+   docs/app/Index.rst
+   docs/firmware/Index.rst
+   docs/devices/Index.rst
 
 .. toctree::
    :titlesonly:
