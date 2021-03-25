@@ -3,15 +3,26 @@ Deploy the solution to your account
 
 .. note::
 
-    Since the project uses Azure Active Directory B2C, it is recommended to set up the nRF Asset Tracker in a dedicated subscription.
+    Since the project uses Azure Active Directory B2C, it is recommended to set up the nRF Asset Tracker in a dedicated directory and with a dedicated subscription for better cost control.
 
 To deploy the solution to your account, complete the following steps:
 
-1. In the Azure portal, navigate to the :guilabel:`Subscriptions` blade, and add a new subscription for the nRF Asset Tracker. Export the subscription ID onto the ``SUBSCRIPTION_ID`` environment variable:
+1. `Create a new Active Directory <https://portal.azure.com/#create/Microsoft.AzureActiveDirectory>`_:
+   In the Azure portal click :guilabel:`Create a resource` and search for *Azure Active Directory*.
+   Select *Azure Active Directory* and click :guilabel:`Create`.
+   Enter the desired information and click :guilabel:`Create`.
+
+#. In the Azure portal, navigate to the `Subscriptions blade <https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade>`_, and add a new subscription for the nRF Asset Tracker.   
+   Export the subscription ID onto the ``SUBSCRIPTION_ID`` environment variable:
 
    .. code-block:: bash
 
       export SUBSCRIPTION_ID="<Subscription ID>"
+
+#. Find the created subscription in the Azure Portal and give it a meaningful name (by default it will have a generic name, e.g. *Pay-as-You-Go*).
+
+#. Transfer it to the directory you have created above using the :guilabel:`Change directory` feature.
+   The transfer can take up to 10 minutes.
 
 #. Authenticate the CLI using the following command:
 
@@ -21,15 +32,11 @@ To deploy the solution to your account, complete the following steps:
 
 #. Choose a name for the solution and export it as ``APP_NAME``. In this example, we use ``nrf-asset-tracker`` as the default name.
 
-#. Deploy the solution in your preferred location (you can list the locations using ``az account list-locations``) and export it on the environment variable ``LOCATION``.
-
-#. As the recommended workflow, use a `direnv <https://direnv.net/>`_) plugin for your shell, which locates the environment variables in a :file:`.envrc` file in the project folder and automatically exports them.
-
-#. Create a new file :file:`.envrc` in the project folder and add the following environment variables:
+#. Configure your preferred location (you can list the locations using ``az account list-locations``) and export it on the environment variable ``LOCATION``.
 
    .. code-block:: bash
 
-      export LOCATION=northeurope
+      export LOCATION="<Location name>" # e.g. northeurope
 
 #. Create the resource group for the solution:
 
@@ -37,7 +44,7 @@ To deploy the solution to your account, complete the following steps:
 
       az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${APP_NAME:-nrf-asset-tracker}
 
-   Currently, it is not possible to create Active Directory B2C and application through the ARM template (see `GitHub issue <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_).
+#. Create an Azure Active Directory B2C: currently, it is not possible to create Active Directory B2C and application through the ARM template (see `GitHub issue <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_).
    You must follow the instructions in the `tutorial for registering a web application in Azure Active Directory B2C <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications>`_ and create a B2C tenant and an application.
    Use ``http://localhost:3000/`` (for local development) and ``https://${APP_NAME:-nrf-asset-tracker}app.z16.web.core.windows.net/`` as the redirect URLs.
 
