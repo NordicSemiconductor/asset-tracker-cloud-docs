@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Running the application locally with Docker &mdash; nRF Asset Tracker edbc572e7e84d0fc597c56727aa498b248905661 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Upgrading an existing installation" href="Upgrading.html" />
+    <link rel="prev" title="Deploy the Cat Tracker web application" href="GettingStarted/Webapp.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> nRF Asset Tracker
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                saga
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Azure cloud components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/Index.html">Getting started</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Running the application locally with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousIntegration.html">Continuous integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UnwiredLabsAPI.html">Unwired Labs API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">Azure IoT Shadow and Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secure-azure-function-apps-with-microsoft-b2c.html">Using Azure AD B2C to secure your Azure Functions Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">nRF Asset Tracker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Index.html">Azure cloud components</a> &raquo;</li>
+        
+      <li>Running the application locally with Docker</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/azure/RunningInDocker.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="running-the-application-locally-with-docker">
+<span id="azure-running-app-locally"></span><h1>Running the application locally with Docker<a class="headerlink" href="#running-the-application-locally-with-docker" title="Permalink to this headline">¶</a></h1>
+<p>If your system has a different version of Node.js, you can run the application locally in a <a class="reference external" href="https://hub.docker.com/r/NordicSemiconductor/asset-tracker-cloud-azure-js">Docker container</a>.</p>
+<p>To run the application locally with Docker, complete the following steps:</p>
+<ol class="arabic">
+<li><p>Export the IoT Hub connection string and the Avatar storage environment variables (located in the configuration of the function app) to the following environment variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">IOT_HUB_CONNECTION_STRING</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AVATAR_STORAGE_ACCOUNT_NAME</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AVATAR_STORAGE_ACCESS_KEY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOTA_STORAGE_ACCOUNT_NAME</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOTA_STORAGE_ACCESS_KEY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING</span></code></p></li>
+</ul>
+</li>
+<li><p>Make sure to include the following settings in your <code class="file docutils literal notranslate"><span class="pre">local.settings.json</span></code> file:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;IsEncrypted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;Values&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;IoTHubEventHubCompatibleConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;AzureWebJobsStorage&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;IoTHubEventHubName&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;SignalRConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;Host&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;CORS&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;CORSCredentials&quot;</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run the following command to list the environment variables of the function app and export them:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az functionapp config appsettings list <span class="se">\</span>
+    --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP_NAME</span><span class="k">:-</span><span class="nv">n</span><span class="si">}</span> <span class="se">\</span>
+    --name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrf</span><span class="p">-asset-tracker</span><span class="si">}</span>API <span class="p">|</span> jq -r <span class="s1">&#39;.[] | .name + &quot;=\&quot;&quot; + .value + &quot;\&quot;&quot;&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run the function app by using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm --net<span class="o">=</span>host -P <span class="se">\</span>
+    -e IOT_HUB_CONNECTION_STRING <span class="se">\</span>
+    -e AVATAR_STORAGE_ACCOUNT_NAME <span class="se">\</span>
+    -e AVATAR_STORAGE_ACCESS_KEY <span class="se">\</span>
+    -e FOTA_STORAGE_ACCOUNT_NAME <span class="se">\</span>
+    -e FOTA_STORAGE_ACCESS_KEY <span class="se">\</span>
+    -e HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING <span class="se">\</span>
+    -e UNWIREDLABS_API_KEY <span class="se">\</span>
+    -e UNWIREDLABS_API_ENDPOINT <span class="se">\</span>
+    -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir nrf-asset-tracker/azure-dev:latest <span class="se">\</span>
+    func start --typescript
+</pre></div>
+</div>
+</li>
+</ol>
+<p>You can now use <code class="docutils literal notranslate"><span class="pre">http://localhost:7071/</span></code> as your <code class="docutils literal notranslate"><span class="pre">REACT_APP_AZURE_API_ENDPOINT</span></code> for the app.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Upgrading.html" class="btn btn-neutral float-right" title="Upgrading an existing installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="GettingStarted/Webapp.html" class="btn btn-neutral float-left" title="Deploy the Cat Tracker web application" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Device-to-Cloud Protocol &mdash; nRF Asset Tracker v13.1.1 documentation</title>
+  <title>Deploy the Cat Tracker web application &mdash; nRF Asset Tracker edbc572e7e84d0fc597c56727aa498b248905661 documentation</title>
   
 
   
@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Transport and Data Protocol" href="TransportAndData.html" />
-    <link rel="prev" title="Guides" href="../Index.html" /> 
+    <link rel="next" title="Running the application locally with Docker" href="../RunningInDocker.html" />
+    <link rel="prev" title="Create device credentials" href="DeviceCredentials.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,24 +98,36 @@
 <li class="toctree-l1"><a class="reference internal" href="../../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../devices/Index.html">Connect using a real device</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Resources</span></p>
+<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../Index.html">Guides</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Device-to-Cloud Protocol</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="TransportAndData.html">Transport and Data Protocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FourKindsOfData.html">Four kinds of data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SensorDataAndConfiguration.html">Device data and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/Index.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aws/Index.html">AWS cloud components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Index.html">Azure cloud components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="Index.html">Getting started</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="WorkingDirectory.html">Create the working directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Create device credentials</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Deploy the Cat Tracker web application</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CellGeolocations.html">Cell geolocations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CloudDifferences.html">Cloud differences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ETSI-EN-303-645.html">Cyber security for consumer Internet of Things: baseline requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Versioning.html">Versioning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Direnv.html">direnv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RunningInDocker.html">Running the application locally with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DeviceCredentials.html">Device credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ContinuousDeployment.html">Continuous deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ContinuousIntegration.html">Continuous integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../UnwiredLabsAPI.html">Unwired Labs API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IoTShadowAndTopics.html">Azure IoT Shadow and Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../secure-azure-function-apps-with-microsoft-b2c.html">Using Azure AD B2C to secure your Azure Functions Apps</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../app/Index.html">Cat Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../firmware/Index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../adr/README.html">Architecture Decision Records</a></li>
@@ -169,16 +181,18 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../Index.html">Guides</a> &raquo;</li>
+          <li><a href="../Index.html">Azure cloud components</a> &raquo;</li>
         
-      <li>Device-to-Cloud Protocol</li>
+          <li><a href="Index.html">Getting started</a> &raquo;</li>
+        
+      <li>Deploy the Cat Tracker web application</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/guides/device-cloud-protocol/Index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/azure/GettingStarted/Webapp.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -192,19 +206,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="device-to-cloud-protocol">
-<span id="device-cloud-protocol"></span><h1>Device-to-Cloud Protocol<a class="headerlink" href="#device-to-cloud-protocol" title="Permalink to this headline">¶</a></h1>
-<p>This section documents the protocol and the considerations that were made when selecting the device-to-cloud protocol.</p>
-<p><em>Communication</em> is the most important aspect to optimize when developing an ultra-low power product since initiating and maintaining a network connection is relatively expensive compared to the other device operations (for example, reading a sensor value).
-Reducing modem uptime and minimizing the total amount of transferred data results in longer battery life and reduced cost of data transfer.</p>
-<p>To maximize the advantages of the solution, it is recommended to revisit the described principles and customize them to your specific needs.</p>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Subpages:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="TransportAndData.html">Transport and Data Protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="FourKindsOfData.html">Four kinds of data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SensorDataAndConfiguration.html">Device data and configuration</a></li>
+  <div class="section" id="deploy-the-cat-tracker-web-application">
+<span id="azure-getting-started-app"></span><h1>Deploy the Cat Tracker web application<a class="headerlink" href="#deploy-the-cat-tracker-web-application" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#view-your-device" id="id1">View your device</a></p></li>
 </ul>
+</div>
+<p>To deploy the Cat Tracker web application to Azure, complete the following steps:</p>
+<div class="section" id="view-your-device">
+<h2><a class="toc-backref" href="#id1">View your device</a><a class="headerlink" href="#view-your-device" title="Permalink to this headline">¶</a></h2>
+<p>After logging in, your device that was provisioned previously shows up in the list of cats.</p>
 </div>
 </div>
 
@@ -214,8 +226,8 @@ Reducing modem uptime and minimizing the total amount of transferred data result
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="TransportAndData.html" class="btn btn-neutral float-right" title="Transport and Data Protocol" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../Index.html" class="btn btn-neutral float-left" title="Guides" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../RunningInDocker.html" class="btn btn-neutral float-right" title="Running the application locally with Docker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="DeviceCredentials.html" class="btn btn-neutral float-left" title="Create device credentials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

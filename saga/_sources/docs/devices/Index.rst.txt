@@ -27,3 +27,4 @@ For the device to connect, you need to complete the following steps:
 
    FlashingCertificate/Index.rst
    TroubleShooting.rst
+   cloud-protocol/Index.rst

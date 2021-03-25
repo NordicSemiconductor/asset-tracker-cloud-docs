@@ -7,7 +7,13 @@ Automate building of HEX files for your nRF Connect SDK application
 
     This guide was originally published `on the DevZone blog <https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/automate-building-of-hex-files-for-your-nrf-connect-sdk-application-using-circleci>`_.
 
-Continuous delivery is an important aspect of short Time to market and since the nRF9160 DK supports `firmware over the air upgrades <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/aws_fota/README.html?highlight=aws%20fota>`_ we want to ship a new firmware to our development kits every time we change the application.
+.. only:: not saga
+
+    Continuous delivery is an important aspect of short Time to market and since the nRF9160 DK supports `firmware over the air upgrades <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/aws_fota/README.html>`_ we want to ship a new firmware to our development kits every time we change the application.
+
+.. only:: saga
+
+    Continuous delivery is an important aspect of short Time to market and since the nRF9160 DK supports firmware over the air upgrades `for AWS <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/aws_fota/README.html>`_ and `for Azure <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/azure_fota/README.html>`_ we want to ship a new firmware to our development kits every time we change the application.
 
 .. figure:: ./images/github-release-with-hex-files.png
    
