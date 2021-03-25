@@ -1,7 +1,13 @@
-Cloud Differences
+.. _cloud-differences:
+
+Cloud differences
 #################
 
-This document records key differences between the reference AWS implementation and other Cloud Providers IoT implementation:
+.. contents::
+   :local:
+   :depth: 2
+
+This guide describes the key differences between the reference AWS implementation and other IoT implementations by different cloud providers.
 
 Google Cloud Platform (GCP)
 ***************************
@@ -10,7 +16,7 @@ Authentication
 ==============
 
 Devices connect to the broker host using TLS 1.2, but authenticate against MQTT using a username (any) and a JWT token, which has been signed with the device key.
-Which means devices need to be provisioned `with the TLS Root Certitifcates <https://cloud.google.com/iot/docs/how-tos/mqtt-bridge#using_a_long-term_mqtt_domain>`_ AND the device-specific keypair.
+This means that the devices must be provisioned with the `TLS Root Certificates <https://cloud.google.com/iot/docs/how-tos/mqtt-bridge#using_a_long-term_mqtt_domain>`_ and the device-specific keypair.
 
 Digital Twin
 ============
@@ -18,17 +24,18 @@ Digital Twin
 GCP has Configuration (*AWS: desired*) and State (*AWS: reported*).
 
 Devices receive their configuration by subscribing to the ``/devices/${deviceId}/config`` topic.
-On successfull subscription they will receive their configuration on this topic.
-If the configuration is changed, the updated config will be published to the topic.
+On successful subscription, the devices will receive the configuration on this topic.
+If the configuration is changed, the updated configuration will be published to the topic.
 There is no *delta*.
 
 Devices publish their state to ``/devices/${deviceId}/state`` topic.
-They always must publish the *entire state*, there is no native support for partial update
+The devices must always publish the *entire state*.
+There is no native support for partial updates.
 
 Websockets
 ==========
 
-The IoT Core does not support Websocket connections which is used in the app to get notified in real-time about changes on device state.
+The IoT Core does not support Websocket connections, which is used in the app to get notifications about changes on the device state in real time.
 
 Microsoft Azure
 ***************
@@ -36,5 +43,4 @@ Microsoft Azure
 Device Provisioning Service
 ===========================
 
-Azure also supports Just-in-Time-Provisioning, but this process is not transparent to the device.
-
+Azure supports Just-in-Time Provisioning, but this process is not transparent to the device.

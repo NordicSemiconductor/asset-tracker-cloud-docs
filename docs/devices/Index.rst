@@ -20,11 +20,10 @@ For the device to connect, you need to complete the following steps:
    * `nRF9160 DK application firmware update <https://infocenter.nordicsemi.com/topic/ug_nrf91_dk_gsg/UG/nrf91_DK_gsg/updating_application_firmware.html>`_
    * `Thingy:91 application firmware update <https://infocenter.nordicsemi.com/topic/ug_nc_programmer/UG/nrf_connect_programmer/ncp_pgming_thingy91_usb.html>`_
 
-Documentation
-*************
 
 .. toctree::
    :titlesonly:
+   :caption: Subpages:
 
    FlashingCertificate/Index.rst
    TroubleShooting.rst

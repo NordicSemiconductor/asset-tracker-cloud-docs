@@ -20,14 +20,14 @@ Use the CLI to provision the device certificates:
 
     node cli flash "<imei>" -f /path/to/firmware.hex
     # default secTag is 42
-    # default board is the Thingy:91, use --dk to flash a DK
-    # when flashing a Thingy you most likely need to override the default port: -p /dev/ttyACM2
-    # pass --help to see additional options, e.g. how to use a different secTag
+    # default board is the Thingy:91, use --dk to program a DK
+    # when programming a Thingy:91, most likely you need to override the default port: -p /dev/ttyACM2
+    # pass --help to see the additional options, for example, option that enables the use of a different secTag
 
 Provisioning of the certificate using CLI also results in the following actions:
 
-1. Programming the `AT client sample <https://github.com/NordicSemiconductor/at_client-hex>`_ onto device
-#. Provisioning the device credentials created :ref:`in the previous step <aws-device-credentials>`
-#. Programming of the firmware that you have :ref:`configured and built before <firmware-configuration>` to the device
+1. Programming of the `AT client sample <https://github.com/NordicSemiconductor/at_client-hex>`_ onto the device
+#. Provisioning of the :ref:`created device credentials <aws-device-credentials>`
+#. Programming of the :ref:`configured and built firmware <firmware-configuration>` to the device
 
 .. body_end

@@ -1,13 +1,17 @@
-3. Use ``saga`` as the name for the main branch
-###############################################
+.. _adr-03-use-saga:
 
-Historically, Git and other software use terms such as ``master/slave``, ``whitelist/blacklist`` which are based on racial concepts.
-Their continued use maintains the racial stereo-types they depict.
+ADR 003: Use ``saga`` as the name for the main branch
+#####################################################
+
+Historically, Git and other software use terms such as ``master/slave``, ``whitelist/blacklist``, which are based on racial concepts.
+Their continued use maintains the racial stereotypes they depict.
 Better alternatives in meaning and technical correctness exist, like ``leader/follower``, ``blocklist/allowlist``.
 
-In the Nordic mythology, a *saga* is a long continuous recollection of histories of stories about the history of humans, legends and gods. This idea reflects very well what happens in a Git repository.
-Changes happen in branches (some teams tie them to *User Stories*, which are sometimes directly, sometimes loosely coupled to the main branch.
-Once they are finished they get added to the main branch, or get appended in case of a rebase.
+In the Nordic mythology, a ``saga`` is a long, continuous recollection of stories about the history of humans, legends, and Gods.
+The term ``saga`` reflects very well what happens in a Git repository.
+Changes happen in branches (some teams tie them to *User Stories*, which are sometimes directly or loosely coupled to the main branch).
+Once the changes are finalized, they get added to the main branch, or get appended in the case of a rebase.
 The mental model of a big book of stories fits this process very well.
 
-Therefore the main branch in this project is named ``saga``. ``master`` shall not be used.
+Therefore, the main branch in this project is named ``saga``.
+``master`` must not be used.

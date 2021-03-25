@@ -1,7 +1,9 @@
-4. Move to Nordic Semiconductor GitHub organization
-###################################################
+.. _adr-04-move-to-nordicsemi:
 
-In February 2021 the project is moved to the official Nordic Semiconductor GitHub organization (``NordicSemiconductor``) from the ``bifravst`` GitHub organization.
-This move was caused by the `Bifravst project being promoted to an official Nordic Semiconductor open-source project <https://github.com/bifravst/bifravst/issues/56>`_ alongside with the release of the firmware in `nRF Connect SDK <https://github.com/nrfconnect/sdk-nrf>`_ as ``asset_tracker_v2`` application.
+ADR 004: Move to Nordic Semiconductor GitHub organization
+#########################################################
 
-This includes a rename of the project to *nRF Asset Tracker*.
+In February 2021, the project was moved from the ``Bifravst`` GitHub organization to the official Nordic Semiconductor GitHub organization (``Nordic Semiconductor``).
+This move was caused by the `promotion of the Bifravst project into an official Nordic Semiconductor open-source project <https://github.com/bifravst/bifravst/issues/56>`_ with the release of the firmware in `nRF Connect SDK <https://github.com/nrfconnect/sdk-nrf>`_ as `nRF9160: Asset Tracker v2 <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/1.5.0/nrf/applications/asset_tracker_v2/README.html>`_ application.
+
+The project is renamed to nRF Asset Tracker.

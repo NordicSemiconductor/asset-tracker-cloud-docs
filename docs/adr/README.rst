@@ -1,12 +1,15 @@
+.. _adr_index:
+
 Architecture Decision Records
 #############################
 
-This folder contains Architecture Decision Records (ADRs) which apply to the entire project.
+This section contains the Architecture Decision Records (ADRs), which apply to the entire project.
 
-If you want to learn more about ADRs you might find `this article <http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions>`_ and `this video <https://www.youtube.com/watch?v=rwfXkSjFhzc>`_ helpful.
+To know more about ADRs, see `Documenting architecture decisions <http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions>`_ and the video on `Communicating and documenting architectural decisions <https://www.youtube.com/watch?v=rwfXkSjFhzc>`_.
 
 .. toctree::
    :titlesonly:
    :glob:
-
+   :caption: Subpages:
+   
    *
