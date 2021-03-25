@@ -16,8 +16,6 @@ The nRF Asset Tracker aims to provide a concrete end-to-end example for an ultra
    docs/firmware/Index.rst
    docs/devices/Index.rst
 
-
-
 .. toctree::
    :titlesonly:
    :caption: Resources

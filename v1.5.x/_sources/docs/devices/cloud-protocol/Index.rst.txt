@@ -1,4 +1,4 @@
-.. _device-cloud-protocol:
+.. _cloud-protocol:
 
 Device-to-Cloud Protocol
 ########################
@@ -15,6 +15,5 @@ To maximize the advantages of the solution, it is recommended to revisit the des
    :caption: Subpages:
 
    TransportAndData.rst
-   FourKindsOfData.rst
    SensorDataAndConfiguration.rst
    

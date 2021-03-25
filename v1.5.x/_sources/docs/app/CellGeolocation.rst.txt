@@ -38,4 +38,11 @@ Note that cellular signals can travel many kilometers and `the tests <https://ww
 
 Follow the configuration guide in the respective implementation to enable Unwired Labs' geolocation API:
 
-* :ref:`AWS <aws-unwired-labs-api>`
+.. only:: not saga
+
+   * :ref:`AWS <aws-unwired-labs-api>`
+
+.. only:: saga
+
+   * :ref:`AWS <aws-unwired-labs-api>`
+   * :ref:`Azure <azure-unwired-labs-api>`

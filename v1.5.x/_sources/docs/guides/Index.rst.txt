@@ -6,7 +6,7 @@ Guides
 .. toctree::
    :titlesonly:
 
-   device-cloud-protocol/Index.rst
+   FourKindsOfData.rst
    AutomateHEXFileBuilding.rst
    CellGeolocations.rst
    Cloud-connectivity-and-protocols-for-the-Internet-of-Things.rst
