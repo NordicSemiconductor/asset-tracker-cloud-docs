@@ -94,8 +94,8 @@ jobs:
         if: github.ref == 'refs/heads/saga' && github.event_name == 'push'
         run: |
           git pull --ff-only
+          RELEASE=`git describe --abbrev=0 --tags --always | tr -d '\n'`
           echo "VERSION=saga" >> $GITHUB_ENV
-          RELEASE=`git describe --abbrev=0 --tags | tr -d '\n'`
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
           echo "AUDIENCE=saga" >> $GITHUB_ENV
 
