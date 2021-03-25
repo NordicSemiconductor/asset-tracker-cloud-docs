@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Unwired Labs API &mdash; nRF Asset Tracker 10550f4ce784da36e5a1b7fac8ed236e253d4963 documentation</title>
+  <title>Unwired Labs API &mdash; nRF Asset Tracker v13.2.2 documentation</title>
   
 
   
@@ -194,11 +194,11 @@
 <span id="azure-unwired-labs-api"></span><h1>Unwired Labs API<a class="headerlink" href="#unwired-labs-api" title="Permalink to this headline">¶</a></h1>
 <p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for the application using <a class="reference external" href="https://unwiredlabs.com/">Unwired Labs’</a> geolocation API in your deployment.</p>
 <p>To use Unwired Labs’ LocationAPI, provide the <code class="docutils literal notranslate"><span class="pre">unwiredlabsApiKey</span></code> parameter when deploying the solution:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group create --resource-group <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">bifravst</span><span class="si">}</span> <span class="se">\</span>
-    --mode Complete --name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">bifravst</span><span class="si">}</span> <span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group create --resource-group <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrf</span><span class="p">-asset-tracker</span><span class="si">}</span> <span class="se">\</span>
+    --mode Complete --name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrf</span><span class="p">-asset-tracker</span><span class="si">}</span> <span class="se">\</span>
     --template-file azuredeploy.json <span class="se">\</span>
     --parameters <span class="se">\</span>
-        <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">bifravst</span><span class="si">}</span> <span class="se">\</span>
+        <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrf</span><span class="p">-asset-tracker</span><span class="si">}</span> <span class="se">\</span>
         <span class="nv">location</span><span class="o">=</span><span class="nv">$LOCATION</span> <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
         <span class="nv">b2cTenant</span><span class="o">=</span><span class="nv">$B2C_TENANT</span> <span class="se">\</span>
         <span class="nv">unwiredlabsApiKey</span><span class="o">=</span><span class="s2">&quot;&lt;your API key&gt;&quot;</span>
@@ -210,7 +210,7 @@ Otherwise, this function will return a <code class="docutils literal notranslate
 <p class="admonition-title">Note</p>
 <p>Unwired Lab’s LocationAPI is free for low volumes.
 However, <a class="reference external" href="https://opencellid.org/#zoom=16&amp;lat=37.77889&amp;lon=-122.41942">OpenCellid</a> allows free use of the underlying dataset.
-If it is relevant for you, vote in the <a class="reference external" href="https://github.com/bifravst/azure/issues/403">Integrate OpenCelliD data issue</a>.</p>
+If it is relevant for you, vote in the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/5">Integrate OpenCelliD data issue</a>.</p>
 </div>
 </div>
 
