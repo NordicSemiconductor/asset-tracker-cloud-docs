@@ -32,6 +32,11 @@ jobs:
           export PATH=$PATH:/home/runner/.local/bin
           errlog=$(mktemp)
           export AUDIENCE=${{ matrix.audience }}
+          # Remove Azure from release builds
+          if [[ "${{ matrix.audience }}" == "release" ]]; then
+            cat index.rst | grep -v docs/azure > index-no-azure.rst
+            mv index-no-azure.rst index.rst
+          fi
           make html 2> $errlog
           if [[ -s "$errlog" ]]; then
             cat $errlog
@@ -119,6 +124,11 @@ jobs:
         run: |
           echo "Updating documentation for version ${{ env.VERSION }} release ${{ env.RELEASE }}...";
           export PATH=$PATH:/home/runner/.local/bin
+          # Remove Azure from release builds
+          if [[ "${AUDIENCE}" == "release" ]]; then
+            cat index.rst | grep -v docs/azure > index-no-azure.rst
+            mv index-no-azure.rst index.rst
+          fi
           # Generate Documentation
           make html
           # Clone gh-pages branch
