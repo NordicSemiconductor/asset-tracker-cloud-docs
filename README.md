@@ -14,3 +14,18 @@ Cat Tracker.
 
 > :information_source:
 > [Read the complete nRF Asset Tracker documentation](https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/).
+
+## How this documentation is published
+
+This documentation is built using [Sphinx](https://www.sphinx-doc.org/), and
+right now serves a version of the documentation under the
+[`saga` directory](https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/tree/gh-pages/saga)
+in the `gh-pages` branch of this repository and one under
+[`v1.5.x`](https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/tree/gh-pages/v1.5.x).
+
+A deployment is trigger by pushing to the respective branch and automated using
+GitHub actions, see [./github/workflows/test-and-release.yaml].
+
+The build for the release (`v1.5.x`) does not include the Azure documentation.
+The two variants are built from the same source so there is not ongoing
+maintenance of a _feature branch_.
