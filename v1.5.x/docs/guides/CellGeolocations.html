@@ -7,12 +7,13 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Cell Geolocations &mdash; nRF Asset Tracker 9f7b120cc287856af7522d5dea1f77fb62118ade documentation</title>
+  <title>Cell geolocations &mdash; nRF Asset Tracker eff353451c4e66d0b95aa436a5de4cec2e5ae108 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
 
   
   
@@ -88,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
@@ -96,27 +97,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Cell Geolocations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Versioning.html">Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
-<ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Cell geolocations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CloudDifferences.html">Cloud differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETSI-EN-303-645.html">Cyber security for consumer Internet of Things: baseline requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Versioning.html">Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Direnv.html">direnv</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
             
@@ -165,7 +164,9 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Cell Geolocations</li>
+          <li><a href="Index.html">Guides</a> &raquo;</li>
+        
+      <li>Cell geolocations</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -187,52 +188,68 @@
            <div itemprop="articleBody">
             
   <div class="section" id="cell-geolocations">
-<h1>Cell Geolocations<a class="headerlink" href="#cell-geolocations" title="Permalink to this headline">¶</a></h1>
+<h1>Cell geolocations<a class="headerlink" href="#cell-geolocations" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#assisted-gps-agps" id="id1">Assisted GPS (AGPS)</a></p></li>
+<li><p><a class="reference internal" href="#geolocating-cells" id="id2">Geolocating cells</a></p>
+<ul>
+<li><p><a class="reference internal" href="#geolocating-cells-using-other-devices" id="id3">Geolocating cells using other devices</a></p></li>
+<li><p><a class="reference internal" href="#geolocating-cells-using-third-party-apis" id="id4">Geolocating cells using third-party APIs</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
 <p>Locating a device is an important aspect of any IoT solution.
-In case of an asset tracker (like the Cat Tracker), it’s one of the primary functions.
-But acquiring a GPS fix is sometimes not possible, e.g. when the device is indoors.
-In these situation other data can be used to approximate the device’s location.
-If the device has a cellular connection, the id of the cell(s) the device modem is communicating with can be used to triangulate its location.
-Smartphones use this technique (and even combine data from other wireless networks) to quickly estimate a location down to a few meters.
-Knowing roughly <em>where</em> the device is, is then used by the GPS module to speed up the time to the first GPS fix since it can limit the number of GPS sattelites it queries to the ones that should currently be visible on the sky.</p>
-<p>Smartphones however are multiple orders of magnitudes more powerful <em>and</em> there is a concrete need to have location information <em>on the device</em> quickly (e.g. for showing the user’s location in a navigation application while the device is indoors).
-Smartphones have location-dependend features, while most IoT devices wont have them.
-For example the Cat Tracker has no feature that depends on a location, it will only <em>report</em> the location to the cloud backend, and it’s the mobile app which is visualizing the Cat Tracker’s location has a need to <em>know</em> the device location.</p>
+It is one of the primary functions in the case of an asset tracker (like the Cat Tracker).
+But sometimes, acquiring a GPS fix is not possible, for example, when the device is indoors.
+In such a situation, other data can be used to approximately calculate the location of the device.
+If the device has a cellular connection, the ID of the cells with which the device modem communicates can be used to calculate its location.
+Smartphones use this technique and combine the data from other wireless networks to quickly estimate a location down to a few meters.
+The approximate location of the device is then used by the GPS module to speed up the time to the first GPS fix since it can limit the number of GPS satellites that must be queried to the ones that are currently visible in the sky.</p>
+<p>However, smartphones are many times more powerful and there is a concrete need to have the location information <em>on the device</em> instantly (for example, for showing the location of the user in a navigation application while the device is indoors).
+Smartphones have location-dependent features, while most of the IoT devices will not have such features.
+For example, the Cat Tracker has no feature that depends on a location, it will only <em>report</em> the location to the cloud backend.
+In this case, only the mobile app that visualizes the location of the Cat Tracker requires the location of the device.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Since it is much more efficient to resolve cell geolocations on the cloud it’s the cloud backend’s responsibility.</p>
+<p>Since it is much more efficient to resolve cell geolocations on the cloud, this can be ideally the responsibility of the cloud backend.</p>
 </div>
 <div class="section" id="assisted-gps-agps">
-<h2>Assisted GPS (AGPS)<a class="headerlink" href="#assisted-gps-agps" title="Permalink to this headline">¶</a></h2>
-<p>The only <em>location-dependend</em> feature on the Cat Tracker is AGPS, which tremendously speeds of the time to acquire the first GPS fix (seconds instead of minutes).
-But there is no need to have complex location triangulation based on mobile network cells or WiFi MAC Addresses, it is sufficient to have an up-to-date <a class="reference external" href="https://en.wikipedia.org/wiki/GPS_signals#Almanac">GPS almanac</a> and know the rough location on the globe, which is provided by the mobile network operators country code.
-This is sufficient to provide the GPS module with the data it needs for a quick GPS fix.</p>
+<h2><a class="toc-backref" href="#id1">Assisted GPS (AGPS)</a><a class="headerlink" href="#assisted-gps-agps" title="Permalink to this headline">¶</a></h2>
+<p>The only <em>location-dependent</em> feature on the Cat Tracker is AGPS, which tremendously speeds up the time to acquire the first GPS fix (seconds instead of minutes).
+Complex location triangulation based on mobile network cells or Wi-Fi MAC Addresses is not required.
+It is sufficient to have an up-to-date <a class="reference external" href="https://en.wikipedia.org/wiki/GPS_signals#Almanac">GPS almanac</a> and an approximate location, which can be derived from the mobile network operator’s country code.
+This data is sufficient for the GPS module for calculating a quick GPS fix.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/9">AGPS is currently not implemented in the Asset Tracker v2</a>.</p>
 </div>
 </div>
 <div class="section" id="geolocating-cells">
-<h2>Geolocating cells<a class="headerlink" href="#geolocating-cells" title="Permalink to this headline">¶</a></h2>
-<p>As mentioned above, on the UI the user is interested to know <em>where</em> the device is as soon as possible, even an approximate location can be sufficient: depending on the tracked subject, a few hundred meters accuracy may be enough.
-And an approximate position is always better then no location information at all (if the device is unable to acquire a GPS fix).
-Therefore it is beneficial to geolocate the current mobile network cell.</p>
+<h2><a class="toc-backref" href="#id2">Geolocating cells</a><a class="headerlink" href="#geolocating-cells" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned above, on the UI, the user may require to know the <em>location</em> of the device instantly.
+Depending on the tracked subject, an accuracy of a few hundred meters may be enough.
+Thus, an approximate location can be sufficient.
+An approximate position is always better than the absence of the location information (if the device is unable to acquire a GPS fix).
+Therefore, it is beneficial to geolocate the current mobile network cell.</p>
 <div class="section" id="geolocating-cells-using-other-devices">
-<h3>Geolocating cells using other devices<a class="headerlink" href="#geolocating-cells-using-other-devices" title="Permalink to this headline">¶</a></h3>
-<p>Resolving the cell location on the cloud backend has unique advantages over resolving it on the device: it removes the firmware image size and memory usage and it can leverage other devices past GPS fixes.
-If many devices are closely located it saves a lot of resource because a cell’s geolocation only needs to be resolved once and then can be made available to all device.
-This should also be the preferred aproach when developing an IoT product that has location-specific features that can rely on the aproximate location of cell towers to operate.
-If a device knows its cell tower it is mormally safe to assume that it has an internet connection in order to request the approximate location from the cloud.
+<h3><a class="toc-backref" href="#id3">Geolocating cells using other devices</a><a class="headerlink" href="#geolocating-cells-using-other-devices" title="Permalink to this headline">¶</a></h3>
+<p>Resolving the cell location on the cloud backend has unique advantages over resolving it on the device.
+It removes the limitations caused by the firmware image size and the memory usage on the device and it can attend to other devices after GPS fixes.
+If many devices are closely located, it saves a lot of resources since a cell’s geolocation needs to be resolved only once and then it can be made available to all the devices.
+This must be the preferred approach when developing an IoT product that has location-specific features and relies on the approximate location of cell towers to operate.
+If a device knows its cell tower, it is normally safe to assume that it has an internet connection to request the approximate location from the cloud.
 This allows to offload expensive calculations to the cloud and reduce the resource usage on the device.</p>
-<p>In the nRF Asset Tracker every time a device reports a GPS fix, that position is stored together with the cell id.
-Over time this builds a cell location database that is independet from a third party API and up to date.
-It is used as the primary means of geolocating cells in the nRF Asset Tracker.
-Only if a cell has not previously been geolocated by a device will the third-party API be called, <strong>if it is enabled</strong>.</p>
+<p>In the nRF Asset Tracker, whenever a device reports a GPS fix, the position is stored together with the cell ID.
+Over time, an up-to-date cell location database that is independent from a third-party API is built.
+This database is used as the primary means of geolocating cells in the nRF Asset Tracker.
+The third-party API will be called (<em>if it is enabled</em>) only if a cell has not been geolocated by a device previously.</p>
 </div>
 <div class="section" id="geolocating-cells-using-third-party-apis">
-<h3>Geolocating cells using third-party APIs<a class="headerlink" href="#geolocating-cells-using-third-party-apis" title="Permalink to this headline">¶</a></h3>
-<p>Third-party APIs and services like <a class="reference external" href="https://unwiredlabs.com/">UnwiredLabs</a> and <a class="reference external" href="https://www.cellmapper.net/">CellMapper</a> have a database of cell tower locations and provide an API to query against them.
-The nRF Asset Tracker implements the optional resolution on the cloud side using <em>UnwiredLabs</em> on <a class="reference internal" href="../aws/UnwiredLabsAPI.html#aws-unwired-labs-api"><span class="std std-ref">AWS</span></a> for the cells that have not been geolocated by the devices.</p>
+<h3><a class="toc-backref" href="#id4">Geolocating cells using third-party APIs</a><a class="headerlink" href="#geolocating-cells-using-third-party-apis" title="Permalink to this headline">¶</a></h3>
+<p>Third-party APIs and services like <a class="reference external" href="https://unwiredlabs.com/">UnwiredLabs</a> and <a class="reference external" href="https://www.cellmapper.net/">CellMapper</a> have a database of cell tower locations and provide an API to query against these locations.
+The nRF Asset Tracker implements the optional resolution on the cloud side using <a class="reference internal" href="../aws/UnwiredLabsAPI.html#aws-unwired-labs-api"><span class="std std-ref">UnwiredLabs on AWS</span></a> for the cells that have not been geolocated by the devices.</p>
 </div>
 </div>
 </div>

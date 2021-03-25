@@ -1,24 +1,21 @@
-Contributing
-############
+.. _contributing:
 
-.. note::
+Contributing to the project
+###########################
 
-    We maintain this guide for those of you who are curious to find out how to get started contributing to the *nRF Asset Tracker* code base.
-
-Thanks so much for your interest in contributing to the *nRF Asset Tracker*! We really appreciate your help. **We look forward to working with you!**
-
-But first, please read our :ref:`Code of Conduct <code-of-conduct>`.
+This guide is intended for providing information on contributing to the nRF Asset Tracker codebase.
+As a first step, see :ref:`Code of Conduct <code-of-conduct>`.
 
 Finding open issues
 *******************
 
-We maintain a list of `help wanted <https://github.com/orgs/NordicSemiconductor/projects/2?card_filter_query=label%3A%22help+wanted%22>`_ issues in our project board, which are a good starting point.
+A list of `help-wanted issues <https://github.com/orgs/NordicSemiconductor/projects/2?card_filter_query=label%3A%22help+wanted%22>`_ is maintained in the project board.
+These issues are good starting points for contributing to the project.
 Some of them require in-depth knowledge about the technology in use.
 
-Issues tagged with `good first issues <https://github.com/orgs/NordicSemiconductor/projects/2?card_filter_query=label%3A%22good+first+issue%22>`_ are very small issues that are selected to be a great starting point in making yourself familiar with the codebase.
+Issues tagged with `good first issues <https://github.com/orgs/NordicSemiconductor/projects/2?card_filter_query=label%3A%22good+first+issue%22>`_ are very small issues that can help you to get familiar with the codebase.
 
 Improving documentation
 ***********************
 
-`The nRF Asset Tracker documention <https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/>`_ can always be improved.
-If you find something to improve, even something small like a typo, please do not hesitate to open a new PR.
+If you have suggestions on improving the `nRF Asset Tracker documentation <https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/>`_, open a new PR in the project repository.

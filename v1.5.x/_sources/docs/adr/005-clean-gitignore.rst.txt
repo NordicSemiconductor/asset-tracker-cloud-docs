@@ -1,9 +1,8 @@
-5. Clean :file:`.gitignore`
-###########################
+.. _adr-05-clean-gitignore:
 
-A :file:`.gitignore` in a project should only cover artifacts caused by the contained
-source code, not those caused by the personal choice of editor and/or
-environment of a developer.
+ADR 005: Clean :file:`.gitignore`
+#################################
 
-This is explained in detail
-`here <https://github.com/coderbyheart/first-principles/issues/30>`_.
+A :file:`.gitignore` file in a project must only cover the artifacts caused by the contained source code and not those caused by the personal choice of editor or the environment of a developer.
+
+This is explained in detail in the `Clean .gitignore files issue <https://github.com/coderbyheart/first-principles/issues/30>`_.

@@ -12,7 +12,7 @@ The IMEI is also typically printed on a sticker on the device.
 
 Following is the output of the command:
 
-.. code-block::
+.. code-block:: bash
 
     # AT+CGSN
     352656100248049 OK

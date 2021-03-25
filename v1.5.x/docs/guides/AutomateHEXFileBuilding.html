@@ -7,12 +7,13 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Automate building of HEX files for your nRF Connect SDK application &mdash; nRF Asset Tracker 9f7b120cc287856af7522d5dea1f77fb62118ade documentation</title>
+  <title>Automate building of HEX files for your nRF Connect SDK application &mdash; nRF Asset Tracker eff353451c4e66d0b95aa436a5de4cec2e5ae108 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
 
   
   
@@ -38,8 +39,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Cell Geolocations" href="CellGeolocations.html" />
-    <link rel="prev" title="Device Data and Configuration" href="../device-cloud-protocol/SensorDataAndConfiguration.html" /> 
+    <link rel="next" title="Cell geolocations" href="CellGeolocations.html" />
+    <link rel="prev" title="Device data and configuration" href="device-cloud-protocol/SensorDataAndConfiguration.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
@@ -96,27 +97,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CellGeolocations.html">Cell Geolocations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Versioning.html">Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
-<ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CellGeolocations.html">Cell geolocations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CloudDifferences.html">Cloud differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETSI-EN-303-645.html">Cyber security for consumer Internet of Things: baseline requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Versioning.html">Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Direnv.html">direnv</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
             
@@ -165,6 +164,8 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
+          <li><a href="Index.html">Guides</a> &raquo;</li>
+        
       <li>Automate building of HEX files for your nRF Connect SDK application</li>
     
     
@@ -190,9 +191,9 @@
 <span id="guides-automate-hexfile-building"></span><h1>Automate building of HEX files for your nRF Connect SDK application<a class="headerlink" href="#automate-building-of-hex-files-for-your-nrf-connect-sdk-application" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This guide was originally published <a class="reference external" href="https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/automate-building-of-hex-files-for-your-nrf-connect-sdk-application-using-circleci">on the {DevZone blog</a>.</p>
+<p>This guide was originally published <a class="reference external" href="https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/automate-building-of-hex-files-for-your-nrf-connect-sdk-application-using-circleci">on the DevZone blog</a>.</p>
 </div>
-<p>Continuous delivery is in important aspect of short time to market and since the nRF9160 <a class="reference external" href="https://github.com/nrfconnect/sdk-nrf/tree/master/samples/nrf9160/aws_fota">supports firmware over the air upgrades</a> we want to ship a new firmware to our development boards every time we change the application.</p>
+<p>Continuous delivery is an important aspect of short Time to market and since the nRF9160 DK supports <a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/aws_fota/README.html?highlight=aws%20fota">firmware over the air upgrades</a> we want to ship a new firmware to our development kits every time we change the application.</p>
 <div class="figure align-default" id="id1">
 <img alt="../../_images/github-release-with-hex-files.png" src="../../_images/github-release-with-hex-files.png" />
 <p class="caption"><span class="caption-text">GitHub release with attached HEX files</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -203,10 +204,10 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>By default <code class="docutils literal notranslate"><span class="pre">semantic-release</span></code> will get the <code class="docutils literal notranslate"><span class="pre">reposityUrl</span></code> it uses to  determine the changes between releases from the <code class="docutils literal notranslate"><span class="pre">package.json</span></code> which after forking the <code class="docutils literal notranslate"><span class="pre">firmware</span></code> repo will still point to <code class="docutils literal notranslate"><span class="pre">https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware.git</span></code>.
-Either, update that to the URL of  your fork, or <a class="reference external" href="https://semantic-release.gitbook.io/semantic-release/usage/configuration#repositoryurl">provide it as an argument</a> to the <code class="docutils literal notranslate"><span class="pre">semantic-release</span></code> CLI.</p>
+Either update that to the URL of your fork, or <a class="reference external" href="https://semantic-release.gitbook.io/semantic-release/usage/configuration#repositoryurl">provide it as an argument</a> to the <code class="docutils literal notranslate"><span class="pre">semantic-release</span></code> CLI.</p>
 </div>
-<p><a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware/blob/saga/.github/workflows/build-and-release.yaml">Here is the workflow definition for GitHub Actions</a> which automatically builds HEX files and attaches them to the GitHub release.</p>
-<p>Following this example, all developers need to do format their commit messages following a certain schema (you can read more in detail about this process <a class="reference internal" href="Versioning.html#guides-versionining-how-to-release-a-new-version-of-a-package"><span class="std std-ref">here</span></a> to trigger a new release.</p>
+<p>The <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware/blob/saga/.github/workflows/build-and-release.yaml">workflow definition for GitHub Actions</a>  automatically builds HEX files and attaches them to the GitHub release.</p>
+<p>Following this example, all developers need to do is to format their commit messages following a certain schema (for more information see <a class="reference internal" href="Versioning.html#guides-versionining-how-to-release-a-new-version-of-a-package"><span class="std std-ref">Releasing a new version of a package</span></a>) to trigger a new release.</p>
 <div class="figure align-default" id="id2">
 <img alt="../../_images/github-releases.png" src="../../_images/github-releases.png" />
 <p class="caption"><span class="caption-text">GitHub releases</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
@@ -219,8 +220,8 @@ Either, update that to the URL of  your fork, or <a class="reference external" h
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="CellGeolocations.html" class="btn btn-neutral float-right" title="Cell Geolocations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../device-cloud-protocol/SensorDataAndConfiguration.html" class="btn btn-neutral float-left" title="Device Data and Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="CellGeolocations.html" class="btn btn-neutral float-right" title="Cell geolocations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="device-cloud-protocol/SensorDataAndConfiguration.html" class="btn btn-neutral float-left" title="Device data and configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

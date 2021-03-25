@@ -7,12 +7,13 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Architecture Decision Records &mdash; nRF Asset Tracker 9f7b120cc287856af7522d5dea1f77fb62118ade documentation</title>
+  <title>Architecture Decision Records &mdash; nRF Asset Tracker eff353451c4e66d0b95aa436a5de4cec2e5ae108 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
 
   
   
@@ -38,7 +39,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. Use NPM registry" href="002-use-npm-package-registry.html" />
+    <link rel="next" title="ADR 002: Use NPM registry" href="002-use-npm-package-registry.html" />
     <link rel="prev" title="Support" href="../Support.html" /> 
 </head>
 
@@ -88,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
@@ -96,33 +97,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Architecture Decision Records</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="002-use-npm-package-registry.html">2. Use NPM registry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="003-use-saga-as-the-main-branch.html">3. Use <code class="docutils literal notranslate"><span class="pre">saga</span></code> as the name for the main branch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="004-move-to-nordicsemiconductor-github-organization.html">4. Move to Nordic Semiconductor GitHub organization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="005-clean-gitignore.html">5. Clean <code class="file docutils literal notranslate"><span class="pre">.gitignore</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="002-use-npm-package-registry.html">ADR 002: Use NPM registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="003-use-saga-as-the-main-branch.html">ADR 003: Use <code class="docutils literal notranslate"><span class="pre">saga</span></code> as the name for the main branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="004-move-to-nordicsemiconductor-github-organization.html">ADR 004: Move to Nordic Semiconductor GitHub organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="005-clean-gitignore.html">ADR 005: Clean <code class="file docutils literal notranslate"><span class="pre">.gitignore</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
             
@@ -193,15 +182,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="architecture-decision-records">
-<h1>Architecture Decision Records<a class="headerlink" href="#architecture-decision-records" title="Permalink to this headline">¶</a></h1>
-<p>This folder contains Architecture Decision Records (ADRs) which apply to the entire project.</p>
-<p>If you want to learn more about ADRs you might find <a class="reference external" href="http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions">this article</a> and <a class="reference external" href="https://www.youtube.com/watch?v=rwfXkSjFhzc">this video</a> helpful.</p>
+<span id="adr-index"></span><h1>Architecture Decision Records<a class="headerlink" href="#architecture-decision-records" title="Permalink to this headline">¶</a></h1>
+<p>This section contains the Architecture Decision Records (ADRs), which apply to the entire project.</p>
+<p>To know more about ADRs, see <a class="reference external" href="http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions">Documenting architecture decisions</a> and the video on <a class="reference external" href="https://www.youtube.com/watch?v=rwfXkSjFhzc">Communicating and documenting architectural decisions</a>.</p>
 <div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Subpages:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="002-use-npm-package-registry.html">2. Use NPM registry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="003-use-saga-as-the-main-branch.html">3. Use <code class="docutils literal notranslate"><span class="pre">saga</span></code> as the name for the main branch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="004-move-to-nordicsemiconductor-github-organization.html">4. Move to Nordic Semiconductor GitHub organization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="005-clean-gitignore.html">5. Clean <code class="file docutils literal notranslate"><span class="pre">.gitignore</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="002-use-npm-package-registry.html">ADR 002: Use NPM registry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="003-use-saga-as-the-main-branch.html">ADR 003: Use <code class="docutils literal notranslate"><span class="pre">saga</span></code> as the name for the main branch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="004-move-to-nordicsemiconductor-github-organization.html">ADR 004: Move to Nordic Semiconductor GitHub organization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="005-clean-gitignore.html">ADR 005: Clean <code class="file docutils literal notranslate"><span class="pre">.gitignore</span></code></a></li>
 </ul>
 </div>
 </div>
@@ -212,7 +202,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="002-use-npm-package-registry.html" class="btn btn-neutral float-right" title="2. Use NPM registry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="002-use-npm-package-registry.html" class="btn btn-neutral float-right" title="ADR 002: Use NPM registry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="../Support.html" class="btn btn-neutral float-left" title="Support" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

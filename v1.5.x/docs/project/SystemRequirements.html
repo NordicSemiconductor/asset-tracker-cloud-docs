@@ -7,12 +7,13 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>System requirements &mdash; nRF Asset Tracker 9f7b120cc287856af7522d5dea1f77fb62118ade documentation</title>
+  <title>System requirements &mdash; nRF Asset Tracker eff353451c4e66d0b95aa436a5de4cec2e5ae108 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
 
   
   
@@ -38,8 +39,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="About direnv" href="Direnv.html" />
-    <link rel="prev" title="Versioning" href="Versioning.html" /> 
+    <link rel="next" title="License" href="License.html" />
+    <link rel="prev" title="Supported cloud providers" href="SupportedCloudProviders.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,35 +89,30 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Project Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="CorePrinciples.html">Core principles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SystemOverview.html">System overview and technical considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SupportedCloudProviders.html">Supported cloud providers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">System requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="License.html">License</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CellGeolocations.html">Cell Geolocations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Versioning.html">Versioning</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">System requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
             
@@ -165,6 +161,8 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
+          <li><a href="Index.html">Project Overview</a> &raquo;</li>
+        
       <li>System requirements</li>
     
     
@@ -172,7 +170,7 @@
         
           
             
-              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v1.5.x/docs/guides/SystemRequirements.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v1.5.x/docs/project/SystemRequirements.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -189,12 +187,12 @@
   <div class="section" id="system-requirements">
 <span id="id1"></span><h1>System requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h1>
 <p>You need a development environment with <a class="reference external" href="https://git-scm.com/">Git</a>, the <a class="reference external" href="https://nodejs.org/en/about/releases/">LTS release candidate of Node.js</a> (current LTS release is version 14), and <a class="reference external" href="https://github.blog/2021-02-02-npm-7-is-now-generally-available/">the current stable release of npm (version 7)</a>.
-Alternatively install Node.js 15 which ships with npm 7.</p>
+Alternatively, you can install Node.js 15, which ships with npm 7.</p>
 <p>If you are using Windows, use the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a> with <a class="reference external" href="https://www.microsoft.com/nb-no/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1">Ubuntu 18.04
 LTS</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Windows is not included in the continuous integration tests, and hence if you encounter issues, you can vote for  <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/21">the issue in the nRF Asset Tracker project discussion</a></p>
+<p>Windows is not included in the continuous integration tests, and hence if you encounter issues, you can vote in the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/21">nRF Asset Tracker project discussion</a>.</p>
 </div>
 </div>
 
@@ -204,8 +202,8 @@ LTS</a>.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Direnv.html" class="btn btn-neutral float-right" title="About direnv" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="Versioning.html" class="btn btn-neutral float-left" title="Versioning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="License.html" class="btn btn-neutral float-right" title="License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="SupportedCloudProviders.html" class="btn btn-neutral float-left" title="Supported cloud providers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

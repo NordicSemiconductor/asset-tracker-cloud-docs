@@ -1,15 +1,15 @@
+.. _aws-next-steps:
+
 Next steps
 ##########
 
-*Congratulations!* You have finished the initial set-up of the *nRF Asset Tracker* cloud components.
+At this stage, you have completed the initial setup of the nRF Asset Tracker.
+An interesting topic to explore is enabling :ref:`Cell Geolocation <aws-unwired-labs-api>`.
 
-This is all you need to do for now, some next interesting topics are:
+Once you start modifying the firmware, you can also look into the following topics:
 
-* enabling :ref:`Cell Geolocation <aws-unwired-labs-api>`
-* once you start modifying the firmware you should
+* Setting up :ref:`Continuous deployment <aws-continuous-deployment>`
+* Performing :ref:`Continuous integration of the cloud resources <aws-continuous-integration>`
+* Performing advanced :ref:`aws-firmware-ci`
 
-   * set up :ref:`Continuous deployment <aws-continuous-deployment>`
-   * and :ref:`Continuous integration of the cloud resources <aws-continuous-integration>`,
-   * and even more advanced :ref:`of the firmware <aws-firmware-ci>`.
-
-If you have feedback on how to improve this *Getting Started Guide*, please get in touch and share your ideas `on {DevZone <https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc>`_ or `on GitHub <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs>`_ ... we monitor these forums closely.
+If you have feedback on improving this *Getting Started Guide*, share your ideas in `DevZone <https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc>`_ or in the `GitHub repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs>`_.

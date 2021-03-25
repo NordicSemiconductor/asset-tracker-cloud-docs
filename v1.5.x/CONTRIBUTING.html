@@ -7,12 +7,13 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Contributing &mdash; nRF Asset Tracker 9f7b120cc287856af7522d5dea1f77fb62118ade documentation</title>
+  <title>Contributing to the project &mdash; nRF Asset Tracker eff353451c4e66d0b95aa436a5de4cec2e5ae108 documentation</title>
   
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/common.css" type="text/css" />
 
   
   
@@ -87,7 +88,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="docs/project/Index.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="docs/GettingStarted.html">Getting Started</a></li>
@@ -95,27 +96,15 @@
 <li class="toctree-l1"><a class="reference internal" href="docs/app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="docs/firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="docs/devices/Index.html">Connect using a real device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docs/device-cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="docs/guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docs/guides/CellGeolocations.html">Cell Geolocations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docs/guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docs/guides/CloudDifferences.html">Cloud Differences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docs/guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docs/guides/Versioning.html">Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docs/guides/SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docs/guides/Direnv.html">About <em>direnv</em></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="docs/guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="docs/Support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="docs/adr/README.html">Architecture Decision Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing to the project</a></li>
 </ul>
 
             
@@ -164,7 +153,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Contributing</li>
+      <li>Contributing to the project</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -185,24 +174,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="contributing">
-<h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We maintain this guide for those of you who are curious to find out how to get started contributing to the <em>nRF Asset Tracker</em> code base.</p>
-</div>
-<p>Thanks so much for your interest in contributing to the <em>nRF Asset Tracker</em>! We really appreciate your help. <strong>We look forward to working with you!</strong></p>
-<p>But first, please read our <a class="reference internal" href="CODE_OF_CONDUCT.html#code-of-conduct"><span class="std std-ref">Code of Conduct</span></a>.</p>
+  <div class="section" id="contributing-to-the-project">
+<span id="contributing"></span><h1>Contributing to the project<a class="headerlink" href="#contributing-to-the-project" title="Permalink to this headline">¶</a></h1>
+<p>This guide is intended for providing information on contributing to the nRF Asset Tracker codebase.
+As a first step, see <a class="reference internal" href="CODE_OF_CONDUCT.html#code-of-conduct"><span class="std std-ref">Code of Conduct</span></a>.</p>
 <div class="section" id="finding-open-issues">
 <h2>Finding open issues<a class="headerlink" href="#finding-open-issues" title="Permalink to this headline">¶</a></h2>
-<p>We maintain a list of <a class="reference external" href="https://github.com/orgs/NordicSemiconductor/projects/2?card_filter_query=label%3A%22help+wanted%22">help wanted</a> issues in our project board, which are a good starting point.
+<p>A list of <a class="reference external" href="https://github.com/orgs/NordicSemiconductor/projects/2?card_filter_query=label%3A%22help+wanted%22">help-wanted issues</a> is maintained in the project board.
+These issues are good starting points for contributing to the project.
 Some of them require in-depth knowledge about the technology in use.</p>
-<p>Issues tagged with <a class="reference external" href="https://github.com/orgs/NordicSemiconductor/projects/2?card_filter_query=label%3A%22good+first+issue%22">good first issues</a> are very small issues that are selected to be a great starting point in making yourself familiar with the codebase.</p>
+<p>Issues tagged with <a class="reference external" href="https://github.com/orgs/NordicSemiconductor/projects/2?card_filter_query=label%3A%22good+first+issue%22">good first issues</a> are very small issues that can help you to get familiar with the codebase.</p>
 </div>
 <div class="section" id="improving-documentation">
 <h2>Improving documentation<a class="headerlink" href="#improving-documentation" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/">The nRF Asset Tracker documention</a> can always be improved.
-If you find something to improve, even something small like a typo, please do not hesitate to open a new PR.</p>
+<p>If you have suggestions on improving the <a class="reference external" href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/">nRF Asset Tracker documentation</a>, open a new PR in the project repository.</p>
 </div>
 </div>
 
