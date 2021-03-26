@@ -30,7 +30,9 @@ To deploy the solution to your account, complete the following steps:
 
       az login
 
-#. Choose a name for the solution and export it as ``APP_NAME``. In this example, we use ``nrf-asset-tracker`` as the default name.
+#. Choose a name for the solution and export it as ``APP_NAME``.
+   Use a short name composed of numbers and lower-case letters only.
+   In this example, we use ``nrfassettracker`` as the default name.
 
 #. Configure your preferred location (you can list the locations using ``az account list-locations``) and export it on the environment variable ``LOCATION``.
 
@@ -42,13 +44,25 @@ To deploy the solution to your account, complete the following steps:
 
    .. code-block:: bash
 
-      az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${APP_NAME:-nrf-asset-tracker}
+      az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${APP_NAME:-nrfassettracker}
+
+#. For creating an Azure Active Directory B2C in the next step, the namespace needs to be registered in the subscription:
+
+   .. code-block:: bash
+
+      az provider register --namespace Microsoft.AzureActiveDirectory
 
 #. Create an Azure Active Directory B2C: currently, it is not possible to create Active Directory B2C and application through the ARM template (see `GitHub issue <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_).
    You must follow the instructions in the `tutorial for registering a web application in Azure Active Directory B2C <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications>`_ and create a B2C tenant and an application.
-   Use ``http://localhost:3000/`` (for local development) and ``https://${APP_NAME:-nrf-asset-tracker}app.z16.web.core.windows.net/`` as the redirect URLs.
+   Use ``http://localhost:3000/`` (for local development) and ``https://<your APP_NAME>app.z16.web.core.windows.net/`` as the redirect URLs.
 
-#. Save the ``directory (tenant) id`` of the created Active Directory B2C and the ``application (client) id`` to the environment variable ``APP_REG_CLIENT_ID`` in the :file:`.envrc` file:
+#. Save the initial domain name of the created Active Directory B2C to the environment variable ``B2C_TENANT``
+
+   .. code-block:: bash
+
+      export B2C_TENANT=... # e.g. nrfassettrackerusers
+
+#. Save the ``application (client) id`` to the environment variable ``APP_REG_CLIENT_ID`` in the :file:`.envrc` file:
 
    .. code-block:: bash
 
@@ -66,19 +80,22 @@ To deploy the solution to your account, complete the following steps:
 
    .. code-block:: bash
 
-       az deployment group create --resource-group ${APP_NAME:-nrf-asset-tracker} \
-           --mode Complete --name ${APP_NAME:-nrf-asset-tracker} \
-           --template-file azuredeploy.json \
-           --parameters \
-               appName=${APP_NAME:-nrf-asset-tracker} \
-               location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID \
-               b2cTenant=$B2C_TENANT
-       # Currently it is not possible to enable website hosting through the ARM template
-       az storage blob service-properties update \
-           --account-name ${APP_NAME:-nrf-asset-tracker}app
-           --static-website --index-document index.html
-       az storage blob service-properties update \
-           --account-name ${APP_NAME:-nrf-asset-tracker}deviceui \
-           --static-website --index-document index.html
-       # Deploy the functions
-       func azure functionapp publish ${APP_NAME:-nrf-asset-tracker}API --typescript
+      az deployment group create --resource-group ${APP_NAME:-nrfassettracker} \
+         --mode Complete --name ${APP_NAME:-nrfassettracker} \
+         --template-file azuredeploy.json \
+         --parameters \
+            appName=${APP_NAME:-nrfassettracker} \
+            location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID \
+            b2cTenant=$B2C_TENANT \
+      && \
+      # Currently it is not possible to enable website hosting through the ARM template
+      az storage blob service-properties update \
+         --account-name ${APP_NAME:-nrfassettracker}app \
+         --static-website --index-document index.html \
+      && \
+      az storage blob service-properties update \
+         --account-name ${APP_NAME:-nrfassettracker}deviceui \
+         --static-website --index-document index.html \
+      && \
+      # Deploy the functions
+      func azure functionapp publish ${APP_NAME:-nrfassettracker}API --typescript

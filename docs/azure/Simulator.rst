@@ -70,7 +70,7 @@ To build and setup the device simulator web application to the storage account c
 
     cd ../azure
     export $(cd ../azure && node cli device-ui-config | xargs)
-    export APP_NAME=${APP_NAME:-nrf-asset-tracker}
+    export APP_NAME=${APP_NAME:-nrfassettracker}
     cd ../device-ui
     export SNOWPACK_PUBLIC_VERSION=`git describe --tags $(git rev-list --tags --max-count=1)`
 
