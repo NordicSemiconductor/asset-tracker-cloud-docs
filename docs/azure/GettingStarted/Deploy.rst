@@ -19,6 +19,12 @@ To deploy the solution to your account, complete the following steps:
 
       export SUBSCRIPTION_ID="<Subscription ID>"
 
+#. Run the following command to allow the changed file:
+
+.. code-block:: bash
+
+   direnv allow
+   
 #. Find the created subscription in the Azure Portal and give it a meaningful name (by default it will have a generic name, e.g. *Pay-as-You-Go*).
 
 #. Transfer it to the directory you have created above using the :guilabel:`Change directory` feature.
@@ -29,6 +35,14 @@ To deploy the solution to your account, complete the following steps:
    .. code-block:: bash
 
       az login
+
+#. Make sure that you have enabled the right subscription by using the following commands:
+
+.. code-block:: bash
+
+      az account set --subscription $SUBSCRIPTION_ID 
+      # Verify that it is set to default
+      az account list --output table
 
 #. Choose a name for the solution and export it as ``APP_NAME``.
    Use a short name composed of numbers and lower-case letters only.
