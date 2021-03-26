@@ -18,8 +18,8 @@ Create a CA root certificate
 
 .. note::
 
-   Make sure that you have exported the right resource group name as ``$RESOURCE_GROUP_NAME``.
-   By default, it is set to ``nrf-asset-tracker``.
+   Make sure that you have exported the right resource group name as ``$APP_NAME``.
+   By default, it is set to ``nrfassettracker``.
 
 To create a CA root certificate and register it with the Azure IoT Device Provisioning Service, run the following command:
 

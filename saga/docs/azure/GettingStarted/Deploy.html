@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploy the solution to your account &mdash; nRF Asset Tracker v13.2.5 documentation</title>
+  <title>Deploy the solution to your account &mdash; nRF Asset Tracker v13.2.6 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Create device credentials" href="DeviceCredentials.html" />
+    <link rel="next" title="Enable Device Update for IoT Hubs" href="DeviceUpdate.html" />
     <link rel="prev" title="Install the Azure Functions Core Tools" href="AzureFunctionCoreTools.html" /> 
 </head>
 
@@ -101,6 +101,7 @@
 <li class="toctree-l3"><a class="reference internal" href="AzureCLI.html">Install the Azure CLI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AzureFunctionCoreTools.html">Install the Azure Functions Core Tools</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Deploy the solution to your account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DeviceUpdate.html">Enable Device Update for IoT Hubs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Create device credentials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Webapp.html">Deploy the Cat Tracker web application</a></li>
 </ul>
@@ -219,6 +220,12 @@ Export the subscription ID onto the <code class="docutils literal notranslate"><
 </pre></div>
 </div>
 </li>
+<li><p>Run the following command to allow the changed file:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>direnv allow
+</pre></div>
+</div>
+<ol class="arabic">
 <li><p>Find the created subscription in the Azure Portal and give it a meaningful name (by default it will have a generic name, e.g. <em>Pay-as-You-Go</em>).</p></li>
 <li><p>Transfer it to the directory you have created above using the <span class="guilabel">Change directory</span> feature.
 The transfer can take up to 10 minutes.</p></li>
@@ -227,6 +234,14 @@ The transfer can take up to 10 minutes.</p></li>
 </pre></div>
 </div>
 </li>
+<li><p>Make sure that you have enabled the right subscription by using the following commands:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az account <span class="nb">set</span> --subscription <span class="nv">$SUBSCRIPTION_ID</span>
+<span class="c1"># Verify that it is set to default</span>
+az account list --output table
+</pre></div>
+</div>
+<ol class="arabic">
 <li><p>Choose a name for the solution and export it as <code class="docutils literal notranslate"><span class="pre">APP_NAME</span></code>.
 Use a short name composed of numbers and lower-case letters only.
 In this example, we use <code class="docutils literal notranslate"><span class="pre">nrfassettracker</span></code> as the default name.</p></li>
@@ -296,7 +311,7 @@ func azure functionapp publish <span class="si">${</span><span class="nv">APP_NA
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="DeviceCredentials.html" class="btn btn-neutral float-right" title="Create device credentials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="DeviceUpdate.html" class="btn btn-neutral float-right" title="Enable Device Update for IoT Hubs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="AzureFunctionCoreTools.html" class="btn btn-neutral float-left" title="Install the Azure Functions Core Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
