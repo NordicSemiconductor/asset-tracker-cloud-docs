@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Connect using the simulator &mdash; nRF Asset Tracker v13.2.4 documentation</title>
+  <title>Connect using the simulator &mdash; nRF Asset Tracker v13.2.5 documentation</title>
   
 
   
@@ -244,7 +244,7 @@ npm ci
 <p>To build and setup the device simulator web application to the storage account created when setting up the nRF Asset Tracker in your Azure account, run the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../azure
 <span class="nb">export</span> <span class="k">$(</span><span class="nb">cd</span> ../azure <span class="o">&amp;&amp;</span> node cli device-ui-config <span class="p">|</span> xargs<span class="k">)</span>
-<span class="nb">export</span> <span class="nv">APP_NAME</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrf</span><span class="p">-asset-tracker</span><span class="si">}</span>
+<span class="nb">export</span> <span class="nv">APP_NAME</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>
 <span class="nb">cd</span> ../device-ui
 <span class="nb">export</span> <span class="nv">SNOWPACK_PUBLIC_VERSION</span><span class="o">=</span><span class="sb">`</span>git describe --tags <span class="k">$(</span>git rev-list --tags --max-count<span class="o">=</span><span class="m">1</span><span class="k">)</span><span class="sb">`</span>
 
