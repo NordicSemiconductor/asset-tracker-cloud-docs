@@ -3,50 +3,50 @@
 Run the device simulator UI
 ###########################
 
-We start in our :ref:`working directory <aws-working-directory>`:
+First, run the device simulator User Interface (UI) by completing the following steps:
 
-.. code-block:: bash
+1. Navigate to the :ref:`working directory <aws-working-directory>`.
+#. Clone the device simulator UI and install the dependencies:
 
-    cd nrf-asset-tracker
-    # ~/nrf-asset-tracker
+   .. code-block:: bash
 
-First, clone the device simulator user-interface (UI) and install the dependencies:
+      git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js simulator-ui
+      cd simulator-ui
+      npm ci
 
-.. code-block:: bash
+#. Start the device simulator UI's development server by running the following command:
 
-    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js simulator-ui
-    cd simulator-ui
-    npm ci
+   .. code-block:: bash
 
-Start the device simulator UI's development server:
+      npm start
 
-.. code-block:: bash
+   .. figure:: ./images/device-simulator-ui-development-server.png
+      :alt: Device simulator UI development server
 
-    npm start
+      Device simulator UI development server
+	  
+   The command launches a browser with `<http://localhost:8080>`_ in the address bar as shown in the following image:
 
-.. figure:: ./images/device-simulator-ui-development-server.png
-   :alt: device simulator UI development server
+   .. figure:: ./images/device-simulator-ui.png
+      :alt: Device simulator UI
+   
+      Device simulator UI
 
-and open the browser at `<http://localhost:8080>`_.
+   The device simulator UI loads in the browser.
 
-You will see the device simulator UI:
+#. Create a new device for use with the simulator by generating a new device certificate.
 
-.. figure:: ./images/device-simulator-ui.png
-   :alt: device simulator UI
+   .. code-block:: bash
 
-Now, create a new device for use with the simulator
+      cd nrf-asset-tracker/aws
+      # Create a new certificate
+      node cli create-device-cert
+      # Now connect with the certificate using the device simulator
+      node cli connect '<device id>'
 
-.. code-block:: bash
+#. Copy the query string of the URL printed after ``To control this device open your browser on:`` in CLI, for example, ``?endpoint=http%3A%2F%2Flocalhost%3A24272`` and append it to the URL in the browser and press enter.
 
-    cd nrf-asset-tracker/aws
-    # Create a new certificate
-    node cli create-device-cert
-    # Now connect with the certificate using the device simulator
-    node cli connect '<device id>'
+   As shown in the following image, the UI connects to the simulator, which is run through the CLI:
 
-Copy the query string of the URL printed after :guilabel:`To control this device open your browser on:`, e.g. ``?endpoint=http%3A%2F%2Flocalhost%3A24272`` and append it to the URL in the browser and press enter.
-
-The UI will not connect to the simulator run by the CLI:
-
-.. figure:: ./images/device-simulator-ui-connected.png
-   :alt: device simulator UI connected
+   .. figure:: ./images/device-simulator-ui-connected.png
+      :alt: device simulator UI connected
