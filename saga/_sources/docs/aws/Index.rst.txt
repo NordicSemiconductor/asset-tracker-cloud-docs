@@ -13,12 +13,13 @@ It is developed using `AWS CDK <https://aws.amazon.com/cdk/>`_ in `TypeScript <h
    GettingStarted/Index.rst
    Upgrading.rst
    Uninstalling.rst
-   Simulator.rst
+   Customization/Index.rst
    ContinuousDeployment.rst
+   ContinuousIntegration.rst
+   UnwiredLabsAPI.rst
+   Simulator.rst
    Authentication.rst
    IoTShadowAndTopics.rst
    LimitingShadowDocumentSize.rst
    HistoricalData.rst
-   ContinuousIntegration.rst
-   UnwiredLabsAPI.rst
    SNI.rst
