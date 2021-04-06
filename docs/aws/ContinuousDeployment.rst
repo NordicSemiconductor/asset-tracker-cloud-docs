@@ -50,7 +50,7 @@ After providing the GitHub credentials, you can set up the continuous deployment
     echo "cd=1" >> context.cfg
     npx cdk deploy '*'
 
-Check the status of the Continuous deployment
+Check the status of the continuous deployment
 *********************************************
 
 If you want to check the status of the continuous deployment after you have made the changes, use the following CLI command:
