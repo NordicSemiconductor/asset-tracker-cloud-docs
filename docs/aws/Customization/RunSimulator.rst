@@ -38,7 +38,7 @@ First, run the device simulator User Interface (UI) by completing the following 
 
    .. code-block:: bash
 
-      cd nrf-asset-tracker/aws
+      cd ~/nrf-asset-tracker/aws
       # Create a new certificate
       node cli create-device-cert
       # Now connect with the certificate using the device simulator

@@ -1,7 +1,7 @@
 .. _aws-customization:
 
-Customization of nRF Asset Tracker
-##################################
+Customization of the nRF Asset Tracker
+######################################
 
 This section walks you through the customization of the nRF Asset Tracker for your own product by showing how to visualize additional sensor data on the :ref:`Cat Tracker web application <index-cat-tracker-web-app>`.
 
@@ -25,7 +25,7 @@ The following video and table show the customization steps and the associated ti
 +-------+----------------------------------------------------------------------------------------------------------+
 | 01:55 | `Customization overview <https://youtu.be/d_ytGb9wdb8?t=115>`_                                           |
 +-------+----------------------------------------------------------------------------------------------------------+
-| 02:25 | `Introduction to Device simulator UI <https://youtu.be/d_ytGb9wdb8?t=145>`_                              |
+| 02:25 | `Introduction to device simulator UI <https://youtu.be/d_ytGb9wdb8?t=145>`_                              |
 +-------+----------------------------------------------------------------------------------------------------------+
 | 03:01 | `Cloning and running the device simulator UI <https://youtu.be/d_ytGb9wdb8?t=181>`_                      |
 +-------+----------------------------------------------------------------------------------------------------------+

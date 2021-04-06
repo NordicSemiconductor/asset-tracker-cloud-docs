@@ -48,7 +48,7 @@ To customize the web application, complete the following steps:
       ORDER BY time DESC
       LIMIT 100
 
-    To know more about the syntax, see `Timestream Query language <https://docs.aws.amazon.com/timestream/latest/developerguide/reference.html>`_.
+   To know more about the syntax, see `Timestream Query language <https://docs.aws.amazon.com/timestream/latest/developerguide/reference.html>`_.
 
 #. After defining the query, add a new chart to the Cat Tracker web application that displays the data in a line chart.
 
