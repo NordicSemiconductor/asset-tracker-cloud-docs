@@ -41,12 +41,10 @@ First, run the device simulator User Interface (UI) by completing the following 
       cd ~/nrf-asset-tracker/aws
       # Create a new certificate
       node cli create-device-cert
-      # Now connect with the certificate using the device simulator
-      node cli connect '<device id>'
 
-#. Copy the query string of the URL printed after ``To control this device open your browser on:`` in CLI, for example, ``?endpoint=http%3A%2F%2Flocalhost%3A24272`` and append it to the URL in the browser and press enter.
+#. After executing the above command, copy the endpoint printed from ``npm exec -- @nordicsemiconductor/asset-tracker-cloud-device-simulator-aws "</path/to/certificate.json>"`` (for example, ``http://localhost:25336``) and use it in the device simulator UI.
 
    As shown in the following image, the UI connects to the simulator, which is run through the CLI:
 
    .. figure:: ./images/device-simulator-ui-connected.png
-      :alt: device simulator UI connected
+      :alt: Device simulator UI connected

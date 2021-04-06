@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Run the device simulator UI &mdash; nRF Asset Tracker v13.3.0 documentation</title>
+  <title>Run the device simulator UI &mdash; nRF Asset Tracker v13.3.1 documentation</title>
   
 
   
@@ -231,15 +231,13 @@ npm ci
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/nrf-asset-tracker/aws
 <span class="c1"># Create a new certificate</span>
 node cli create-device-cert
-<span class="c1"># Now connect with the certificate using the device simulator</span>
-node cli connect <span class="s1">&#39;&lt;device id&gt;&#39;</span>
 </pre></div>
 </div>
 </li>
-<li><p>Copy the query string of the URL printed after <code class="docutils literal notranslate"><span class="pre">To</span> <span class="pre">control</span> <span class="pre">this</span> <span class="pre">device</span> <span class="pre">open</span> <span class="pre">your</span> <span class="pre">browser</span> <span class="pre">on:</span></code> in CLI, for example, <code class="docutils literal notranslate"><span class="pre">?endpoint=http%3A%2F%2Flocalhost%3A24272</span></code> and append it to the URL in the browser and press enter.</p>
+<li><p>After executing the above command, copy the endpoint printed from <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">exec</span> <span class="pre">--</span> <span class="pre">&#64;nordicsemiconductor/asset-tracker-cloud-device-simulator-aws</span> <span class="pre">&quot;&lt;/path/to/certificate.json&gt;&quot;</span></code> (for example, <code class="docutils literal notranslate"><span class="pre">http://localhost:25336</span></code>) and use it in the device simulator UI.</p>
 <p>As shown in the following image, the UI connects to the simulator, which is run through the CLI:</p>
 <div class="figure align-default">
-<img alt="device simulator UI connected" src="../../../_images/device-simulator-ui-connected.png" />
+<img alt="Device simulator UI connected" src="../../../_images/device-simulator-ui-connected.png" />
 </div>
 </li>
 </ol>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Connect using the simulator &mdash; nRF Asset Tracker v13.3.0 documentation</title>
+  <title>Connect using the simulator &mdash; nRF Asset Tracker v13.3.1 documentation</title>
   
 
   
@@ -199,7 +199,7 @@ This feature is also used for testing the nRF Asset Tracker using <a class="refe
 <ul class="simple">
 <li><p>Create certificates for the device</p></li>
 <li><p>Connect to the device</p></li>
-<li><p>Use the device simulator web application to control the device</p></li>
+<li><p>Use the device simulator UI to control the device</p></li>
 </ul>
 <div class="section" id="running-the-simulator">
 <h2>Running the simulator<a class="headerlink" href="#running-the-simulator" title="Permalink to this headline">¶</a></h2>
@@ -208,18 +208,14 @@ This feature is also used for testing the nRF Asset Tracker using <a class="refe
 </pre></div>
 </div>
 <p>After executing the above command you can run the device simulator using <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">exec</span> <span class="pre">--</span> <span class="pre">&#64;nordicsemiconductor/asset-tracker-cloud-device-simulator-azure</span> <span class="pre">&quot;&lt;/path/to/certificate.json&gt;&quot;</span></code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The device simulator will print a link to the device simulator web application.
-For the link to work, either enable <a class="reference internal" href="ContinuousDeployment.html#azure-continuous-deployment"><span class="std std-ref">Continuous Deployment</span></a>, or <a class="reference internal" href="#manually-deploy-device-sim"><span class="std std-ref">manually deploy the device simulator web application</span></a>.</p>
+<p>The device simulator will print an endpoint to use with the device simulator UI.</p>
 </div>
-</div>
-<div class="section" id="using-the-device-simulator-web-application">
-<h2>Using the device simulator web application<a class="headerlink" href="#using-the-device-simulator-web-application" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="using-the-device-simulator-ui">
+<h2>Using the device simulator UI<a class="headerlink" href="#using-the-device-simulator-ui" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js">device-ui</a> project provides a browser-based UI to control the simulated device.</p>
 <div class="figure align-default" id="id1">
-<img alt="Device simulator web application" src="../../_images/device-simulator.png" />
-<p class="caption"><span class="caption-text">Device simulator web application</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<img alt="Device simulator UI" src="../../_images/device-simulator.png" />
+<p class="caption"><span class="caption-text">Device simulator UI</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="clone-the-project-and-install-dependencies">
 <h3>Clone the project and install dependencies<a class="headerlink" href="#clone-the-project-and-install-dependencies" title="Permalink to this headline">¶</a></h3>
@@ -230,18 +226,18 @@ npm ci
 </pre></div>
 </div>
 </div>
-<div class="section" id="run-the-device-simulator-web-application">
-<h3>Run the device simulator web application<a class="headerlink" href="#run-the-device-simulator-web-application" title="Permalink to this headline">¶</a></h3>
-<p>You can run the device simulator web application by using the following command:</p>
+<div class="section" id="run-the-device-simulator-ui">
+<h3>Run the device simulator UI<a class="headerlink" href="#run-the-device-simulator-ui" title="Permalink to this headline">¶</a></h3>
+<p>You can run the device simulator UI by using the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm run
 </pre></div>
 </div>
-<p>After executing the above command, copy the connection string printed from <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">exec</span> <span class="pre">--</span> <span class="pre">&#64;nordicsemiconductor/asset-tracker-cloud-device-simulator-azure</span> <span class="pre">&quot;&lt;/path/to/certificate.json&gt;&quot;</span></code> (for example, <code class="docutils literal notranslate"><span class="pre">?endpoint=http%3A%2F%2Flocalhost%3A23719</span></code>) and append it to the browser address. (for example, <code class="docutils literal notranslate"><span class="pre">http://localhost:8080/?endpoint=http%3A%2F%2Flocalhost%3A23719</span></code>).</p>
+<p>After executing the above command, copy the endpoint printed from <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">exec</span> <span class="pre">--</span> <span class="pre">&#64;nordicsemiconductor/asset-tracker-cloud-device-simulator-azure</span> <span class="pre">&quot;&lt;/path/to/certificate.json&gt;&quot;</span></code> (for example, <code class="docutils literal notranslate"><span class="pre">http://localhost:25336</span></code>) and use it in the simulator UI.</p>
 </div>
 </div>
-<div class="section" id="deploying-the-device-simulator-web-application">
-<span id="manually-deploy-device-sim"></span><h2>Deploying the device simulator web application<a class="headerlink" href="#deploying-the-device-simulator-web-application" title="Permalink to this headline">¶</a></h2>
-<p>To build and setup the device simulator web application to the storage account created when setting up the nRF Asset Tracker in your Azure account, run the following commands:</p>
+<div class="section" id="deploying-the-device-simulator-ui">
+<span id="manually-deploy-device-sim"></span><h2>Deploying the device simulator UI<a class="headerlink" href="#deploying-the-device-simulator-ui" title="Permalink to this headline">¶</a></h2>
+<p>To build and setup the device simulator UI to the storage account created when setting up the nRF Asset Tracker in your Azure account, run the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../azure
 <span class="nb">export</span> <span class="k">$(</span><span class="nb">cd</span> ../azure <span class="o">&amp;&amp;</span> node cli device-ui-config <span class="p">|</span> xargs<span class="k">)</span>
 <span class="nb">export</span> <span class="nv">APP_NAME</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>
@@ -257,7 +253,7 @@ az storage blob upload-batch --connection-string <span class="si">${</span><span
 <span class="nb">echo</span> <span class="s2">&quot;Done. Now open </span><span class="nv">$SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL</span><span class="s2"> to view the web app.&quot;</span>
 </pre></div>
 </div>
-<p>After executing the commands, you can open the domain name printed in <code class="docutils literal notranslate"><span class="pre">SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL</span></code> to view the device simulator web application.</p>
+<p>After executing the commands, you can open the domain name printed in <code class="docutils literal notranslate"><span class="pre">SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL</span></code> to view the device simulator UI.</p>
 </div>
 </div>
 

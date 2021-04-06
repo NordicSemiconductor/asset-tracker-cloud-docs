@@ -14,7 +14,7 @@ To connect to a device and control the device using the simulator, complete the 
 
 * Create certificates for the device
 * Connect to the device
-* Use the Device simulator web application to control the device
+* Use the device simulator UI to control the device
 
 To create certificates for a simulated device, run the following command:
 
@@ -28,26 +28,22 @@ As the next step, you can run a simulated device using the generated certificate
 
     npm exec -- @nordicsemiconductor/asset-tracker-cloud-device-simulator-aws "</path/to/certificate.json>"
 
-.. note::
+The device simulator will print an endpoint to use with the device simulator UI.
 
-   The device simulator will print a link to the Device simulator web application.
-   For the link to work, either enable :ref:`aws-continuous-deployment`, or manually deploy the Device simulator web application as described in :ref:`deploy_dev_sim_web_app`.
-
-Using the Device simulator web application
-******************************************
+Using the device simulator UI
+*****************************
 
 The `device-ui <https://github.com/NordicSemiconductor/device-ui>`_ provides a browser-based UI to control the simulated device.
 
 .. figure:: ./device-simulator.png
-   :alt: Device simulator web application
+   :alt: Device simulator UI
 
-   Device simulator web application   
+   Device simulator UI   
 
-To use the Device simulator web application, complete the following steps:
+To use the device simulator UI, complete the following steps:
 
 * Clone the project and install the dependencies
-* Run the Device simulator web application
-
+* Run the device simulator UI
 
 Clone the project and install the dependencies
 ==============================================
@@ -56,27 +52,27 @@ Clone the latest version of the `device-ui`_ project and install the dependencie
 
 .. code-block:: bash
 
-    git clone https://github.com/NordicSemiconductor/device-ui.git cat-tracker-device-ui
+    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js.git cat-tracker-device-ui
     cd cat-tracker-device-ui
     npm ci
 
-Run the Device simulator web application
-========================================
+Run the device simulator UI
+===========================
 
-You can run the Device simulator web application by using the following command:
+You can run the device simulator UI by using the following command:
 
 .. code-block:: bash
 
     npm run
 
-After executing the above command, copy the connection string printed from ``npm exec -- @nordicsemiconductor/asset-tracker-cloud-device-simulator-aws "</path/to/certificate.json>"`` (for example, ``?endpoint=http%3A%2F%2Flocalhost%3A23719``) and append it to the browser address. (for example, ``http://localhost:8080/?endpoint=http%3A%2F%2Flocalhost%3A23719``).
+After executing the above command, copy the endpoint printed from ``npm exec -- @nordicsemiconductor/asset-tracker-cloud-device-simulator-aws "</path/to/certificate.json>"`` (for example, ``http://localhost:25336``) and use it in the device simulator UI.
 
 .. _deploy_dev_sim_web_app:
 
-Deploying the Device simulator web application
-**********************************************
+Deploying the device simulator UI
+*********************************
 
-To build and setup the Device simulator web application to the S3 bucket created when setting up the nRF Asset Tracker in your AWS account, run the following commands:
+To build and setup the device simulator UI to the S3 bucket created when setting up the nRF Asset Tracker in your AWS account, run the following commands:
 
 .. code-block:: bash
 
@@ -89,4 +85,4 @@ To build and setup the Device simulator web application to the S3 bucket created
     $SNOWPACK_PUBLIC_CLOUDFRONT_DISTRIBUTION_ID_DEVICE_UI --paths /,/index.html
     echo "Done. Now open $SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL to view the web app."
 
-After executing the above commands, you can open the domain name printed in ``SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL`` to view the Device simulator web application.
+After executing the above commands, you can open the domain name printed in ``SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL`` to view the device simulator UI.
