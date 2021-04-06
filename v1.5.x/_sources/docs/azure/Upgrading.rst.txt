@@ -11,23 +11,23 @@ If you already have an installation and you want to upgrade to the latest releas
     npm ci
     npx tsc
     az deployment group create \
-        --resource-group ${APP_NAME:-nrf-asset-tracker} \
+        --resource-group ${APP_NAME:-nrfassettracker} \
         --mode Complete \
         --name cli-`uuidgen` \
         --template-file azuredeploy.json \
         --parameters \
-            appName=${APP_NAME:-nrf-asset-tracker} \
+            appName=${APP_NAME:-nrfassettracker} \
             location=${LOCATION:-northeurope} \
             appRegistrationClientId=$APP_REG_CLIENT_ID \
-            b2cTenant=${B2C_TENANT:-nrf-asset-tracker}
-    func azure functionapp publish ${APP_NAME:-nrf-asset-tracker}API --typescript
+            b2cTenant=${B2C_TENANT:-nrfassettrackerusers}
+    func azure functionapp publish ${APP_NAME:-nrfassettracker}API --typescript
 
 Docker variant (in case you get a ``Permission denied.`` error):
 
 .. code-block:: bash
 
     docker run --rm -v ${PWD}:/workdir -v ${HOME}/.azure:/root/.azure nrf-asset-tracker/azure-dev:latest \
-        func azure functionapp publish ${APP_NAME:-nrf-asset-tracker}API --typescript
+        func azure functionapp publish ${APP_NAME:-nrfassettracker}API --typescript
 
 .. tip::
 
@@ -36,15 +36,15 @@ Docker variant (in case you get a ``Permission denied.`` error):
    .. code-block:: bash
 
        az deployment group validate \
-           --resource-group ${APP_NAME:-nrf-asset-tracker} \
+           --resource-group ${APP_NAME:-nrfassettracker} \
            --mode Complete \
-           --name ${APP_NAME:-nrf-asset-tracker} \
+           --name ${APP_NAME:-nrfassettracker} \
            --template-file azuredeploy.json \
            --parameters \
-               appName=${APP_NAME:-nrf-asset-tracker} \
+               appName=${APP_NAME:-nrfassettracker} \
                location=${LOCATION:-northeurope} \
                appRegistrationClientId=$APP_REG_CLIENT_ID \
-               b2cTenant=${B2C_TENANT:-nrf-asset-tracker}
+               b2cTenant=${B2C_TENANT:-nrfassettrackerusers}
 
 If the command throws an error, you can find the detailed log message using the following command:
 

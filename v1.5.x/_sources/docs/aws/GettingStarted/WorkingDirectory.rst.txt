@@ -1,5 +1,7 @@
 .. _aws-create-the-working-dir:
 
+.. _aws-working-directory:
+
 Create the working directory
 ############################
 

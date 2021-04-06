@@ -41,6 +41,8 @@ Button is a UI element and in the case of push buttons, there is no *state*, whi
 The messages published by the device are described in detail in the `messages JSON schema file <./messages.schema.json>`_.
 For more information, see the `messages JSON document <./message.json>`_ for an example device state.
 
+.. _batch-messages:
+
 Batch data
 **********
 

@@ -160,18 +160,18 @@ To deploy the solution, complete the following steps:
 
    .. code-block:: bash
 
-       az group create --name ${RESOURCE_GROUP_NAME:-nrf-asset-tracker} --location ${LOCATION:-northeurope}
+       az group create --name ${APP_NAME:-nrfassettracker} --location ${LOCATION:-northeurope}
 
 #. Deploy the resources:
 
    .. code-block:: bash
 
        az deployment group create \
-       --resource-group ${RESOURCE_GROUP_NAME:-nrf-asset-tracker} \
+       --resource-group ${APP_NAME:-nrfassettracker} \
        --mode Complete \
        --template-file azuredeploy.json \
        --parameters \
-       appName=${APP_NAME:-nrf-asset-tracker} \
+       appName=${APP_NAME:-nrfassettracker} \
        location=${LOCATION:-northeurope} \
        appRegistrationClientId=$APP_REG_CLIENT_ID \
        b2cTenant=$B2C_TENANT \
@@ -181,14 +181,14 @@ To deploy the solution, complete the following steps:
 
    .. code-block:: bash
 
-       func azure functionapp publish ${APP_NAME:-nrf-asset-tracker}API --typescript
+       func azure functionapp publish ${APP_NAME:-nrfassettracker}API --typescript
 
    Docker variant for publishing the functions (in case you get a ``Permission denied`` error):
 
    .. code-block:: bash
 
        docker run --rm -v ${PWD}:/workdir -v ${HOME}/.azure:/root/.azure nordicsemiconductor/asset-tracker-cloud-azure-js:saga \
-           func azure functionapp publish ${APP_NAME:-nrf-asset-tracker}API --typescript
+           func azure functionapp publish ${APP_NAME:-nrfassettracker}API --typescript
 
 Running the solution during development
 ***************************************
@@ -197,7 +197,7 @@ To run the solution during development, run the following commands:
 
 .. code-block:: bash
 
-      export API_ENDPOINT=https://`az functionapp show -g ${RESOURCE_GROUP_NAME} -n ${APP_NAME:-nrf-asset-tracker}api --query 'defaultHostName' --output tsv | tr -d '\n'`/
+      export API_ENDPOINT=https://`az functionapp show -g ${APP_NAME} -n ${APP_NAME:-nrfassettracker}api --query 'defaultHostName' --output tsv | tr -d '\n'`/
 
       npm ci
       npm run test:e2e

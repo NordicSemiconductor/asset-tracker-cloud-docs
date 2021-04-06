@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous integration &mdash; nRF Asset Tracker 6e81782411742bb38feca946960923ec900acea0 documentation</title>
+  <title>Continuous integration &mdash; nRF Asset Tracker 160cf47881efc5dbfce65348ae7c462b0e1105a3 documentation</title>
   
 
   
@@ -314,17 +314,17 @@ az provider register --namespace Microsoft.Web
 </div>
 </li>
 <li><p>Create a resource group for the nRF Asset Tracker:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az group create --name <span class="si">${</span><span class="nv">RESOURCE_GROUP_NAME</span><span class="k">:-</span><span class="nv">nrf</span><span class="p">-asset-tracker</span><span class="si">}</span> --location <span class="si">${</span><span class="nv">LOCATION</span><span class="k">:-</span><span class="nv">northeurope</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az group create --name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> --location <span class="si">${</span><span class="nv">LOCATION</span><span class="k">:-</span><span class="nv">northeurope</span><span class="si">}</span>
 </pre></div>
 </div>
 </li>
 <li><p>Deploy the resources:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group create <span class="se">\</span>
---resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP_NAME</span><span class="k">:-</span><span class="nv">nrf</span><span class="p">-asset-tracker</span><span class="si">}</span> <span class="se">\</span>
+--resource-group <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
 --mode Complete <span class="se">\</span>
 --template-file azuredeploy.json <span class="se">\</span>
 --parameters <span class="se">\</span>
-<span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrf</span><span class="p">-asset-tracker</span><span class="si">}</span> <span class="se">\</span>
+<span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
 <span class="nv">location</span><span class="o">=</span><span class="si">${</span><span class="nv">LOCATION</span><span class="k">:-</span><span class="nv">northeurope</span><span class="si">}</span> <span class="se">\</span>
 <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
 <span class="nv">b2cTenant</span><span class="o">=</span><span class="nv">$B2C_TENANT</span> <span class="se">\</span>
@@ -333,12 +333,12 @@ az provider register --namespace Microsoft.Web
 </div>
 </li>
 <li><p>Publish the functions:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>func azure functionapp publish <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrf</span><span class="p">-asset-tracker</span><span class="si">}</span>API --typescript
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>func azure functionapp publish <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>API --typescript
 </pre></div>
 </div>
 <p>Docker variant for publishing the functions (in case you get a <code class="docutils literal notranslate"><span class="pre">Permission</span> <span class="pre">denied</span></code> error):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir -v <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.azure:/root/.azure nordicsemiconductor/asset-tracker-cloud-azure-js:saga <span class="se">\</span>
-    func azure functionapp publish <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrf</span><span class="p">-asset-tracker</span><span class="si">}</span>API --typescript
+    func azure functionapp publish <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>API --typescript
 </pre></div>
 </div>
 </li>
@@ -347,7 +347,7 @@ az provider register --namespace Microsoft.Web
 <div class="section" id="running-the-solution-during-development">
 <h2>Running the solution during development<a class="headerlink" href="#running-the-solution-during-development" title="Permalink to this headline">¶</a></h2>
 <p>To run the solution during development, run the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">API_ENDPOINT</span><span class="o">=</span>https://<span class="sb">`</span>az functionapp show -g <span class="si">${</span><span class="nv">RESOURCE_GROUP_NAME</span><span class="si">}</span> -n <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrf</span><span class="p">-asset-tracker</span><span class="si">}</span>api --query <span class="s1">&#39;defaultHostName&#39;</span> --output tsv <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">API_ENDPOINT</span><span class="o">=</span>https://<span class="sb">`</span>az functionapp show -g <span class="si">${</span><span class="nv">APP_NAME</span><span class="si">}</span> -n <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>api --query <span class="s1">&#39;defaultHostName&#39;</span> --output tsv <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>/
 
 npm ci
 npm run test:e2e
