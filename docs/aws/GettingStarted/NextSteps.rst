@@ -8,6 +8,7 @@ An interesting topic to explore is enabling :ref:`Cell Geolocation <aws-unwired-
 
 Once you start modifying the firmware, you can also look into the following topics:
 
+* :ref:`Customizing the web application to show your sensor data <aws-customization>`
 * Setting up :ref:`Continuous deployment <aws-continuous-deployment>`
 * Performing :ref:`Continuous integration of the cloud resources <aws-continuous-integration>`
 * Performing advanced :ref:`aws-firmware-ci`
