@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Upgrading an existing installation &mdash; nRF Asset Tracker v13.3.4 documentation</title>
+  <title>Upgrading an existing installation &mdash; nRF Asset Tracker v13.3.5 documentation</title>
   
 
   
@@ -197,7 +197,7 @@
 npm ci
 npx tsc
 az deployment group create <span class="se">\</span>
-    --resource-group <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+    --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
     --mode Complete <span class="se">\</span>
     --name cli-<span class="sb">`</span>uuidgen<span class="sb">`</span> <span class="se">\</span>
     --template-file azuredeploy.json <span class="se">\</span>
@@ -218,9 +218,9 @@ func azure functionapp publish <span class="si">${</span><span class="nv">APP_NA
 <p class="admonition-title">Tip</p>
 <p>You can verify the validity of a template using the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group validate <span class="se">\</span>
-    --resource-group <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+    --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
     --mode Complete <span class="se">\</span>
-    --name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+    --name cli-<span class="sb">`</span>uuidgen<span class="sb">`</span> <span class="se">\</span>
     --template-file azuredeploy.json <span class="se">\</span>
     --parameters <span class="se">\</span>
         <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>

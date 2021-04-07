@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Running the application locally with Docker &mdash; nRF Asset Tracker v13.3.4 documentation</title>
+  <title>Running the application locally with Docker &mdash; nRF Asset Tracker v13.3.5 documentation</title>
   
 
   
@@ -224,7 +224,7 @@
 </li>
 <li><p>Run the following command to list the environment variables of the function app and export them:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az functionapp config appsettings list <span class="se">\</span>
-    --resource-group <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">n</span><span class="si">}</span> <span class="se">\</span>
+    --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
     --name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>API <span class="p">|</span> jq -r <span class="s1">&#39;.[] | .name + &quot;=\&quot;&quot; + .value + &quot;\&quot;&quot;&#39;</span>
 </pre></div>
 </div>

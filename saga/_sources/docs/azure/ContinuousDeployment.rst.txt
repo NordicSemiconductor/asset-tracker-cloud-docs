@@ -173,7 +173,7 @@ To acquire credentials for the CI runner, complete the following steps:
 
    .. code-block:: bash
 
-      az group create --name ${APP_NAME:-nrfassettracker} --location ${LOCATION:-northeurope}
+      az group create --name ${RESOURCE_GROUP:-nrfassettracker} --location ${LOCATION:-northeurope}
 
 #. Fork the `nRF Asset Tracker for Azure project <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_ and add the following secrets.
 

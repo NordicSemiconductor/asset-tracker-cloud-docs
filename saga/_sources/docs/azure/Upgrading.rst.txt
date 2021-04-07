@@ -11,7 +11,7 @@ If you already have an installation and you want to upgrade to the latest releas
     npm ci
     npx tsc
     az deployment group create \
-        --resource-group ${APP_NAME:-nrfassettracker} \
+        --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
         --mode Complete \
         --name cli-`uuidgen` \
         --template-file azuredeploy.json \
@@ -36,9 +36,9 @@ Docker variant (in case you get a ``Permission denied.`` error):
    .. code-block:: bash
 
        az deployment group validate \
-           --resource-group ${APP_NAME:-nrfassettracker} \
+           --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
            --mode Complete \
-           --name ${APP_NAME:-nrfassettracker} \
+           --name cli-`uuidgen` \
            --template-file azuredeploy.json \
            --parameters \
                appName=${APP_NAME:-nrfassettracker} \

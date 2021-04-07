@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploy the solution to your account &mdash; nRF Asset Tracker v13.3.4 documentation</title>
+  <title>Deploy the solution to your account &mdash; nRF Asset Tracker v13.3.5 documentation</title>
   
 
   
@@ -242,6 +242,7 @@ az account list --output table
 </pre></div>
 </div>
 <ol class="arabic">
+<li><p>Choose a resource group name for the solution and export it as <code class="docutils literal notranslate"><span class="pre">RESOURCE_GROUP</span></code>.</p></li>
 <li><p>Choose a name for the solution and export it as <code class="docutils literal notranslate"><span class="pre">APP_NAME</span></code>.
 Use a short name composed of numbers and lower-case letters only.
 In this example, we use <code class="docutils literal notranslate"><span class="pre">nrfassettracker</span></code> as the default name.</p></li>
@@ -251,7 +252,7 @@ In this example, we use <code class="docutils literal notranslate"><span class="
 </div>
 </li>
 <li><p>Create the resource group for the solution:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az group create --subscription <span class="nv">$SUBSCRIPTION_ID</span> -l <span class="nv">$LOCATION</span> -n <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az group create --subscription <span class="nv">$SUBSCRIPTION_ID</span> -l <span class="nv">$LOCATION</span> -n <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>
 </pre></div>
 </div>
 </li>
@@ -280,8 +281,9 @@ Use <code class="docutils literal notranslate"><span class="pre">http://localhos
 </div>
 </li>
 <li><p>Deploy the solution by running the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group create --resource-group <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
-   --mode Complete --name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group create --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+   --mode Complete <span class="se">\</span>
+   --name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
    --template-file azuredeploy.json <span class="se">\</span>
    --parameters <span class="se">\</span>
       <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>

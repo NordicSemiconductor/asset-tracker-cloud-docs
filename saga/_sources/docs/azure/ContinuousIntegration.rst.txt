@@ -160,14 +160,14 @@ To deploy the solution, complete the following steps:
 
    .. code-block:: bash
 
-       az group create --name ${APP_NAME:-nrfassettracker} --location ${LOCATION:-northeurope}
+       az group create --name ${RESOURCE_GROUP:-nrfassettracker} --location ${LOCATION:-northeurope}
 
 #. Deploy the resources:
 
    .. code-block:: bash
 
        az deployment group create \
-       --resource-group ${APP_NAME:-nrfassettracker} \
+       --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
        --mode Complete \
        --template-file azuredeploy.json \
        --parameters \
@@ -197,7 +197,7 @@ To run the solution during development, run the following commands:
 
 .. code-block:: bash
 
-      export API_ENDPOINT=https://`az functionapp show -g ${APP_NAME} -n ${APP_NAME:-nrfassettracker}api --query 'defaultHostName' --output tsv | tr -d '\n'`/
+      export API_ENDPOINT=https://`az functionapp show -g ${RESOURCE_GROUP:-nrfassettracker} -n ${APP_NAME:-nrfassettracker}api --query 'defaultHostName' --output tsv | tr -d '\n'`/
 
       npm ci
       npm run test:e2e

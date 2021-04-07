@@ -40,7 +40,7 @@ To run the application locally with Docker, complete the following steps:
    .. code-block:: bash
 
        az functionapp config appsettings list \
-           --resource-group ${APP_NAME:-n} \
+           --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
            --name ${APP_NAME:-nrfassettracker}API | jq -r '.[] | .name + "=\"" + .value + "\""'
 
 #. Run the function app by using the following command:
