@@ -7,7 +7,7 @@ This section walks you through the customization of the nRF Asset Tracker for yo
 
 Through the example, the following changes are made:
 
-1. :ref:`Device Simulator UI <simulator>` is modified to generate the heart rate sensor data.
+1. :ref:`Device Simulator UI <simulator-aws>` is modified to generate the heart rate sensor data.
 #. :ref:`Cat Tracker web application <index-cat-tracker-web-app>` is modified to display the sensor data.
 
 The following video and table show the customization steps and the associated timestamps:
