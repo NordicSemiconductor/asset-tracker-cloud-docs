@@ -60,10 +60,10 @@ To build and deploy the web application to the Storage Account created while set
 
 .. code-block:: bash
 
-      export APP_URL=`az storage account show -g ${APP_NAME} -n ${APP_NAME}app --query 'primaryEndpoints.web' --output tsv | tr -d '\n'`
-      export APP_STORAGE_CONNECTION_STRING=`az storage account show-connection-string --name ${APP_NAME}app --query 'connectionString'`
+      export APP_URL=`az storage account show -g ${RESOURCE_GROUP:-nrfassettracker} -n ${APP_NAME:-nrfassettracker}app --query 'primaryEndpoints.web' --output tsv | tr -d '\n'`
+      export APP_STORAGE_CONNECTION_STRING=`az storage account show-connection-string --name ${APP_NAME:-nrfassettracker}app --query 'connectionString'`
       npm run build
-      az storage blob upload-batch --connection-string ${APP_STORAGE_CONNECTION_STRING} --account-name ${APP_NAME}app -s ./build -d '$web'
+      az storage blob upload-batch --connection-string ${APP_STORAGE_CONNECTION_STRING} --account-name ${APP_NAME:-nrfassettracker}app -s ./build -d '$web'
       echo "Done. Now open $APP_URL to view the web app."
 
 After running the above commands, you can open the domain name printed in ``APP_URL`` to view the web application.
