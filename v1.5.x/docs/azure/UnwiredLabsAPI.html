@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Unwired Labs API &mdash; nRF Asset Tracker 6733e736e6122090e99ab0212b077ecae299f246 documentation</title>
+  <title>Unwired Labs API &mdash; nRF Asset Tracker 00eb0b350680e468633fe1b0c81a256e6ca8c40a documentation</title>
   
 
   
@@ -177,8 +177,9 @@
 <span id="azure-unwired-labs-api"></span><h1>Unwired Labs API<a class="headerlink" href="#unwired-labs-api" title="Permalink to this headline">¶</a></h1>
 <p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for the application using <a class="reference external" href="https://unwiredlabs.com/">Unwired Labs’</a> geolocation API in your deployment.</p>
 <p>To use Unwired Labs’ LocationAPI, provide the <code class="docutils literal notranslate"><span class="pre">unwiredlabsApiKey</span></code> parameter when deploying the solution:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group create --resource-group <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
-    --mode Complete --name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group create --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+    --mode Complete <span class="se">\</span>
+    --name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
     --template-file azuredeploy.json <span class="se">\</span>
     --parameters <span class="se">\</span>
         <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>

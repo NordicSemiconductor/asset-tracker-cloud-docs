@@ -9,8 +9,9 @@ To use Unwired Labs' LocationAPI, provide the ``unwiredlabsApiKey`` parameter wh
 
 .. code-block:: bash
 
-    az deployment group create --resource-group ${APP_NAME:-nrfassettracker} \
-        --mode Complete --name ${APP_NAME:-nrfassettracker} \
+    az deployment group create --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
+        --mode Complete \
+        --name ${APP_NAME:-nrfassettracker} \
         --template-file azuredeploy.json \
         --parameters \
             appName=${APP_NAME:-nrfassettracker} \

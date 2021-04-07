@@ -44,6 +44,8 @@ To deploy the solution to your account, complete the following steps:
       # Verify that it is set to default
       az account list --output table
 
+#. Choose a resource group name for the solution and export it as ``RESOURCE_GROUP``.
+
 #. Choose a name for the solution and export it as ``APP_NAME``.
    Use a short name composed of numbers and lower-case letters only.
    In this example, we use ``nrfassettracker`` as the default name.
@@ -58,7 +60,7 @@ To deploy the solution to your account, complete the following steps:
 
    .. code-block:: bash
 
-      az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${APP_NAME:-nrfassettracker}
+      az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${RESOURCE_GROUP:-nrfassettracker}
 
 #. For creating an Azure Active Directory B2C in the next step, the namespace needs to be registered in the subscription:
 
@@ -94,8 +96,9 @@ To deploy the solution to your account, complete the following steps:
 
    .. code-block:: bash
 
-      az deployment group create --resource-group ${APP_NAME:-nrfassettracker} \
-         --mode Complete --name ${APP_NAME:-nrfassettracker} \
+      az deployment group create --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
+         --mode Complete \
+         --name ${APP_NAME:-nrfassettracker} \
          --template-file azuredeploy.json \
          --parameters \
             appName=${APP_NAME:-nrfassettracker} \
