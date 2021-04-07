@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Transport and Data Protocol &mdash; nRF Asset Tracker v13.3.3 documentation</title>
+  <title>Transport and Data Protocol &mdash; nRF Asset Tracker v13.3.4 documentation</title>
   
 
   
@@ -242,7 +242,7 @@ Only the values change in the data.</p>
 If the message is to be transferred for example, using <a class="reference external" href="https://developers.google.com/protocol-buffers/">Protocol Buffers</a>, the data can be encoded with just 62 bytes (an improvement by 46%) (<a class="reference external" href="https://gist.github.com/coderbyheart/34a8e71ffe30af882407544567971efb">source code</a>).</p>
 <p>Note that even though the savings in transferred data over the lifetime of a device are significant, there is an extra cost of maintaining the source code on the device side and on the cloud side that enables the use of a protocol, which is not supported natively by the cloud provider.</p>
 <p>See <a class="reference external" href="http://tutorials.jenkov.com/rion/rion-performance-benchmarks.html">RION Performance Benchmarks</a> also.</p>
-<p><a class="reference external" href="https://google.github.io/flatbuffers/">FlatBuffers</a> seems to be the best candidate for a resource-constrained device like the nRF9160 DK.</p>
+<p><a class="reference external" href="https://google.github.io/flatbuffers/">FlatBuffers</a> seems to be <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues/59">a good candidate</a> for a resource-constrained device like the nRF9160 DK.</p>
 </div>
 </div>
 </div>

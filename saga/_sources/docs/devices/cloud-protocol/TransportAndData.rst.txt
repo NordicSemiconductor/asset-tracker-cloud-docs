@@ -59,4 +59,4 @@ Note that even though the savings in transferred data over the lifetime of a dev
 
 See `RION Performance Benchmarks <http://tutorials.jenkov.com/rion/rion-performance-benchmarks.html>`_ also.
 
-`FlatBuffers <https://google.github.io/flatbuffers/>`_ seems to be the best candidate for a resource-constrained device like the nRF9160 DK.
+`FlatBuffers <https://google.github.io/flatbuffers/>`_ seems to be `a good candidate <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues/59>`_ for a resource-constrained device like the nRF9160 DK.
