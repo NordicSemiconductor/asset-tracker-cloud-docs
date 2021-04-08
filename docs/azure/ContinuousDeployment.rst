@@ -3,10 +3,6 @@
 Continuous deployment
 #####################
 
-.. contents::
-   :local:
-   :depth: 2
-
 You can enable continuous deployment of the changes in your source repository to an Azure account.
 
 .. note::
@@ -43,25 +39,13 @@ To acquire credentials for the CI runner, complete the following steps:
       # Verify that it is set to default
       az account list --output table
 
-#. Enable required resources using the following commands:
-
-   .. code-block:: bash
-
-      az provider register --namespace Microsoft.AzureActiveDirectory
-      az provider register --namespace Microsoft.Storage
-      az provider register --namespace Microsoft.Insights
-      az provider register --namespace Microsoft.SignalRService
-      az provider register --namespace Microsoft.DocumentDB
-      az provider register --namespace Microsoft.Devices
-      az provider register --namespace Microsoft.Web
-
 #. Create the CI credentials:
 
    .. code-block:: bash
 
       az ad sp create-for-rbac --name https://github.com/ --role Contributor --sdk-auth --scopes /subscriptions/${SUBSCRIPTION_ID} > ci-credentials.json
 
-#. Fork the `nRF Asset Tracker for Azure project <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_ and add the following secrets.
+#. Fork the `nRF Asset Tracker for Azure project <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_ and add the following secrets to an environment called ``production``:
 
    * ``AZURE_CREDENTIALS`` - Store the contents of the JSON file created in the above step.
    * ``APP_REG_CLIENT_ID`` - The ``application (client) id`` of the Active Directory B2C App registration.

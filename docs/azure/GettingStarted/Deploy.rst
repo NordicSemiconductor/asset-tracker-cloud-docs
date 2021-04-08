@@ -3,33 +3,43 @@ Deploy the solution to your account
 
 .. note::
 
-    Since the project uses Azure Active Directory B2C, it is recommended to set up the nRF Asset Tracker in a dedicated directory and with a dedicated subscription for better cost control.
+   The setup process in Azure is more complicated when compared to the :ref:`AWS continuous integration setup <aws-continuous-integration>`, since it involves many manual steps, which cannot be automated.
+   If you have ideas to simplify the process, `please provide your input <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_.
 
-To deploy the solution to your account, complete the following steps:
-
-1. `Create a new Active Directory <https://portal.azure.com/#create/Microsoft.AzureActiveDirectory>`_:
-   In the Azure portal click :guilabel:`Create a resource` and search for *Azure Active Directory*.
-   Select *Azure Active Directory* and click :guilabel:`Create`.
-   Enter the desired information and click :guilabel:`Create`.
-
-#. In the Azure portal, navigate to the `Subscriptions blade <https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade>`_, and add a new subscription for the nRF Asset Tracker.   
-   Export the subscription ID onto the ``SUBSCRIPTION_ID`` environment variable:
+1. Export the identifier of the subscription which contains the nRF Asset Tracker resources:
 
    .. code-block:: bash
 
       export SUBSCRIPTION_ID="<Subscription ID>"
 
+#. Choose a resource group name for the solution and export it as ``RESOURCE_GROUP``.
+   In this example, we use ``nrfassettracker`` as the resource group name.
+
+   .. code-block:: bash
+
+      export RESOURCE_GROUP="nrfassettracker"
+
+#. Choose a name for the solution and export it as ``APP_NAME``.
+   Use a short name composed of numbers and lower-case letters only.
+   In this example, we use ``nrfassettracker`` as the application name.
+
+   .. code-block:: bash
+
+      export APP_NAME="nrfassettracker"
+
+#. Configure your preferred location (you can list the locations using ``az account list-locations``) and export it on the environment variable ``LOCATION``.
+   In this example, we use ``northeurope`` as the location name.
+
+   .. code-block:: bash
+
+      export LOCATION="northeurope"
+
 #. Run the following command to allow the changed file:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   direnv allow
+      direnv allow
    
-#. Find the created subscription in the Azure Portal and give it a meaningful name (by default it will have a generic name, e.g. *Pay-as-You-Go*).
-
-#. Transfer it to the directory you have created above using the :guilabel:`Change directory` feature.
-   The transfer can take up to 10 minutes.
-
 #. Authenticate the CLI using the following command:
 
    .. code-block:: bash
@@ -38,23 +48,11 @@ To deploy the solution to your account, complete the following steps:
 
 #. Make sure that you have enabled the right subscription by using the following commands:
 
-.. code-block:: bash
-
-      az account set --subscription $SUBSCRIPTION_ID 
-      # Verify that it is set to default
-      az account list --output table
-
-#. Choose a resource group name for the solution and export it as ``RESOURCE_GROUP``.
-
-#. Choose a name for the solution and export it as ``APP_NAME``.
-   Use a short name composed of numbers and lower-case letters only.
-   In this example, we use ``nrfassettracker`` as the default name.
-
-#. Configure your preferred location (you can list the locations using ``az account list-locations``) and export it on the environment variable ``LOCATION``.
-
    .. code-block:: bash
 
-      export LOCATION="<Location name>" # e.g. northeurope
+         az account set --subscription $SUBSCRIPTION_ID 
+         # Verify that it is set to default
+         az account list --output table
 
 #. Create the resource group for the solution:
 

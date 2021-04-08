@@ -35,11 +35,11 @@ It is developed using `Azure Resource Manager <https://docs.microsoft.com/en-us/
 
    GettingStarted/Index.rst
    ContinuousDeployment.rst
+   ContinuousIntegration.rst
    RunningInDocker.rst
    Upgrading.rst
    DeviceCredentials.rst
    Simulator.rst
-   ContinuousIntegration.rst
    UnwiredLabsAPI.rst
    IoTShadowAndTopics.rst
    secure-azure-function-apps-with-microsoft-b2c.rst
