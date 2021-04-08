@@ -3,6 +3,10 @@
 Continuous integration
 ######################
 
+.. contents::
+   :local:
+   :depth: 2
+
 Continuous integration involves the following actions:
 
 * Every change to the project is tested against an Azure account, which must be manually prepared.
@@ -26,47 +30,7 @@ Prepare your Azure Account
 .. note::
 
    The setup process in Azure is more complicated when compared to the :ref:`AWS continuous integration setup <aws-continuous-integration>`, since it involves many manual steps, which cannot be automated.
-   If you have ideas to simplify the process, `provide your input <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_.
-
-To prepare your Azure account, complete the following steps:
-
-1. Create a new tenant (Azure Active Directory B2C).
-#. Create a subscription.
-#. Create a secondary tenant (Azure Active Directory B2C).
-
-Create a new tenant (Azure Active Directory)
-============================================
-
-To separate the CI test runs from the production resources, navigate to the `Azure Portal <https://portal.azure.com/>`_ and create a new *Azure Active Directory tenant* with the following values:
-
-* Organization name - ``nRF Asset Tracker (CI)``.
-* Initial domain name - ``nrfassettrackerci`` (Customize the name since it is globally unique).
-* Country - Choose your preferred country.
-
-After you submit, the tenant will be created in a few minutes.
-
-Note down the initial domain name that you used:
-
-.. code-block:: bash
-
-   export TENANT_DOMAIN="<Primary domain>" # For example, "nrfassettrackerci"
-
-Create subscription
-===================
-
-To create a subscription, complete the following steps:
-
-1. Login to the Azure portal.
- 
-#. Navigate to the :guilabel:`Subscriptions` blade and create a new subscription for the CI tenant. This subscription creation will make it easier to identify the costs for the purpose.
-
-#. After creating the subscription, change its directory to the one created in the previous section.
-
-Note down the ``Subscription ID``, which you can find in the :guilabel:`Subscriptions` blade:
-
-.. code-block:: bash
-
-   export SUBSCRIPTION_ID="<Subscription ID>" # For example, "1aae311f-12d6-419e-8c6b-ebcf3ec4ed15"
+   If you have ideas to simplify the process, `please provide your input <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_.
 
 Create a secondary tenant (Azure Active Directory B2C)
 ======================================================
@@ -88,7 +52,7 @@ Create a secondary tenant (Azure Active Directory B2C)
 #. Link this Azure AD B2C tenant to the subscription for CI by following the `Billing guide <https://docs.microsoft.com/en-us/azure/active-directory-b2c/billing#link-an-azure-ad-b2c-tenant-to-a-subscription>`_.
 
 Create the Azure Active Directory B2C application
-*************************************************
+-------------------------------------------------
 
 To create the Azure Active Directory B2C application, complete the following steps:
 
@@ -113,11 +77,7 @@ To create the Azure Active Directory B2C application, complete the following ste
 
 #. In the left menu, under :guilabel:`Manage`, select :guilabel:`Authentication`. Allow the Implicit grant for Access and ID tokens and select ``Yes`` for :guilabel:`Treat application as a public client`.
 
-#. Create a new client secret for the App registration and note it down:
-
-   .. code-block:: bash
-
-       export B2C_CLIENT_SECRET="<Client Secret Value>" # For example, "12OzW72ie-U.vlmzik-eO5gX.x26jLTI6U"
+#. Create a new client secret for the App registration (for example, "12OzW72ie-U.vlmzik-eO5gX.x26jLTI6U") and note it down.
 
 Deploy the solution
 *******************
@@ -130,6 +90,12 @@ To deploy the solution, complete the following steps:
 
        az login
 
+#. Export the identifier of the subscription which contains the nRF Asset Tracker resources:
+
+   .. code-block:: bash
+
+      export SUBSCRIPTION_ID="<subscription id>"
+
 #. Make sure that you have enabled the right subscription by using the following commands:
 
    .. code-block:: bash
@@ -137,18 +103,6 @@ To deploy the solution, complete the following steps:
        az account set --subscription $SUBSCRIPTION_ID 
        # Verify that it is set to default
        az account list --output table
-
-#. Enable the required resources
-
-   .. code-block:: bash
-
-       az provider register --namespace Microsoft.AzureActiveDirectory
-       az provider register --namespace Microsoft.Storage
-       az provider register --namespace Microsoft.Insights
-       az provider register --namespace Microsoft.SignalRService
-       az provider register --namespace Microsoft.DocumentDB
-       az provider register --namespace Microsoft.Devices
-       az provider register --namespace Microsoft.Web
 
 #. Create the CI credentials:
 
@@ -160,18 +114,18 @@ To deploy the solution, complete the following steps:
 
    .. code-block:: bash
 
-       az group create --name ${RESOURCE_GROUP:-nrfassettracker} --location ${LOCATION:-northeurope}
+       az group create --name ${RESOURCE_GROUP:-nrfassettrackerci} --location ${LOCATION:-northeurope}
 
 #. Deploy the resources:
 
    .. code-block:: bash
 
        az deployment group create \
-       --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
+       --resource-group ${RESOURCE_GROUP:-nrfassettrackerci} \
        --mode Complete \
        --template-file azuredeploy.json \
        --parameters \
-       appName=${APP_NAME:-nrfassettracker} \
+       appName=${APP_NAME:-nrfassettrackerci} \
        location=${LOCATION:-northeurope} \
        appRegistrationClientId=$APP_REG_CLIENT_ID \
        b2cTenant=$B2C_TENANT \
@@ -181,14 +135,24 @@ To deploy the solution, complete the following steps:
 
    .. code-block:: bash
 
-       func azure functionapp publish ${APP_NAME:-nrfassettracker}API --typescript
+       func azure functionapp publish ${APP_NAME:-nrfassettrackerci}API --typescript
 
    Docker variant for publishing the functions (in case you get a ``Permission denied`` error):
 
    .. code-block:: bash
 
        docker run --rm -v ${PWD}:/workdir -v ${HOME}/.azure:/root/.azure nordicsemiconductor/asset-tracker-cloud-azure-js:saga \
-           func azure functionapp publish ${APP_NAME:-nrfassettracker}API --typescript
+           func azure functionapp publish ${APP_NAME:-nrfassettrackerci}API --typescript
+
+Setup continuous integration on GitHub
+**************************************
+
+Fork the `nRF Asset Tracker for Azure project <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_ and add the following secrets to an environment called ``ci``:
+
+*  ``APP_REG_CLIENT_ID``
+*  ``AZURE_CREDENTIALS`` (the contents of :file:`ci-credentials.json`)
+*  ``B2C_CLIENT_SECRET``
+*  ``B2C_TENANT_ID``
 
 Running the solution during development
 ***************************************
@@ -197,7 +161,7 @@ To run the solution during development, run the following commands:
 
 .. code-block:: bash
 
-      export API_ENDPOINT=https://`az functionapp show -g ${RESOURCE_GROUP:-nrfassettracker} -n ${APP_NAME:-nrfassettracker}api --query 'defaultHostName' --output tsv | tr -d '\n'`/
+      export API_ENDPOINT=https://`az functionapp show -g ${RESOURCE_GROUP:-nrfassettrackerci} -n ${APP_NAME:-nrfassettrackerci}api --query 'defaultHostName' --output tsv | tr -d '\n'`/
 
       npm ci
       npm run test:e2e
@@ -205,13 +169,3 @@ To run the solution during development, run the following commands:
 .. note::
 
    Azure functions allow only one ``Issuer Url`` in the Active Directory authentication configuration. So, you cannot interact with this instance from the end-to-end tests and the web application since the user flow name differs (``B2C_1_developer`` for end-to-end tests and ``B2C_1_signup_signin`` for the web application) and it is part of the Issuer Url (for example, ``https://${TENANT_DOMAIN}.b2clogin.com/${TENANT_DOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_developer``).
-
-Setup the solution on GitHub
-****************************
-
-To setup the solution on GitHub, provide the following environment variables for GitHub Actions of the project:
-
-*  ``E2E_APP_REG_CLIENT_ID``
-*  ``E2E_AZURE_CREDENTIALS`` (the contents of :file:`ci-credentials.json`)
-*  ``E2E_B2C_CLIENT_SECRET``
-*  ``E2E_B2C_TENANT_ID``
