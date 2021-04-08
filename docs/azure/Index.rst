@@ -34,11 +34,11 @@ It is developed using `Azure Resource Manager <https://docs.microsoft.com/en-us/
    :caption: Subpages:
 
    GettingStarted/Index.rst
+   ContinuousDeployment.rst
    RunningInDocker.rst
    Upgrading.rst
    DeviceCredentials.rst
    Simulator.rst
-   ContinuousDeployment.rst
    ContinuousIntegration.rst
    UnwiredLabsAPI.rst
    IoTShadowAndTopics.rst
