@@ -135,6 +135,10 @@ jobs:
           git -C asset-tracker-docs rm -r ${{ env.VERSION }}/\*
           mkdir -p asset-tracker-docs/${{ env.VERSION }}
           cp -r build/html/* asset-tracker-docs/${{ env.VERSION }}
+          # Maintain legacy URLs
+          if [[ "${{ env.VERSION }}" == "v1.5.x" ]]; then
+            REDIRECT=./GettingStarted/Index.html node scripts/redirect.mjs > asset-tracker-docs/${{ env.VERSION }}/docs/aws/GettingStarted.html
+          fi;
           git -C asset-tracker-docs add -A ${{ env.VERSION }}
           if [[ `git -C asset-tracker-docs status --porcelain` ]]; then
             echo "HAS_CHANGES=1" >> $GITHUB_ENV
