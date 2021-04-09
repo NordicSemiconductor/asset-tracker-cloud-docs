@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Generating a certificate &mdash; nRF Asset Tracker 01f96deb34ff30cc358b851b03fa9e02696810c3 documentation</title>
+  <title>Next steps &mdash; nRF Asset Tracker 01f96deb34ff30cc358b851b03fa9e02696810c3 documentation</title>
   
 
   
@@ -94,7 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../aws/Index.html">AWS cloud components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../firmware/Index.html">Firmware</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Index.html">Connect using a real device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devices/Index.html">Connect using a real device</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
@@ -152,14 +152,14 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Generating a certificate</li>
+      <li>Next steps</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v1.5.x/docs/devices/FlashingCertificate/Generate.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v1.5.x/docs/azure/GettingStarted/NextSteps.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -173,21 +173,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="generating-a-certificate">
-<span id="devices-provisioning-certificate-generate"></span><h1>Generating a certificate<a class="headerlink" href="#generating-a-certificate" title="Permalink to this headline">¶</a></h1>
-<p>You can use the CLI to generate a certificate for your device.
-The firmware will use the IMEI of the device as the MQTT client ID.
-You can get the IMEI of your device using the AT command <code class="docutils literal notranslate"><span class="pre">AT+CGSN</span></code>.
-The IMEI is also typically printed on a sticker on the device.</p>
-<p>Following is the output of the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># AT+CGSN</span>
-<span class="m">352656100248049</span> OK
-</pre></div>
-</div>
-<p>Use the IMEI when generating the certificate:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli create-device-cert -d <span class="s2">&quot;&lt;imei&gt;&quot;</span>
-</pre></div>
-</div>
+  <div class="section" id="next-steps">
+<span id="azure-next-steps"></span><h1>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h1>
+<p>At this stage, you have completed the initial setup of the nRF Asset Tracker.
+An interesting topic to explore is enabling <a class="reference internal" href="../UnwiredLabsAPI.html#azure-unwired-labs-api"><span class="std std-ref">Cell Geolocation</span></a>.</p>
+<p>Once you start modifying the firmware, you can also look into the following topics:</p>
+<ul class="simple">
+<li><p>Setting up <a class="reference internal" href="../ContinuousDeployment.html#azure-continuous-deployment"><span class="std std-ref">Continuous deployment</span></a></p></li>
+<li><p>Performing <a class="reference internal" href="../ContinuousIntegration.html#azure-continuous-integration"><span class="std std-ref">Continuous integration of the cloud resources</span></a></p></li>
+</ul>
+<p>If you have feedback on improving this <em>Getting Started Guide</em>, share your ideas in <a class="reference external" href="https://devzone.nordicsemi.com/search?q=nRFAssetTracker#serpsort=date%20desc">DevZone</a> or in the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs">GitHub repository</a>.</p>
 </div>
 
 
