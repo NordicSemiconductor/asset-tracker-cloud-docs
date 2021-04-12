@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous deployment &mdash; nRF Asset Tracker v13.3.8 documentation</title>
+  <title>Continuous deployment &mdash; nRF Asset Tracker v13.4.0 documentation</title>
   
 
   
@@ -222,15 +222,22 @@ az account list --output table
 </div>
 </li>
 <li><p>Create the CI credentials:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az ad sp create-for-rbac --name https://github.com/ --role Contributor --sdk-auth --scopes /subscriptions/<span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span> &gt; ci-credentials.json
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az ad sp create-for-rbac --name https://github.com/ --role Contributor --sdk-auth --scopes /subscriptions/<span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span> &gt; cd-credentials.json
 </pre></div>
 </div>
 </li>
 <li><p>Fork the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js">nRF Asset Tracker for Azure project</a> and add the following secrets to an environment called <code class="docutils literal notranslate"><span class="pre">production</span></code>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">AZURE_CREDENTIALS</span></code> - Store the contents of the JSON file created in the above step.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">APP_REG_CLIENT_ID</span></code> - The <code class="docutils literal notranslate"><span class="pre">application</span> <span class="pre">(client)</span> <span class="pre">id</span></code> of the Active Directory B2C App registration.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">B2C_TENANT</span></code> - The <code class="docutils literal notranslate"><span class="pre">initial</span> <span class="pre">domain</span> <span class="pre">name</span></code> of the Active Directory B2C that is created.</p></li>
+</ul>
+</li>
+<li><p>Add these values from your <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file as secrets as well (everything except <code class="docutils literal notranslate"><span class="pre">SUBSCRIPTION_ID</span></code>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RESOURCE_GROUP</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">APP_NAME</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LOCATION</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">B2C_TENANT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">APP_REG_CLIENT_ID</span></code></p></li>
 </ul>
 </li>
 <li><p>Commit a change</p>

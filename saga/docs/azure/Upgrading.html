@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Upgrading an existing installation &mdash; nRF Asset Tracker v13.3.8 documentation</title>
+  <title>Upgrading an existing installation &mdash; nRF Asset Tracker v13.4.0 documentation</title>
   
 
   
@@ -199,7 +199,7 @@ npx tsc
 az deployment group create <span class="se">\</span>
     --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
     --mode Complete <span class="se">\</span>
-    --name cli-<span class="sb">`</span>uuidgen<span class="sb">`</span> <span class="se">\</span>
+    --name update-<span class="sb">`</span>uuidgen<span class="sb">`</span> <span class="se">\</span>
     --template-file azuredeploy.json <span class="se">\</span>
     --parameters <span class="se">\</span>
         <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
@@ -220,7 +220,7 @@ func azure functionapp publish <span class="si">${</span><span class="nv">APP_NA
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group validate <span class="se">\</span>
     --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
     --mode Complete <span class="se">\</span>
-    --name cli-<span class="sb">`</span>uuidgen<span class="sb">`</span> <span class="se">\</span>
+    --name update-<span class="sb">`</span>uuidgen<span class="sb">`</span> <span class="se">\</span>
     --template-file azuredeploy.json <span class="se">\</span>
     --parameters <span class="se">\</span>
         <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
@@ -231,9 +231,11 @@ func azure functionapp publish <span class="si">${</span><span class="nv">APP_NA
 </div>
 </div>
 <p>If the command throws an error, you can find the detailed log message using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az monitor activity-log list --correlation-id <span class="s2">&quot;&lt;tracking id&gt;&quot;</span> <span class="p">|</span> jq <span class="s1">&#39;.[].properties.statusMessage | fromjson&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az monitor activity-log list --correlation-id <span class="s2">&quot;&lt;tracking id&gt;&quot;</span> <span class="se">\</span>
+    <span class="p">|</span> jq <span class="s1">&#39;.[].properties.statusMessage | fromjson&#39;</span>
 </pre></div>
 </div>
+<p>It can take a few minutes for the detailed log message to be populated.</p>
 </div>
 
 
