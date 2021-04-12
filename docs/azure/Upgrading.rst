@@ -13,7 +13,7 @@ If you already have an installation and you want to upgrade to the latest releas
     az deployment group create \
         --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
         --mode Complete \
-        --name cli-`uuidgen` \
+        --name update-`uuidgen` \
         --template-file azuredeploy.json \
         --parameters \
             appName=${APP_NAME:-nrfassettracker} \
@@ -38,7 +38,7 @@ Docker variant (in case you get a ``Permission denied.`` error):
        az deployment group validate \
            --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
            --mode Complete \
-           --name cli-`uuidgen` \
+           --name update-`uuidgen` \
            --template-file azuredeploy.json \
            --parameters \
                appName=${APP_NAME:-nrfassettracker} \
@@ -50,4 +50,7 @@ If the command throws an error, you can find the detailed log message using the 
 
 .. code-block:: bash
 
-    az monitor activity-log list --correlation-id "<tracking id>" | jq '.[].properties.statusMessage | fromjson'
+    az monitor activity-log list --correlation-id "<tracking id>" \
+        | jq '.[].properties.statusMessage | fromjson'
+
+It can take a few minutes for the detailed log message to be populated.

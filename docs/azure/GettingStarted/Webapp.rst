@@ -30,11 +30,17 @@ Configure the IDs of your Azure resources
 =========================================
 
 The web application requires the IDs of the Azure resources that were created during the setup of the stack.
-Run the following command in the :file:`bifravst-app` directory to copy the output to the :file:`.env.local` file:
+Run the following command in the :file:`cat-tracker-web-app` directory to copy the output to the :file:`.env.local` file:
 
 .. code-block:: bash
 
-      node ../bifravst-azure/cli react-config > .env.local
+   cd ../azure
+   node cli react-config > ../cat-tracker-web-app/.env.local
+   cd ../cat-tracker-web-app
+
+.. include:: ../../app/Includes.rst
+   :start-after: provide_versionstring_start
+   :end-before: provide_versionstring_end
 
 Example for :file:`.env.local`
 ------------------------------
@@ -43,15 +49,11 @@ Following is an example for the contents of the :file:`.env.local` file:
 
 .. code-block:: bash
 
-      REACT_APP_CLOUD_FLAVOUR=Azure
-      REACT_APP_AZURE_CLIENT_ID=358162bb-b809-42ef-9b62-22f8fa42b5fb
-      REACT_APP_AZURE_AD_B2C_AUTHORITY=https://bifravstprod.b2clogin.com/bifravstprod.onmicrosoft.com/B2C_1_signup_signin
-      REACT_APP_AZURE_B2C_TENANT=bifravstprod
-      REACT_APP_VERSION=v3.6.1
-
-.. include:: ../../app/Includes.rst
-   :start-after: provide_versionstring_start
-   :end-before: provide_versionstring_end
+   REACT_APP_CLOUD_FLAVOUR=Azure
+   REACT_APP_AZURE_B2C_TENANT=nrfassettrackerprodusers
+   REACT_APP_AZURE_CLIENT_ID=fa8d9edc-3a85-455b-bcc4-f7389764184b
+   REACT_APP_AZURE_API_ENDPOINT=https://nrfassettrackerprodapi.azurewebsites.net/
+   REACT_APP_VERSION=v8.6.50
 
 Deploy the web application
 **************************
@@ -60,11 +62,14 @@ To build and deploy the web application to the Storage Account created while set
 
 .. code-block:: bash
 
-      export APP_URL=`az storage account show -g ${RESOURCE_GROUP:-nrfassettracker} -n ${APP_NAME:-nrfassettracker}app --query 'primaryEndpoints.web' --output tsv | tr -d '\n'`
-      export APP_STORAGE_CONNECTION_STRING=`az storage account show-connection-string --name ${APP_NAME:-nrfassettracker}app --query 'connectionString'`
-      npm run build
-      az storage blob upload-batch --connection-string ${APP_STORAGE_CONNECTION_STRING} --account-name ${APP_NAME:-nrfassettracker}app -s ./build -d '$web'
-      echo "Done. Now open $APP_URL to view the web app."
+   cd ../azure
+   export PUBLIC_URL=`az storage account show -g ${RESOURCE_GROUP:-nrfassettracker} -n ${APP_NAME:-nrfassettracker}app --query 'primaryEndpoints.web' --output tsv | tr -d '\n'`
+   export APP_STORAGE_CONNECTION_STRING=`az storage account show-connection-string --name ${APP_NAME:-nrfassettracker}app --query 'connectionString'`
+   export APP_STORAGE_ACCOUNT_NAME=${APP_NAME:-nrfassettracker}app
+   cd ../cat-tracker-web-app
+   npm run build
+   az storage blob upload-batch --connection-string ${APP_STORAGE_CONNECTION_STRING} --account-name ${APP_STORAGE_ACCOUNT_NAME} -s ./build -d '$web'
+   echo "Done. Now open $PUBLIC_URL to view the web app."
 
 After running the above commands, you can open the domain name printed in ``APP_URL`` to view the web application.
 
@@ -72,3 +77,8 @@ Register a new user
 *******************
 
 Since are no predefined user accounts in the B2C Active Directory, you need to register a new user.
+
+.. figure:: ./images/register-account.png
+    :alt: Register a new user
+
+    Register a new user
