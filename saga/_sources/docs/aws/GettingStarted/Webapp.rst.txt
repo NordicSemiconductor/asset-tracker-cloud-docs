@@ -36,6 +36,10 @@ Run the following command in the :file:`cat-tracker-web-app` directory to copy t
    node cli react-config > ../cat-tracker-web-app/.env.local
    cd ../cat-tracker-web-app
 
+.. include:: ../../app/Includes.rst
+   :start-after: provide_versionstring_start
+   :end-before: provide_versionstring_end
+
 Example for :file:`.env.local`
 ------------------------------
 
@@ -60,10 +64,6 @@ Following is an example for the contents of the :file:`.env.local` file:
     REACT_APP_WEB_APP_BUCKET_NAME=nrf-asset-tracker-webapps-webapphostingbucketc58d3c2b-1or3is1vmmq5q
     REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP=EGNO6F61DSJ5Y
     REACT_APP_VERSION=v3.6.1
-
-.. include:: ../../app/Includes.rst
-   :start-after: provide_versionstring_start
-   :end-before: provide_versionstring_end
 
 Deploy the web application
 **************************

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploy the Cat Tracker web application &mdash; nRF Asset Tracker 8f3a7fdcfe893a9e117fde152ce325b30c2ed5b0 documentation</title>
+  <title>Deploy the Cat Tracker web application &mdash; nRF Asset Tracker 631c619191d9927eca4fd80f8148969bcafdd004 documentation</title>
   
 
   
@@ -247,6 +247,13 @@ node cli react-config &gt; ../cat-tracker-web-app/.env.local
 <span class="nb">cd</span> ../cat-tracker-web-app
 </pre></div>
 </div>
+<div class="section" id="version-string">
+<h4>Version string<a class="headerlink" href="#version-string" title="Permalink to this headline">¶</a></h4>
+<p>Run the following command to provide the version to the application:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">REACT_APP_VERSION</span><span class="o">=</span><span class="sb">`</span>git describe --tags <span class="k">$(</span>git rev-list --tags --max-count<span class="o">=</span><span class="m">1</span><span class="k">)</span><span class="sb">`</span> &gt;&gt; .env.local
+</pre></div>
+</div>
+</div>
 <div class="section" id="example-for-env-local">
 <h4>Example for <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code><a class="headerlink" href="#example-for-env-local" title="Permalink to this headline">¶</a></h4>
 <p>Following is an example for the contents of the <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code> file:</p>
@@ -267,13 +274,6 @@ node cli react-config &gt; ../cat-tracker-web-app/.env.local
 <span class="nv">REACT_APP_WEB_APP_BUCKET_NAME</span><span class="o">=</span>nrf-asset-tracker-webapps-webapphostingbucketc58d3c2b-1or3is1vmmq5q
 <span class="nv">REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP</span><span class="o">=</span>EGNO6F61DSJ5Y
 <span class="nv">REACT_APP_VERSION</span><span class="o">=</span>v3.6.1
-</pre></div>
-</div>
-</div>
-<div class="section" id="version-string">
-<h4>Version string<a class="headerlink" href="#version-string" title="Permalink to this headline">¶</a></h4>
-<p>Run the following command to provide the version to the application:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">REACT_APP_VERSION</span><span class="o">=</span><span class="sb">`</span>git describe --tags <span class="k">$(</span>git rev-list --tags --max-count<span class="o">=</span><span class="m">1</span><span class="k">)</span><span class="sb">`</span> &gt;&gt; .env.local
 </pre></div>
 </div>
 </div>
