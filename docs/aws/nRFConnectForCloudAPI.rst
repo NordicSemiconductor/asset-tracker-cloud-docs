@@ -26,7 +26,8 @@ Connect the device using the device simulator:
 
 .. code-block:: bash
 
-    npm exec -- @nordicsemiconductor/asset-tracker-cloud-device-simulator-aws
+    npm exec -- @nordicsemiconductor/asset-tracker-cloud-device-simulator-aws \
+        ${DEVICE_ID}.json
 
 Once it prints ``connected``, you can terminate the simulator.
 You can ignore the ``disconnected!`` warnings.
