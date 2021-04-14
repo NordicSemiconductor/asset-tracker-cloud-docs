@@ -11,7 +11,7 @@ Creating an API device
 The nRF Connect for Cloud API requires for some calls a device identifier.
 It is recommended to create a new device for the API operations.
 
-The following commands create a new device using `httpie <https://httpie.io/>`_:
+Create a new device using `httpie <https://httpie.io/>`_:
 
 .. code-block:: bash
 
