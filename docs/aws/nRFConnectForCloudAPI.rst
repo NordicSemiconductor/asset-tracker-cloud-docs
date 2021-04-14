@@ -8,7 +8,7 @@ You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for the 
 Creating an API device
 **********************
 
-The nRF Connect for Cloud API requires for some calls a device identifier.
+The nRF Connect for Cloud API requires a device identifier for some calls.
 It is recommended to create a new device for the API operations.
 
 Create a new device using `httpie <https://httpie.io/>`_:
