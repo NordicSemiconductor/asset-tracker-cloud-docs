@@ -32,7 +32,7 @@ Connect the device using the device simulator:
 Once it prints ``connected``, you can terminate the simulator.
 You can ignore the ``disconnected!`` warnings.
 
-Now associate the device to your account:
+Associate the device to your account:
 
 .. code-block:: bash
 
