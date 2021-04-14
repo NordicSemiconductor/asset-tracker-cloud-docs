@@ -47,6 +47,7 @@ Enabling the nRF Connect for Cloud geolocation API
 To use nRF Connect for Cloud's geolocation API, configure your API key and API device using the CLI and redeploy the stack using the following commands:
 
 .. parsed-literal::
+   class: highlight
 
     node cli configure-api cellGeoLocation nrfconnectforcloud apiKey *API Key*
     node cli configure-api cellGeoLocation nrfconnectforcloud apiDevice *API device*
