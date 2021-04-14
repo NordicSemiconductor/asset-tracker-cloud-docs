@@ -3,7 +3,7 @@
 nRF Connect for Cloud API
 #########################
 
-You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for the application using `nRF Connect for Cloud's geolocation API <https://api.nrfcloud.com/v1/#operation/GetSingleCellLocation>`_  in your deployment.
+You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for the application using the `nRF Connect for Cloud's geolocation API <https://api.nrfcloud.com/v1/#operation/GetSingleCellLocation>`_  in your deployment.
 
 Creating an API device
 **********************
