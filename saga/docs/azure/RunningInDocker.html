@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Running the application locally with Docker &mdash; nRF Asset Tracker v13.5.2 documentation</title>
+  <title>Running the application locally with Docker &mdash; nRF Asset Tracker v13.5.3 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Upgrading an existing installation" href="Upgrading.html" />
+    <link rel="next" title="Device credentials" href="DeviceCredentials.html" />
     <link rel="prev" title="Continuous integration" href="ContinuousIntegration.html" /> 
 </head>
 
@@ -96,10 +96,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Index.html">Azure cloud components</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="GettingStarted/Index.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ContinuousIntegration.html">Continuous integration</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Running the application locally with Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="UnwiredLabsAPI.html">Unwired Labs API</a></li>
@@ -192,42 +192,23 @@
             
   <div class="section" id="running-the-application-locally-with-docker">
 <span id="azure-running-app-locally"></span><h1>Running the application locally with Docker<a class="headerlink" href="#running-the-application-locally-with-docker" title="Permalink to this headline">¶</a></h1>
-<p>If your system has a different version of Node.js, you can run the application locally in a <a class="reference external" href="https://hub.docker.com/r/NordicSemiconductor/asset-tracker-cloud-azure-js">Docker container</a>.</p>
+<p>If your system has a different version of Node.js, you can run the application locally in a <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/blob/saga/Dockerfile">Docker container</a>.</p>
 <p>To run the application locally with Docker, complete the following steps:</p>
 <ol class="arabic">
-<li><p>Export the IoT Hub connection string and the Avatar storage environment variables (located in the configuration of the function app) to the following environment variables:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">IOT_HUB_CONNECTION_STRING</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AVATAR_STORAGE_ACCOUNT_NAME</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AVATAR_STORAGE_ACCESS_KEY</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FOTA_STORAGE_ACCOUNT_NAME</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FOTA_STORAGE_ACCESS_KEY</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING</span></code></p></li>
+<li><p>Export the function app configuration as environment variables:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli functions-settings &gt; local.settings.json
+</pre></div>
+</div>
+</li>
+<li><p>Either:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.github.com/en/packages/guides/pushing-and-pulling-docker-images#authenticating-to-github-container-registry">Authenticate against the Google Container registry</a></p></li>
+<li><p>or build the Docker image:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker build -t ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js .
+</pre></div>
+</div>
+</li>
 </ul>
-</li>
-<li><p>Make sure to include the following settings in your <code class="file docutils literal notranslate"><span class="pre">local.settings.json</span></code> file:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;IsEncrypted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;Values&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;IoTHubEventHubCompatibleConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;AzureWebJobsStorage&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;IoTHubEventHubName&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;SignalRConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;Host&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;CORS&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;CORSCredentials&quot;</span><span class="p">:</span> <span class="kc">false</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</li>
-<li><p>Run the following command to list the environment variables of the function app and export them:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az functionapp config appsettings list <span class="se">\</span>
-    --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
-    --name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>API <span class="p">|</span> jq -r <span class="s1">&#39;.[] | .name + &quot;=\&quot;&quot; + .value + &quot;\&quot;&quot;&#39;</span>
-</pre></div>
-</div>
 </li>
 <li><p>Run the function app by using the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm --net<span class="o">=</span>host -P <span class="se">\</span>
@@ -239,7 +220,7 @@
     -e HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING <span class="se">\</span>
     -e UNWIREDLABS_API_KEY <span class="se">\</span>
     -e UNWIREDLABS_API_ENDPOINT <span class="se">\</span>
-    -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir nrf-asset-tracker/azure-dev:latest <span class="se">\</span>
+    -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js <span class="se">\</span>
     func start --typescript
 </pre></div>
 </div>
@@ -254,7 +235,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Upgrading.html" class="btn btn-neutral float-right" title="Upgrading an existing installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="DeviceCredentials.html" class="btn btn-neutral float-right" title="Device credentials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="ContinuousIntegration.html" class="btn btn-neutral float-left" title="Continuous integration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
