@@ -47,8 +47,7 @@ Also enable the Firmware CI runner to connect by enabling the context switch ``f
 
 .. code-block:: bash
 
-   echo "firmware-ci=1" >> context.cfg
-   npx cdk deploy '*'
+   npx cdk -c firmware-ci=1 deploy '*'
 
 Print the AWS Key for the CI runner on GitHub Actions using the following command:
 

@@ -47,8 +47,7 @@ After providing the GitHub credentials, you can set up the continuous deployment
 
 .. code-block:: bash
 
-    echo "cd=1" >> context.cfg
-    npx cdk deploy '*'
+    npx cdk -c cd=1 deploy '*'
 
 Check the status of the continuous deployment
 *********************************************
