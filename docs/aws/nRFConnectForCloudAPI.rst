@@ -10,7 +10,7 @@ To use nRF Connect for Cloud's geolocation API, configure your API key using the
 .. parsed-literal::
     :class: highlight
 
-    node cli configure-api cellGeoLocation nrfconnectforcloud apiKey *API Key*
+    node cli configure-api cellGeoLocation nrfconnectforcloud apiKey *API key*
     npx cdk -c nrfconnectforcloud=1 deploy '*'
 
 This will update the StateMachine, which resolves cells from devices to use the nRF Connect for Cloud's API as a resolver.
