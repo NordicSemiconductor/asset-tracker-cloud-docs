@@ -3,45 +3,24 @@
 Running the application locally with Docker
 ###########################################
 
-If your system has a different version of Node.js, you can run the application locally in a `Docker container <https://hub.docker.com/r/NordicSemiconductor/asset-tracker-cloud-azure-js>`_.
+If your system has a different version of Node.js, you can run the application locally in a `Docker container <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/blob/saga/Dockerfile>`_.
 
 To run the application locally with Docker, complete the following steps:
 
-1. Export the IoT Hub connection string and the Avatar storage environment variables (located in the configuration of the function app) to the following environment variables:
-
-   * ``IOT_HUB_CONNECTION_STRING``
-   * ``AVATAR_STORAGE_ACCOUNT_NAME``
-   * ``AVATAR_STORAGE_ACCESS_KEY``
-   * ``FOTA_STORAGE_ACCOUNT_NAME``
-   * ``FOTA_STORAGE_ACCESS_KEY``
-   * ``HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING``
-
-#. Make sure to include the following settings in your :file:`local.settings.json` file:
-
-   .. code-block:: json
-
-       {
-           "IsEncrypted": false,
-           "Values": {
-               "IoTHubEventHubCompatibleConnectionString": "...",
-               "AzureWebJobsStorage": "...",
-               "IoTHubEventHubName": "...",
-               "SignalRConnectionString": "..."
-           },
-           "Host": {
-               "CORS": "*",
-               "CORSCredentials": false
-           }
-       }
-
-#. Run the following command to list the environment variables of the function app and export them:
-
+1. Export the function app configuration as environment variables:
 
    .. code-block:: bash
 
-       az functionapp config appsettings list \
-           --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
-           --name ${APP_NAME:-nrfassettracker}API | jq -r '.[] | .name + "=\"" + .value + "\""'
+      node cli functions-settings > local.settings.json
+
+#. Either:
+
+   * `Authenticate against the Google Container registry <https://docs.github.com/en/packages/guides/pushing-and-pulling-docker-images#authenticating-to-github-container-registry>`_
+   * or build the Docker image:
+     
+     .. code-block:: bash
+
+        docker build -t ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js .
 
 #. Run the function app by using the following command:
 
@@ -56,7 +35,7 @@ To run the application locally with Docker, complete the following steps:
            -e HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING \
            -e UNWIREDLABS_API_KEY \
            -e UNWIREDLABS_API_ENDPOINT \
-           -v ${PWD}:/workdir nrf-asset-tracker/azure-dev:latest \
+           -v ${PWD}:/workdir ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js \
            func start --typescript
 
 You can now use ``http://localhost:7071/`` as your ``REACT_APP_AZURE_API_ENDPOINT`` for the app.

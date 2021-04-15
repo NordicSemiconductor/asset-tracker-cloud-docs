@@ -27,7 +27,7 @@ Docker variant (in case you get a ``Permission denied.`` error):
 
 .. code-block:: bash
 
-    docker run --rm -v ${PWD}:/workdir -v ${HOME}/.azure:/root/.azure nrf-asset-tracker/azure-dev:latest \
+    docker run --rm -v ${PWD}:/workdir -v ${HOME}/.azure:/root/.azure ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js:latest \
         func azure functionapp publish ${APP_NAME:-nrfassettracker}API --typescript
 
 .. tip::
