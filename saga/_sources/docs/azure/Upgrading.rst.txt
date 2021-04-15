@@ -19,7 +19,8 @@ If you already have an installation and you want to upgrade to the latest releas
             appName=${APP_NAME:-nrfassettracker} \
             location=${LOCATION:-northeurope} \
             appRegistrationClientId=$APP_REG_CLIENT_ID \
-            b2cTenant=${B2C_TENANT:-nrfassettrackerusers}
+            b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
+            unwiredlabsApiKey=${UNWIRED_LABS_API_KEY}
     func azure functionapp publish ${APP_NAME:-nrfassettracker}API --typescript
 
 Docker variant (in case you get a ``Permission denied.`` error):
@@ -44,7 +45,8 @@ Docker variant (in case you get a ``Permission denied.`` error):
                appName=${APP_NAME:-nrfassettracker} \
                location=${LOCATION:-northeurope} \
                appRegistrationClientId=$APP_REG_CLIENT_ID \
-               b2cTenant=${B2C_TENANT:-nrfassettrackerusers}
+               b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
+               unwiredlabsApiKey=${UNWIRED_LABS_API_KEY}
 
 If the command throws an error, you can find the detailed log message using the following command:
 

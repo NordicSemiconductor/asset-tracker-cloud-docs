@@ -7,17 +7,19 @@ You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for the 
 
 To use Unwired Labs' LocationAPI, provide the ``unwiredlabsApiKey`` parameter when deploying the solution:
 
-.. code-block:: bash
+.. parsed-literal::
 
-    az deployment group create --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
+    az deployment group create \
+        --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
         --mode Complete \
         --name enable-unwiredlabs \
         --template-file azuredeploy.json \
         --parameters \
             appName=${APP_NAME:-nrfassettracker} \
-            location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID \
-            b2cTenant=$B2C_TENANT \
-            unwiredlabsApiKey="<your API key>"
+            location=${LOCATION:-northeurope} \
+            appRegistrationClientId=$APP_REG_CLIENT_ID \
+            b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
+            unwiredlabsApiKey=*your API key*
 
 This command will enable the `geolocateCellFromUnwiredLabs` function to resolve cells.
 Otherwise, this function will return a ``402`` status on the API route ``cellgeolocation/unwired``.
