@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous deployment &mdash; nRF Asset Tracker v13.5.0 documentation</title>
+  <title>Continuous deployment &mdash; nRF Asset Tracker v13.5.1 documentation</title>
   
 
   
@@ -231,8 +231,7 @@ The CodeBuild project upgrades the web application deployment on the S3 bucket.<
 <div class="section" id="enable-continuous-deployment">
 <h2><a class="toc-backref" href="#id3">Enable continuous deployment</a><a class="headerlink" href="#enable-continuous-deployment" title="Permalink to this headline">¶</a></h2>
 <p>After providing the GitHub credentials, you can set up the continuous deployment by enabling it through the context switch <code class="docutils literal notranslate"><span class="pre">cd</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;cd=1&quot;</span> &gt;&gt; context.cfg
-npx cdk deploy <span class="s1">&#39;*&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npx cdk -c <span class="nv">cd</span><span class="o">=</span><span class="m">1</span> deploy <span class="s1">&#39;*&#39;</span>
 </pre></div>
 </div>
 </div>

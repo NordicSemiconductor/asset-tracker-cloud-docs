@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous integration of firmware &mdash; nRF Asset Tracker v13.5.0 documentation</title>
+  <title>Continuous integration of firmware &mdash; nRF Asset Tracker v13.5.1 documentation</title>
   
 
   
@@ -230,8 +230,7 @@ This approach is designed for <a class="reference external" href="https://thinki
 <h2><a class="toc-backref" href="#id3">Preparation</a><a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
 <p>Enable the Firmware CI resources of the nRF Asset Tracker that allow GitHub Actions to create test devices.
 Also enable the Firmware CI runner to connect by enabling the context switch <code class="docutils literal notranslate"><span class="pre">firmware-ci</span></code> when deploying the stack (see <a class="reference internal" href="GettingStarted/Index.html#aws-getting-started"><span class="std std-ref">Getting Started</span></a>).</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;firmware-ci=1&quot;</span> &gt;&gt; context.cfg
-npx cdk deploy <span class="s1">&#39;*&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npx cdk -c firmware-ci<span class="o">=</span><span class="m">1</span> deploy <span class="s1">&#39;*&#39;</span>
 </pre></div>
 </div>
 <p>Print the AWS Key for the CI runner on GitHub Actions using the following command:</p>
