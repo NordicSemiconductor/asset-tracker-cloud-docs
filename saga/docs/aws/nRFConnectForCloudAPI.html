@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>nRF Connect for Cloud API &mdash; nRF Asset Tracker 6ba96886a8f6a19aedfbb76e943ea63816c21b79 documentation</title>
+  <title>nRF Connect for Cloud API &mdash; nRF Asset Tracker v13.6.0 documentation</title>
   
 
   
@@ -197,9 +197,10 @@
   <div class="section" id="nrf-connect-for-cloud-api">
 <span id="aws-nrf-connect-for-cloud-api"></span><h1>nRF Connect for Cloud API<a class="headerlink" href="#nrf-connect-for-cloud-api" title="Permalink to this headline">¶</a></h1>
 <p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for the application using the <a class="reference external" href="https://api.nrfcloud.com/v1/#operation/GetSingleCellLocation">nRF Connect for Cloud’s geolocation API</a>  in your deployment.</p>
-<p>To use nRF Connect for Cloud’s geolocation API, configure your API key using the CLI and redeploy the stack using the following commands:</p>
+<p>To use nRF Connect for Cloud’s geolocation API, configure your API key and enable the API using the CLI and redeploy the stack using the following commands:</p>
 <pre class="highlight literal-block">node cli configure-api cellGeoLocation nrfconnectforcloud apiKey <em>API key</em>
-npx cdk -c nrfconnectforcloud=1 deploy '*'</pre>
+node cli configure-api context stack nrfconnectforcloud 1
+npx cdk deploy '*'</pre>
 <p>This will update the StateMachine, which resolves cells from devices to use the nRF Connect for Cloud’s API as a resolver.</p>
 </div>
 

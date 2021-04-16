@@ -5,12 +5,14 @@ Unwired Labs API
 
 You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for the application using `Unwired Labs' <https://unwiredlabs.com/>`_ geolocation API in your deployment.
 
-To use Unwired Labs' geolocation API, configure your API key using the CLI and redeploy the stack using the following commands:
+To use Unwired Labs' geolocation API, configure your API key and enable the API using the CLI and redeploy the stack using the following commands:
 
-.. code-block:: bash
+.. parsed-literal::
+    :class: highlight
 
-    node cli configure-api cellGeoLocation unwiredlabs apiKey "<API Key>"
-    npx cdk -c unwiredlabs=1 deploy '*'
+    node cli configure-api cellGeoLocation unwiredlabs apiKey *API key*
+    node cli configure-api context stack unwiredlabs 1
+    npx cdk deploy '*'
 
 This will update the StateMachine, which resolves cells from devices to use the Unwired Labs' API as a resolver.
 

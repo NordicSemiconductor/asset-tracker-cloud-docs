@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Unwired Labs API &mdash; nRF Asset Tracker 6ba96886a8f6a19aedfbb76e943ea63816c21b79 documentation</title>
+  <title>Unwired Labs API &mdash; nRF Asset Tracker v13.6.0 documentation</title>
   
 
   
@@ -197,11 +197,10 @@
   <div class="section" id="unwired-labs-api">
 <span id="aws-unwired-labs-api"></span><h1>Unwired Labs API<a class="headerlink" href="#unwired-labs-api" title="Permalink to this headline">¶</a></h1>
 <p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for the application using <a class="reference external" href="https://unwiredlabs.com/">Unwired Labs’</a> geolocation API in your deployment.</p>
-<p>To use Unwired Labs’ geolocation API, configure your API key using the CLI and redeploy the stack using the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli configure-api cellGeoLocation unwiredlabs apiKey <span class="s2">&quot;&lt;API Key&gt;&quot;</span>
-npx cdk -c <span class="nv">unwiredlabs</span><span class="o">=</span><span class="m">1</span> deploy <span class="s1">&#39;*&#39;</span>
-</pre></div>
-</div>
+<p>To use Unwired Labs’ geolocation API, configure your API key and enable the API using the CLI and redeploy the stack using the following commands:</p>
+<pre class="highlight literal-block">node cli configure-api cellGeoLocation unwiredlabs apiKey <em>API key</em>
+node cli configure-api context stack unwiredlabs 1
+npx cdk deploy '*'</pre>
 <p>This will update the StateMachine, which resolves cells from devices to use the Unwired Labs’ API as a resolver.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
