@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Running the application locally with Docker &mdash; nRF Asset Tracker 83ced8f890546c3b67da32c7cc900df95442ff21 documentation</title>
+  <title>Running the application locally with Docker &mdash; nRF Asset Tracker 0a1872fb01d440569d61cae40423ca188350ed7e documentation</title>
   
 
   
@@ -201,11 +201,9 @@
 </div>
 </li>
 <li><p>Either <a class="reference external" href="https://docs.github.com/en/packages/guides/pushing-and-pulling-docker-images#authenticating-to-github-container-registry">Authenticate against the Google Container registry</a>  or build the Docker image using the following command:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker build -t ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js .
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker build -t ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js .
 </pre></div>
 </div>
-</div></blockquote>
 </li>
 <li><p>Run the function app by using the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm --net<span class="o">=</span>host -P <span class="se">\</span>
