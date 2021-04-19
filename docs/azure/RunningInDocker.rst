@@ -20,7 +20,7 @@ To run the application locally with Docker, complete the following steps:
      
      .. code-block:: bash
 
-        docker build -t ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js .
+      docker build -t ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js .
 
 #. Run the function app by using the following command:
 
