@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Unwired Labs API &mdash; nRF Asset Tracker 48bf2dda0a6824076b3b141c22791dafb6424da5 documentation</title>
+  <title>Unwired Labs API &mdash; nRF Asset Tracker dadd420058874b78b172584b7625d102ac8d8711 documentation</title>
   
 
   
@@ -89,8 +89,8 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
@@ -101,8 +101,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture decision records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
@@ -177,17 +177,7 @@
 <span id="azure-unwired-labs-api"></span><h1>Unwired Labs API<a class="headerlink" href="#unwired-labs-api" title="Permalink to this headline">¶</a></h1>
 <p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for the application using <a class="reference external" href="https://unwiredlabs.com/">Unwired Labs’</a> geolocation API in your deployment.</p>
 <p>To use Unwired Labs’ LocationAPI, provide the <code class="docutils literal notranslate"><span class="pre">unwiredlabsApiKey</span></code> parameter when deploying the solution:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group create --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
-    --mode Complete <span class="se">\</span>
-    --name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
-    --template-file azuredeploy.json <span class="se">\</span>
-    --parameters <span class="se">\</span>
-        <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
-        <span class="nv">location</span><span class="o">=</span><span class="nv">$LOCATION</span> <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
-        <span class="nv">b2cTenant</span><span class="o">=</span><span class="nv">$B2C_TENANT</span> <span class="se">\</span>
-        <span class="nv">unwiredlabsApiKey</span><span class="o">=</span><span class="s2">&quot;&lt;your API key&gt;&quot;</span>
-</pre></div>
-</div>
+<pre class="literal-block">az deployment group create     --resource-group ${RESOURCE_GROUP:-nrfassettracker}     --mode Complete     --name enable-unwiredlabs     --template-file azuredeploy.json     --parameters         appName=${APP_NAME:-nrfassettracker}         location=${LOCATION:-northeurope}         appRegistrationClientId=$APP_REG_CLIENT_ID         b2cTenant=${B2C_TENANT:-nrfassettrackerusers}         unwiredlabsApiKey=*your API key*</pre>
 <p>This command will enable the <cite>geolocateCellFromUnwiredLabs</cite> function to resolve cells.
 Otherwise, this function will return a <code class="docutils literal notranslate"><span class="pre">402</span></code> status on the API route <code class="docutils literal notranslate"><span class="pre">cellgeolocation/unwired</span></code>.</p>
 <div class="admonition note">

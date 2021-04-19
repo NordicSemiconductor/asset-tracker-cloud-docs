@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Building the project using Docker &mdash; nRF Asset Tracker 48bf2dda0a6824076b3b141c22791dafb6424da5 documentation</title>
+  <title>Building the project using Docker &mdash; nRF Asset Tracker dadd420058874b78b172584b7625d102ac8d8711 documentation</title>
   
 
   
@@ -91,8 +91,8 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Index.html">Firmware</a><ul class="current">
@@ -109,8 +109,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture decision records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
@@ -189,8 +189,8 @@
 <ul class="simple">
 <li><p><a class="reference internal" href="#build-the-project" id="id1">Build the project</a></p>
 <ul>
-<li><p><a class="reference internal" href="#thingy-91-pca20035" id="id2">Thingy:91 (<code class="docutils literal notranslate"><span class="pre">PCA20035</span></code>)</a></p></li>
-<li><p><a class="reference internal" href="#nrf9160-dk-pca10090" id="id3">nRF9160 DK (<code class="docutils literal notranslate"><span class="pre">PCA10090</span></code>)</a></p></li>
+<li><p><a class="reference internal" href="#thingy-91-pca20035" id="id2">Thingy:91 (PCA20035)</a></p></li>
+<li><p><a class="reference internal" href="#nrf9160-dk-pca10090" id="id3">nRF9160 DK (PCA10090)</a></p></li>
 </ul>
 </li>
 <li><p><a class="reference internal" href="#location-of-the-hex-file" id="id4">Location of the HEX file</a></p></li>
@@ -215,14 +215,14 @@ docker build -t asset-tracker-firmware-docker .
 <h2><a class="toc-backref" href="#id1">Build the project</a><a class="headerlink" href="#build-the-project" title="Permalink to this headline">¶</a></h2>
 <p>Build the project for your nRF9160-based device using the specified commands.</p>
 <div class="section" id="thingy-91-pca20035">
-<h3><a class="toc-backref" href="#id2">Thingy:91 (<code class="docutils literal notranslate"><span class="pre">PCA20035</span></code>)</a><a class="headerlink" href="#thingy-91-pca20035" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id2">Thingy:91 (PCA20035)</a><a class="headerlink" href="#thingy-91-pca20035" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c <span class="s1">&#39;cd /workdir/ncs/firmware; west build -p always -b thingy91_nrf9160ns -- -DOVERLAY_CONFIG=&quot;overlay-debug.conf;asset-tracker-cloud-firmware.conf&quot;&#39;</span>
 ls -la build/zephyr/merged.hex
 </pre></div>
 </div>
 </div>
 <div class="section" id="nrf9160-dk-pca10090">
-<h3><a class="toc-backref" href="#id3">nRF9160 DK (<code class="docutils literal notranslate"><span class="pre">PCA10090</span></code>)</a><a class="headerlink" href="#nrf9160-dk-pca10090" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id3">nRF9160 DK (PCA10090)</a><a class="headerlink" href="#nrf9160-dk-pca10090" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c <span class="s1">&#39;cd /workdir/ncs/firmware; west build -p always -b nrf9160dk_nrf9160ns -- -DOVERLAY_CONFIG=&quot;overlay-debug.conf;asset-tracker-cloud-firmware.conf&quot;&#39;</span>
 ls -la build/zephyr/merged.hex
 </pre></div>

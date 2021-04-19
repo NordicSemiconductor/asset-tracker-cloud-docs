@@ -1,6 +1,6 @@
 .. _azure-iot-shadow-topics:
 
-Azure IoT Shadow and Topics
+Azure IoT Shadow and topics
 ###########################
 
 .. contents::

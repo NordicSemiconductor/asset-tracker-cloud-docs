@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Upgrading an existing installation &mdash; nRF Asset Tracker 48bf2dda0a6824076b3b141c22791dafb6424da5 documentation</title>
+  <title>Upgrading an existing installation &mdash; nRF Asset Tracker dadd420058874b78b172584b7625d102ac8d8711 documentation</title>
   
 
   
@@ -89,8 +89,8 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
@@ -101,8 +101,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture decision records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
@@ -182,18 +182,19 @@ npx tsc
 az deployment group create <span class="se">\</span>
     --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
     --mode Complete <span class="se">\</span>
-    --name cli-<span class="sb">`</span>uuidgen<span class="sb">`</span> <span class="se">\</span>
+    --name update-<span class="sb">`</span>uuidgen<span class="sb">`</span> <span class="se">\</span>
     --template-file azuredeploy.json <span class="se">\</span>
     --parameters <span class="se">\</span>
         <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
         <span class="nv">location</span><span class="o">=</span><span class="si">${</span><span class="nv">LOCATION</span><span class="k">:-</span><span class="nv">northeurope</span><span class="si">}</span> <span class="se">\</span>
         <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
-        <span class="nv">b2cTenant</span><span class="o">=</span><span class="si">${</span><span class="nv">B2C_TENANT</span><span class="k">:-</span><span class="nv">nrfassettrackerusers</span><span class="si">}</span>
+        <span class="nv">b2cTenant</span><span class="o">=</span><span class="si">${</span><span class="nv">B2C_TENANT</span><span class="k">:-</span><span class="nv">nrfassettrackerusers</span><span class="si">}</span> <span class="se">\</span>
+        <span class="nv">unwiredlabsApiKey</span><span class="o">=</span><span class="si">${</span><span class="nv">UNWIRED_LABS_API_KEY</span><span class="si">}</span>
 func azure functionapp publish <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>API --typescript
 </pre></div>
 </div>
 <p>Docker variant (in case you get a <code class="docutils literal notranslate"><span class="pre">Permission</span> <span class="pre">denied.</span></code> error):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir -v <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.azure:/root/.azure nrf-asset-tracker/azure-dev:latest <span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir -v <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.azure:/root/.azure ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js:latest <span class="se">\</span>
     func azure functionapp publish <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>API --typescript
 </pre></div>
 </div>
@@ -203,20 +204,23 @@ func azure functionapp publish <span class="si">${</span><span class="nv">APP_NA
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group validate <span class="se">\</span>
     --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
     --mode Complete <span class="se">\</span>
-    --name cli-<span class="sb">`</span>uuidgen<span class="sb">`</span> <span class="se">\</span>
+    --name update-<span class="sb">`</span>uuidgen<span class="sb">`</span> <span class="se">\</span>
     --template-file azuredeploy.json <span class="se">\</span>
     --parameters <span class="se">\</span>
         <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
         <span class="nv">location</span><span class="o">=</span><span class="si">${</span><span class="nv">LOCATION</span><span class="k">:-</span><span class="nv">northeurope</span><span class="si">}</span> <span class="se">\</span>
         <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
-        <span class="nv">b2cTenant</span><span class="o">=</span><span class="si">${</span><span class="nv">B2C_TENANT</span><span class="k">:-</span><span class="nv">nrfassettrackerusers</span><span class="si">}</span>
+        <span class="nv">b2cTenant</span><span class="o">=</span><span class="si">${</span><span class="nv">B2C_TENANT</span><span class="k">:-</span><span class="nv">nrfassettrackerusers</span><span class="si">}</span> <span class="se">\</span>
+        <span class="nv">unwiredlabsApiKey</span><span class="o">=</span><span class="si">${</span><span class="nv">UNWIRED_LABS_API_KEY</span><span class="si">}</span>
 </pre></div>
 </div>
 </div>
-<p>If the command throws an error, you can find the detailed log message using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az monitor activity-log list --correlation-id <span class="s2">&quot;&lt;tracking id&gt;&quot;</span> <span class="p">|</span> jq <span class="s1">&#39;.[].properties.statusMessage | fromjson&#39;</span>
+<p>If the command gives an error, you can find the detailed log message using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az monitor activity-log list --correlation-id <span class="s2">&quot;&lt;tracking id&gt;&quot;</span> <span class="se">\</span>
+    <span class="p">|</span> jq <span class="s1">&#39;.[].properties.statusMessage | fromjson&#39;</span>
 </pre></div>
 </div>
+<p>It can take a few minutes for the detailed log message to be populated.</p>
 </div>
 
 

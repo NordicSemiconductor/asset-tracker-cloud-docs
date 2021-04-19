@@ -43,11 +43,11 @@ Preparation
 ***********
 
 Enable the Firmware CI resources of the nRF Asset Tracker that allow GitHub Actions to create test devices.
-Also enable the Firmware CI runner to connect by enabling the context switch ``firmware-ci`` when deploying the stack (see :ref:`Getting Started <aws-getting-started>`).
+Also enable the Firmware CI runner to connect before deploying the stack (see :ref:`Getting Started <aws-getting-started>`).
 
 .. code-block:: bash
 
-   echo "firmware-ci=1" >> context.cfg
+   node cli configure-api context stack firmware-ci 1
    npx cdk deploy '*'
 
 Print the AWS Key for the CI runner on GitHub Actions using the following command:

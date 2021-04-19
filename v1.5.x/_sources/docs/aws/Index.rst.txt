@@ -16,6 +16,7 @@ It is developed using `AWS CDK <https://aws.amazon.com/cdk/>`_ in `TypeScript <h
    Customization/Index.rst
    ContinuousDeployment.rst
    ContinuousIntegration.rst
+   nRFConnectForCloudAPI.rst
    UnwiredLabsAPI.rst
    Simulator.rst
    Authentication.rst

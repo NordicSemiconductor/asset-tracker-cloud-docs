@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Running the application locally with Docker &mdash; nRF Asset Tracker 48bf2dda0a6824076b3b141c22791dafb6424da5 documentation</title>
+  <title>Running the application locally with Docker &mdash; nRF Asset Tracker dadd420058874b78b172584b7625d102ac8d8711 documentation</title>
   
 
   
@@ -89,8 +89,8 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
@@ -101,8 +101,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture decision records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
@@ -175,40 +175,16 @@
             
   <div class="section" id="running-the-application-locally-with-docker">
 <span id="azure-running-app-locally"></span><h1>Running the application locally with Docker<a class="headerlink" href="#running-the-application-locally-with-docker" title="Permalink to this headline">¶</a></h1>
-<p>If your system has a different version of Node.js, you can run the application locally in a <a class="reference external" href="https://hub.docker.com/r/NordicSemiconductor/asset-tracker-cloud-azure-js">Docker container</a>.</p>
+<p>If your system has a different version of Node.js, you can run the application locally in a <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/blob/saga/Dockerfile">Docker container</a>.</p>
 <p>To run the application locally with Docker, complete the following steps:</p>
 <ol class="arabic">
-<li><p>Export the IoT Hub connection string and the Avatar storage environment variables (located in the configuration of the function app) to the following environment variables:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">IOT_HUB_CONNECTION_STRING</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AVATAR_STORAGE_ACCOUNT_NAME</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AVATAR_STORAGE_ACCESS_KEY</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FOTA_STORAGE_ACCOUNT_NAME</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FOTA_STORAGE_ACCESS_KEY</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING</span></code></p></li>
-</ul>
-</li>
-<li><p>Make sure to include the following settings in your <code class="file docutils literal notranslate"><span class="pre">local.settings.json</span></code> file:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;IsEncrypted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;Values&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;IoTHubEventHubCompatibleConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;AzureWebJobsStorage&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;IoTHubEventHubName&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;SignalRConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;Host&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;CORS&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;CORSCredentials&quot;</span><span class="p">:</span> <span class="kc">false</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<li><p>Export the function app configuration as environment variables:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli functions-settings &gt; local.settings.json
 </pre></div>
 </div>
 </li>
-<li><p>Run the following command to list the environment variables of the function app and export them:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az functionapp config appsettings list <span class="se">\</span>
-    --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
-    --name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>API <span class="p">|</span> jq -r <span class="s1">&#39;.[] | .name + &quot;=\&quot;&quot; + .value + &quot;\&quot;&quot;&#39;</span>
+<li><p>Either <a class="reference external" href="https://docs.github.com/en/packages/guides/pushing-and-pulling-docker-images#authenticating-to-github-container-registry">Authenticate against the Google Container registry</a>  or build the Docker image using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker build -t ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js .
 </pre></div>
 </div>
 </li>
@@ -222,7 +198,7 @@
     -e HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING <span class="se">\</span>
     -e UNWIREDLABS_API_KEY <span class="se">\</span>
     -e UNWIREDLABS_API_ENDPOINT <span class="se">\</span>
-    -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir nrf-asset-tracker/azure-dev:latest <span class="se">\</span>
+    -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js <span class="se">\</span>
     func start --typescript
 </pre></div>
 </div>

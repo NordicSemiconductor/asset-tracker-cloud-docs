@@ -43,14 +43,20 @@ To acquire credentials for the CI runner, complete the following steps:
 
    .. code-block:: bash
 
-      az ad sp create-for-rbac --name https://github.com/ --role Contributor --sdk-auth --scopes /subscriptions/${SUBSCRIPTION_ID} > ci-credentials.json
+      az ad sp create-for-rbac --name https://github.com/ --role Contributor --sdk-auth --scopes /subscriptions/${SUBSCRIPTION_ID} > cd-credentials.json
 
 #. Fork the `nRF Asset Tracker for Azure project <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_ and add the following secrets to an environment called ``production``:
 
    * ``AZURE_CREDENTIALS`` - Store the contents of the JSON file created in the above step.
-   * ``APP_REG_CLIENT_ID`` - The ``application (client) id`` of the Active Directory B2C App registration.
-   * ``B2C_TENANT`` - The ``initial domain name`` of the Active Directory B2C that is created.
+  
+#. Add the following following values from your :file:`.envrc` file as secrets as well (everything except ``SUBSCRIPTION_ID``):
 
-#. Commit a change
+   * ``RESOURCE_GROUP``
+   * ``APP_NAME``
+   * ``LOCATION``
+   * ``B2C_TENANT``
+   * ``APP_REG_CLIENT_ID``
+
+#. Commit a change.
 
    GitHub actions should now update your deployment.
