@@ -83,7 +83,7 @@ Deploy the solution to your account
    
    1. Click :guilabel:`Expose an API` and  set the ``Application ID URI`` field to ``api``.
    
-   #. Click :guilabel:`+ Add a scope` and create a new scope with the following values and then clicking :guilabel:`Add a scope`:
+   #. Click :guilabel:`+ Add a scope` and create a new scope with the following values and click :guilabel:`Add a scope`:
       
       * Scope name - ``nrfassettracker.admin``
       * Admin consent display name - Admin Access to the nRF Asset Tracker API
