@@ -76,7 +76,7 @@ After running the above commands, you can open the domain name printed in ``APP_
 Register a new user
 *******************
 
-Since are no predefined user accounts in the B2C Active Directory, you need to register a new user.
+Since there are no predefined user accounts in the B2C Active Directory, you need to register a new user.
 
 .. figure:: ./images/register-account.png
     :alt: Register a new user

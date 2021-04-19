@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploy the solution to your account &mdash; nRF Asset Tracker v13.6.0 documentation</title>
+  <title>Deploy the solution to your account &mdash; nRF Asset Tracker 99ac4c220cf18eca59118b1e361884d0b0881271 documentation</title>
   
 
   
@@ -266,21 +266,21 @@ az account list --output table
 </pre></div>
 </div>
 </li>
-<li><p>Create an Azure Active Directory B2C: currently, it is not possible to create Active Directory B2C and application through the ARM template (see <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1">GitHub issue</a>).</p>
-<p>1. You must follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications">tutorial for registering a web application in Azure Active Directory B2C</a> and create a B2C tenant and an application.
+<li><p>Create an Azure Active Directory B2C: currently, it is not possible to create an Active Directory B2C and application through the ARM template (see <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1">GitHub issue</a>).</p>
+<p>1. Follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications">tutorial for registering a web application in Azure Active Directory B2C</a> and create a B2C tenant and an application.
 Use <code class="docutils literal notranslate"><span class="pre">http://localhost:3000/</span></code> (for local development) and <code class="docutils literal notranslate"><span class="pre">https://&lt;your</span> <span class="pre">APP_NAME&gt;app.z16.web.core.windows.net/</span></code> as the redirect URLs.</p>
 <ol class="arabic simple">
 <li><p>Enable the <em>implicit grant and hybrid flows</em> for <span class="guilabel">Access tokens</span> and <span class="guilabel">ID tokens</span> and click <span class="guilabel">Save</span>.</p></li>
 </ol>
 </li>
-<li><p>Create the user flow for sign up, sign in, and make sure to name the userflow as <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code>.</p></li>
+<li><p>Create the user flow for sign-up, sign-in, and make sure to name the userflow as <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code>.</p></li>
 <li><p>Grant the B2C directory API permissions for the function app:</p>
 <ol class="arabic simple">
 <li><p>Click <span class="guilabel">Expose an API</span> and  set the <code class="docutils literal notranslate"><span class="pre">Application</span> <span class="pre">ID</span> <span class="pre">URI</span></code> field to <code class="docutils literal notranslate"><span class="pre">api</span></code>.</p></li>
-<li><p>Click <span class="guilabel">+ Add a scope</span> and create a new scope with the following values and then clicking <span class="guilabel">Add a scope</span>:</p>
+<li><p>Click <span class="guilabel">+ Add a scope</span> and create a new scope with the following values and click <span class="guilabel">Add a scope</span>:</p>
 <ul class="simple">
 <li><p>Scope name - <code class="docutils literal notranslate"><span class="pre">nrfassettracker.admin</span></code></p></li>
-<li><p>Admin consent display name - Admin Access to the nRF Asset Tracker API</p></li>
+<li><p>Admin consent display name - Admin access to the nRF Asset Tracker API</p></li>
 <li><p>Admin consent description - Allows admin access to all resources exposed through the nRF Asset Tracker API</p></li>
 </ul>
 </li>
@@ -326,7 +326,7 @@ az storage blob service-properties update <span class="se">\</span>
 func azure functionapp publish <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>API --typescript
 </pre></div>
 </div>
-<p>If the command throws an error, you can find the detailed log message using the following command:</p>
+<p>If the command gives an error, you can find the detailed log message using the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az monitor activity-log list --correlation-id <span class="s2">&quot;&lt;tracking id&gt;&quot;</span> <span class="se">\</span>
    <span class="p">|</span> jq <span class="s1">&#39;.[].properties.statusMessage | fromjson&#39;</span>
 </pre></div>

@@ -70,23 +70,23 @@ Deploy the solution to your account
 
       az provider register --namespace Microsoft.AzureActiveDirectory
 
-#. Create an Azure Active Directory B2C: currently, it is not possible to create Active Directory B2C and application through the ARM template (see `GitHub issue <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_).
+#. Create an Azure Active Directory B2C: currently, it is not possible to create an Active Directory B2C and application through the ARM template (see `GitHub issue <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_).
 
-   1. You must follow the instructions in the `tutorial for registering a web application in Azure Active Directory B2C <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications>`_ and create a B2C tenant and an application.
+   1. Follow the instructions in the `tutorial for registering a web application in Azure Active Directory B2C <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications>`_ and create a B2C tenant and an application.
    Use ``http://localhost:3000/`` (for local development) and ``https://<your APP_NAME>app.z16.web.core.windows.net/`` as the redirect URLs.
 
    #. Enable the *implicit grant and hybrid flows* for :guilabel:`Access tokens` and :guilabel:`ID tokens` and click :guilabel:`Save`.
 
-#. Create the user flow for sign up, sign in, and make sure to name the userflow as ``B2C_1_signup_signin``.
+#. Create the user flow for sign-up, sign-in, and make sure to name the userflow as ``B2C_1_signup_signin``.
 
 #. Grant the B2C directory API permissions for the function app:
    
    1. Click :guilabel:`Expose an API` and  set the ``Application ID URI`` field to ``api``.
    
-   #. Click :guilabel:`+ Add a scope` and create a new scope with the following values and then clicking :guilabel:`Add a scope`:
+   #. Click :guilabel:`+ Add a scope` and create a new scope with the following values and click :guilabel:`Add a scope`:
       
       * Scope name - ``nrfassettracker.admin``
-      * Admin consent display name - Admin Access to the nRF Asset Tracker API
+      * Admin consent display name - Admin access to the nRF Asset Tracker API
       * Admin consent description - Allows admin access to all resources exposed through the nRF Asset Tracker API
 
    #. Click :guilabel:`API permissions` and then click :guilabel:`+ Add a permission`. Under :guilabel:`My APIs`, select the app registration.
@@ -137,7 +137,7 @@ Deploy the solution to your account
       # Deploy the functions
       func azure functionapp publish ${APP_NAME:-nrfassettracker}API --typescript
 
-   If the command throws an error, you can find the detailed log message using the following command:
+   If the command gives an error, you can find the detailed log message using the following command:
 
    .. code-block:: bash
 
