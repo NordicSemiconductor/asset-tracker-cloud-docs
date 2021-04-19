@@ -9,8 +9,8 @@ After installing the CLI, you must be able to execute the ``az`` command:
 
     az
 
-Dockerizing the ``az`` command
-==============================
+Dockerizing the az command
+==========================
 
 In case you encounter the issue where the Azure CLI requires `an older Python version <https://github.com/Azure/azure-cli/issues/11239>`_, you can *dockerize* it as follows:
 

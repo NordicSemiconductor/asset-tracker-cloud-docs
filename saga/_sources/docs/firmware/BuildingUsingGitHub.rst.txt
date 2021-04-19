@@ -10,8 +10,8 @@ After you have forked the repository, `enable GitHub Actions <https://help.githu
 
 .. only:: saga
 
-    Configuration for firmware connecting to the *nRF Asset Tracker* for AWS
-    ========================================================================
+    Configuration for firmware connecting to the nRF Asset Tracker for AWS
+    ======================================================================
 
 Navigate to the settings of the repository and configure a new Secret ``BROKER_HOSTNAME`` and assign the host name of your AWS IoT Core MQTT broker to the secret.
 You can retrieve the host name by using the following command:

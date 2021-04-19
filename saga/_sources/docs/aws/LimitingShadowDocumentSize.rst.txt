@@ -1,6 +1,6 @@
 .. _limit_shadow_size:
 
-Limiting the Shadow Document size
+Limiting the shadow document size
 #################################
 
 The nRF9160 DK has a size limit of 2303 bytes for receiving TLS packages.

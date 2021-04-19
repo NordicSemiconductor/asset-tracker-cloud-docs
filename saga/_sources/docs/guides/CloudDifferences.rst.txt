@@ -32,10 +32,10 @@ Devices publish their state to ``/devices/${deviceId}/state`` topic.
 The devices must always publish the *entire state*.
 There is no native support for partial updates.
 
-Websockets
+WebSockets
 ==========
 
-The IoT Core does not support Websocket connections, which is used in the app to get notifications about changes on the device state in real time.
+The IoT Core does not support WebSocket connections, which is used in the app to get notifications about changes on the device state in real time.
 
 Microsoft Azure
 ***************

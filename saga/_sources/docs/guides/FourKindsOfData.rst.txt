@@ -104,7 +104,7 @@ Once these recorded measurements are ready to be sent (in the presence of a cell
 
 In this way, all the data is sent with precise timestamps to the cloud where the device time is used when visualizing the data to accurately reflect the time of creation of the datum.
 
-Past State
+Past state
 **********
 
 There can be scenarios when the position updates are collected only when a cellular connection can be established.
@@ -125,7 +125,7 @@ A simple approach is to use a ring buffer that stores the latest messages and wi
 This is also applicable for devices that control a system.
 Such devices must have built-in decision rules and they must not depend on the cloud backend to provide the action to be executed based on the current condition.
 
-Firmware Upgrades (FOTA)
+Firmware upgrades (FOTA)
 ************************
 
 Firmware upgrade *over the air* (FOTA) can be seen as a device configuration.

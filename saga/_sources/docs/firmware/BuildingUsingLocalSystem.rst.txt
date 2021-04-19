@@ -41,15 +41,15 @@ Build the project
 
 Navigate to the :file:`./ncs/firmware` directory and build the project for your nRF9160-based device.
 
-Thingy:91 (``PCA20035``)
-========================
+Thingy:91 (PCA20035)
+====================
 
 .. code-block:: bash
 
     west build -p always -b thingy91_nrf9160ns
 
-nRF9160 DK (``PCA10090``)
-=========================
+nRF9160 DK (PCA10090)
+=====================
 
 .. code-block:: bash
 

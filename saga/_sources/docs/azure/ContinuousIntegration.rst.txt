@@ -24,7 +24,7 @@ Since the BDD tests are purely testing based on the public API of the project (w
 
 The project also provides an easily understandable description of the available (and implemented) features, in a single folder called  `features <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/tree/saga/features>`_.
 
-Prepare your Azure Account
+Prepare your Azure account
 **************************
 
 .. note::
