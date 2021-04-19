@@ -57,6 +57,6 @@ To acquire credentials for the CI runner, complete the following steps:
    * ``B2C_TENANT``
    * ``APP_REG_CLIENT_ID``
 
-#. Commit a change
+#. Commit a change.
 
    GitHub actions should now update your deployment.
