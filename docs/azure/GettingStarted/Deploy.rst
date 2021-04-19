@@ -77,7 +77,7 @@ Deploy the solution to your account
 
    #. Enable the *implicit grant and hybrid flows* for :guilabel:`Access tokens` and :guilabel:`ID tokens` and click :guilabel:`Save`.
 
-#. Create the user flow for sign up, sign in, and make sure to name the userflow as ``B2C_1_signup_signin``.
+#. Create the user flow for sign-up, sign-in, and make sure to name the userflow as ``B2C_1_signup_signin``.
 
 #. Grant the B2C directory API permissions for the function app:
    
