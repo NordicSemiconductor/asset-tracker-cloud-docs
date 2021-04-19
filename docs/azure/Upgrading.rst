@@ -48,7 +48,7 @@ Docker variant (in case you get a ``Permission denied.`` error):
                b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
                unwiredlabsApiKey=${UNWIRED_LABS_API_KEY}
 
-If the command throws an error, you can find the detailed log message using the following command:
+If the command gives an error, you can find the detailed log message using the following command:
 
 .. code-block:: bash
 
