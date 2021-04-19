@@ -15,7 +15,7 @@ To run the application locally with Docker, complete the following steps:
 
 #. Either `Authenticate against the Google Container registry <https://docs.github.com/en/packages/guides/pushing-and-pulling-docker-images#authenticating-to-github-container-registry>`_  or build the Docker image using the following command:
 
-     .. code-block:: bash
+   .. code-block:: bash
 
       docker build -t ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js .
 
