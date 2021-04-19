@@ -86,7 +86,7 @@ Deploy the solution to your account
    #. Click :guilabel:`+ Add a scope` and create a new scope with the following values and click :guilabel:`Add a scope`:
       
       * Scope name - ``nrfassettracker.admin``
-      * Admin consent display name - Admin Access to the nRF Asset Tracker API
+      * Admin consent display name - Admin access to the nRF Asset Tracker API
       * Admin consent description - Allows admin access to all resources exposed through the nRF Asset Tracker API
 
    #. Click :guilabel:`API permissions` and then click :guilabel:`+ Add a permission`. Under :guilabel:`My APIs`, select the app registration.
