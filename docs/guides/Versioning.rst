@@ -57,8 +57,8 @@ Following are the three commit messages that triggers a release:
 
     A commit message of a different format *will not trigger* a release.
 
-Patch release (``fix``) ``2.3.4 -> 2.3.5``
-==========================================
+Patch release (fix)
+===================
 
 A fix is a change to the implementation, which removes a bug *without changing the public API* (method names and signatures, exports) of the library.
 The consumer of the library need not change their implementation when installing the fixed version.
@@ -77,8 +77,8 @@ You can optionally add a scope, which is a lowercase string that is used to iden
 
 Scopes are useful when the project is big.
 
-Feature release (``feat``) ``2.3.4 -> 2.4.0``
-=============================================
+Feature release (feat)
+======================
 
 A feature is a change to the implementation of a library which adds additional functionality *without changing the public API* of the library.
 
@@ -92,8 +92,8 @@ To release a feature (which will update the version from ``2.3.4`` to ``2.4.0``)
 
 You can optionally add a scope as well.
 
-Breaking Release (``BREAKING CHANGE:``) ``2.3.4 -> 3.0.0``
-==========================================================
+Breaking Release (BREAKING CHANGE:)
+===================================
 
 Whenever the public API of the library changes in a way that requires the consumer to update their implementation, *you must mark the change as breaking*. 
 This can happen in the following conditions:

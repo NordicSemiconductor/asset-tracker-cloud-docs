@@ -1,6 +1,6 @@
 .. _project:
 
-Project Overview
+Project overview
 ################
 
 The nRF Asset Tracker enables developers to set up a real-world IoT solution using one of the supported cloud providers and adapt the example firmware and software to fit their use case.
@@ -9,8 +9,8 @@ The nRF Asset Tracker enables developers to set up a real-world IoT solution usi
 
 .. note::
 
-   Developers are expected to have prior experience in developing solutions with the respective cloud provider.
-   The nRF Asset Tracker is designed for developers who require a head start on setting up the cloud provider for Nordic devices and require modifying the solution according to specific needs.
+   Developers are expected to have experience in developing solutions with the respective cloud provider.
+   The nRF Asset Tracker is designed for developers who require a head start on setting up the cloud provider for Nordic devices and want to modify the solution according to their specific needs.
    The nRF Asset Tracker  is not a turn-key software-as-a-service solution.
    It comes with additional costs and there will be future maintenance efforts.
 

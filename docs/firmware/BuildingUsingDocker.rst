@@ -34,16 +34,16 @@ Build the project
 Build the project for your nRF9160-based device using the specified commands.
 
 
-Thingy:91 (``PCA20035``)
-========================
+Thingy:91 (PCA20035)
+====================
 
 .. code-block:: bash
 
     docker run --rm -v ${PWD}:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b thingy91_nrf9160ns -- -DOVERLAY_CONFIG="overlay-debug.conf;asset-tracker-cloud-firmware.conf"'
     ls -la build/zephyr/merged.hex
 
-nRF9160 DK (``PCA10090``)
-=========================
+nRF9160 DK (PCA10090)
+=====================
 
 .. code-block:: bash
 

@@ -1,7 +1,7 @@
 .. _about-direnv:
 
-direnv
-######
+Managing environment variables using direnv
+###########################################
 
 The `direnv <https://direnv.net/>`_ extension locates the environment variables in a :file:`.envrc` file in the current folder and automatically exports them.
 It is available as a plugin for most of the shells.
