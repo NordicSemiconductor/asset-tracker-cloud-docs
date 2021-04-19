@@ -72,8 +72,7 @@ Deploy the solution to your account
 
 #. Create an Azure Active Directory B2C: currently, it is not possible to create an Active Directory B2C and application through the ARM template (see `GitHub issue <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_).
 
-   1. Follow the instructions in the `tutorial for registering a web application in Azure Active Directory B2C <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications>`_ and create a B2C tenant and an application.
-   Use ``http://localhost:3000/`` (for local development) and ``https://<your APP_NAME>app.z16.web.core.windows.net/`` as the redirect URLs.
+   a. Follow the instructions in the `tutorial for registering a web application in Azure Active Directory B2C <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications>`_ and create a B2C tenant and an application. Use ``http://localhost:3000/`` (for local development) and ``https://<your APP_NAME>app.z16.web.core.windows.net/`` as the redirect URLs.
 
    #. Enable the *implicit grant and hybrid flows* for :guilabel:`Access tokens` and :guilabel:`ID tokens` and click :guilabel:`Save`.
 
@@ -81,7 +80,7 @@ Deploy the solution to your account
 
 #. Grant the B2C directory API permissions for the function app:
    
-   1. Click :guilabel:`Expose an API` and  set the ``Application ID URI`` field to ``api``.
+   a. Click :guilabel:`Expose an API` and  set the ``Application ID URI`` field to ``api``.
    
    #. Click :guilabel:`+ Add a scope` and create a new scope with the following values and click :guilabel:`Add a scope`:
       

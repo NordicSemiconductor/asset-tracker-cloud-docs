@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous deployment &mdash; nRF Asset Tracker v13.6.1 documentation</title>
+  <title>Continuous deployment &mdash; nRF Asset Tracker 91631690802a52555514dbdaa47623c5e45eb696 documentation</title>
   
 
   
@@ -231,7 +231,7 @@ az account list --output table
 <li><p><code class="docutils literal notranslate"><span class="pre">AZURE_CREDENTIALS</span></code> - Store the contents of the JSON file created in the above step.</p></li>
 </ul>
 </li>
-<li><p>Add these values from your <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file as secrets as well (everything except <code class="docutils literal notranslate"><span class="pre">SUBSCRIPTION_ID</span></code>):</p>
+<li><p>Add the following values from your <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file as secrets as well (everything except <code class="docutils literal notranslate"><span class="pre">SUBSCRIPTION_ID</span></code>):</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">RESOURCE_GROUP</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">APP_NAME</span></code></p></li>
@@ -240,7 +240,7 @@ az account list --output table
 <li><p><code class="docutils literal notranslate"><span class="pre">APP_REG_CLIENT_ID</span></code></p></li>
 </ul>
 </li>
-<li><p>Commit a change</p>
+<li><p>Commit a change.</p>
 <p>GitHub actions should now update your deployment.</p>
 </li>
 </ol>

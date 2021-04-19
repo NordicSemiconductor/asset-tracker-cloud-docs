@@ -42,8 +42,8 @@ Run the following command in the :file:`cat-tracker-web-app` directory to copy t
    :start-after: provide_versionstring_start
    :end-before: provide_versionstring_end
 
-Example for :file:`.env.local`
-------------------------------
+Example for the .env.local file
+--------------------------------
 
 Following is an example for the contents of the :file:`.env.local` file:
 

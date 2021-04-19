@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploy the solution to your account &mdash; nRF Asset Tracker v13.6.1 documentation</title>
+  <title>Deploy the solution to your account &mdash; nRF Asset Tracker 91631690802a52555514dbdaa47623c5e45eb696 documentation</title>
   
 
   
@@ -267,15 +267,14 @@ az account list --output table
 </div>
 </li>
 <li><p>Create an Azure Active Directory B2C: currently, it is not possible to create an Active Directory B2C and application through the ARM template (see <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1">GitHub issue</a>).</p>
-<p>1. Follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications">tutorial for registering a web application in Azure Active Directory B2C</a> and create a B2C tenant and an application.
-Use <code class="docutils literal notranslate"><span class="pre">http://localhost:3000/</span></code> (for local development) and <code class="docutils literal notranslate"><span class="pre">https://&lt;your</span> <span class="pre">APP_NAME&gt;app.z16.web.core.windows.net/</span></code> as the redirect URLs.</p>
-<ol class="arabic simple">
+<ol class="loweralpha simple">
+<li><p>Follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications">tutorial for registering a web application in Azure Active Directory B2C</a> and create a B2C tenant and an application. Use <code class="docutils literal notranslate"><span class="pre">http://localhost:3000/</span></code> (for local development) and <code class="docutils literal notranslate"><span class="pre">https://&lt;your</span> <span class="pre">APP_NAME&gt;app.z16.web.core.windows.net/</span></code> as the redirect URLs.</p></li>
 <li><p>Enable the <em>implicit grant and hybrid flows</em> for <span class="guilabel">Access tokens</span> and <span class="guilabel">ID tokens</span> and click <span class="guilabel">Save</span>.</p></li>
 </ol>
 </li>
 <li><p>Create the user flow for sign-up, sign-in, and make sure to name the userflow as <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code>.</p></li>
 <li><p>Grant the B2C directory API permissions for the function app:</p>
-<ol class="arabic simple">
+<ol class="loweralpha simple">
 <li><p>Click <span class="guilabel">Expose an API</span> and  set the <code class="docutils literal notranslate"><span class="pre">Application</span> <span class="pre">ID</span> <span class="pre">URI</span></code> field to <code class="docutils literal notranslate"><span class="pre">api</span></code>.</p></li>
 <li><p>Click <span class="guilabel">+ Add a scope</span> and create a new scope with the following values and click <span class="guilabel">Add a scope</span>:</p>
 <ul class="simple">
