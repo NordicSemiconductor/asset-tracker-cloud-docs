@@ -43,7 +43,7 @@ Run the following command in the :file:`cat-tracker-web-app` directory to copy t
    :end-before: provide_versionstring_end
 
 Example for the .env.local file
---------------------------------
+-------------------------------
 
 Following is an example for the contents of the :file:`.env.local` file:
 
