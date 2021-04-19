@@ -137,7 +137,7 @@ Deploy the solution to your account
       # Deploy the functions
       func azure functionapp publish ${APP_NAME:-nrfassettracker}API --typescript
 
-   If the command throws an error, you can find the detailed log message using the following command:
+   If the command gives an error, you can find the detailed log message using the following command:
 
    .. code-block:: bash
 
