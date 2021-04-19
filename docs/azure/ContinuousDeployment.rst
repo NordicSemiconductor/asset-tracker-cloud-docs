@@ -49,7 +49,7 @@ To acquire credentials for the CI runner, complete the following steps:
 
    * ``AZURE_CREDENTIALS`` - Store the contents of the JSON file created in the above step.
   
-#. Add the following values from your :file:`.envrc` file as secrets as well (everything except ``SUBSCRIPTION_ID``):
+#. Add the following following values from your :file:`.envrc` file as secrets as well (everything except ``SUBSCRIPTION_ID``):
 
    * ``RESOURCE_GROUP``
    * ``APP_NAME``
