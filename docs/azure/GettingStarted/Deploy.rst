@@ -80,7 +80,7 @@ Deploy the solution to your account
 
 #. Grant the B2C directory API permissions for the function app:
    
-   1. Click :guilabel:`Expose an API` and  set the ``Application ID URI`` field to ``api``.
+   a. Click :guilabel:`Expose an API` and  set the ``Application ID URI`` field to ``api``.
    
    #. Click :guilabel:`+ Add a scope` and create a new scope with the following values and click :guilabel:`Add a scope`:
       
