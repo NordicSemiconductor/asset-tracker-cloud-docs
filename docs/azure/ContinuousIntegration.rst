@@ -22,8 +22,6 @@ Since the BDD tests are purely testing based on the public API of the project (w
     This is an advanced topic for those who need to further develop and customize the nRF Asset Tracker.
     See the `nRF Asset Tracker for Azure GitHub project page <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_, for the implementation of the process outlined in this section.
 
-The project also provides an easily understandable description of the available (and implemented) features, in a single folder called  `features <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/tree/saga/features>`_.
-
 Prepare your Azure account
 **************************
 

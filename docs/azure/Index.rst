@@ -17,6 +17,8 @@ Azure cloud components
 The nRF Asset Tracker provides a reference implementation of a serverless backend for an IoT product using Azure.
 It is developed using `Azure Resource Manager <https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview>`_ in `TypeScript <https://www.typescriptlang.org/>`_.
 
+The project also provides an easily understandable description of the available (and implemented) features, in a single folder called  `features <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/tree/saga/features>`_.
+
 .. note::
 
    **Recurring costs**
