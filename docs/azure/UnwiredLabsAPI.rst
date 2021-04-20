@@ -8,6 +8,7 @@ You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for the 
 To use Unwired Labs' LocationAPI, provide the ``unwiredlabsApiKey`` parameter when deploying the solution:
 
 .. parsed-literal::
+   :class: highlight
 
     az deployment group create \
         --resource-group ${RESOURCE_GROUP:-nrfassettracker} \

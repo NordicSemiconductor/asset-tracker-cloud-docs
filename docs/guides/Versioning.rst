@@ -33,25 +33,28 @@ Following are the three commit messages that triggers a release:
 
 * Patch release 
 
-  .. code-block:: bash
+  .. parsed-literal::
+     :class: highlight
 
-      fix: <commit message>
+      fix: *commit message*
 
 * Feature release
 
-  .. code-block:: bash
+  .. parsed-literal::
+     :class: highlight
 
-     feat: <commit message>
+     feat: *commit message*
 
 * Breaking Release
 
-  .. code-block:: bash
+  .. parsed-literal::
+     :class: highlight
 
-     <scope>: <commit message>
+     *scope*: *commit message*
     
      BREAKING CHANGE:
     
-     <description of breaking change>
+     *description of breaking change*
 
 .. note::
 
@@ -65,15 +68,17 @@ The consumer of the library need not change their implementation when installing
 
 To release a fix (which will update the version from ``2.3.4`` to ``2.3.5``), use the type ``fix`` in the commit message:
 
-.. code-block:: bash
+.. parsed-literal::
+   :class: highlight
 
-    fix: <commit message>
+    fix: *commit message*
 
 You can optionally add a scope, which is a lowercase string that is used to identify the affected *component*.
 
-.. code-block:: bash
+.. parsed-literal::
+   :class: highlight
 
-    fix(<scope>): <commit message>
+    fix(*scope*): *commit message*
 
 Scopes are useful when the project is big.
 
@@ -86,9 +91,10 @@ You may add new exports, methods and extra method arguments that are optional, b
 
 To release a feature (which will update the version from ``2.3.4`` to ``2.4.0``), use the type ``feat`` in the commit message:
 
-.. code-block:: bash
+.. parsed-literal::
+   :class: highlight
 
-    feat: <commit message>
+    feat: *commit message*
 
 You can optionally add a scope as well.
 
@@ -107,13 +113,14 @@ Even if the change is very small, as soon as you break the library's *contract* 
 
 To do a breaking release (which will update the version from ``2.3.4`` to ``3.0.0``), use the text :code:`BREAKING CHANGE:` (followed by a space of two new lines) in the commit message:
 
-.. code-block:: bash
+.. parsed-literal::
+   :class: highlight
 
-    refactor: <commit message>
+    refactor: *commit message*
     
     BREAKING CHANGE:
     
-    <description of breaking change>
+    *description of breaking change*
 
 You can optionally add a scope as well.
 

@@ -36,14 +36,15 @@ To customize the web application, complete the following steps:
 
    The following query selects the last 100 heart rate readings for the device:
 
-   .. code-block:: SQL
+   .. parsed-literal::
+      :class: highlight
 
       SELECT
       -- `date` and `value` are column names used in the React component that renders the chart
       time as date,
       measure_value::double as value
-      FROM '<table>'
-      WHERE deviceId='<catId>'
+      FROM '*table*'
+      WHERE deviceId='*catId*'
       AND measure_name = 'heartrate'
       ORDER BY time DESC
       LIMIT 100

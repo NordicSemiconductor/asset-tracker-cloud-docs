@@ -16,9 +16,10 @@ To provision the device certificate using CLI, you must have `Segger JLink <http
 
 Use the CLI to provision the device certificates:
 
-.. code-block:: bash
+.. parsed-literal::
+   :class: highlight
 
-    node cli flash "<imei>" -f /path/to/firmware.hex
+    node cli flash "*imei*" -f /path/to/firmware.hex
     # default secTag is 42
     # default board is the Thingy:91, use --dk to program a DK
     # when programming a Thingy:91, most likely you need to override the default port: -p /dev/ttyACM2
