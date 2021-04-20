@@ -27,9 +27,10 @@ To acquire credentials for the CI runner, complete the following steps:
 
 #. Export the identifier of the subscription which contains the nRF Asset Tracker resources:
 
-   .. code-block:: bash
+   .. parsed-literal::
+      :class: highlight
 
-      export SUBSCRIPTION_ID="<subscription id>"
+      export SUBSCRIPTION_ID="*subscription id*"
 
 #. Make sure that you have enabled the correct subscription by running the following commands:
 
