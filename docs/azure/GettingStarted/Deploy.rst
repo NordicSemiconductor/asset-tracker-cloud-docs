@@ -8,10 +8,11 @@ Deploy the solution to your account
 
 1. Export the identifier of the subscription which contains the nRF Asset Tracker resources to a new :file:`.envrc` file (:ref:`used with direnv <about-direnv>`), as shown in the following code:
 
-   .. code-block:: bash
+   .. parsed-literal::
+      :class: highlight
 
       # add to .envrc
-      export SUBSCRIPTION_ID="<Subscription ID>"
+      export SUBSCRIPTION_ID="*Subscription ID*"
 
 #. Choose a resource group name for the solution and export it as ``RESOURCE_GROUP``.
    In this example, we use ``nrfassettracker`` as the resource group name.
@@ -138,9 +139,10 @@ Deploy the solution to your account
 
    If the command gives an error, you can find the detailed log message using the following command:
 
-   .. code-block:: bash
+   .. parsed-literal::
+      :class: highlight
 
-      az monitor activity-log list --correlation-id "<tracking id>" \
+      az monitor activity-log list --correlation-id "*tracking id*" \
          | jq '.[].properties.statusMessage | fromjson'
 
    It can take a few minutes for the detailed log message to be populated.

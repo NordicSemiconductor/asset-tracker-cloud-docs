@@ -50,9 +50,10 @@ Docker variant (in case you get a ``Permission denied.`` error):
 
 If the command gives an error, you can find the detailed log message using the following command:
 
-.. code-block:: bash
+.. parsed-literal::
+   :class: highlight
 
-    az monitor activity-log list --correlation-id "<tracking id>" \
+    az monitor activity-log list --correlation-id "*tracking id*" \
         | jq '.[].properties.statusMessage | fromjson'
 
 It can take a few minutes for the detailed log message to be populated.

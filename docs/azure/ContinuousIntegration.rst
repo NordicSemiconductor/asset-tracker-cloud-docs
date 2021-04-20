@@ -45,9 +45,10 @@ Create a secondary tenant (Azure Active Directory B2C)
 
 #. Note down the initial domain name that you used:
 
-   .. code-block:: bash
+   .. parsed-literal::
+      :class: highlight
 
-      export B2C_TENANT="<Primary domain>" # For example, "nrfassettrackerciusers"
+      export B2C_TENANT="*Primary domain*" # For example, "nrfassettrackerciusers"
 
 #. Link this Azure AD B2C tenant to the subscription for CI by following the `Billing guide <https://docs.microsoft.com/en-us/azure/active-directory-b2c/billing#link-an-azure-ad-b2c-tenant-to-a-subscription>`_.
 
@@ -63,10 +64,11 @@ To create the Azure Active Directory B2C application, complete the following ste
 
 #. Export the ``Application (client) ID`` and the ``Directory (tenant) ID`` of the created Active Directory B2C App registration into the ``APP_REG_CLIENT_ID`` and ``B2C_TENANT_ID`` parameters:
 
-   .. code-block:: bash
+   .. parsed-literal::
+      :class: highlight
 
-      export APP_REG_CLIENT_ID="<Application (client) id>"
-      export B2C_TENANT_ID="<Directory (tenant) ID>"
+      export APP_REG_CLIENT_ID="*Application (client) ID*"
+      export B2C_TENANT_ID="*Directory (tenant) ID*"
 
 #. For enabling the test-runner to programmatically login users, enable `the resource owner password credentials (ROPC) flow <https://docs.microsoft.com/EN-US/azure/active-directory-b2c/configure-ropc?tabs=app-reg-ga>`_ with the following settings:
 
@@ -92,9 +94,10 @@ To deploy the solution, complete the following steps:
 
 #. Export the identifier of the subscription which contains the nRF Asset Tracker resources:
 
-   .. code-block:: bash
+   .. parsed-literal::
+      :class: highlight
 
-      export SUBSCRIPTION_ID="<subscription id>"
+      export SUBSCRIPTION_ID="*subscription ID*"
 
 #. Make sure that you have enabled the right subscription by using the following commands:
 
