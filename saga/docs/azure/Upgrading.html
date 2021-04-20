@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Upgrading an existing installation &mdash; nRF Asset Tracker 79c8cd1e2d5f58cfc0308f22520a8c2799d3b240 documentation</title>
+  <title>Upgrading an existing installation &mdash; nRF Asset Tracker 18c804669aec81a7f5197683a9d83d9b3fb37249 documentation</title>
   
 
   
@@ -233,10 +233,7 @@ func azure functionapp publish <span class="si">${</span><span class="nv">APP_NA
 </div>
 </div>
 <p>If the command gives an error, you can find the detailed log message using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az monitor activity-log list --correlation-id <span class="s2">&quot;&lt;tracking id&gt;&quot;</span> <span class="se">\</span>
-    <span class="p">|</span> jq <span class="s1">&#39;.[].properties.statusMessage | fromjson&#39;</span>
-</pre></div>
-</div>
+<pre class="highlight literal-block"> az monitor activity-log list --correlation-id &quot;<em>tracking id</em>&quot;      | jq '.[].properties.statusMessage | fromjson'</pre>
 <p>It can take a few minutes for the detailed log message to be populated.</p>
 </div>
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous deployment &mdash; nRF Asset Tracker 79c8cd1e2d5f58cfc0308f22520a8c2799d3b240 documentation</title>
+  <title>Continuous deployment &mdash; nRF Asset Tracker 18c804669aec81a7f5197683a9d83d9b3fb37249 documentation</title>
   
 
   
@@ -224,9 +224,7 @@ The CodeBuild project upgrades the web application deployment on the S3 bucket.<
 <p>It is recommended to use a separate GitHub account instead of your personal GitHub account.</p>
 </div>
 <p>You need to store this token in <a class="reference external" href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html">AWS ParameterStore</a> and it is a manual <em>one-time</em> step done through AWS CLI  by using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli configure-api codebuild github token <span class="s2">&quot;&lt;Github Token&gt;&quot;</span>
-</pre></div>
-</div>
+<pre class="highlight literal-block"> node cli configure-api codebuild github token &quot;<em>Github Token</em>&quot;</pre>
 </div>
 <div class="section" id="enable-continuous-deployment">
 <h2><a class="toc-backref" href="#id3">Enable continuous deployment</a><a class="headerlink" href="#enable-continuous-deployment" title="Permalink to this headline">¶</a></h2>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploy the solution to your account &mdash; nRF Asset Tracker 79c8cd1e2d5f58cfc0308f22520a8c2799d3b240 documentation</title>
+  <title>Deploy the solution to your account &mdash; nRF Asset Tracker 18c804669aec81a7f5197683a9d83d9b3fb37249 documentation</title>
   
 
   
@@ -212,10 +212,8 @@ If you have ideas to simplify the process, <a class="reference external" href="h
 </div>
 <ol class="arabic">
 <li><p>Export the identifier of the subscription which contains the nRF Asset Tracker resources to a new <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file (<a class="reference internal" href="../../guides/Direnv.html#about-direnv"><span class="std std-ref">used with direnv</span></a>), as shown in the following code:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
-<span class="nb">export</span> <span class="nv">SUBSCRIPTION_ID</span><span class="o">=</span><span class="s2">&quot;&lt;Subscription ID&gt;&quot;</span>
-</pre></div>
-</div>
+<pre class="highlight literal-block"># add to .envrc
+export SUBSCRIPTION_ID=&quot;<em>Subscription ID</em>&quot;</pre>
 </li>
 <li><p>Choose a resource group name for the solution and export it as <code class="docutils literal notranslate"><span class="pre">RESOURCE_GROUP</span></code>.
 In this example, we use <code class="docutils literal notranslate"><span class="pre">nrfassettracker</span></code> as the resource group name.</p>
@@ -326,10 +324,7 @@ func azure functionapp publish <span class="si">${</span><span class="nv">APP_NA
 </pre></div>
 </div>
 <p>If the command gives an error, you can find the detailed log message using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az monitor activity-log list --correlation-id <span class="s2">&quot;&lt;tracking id&gt;&quot;</span> <span class="se">\</span>
-   <span class="p">|</span> jq <span class="s1">&#39;.[].properties.statusMessage | fromjson&#39;</span>
-</pre></div>
-</div>
+<pre class="highlight literal-block">az monitor activity-log list --correlation-id &quot;<em>tracking id</em>&quot;    | jq '.[].properties.statusMessage | fromjson'</pre>
 <p>It can take a few minutes for the detailed log message to be populated.</p>
 </li>
 </ol>

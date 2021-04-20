@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Customize the Cat Tracker web application &mdash; nRF Asset Tracker 79c8cd1e2d5f58cfc0308f22520a8c2799d3b240 documentation</title>
+  <title>Customize the Cat Tracker web application &mdash; nRF Asset Tracker 18c804669aec81a7f5197683a9d83d9b3fb37249 documentation</title>
   
 
   
@@ -230,17 +230,15 @@ As shown in the following image, you can use the Timestream Query Browser on the
 <img alt="Timestream query browser" src="../../../_images/timestream-query-browser.png" />
 </div>
 <p>The following query selects the last 100 heart rate readings for the device:</p>
-<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
-<span class="c1">-- `date` and `value` are column names used in the React component that renders the chart</span>
-<span class="n">time</span> <span class="k">as</span> <span class="nb">date</span><span class="p">,</span>
-<span class="n">measure_value</span><span class="p">::</span><span class="n">double</span> <span class="k">as</span> <span class="n">value</span>
-<span class="k">FROM</span> <span class="s1">&#39;&lt;table&gt;&#39;</span>
-<span class="k">WHERE</span> <span class="n">deviceId</span><span class="o">=</span><span class="s1">&#39;&lt;catId&gt;&#39;</span>
-<span class="k">AND</span> <span class="n">measure_name</span> <span class="o">=</span> <span class="s1">&#39;heartrate&#39;</span>
-<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">time</span> <span class="k">DESC</span>
-<span class="k">LIMIT</span> <span class="mi">100</span>
-</pre></div>
-</div>
+<pre class="highlight literal-block">SELECT
+-- <cite>date</cite> and <cite>value</cite> are column names used in the React component that renders the chart
+time as date,
+measure_value::double as value
+FROM '<em>table</em>'
+WHERE deviceId='<em>catId</em>'
+AND measure_name = 'heartrate'
+ORDER BY time DESC
+LIMIT 100</pre>
 <p>To know more about the syntax, see <a class="reference external" href="https://docs.aws.amazon.com/timestream/latest/developerguide/reference.html">Timestream Query language</a>.</p>
 </li>
 <li><p>After defining the query, add a new chart to the Cat Tracker web application that displays the data in a line chart.</p></li>

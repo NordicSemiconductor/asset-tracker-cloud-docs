@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Unwired Labs API &mdash; nRF Asset Tracker 79c8cd1e2d5f58cfc0308f22520a8c2799d3b240 documentation</title>
+  <title>Unwired Labs API &mdash; nRF Asset Tracker 18c804669aec81a7f5197683a9d83d9b3fb37249 documentation</title>
   
 
   
@@ -194,7 +194,7 @@
 <span id="azure-unwired-labs-api"></span><h1>Unwired Labs API<a class="headerlink" href="#unwired-labs-api" title="Permalink to this headline">¶</a></h1>
 <p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for the application using <a class="reference external" href="https://unwiredlabs.com/">Unwired Labs’</a> geolocation API in your deployment.</p>
 <p>To use Unwired Labs’ LocationAPI, provide the <code class="docutils literal notranslate"><span class="pre">unwiredlabsApiKey</span></code> parameter when deploying the solution:</p>
-<pre class="literal-block">az deployment group create     --resource-group ${RESOURCE_GROUP:-nrfassettracker}     --mode Complete     --name enable-unwiredlabs     --template-file azuredeploy.json     --parameters         appName=${APP_NAME:-nrfassettracker}         location=${LOCATION:-northeurope}         appRegistrationClientId=$APP_REG_CLIENT_ID         b2cTenant=${B2C_TENANT:-nrfassettrackerusers}         unwiredlabsApiKey=*your API key*</pre>
+<pre class="highlight literal-block"> az deployment group create      --resource-group ${RESOURCE_GROUP:-nrfassettracker}      --mode Complete      --name enable-unwiredlabs      --template-file azuredeploy.json      --parameters          appName=${APP_NAME:-nrfassettracker}          location=${LOCATION:-northeurope}          appRegistrationClientId=$APP_REG_CLIENT_ID          b2cTenant=${B2C_TENANT:-nrfassettrackerusers}          unwiredlabsApiKey=*your API key*</pre>
 <p>This command will enable the <cite>geolocateCellFromUnwiredLabs</cite> function to resolve cells.
 Otherwise, this function will return a <code class="docutils literal notranslate"><span class="pre">402</span></code> status on the API route <code class="docutils literal notranslate"><span class="pre">cellgeolocation/unwired</span></code>.</p>
 <div class="admonition note">

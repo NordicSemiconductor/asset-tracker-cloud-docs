@@ -52,14 +52,15 @@ Also enable the Firmware CI runner to connect before deploying the stack (see :r
 
 Print the AWS Key for the CI runner on GitHub Actions using the following command:
 
-.. code-block:: bash
+.. parsed-literal::
+   :class: highlight
 
    node cli firmware-ci -s
     
-   Region: "<Region>"
-   Bucket name: "<Bucket name>"
-   Access Key ID: "<AWS Access Key ID>"
-   Secret Access Key: "<AWS Secret Access Key>"
+   Region: "*Region*"
+   Bucket name: "*Bucket name*"
+   Access Key ID: "*AWS Access Key ID*"
+   Secret Access Key: "*AWS Secret Access Key*"
 
 At this stage, you can create a new IoT Thing to be used for a Firmware CI runner, by running the following command:
 
@@ -67,11 +68,12 @@ At this stage, you can create a new IoT Thing to be used for a Firmware CI runne
 
    node cli firmware-ci -c
 
-You can delete a device using the following command:
+To delete a device, use the following command:
 
-.. code-block:: bash
+.. parsed-literal::
+   :class: highlight
 
-   node cli firmware-ci -r "<deviceId>"
+   node cli firmware-ci -r "*deviceId*"
 
 Configure the following parameters as secrets on the firmware GitHub repository:
 
@@ -100,13 +102,14 @@ To set up Firmware CI runner, complete the following steps:
 
 #. Provide the following environment variables. Use the path to the JLink folder (for example, :file:`~/JLink_Linux_V686_arm64/`) that is created during the installation in step 1:
 
-   .. code-block:: bash
+   .. parsed-literal::
+      :class: highlight
 
-      export AWS_ACCESS_KEY_ID="<AWS Access Key ID printed above>"
-      export AWS_SECRET_ACCESS_KEY="<AWS Secret Access Key printed above>"
-      export REGION="<Region printed above>"
-      export BUCKET_NAME="<Bucket name printed above>"
-      export PATH="<Path to JLINK>":$PATH
+      export AWS_ACCESS_KEY_ID="*AWS Access Key ID printed above*"
+      export AWS_SECRET_ACCESS_KEY="*AWS Secret Access Key printed above*"
+      export REGION="*Region printed above*"
+      export BUCKET_NAME="*Bucket name printed above*"
+      export PATH="*Path to JLINK*":$PATH
 
    The recommended workflow is to use a `direnv <https://direnv.net/>`_ plugin for your shell, which locates the environment variables in a :file:`.envrc` file in the project folder and automatically exports them.
    Create a new file :file:`.envrc` in the project folder and add the credentials that are provided to you after you have created the new user.
@@ -115,10 +118,11 @@ To set up Firmware CI runner, complete the following steps:
 
 #. Run the following command:
 
-   .. code-block:: bash
+   .. parsed-literal::
+      :class: highlight
 
-      node cli run "<device>" "<path to certificate.json>"
+      node cli run "*device*" "*path to certificate.json*"
 
-   :file:`<device>` is the Linux file where the device is connected to, for example, ``/dev/ttyACM0``.
+   :file:`device` is the Linux file to which the device is connected, for example, ``/dev/ttyACM0``.
 
 The Firmware CI starts to process all the scheduled jobs one after another.

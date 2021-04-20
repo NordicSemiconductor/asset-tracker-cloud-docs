@@ -19,8 +19,9 @@ Following is the output of the command:
 
 Use the IMEI when generating the certificate:
 
-.. code-block:: bash
+.. parsed-literal::
+   :class: highlight
 
-    node cli create-device-cert -d "<imei>"
+    node cli create-device-cert -d "*imei*"
 
 .. body_end

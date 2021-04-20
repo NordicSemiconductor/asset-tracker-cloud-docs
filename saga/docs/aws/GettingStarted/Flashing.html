@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Program the device firmware and provision the credentials &mdash; nRF Asset Tracker 79c8cd1e2d5f58cfc0308f22520a8c2799d3b240 documentation</title>
+  <title>Program the device firmware and provision the credentials &mdash; nRF Asset Tracker 18c804669aec81a7f5197683a9d83d9b3fb37249 documentation</title>
   
 
   
@@ -217,13 +217,11 @@ Instead, <a class="reference internal" href="../../devices/FlashingCertificate/D
 </div>
 <p>To provision the device certificate using CLI, you must have <a class="reference external" href="https://www.segger.com/downloads/jlink/">Segger JLink</a> installed in your path.</p>
 <p>Use the CLI to provision the device certificates:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli flash <span class="s2">&quot;&lt;imei&gt;&quot;</span> -f /path/to/firmware.hex
-<span class="c1"># default secTag is 42</span>
-<span class="c1"># default board is the Thingy:91, use --dk to program a DK</span>
-<span class="c1"># when programming a Thingy:91, most likely you need to override the default port: -p /dev/ttyACM2</span>
-<span class="c1"># pass --help to see the additional options, for example, option that enables the use of a different secTag</span>
-</pre></div>
-</div>
+<pre class="highlight literal-block"> node cli flash &quot;<em>imei</em>&quot; -f /path/to/firmware.hex
+ # default secTag is 42
+ # default board is the Thingy:91, use --dk to program a DK
+ # when programming a Thingy:91, most likely you need to override the default port: -p /dev/ttyACM2
+ # pass --help to see the additional options, for example, option that enables the use of a different secTag</pre>
 <p>Provisioning of the certificate using CLI also results in the following actions:</p>
 <ol class="arabic simple">
 <li><p>Programming of the <a class="reference external" href="https://github.com/NordicSemiconductor/at_client-hex">AT client sample</a> onto the device</p></li>

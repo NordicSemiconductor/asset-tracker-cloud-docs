@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous integration &mdash; nRF Asset Tracker 79c8cd1e2d5f58cfc0308f22520a8c2799d3b240 documentation</title>
+  <title>Continuous integration &mdash; nRF Asset Tracker 18c804669aec81a7f5197683a9d83d9b3fb37249 documentation</title>
   
 
   
@@ -218,7 +218,6 @@ Since the BDD tests are purely testing based on the public API of the project (w
 <p>This is an advanced topic for those who need to further develop and customize the nRF Asset Tracker.
 See the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js">nRF Asset Tracker for Azure GitHub project page</a>, for the implementation of the process outlined in this section.</p>
 </div>
-<p>The project also provides an easily understandable description of the available (and implemented) features, in a single folder called  <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/tree/saga/features">features</a>.</p>
 <div class="section" id="prepare-your-azure-account">
 <h2><a class="toc-backref" href="#id1">Prepare your Azure account</a><a class="headerlink" href="#prepare-your-azure-account" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
@@ -238,9 +237,7 @@ If you have ideas to simplify the process, <a class="reference external" href="h
 </ul>
 </li>
 <li><p>Note down the initial domain name that you used:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">B2C_TENANT</span><span class="o">=</span><span class="s2">&quot;&lt;Primary domain&gt;&quot;</span> <span class="c1"># For example, &quot;nrfassettrackerciusers&quot;</span>
-</pre></div>
-</div>
+<pre class="highlight literal-block">export B2C_TENANT=&quot;<em>Primary domain</em>&quot; # For example, &quot;nrfassettrackerciusers&quot;</pre>
 </li>
 <li><p>Link this Azure AD B2C tenant to the subscription for CI by following the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/billing#link-an-azure-ad-b2c-tenant-to-a-subscription">Billing guide</a>.</p></li>
 </ol>
@@ -255,10 +252,8 @@ If you have ideas to simplify the process, <a class="reference external" href="h
 </ul>
 </li>
 <li><p>Export the <code class="docutils literal notranslate"><span class="pre">Application</span> <span class="pre">(client)</span> <span class="pre">ID</span></code> and the <code class="docutils literal notranslate"><span class="pre">Directory</span> <span class="pre">(tenant)</span> <span class="pre">ID</span></code> of the created Active Directory B2C App registration into the <code class="docutils literal notranslate"><span class="pre">APP_REG_CLIENT_ID</span></code> and <code class="docutils literal notranslate"><span class="pre">B2C_TENANT_ID</span></code> parameters:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">APP_REG_CLIENT_ID</span><span class="o">=</span><span class="s2">&quot;&lt;Application (client) id&gt;&quot;</span>
-<span class="nb">export</span> <span class="nv">B2C_TENANT_ID</span><span class="o">=</span><span class="s2">&quot;&lt;Directory (tenant) ID&gt;&quot;</span>
-</pre></div>
-</div>
+<pre class="highlight literal-block">export APP_REG_CLIENT_ID=&quot;<em>Application (client) ID</em>&quot;
+export B2C_TENANT_ID=&quot;<em>Directory (tenant) ID</em>&quot;</pre>
 </li>
 <li><p>For enabling the test-runner to programmatically login users, enable <a class="reference external" href="https://docs.microsoft.com/EN-US/azure/active-directory-b2c/configure-ropc?tabs=app-reg-ga">the resource owner password credentials (ROPC) flow</a> with the following settings:</p>
 <ul class="simple">
@@ -283,9 +278,7 @@ If you have ideas to simplify the process, <a class="reference external" href="h
 </div>
 </li>
 <li><p>Export the identifier of the subscription which contains the nRF Asset Tracker resources:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">SUBSCRIPTION_ID</span><span class="o">=</span><span class="s2">&quot;&lt;subscription id&gt;&quot;</span>
-</pre></div>
-</div>
+<pre class="highlight literal-block">export SUBSCRIPTION_ID=&quot;<em>subscription ID</em>&quot;</pre>
 </li>
 <li><p>Make sure that you have enabled the right subscription by using the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az account <span class="nb">set</span> --subscription <span class="nv">$SUBSCRIPTION_ID</span>
