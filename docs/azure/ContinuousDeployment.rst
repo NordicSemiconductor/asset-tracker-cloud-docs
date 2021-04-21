@@ -44,7 +44,10 @@ To acquire credentials for the CI runner, complete the following steps:
 
    .. code-block:: bash
 
-      az ad sp create-for-rbac --name https://github.com/ --role Contributor --sdk-auth --scopes /subscriptions/${SUBSCRIPTION_ID} > cd-credentials.json
+      az ad sp create-for-rbac --name 'https://nrfassettracker.invalid/cd' --role contributor \
+      --scopes /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker} \
+      --sdk-auth \
+      > cd-credentials.json
 
 #. Fork the `nRF Asset Tracker for Azure project <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_ and add the following secrets to an environment called ``production``:
 
