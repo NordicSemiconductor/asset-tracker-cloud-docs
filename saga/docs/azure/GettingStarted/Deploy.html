@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploy the solution to your account &mdash; nRF Asset Tracker v13.6.4 documentation</title>
+  <title>Deploy the solution to your account &mdash; nRF Asset Tracker v13.6.5 documentation</title>
   
 
   
@@ -204,7 +204,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="deploy-the-solution-to-your-account">
-<h1>Deploy the solution to your account<a class="headerlink" href="#deploy-the-solution-to-your-account" title="Permalink to this headline">¶</a></h1>
+<span id="azure-getting-started-deploy"></span><h1>Deploy the solution to your account<a class="headerlink" href="#deploy-the-solution-to-your-account" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The setup process in Azure is more complicated when compared to the <a class="reference internal" href="../../aws/ContinuousIntegration.html#aws-continuous-integration"><span class="std std-ref">AWS continuous integration setup</span></a>, since it involves many manual steps, which cannot be automated.
@@ -270,7 +270,11 @@ az account list --output table
 <li><p>Enable the <em>implicit grant and hybrid flows</em> for <span class="guilabel">Access tokens</span> and <span class="guilabel">ID tokens</span> and click <span class="guilabel">Save</span>.</p></li>
 </ol>
 </li>
-<li><p>Create the user flow for sign-up, sign-in, and make sure to name the userflow as <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code>.</p></li>
+<li><p>Create the user flow for sign-up, sign-in, and make sure to name the userflow as <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code>.</p>
+<ol class="loweralpha simple">
+<li><p>Application claims - Select <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">more</span> <span class="pre">...</span></code> and then mark <code class="docutils literal notranslate"><span class="pre">Email</span> <span class="pre">Addresses</span></code> as a return claim.</p></li>
+</ol>
+</li>
 <li><p>Grant the B2C directory API permissions for the function app:</p>
 <ol class="loweralpha simple">
 <li><p>Click <span class="guilabel">Expose an API</span> and  set the <code class="docutils literal notranslate"><span class="pre">Application</span> <span class="pre">ID</span> <span class="pre">URI</span></code> field to <code class="docutils literal notranslate"><span class="pre">api</span></code>.</p></li>

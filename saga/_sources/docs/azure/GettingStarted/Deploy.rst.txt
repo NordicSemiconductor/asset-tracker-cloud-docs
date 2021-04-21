@@ -1,3 +1,5 @@
+.. _azure-getting-started-deploy:
+
 Deploy the solution to your account
 ===================================
 
@@ -78,6 +80,8 @@ Deploy the solution to your account
    #. Enable the *implicit grant and hybrid flows* for :guilabel:`Access tokens` and :guilabel:`ID tokens` and click :guilabel:`Save`.
 
 #. Create the user flow for sign-up, sign-in, and make sure to name the userflow as ``B2C_1_signup_signin``.
+
+   a. Application claims - Select ``Show more ...`` and then mark ``Email Addresses`` as a return claim.
 
 #. Grant the B2C directory API permissions for the function app:
    
