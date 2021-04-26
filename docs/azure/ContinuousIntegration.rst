@@ -100,7 +100,7 @@ Create a secondary tenant (Azure Active Directory B2C)
         
         .. code-block:: json
 
-           "oauth2AllowImplicitFlow": true
+           {"oauth2AllowImplicitFlow": true}
    
 #. Export the initial domain name that you used:
 
