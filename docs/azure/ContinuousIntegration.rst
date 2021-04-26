@@ -98,7 +98,7 @@ Create a secondary tenant (Azure Active Directory B2C)
       - set the :guilabel:`Supported account types` to :guilabel:`All users`     
       - update the manifest and set
         
-        .. code:: json
+        .. code-block:: json
 
            "oauth2AllowImplicitFlow": true
    
