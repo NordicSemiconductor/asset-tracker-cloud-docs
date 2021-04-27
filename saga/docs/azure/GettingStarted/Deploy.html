@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploy the solution to your account &mdash; nRF Asset Tracker 8fb0ccc5b56106357dbecc3e334e228aa350ef68 documentation</title>
+  <title>Deploy the solution to your account &mdash; nRF Asset Tracker v13.6.8 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Enable Device Update for IoT Hubs" href="DeviceUpdate.html" />
+    <link rel="next" title="Create device credentials" href="DeviceCredentials.html" />
     <link rel="prev" title="Install the Azure Functions Core Tools" href="AzureFunctionCoreTools.html" /> 
 </head>
 
@@ -101,7 +101,6 @@
 <li class="toctree-l3"><a class="reference internal" href="AzureCLI.html">Install the Azure CLI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AzureFunctionCoreTools.html">Install the Azure Functions Core Tools</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Deploy the solution to your account</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DeviceUpdate.html">Enable Device Update for IoT Hubs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Create device credentials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Webapp.html">Deploy the Cat Tracker web application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="NextSteps.html">Next steps</a></li>
@@ -272,7 +271,7 @@ az account list --output table
 </li>
 <li><p>Create the user flow for sign-up, sign-in, and make sure to name the userflow as <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code>.</p>
 <ol class="loweralpha simple">
-<li><p>Application claims - Select <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">more</span> <span class="pre">...</span></code> and then mark <code class="docutils literal notranslate"><span class="pre">Email</span> <span class="pre">Addresses</span></code> as a return claim.</p></li>
+<li><p>Application claims - Select <span class="guilabel">Show more …</span> and then mark <span class="guilabel">Email Addresses</span> as a return claim.</p></li>
 </ol>
 </li>
 <li><p>Grant the B2C directory API permissions for the function app:</p>
@@ -340,7 +339,7 @@ func azure functionapp publish <span class="si">${</span><span class="nv">APP_NA
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="DeviceUpdate.html" class="btn btn-neutral float-right" title="Enable Device Update for IoT Hubs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="DeviceCredentials.html" class="btn btn-neutral float-right" title="Create device credentials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="AzureFunctionCoreTools.html" class="btn btn-neutral float-left" title="Install the Azure Functions Core Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
