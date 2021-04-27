@@ -33,13 +33,14 @@ Deploy the solution to your account
       # add to .envrc
       export APP_NAME="nrfassettracker"
 
-#. Choose a name for the Device Update instance and export it as ``ADU_INSTANCE_NAME``.
+#. Choose a resource group and a name for the Device Update instance and export it as ``ADU_RESOURCE_GROUP`` and ``ADU_INSTANCE_NAME``.
    There is a limit of `2 instances per subscription <https://docs.microsoft.com/en-us/azure/iot-hub-device-update/device-update-resources#device-update-instance>`_, so the ADU instance needs to be shared between multiple IoT hubs.
-   In this example, we use ``nRFAssetTrackerADU`` as the Device Update instance name.
+   In this example, we use ``nRFAssetTrackerADU`` as the resource group and  Device Update instance name.
 
 .. code-block:: bash
 
    # add to .envrc
+   export ADU_RESOURCE_GROUP="nRFAssetTrackerADU"
    export ADU_INSTANCE_NAME="nRFAssetTrackerADU"
 
 #. Configure your preferred location (you can list the locations using ``az account list-locations``) and export it on the environment variable ``LOCATION``.
@@ -74,6 +75,7 @@ Deploy the solution to your account
 
    .. code-block:: bash
 
+      az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${ADU_RESOURCE_GROUP:-nRFAssetTrackerADU}
       az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${RESOURCE_GROUP:-nrfassettracker}
 
 #. For creating an Azure Active Directory B2C in the next step, the namespace needs to be registered in the subscription:
@@ -133,6 +135,14 @@ Deploy the solution to your account
 
    .. code-block:: bash
 
+      az deployment group create --resource-group ${ADU_RESOURCE_GROUP:-nRFAssetTrackerADU} \
+         --mode Complete \
+         --name initial-setup \
+         --template-file azuredeploy.adu.json \
+         --parameters \
+            aduInstanceName=${ADU_INSTANCE_NAME:-nRFAssetTrackerADU} \
+            location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID \
+      && \
       az deployment group create --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
          --mode Complete \
          --name initial-setup \
