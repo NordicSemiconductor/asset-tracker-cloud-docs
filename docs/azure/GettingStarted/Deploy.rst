@@ -81,7 +81,7 @@ Deploy the solution to your account
 
 #. Create the user flow for sign-up, sign-in, and make sure to name the userflow as ``B2C_1_signup_signin``.
 
-   a. Application claims - Select ``Show more ...`` and then mark ``Email Addresses`` as a return claim.
+   a. Application claims - Select :guilabel:`Show more ...` and then mark :guilabel:`Email Addresses` as a return claim.
 
 #. Grant the B2C directory API permissions for the function app:
    
