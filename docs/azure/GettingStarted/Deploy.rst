@@ -33,6 +33,15 @@ Deploy the solution to your account
       # add to .envrc
       export APP_NAME="nrfassettracker"
 
+#. Choose a name for the Device Update instance and export it as ``ADU_INSTANCE_NAME``.
+   There is a limit of `2 instances per subscription <https://docs.microsoft.com/en-us/azure/iot-hub-device-update/device-update-resources#device-update-instance>`_, so the ADU instance needs to be shared between multiple IoT hubs.
+   In this example, we use ``nRFAssetTrackerADU`` as the Device Update instance name.
+
+.. code-block:: bash
+
+   # add to .envrc
+   export ADU_INSTANCE_NAME="nRFAssetTrackerADU"
+
 #. Configure your preferred location (you can list the locations using ``az account list-locations``) and export it on the environment variable ``LOCATION``.
    In this example, we use ``northeurope`` as the location name.
 
@@ -130,6 +139,7 @@ Deploy the solution to your account
          --template-file azuredeploy.json \
          --parameters \
             appName=${APP_NAME:-nrfassettracker} \
+            aduInstanceName=${ADU_INSTANCE_NAME:-nRFAssetTrackerADU} \
             location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=$B2C_TENANT \
       && \
