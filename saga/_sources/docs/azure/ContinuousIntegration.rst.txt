@@ -159,10 +159,12 @@ Setup continuous integration on GitHub
    .. code-block:: bash
 
       az ad sp create-for-rbac --name 'https://nrfassettracker.invalid/ci' \
-      --role contributor \
-      --scopes /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettrackerci} \
-      --sdk-auth \
-      > ci-credentials.json
+         --role contributor \
+         --scopes \
+            "/subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker} \
+            /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${ADU_RESOURCE_GROUP:-nRFAssetTrackerADU}"\
+         --sdk-auth \
+         > ci-credentials.json
 
 #. Fork the `nRF Asset Tracker for Azure project <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_.
 
