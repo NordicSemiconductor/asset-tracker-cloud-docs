@@ -7,10 +7,15 @@ const template = (redirect) => `<!DOCTYPE html>
       content="nRF Asset Tracker Documenation"
     />
     <title>nRF Asset Tracker Documenation</title>
+    <!-- Fallback redirect without JavaScript -->
     <meta
       http-equiv="refresh"
-      content="0; URL=${redirect}"
+      content="10; URL=${redirect}"
     />
+    <!-- Preserve hashes -->
+    <script>
+      window.location.href="${redirect}" + window.location.hash;
+    </script>
   </head>
   <body>
     If you are not getting redirected, please click <a href="${redirect}">this link</a>.

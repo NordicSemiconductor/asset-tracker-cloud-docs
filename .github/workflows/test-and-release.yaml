@@ -138,6 +138,8 @@ jobs:
           # Maintain legacy URLs
           if [[ "${{ env.VERSION }}" == "v1.5.x" ]]; then
             REDIRECT=./GettingStarted/Index.html node scripts/redirect.mjs > asset-tracker-docs/${{ env.VERSION }}/docs/aws/GettingStarted.html
+            mkdir asset-tracker-docs/${{ env.VERSION }}/docs/device-cloud-protocol
+            REDIRECT=../guides/FourKindsOfData.html node scripts/redirect.mjs > asset-tracker-docs/${{ env.VERSION }}/docs/device-cloud-protocol/FourKindsOfData.html
           fi;
           git -C asset-tracker-docs add -A ${{ env.VERSION }}
           if [[ `git -C asset-tracker-docs status --porcelain` ]]; then
