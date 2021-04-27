@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploy the solution to your account &mdash; nRF Asset Tracker v13.6.9 documentation</title>
+  <title>Deploy the solution to your account &mdash; nRF Asset Tracker v13.6.10 documentation</title>
   
 
   
@@ -229,6 +229,15 @@ In this example, we use <code class="docutils literal notranslate"><span class="
 </pre></div>
 </div>
 </li>
+<li><p>Choose a name for the Device Update instance and export it as <code class="docutils literal notranslate"><span class="pre">ADU_INSTANCE_NAME</span></code>.
+There is a limit of <a class="reference external" href="https://docs.microsoft.com/en-us/azure/iot-hub-device-update/device-update-resources#device-update-instance">2 instances per subscription</a>, so the ADU instance needs to be shared between multiple IoT hubs.
+In this example, we use <code class="docutils literal notranslate"><span class="pre">nRFAssetTrackerADU</span></code> as the Device Update instance name.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
+<span class="nb">export</span> <span class="nv">ADU_INSTANCE_NAME</span><span class="o">=</span><span class="s2">&quot;nRFAssetTrackerADU&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic">
 <li><p>Configure your preferred location (you can list the locations using <code class="docutils literal notranslate"><span class="pre">az</span> <span class="pre">account</span> <span class="pre">list-locations</span></code>) and export it on the environment variable <code class="docutils literal notranslate"><span class="pre">LOCATION</span></code>.
 In this example, we use <code class="docutils literal notranslate"><span class="pre">northeurope</span></code> as the location name.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
@@ -314,6 +323,7 @@ In this example, we use <code class="docutils literal notranslate"><span class="
    --template-file azuredeploy.json <span class="se">\</span>
    --parameters <span class="se">\</span>
       <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+      <span class="nv">aduInstanceName</span><span class="o">=</span><span class="si">${</span><span class="nv">ADU_INSTANCE_NAME</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span> <span class="se">\</span>
       <span class="nv">location</span><span class="o">=</span><span class="nv">$LOCATION</span> <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
       <span class="nv">b2cTenant</span><span class="o">=</span><span class="nv">$B2C_TENANT</span> <span class="se">\</span>
 <span class="o">&amp;&amp;</span> <span class="se">\</span>

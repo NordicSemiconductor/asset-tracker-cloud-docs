@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Upgrading an existing installation &mdash; nRF Asset Tracker v13.6.9 documentation</title>
+  <title>Upgrading an existing installation &mdash; nRF Asset Tracker v13.6.10 documentation</title>
   
 
   
@@ -203,6 +203,7 @@ az deployment group create <span class="se">\</span>
     --template-file azuredeploy.json <span class="se">\</span>
     --parameters <span class="se">\</span>
         <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+        <span class="nv">aduInstanceName</span><span class="o">=</span><span class="si">${</span><span class="nv">ADU_INSTANCE_NAME</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span> <span class="se">\</span>
         <span class="nv">location</span><span class="o">=</span><span class="si">${</span><span class="nv">LOCATION</span><span class="k">:-</span><span class="nv">northeurope</span><span class="si">}</span> <span class="se">\</span>
         <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
         <span class="nv">b2cTenant</span><span class="o">=</span><span class="si">${</span><span class="nv">B2C_TENANT</span><span class="k">:-</span><span class="nv">nrfassettrackerusers</span><span class="si">}</span> <span class="se">\</span>
@@ -225,6 +226,7 @@ func azure functionapp publish <span class="si">${</span><span class="nv">APP_NA
     --template-file azuredeploy.json <span class="se">\</span>
     --parameters <span class="se">\</span>
         <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+        <span class="nv">aduInstanceName</span><span class="o">=</span><span class="si">${</span><span class="nv">ADU_INSTANCE_NAME</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span> <span class="se">\</span>
         <span class="nv">location</span><span class="o">=</span><span class="si">${</span><span class="nv">LOCATION</span><span class="k">:-</span><span class="nv">northeurope</span><span class="si">}</span> <span class="se">\</span>
         <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
         <span class="nv">b2cTenant</span><span class="o">=</span><span class="si">${</span><span class="nv">B2C_TENANT</span><span class="k">:-</span><span class="nv">nrfassettrackerusers</span><span class="si">}</span> <span class="se">\</span>

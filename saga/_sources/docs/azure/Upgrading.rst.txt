@@ -17,6 +17,7 @@ If you already have an installation and you want to upgrade to the latest releas
         --template-file azuredeploy.json \
         --parameters \
             appName=${APP_NAME:-nrfassettracker} \
+            aduInstanceName=${ADU_INSTANCE_NAME:-nRFAssetTrackerADU} \
             location=${LOCATION:-northeurope} \
             appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
@@ -43,6 +44,7 @@ Docker variant (in case you get a ``Permission denied.`` error):
            --template-file azuredeploy.json \
            --parameters \
                appName=${APP_NAME:-nrfassettracker} \
+               aduInstanceName=${ADU_INSTANCE_NAME:-nRFAssetTrackerADU} \
                location=${LOCATION:-northeurope} \
                appRegistrationClientId=$APP_REG_CLIENT_ID \
                b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
