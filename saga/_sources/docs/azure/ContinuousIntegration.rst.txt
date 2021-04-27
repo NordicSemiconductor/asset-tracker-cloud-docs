@@ -188,7 +188,7 @@ You can also manually trigger a deploy on the *Test and Release* workflow.
 Running the solution during development
 ***************************************
 
-To run the end-to-end tests agains the solution during development, run the following commands:
+To run the end-to-end tests against the solution during development, run the following commands:
 
 .. code-block:: bash
 
