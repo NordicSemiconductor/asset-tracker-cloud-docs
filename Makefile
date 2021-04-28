@@ -1,21 +1,18 @@
-.PHONY: Makefile
+.PHONY: Makefile dotincludes
 
-all: docs/firmware/images/sequence.png docs/firmware/images/successful.svg docs/firmware/images/data-publication.svg
+dotincludes:
+	mkdir -p build/html/docs/project/images
+	cp -v docs/project/images/* build/html/docs/project/images
 
-docs/firmware/images/%.png: docs/firmware/images/%.dot
-	dot -Tpng -Gdpi=150 -Nfontname="Source Sans Pro" -Nfontsize=10 -Gfontname="Source Sans Pro" -Gfontsize=10 -Efontname="Source Sans Pro" -Efontsize=8 -o$@ $<
+DOCKER_IMAGE ?= nordicsemiconductor/asset-tracker-cloud-docs/graphviz
 
-docs/firmware/images/%.svg: docs/firmware/images/%.sequence
-	goseq -o $@ $<
-
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
+docs/project/%.svg: docs/project/%.dot 
+	docker run --rm -v ${PWD}:/workdir ${DOCKER_IMAGE} /bin/dot2svg.sh $< $@
 
 RELEASE ?= 0.0.0-development
 VERSION ?= saga
 AUDIENCE ?= release
 
-html: Makefile
-	sphinx-build -M html ./ build -D release=${RELEASE} -D version=${VERSION} -A github_version=${VERSION}/ -t ${AUDIENCE}
+html: Makefile dotincludes docs/project/system-overview.svg docs/project/system-overview-release.svg
+	./scripts/sphinx.sh
 	find docs -type f -name \*.json | xargs -I@ cp -v @ build/html/@
-
