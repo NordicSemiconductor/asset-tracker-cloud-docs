@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploy the solution to your account &mdash; nRF Asset Tracker da724670327c82c7f26ff6e36c69798da4e5f345 documentation</title>
+  <title>Deploy the solution to your account &mdash; nRF Asset Tracker c289f795e3ff0b1342f69e2e807fddc1b63d436d documentation</title>
   
 
   
@@ -231,14 +231,13 @@ In this example, we use <code class="docutils literal notranslate"><span class="
 </li>
 <li><p>Choose a resource group and a name for the Device Update instance and export it as <code class="docutils literal notranslate"><span class="pre">ADU_RESOURCE_GROUP</span></code> and <code class="docutils literal notranslate"><span class="pre">ADU_INSTANCE_NAME</span></code>.
 There is a limit of <a class="reference external" href="https://docs.microsoft.com/en-us/azure/iot-hub-device-update/device-update-resources#device-update-instance">2 instances per subscription</a>, so the ADU instance needs to be shared between multiple IoT hubs.
-In this example, we use <code class="docutils literal notranslate"><span class="pre">nRFAssetTrackerADU</span></code> as the resource group and  Device Update instance name.</p></li>
-</ol>
+In this example, we use <code class="docutils literal notranslate"><span class="pre">nRFAssetTrackerADU</span></code> as the resource group and  Device Update instance name.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
 <span class="nb">export</span> <span class="nv">ADU_RESOURCE_GROUP</span><span class="o">=</span><span class="s2">&quot;nRFAssetTrackerADU&quot;</span>
 <span class="nb">export</span> <span class="nv">ADU_INSTANCE_NAME</span><span class="o">=</span><span class="s2">&quot;nRFAssetTrackerADU&quot;</span>
 </pre></div>
 </div>
-<ol class="arabic">
+</li>
 <li><p>Configure your preferred location (you can list the locations using <code class="docutils literal notranslate"><span class="pre">az</span> <span class="pre">account</span> <span class="pre">list-locations</span></code>) and export it on the environment variable <code class="docutils literal notranslate"><span class="pre">LOCATION</span></code>.
 In this example, we use <code class="docutils literal notranslate"><span class="pre">northeurope</span></code> as the location name.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
@@ -282,7 +281,7 @@ az group create --subscription <span class="nv">$SUBSCRIPTION_ID</span> -l <span
 </li>
 <li><p>Create the user flow for sign-up, sign-in, and make sure to name the userflow as <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code>.</p>
 <ol class="loweralpha simple">
-<li><p>Application claims - Select <span class="guilabel">Show more …</span> and then mark <span class="guilabel">Email Addresses</span> as a return claim.</p></li>
+<li><p>Click <span class="guilabel">Application claims</span>, select <span class="guilabel">Show more …</span> and then mark <span class="guilabel">Email Addresses</span> as a return claim.</p></li>
 </ol>
 </li>
 <li><p>Grant the B2C directory API permissions for the function app:</p>
@@ -319,23 +318,25 @@ In this example, we use <code class="docutils literal notranslate"><span class="
 </div>
 </li>
 <li><p>Deploy the solution by running the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group create --resource-group <span class="si">${</span><span class="nv">ADU_RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span> <span class="se">\</span>
-   --mode Complete <span class="se">\</span>
-   --name initial-setup <span class="se">\</span>
-   --template-file azuredeploy.adu.json <span class="se">\</span>
-   --parameters <span class="se">\</span>
-      <span class="nv">aduInstanceName</span><span class="o">=</span><span class="si">${</span><span class="nv">ADU_INSTANCE_NAME</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span> <span class="se">\</span>
-      <span class="nv">location</span><span class="o">=</span><span class="nv">$LOCATION</span> <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
-<span class="o">&amp;&amp;</span> <span class="se">\</span>
-az deployment group create --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group create --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
    --mode Complete <span class="se">\</span>
    --name initial-setup <span class="se">\</span>
    --template-file azuredeploy.json <span class="se">\</span>
    --parameters <span class="se">\</span>
       <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
-      <span class="nv">aduInstanceName</span><span class="o">=</span><span class="si">${</span><span class="nv">ADU_INSTANCE_NAME</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span> <span class="se">\</span>
-      <span class="nv">location</span><span class="o">=</span><span class="nv">$LOCATION</span> <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
+      <span class="nv">location</span><span class="o">=</span><span class="nv">$LOCATION</span> <span class="se">\</span>
+      <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
       <span class="nv">b2cTenant</span><span class="o">=</span><span class="nv">$B2C_TENANT</span> <span class="se">\</span>
+<span class="o">&amp;&amp;</span> <span class="se">\</span>
+az deployment group create --resource-group <span class="si">${</span><span class="nv">ADU_RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span> <span class="se">\</span>
+   --mode Incremental <span class="c1"># Incremental is used here to allow the creation of an ADU instance per solution independently  \</span>
+   --name initial-setup <span class="se">\</span>
+   --template-file azuredeploy.adu.json <span class="se">\</span>
+   --parameters <span class="se">\</span>
+      <span class="nv">aduInstanceName</span><span class="o">=</span><span class="si">${</span><span class="nv">ADU_INSTANCE_NAME</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span> <span class="se">\</span>
+      <span class="nv">nrfAssetTrackerResourceGroup</span><span class="o">=</span><span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+      <span class="nv">nrfAssetTrackerAppName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+      <span class="nv">location</span><span class="o">=</span><span class="nv">$LOCATION</span> <span class="se">\</span>
 <span class="o">&amp;&amp;</span> <span class="se">\</span>
 <span class="c1"># Currently it is not possible to enable website hosting through the ARM template</span>
 az storage blob service-properties update <span class="se">\</span>

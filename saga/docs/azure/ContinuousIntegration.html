@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous integration &mdash; nRF Asset Tracker da724670327c82c7f26ff6e36c69798da4e5f345 documentation</title>
+  <title>Continuous integration &mdash; nRF Asset Tracker c289f795e3ff0b1342f69e2e807fddc1b63d436d documentation</title>
   
 
   
@@ -300,12 +300,12 @@ export B2C_TENANT_ID=&quot;<em>Directory (tenant) ID</em>&quot;</pre>
 <li><p>For enabling the test-runner to programmatically login users, enable <a class="reference external" href="https://docs.microsoft.com/EN-US/azure/active-directory-b2c/configure-ropc?tabs=app-reg-ga">the resource owner password credentials (ROPC) flow</a> with the following settings on the Active Directory B2C:</p>
 <ol class="loweralpha simple">
 <li><p>Name - <code class="docutils literal notranslate"><span class="pre">B2C_1_developer</span></code>.</p></li>
-<li><p>Application claims - Select <span class="guilabel">Show more …</span> and then mark <span class="guilabel">Email Addresses</span> as a return claim.</p></li>
+<li><p>Click <span class="guilabel">Application claims</span>, select <span class="guilabel">Show more …</span> and then mark <span class="guilabel">Email Addresses</span> as a return claim.</p></li>
 </ol>
 </li>
 <li><p>Grant the B2C directory API permissions for authenticating users:</p>
 <ol class="loweralpha simple">
-<li><p>In the left menu, under <span class="guilabel">Manage</span>, select <span class="guilabel">API permissions</span>. Add the permission to manage user accounts (<span class="guilabel">Microsoft Graph</span> &gt; <span class="guilabel">Application permission</span> &gt; <span class="guilabel">User.ReadWrite.All</span>).</p></li>
+<li><p>In the left menu, under <span class="guilabel">Manage</span>, select <span class="guilabel">API permissions</span>. Add the permission to manage user accounts (<span class="guilabel">Microsoft Graph</span> -&gt; <span class="guilabel">Application permission</span> -&gt; <span class="guilabel">User.ReadWrite.All</span>).</p></li>
 </ol>
 </li>
 <li><p>Grant the B2C directory API permissions for the function app:</p>
@@ -382,7 +382,7 @@ npm run test:e2e
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Azure functions allow only one Client Id and Issuer Url in the Active Directory authentication configuration. So, you cannot interact with this instance from the end-to-end tests and the web application since the user flow name differs (<code class="docutils literal notranslate"><span class="pre">B2C_1_developer</span></code> for end-to-end tests and <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code> for the web application) and it is part of the Issuer Url (for example, <code class="docutils literal notranslate"><span class="pre">https://${TENANT_DOMAIN}.b2clogin.com/${TENANT_DOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_developer</span></code>).</p>
+<p>Azure functions allow only one Client ID and Issuer URL in the Active Directory authentication configuration. So, you cannot interact with this instance from the end-to-end tests and the web application since the user flow name differs (<code class="docutils literal notranslate"><span class="pre">B2C_1_developer</span></code> for end-to-end tests and <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code> for the web application) and it is part of the Issuer URL (for example, <code class="docutils literal notranslate"><span class="pre">https://${TENANT_DOMAIN}.b2clogin.com/${TENANT_DOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_developer</span></code>).</p>
 </div>
 </div>
 </div>
