@@ -120,11 +120,11 @@ Create a secondary tenant (Azure Active Directory B2C)
 #. For enabling the test-runner to programmatically login users, enable `the resource owner password credentials (ROPC) flow <https://docs.microsoft.com/EN-US/azure/active-directory-b2c/configure-ropc?tabs=app-reg-ga>`_ with the following settings on the Active Directory B2C:
 
    a. Name - ``B2C_1_developer``.
-   #. Application claims - Select :guilabel:`Show more ...` and then mark :guilabel:`Email Addresses` as a return claim.
+   #. Click :guilabel:`Application claims`, select :guilabel:`Show more ...` and then mark :guilabel:`Email Addresses` as a return claim.
 
 #. Grant the B2C directory API permissions for authenticating users:
 
-   a. In the left menu, under :guilabel:`Manage`, select :guilabel:`API permissions`. Add the permission to manage user accounts (:guilabel:`Microsoft Graph` > :guilabel:`Application permission` > :guilabel:`User.ReadWrite.All`).
+   a. In the left menu, under :guilabel:`Manage`, select :guilabel:`API permissions`. Add the permission to manage user accounts (:guilabel:`Microsoft Graph` -> :guilabel:`Application permission` -> :guilabel:`User.ReadWrite.All`).
 
 #. Grant the B2C directory API permissions for the function app:
    
@@ -207,4 +207,4 @@ To run the end-to-end tests against the solution during development, run the fol
 
 .. note::
 
-   Azure functions allow only one Client Id and Issuer Url in the Active Directory authentication configuration. So, you cannot interact with this instance from the end-to-end tests and the web application since the user flow name differs (``B2C_1_developer`` for end-to-end tests and ``B2C_1_signup_signin`` for the web application) and it is part of the Issuer Url (for example, ``https://${TENANT_DOMAIN}.b2clogin.com/${TENANT_DOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_developer``).
+   Azure functions allow only one Client ID and Issuer URL in the Active Directory authentication configuration. So, you cannot interact with this instance from the end-to-end tests and the web application since the user flow name differs (``B2C_1_developer`` for end-to-end tests and ``B2C_1_signup_signin`` for the web application) and it is part of the Issuer URL (for example, ``https://${TENANT_DOMAIN}.b2clogin.com/${TENANT_DOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_developer``).

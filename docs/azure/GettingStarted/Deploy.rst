@@ -37,11 +37,11 @@ Deploy the solution to your account
    There is a limit of `2 instances per subscription <https://docs.microsoft.com/en-us/azure/iot-hub-device-update/device-update-resources#device-update-instance>`_, so the ADU instance needs to be shared between multiple IoT hubs.
    In this example, we use ``nRFAssetTrackerADU`` as the resource group and  Device Update instance name.
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   # add to .envrc
-   export ADU_RESOURCE_GROUP="nRFAssetTrackerADU"
-   export ADU_INSTANCE_NAME="nRFAssetTrackerADU"
+      # add to .envrc
+      export ADU_RESOURCE_GROUP="nRFAssetTrackerADU"
+      export ADU_INSTANCE_NAME="nRFAssetTrackerADU"
 
 #. Configure your preferred location (you can list the locations using ``az account list-locations``) and export it on the environment variable ``LOCATION``.
    In this example, we use ``northeurope`` as the location name.
@@ -92,7 +92,7 @@ Deploy the solution to your account
 
 #. Create the user flow for sign-up, sign-in, and make sure to name the userflow as ``B2C_1_signup_signin``.
 
-   a. Application claims - Select :guilabel:`Show more ...` and then mark :guilabel:`Email Addresses` as a return claim.
+   a. Click :guilabel:`Application claims`, select :guilabel:`Show more ...` and then mark :guilabel:`Email Addresses` as a return claim.
 
 #. Grant the B2C directory API permissions for the function app:
    
