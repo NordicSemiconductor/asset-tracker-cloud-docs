@@ -135,23 +135,25 @@ Deploy the solution to your account
 
    .. code-block:: bash
 
-      az deployment group create --resource-group ${ADU_RESOURCE_GROUP:-nRFAssetTrackerADU} \
-         --mode Complete \
-         --name initial-setup \
-         --template-file azuredeploy.adu.json \
-         --parameters \
-            aduInstanceName=${ADU_INSTANCE_NAME:-nRFAssetTrackerADU} \
-            location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID \
-      && \
       az deployment group create --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
          --mode Complete \
          --name initial-setup \
          --template-file azuredeploy.json \
          --parameters \
             appName=${APP_NAME:-nrfassettracker} \
-            aduInstanceName=${ADU_INSTANCE_NAME:-nRFAssetTrackerADU} \
-            location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID \
+            location=$LOCATION \
+            appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=$B2C_TENANT \
+      && \
+      az deployment group create --resource-group ${ADU_RESOURCE_GROUP:-nRFAssetTrackerADU} \
+         --mode Incremental # Incremental is used here to allow the creation of an ADU instance per solution independently  \
+         --name initial-setup \
+         --template-file azuredeploy.adu.json \
+         --parameters \
+            aduInstanceName=${ADU_INSTANCE_NAME:-nRFAssetTrackerADU} \
+            nrfAssetTrackerResourceGroup=${RESOURCE_GROUP:-nrfassettracker} \
+            nrfAssetTrackerAppName=${APP_NAME:-nrfassettracker} \
+            location=$LOCATION \
       && \
       # Currently it is not possible to enable website hosting through the ARM template
       az storage blob service-properties update \
