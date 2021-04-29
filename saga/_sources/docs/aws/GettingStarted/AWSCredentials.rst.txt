@@ -22,25 +22,25 @@ To provide the AWS credentials to the nRF Asset Tracker, complete the following 
 
        This action will create a user with full access rights to the account, and therefore it must only be created in an account dedicated for the nRF Asset Tracker.
 
-#.  Create *Security credentials* for the user.
+#.  Create Security credentials for the user.
 
-#.  Add the *Access key ID* and *Secret access key*, to a new :file:`.envrc` file (:ref:`used with direnv <about-direnv>`), as shown in the following code:
+#.  Add the Access key ID and Secret access key, to a new :file:`.envrc` file (:ref:`used with direnv <about-direnv>`), as shown in the following code:
 
     .. parsed-literal::
-	   :class: highlight
+       :class: highlight
 
-      # add to .envrc
-      export AWS_ACCESS_KEY_ID="*value of Access key ID*"
-      export AWS_SECRET_ACCESS_KEY="*value of Secret access key*"
+       # add to .envrc
+       export AWS_ACCESS_KEY_ID="*value of Access key ID*"
+       export AWS_SECRET_ACCESS_KEY="*value of Secret access key*"
 
 #.  Add your preferred region to the :file:`.envrc` file, as shown in the following code (``eu-west-1`` is a safe example):
 
     .. parsed-literal::
-	   :class: highlight
+       :class: highlight
 
-      # add to .envrc
-      export AWS_DEFAULT_REGION="*your preferred AWS region*"
-      export AWS_REGION="*your preferred AWS region*"
+       # add to .envrc
+       export AWS_DEFAULT_REGION="*your preferred AWS region*"
+       export AWS_REGION="*your preferred AWS region*"
 
     .. note::
 
