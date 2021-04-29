@@ -3,7 +3,7 @@
 nRF Asset Tracker
 #################
 
-The nRF Asset Tracker aims to provide a concrete end-to-end example for an ultra-low power cellular IoT product in the asset tracker space, specifically a Cat Tracker.
+The nRF Asset Tracker is an application that aims to provide a concrete end-to-end example for an ultra-low power cellular IoT product in the asset tracker space, specifically a Cat Tracker.
 
 .. toctree::
    :titlesonly:
