@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploy the solution to your account &mdash; nRF Asset Tracker d79295694c41b518f5e523a64a56392208ee77be documentation</title>
+  <title>Deploy the solution to your account &mdash; nRF Asset Tracker v13.6.14 documentation</title>
   
 
   
@@ -324,7 +324,6 @@ In this example, we use <code class="docutils literal notranslate"><span class="
    --template-file azuredeploy.json <span class="se">\</span>
    --parameters <span class="se">\</span>
       <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
-      <span class="nv">location</span><span class="o">=</span><span class="nv">$LOCATION</span> <span class="se">\</span>
       <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
       <span class="nv">b2cTenant</span><span class="o">=</span><span class="nv">$B2C_TENANT</span> <span class="se">\</span>
 <span class="o">&amp;&amp;</span> <span class="se">\</span>
@@ -336,7 +335,6 @@ az deployment group create --resource-group <span class="si">${</span><span clas
       <span class="nv">aduInstanceName</span><span class="o">=</span><span class="si">${</span><span class="nv">ADU_INSTANCE_NAME</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span> <span class="se">\</span>
       <span class="nv">nrfAssetTrackerResourceGroup</span><span class="o">=</span><span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
       <span class="nv">nrfAssetTrackerAppName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
-      <span class="nv">location</span><span class="o">=</span><span class="nv">$LOCATION</span> <span class="se">\</span>
 <span class="o">&amp;&amp;</span> <span class="se">\</span>
 <span class="c1"># Currently it is not possible to enable website hosting through the ARM template</span>
 az storage blob service-properties update <span class="se">\</span>
