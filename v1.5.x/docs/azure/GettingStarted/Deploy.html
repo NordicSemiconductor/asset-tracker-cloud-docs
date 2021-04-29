@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploy the solution to your account &mdash; nRF Asset Tracker 79c8cd1e2d5f58cfc0308f22520a8c2799d3b240 documentation</title>
+  <title>Deploy the solution to your account &mdash; nRF Asset Tracker 11589ff09d3c1d2a550056bc01d7469730c860b3 documentation</title>
   
 
   
@@ -174,7 +174,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="deploy-the-solution-to-your-account">
-<h1>Deploy the solution to your account<a class="headerlink" href="#deploy-the-solution-to-your-account" title="Permalink to this headline">¶</a></h1>
+<span id="azure-getting-started-deploy"></span><h1>Deploy the solution to your account<a class="headerlink" href="#deploy-the-solution-to-your-account" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The setup process in Azure is more complicated when compared to the <a class="reference internal" href="../../aws/ContinuousIntegration.html#aws-continuous-integration"><span class="std std-ref">AWS continuous integration setup</span></a>, since it involves many manual steps, which cannot be automated.
@@ -182,10 +182,8 @@ If you have ideas to simplify the process, <a class="reference external" href="h
 </div>
 <ol class="arabic">
 <li><p>Export the identifier of the subscription which contains the nRF Asset Tracker resources to a new <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file (<a class="reference internal" href="../../guides/Direnv.html#about-direnv"><span class="std std-ref">used with direnv</span></a>), as shown in the following code:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
-<span class="nb">export</span> <span class="nv">SUBSCRIPTION_ID</span><span class="o">=</span><span class="s2">&quot;&lt;Subscription ID&gt;&quot;</span>
-</pre></div>
-</div>
+<pre class="highlight literal-block"># add to .envrc
+export SUBSCRIPTION_ID=&quot;<em>Subscription ID</em>&quot;</pre>
 </li>
 <li><p>Choose a resource group name for the solution and export it as <code class="docutils literal notranslate"><span class="pre">RESOURCE_GROUP</span></code>.
 In this example, we use <code class="docutils literal notranslate"><span class="pre">nrfassettracker</span></code> as the resource group name.</p>
@@ -199,6 +197,15 @@ Use a short name (not more than 16 characters) composed of numbers and lower-cas
 In this example, we use <code class="docutils literal notranslate"><span class="pre">nrfassettracker</span></code> as the application name.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
 <span class="nb">export</span> <span class="nv">APP_NAME</span><span class="o">=</span><span class="s2">&quot;nrfassettracker&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Choose a resource group and a name for the Device Update instance and export it as <code class="docutils literal notranslate"><span class="pre">ADU_RESOURCE_GROUP</span></code> and <code class="docutils literal notranslate"><span class="pre">ADU_INSTANCE_NAME</span></code>.
+There is a limit of <a class="reference external" href="https://docs.microsoft.com/en-us/azure/iot-hub-device-update/device-update-resources#device-update-instance">2 instances per subscription</a>, so the ADU instance needs to be shared between multiple IoT hubs.
+In this example, we use <code class="docutils literal notranslate"><span class="pre">nRFAssetTrackerADU</span></code> as the resource group and  Device Update instance name.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
+<span class="nb">export</span> <span class="nv">ADU_RESOURCE_GROUP</span><span class="o">=</span><span class="s2">&quot;nRFAssetTrackerADU&quot;</span>
+<span class="nb">export</span> <span class="nv">ADU_INSTANCE_NAME</span><span class="o">=</span><span class="s2">&quot;nRFAssetTrackerADU&quot;</span>
 </pre></div>
 </div>
 </li>
@@ -227,7 +234,8 @@ az account list --output table
 </div>
 </li>
 <li><p>Create the resource group for the solution:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az group create --subscription <span class="nv">$SUBSCRIPTION_ID</span> -l <span class="nv">$LOCATION</span> -n <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az group create --subscription <span class="nv">$SUBSCRIPTION_ID</span> -l <span class="nv">$LOCATION</span> -n <span class="si">${</span><span class="nv">ADU_RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span>
+az group create --subscription <span class="nv">$SUBSCRIPTION_ID</span> -l <span class="nv">$LOCATION</span> -n <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>
 </pre></div>
 </div>
 </li>
@@ -242,7 +250,11 @@ az account list --output table
 <li><p>Enable the <em>implicit grant and hybrid flows</em> for <span class="guilabel">Access tokens</span> and <span class="guilabel">ID tokens</span> and click <span class="guilabel">Save</span>.</p></li>
 </ol>
 </li>
-<li><p>Create the user flow for sign-up, sign-in, and make sure to name the userflow as <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code>.</p></li>
+<li><p>Create the user flow for sign-up, sign-in, and make sure to name the userflow as <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code>.</p>
+<ol class="loweralpha simple">
+<li><p>Click <span class="guilabel">Application claims</span>, select <span class="guilabel">Show more …</span> and then mark <span class="guilabel">Email Addresses</span> as a return claim.</p></li>
+</ol>
+</li>
 <li><p>Grant the B2C directory API permissions for the function app:</p>
 <ol class="loweralpha simple">
 <li><p>Click <span class="guilabel">Expose an API</span> and  set the <code class="docutils literal notranslate"><span class="pre">Application</span> <span class="pre">ID</span> <span class="pre">URI</span></code> field to <code class="docutils literal notranslate"><span class="pre">api</span></code>.</p></li>
@@ -283,8 +295,19 @@ In this example, we use <code class="docutils literal notranslate"><span class="
    --template-file azuredeploy.json <span class="se">\</span>
    --parameters <span class="se">\</span>
       <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
-      <span class="nv">location</span><span class="o">=</span><span class="nv">$LOCATION</span> <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
+      <span class="nv">location</span><span class="o">=</span><span class="nv">$LOCATION</span> <span class="se">\</span>
+      <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
       <span class="nv">b2cTenant</span><span class="o">=</span><span class="nv">$B2C_TENANT</span> <span class="se">\</span>
+<span class="o">&amp;&amp;</span> <span class="se">\</span>
+az deployment group create --resource-group <span class="si">${</span><span class="nv">ADU_RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span> <span class="se">\</span>
+   --mode Incremental <span class="c1"># Incremental is used here to allow the creation of an ADU instance per solution independently  \</span>
+   --name initial-setup <span class="se">\</span>
+   --template-file azuredeploy.adu.json <span class="se">\</span>
+   --parameters <span class="se">\</span>
+      <span class="nv">aduInstanceName</span><span class="o">=</span><span class="si">${</span><span class="nv">ADU_INSTANCE_NAME</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span> <span class="se">\</span>
+      <span class="nv">nrfAssetTrackerResourceGroup</span><span class="o">=</span><span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+      <span class="nv">nrfAssetTrackerAppName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+      <span class="nv">location</span><span class="o">=</span><span class="nv">$LOCATION</span> <span class="se">\</span>
 <span class="o">&amp;&amp;</span> <span class="se">\</span>
 <span class="c1"># Currently it is not possible to enable website hosting through the ARM template</span>
 az storage blob service-properties update <span class="se">\</span>
@@ -296,10 +319,7 @@ func azure functionapp publish <span class="si">${</span><span class="nv">APP_NA
 </pre></div>
 </div>
 <p>If the command gives an error, you can find the detailed log message using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az monitor activity-log list --correlation-id <span class="s2">&quot;&lt;tracking id&gt;&quot;</span> <span class="se">\</span>
-   <span class="p">|</span> jq <span class="s1">&#39;.[].properties.statusMessage | fromjson&#39;</span>
-</pre></div>
-</div>
+<pre class="highlight literal-block">az monitor activity-log list --correlation-id &quot;<em>tracking id</em>&quot;    | jq '.[].properties.statusMessage | fromjson'</pre>
 <p>It can take a few minutes for the detailed log message to be populated.</p>
 </li>
 </ol>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous integration &mdash; nRF Asset Tracker 79c8cd1e2d5f58cfc0308f22520a8c2799d3b240 documentation</title>
+  <title>Continuous integration &mdash; nRF Asset Tracker 11589ff09d3c1d2a550056bc01d7469730c860b3 documentation</title>
   
 
   
@@ -179,12 +179,13 @@
 <ul class="simple">
 <li><p><a class="reference internal" href="#prepare-your-azure-account" id="id1">Prepare your Azure account</a></p>
 <ul>
-<li><p><a class="reference internal" href="#create-a-secondary-tenant-azure-active-directory-b2c" id="id2">Create a secondary tenant (Azure Active Directory B2C)</a></p></li>
+<li><p><a class="reference internal" href="#login-and-create-the-resource-group" id="id2">Login and create the resource group</a></p></li>
+<li><p><a class="reference internal" href="#create-a-secondary-tenant-azure-active-directory-b2c" id="id3">Create a secondary tenant (Azure Active Directory B2C)</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#deploy-the-solution" id="id3">Deploy the solution</a></p></li>
 <li><p><a class="reference internal" href="#setup-continuous-integration-on-github" id="id4">Setup continuous integration on GitHub</a></p></li>
-<li><p><a class="reference internal" href="#running-the-solution-during-development" id="id5">Running the solution during development</a></p></li>
+<li><p><a class="reference internal" href="#commit-and-push-a-change" id="id5">Commit and push a change</a></p></li>
+<li><p><a class="reference internal" href="#running-the-solution-during-development" id="id6">Running the solution during development</a></p></li>
 </ul>
 </div>
 <p>Continuous integration involves the following actions:</p>
@@ -201,7 +202,6 @@ Since the BDD tests are purely testing based on the public API of the project (w
 <p>This is an advanced topic for those who need to further develop and customize the nRF Asset Tracker.
 See the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js">nRF Asset Tracker for Azure GitHub project page</a>, for the implementation of the process outlined in this section.</p>
 </div>
-<p>The project also provides an easily understandable description of the available (and implemented) features, in a single folder called  <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/tree/saga/features">features</a>.</p>
 <div class="section" id="prepare-your-azure-account">
 <h2><a class="toc-backref" href="#id1">Prepare your Azure account</a><a class="headerlink" href="#prepare-your-azure-account" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
@@ -209,56 +209,9 @@ See the <a class="reference external" href="https://github.com/NordicSemiconduct
 <p>The setup process in Azure is more complicated when compared to the <a class="reference internal" href="../aws/ContinuousIntegration.html#aws-continuous-integration"><span class="std std-ref">AWS continuous integration setup</span></a>, since it involves many manual steps, which cannot be automated.
 If you have ideas to simplify the process, <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1">please provide your input</a>.</p>
 </div>
-<div class="section" id="create-a-secondary-tenant-azure-active-directory-b2c">
-<h3><a class="toc-backref" href="#id2">Create a secondary tenant (Azure Active Directory B2C)</a><a class="headerlink" href="#create-a-secondary-tenant-azure-active-directory-b2c" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic">
-<li><p>Create a new Azure Active Directory B2C tenant, which is used as the identity management solution for the user accounts of the nRF Asset Tracker instance.</p></li>
-<li><p>Follow <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant">the Create Tenant guide</a> to create a new Azure AD B2C tenant with the following values:</p>
-<ul class="simple">
-<li><p>Organization name - <code class="docutils literal notranslate"><span class="pre">nRF</span> <span class="pre">Asset</span> <span class="pre">Tracker</span> <span class="pre">(CI)</span> <span class="pre">Users</span></code>.</p></li>
-<li><p>Initial domain name - <code class="docutils literal notranslate"><span class="pre">nrfassettrackerciusers</span></code> (Customize the name since it is globally unique).</p></li>
-<li><p>Country - Choose your preferred country.</p></li>
-</ul>
-</li>
-<li><p>Note down the initial domain name that you used:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">B2C_TENANT</span><span class="o">=</span><span class="s2">&quot;&lt;Primary domain&gt;&quot;</span> <span class="c1"># For example, &quot;nrfassettrackerciusers&quot;</span>
-</pre></div>
-</div>
-</li>
-<li><p>Link this Azure AD B2C tenant to the subscription for CI by following the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/billing#link-an-azure-ad-b2c-tenant-to-a-subscription">Billing guide</a>.</p></li>
-</ol>
-<div class="section" id="create-the-azure-active-directory-b2c-application">
-<h4>Create the Azure Active Directory B2C application<a class="headerlink" href="#create-the-azure-active-directory-b2c-application" title="Permalink to this headline">¶</a></h4>
-<p>To create the Azure Active Directory B2C application, complete the following steps:</p>
-<ol class="arabic">
-<li><p>Follow the instructions in the <a class="reference internal" href="ContinuousDeployment.html#azure-continuous-deployment"><span class="std std-ref">Continous Deployment</span></a> instructions to create a new App registration with the following values:</p>
-<ul class="simple">
-<li><p>Name - Cat Tracker Web App.</p></li>
-<li><p>Redirect URI (make sure to select SPA) - <code class="docutils literal notranslate"><span class="pre">https://nrfassettrackerciapp.z16.web.core.windows.net/</span></code> (Choose a name that fits your project instead of <code class="docutils literal notranslate"><span class="pre">nrfassettrackerciapp</span></code> since <code class="docutils literal notranslate"><span class="pre">nrfassettrackerciapp</span></code> is globally unique).</p></li>
-</ul>
-</li>
-<li><p>Export the <code class="docutils literal notranslate"><span class="pre">Application</span> <span class="pre">(client)</span> <span class="pre">ID</span></code> and the <code class="docutils literal notranslate"><span class="pre">Directory</span> <span class="pre">(tenant)</span> <span class="pre">ID</span></code> of the created Active Directory B2C App registration into the <code class="docutils literal notranslate"><span class="pre">APP_REG_CLIENT_ID</span></code> and <code class="docutils literal notranslate"><span class="pre">B2C_TENANT_ID</span></code> parameters:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">APP_REG_CLIENT_ID</span><span class="o">=</span><span class="s2">&quot;&lt;Application (client) id&gt;&quot;</span>
-<span class="nb">export</span> <span class="nv">B2C_TENANT_ID</span><span class="o">=</span><span class="s2">&quot;&lt;Directory (tenant) ID&gt;&quot;</span>
-</pre></div>
-</div>
-</li>
-<li><p>For enabling the test-runner to programmatically login users, enable <a class="reference external" href="https://docs.microsoft.com/EN-US/azure/active-directory-b2c/configure-ropc?tabs=app-reg-ga">the resource owner password credentials (ROPC) flow</a> with the following settings:</p>
-<ul class="simple">
-<li><p>Name - <code class="docutils literal notranslate"><span class="pre">B2C_1_developer</span></code>.</p></li>
-<li><p>Application claims - Select <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">more</span> <span class="pre">...</span></code> and then mark <code class="docutils literal notranslate"><span class="pre">Email</span> <span class="pre">Addresses</span></code> as a return claim.</p></li>
-</ul>
-</li>
-<li><p>Add the permission to manage user accounts (Microsoft Graph &gt; <code class="docutils literal notranslate"><span class="pre">User.ReadWrite.All</span></code>) and grant admin consent.</p></li>
-<li><p>In the left menu, under <span class="guilabel">Manage</span>, select <span class="guilabel">Authentication</span>. Allow the Implicit grant for Access and ID tokens and select <code class="docutils literal notranslate"><span class="pre">Yes</span></code> for <span class="guilabel">Treat application as a public client</span>.</p></li>
-<li><p>Create a new client secret for the App registration (for example, “12OzW72ie-U.vlmzik-eO5gX.x26jLTI6U”) and note it down.</p></li>
-</ol>
-</div>
-</div>
-</div>
-<div class="section" id="deploy-the-solution">
-<h2><a class="toc-backref" href="#id3">Deploy the solution</a><a class="headerlink" href="#deploy-the-solution" title="Permalink to this headline">¶</a></h2>
-<p>To deploy the solution, complete the following steps:</p>
+<div class="section" id="login-and-create-the-resource-group">
+<h3><a class="toc-backref" href="#id2">Login and create the resource group</a><a class="headerlink" href="#login-and-create-the-resource-group" title="Permalink to this headline">¶</a></h3>
+<p>To create the resource group for the CI resources, complete the following steps:</p>
 <ol class="arabic">
 <li><p>Login to the shell:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az login
@@ -266,9 +219,7 @@ If you have ideas to simplify the process, <a class="reference external" href="h
 </div>
 </li>
 <li><p>Export the identifier of the subscription which contains the nRF Asset Tracker resources:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">SUBSCRIPTION_ID</span><span class="o">=</span><span class="s2">&quot;&lt;subscription id&gt;&quot;</span>
-</pre></div>
-</div>
+<pre class="highlight literal-block">export SUBSCRIPTION_ID=&quot;<em>subscription id</em>&quot;</pre>
 </li>
 <li><p>Make sure that you have enabled the right subscription by using the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az account <span class="nb">set</span> --subscription <span class="nv">$SUBSCRIPTION_ID</span>
@@ -277,64 +228,144 @@ az account list --output table
 </pre></div>
 </div>
 </li>
-<li><p>Create the CI credentials:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az ad sp create-for-rbac --name https://github.com/ --role Contributor --sdk-auth --scopes /subscriptions/<span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span> &gt; ci-credentials.json
+<li><p>Choose a resource group name for the solution and export it as <code class="docutils literal notranslate"><span class="pre">RESOURCE_GROUP</span></code>.
+In this example, we use <code class="docutils literal notranslate"><span class="pre">nrfassettrackerci</span></code> as the resource group name.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">RESOURCE_GROUP</span><span class="o">=</span><span class="s2">&quot;nrfassettrackerci&quot;</span>
 </pre></div>
 </div>
 </li>
-<li><p>Create a resource group for the nRF Asset Tracker:</p>
+<li><p>Choose a name for the solution and export it as <code class="docutils literal notranslate"><span class="pre">APP_NAME</span></code>.
+Use a short name (not more than 16 characters) composed of numbers and lower-case letters only.
+In this example, we use <code class="docutils literal notranslate"><span class="pre">nrfassettrackerci</span></code> as the application name.</p>
+<div class="highlight highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">APP_NAME</span><span class="o">=</span><span class="s2">&quot;nrfassettrackerci&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Configure your preferred location (you can list the locations using <code class="docutils literal notranslate"><span class="pre">az</span> <span class="pre">account</span> <span class="pre">list-locations</span></code>) and export it on the environment variable <code class="docutils literal notranslate"><span class="pre">LOCATION</span></code>.
+In this example, we use <code class="docutils literal notranslate"><span class="pre">northeurope</span></code> as the location name.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LOCATION</span><span class="o">=</span><span class="s2">&quot;northeurope&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Create a resource group for the CI resources:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az group create --name <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettrackerci</span><span class="si">}</span> --location <span class="si">${</span><span class="nv">LOCATION</span><span class="k">:-</span><span class="nv">northeurope</span><span class="si">}</span>
-</pre></div>
-</div>
-</li>
-<li><p>Deploy the resources:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group create <span class="se">\</span>
---resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettrackerci</span><span class="si">}</span> <span class="se">\</span>
---mode Complete <span class="se">\</span>
---template-file azuredeploy.json <span class="se">\</span>
---parameters <span class="se">\</span>
-<span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettrackerci</span><span class="si">}</span> <span class="se">\</span>
-<span class="nv">location</span><span class="o">=</span><span class="si">${</span><span class="nv">LOCATION</span><span class="k">:-</span><span class="nv">northeurope</span><span class="si">}</span> <span class="se">\</span>
-<span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
-<span class="nv">b2cTenant</span><span class="o">=</span><span class="nv">$B2C_TENANT</span> <span class="se">\</span>
-<span class="nv">b2cFlowName</span><span class="o">=</span>B2C_1_developer
-</pre></div>
-</div>
-</li>
-<li><p>Publish the functions:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>func azure functionapp publish <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettrackerci</span><span class="si">}</span>API --typescript
-</pre></div>
-</div>
-<p>Docker variant for publishing the functions (in case you get a <code class="docutils literal notranslate"><span class="pre">Permission</span> <span class="pre">denied</span></code> error):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir -v <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.azure:/root/.azure nordicsemiconductor/asset-tracker-cloud-azure-js:saga <span class="se">\</span>
-    func azure functionapp publish <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettrackerci</span><span class="si">}</span>API --typescript
 </pre></div>
 </div>
 </li>
 </ol>
 </div>
+<div class="section" id="create-a-secondary-tenant-azure-active-directory-b2c">
+<h3><a class="toc-backref" href="#id3">Create a secondary tenant (Azure Active Directory B2C)</a><a class="headerlink" href="#create-a-secondary-tenant-azure-active-directory-b2c" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Create an Azure Active Directory B2C. Currently, it is not possible to create an Active Directory B2C and application through the ARM template (see <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1">GitHub issue</a>).</p>
+<ol class="loweralpha">
+<li><p>Follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant">tutorial for creasting an Azure Active Directory B2C tenant</a> and create a B2C tenant.</p></li>
+<li><p>Follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/add-ropc-policy?tabs=app-reg-ga&amp;pivots=b2c-user-flow#register-an-application">tutorial for setting up a resource owner password credentials flow in Azure Active Directory B2C</a> and register an application.
+Make sure to:</p>
+<ul>
+<li><p>set the <span class="guilabel">Supported account types</span> to <span class="guilabel">All users</span></p></li>
+<li><p>update the manifest and set</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;oauth2AllowImplicitFlow&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Export the initial domain name that you used:</p>
+<pre class="highlight literal-block">export B2C_TENANT=&quot;<em>Initial domain name</em>&quot; # For example, &quot;nrfassettrackerciusers&quot;</pre>
+</li>
+<li><p>Export the <span class="guilabel">Application (client) ID</span> and the <span class="guilabel">Directory (tenant) ID</span> of the created Active Directory B2C App:</p>
+<pre class="highlight literal-block">export APP_REG_CLIENT_ID=&quot;<em>Application (client) id</em>&quot;
+export B2C_TENANT_ID=&quot;<em>Directory (tenant) ID</em>&quot;</pre>
+</li>
+<li><p>For enabling the test-runner to programmatically login users, enable <a class="reference external" href="https://docs.microsoft.com/EN-US/azure/active-directory-b2c/configure-ropc?tabs=app-reg-ga">the resource owner password credentials (ROPC) flow</a> with the following settings on the Active Directory B2C:</p>
+<ol class="loweralpha simple">
+<li><p>Name - <code class="docutils literal notranslate"><span class="pre">B2C_1_developer</span></code>.</p></li>
+<li><p>Click <span class="guilabel">Application claims</span>, select <span class="guilabel">Show more …</span> and then mark <span class="guilabel">Email Addresses</span> as a return claim.</p></li>
+</ol>
+</li>
+<li><p>Grant the B2C directory API permissions for authenticating users:</p>
+<ol class="loweralpha simple">
+<li><p>In the left menu, under <span class="guilabel">Manage</span>, select <span class="guilabel">API permissions</span>. Add the permission to manage user accounts (<span class="guilabel">Microsoft Graph</span> -&gt; <span class="guilabel">Application permission</span> -&gt; <span class="guilabel">User.ReadWrite.All</span>).</p></li>
+</ol>
+</li>
+<li><p>Grant the B2C directory API permissions for the function app:</p>
+<ol class="loweralpha simple">
+<li><p>Click <span class="guilabel">Expose an API</span> and  set the <span class="guilabel">Application ID URI</span> field to <code class="docutils literal notranslate"><span class="pre">api</span></code>.</p></li>
+<li><p>Click <span class="guilabel">+ Add a scope</span> and create a new scope with the following values and click <span class="guilabel">Add a scope</span>:</p>
+<ul class="simple">
+<li><p>Scope name - <code class="docutils literal notranslate"><span class="pre">nrfassettracker.admin</span></code></p></li>
+<li><p>Admin consent display name - Admin access to the nRF Asset Tracker API</p></li>
+<li><p>Admin consent description - Allows admin access to all resources exposed through the nRF Asset Tracker API</p></li>
+</ul>
+</li>
+<li><p>Click <span class="guilabel">API permissions</span> and then click <span class="guilabel">+ Add a permission</span>. Under <span class="guilabel">My APIs</span>, select the app registration.</p></li>
+<li><p>Enable the <code class="docutils literal notranslate"><span class="pre">nrfassettracker.admin</span></code> permission and click <span class="guilabel">Add permission</span>.</p></li>
+</ol>
+</li>
+<li><p>Click <span class="guilabel">Grant admin consent for &lt;your B2C directory&gt;</span>.</p></li>
+<li><p>Create a new client secret for the App registration (for example, <code class="docutils literal notranslate"><span class="pre">12OzW72ie-U.vlmzik-eO5gX.x26jLTI6U</span></code>) and note it down.</p>
+<pre class="highlight literal-block">export B2C_CLIENT_SECRET=&quot;<em>client secret</em>&quot;</pre>
+</li>
+<li><p>Link this Azure AD B2C tenant to the subscription for CI by following the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/billing#link-an-azure-ad-b2c-tenant-to-a-subscription">Billing guide</a>.</p></li>
+</ol>
+</div>
+</div>
 <div class="section" id="setup-continuous-integration-on-github">
 <h2><a class="toc-backref" href="#id4">Setup continuous integration on GitHub</a><a class="headerlink" href="#setup-continuous-integration-on-github" title="Permalink to this headline">¶</a></h2>
-<p>Fork the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js">nRF Asset Tracker for Azure project</a> and add the following secrets to an environment called <code class="docutils literal notranslate"><span class="pre">ci</span></code>:</p>
+<ol class="arabic">
+<li><p>Create the CI credentials:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az ad sp create-for-rbac --name <span class="s1">&#39;https://nrfassettracker.invalid/ci&#39;</span> <span class="se">\</span>
+   --role contributor <span class="se">\</span>
+   --scopes <span class="se">\</span>
+      <span class="s2">&quot;/subscriptions/</span><span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span><span class="s2">/resourceGroups/</span><span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span><span class="s2"> \</span>
+<span class="s2">      /subscriptions/</span><span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span><span class="s2">/resourceGroups/</span><span class="si">${</span><span class="nv">ADU_RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span><span class="s2">&quot;</span><span class="se">\</span>
+   --sdk-auth <span class="se">\</span>
+   &gt; ci-credentials.json
+</pre></div>
+</div>
+</li>
+<li><p>Fork the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js">nRF Asset Tracker for Azure project</a>.</p></li>
+<li><p>Add the following secrets to an environment called <code class="docutils literal notranslate"><span class="pre">ci</span></code>:</p>
 <ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RESOURCE_GROUP</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">APP_REG_CLIENT_ID</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">AZURE_CREDENTIALS</span></code> (the contents of <code class="file docutils literal notranslate"><span class="pre">ci-credentials.json</span></code>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">B2C_CLIENT_SECRET</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">B2C_TENANT_ID</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">APP_NAME</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">B2C_TENANT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LOCATION</span></code></p></li>
 </ul>
+</li>
+</ol>
+</div>
+<div class="section" id="commit-and-push-a-change">
+<h2><a class="toc-backref" href="#id5">Commit and push a change</a><a class="headerlink" href="#commit-and-push-a-change" title="Permalink to this headline">¶</a></h2>
+<p>Now, commit and push a change to your repository.
+This will trigger the CI run.</p>
+<p>You can also manually trigger a deploy on the <em>Test and Release</em> workflow.</p>
 </div>
 <div class="section" id="running-the-solution-during-development">
-<h2><a class="toc-backref" href="#id5">Running the solution during development</a><a class="headerlink" href="#running-the-solution-during-development" title="Permalink to this headline">¶</a></h2>
-<p>To run the solution during development, run the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">API_ENDPOINT</span><span class="o">=</span>https://<span class="sb">`</span>az functionapp show -g <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettrackerci</span><span class="si">}</span> -n <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettrackerci</span><span class="si">}</span>api --query <span class="s1">&#39;defaultHostName&#39;</span> --output tsv <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>/
-
+<h2><a class="toc-backref" href="#id6">Running the solution during development</a><a class="headerlink" href="#running-the-solution-during-development" title="Permalink to this headline">¶</a></h2>
+<p>To run the end-to-end tests against the solution during development, run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install dependencies</span>
 npm ci
+
+<span class="c1"># One time operation: create an intermediate CA certificate</span>
+node cli create-ca-root
+node cli proof-ca-root-possession
+node cli create-ca-intermediate
+
+<span class="c1"># Run tests</span>
 npm run test:e2e
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Azure functions allow only one <code class="docutils literal notranslate"><span class="pre">Issuer</span> <span class="pre">Url</span></code> in the Active Directory authentication configuration. So, you cannot interact with this instance from the end-to-end tests and the web application since the user flow name differs (<code class="docutils literal notranslate"><span class="pre">B2C_1_developer</span></code> for end-to-end tests and <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code> for the web application) and it is part of the Issuer Url (for example, <code class="docutils literal notranslate"><span class="pre">https://${TENANT_DOMAIN}.b2clogin.com/${TENANT_DOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_developer</span></code>).</p>
+<p>Azure functions allow only one Client ID and Issuer URL in the Active Directory authentication configuration. So, you cannot interact with this instance from the end-to-end tests and the web application since the user flow name differs (<code class="docutils literal notranslate"><span class="pre">B2C_1_developer</span></code> for end-to-end tests and <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code> for the web application) and it is part of the Issuer URL (for example, <code class="docutils literal notranslate"><span class="pre">https://${TENANT_DOMAIN}.b2clogin.com/${TENANT_DOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_developer</span></code>).</p>
 </div>
 </div>
 </div>

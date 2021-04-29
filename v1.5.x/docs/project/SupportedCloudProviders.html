@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Supported cloud providers &mdash; nRF Asset Tracker 79c8cd1e2d5f58cfc0308f22520a8c2799d3b240 documentation</title>
+  <title>Supported cloud providers &mdash; nRF Asset Tracker 11589ff09d3c1d2a550056bc01d7469730c860b3 documentation</title>
   
 
   
@@ -186,12 +186,12 @@
             
   <div class="section" id="supported-cloud-providers">
 <span id="id1"></span><h1>Supported cloud providers<a class="headerlink" href="#supported-cloud-providers" title="Permalink to this headline">¶</a></h1>
-<p>The nRF Asset Tracker is not a <em>multi-cloud</em> solution.
+<p>nRF Asset Tracker is a single cloud solution that supports multiple cloud providers.
 The concrete implementation will differ for each cloud provider.
-This solution does not aim to provide a solution where you can switch in a seamless manner between cloud providers.
+This solution does not support seamless switching between cloud providers.
 A multi-cloud solution with a functionality of switching between the clouds will require the implementation of additional abstraction layers.
-Also, it can mandate a constant translation between the vendor-specific concepts and the abstraction instead of becoming a meaningful benefit for the majority of users.
-Hence, in this project, the best practices of the respective cloud vendor for building a <em>serverless</em> IoT solution are followed.</p>
+Also, it can mandate a constant translation between the vendor-specific concepts and the abstraction instead of becoming a meaningful benefit for the users.
+Hence, in this project, the best practices of the respective cloud vendor for building a serverless IoT solution are followed.</p>
 <p>See the below table for a list of supported cloud providers:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -213,14 +213,14 @@ Hence, in this project, the best practices of the respective cloud vendor for bu
 <td><p><a class="reference internal" href="../azure/GettingStarted/Index.html#azure-getting-started"><span class="std std-ref">feature complete</span></a></p></td>
 <td><p><a class="reference external" href="https://github.com/bifravst/bifravst/issues/25">On hold</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>NB-IoT: UDP and LWM2M</p></td>
+<tr class="row-odd"><td><p>NB-IoT: UDP and LwM2M</p></td>
 <td><p>In consideration</p></td>
 <td><p>In consideration</p></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<p>In the case of cloud providers without native UDP and LWM2M support, the option of using a bridge such as <a class="reference external" href="https://github.com/eclipse/californium">Eclipse Californium</a>, was evaluated.
+<p>In the case of cloud providers without native UDP and LwM2M support, the option of using a bridge such as <a class="reference external" href="https://github.com/eclipse/californium">Eclipse Californium</a>, was evaluated.
 For more information, see <a class="reference external" href="https://github.com/coderbyheart/leshan-aws">Leshan LwM2M AWS IoT Gateway</a>.</p>
 <div class="section" id="iot-cloud-vendor-survey-results">
 <h2>IoT cloud vendor survey results<a class="headerlink" href="#iot-cloud-vendor-survey-results" title="Permalink to this headline">¶</a></h2>
@@ -255,7 +255,7 @@ For more information, see <a class="reference external" href="https://github.com
 <td><p>3. 66%</p></td>
 <td><p>2. 84%</p></td>
 </tr>
-<tr class="row-odd"><td><p>ARM Pelion</p></td>
+<tr class="row-odd"><td><p>Arm Pelion</p></td>
 <td><p>4. 25%</p></td>
 <td><p>4. 23% ▼</p></td>
 <td></td>
@@ -267,7 +267,7 @@ For more information, see <a class="reference external" href="https://github.com
 </tr>
 </tbody>
 </table>
-<p>These survey results can influence the decision on the selection of the cloud provider.</p>
+<p>These survey results can have an influence on the cloud provider selection.</p>
 <p>A value of <code class="docutils literal notranslate"><span class="pre">100%</span></code> in the chart corresponds to the majority of answers given for a specific cloud provider in the survey, while the rest of the percentage values for the different cloud providers (with less answers) are given relatively to the majority of answers for a specific cloud provider per year.</p>
 </div>
 </div>

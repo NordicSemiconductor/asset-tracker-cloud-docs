@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Core principles &mdash; nRF Asset Tracker 79c8cd1e2d5f58cfc0308f22520a8c2799d3b240 documentation</title>
+  <title>Core principles &mdash; nRF Asset Tracker 11589ff09d3c1d2a550056bc01d7469730c860b3 documentation</title>
   
 
   
@@ -187,25 +187,31 @@
   <div class="section" id="core-principles">
 <span id="id1"></span><h1>Core principles<a class="headerlink" href="#core-principles" title="Permalink to this headline">¶</a></h1>
 <p>The nRF Asset Tracker is built on the following principles:</p>
+<dl class="simple">
+<dt>Teach by showing</dt><dd><p>All the examples are designed to solve a concrete use case (a Cat Tracker) instead of providing generic or abstract solutions.
+It is not a framework, but a real application.</p>
+</dd>
+<dt>Err on the side of security</dt><dd><p>It follows the most robust security recommendations of the respective cloud provider.</p>
+</dd>
+<dt>Single tenancy</dt><dd><p>It implements a scenario in which all the authenticated users can be trusted to access all the devices.
+This is a typical scenario for cellular IoT products, and it simplifies the onboarding of new devices.</p>
+</dd>
+<dt>Serverless</dt><dd><p>It uses a serverless architecture as much as possible to have near-zero costs for the operation during the development, and to provide horizontal scaling of resources to be used in a production system if needed.</p>
+</dd>
+<dt>Cloud native</dt><dd><p>It follows the best practices of the respective cloud provider to reduce development efforts due to abstraction and offer the best integration into the cloud provider’s ecosystem.</p>
+</dd>
+<dt>Being offline is not an exception</dt><dd><p>Highly-mobile cellular IoT products need to handle unreliable connections gracefully, by implementing the mechanisms to retry the failed sending of data.
+This also means that the sensor measurements need to be timestamped when they are created, and not when they arrive at the cloud.</p>
+</dd>
+<dt>Maximize power saving</dt><dd><p>The firmware examples highlight the power saving features of the nRF9160 since this is a critical aspect for developing small form-factor devices that need to run on the battery charge of a single battery cell for years.</p>
 <ul class="simple">
-<li><p><em>Teach by showing</em> - All the examples are designed to solve a concrete use case (a Cat Tracker) instead of providing generic or abstract solutions.
-It is not a framework, but a real application.</p></li>
-<li><p><em>Err on the side of security</em> - It follows the most robust security recommendations of the respective cloud provider.</p></li>
-<li><p><em>Single tenancy</em> - It implements a scenario in which all the authenticated users can be trusted to access all the devices.
-This is a typical scenario for cellular IoT products, and it simplifies the onboarding of new devices.</p></li>
-<li><p><em>Serverless</em> - It uses a serverless architecture as much as possible to have near-zero costs for the operation during the development, and to provide horizontal scaling of resources to be used in a production system if needed.</p></li>
-<li><p><em>Cloud native</em> - It follows the best practices of the respective cloud provider to reduce development efforts due to abstraction and offer the best integration into the cloud provider’s ecosystem.</p></li>
-<li><p><em>Being offline is not an exception</em> - Highly-mobile cellular IoT products need to handle unreliable connections gracefully, by implementing the mechanisms to retry the failed sending of data.
-This also means that the sensor measurements need to be timestamped when they are created, and not when they arrive at the cloud.</p></li>
-<li><p><em>Maximize power saving</em> - The firmware examples highlight the power saving features of the nRF9160 since this is a critical aspect for developing small form-factor devices that need to run on the battery charge of a single battery cell for years.</p>
-<ul>
 <li><p>Power saving is used as much as possible in all the operating states of the device.</p></li>
 <li><p>All the necessary computation that can be done on the device must be done on the device itself.</p></li>
 <li><p>The least amount of data is sent to the cloud (optimize for message size).</p></li>
 <li><p>Data is encoded in the most efficient way for the device (optimize for computation cycles).</p></li>
 </ul>
-</li>
-</ul>
+</dd>
+</dl>
 </div>
 
 

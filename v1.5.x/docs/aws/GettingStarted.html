@@ -7,10 +7,15 @@
       content="nRF Asset Tracker Documenation"
     />
     <title>nRF Asset Tracker Documenation</title>
+    <!-- Fallback redirect without JavaScript -->
     <meta
       http-equiv="refresh"
-      content="0; URL=./GettingStarted/Index.html"
+      content="10; URL=./GettingStarted/Index.html"
     />
+    <!-- Preserve hashes -->
+    <script>
+      window.location.href="./GettingStarted/Index.html" + window.location.hash;
+    </script>
   </head>
   <body>
     If you are not getting redirected, please click <a href="./GettingStarted/Index.html">this link</a>.

@@ -22,8 +22,6 @@ Since the BDD tests are purely testing based on the public API of the project (w
     This is an advanced topic for those who need to further develop and customize the nRF Asset Tracker.
     See the `nRF Asset Tracker for Azure GitHub project page <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_, for the implementation of the process outlined in this section.
 
-The project also provides an easily understandable description of the available (and implemented) features, in a single folder called  `features <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/tree/saga/features>`_.
-
 Prepare your Azure account
 **************************
 
@@ -32,57 +30,10 @@ Prepare your Azure account
    The setup process in Azure is more complicated when compared to the :ref:`AWS continuous integration setup <aws-continuous-integration>`, since it involves many manual steps, which cannot be automated.
    If you have ideas to simplify the process, `please provide your input <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_.
 
-Create a secondary tenant (Azure Active Directory B2C)
-======================================================
+Login and create the resource group
+===================================
 
-1. Create a new Azure Active Directory B2C tenant, which is used as the identity management solution for the user accounts of the nRF Asset Tracker instance.
-
-#. Follow `the Create Tenant guide <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant>`_ to create a new Azure AD B2C tenant with the following values:
-
-   * Organization name - ``nRF Asset Tracker (CI) Users``.
-   * Initial domain name - ``nrfassettrackerciusers`` (Customize the name since it is globally unique).
-   * Country - Choose your preferred country.
-
-#. Note down the initial domain name that you used:
-
-   .. code-block:: bash
-
-      export B2C_TENANT="<Primary domain>" # For example, "nrfassettrackerciusers"
-
-#. Link this Azure AD B2C tenant to the subscription for CI by following the `Billing guide <https://docs.microsoft.com/en-us/azure/active-directory-b2c/billing#link-an-azure-ad-b2c-tenant-to-a-subscription>`_.
-
-Create the Azure Active Directory B2C application
--------------------------------------------------
-
-To create the Azure Active Directory B2C application, complete the following steps:
-
-1. Follow the instructions in the :ref:`Continous Deployment <azure-continuous-deployment>` instructions to create a new App registration with the following values:
-
-   * Name - Cat Tracker Web App.
-   * Redirect URI (make sure to select SPA) - ``https://nrfassettrackerciapp.z16.web.core.windows.net/`` (Choose a name that fits your project instead of ``nrfassettrackerciapp`` since ``nrfassettrackerciapp`` is globally unique).
-
-#. Export the ``Application (client) ID`` and the ``Directory (tenant) ID`` of the created Active Directory B2C App registration into the ``APP_REG_CLIENT_ID`` and ``B2C_TENANT_ID`` parameters:
-
-   .. code-block:: bash
-
-      export APP_REG_CLIENT_ID="<Application (client) id>"
-      export B2C_TENANT_ID="<Directory (tenant) ID>"
-
-#. For enabling the test-runner to programmatically login users, enable `the resource owner password credentials (ROPC) flow <https://docs.microsoft.com/EN-US/azure/active-directory-b2c/configure-ropc?tabs=app-reg-ga>`_ with the following settings:
-
-   * Name - ``B2C_1_developer``.
-   * Application claims - Select ``Show more ...`` and then mark ``Email Addresses`` as a return claim.
-
-#. Add the permission to manage user accounts (Microsoft Graph > ``User.ReadWrite.All``) and grant admin consent.
-
-#. In the left menu, under :guilabel:`Manage`, select :guilabel:`Authentication`. Allow the Implicit grant for Access and ID tokens and select ``Yes`` for :guilabel:`Treat application as a public client`.
-
-#. Create a new client secret for the App registration (for example, "12OzW72ie-U.vlmzik-eO5gX.x26jLTI6U") and note it down.
-
-Deploy the solution
-*******************
-
-To deploy the solution, complete the following steps:
+To create the resource group for the CI resources, complete the following steps:
 
 1. Login to the shell:
 
@@ -92,9 +43,10 @@ To deploy the solution, complete the following steps:
 
 #. Export the identifier of the subscription which contains the nRF Asset Tracker resources:
 
-   .. code-block:: bash
+   .. parsed-literal::
+      :class: highlight
 
-      export SUBSCRIPTION_ID="<subscription id>"
+      export SUBSCRIPTION_ID="*subscription id*"
 
 #. Make sure that you have enabled the right subscription by using the following commands:
 
@@ -104,68 +56,155 @@ To deploy the solution, complete the following steps:
        # Verify that it is set to default
        az account list --output table
 
-#. Create the CI credentials:
+#. Choose a resource group name for the solution and export it as ``RESOURCE_GROUP``.
+   In this example, we use ``nrfassettrackerci`` as the resource group name.
 
    .. code-block:: bash
 
-       az ad sp create-for-rbac --name https://github.com/ --role Contributor --sdk-auth --scopes /subscriptions/${SUBSCRIPTION_ID} > ci-credentials.json
+      export RESOURCE_GROUP="nrfassettrackerci"
+    
+#. Choose a name for the solution and export it as ``APP_NAME``.
+   Use a short name (not more than 16 characters) composed of numbers and lower-case letters only.
+   In this example, we use ``nrfassettrackerci`` as the application name.
 
-#. Create a resource group for the nRF Asset Tracker:
+   .. parsed-literal::
+      :class: highlight
+
+      export APP_NAME="nrfassettrackerci"
+
+#. Configure your preferred location (you can list the locations using ``az account list-locations``) and export it on the environment variable ``LOCATION``.
+   In this example, we use ``northeurope`` as the location name.
+
+   .. code-block:: bash
+
+      export LOCATION="northeurope"
+
+#. Create a resource group for the CI resources:
 
    .. code-block:: bash
 
        az group create --name ${RESOURCE_GROUP:-nrfassettrackerci} --location ${LOCATION:-northeurope}
 
-#. Deploy the resources:
+Create a secondary tenant (Azure Active Directory B2C)
+======================================================
 
-   .. code-block:: bash
+1. Create an Azure Active Directory B2C. Currently, it is not possible to create an Active Directory B2C and application through the ARM template (see `GitHub issue <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_).
 
-       az deployment group create \
-       --resource-group ${RESOURCE_GROUP:-nrfassettrackerci} \
-       --mode Complete \
-       --template-file azuredeploy.json \
-       --parameters \
-       appName=${APP_NAME:-nrfassettrackerci} \
-       location=${LOCATION:-northeurope} \
-       appRegistrationClientId=$APP_REG_CLIENT_ID \
-       b2cTenant=$B2C_TENANT \
-       b2cFlowName=B2C_1_developer
+   a. Follow the instructions in the `tutorial for creasting an Azure Active Directory B2C tenant <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant>`_ and create a B2C tenant.
 
-#. Publish the functions:
+   #. Follow the instructions in the `tutorial for setting up a resource owner password credentials flow in Azure Active Directory B2C <https://docs.microsoft.com/en-us/azure/active-directory-b2c/add-ropc-policy?tabs=app-reg-ga&pivots=b2c-user-flow#register-an-application>`_ and register an application.
+      Make sure to:
 
-   .. code-block:: bash
+      - set the :guilabel:`Supported account types` to :guilabel:`All users`     
+      - update the manifest and set
+        
+        .. code-block:: json
 
-       func azure functionapp publish ${APP_NAME:-nrfassettrackerci}API --typescript
+           {"oauth2AllowImplicitFlow": true}
+   
+#. Export the initial domain name that you used:
 
-   Docker variant for publishing the functions (in case you get a ``Permission denied`` error):
+   .. parsed-literal::
+      :class: highlight
 
-   .. code-block:: bash
+      export B2C_TENANT="*Initial domain name*" # For example, "nrfassettrackerciusers"
 
-       docker run --rm -v ${PWD}:/workdir -v ${HOME}/.azure:/root/.azure nordicsemiconductor/asset-tracker-cloud-azure-js:saga \
-           func azure functionapp publish ${APP_NAME:-nrfassettrackerci}API --typescript
+#. Export the :guilabel:`Application (client) ID` and the :guilabel:`Directory (tenant) ID` of the created Active Directory B2C App:
+
+   .. parsed-literal::
+      :class: highlight
+
+      export APP_REG_CLIENT_ID="*Application (client) id*"
+      export B2C_TENANT_ID="*Directory (tenant) ID*"
+
+#. For enabling the test-runner to programmatically login users, enable `the resource owner password credentials (ROPC) flow <https://docs.microsoft.com/EN-US/azure/active-directory-b2c/configure-ropc?tabs=app-reg-ga>`_ with the following settings on the Active Directory B2C:
+
+   a. Name - ``B2C_1_developer``.
+   #. Click :guilabel:`Application claims`, select :guilabel:`Show more ...` and then mark :guilabel:`Email Addresses` as a return claim.
+
+#. Grant the B2C directory API permissions for authenticating users:
+
+   a. In the left menu, under :guilabel:`Manage`, select :guilabel:`API permissions`. Add the permission to manage user accounts (:guilabel:`Microsoft Graph` -> :guilabel:`Application permission` -> :guilabel:`User.ReadWrite.All`).
+
+#. Grant the B2C directory API permissions for the function app:
+   
+   a. Click :guilabel:`Expose an API` and  set the :guilabel:`Application ID URI` field to ``api``.
+   
+   #. Click :guilabel:`+ Add a scope` and create a new scope with the following values and click :guilabel:`Add a scope`:
+      
+      * Scope name - ``nrfassettracker.admin``
+      * Admin consent display name - Admin access to the nRF Asset Tracker API
+      * Admin consent description - Allows admin access to all resources exposed through the nRF Asset Tracker API
+
+   #. Click :guilabel:`API permissions` and then click :guilabel:`+ Add a permission`. Under :guilabel:`My APIs`, select the app registration.
+   
+   #. Enable the ``nrfassettracker.admin`` permission and click :guilabel:`Add permission`.
+   
+#. Click :guilabel:`Grant admin consent for <your B2C directory>`.
+   
+#. Create a new client secret for the App registration (for example, ``12OzW72ie-U.vlmzik-eO5gX.x26jLTI6U``) and note it down.
+
+   .. parsed-literal::
+      :class: highlight
+
+      export B2C_CLIENT_SECRET="*client secret*"
+
+#. Link this Azure AD B2C tenant to the subscription for CI by following the `Billing guide <https://docs.microsoft.com/en-us/azure/active-directory-b2c/billing#link-an-azure-ad-b2c-tenant-to-a-subscription>`_.
 
 Setup continuous integration on GitHub
 **************************************
 
-Fork the `nRF Asset Tracker for Azure project <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_ and add the following secrets to an environment called ``ci``:
+1. Create the CI credentials:
 
-*  ``APP_REG_CLIENT_ID``
-*  ``AZURE_CREDENTIALS`` (the contents of :file:`ci-credentials.json`)
-*  ``B2C_CLIENT_SECRET``
-*  ``B2C_TENANT_ID``
+   .. code-block:: bash
+
+      az ad sp create-for-rbac --name 'https://nrfassettracker.invalid/ci' \
+         --role contributor \
+         --scopes \
+            "/subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker} \
+            /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${ADU_RESOURCE_GROUP:-nRFAssetTrackerADU}"\
+         --sdk-auth \
+         > ci-credentials.json
+
+#. Fork the `nRF Asset Tracker for Azure project <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_.
+
+#. Add the following secrets to an environment called ``ci``:
+
+   *  ``RESOURCE_GROUP``
+   *  ``APP_REG_CLIENT_ID``
+   *  ``AZURE_CREDENTIALS`` (the contents of :file:`ci-credentials.json`)
+   *  ``B2C_CLIENT_SECRET``
+   *  ``B2C_TENANT_ID``
+   *  ``APP_NAME``
+   *  ``B2C_TENANT``
+   *  ``LOCATION``
+
+Commit and push a change
+************************
+
+Now, commit and push a change to your repository.
+This will trigger the CI run.
+
+You can also manually trigger a deploy on the *Test and Release* workflow.
 
 Running the solution during development
 ***************************************
 
-To run the solution during development, run the following commands:
+To run the end-to-end tests against the solution during development, run the following commands:
 
 .. code-block:: bash
 
-      export API_ENDPOINT=https://`az functionapp show -g ${RESOURCE_GROUP:-nrfassettrackerci} -n ${APP_NAME:-nrfassettrackerci}api --query 'defaultHostName' --output tsv | tr -d '\n'`/
-
+      # Install dependencies
       npm ci
+
+      # One time operation: create an intermediate CA certificate
+      node cli create-ca-root
+      node cli proof-ca-root-possession
+      node cli create-ca-intermediate
+
+      # Run tests
       npm run test:e2e
 
 .. note::
 
-   Azure functions allow only one ``Issuer Url`` in the Active Directory authentication configuration. So, you cannot interact with this instance from the end-to-end tests and the web application since the user flow name differs (``B2C_1_developer`` for end-to-end tests and ``B2C_1_signup_signin`` for the web application) and it is part of the Issuer Url (for example, ``https://${TENANT_DOMAIN}.b2clogin.com/${TENANT_DOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_developer``).
+   Azure functions allow only one Client ID and Issuer URL in the Active Directory authentication configuration. So, you cannot interact with this instance from the end-to-end tests and the web application since the user flow name differs (``B2C_1_developer`` for end-to-end tests and ``B2C_1_signup_signin`` for the web application) and it is part of the Issuer URL (for example, ``https://${TENANT_DOMAIN}.b2clogin.com/${TENANT_DOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_developer``).

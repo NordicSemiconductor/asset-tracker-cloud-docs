@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous deployment &mdash; nRF Asset Tracker 79c8cd1e2d5f58cfc0308f22520a8c2799d3b240 documentation</title>
+  <title>Continuous deployment &mdash; nRF Asset Tracker 11589ff09d3c1d2a550056bc01d7469730c860b3 documentation</title>
   
 
   
@@ -193,9 +193,7 @@ For continuous deployment, complete the following steps:</p>
 </div>
 </li>
 <li><p>Export the identifier of the subscription which contains the nRF Asset Tracker resources:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">SUBSCRIPTION_ID</span><span class="o">=</span><span class="s2">&quot;&lt;subscription id&gt;&quot;</span>
-</pre></div>
-</div>
+<pre class="highlight literal-block">export SUBSCRIPTION_ID=&quot;<em>subscription id</em>&quot;</pre>
 </li>
 <li><p>Make sure that you have enabled the correct subscription by running the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az account <span class="nb">set</span> --subscription <span class="nv">$SUBSCRIPTION_ID</span>
@@ -205,7 +203,12 @@ az account list --output table
 </div>
 </li>
 <li><p>Create the CI credentials:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az ad sp create-for-rbac --name https://github.com/ --role Contributor --sdk-auth --scopes /subscriptions/<span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span> &gt; cd-credentials.json
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az ad sp create-for-rbac --name <span class="s1">&#39;https://nrfassettracker.invalid/cd&#39;</span> --role contributor <span class="se">\</span>
+   --scopes <span class="se">\</span>
+      <span class="s2">&quot;/subscriptions/</span><span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span><span class="s2">/resourceGroups/</span><span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span><span class="s2"> \</span>
+<span class="s2">      /subscriptions/</span><span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span><span class="s2">/resourceGroups/</span><span class="si">${</span><span class="nv">ADU_RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
+   --sdk-auth <span class="se">\</span>
+   &gt; cd-credentials.json
 </pre></div>
 </div>
 </li>

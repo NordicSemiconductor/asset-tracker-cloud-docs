@@ -1,3 +1,5 @@
+.. _azure-getting-started-deploy:
+
 Deploy the solution to your account
 ===================================
 
@@ -8,10 +10,11 @@ Deploy the solution to your account
 
 1. Export the identifier of the subscription which contains the nRF Asset Tracker resources to a new :file:`.envrc` file (:ref:`used with direnv <about-direnv>`), as shown in the following code:
 
-   .. code-block:: bash
+   .. parsed-literal::
+      :class: highlight
 
       # add to .envrc
-      export SUBSCRIPTION_ID="<Subscription ID>"
+      export SUBSCRIPTION_ID="*Subscription ID*"
 
 #. Choose a resource group name for the solution and export it as ``RESOURCE_GROUP``.
    In this example, we use ``nrfassettracker`` as the resource group name.
@@ -29,6 +32,16 @@ Deploy the solution to your account
 
       # add to .envrc
       export APP_NAME="nrfassettracker"
+
+#. Choose a resource group and a name for the Device Update instance and export it as ``ADU_RESOURCE_GROUP`` and ``ADU_INSTANCE_NAME``.
+   There is a limit of `2 instances per subscription <https://docs.microsoft.com/en-us/azure/iot-hub-device-update/device-update-resources#device-update-instance>`_, so the ADU instance needs to be shared between multiple IoT hubs.
+   In this example, we use ``nRFAssetTrackerADU`` as the resource group and  Device Update instance name.
+
+   .. code-block:: bash
+
+      # add to .envrc
+      export ADU_RESOURCE_GROUP="nRFAssetTrackerADU"
+      export ADU_INSTANCE_NAME="nRFAssetTrackerADU"
 
 #. Configure your preferred location (you can list the locations using ``az account list-locations``) and export it on the environment variable ``LOCATION``.
    In this example, we use ``northeurope`` as the location name.
@@ -62,6 +75,7 @@ Deploy the solution to your account
 
    .. code-block:: bash
 
+      az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${ADU_RESOURCE_GROUP:-nRFAssetTrackerADU}
       az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${RESOURCE_GROUP:-nrfassettracker}
 
 #. For creating an Azure Active Directory B2C in the next step, the namespace needs to be registered in the subscription:
@@ -77,6 +91,8 @@ Deploy the solution to your account
    #. Enable the *implicit grant and hybrid flows* for :guilabel:`Access tokens` and :guilabel:`ID tokens` and click :guilabel:`Save`.
 
 #. Create the user flow for sign-up, sign-in, and make sure to name the userflow as ``B2C_1_signup_signin``.
+
+   a. Click :guilabel:`Application claims`, select :guilabel:`Show more ...` and then mark :guilabel:`Email Addresses` as a return claim.
 
 #. Grant the B2C directory API permissions for the function app:
    
@@ -125,8 +141,19 @@ Deploy the solution to your account
          --template-file azuredeploy.json \
          --parameters \
             appName=${APP_NAME:-nrfassettracker} \
-            location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID \
+            location=$LOCATION \
+            appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=$B2C_TENANT \
+      && \
+      az deployment group create --resource-group ${ADU_RESOURCE_GROUP:-nRFAssetTrackerADU} \
+         --mode Incremental # Incremental is used here to allow the creation of an ADU instance per solution independently  \
+         --name initial-setup \
+         --template-file azuredeploy.adu.json \
+         --parameters \
+            aduInstanceName=${ADU_INSTANCE_NAME:-nRFAssetTrackerADU} \
+            nrfAssetTrackerResourceGroup=${RESOURCE_GROUP:-nrfassettracker} \
+            nrfAssetTrackerAppName=${APP_NAME:-nrfassettracker} \
+            location=$LOCATION \
       && \
       # Currently it is not possible to enable website hosting through the ARM template
       az storage blob service-properties update \
@@ -138,9 +165,10 @@ Deploy the solution to your account
 
    If the command gives an error, you can find the detailed log message using the following command:
 
-   .. code-block:: bash
+   .. parsed-literal::
+      :class: highlight
 
-      az monitor activity-log list --correlation-id "<tracking id>" \
+      az monitor activity-log list --correlation-id "*tracking id*" \
          | jq '.[].properties.statusMessage | fromjson'
 
    It can take a few minutes for the detailed log message to be populated.

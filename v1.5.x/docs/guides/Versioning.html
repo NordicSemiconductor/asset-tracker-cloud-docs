@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Versioning &mdash; nRF Asset Tracker 79c8cd1e2d5f58cfc0308f22520a8c2799d3b240 documentation</title>
+  <title>Versioning &mdash; nRF Asset Tracker 11589ff09d3c1d2a550056bc01d7469730c860b3 documentation</title>
   
 
   
@@ -224,23 +224,17 @@ Use the commit messages that follow the <a class="reference external" href="http
 <p>Following are the three commit messages that triggers a release:</p>
 <ul>
 <li><p>Patch release</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fix: &lt;commit message&gt;
-</pre></div>
-</div>
+<pre class="highlight literal-block"> fix: <em>commit message</em></pre>
 </li>
 <li><p>Feature release</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>feat: &lt;commit message&gt;
-</pre></div>
-</div>
+<pre class="highlight literal-block">feat: <em>commit message</em></pre>
 </li>
 <li><p>Breaking Release</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;scope&gt;: &lt;commit message&gt;
+<pre class="highlight literal-block"><em>scope</em>: <em>commit message</em>
 
 BREAKING CHANGE:
 
-&lt;description of breaking change&gt;
-</pre></div>
-</div>
+<em>description of breaking change</em></pre>
 </li>
 </ul>
 <div class="admonition note">
@@ -252,13 +246,9 @@ BREAKING CHANGE:
 <p>A fix is a change to the implementation, which removes a bug <em>without changing the public API</em> (method names and signatures, exports) of the library.
 The consumer of the library need not change their implementation when installing the fixed version.</p>
 <p>To release a fix (which will update the version from <code class="docutils literal notranslate"><span class="pre">2.3.4</span></code> to <code class="docutils literal notranslate"><span class="pre">2.3.5</span></code>), use the type <code class="docutils literal notranslate"><span class="pre">fix</span></code> in the commit message:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fix: &lt;commit message&gt;
-</pre></div>
-</div>
+<pre class="highlight literal-block"> fix: <em>commit message</em></pre>
 <p>You can optionally add a scope, which is a lowercase string that is used to identify the affected <em>component</em>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fix<span class="o">(</span>&lt;scope&gt;<span class="o">)</span>: &lt;commit message&gt;
-</pre></div>
-</div>
+<pre class="highlight literal-block"> fix(<em>scope</em>): <em>commit message</em></pre>
 <p>Scopes are useful when the project is big.</p>
 </div>
 <div class="section" id="feature-release-feat">
@@ -266,9 +256,7 @@ The consumer of the library need not change their implementation when installing
 <p>A feature is a change to the implementation of a library which adds additional functionality <em>without changing the public API</em> of the library.</p>
 <p>You may add new exports, methods and extra method arguments that are optional, but the consumer of the library need not change their implementation when installing the library with the new feature.</p>
 <p>To release a feature (which will update the version from <code class="docutils literal notranslate"><span class="pre">2.3.4</span></code> to <code class="docutils literal notranslate"><span class="pre">2.4.0</span></code>), use the type <code class="docutils literal notranslate"><span class="pre">feat</span></code> in the commit message:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>feat: &lt;commit message&gt;
-</pre></div>
-</div>
+<pre class="highlight literal-block"> feat: <em>commit message</em></pre>
 <p>You can optionally add a scope as well.</p>
 </div>
 <div class="section" id="breaking-release-breaking-change">
@@ -283,13 +271,11 @@ This can happen in the following conditions:</p>
 </ul>
 <p>Even if the change is very small, as soon as you break the library’s <em>contract</em> (its public API), it is a breaking change according to <a class="reference external" href="https://semver.org/#spec-item-8">Semantic Versioning 2.0.0</a>.</p>
 <p>To do a breaking release (which will update the version from <code class="docutils literal notranslate"><span class="pre">2.3.4</span></code> to <code class="docutils literal notranslate"><span class="pre">3.0.0</span></code>), use the text <code class="code docutils literal notranslate"><span class="pre">BREAKING</span> <span class="pre">CHANGE:</span></code> (followed by a space of two new lines) in the commit message:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>refactor: &lt;commit message&gt;
+<pre class="highlight literal-block"> refactor: <em>commit message</em>
 
-BREAKING CHANGE:
+ BREAKING CHANGE:
 
-&lt;description of breaking change&gt;
-</pre></div>
-</div>
+ <em>description of breaking change</em></pre>
 <p>You can optionally add a scope as well.</p>
 <p>Note that in the case of a breaking release, the message type (<code class="docutils literal notranslate"><span class="pre">refactor</span></code> in the example) can be any valid type.</p>
 </div>

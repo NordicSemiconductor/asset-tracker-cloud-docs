@@ -36,9 +36,10 @@ You need to create a `developer token <https://help.github.com/en/articles/creat
 
 You need to store this token in `AWS ParameterStore <https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html>`_ and it is a manual *one-time* step done through AWS CLI  by using the following command:
 
-.. code-block:: bash
+.. parsed-literal::
+   :class: highlight
 
-    node cli configure-api codebuild github token "<Github Token>"
+    node cli configure-api codebuild github token "*Github Token*"
 
 Enable continuous deployment
 ****************************

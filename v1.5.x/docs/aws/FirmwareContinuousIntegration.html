@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous integration of firmware &mdash; nRF Asset Tracker 79c8cd1e2d5f58cfc0308f22520a8c2799d3b240 documentation</title>
+  <title>Continuous integration of firmware &mdash; nRF Asset Tracker 11589ff09d3c1d2a550056bc01d7469730c860b3 documentation</title>
   
 
   
@@ -234,22 +234,18 @@ npx cdk deploy <span class="s1">&#39;*&#39;</span>
 </pre></div>
 </div>
 <p>Print the AWS Key for the CI runner on GitHub Actions using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli firmware-ci -s
+<pre class="highlight literal-block">node cli firmware-ci -s
 
-Region: <span class="s2">&quot;&lt;Region&gt;&quot;</span>
-Bucket name: <span class="s2">&quot;&lt;Bucket name&gt;&quot;</span>
-Access Key ID: <span class="s2">&quot;&lt;AWS Access Key ID&gt;&quot;</span>
-Secret Access Key: <span class="s2">&quot;&lt;AWS Secret Access Key&gt;&quot;</span>
-</pre></div>
-</div>
+Region: &quot;<em>Region</em>&quot;
+Bucket name: &quot;<em>Bucket name</em>&quot;
+Access Key ID: &quot;<em>AWS Access Key ID</em>&quot;
+Secret Access Key: &quot;<em>AWS Secret Access Key</em>&quot;</pre>
 <p>At this stage, you can create a new IoT Thing to be used for a Firmware CI runner, by running the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli firmware-ci -c
 </pre></div>
 </div>
-<p>You can delete a device using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli firmware-ci -r <span class="s2">&quot;&lt;deviceId&gt;&quot;</span>
-</pre></div>
-</div>
+<p>To delete a device, use the following command:</p>
+<pre class="highlight literal-block">node cli firmware-ci -r &quot;<em>deviceId</em>&quot;</pre>
 <p>Configure the following parameters as secrets on the firmware GitHub repository:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">AWS_ACCESS_KEY_ID</span></code> (as printed above)</p></li>
@@ -273,22 +269,18 @@ npx tsc
 </div>
 </li>
 <li><p>Provide the following environment variables. Use the path to the JLink folder (for example, <code class="file docutils literal notranslate"><span class="pre">~/JLink_Linux_V686_arm64/</span></code>) that is created during the installation in step 1:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">AWS_ACCESS_KEY_ID</span><span class="o">=</span><span class="s2">&quot;&lt;AWS Access Key ID printed above&gt;&quot;</span>
-<span class="nb">export</span> <span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span><span class="s2">&quot;&lt;AWS Secret Access Key printed above&gt;&quot;</span>
-<span class="nb">export</span> <span class="nv">REGION</span><span class="o">=</span><span class="s2">&quot;&lt;Region printed above&gt;&quot;</span>
-<span class="nb">export</span> <span class="nv">BUCKET_NAME</span><span class="o">=</span><span class="s2">&quot;&lt;Bucket name printed above&gt;&quot;</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;&lt;Path to JLINK&gt;&quot;</span>:<span class="nv">$PATH</span>
-</pre></div>
-</div>
+<pre class="highlight literal-block">export AWS_ACCESS_KEY_ID=&quot;<em>AWS Access Key ID printed above</em>&quot;
+export AWS_SECRET_ACCESS_KEY=&quot;<em>AWS Secret Access Key printed above</em>&quot;
+export REGION=&quot;<em>Region printed above</em>&quot;
+export BUCKET_NAME=&quot;<em>Bucket name printed above</em>&quot;
+export PATH=&quot;<em>Path to JLINK</em>&quot;:$PATH</pre>
 <p>The recommended workflow is to use a <a class="reference external" href="https://direnv.net/">direnv</a> plugin for your shell, which locates the environment variables in a <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file in the project folder and automatically exports them.
 Create a new file <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> in the project folder and add the credentials that are provided to you after you have created the new user.</p>
 </li>
 <li><p>Copy the JSON file containing the certificate.</p></li>
 <li><p>Run the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli run <span class="s2">&quot;&lt;device&gt;&quot;</span> <span class="s2">&quot;&lt;path to certificate.json&gt;&quot;</span>
-</pre></div>
-</div>
-<p><code class="file docutils literal notranslate"><span class="pre">&lt;device&gt;</span></code> is the Linux file where the device is connected to, for example, <code class="docutils literal notranslate"><span class="pre">/dev/ttyACM0</span></code>.</p>
+<pre class="highlight literal-block">node cli run &quot;<em>device</em>&quot; &quot;<em>path to certificate.json</em>&quot;</pre>
+<p><code class="file docutils literal notranslate"><span class="pre">device</span></code> is the Linux file to which the device is connected, for example, <code class="docutils literal notranslate"><span class="pre">/dev/ttyACM0</span></code>.</p>
 </li>
 </ol>
 <p>The Firmware CI starts to process all the scheduled jobs one after another.</p>
