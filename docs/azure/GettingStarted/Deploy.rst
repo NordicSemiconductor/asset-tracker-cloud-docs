@@ -141,7 +141,6 @@ Deploy the solution to your account
          --template-file azuredeploy.json \
          --parameters \
             appName=${APP_NAME:-nrfassettracker} \
-            location=$LOCATION \
             appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=$B2C_TENANT \
       && \
@@ -153,7 +152,6 @@ Deploy the solution to your account
             aduInstanceName=${ADU_INSTANCE_NAME:-nRFAssetTrackerADU} \
             nrfAssetTrackerResourceGroup=${RESOURCE_GROUP:-nrfassettracker} \
             nrfAssetTrackerAppName=${APP_NAME:-nrfassettracker} \
-            location=$LOCATION \
       && \
       # Currently it is not possible to enable website hosting through the ARM template
       az storage blob service-properties update \

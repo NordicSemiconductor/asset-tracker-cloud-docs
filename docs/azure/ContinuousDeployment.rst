@@ -59,7 +59,6 @@ To acquire credentials for the CI runner, complete the following steps:
 
    * ``RESOURCE_GROUP``
    * ``APP_NAME``
-   * ``LOCATION``
    * ``B2C_TENANT``
    * ``APP_REG_CLIENT_ID``
 

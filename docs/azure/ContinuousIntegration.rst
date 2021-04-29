@@ -177,7 +177,6 @@ Setup continuous integration on GitHub
    *  ``B2C_TENANT_ID``
    *  ``APP_NAME``
    *  ``B2C_TENANT``
-   *  ``LOCATION``
 
 Commit and push a change
 ************************
