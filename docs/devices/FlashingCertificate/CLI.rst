@@ -7,8 +7,8 @@ Provisioning using the CLI
 
 .. note::
 
-   Provisioning the certificates and programming the firmware through CLI are not currently supported on WSL 2 since it lacks support for serial devices. 
-   For more information, see the `issue on WSL2 <https://github.com/microsoft/WSL/issues/4322>`_.
+   Provisioning the certificates and programming the firmware through CLI are not currently supported on WSL 2 since it lacks support for serial devices.
+   For more information, see the `issue on WSL 2 <https://github.com/microsoft/WSL/issues/4322>`_.
    Instead, :ref:`use nRF Connect for Desktop to provision your certificates <devices-provisioning-certificate-desktop>` and then :ref:`program the firmware <program-the-firmware>`.
 
    
@@ -29,9 +29,9 @@ Provisioning of the certificate using CLI also results in the following actions:
 
 .. only:: not saga
 
-    1. Programming of the `AT client sample <https://github.com/NordicSemiconductor/at_client-hex>`_ onto the device
-    #. Provisioning of the :ref:`created device credentials <aws-device-credentials>`
-    #. Programming of the :ref:`configured and built firmware <firmware-configuration>` to the device
+    1. Programming of the `AT client sample <https://github.com/NordicSemiconductor/at_client-hex>`_ onto the device.
+    #. Provisioning of the :ref:`created device credentials <aws-device-credentials>`.
+    #. Programming of the :ref:`configured and built firmware <firmware-configuration>` to the device.
 
 .. only:: saga
 
