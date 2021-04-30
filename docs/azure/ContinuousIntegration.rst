@@ -72,6 +72,16 @@ To create the resource group for the CI resources, complete the following steps:
 
       export APP_NAME="nrfassettrackerci"
 
+#. Choose a resource group and a name for the Device Update instance and export it as ``ADU_RESOURCE_GROUP`` and ``ADU_INSTANCE_NAME``.
+   There is an undocumented limit of 2 instances per ADU account, so the CI should be run against a separate Device Update instance.
+   In this example, we use ``nRFAssetTrackerADUCI`` as the resource group and Device Update instance name.
+
+   .. code-block:: bash
+
+      # add to .envrc
+      export ADU_RESOURCE_GROUP="nRFAssetTrackerADUCI"
+      export ADU_INSTANCE_NAME="nRFAssetTrackerADUCI"
+
 #. Configure your preferred location (you can list the locations using ``az account list-locations``) and export it on the environment variable ``LOCATION``.
    In this example, we use ``northeurope`` as the location name.
 
@@ -83,7 +93,8 @@ To create the resource group for the CI resources, complete the following steps:
 
    .. code-block:: bash
 
-       az group create --name ${RESOURCE_GROUP:-nrfassettrackerci} --location ${LOCATION:-northeurope}
+      az group create --name ${ADU_RESOURCE_GROUP:-nRFAssetTrackerADUCI} --location ${LOCATION:-northeurope}
+      az group create --name ${RESOURCE_GROUP:-nrfassettrackerci} --location ${LOCATION:-northeurope}
 
 Create a secondary tenant (Azure Active Directory B2C)
 ======================================================
@@ -162,7 +173,7 @@ Setup continuous integration on GitHub
          --role contributor \
          --scopes \
             "/subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker} \
-            /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${ADU_RESOURCE_GROUP:-nRFAssetTrackerADU}"\
+            /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${ADU_RESOURCE_GROUP:-nRFAssetTrackerADUCI}"\
          --sdk-auth \
          > ci-credentials.json
 
