@@ -9,7 +9,7 @@ Deploy the Cat Tracker web application
 
 To deploy the Cat Tracker web application to AWS, complete the following steps:
 
-1. Clone the web application
+1. Clone the project and install the dependencies
 #. Configure the web application
 #. Deploy the web application
 #. Register a new user
@@ -20,8 +20,8 @@ Before starting, navigate to the working directory :file:`~/nrf-asset-tracker`.
    :start-after: clone_web_app_start
    :end-before: clone_web_app_end
 
-Run-time configuration
-======================
+Configure the web application
+*****************************
 
 .. include:: ../../app/Includes.rst
    :start-after: configure_web_app_start
@@ -100,7 +100,7 @@ Open the application in the browser.
    :alt: Login form of the web application
 
 In the login form, Click :guilabel:`Create Account` and fill in your email and a password.
-You will receive an email with a confirmation code, which needs to be entered to confirm your email address.
+You will receive an email with a confirmation code that you need to enter to confirm your email address.
 Once you have confirmed your email address, you can login with your email address and your password.
 
 View your device
