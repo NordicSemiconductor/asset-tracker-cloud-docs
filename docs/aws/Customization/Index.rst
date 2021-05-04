@@ -3,7 +3,7 @@
 Customization of the nRF Asset Tracker
 ######################################
 
-This section walks you through the customization of the nRF Asset Tracker for your own product by showing how to visualize additional sensor data on the :ref:`Cat Tracker web application <index-cat-tracker-web-app>`.
+This section walks you through the customization of the nRF Asset Tracker for your own product. It shows how to visualize additional sensor data on the :ref:`Cat Tracker web application <index-cat-tracker-web-app>`.
 
 Through the example, the following changes are made:
 
