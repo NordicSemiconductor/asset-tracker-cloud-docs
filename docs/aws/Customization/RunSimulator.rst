@@ -3,7 +3,7 @@
 Run the device simulator UI
 ###########################
 
-First, run the device simulator User Interface (UI) by completing the following steps:
+To run the device simulator User Interface (UI), complete the following steps:
 
 1. Navigate to the :ref:`working directory <aws-working-directory>`.
 #. Clone the device simulator UI and install the dependencies:
@@ -14,7 +14,7 @@ First, run the device simulator User Interface (UI) by completing the following 
       cd simulator-ui
       npm ci
 
-#. Start the device simulator UI's development server by running the following command:
+#. Start the development server of the device simulator UI:
 
    .. code-block:: bash
 
@@ -24,7 +24,7 @@ First, run the device simulator User Interface (UI) by completing the following 
       :alt: Device simulator UI development server
 
       Device simulator UI development server
-	  
+
    The command launches a browser with `<http://localhost:8080>`_ in the address bar as shown in the following image:
 
    .. figure:: ./images/device-simulator-ui.png
@@ -34,7 +34,7 @@ First, run the device simulator User Interface (UI) by completing the following 
 
    The device simulator UI loads in the browser.
 
-#. Create a new device for use with the simulator by generating a new device certificate.
+#. Create a new device for use with the simulator by generating a new device certificate:
 
    .. code-block:: bash
 

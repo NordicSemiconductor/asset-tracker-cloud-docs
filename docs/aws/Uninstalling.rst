@@ -7,7 +7,7 @@ To uninstall the nRF Asset Tracker, execute the listed commands.
 
 .. note::
 
-    The commands must be executed with care since they are destructive.
+    The commands are destructive. Therefore, execute them very carefully.
 
 .. code-block:: bash
 
