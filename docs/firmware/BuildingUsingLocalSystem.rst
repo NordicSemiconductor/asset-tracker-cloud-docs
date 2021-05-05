@@ -27,7 +27,7 @@ Create a folder, for example, ``ncs`` and initialize the project by running the 
 
     cd ./ncs
     sudo pip3 install -U --pre west
-    west init -m https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware --mr saga
+    west init -m https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws --mr saga
     west update
     sudo pip3 install -r zephyr/scripts/requirements.txt
     sudo pip3 install pc_ble_driver_py
