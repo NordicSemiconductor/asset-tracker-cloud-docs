@@ -7,18 +7,18 @@ Connect using the simulator
     :local:
     :depth: 2
 
-The CLI provides a software implementation of Cat Tracker for *testing purposes*.
+The CLI provides a software implementation of Cat Tracker for testing purposes.
 It allows the verification of the cloud configuration.
 This feature is also used for testing the nRF Asset Tracker using Continuous Integration.
 
 To connect to a device and control the device using the simulator, complete the following steps:
 
-* Create certificates for the device
-* Run the device simulator
-* Use the device simulator UI to control the simulated device
+* Create certificates for the device.
+* Run the device simulator.
+* Use the device simulator UI to control the simulated device.
 
-Running the device simulator
-****************************
+Creating certificates for the device
+************************************
 
 To create certificates for a simulated device, run the following command:
 
@@ -26,7 +26,10 @@ To create certificates for a simulated device, run the following command:
 
     node cli create-device-cert
 
-As the next step, you can run a simulated device using the generated certificate by running the following command:
+Running the device simulator
+****************************
+
+To run a simulated device using the generated certificate, run the following command:
 
 .. intro_end
 
@@ -58,7 +61,7 @@ Clone the latest version of the device-ui project and install the dependencies:
 Run the device simulator UI
 ===========================
 
-You can run the device simulator UI by using the following command:
+To run the device simulator UI, use the following command:
 
 .. code-block:: bash
 
