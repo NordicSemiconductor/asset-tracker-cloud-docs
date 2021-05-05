@@ -12,14 +12,14 @@ If you install `Docker <https://www.docker.com/>`_ , it will contain all the dep
 
 The Docker image is not intended to be shared, but to simplify the local building of project.
 
-The Docker image is also used to automate the building of HEX files :ref:`using GitHub Actions <firmware-building-github-actions>`, which is used to :ref:`continuously deliver the firmware builds <guides-automate-hexfile-building>` in the `out-of-tree example repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware>`_.
+The Docker image is also used to automate the building of HEX files :ref:`using GitHub Actions <firmware-building-github-actions>`, which is used to :ref:`continuously deliver the firmware builds <guides-automate-hexfile-building>` in the `out-of-tree example repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws>`_.
 
 To build the project using Docker, run the following commands:
 
 .. code-block:: bash
 
-    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware nrf-asset-tracker-firmware
-    cd nrf-asset-tracker-firmware
+    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws nrf-asset-tracker-firmware-aws
+    cd nrf-asset-tracker-firmware-aws
     docker build -t asset-tracker-firmware-docker .
 
 Edit the value of ``CONFIG_AWS_IOT_BROKER_HOST_NAME`` in :file:`prj.conf` and provide your broker hostname.
@@ -39,7 +39,7 @@ Thingy:91 (PCA20035)
 
 .. code-block:: bash
 
-    docker run --rm -v ${PWD}:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b thingy91_nrf9160ns -- -DOVERLAY_CONFIG="overlay-debug.conf;asset-tracker-cloud-firmware.conf"'
+    docker run --rm -v ${PWD}:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b thingy91_nrf9160ns -- -DOVERLAY_CONFIG="overlay-debug.conf;asset-tracker-cloud-firmware-aws.conf"'
     ls -la build/zephyr/merged.hex
 
 nRF9160 DK (PCA10090)
@@ -47,7 +47,7 @@ nRF9160 DK (PCA10090)
 
 .. code-block:: bash
 
-    docker run --rm -v ${PWD}:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b nrf9160dk_nrf9160ns -- -DOVERLAY_CONFIG="overlay-debug.conf;asset-tracker-cloud-firmware.conf"'
+    docker run --rm -v ${PWD}:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b nrf9160dk_nrf9160ns -- -DOVERLAY_CONFIG="overlay-debug.conf;asset-tracker-cloud-firmware-aws.conf"'
     ls -la build/zephyr/merged.hex
 
 Location of the HEX file
