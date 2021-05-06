@@ -1,4 +1,4 @@
-.. _firmware-building:
+.. _firmware-azure-building:
 
 Building the project using your local system
 ############################################
@@ -27,7 +27,8 @@ Create a folder, for example, ``ncs`` and initialize the project by running the 
 
     cd ./ncs
     sudo pip3 install -U --pre west
-    west init -m https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws --mr saga
+    west init -m https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure \
+        --mr saga firmware
     west update
     sudo pip3 install -r zephyr/scripts/requirements.txt
     sudo pip3 install pc_ble_driver_py
@@ -35,6 +36,11 @@ Create a folder, for example, ``ncs`` and initialize the project by running the 
     sudo pip3 install -r mcuboot/scripts/requirements.txt
     # this sets $ZEPHYR_TOOLCHAIN_VARIANT and $GNUARMEMB_TOOLCHAIN_PATH
     source zephyr/zephyr-env.sh
+
+Configure the project
+*********************
+
+Follow the :ref:`configuration instructions for the firmware <azure-firmware-configuration>` and update the :file:`prj.conf`.
 
 Build the project
 *****************
@@ -58,4 +64,4 @@ nRF9160 DK (PCA10090)
 Location of the HEX file
 ************************
 
-The built HEX file will be located in :file:`ncs/firmware/build/zephyr/merged.hex`.
+The built HEX file will be located in :file:`./ncs/firmware/build/zephyr/merged.hex`.
