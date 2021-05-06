@@ -68,3 +68,5 @@ html_context = {
 }
 
 master_doc = 'index'
+
+suppress_warnings = ['ref.ref']

@@ -29,6 +29,15 @@ jobs:
           export PATH=$PATH:/home/runner/.local/bin
           errlog=$(mktemp)
           export AUDIENCE=${{ matrix.audience }}
+          # Remove Azure from release builds
+          if [[ "${{ matrix.audience }}" == "release" ]]; then
+            rm -r docs/azure
+            cat index.rst | grep -v docs/azure > index-no-azure.rst
+            mv index-no-azure.rst index.rst
+            rm -r docs/firmware/azure
+            cat docs/firmware/Index.rst | grep -v azure/ > docs/firmware/Index-no-azure.rst
+            mv docs/firmware/Index-no-azure.rst docs/firmware/Index.rst
+          fi
           make html 2> $errlog
           if [[ -s "$errlog" ]]; then
             cat $errlog

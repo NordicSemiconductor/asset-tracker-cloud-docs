@@ -33,6 +33,7 @@ jobs:
           export AUDIENCE=${{ matrix.audience }}
           # Remove Azure from release builds
           if [[ "${{ matrix.audience }}" == "release" ]]; then
+            rm -r docs/azure
             cat index.rst | grep -v docs/azure > index-no-azure.rst
             mv index-no-azure.rst index.rst
           fi
