@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Install the nRF Asset Tracker into your AWS account &mdash; nRF Asset Tracker 5b6b1d947532649bac16201a2444f34a2c5473de documentation</title>
+  <title>Install the nRF Asset Tracker into your AWS account &mdash; nRF Asset Tracker 712495510a191f91722a94ec6f23725da1054852 documentation</title>
   
 
   
@@ -227,13 +227,13 @@ npx cdk deploy <span class="s1">&#39;*&#39;</span>
 node dist/cdk/helper/addFakeRoute.js
 </pre></div>
 </div>
-<p>The <em>initial</em> deployment will take a few minutes because it sets up a <a class="reference external" href="https://aws.amazon.com/cloudfront/">CloudFront</a> distribution for the web application.</p>
+<p>The initial deployment will take a few minutes because it sets up a <a class="reference external" href="https://aws.amazon.com/cloudfront/">CloudFront</a> distribution for the web application.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The AWS CDK will provide a list of permission changes to your account, and you need to review them carefully whenever you make changes to the setup.
-However, this step is not mandatory, and it is safe to skip since the deployment happens in a blank account.
+<p>The AWS CDK provides a list of permission changes to your account, and you need to review them carefully whenever you make changes to the setup.
+However, this step is not mandatory and you can safely skip it, because you are deploying in a blank account.
 To skip this step in future, run <code class="docutils literal notranslate"><span class="pre">npx</span> <span class="pre">cdk</span> <span class="pre">deploy</span> <span class="pre">'*'</span> <span class="pre">--require-approval</span> <span class="pre">never</span></code>.
-This must be done only in standalone accounts for development purposes.</p>
+Do this only in standalone accounts for development purposes.</p>
 </div>
 </div>
 

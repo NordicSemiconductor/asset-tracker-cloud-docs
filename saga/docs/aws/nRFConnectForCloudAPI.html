@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>nRF Connect for Cloud API &mdash; nRF Asset Tracker 5b6b1d947532649bac16201a2444f34a2c5473de documentation</title>
+  <title>nRF Connect for Cloud API &mdash; nRF Asset Tracker 712495510a191f91722a94ec6f23725da1054852 documentation</title>
   
 
   
@@ -196,7 +196,13 @@
   <div class="section" id="nrf-connect-for-cloud-api">
 <span id="aws-nrf-connect-for-cloud-api"></span><h1>nRF Connect for Cloud API<a class="headerlink" href="#nrf-connect-for-cloud-api" title="Permalink to this headline">¶</a></h1>
 <p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for the application using the <a class="reference external" href="https://api.nrfcloud.com/v1/#operation/GetSingleCellLocation">nRF Connect for Cloud’s geolocation API</a>  in your deployment.</p>
-<p>To use nRF Connect for Cloud’s geolocation API, configure your API key and enable the API using the CLI and redeploy the stack using the following commands:</p>
+<p>To use the API, complete the following steps:</p>
+<ol class="arabic simple">
+<li><p>Configure your API key.</p></li>
+<li><p>Enable the API using the CLI.</p></li>
+<li><p>Redeploy the stack.</p></li>
+</ol>
+<p>Use the following commands:</p>
 <pre class="highlight literal-block">node cli configure-api cellGeoLocation nrfconnectforcloud apiKey <em>API key</em>
 node cli configure-api context stack nrfconnectforcloud 1
 npx cdk deploy '*'</pre>

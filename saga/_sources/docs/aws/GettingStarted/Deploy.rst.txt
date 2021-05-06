@@ -24,11 +24,11 @@ The following commands set up the necessary resources in your AWS account:
     # See https://github.com/bifravst/aws/issues/455
     node dist/cdk/helper/addFakeRoute.js
 
-The *initial* deployment will take a few minutes because it sets up a `CloudFront <https://aws.amazon.com/cloudfront/>`_ distribution for the web application.
+The initial deployment will take a few minutes because it sets up a `CloudFront <https://aws.amazon.com/cloudfront/>`_ distribution for the web application.
 
 .. note::
 
-    The AWS CDK will provide a list of permission changes to your account, and you need to review them carefully whenever you make changes to the setup.
-    However, this step is not mandatory, and it is safe to skip since the deployment happens in a blank account.
+    The AWS CDK provides a list of permission changes to your account, and you need to review them carefully whenever you make changes to the setup.
+    However, this step is not mandatory and you can safely skip it, because you are deploying in a blank account.
     To skip this step in future, run ``npx cdk deploy '*' --require-approval never``.
-    This must be done only in standalone accounts for development purposes.
+    Do this only in standalone accounts for development purposes.

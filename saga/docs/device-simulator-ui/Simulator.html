@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Connect using the simulator &mdash; nRF Asset Tracker 5b6b1d947532649bac16201a2444f34a2c5473de documentation</title>
+  <title>Connect using the simulator &mdash; nRF Asset Tracker 712495510a191f91722a94ec6f23725da1054852 documentation</title>
   
 
   
@@ -177,42 +177,46 @@
 <h1>Connect using the simulator<a class="headerlink" href="#connect-using-the-simulator" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#running-the-device-simulator" id="id2">Running the device simulator</a></p></li>
-<li><p><a class="reference internal" href="#using-the-device-simulator-ui" id="id3">Using the device simulator UI</a></p>
+<li><p><a class="reference internal" href="#creating-certificates-for-the-device" id="id2">Creating certificates for the device</a></p></li>
+<li><p><a class="reference internal" href="#running-the-device-simulator" id="id3">Running the device simulator</a></p></li>
+<li><p><a class="reference internal" href="#using-the-device-simulator-ui" id="id4">Using the device simulator UI</a></p>
 <ul>
-<li><p><a class="reference internal" href="#clone-the-project-and-install-dependencies" id="id4">Clone the project and install dependencies</a></p></li>
-<li><p><a class="reference internal" href="#run-the-device-simulator-ui" id="id5">Run the device simulator UI</a></p></li>
+<li><p><a class="reference internal" href="#clone-the-project-and-install-dependencies" id="id5">Clone the project and install dependencies</a></p></li>
+<li><p><a class="reference internal" href="#run-the-device-simulator-ui" id="id6">Run the device simulator UI</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<p>The CLI provides a software implementation of Cat Tracker for <em>testing purposes</em>.
+<p>The CLI provides a software implementation of Cat Tracker for testing purposes.
 It allows the verification of the cloud configuration.
 This feature is also used for testing the nRF Asset Tracker using Continuous Integration.</p>
 <p>To connect to a device and control the device using the simulator, complete the following steps:</p>
 <ul class="simple">
-<li><p>Create certificates for the device</p></li>
-<li><p>Run the device simulator</p></li>
-<li><p>Use the device simulator UI to control the simulated device</p></li>
+<li><p>Create certificates for the device.</p></li>
+<li><p>Run the device simulator.</p></li>
+<li><p>Use the device simulator UI to control the simulated device.</p></li>
 </ul>
-<div class="section" id="running-the-device-simulator">
-<h2><a class="toc-backref" href="#id2">Running the device simulator</a><a class="headerlink" href="#running-the-device-simulator" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-certificates-for-the-device">
+<h2><a class="toc-backref" href="#id2">Creating certificates for the device</a><a class="headerlink" href="#creating-certificates-for-the-device" title="Permalink to this headline">¶</a></h2>
 <p>To create certificates for a simulated device, run the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli create-device-cert
 </pre></div>
 </div>
-<p>As the next step, you can run a simulated device using the generated certificate by running the following command:</p>
+</div>
+<div class="section" id="running-the-device-simulator">
+<h2><a class="toc-backref" href="#id3">Running the device simulator</a><a class="headerlink" href="#running-the-device-simulator" title="Permalink to this headline">¶</a></h2>
+<p>To run a simulated device using the generated certificate, run the following command:</p>
 <p>The device simulator will print an endpoint to use with the device simulator UI.</p>
 </div>
 <div class="section" id="using-the-device-simulator-ui">
-<h2><a class="toc-backref" href="#id3">Using the device simulator UI</a><a class="headerlink" href="#using-the-device-simulator-ui" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">Using the device simulator UI</a><a class="headerlink" href="#using-the-device-simulator-ui" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js">device-ui</a> project provides a browser-based UI to control the simulated device.</p>
 <div class="figure align-default" id="id1">
 <img alt="Device simulator UI" src="../../_images/device-simulator.png" />
 <p class="caption"><span class="caption-text">Device simulator UI</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="clone-the-project-and-install-dependencies">
-<h3><a class="toc-backref" href="#id4">Clone the project and install dependencies</a><a class="headerlink" href="#clone-the-project-and-install-dependencies" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id5">Clone the project and install dependencies</a><a class="headerlink" href="#clone-the-project-and-install-dependencies" title="Permalink to this headline">¶</a></h3>
 <p>Clone the latest version of the device-ui project and install the dependencies:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js device-ui
 <span class="nb">cd</span> device-ui
@@ -221,8 +225,8 @@ npm ci
 </div>
 </div>
 <div class="section" id="run-the-device-simulator-ui">
-<h3><a class="toc-backref" href="#id5">Run the device simulator UI</a><a class="headerlink" href="#run-the-device-simulator-ui" title="Permalink to this headline">¶</a></h3>
-<p>You can run the device simulator UI by using the following command:</p>
+<h3><a class="toc-backref" href="#id6">Run the device simulator UI</a><a class="headerlink" href="#run-the-device-simulator-ui" title="Permalink to this headline">¶</a></h3>
+<p>To run the device simulator UI, use the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm run
 </pre></div>
 </div>

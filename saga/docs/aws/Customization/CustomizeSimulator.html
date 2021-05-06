@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Customize the device simulator UI &mdash; nRF Asset Tracker 5b6b1d947532649bac16201a2444f34a2c5473de documentation</title>
+  <title>Customize the device simulator UI &mdash; nRF Asset Tracker 712495510a191f91722a94ec6f23725da1054852 documentation</title>
   
 
   
@@ -204,12 +204,12 @@
 <span id="aws-customization-customize-device-simulator-ui"></span><h1>Customize the device simulator UI<a class="headerlink" href="#customize-the-device-simulator-ui" title="Permalink to this headline">¶</a></h1>
 <p>You can now implement the logic to generate the heart rate monitoring data by modifying the device simulator UI.
 Once this functionality is implemented, the simulator UI will allow to send heartrate data to the cloud using a <a class="reference internal" href="../../devices/cloud-protocol/SensorDataAndConfiguration.html#batch-messages"><span class="std std-ref">batch message</span></a>.
-Following is an example for customization of the device simulator UI:</p>
+Following is an example for customizing the device simulator UI:</p>
 <ul class="simple">
-<li><p>Add a slider for the heart rate reading between 140 and 220 (which are considered as normal heart rates for a cat)</p></li>
-<li><p>Use the <cite>queueUpdate</cite> method to send the readings as a batch message</p></li>
+<li><p>Add a slider for the heart rate reading between 140 and 220 (which are considered as normal heart rates for a cat).</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">queueUpdate</span></code> method to send the readings as a batch message.</p></li>
 </ul>
-<p>The code for the necessary changes can be viewed in the <a class="reference external" href="https://github.com/acme-cat-tracker/simulator-ui/compare/add-heartrate-monitor-data">simulator-ui repository</a>.</p>
+<p>You can view the code for the necessary changes in the <a class="reference external" href="https://github.com/acme-cat-tracker/simulator-ui/compare/add-heartrate-monitor-data">simulator-ui repository</a>.</p>
 <p>The following image shows the customization done on the device simulator UI:</p>
 <div class="figure align-default" id="id1">
 <img alt="Creating batched heart rate messages using the device simulator UI" src="../../../_images/batching-messages.png" />

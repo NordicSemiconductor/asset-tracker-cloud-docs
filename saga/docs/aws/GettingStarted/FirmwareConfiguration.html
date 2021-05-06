@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Configure the firmware &mdash; nRF Asset Tracker 5b6b1d947532649bac16201a2444f34a2c5473de documentation</title>
+  <title>Configure the firmware &mdash; nRF Asset Tracker 712495510a191f91722a94ec6f23725da1054852 documentation</title>
   
 
   
@@ -208,21 +208,20 @@
             
   <div class="section" id="configure-the-firmware">
 <span id="firmware-configuration"></span><h1>Configure the firmware<a class="headerlink" href="#configure-the-firmware" title="Permalink to this headline">¶</a></h1>
-<p>To configure the <a class="reference internal" href="../../firmware/Index.html#firmware-index"><span class="std std-ref">firmware</span></a>, complete the following <em>mandatory</em> steps:</p>
-<ol class="arabic simple">
-<li><p>Run the following command to print the MQTT endpoint to which your devices will connect:</p></li>
-</ol>
+<p>To configure the <a class="reference internal" href="../../firmware/Index.html#firmware-index"><span class="std std-ref">firmware</span></a>, complete the following mandatory steps:</p>
+<ol class="arabic">
+<li><p>Run the following command to print the MQTT endpoint to which your devices will connect:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli info -o mqttEndpoint
 </pre></div>
 </div>
-<ol class="arabic simple">
+</li>
 <li><p>Use this MQTT endpoint value as the value for the <code class="docutils literal notranslate"><span class="pre">CONFIG_AWS_IOT_BROKER_HOST_NAME</span></code> configuration variable.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">42</span></code> as the value for <code class="docutils literal notranslate"><span class="pre">CONFIG_AWS_IOT_SEC_TAG</span></code>.</p></li>
 </ol>
 <p>After completing the configuration, compile the firmware either <a class="reference internal" href="../../firmware/BuildingUsingLocalSystem.html#firmware-building"><span class="std std-ref">using your own development environment</span></a> or <a class="reference internal" href="../../firmware/BuildingUsingDocker.html#firmware-building-docker"><span class="std std-ref">using Docker</span></a> and then <a class="reference internal" href="DeviceCredentials.html#aws-device-credentials"><span class="std std-ref">create the device credentials</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>See the documentation on <a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html">nRF9160: Asset Tracker v2 application</a> for all the available configuration options.</p>
+<p>See the documentation on <a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html">nRF9160: Asset Tracker v2 application</a> for all available configuration options.</p>
 </div>
 </div>
 

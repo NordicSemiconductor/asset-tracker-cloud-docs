@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Customize the Cat Tracker web application &mdash; nRF Asset Tracker 5b6b1d947532649bac16201a2444f34a2c5473de documentation</title>
+  <title>Customize the Cat Tracker web application &mdash; nRF Asset Tracker 712495510a191f91722a94ec6f23725da1054852 documentation</title>
   
 
   
@@ -206,13 +206,13 @@
 The heart rate readings must be visualized in a new chart on the <a class="reference internal" href="../../app/Index.html#index-cat-tracker-web-app"><span class="std std-ref">Cat Tracker web application</span></a>.</p>
 <p>To customize the web application, complete the following steps:</p>
 <ol class="arabic">
-<li><p>Navigate to the web application directory created, while <a class="reference internal" href="../GettingStarted/Webapp.html#aws-getting-started-app"><span class="std std-ref">deploying the cat tracker web application to AWS</span></a>:</p>
+<li><p>Navigate to the web application directory created while <a class="reference internal" href="../GettingStarted/Webapp.html#aws-getting-started-app"><span class="std std-ref">deploying the cat tracker web application to AWS</span></a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/nrf-asset-tracker/cat-tracker-web-app
 <span class="c1"># ~/nrf-asset-tracker/cat-tracker-web-app</span>
 </pre></div>
 </div>
 </li>
-<li><p>Run the development server using the following command:</p>
+<li><p>Run the development server:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm start
 </pre></div>
 </div>
@@ -238,17 +238,17 @@ WHERE deviceId='<em>catId</em>'
 AND measure_name = 'heartrate'
 ORDER BY time DESC
 LIMIT 100</pre>
-<p>To know more about the syntax, see <a class="reference external" href="https://docs.aws.amazon.com/timestream/latest/developerguide/reference.html">Timestream Query language</a>.</p>
+<p>To learn more about the syntax, see <a class="reference external" href="https://docs.aws.amazon.com/timestream/latest/developerguide/reference.html">Timestream Query language</a>.</p>
 </li>
 <li><p>After defining the query, add a new chart to the Cat Tracker web application that displays the data in a line chart.</p></li>
 </ol>
-<p>The code for the necessary changes can be viewed in the <a class="reference external" href="https://github.com/acme-cat-tracker/web-app/compare/add-heartrate-monitor-data">simulator-ui repository</a>.</p>
+<p>You can view the code for the necessary changes in the <a class="reference external" href="https://github.com/acme-cat-tracker/web-app/compare/add-heartrate-monitor-data">simulator-ui repository</a>.</p>
 <div class="figure align-default" id="id1">
 <img alt="Cat Tracker web application showing the heart rate readings" src="../../../_images/web-app-with-heart-rate-readings.png" />
 <p class="caption"><span class="caption-text">Cat Tracker web application showing the heart rate readings</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>At this point, you have successfully completed the customization of the Cat Tracker web application.</p>
-<p>If you want to save the changes to the  Cat Tracker web application in your own repository, maintain a fork and add the source repository as <code class="docutils literal notranslate"><span class="pre">upstream</span></code>:</p>
+<p>At this point, you have successfully customized the Cat Tracker web application.</p>
+<p>If you want to save your changes to the Cat Tracker web application in your own repository, maintain a fork and add the source repository as <code class="docutils literal notranslate"><span class="pre">upstream</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote add upstream https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js
 </pre></div>
 </div>
