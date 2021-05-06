@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Troubleshooting &mdash; nRF Asset Tracker v13.7.0 documentation</title>
+  <title>Troubleshooting &mdash; nRF Asset Tracker v13.8.0 documentation</title>
   
 
   
@@ -186,50 +186,50 @@
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#connection" id="id1">Connection</a></p>
+<li><p><a class="reference internal" href="#connection" id="id2">Connection</a></p>
 <ul>
-<li><p><a class="reference internal" href="#error-code-22" id="id2">Error code <code class="docutils literal notranslate"><span class="pre">-22</span></code></a></p></li>
-<li><p><a class="reference internal" href="#cellular-connection" id="id3">Cellular connection</a></p></li>
+<li><p><a class="reference internal" href="#error-code-22" id="id3">Error code <code class="docutils literal notranslate"><span class="pre">-22</span></code></a></p></li>
+<li><p><a class="reference internal" href="#cellular-connection" id="id4">Cellular connection</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#gps" id="id4">GPS</a></p>
+<li><p><a class="reference internal" href="#gps" id="id5">GPS</a></p>
 <ul>
-<li><p><a class="reference internal" href="#error-gps-evt-operation-blocked" id="id5">Error: <code class="docutils literal notranslate"><span class="pre">GPS_EVT_OPERATION_BLOCKED</span></code></a></p></li>
-<li><p><a class="reference internal" href="#gps-timeout-configuration" id="id6">GPS Timeout configuration</a></p></li>
+<li><p><a class="reference internal" href="#error-gps-evt-operation-blocked" id="id6">Error: <code class="docutils literal notranslate"><span class="pre">GPS_EVT_OPERATION_BLOCKED</span></code></a></p></li>
+<li><p><a class="reference internal" href="#gps-timeout-configuration" id="id7">GPS Timeout configuration</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <p>Following are some of the common errors and the related information.</p>
 <div class="section" id="connection">
-<h2><a class="toc-backref" href="#id1">Connection</a><a class="headerlink" href="#connection" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Connection</a><a class="headerlink" href="#connection" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="error-code-22">
-<h3><a class="toc-backref" href="#id2">Error code <code class="docutils literal notranslate"><span class="pre">-22</span></code></a><a class="headerlink" href="#error-code-22" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id3">Error code <code class="docutils literal notranslate"><span class="pre">-22</span></code></a><a class="headerlink" href="#error-code-22" title="Permalink to this headline">¶</a></h3>
 <p>Verify the client ID, the endpoint, and the certificates.</p>
 </div>
 <div class="section" id="cellular-connection">
-<h3><a class="toc-backref" href="#id3">Cellular connection</a><a class="headerlink" href="#cellular-connection" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id4">Cellular connection</a><a class="headerlink" href="#cellular-connection" title="Permalink to this headline">¶</a></h3>
 <p>Since 5G support is currently being deployed by mobile phone network operators, there is a high chance of connection issues in your location.</p>
 <p>It is generally recommended to try multiple SIM cards from different vendors in case you experience connectivity issues.</p>
 </div>
 </div>
 <div class="section" id="gps">
-<h2><a class="toc-backref" href="#id4">GPS</a><a class="headerlink" href="#gps" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">GPS</a><a class="headerlink" href="#gps" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="error-gps-evt-operation-blocked">
-<h3><a class="toc-backref" href="#id5">Error: <code class="docutils literal notranslate"><span class="pre">GPS_EVT_OPERATION_BLOCKED</span></code></a><a class="headerlink" href="#error-gps-evt-operation-blocked" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">Error: <code class="docutils literal notranslate"><span class="pre">GPS_EVT_OPERATION_BLOCKED</span></code></a><a class="headerlink" href="#error-gps-evt-operation-blocked" title="Permalink to this headline">¶</a></h3>
 <p>This error occurs if the network provider does not grant Power Saving Mode (PSM) and the GPS takes a long time to acquire a fix.
 For more details, see the <a class="reference external" href="https://devzone.nordicsemi.com/f/nordic-q-a/51962/gps-and-lte-issue/210272#210272">DevZone post related to the GPS and LTE issue</a>.</p>
 <p>A solution is to switch to a SIM card that grants PSM.</p>
 <p>Another solution is to use assisted GPS (A-GPS) to speed up the time to fix.</p>
 <p>One form of A-GPS is using SUPL and it can be optionally enabled in the firmware using the <a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/include/supl_os_client.html">SUPL client</a>.
-The <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws/pull/9">nRF Asset Tracker firmware project</a> optionally supports building the firmware images with SUPL enabled.</p>
+The nRF Asset Tracker firmware projects <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws/pull/9">for AWS</a> and <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure#supl-client">for Azure</a> optionally support building the firmware images with SUPL enabled.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Note that the A-GPS data is downloaded after every boot of the device and the data is around 30 KB in size.</p>
 </div>
 </div>
 <div class="section" id="gps-timeout-configuration">
-<h3><a class="toc-backref" href="#id6">GPS Timeout configuration</a><a class="headerlink" href="#gps-timeout-configuration" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id7">GPS Timeout configuration</a><a class="headerlink" href="#gps-timeout-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Since the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/9">firmware currently does not support A-GPS</a>, depending on the device location, it can take a long time to acquire a GPS fix.
 Therefore, a timeout of at least 1000 seconds must be chosen in the web application.</p>
 </div>

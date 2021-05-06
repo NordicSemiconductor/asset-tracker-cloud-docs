@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Firmware &mdash; nRF Asset Tracker v13.7.0 documentation</title>
+  <title>Firmware &mdash; nRF Asset Tracker v13.8.0 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Building the project using your local system" href="BuildingUsingLocalSystem.html" />
+    <link rel="next" title="Firmware for the AWS cloud components" href="aws/Index.html" />
     <link rel="prev" title="Cell geolocation" href="../app/CellGeolocation.html" /> 
 </head>
 
@@ -97,10 +97,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Azure cloud components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Firmware</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="BuildingUsingLocalSystem.html">Building the project using your local system</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BuildingUsingDocker.html">Building the project using Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BuildingUsingGitHub.html">Building the project using GitHub actions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../aws/FirmwareContinuousIntegration.html">Continuous integration of firmware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws/Index.html">Firmware for the AWS cloud components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="azure/Index.html">Firmware for the Azure cloud components</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
@@ -185,14 +183,23 @@
 <span id="firmware-index"></span><h1>Firmware<a class="headerlink" href="#firmware" title="Permalink to this headline">¶</a></h1>
 <p>The firmware of the <a class="reference internal" href="../project/Index.html#project"><span class="std std-ref">nRF Asset Tracker</span></a> is the <a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html">nRF9160: Asset Tracker v2</a>, which is a reference application developed using the <a class="reference external" href="https://github.com/nrfconnect/sdk-nrf">nRF Connect SDK</a>.</p>
 <p>It is compatible with the <a class="reference internal" href="../aws/Index.html#index-aws"><span class="std std-ref">nRF Asset Tracker for AWS</span></a> and the <a class="reference internal" href="../azure/Index.html#index-azure"><span class="std std-ref">nRF Asset Tracker for Azure</span></a>.</p>
-<p>The <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws">firmware GitHub repository</a> provides an example for using the application as an out-of-tree development copy, which optionally enables the SUPL client.</p>
+<p>The firmware GitHub repositories <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws">for AWS</a> and <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure">for Azure</a> provide an example for using the application as an out-of-tree development copy, which optionally enables the SUPL client.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Subpages:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="BuildingUsingLocalSystem.html">Building the project using your local system</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BuildingUsingDocker.html">Building the project using Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BuildingUsingGitHub.html">Building the project using GitHub actions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../aws/FirmwareContinuousIntegration.html">Continuous integration of firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aws/Index.html">Firmware for the AWS cloud components</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aws/BuildingUsingLocalSystem.html">Building the project using your local system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws/BuildingUsingDocker.html">Building the project using Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws/BuildingUsingGitHub.html">Building the project using GitHub actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../aws/FirmwareContinuousIntegration.html">Continuous integration of firmware</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="azure/Index.html">Firmware for the Azure cloud components</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="azure/BuildingUsingLocalSystem.html">Building the project using your local system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="azure/BuildingUsingDocker.html">Building the project using Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="azure/BuildingUsingGitHub.html">Building the project using GitHub actions</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -203,7 +210,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="BuildingUsingLocalSystem.html" class="btn btn-neutral float-right" title="Building the project using your local system" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="aws/Index.html" class="btn btn-neutral float-right" title="Firmware for the AWS cloud components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="../app/CellGeolocation.html" class="btn btn-neutral float-left" title="Cell geolocation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
