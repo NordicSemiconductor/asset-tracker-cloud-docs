@@ -35,6 +35,8 @@ jobs:
           if [[ "${{ matrix.audience }}" == "release" ]]; then
             cat index.rst | grep -v docs/azure > index-no-azure.rst
             mv index-no-azure.rst index.rst
+            cat docs/firmware/Index.rst | grep -v azure/ > docs/firmware/Index-no-azure.rst
+            mv docs/firmware/Index-no-azure.rst docs/firmware/Index.rst
           fi
           make html 2> $errlog
           if [[ -s "$errlog" ]]; then

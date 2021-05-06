@@ -1,4 +1,4 @@
-.. _firmware-building-docker:
+.. _firmware-aws-building-docker:
 
 Building the project using Docker
 #################################
@@ -8,13 +8,17 @@ Building the project using Docker
    :depth: 2
 
 Building using Docker is the simplest way to build the project on your local system.
-If you install `Docker <https://www.docker.com/>`_ , it will contain all the dependencies in the image, and prevents the need to install them separately in your system.
+If you install `Docker <https://www.docker.com/>`_, it will contain all the dependencies in the image, and prevents the need to install them separately in your system.
+
+.. note::
+
+    See `Building nRF Connect SDK applications with Docker <https://devzone.nordicsemi.com/nordic/nrf-connect-sdk-guides/b/getting-started/posts/build-ncs-application-firmware-images-using-docker>`_ for more information.
 
 The Docker image is not intended to be shared, but to simplify the local building of project.
 
-The Docker image is also used to automate the building of HEX files :ref:`using GitHub Actions <firmware-building-github-actions>`, which is used to :ref:`continuously deliver the firmware builds <guides-automate-hexfile-building>` in the `out-of-tree example repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws>`_.
+The Docker image is also used to automate the building of HEX files :ref:`using GitHub Actions <firmware-aws-building-github-actions>`, which is used to :ref:`continuously deliver the firmware builds <guides-automate-hexfile-building>` in the `out-of-tree example repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws>`_.
 
-To build the project using Docker, run the following commands:
+To build the the Docker image for this project, run the following commands:
 
 .. code-block:: bash
 
@@ -22,17 +26,12 @@ To build the project using Docker, run the following commands:
     cd nrf-asset-tracker-firmware-aws
     docker build -t asset-tracker-firmware-docker .
 
-Edit the value of ``CONFIG_AWS_IOT_BROKER_HOST_NAME`` in :file:`prj.conf` and provide your broker hostname.
-
-.. note::
-
-    See `Building nRF Connect SDK applications with Docker <https://devzone.nordicsemi.com/nordic/nrf-connect-sdk-guides/b/getting-started/posts/build-ncs-application-firmware-images-using-docker>`_ for more information.
+Then, follow the :ref:`configuration instructions for the firmware <aws-firmware-configuration>` and update the :file:`prj.conf`.
 
 Build the project
 *****************
 
 Build the project for your nRF9160-based device using the specified commands.
-
 
 Thingy:91 (PCA20035)
 ====================
