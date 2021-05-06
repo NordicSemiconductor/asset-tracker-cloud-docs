@@ -15,7 +15,7 @@ Overview
 Every commit to the `firmware repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws>`_ will trigger a CI run.
 The CI run results in the following actions:
 
-1. Creating a new device and credentials.
+1. Creating a new device and credentials on AWS IoT.
 #. Building a firmware that has the device ID hardcoded for the MQTT client ID.
 #. Creating an AWS IoT job with the firmware and the credentials, which is selected by the `Firmware CI runner <https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js>`_. See :ref:`firmware_ci_runner_setup`.
 #. Observing the firmware CI run until completion.
