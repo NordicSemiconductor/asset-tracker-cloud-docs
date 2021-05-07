@@ -15,7 +15,7 @@ Before building the project using your local system, complete the following step
 Prepare your system
 *******************
 
-Follow the `Getting Started Guide <http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html>`_ of the nRF Connect SDK to set up your system for building the project.
+Follow the `Getting started documentation <http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html>`_ of the nRF Connect SDK to set up your system for building the project.
 Follow the instructions on `Installing the nRF Connect SDK <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/gs_assistant.html>`_.
 
 Clone the project and install the dependencies
