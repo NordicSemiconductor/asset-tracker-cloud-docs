@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Server Name Indication &mdash; nRF Asset Tracker 7e63d0ace45893319070598ff2e5415b8523e34c documentation</title>
+  <title>Server Name Indication &mdash; nRF Asset Tracker 06ae33893cf7f6c9e01e7cec980c5d3d137803c5 documentation</title>
   
 
   
@@ -104,7 +104,7 @@
 <li class="toctree-l2"><a class="reference internal" href="UnwiredLabsAPI.html">Unwired Labs API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Authentication.html">Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">AWS IoT Shadow and topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">AWS IoT Device Shadow service and MQTT topics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LimitingShadowDocumentSize.html">Limiting the shadow document size</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HistoricalData.html">Storage of historical data</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Server Name Indication</a></li>
@@ -196,22 +196,22 @@
   <div class="section" id="server-name-indication">
 <span id="sni-readme"></span><h1>Server Name Indication<a class="headerlink" href="#server-name-indication" title="Permalink to this headline">¶</a></h1>
 <p>According to the <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html">Transport security in AWS IoT</a> documentation, the Server Name Indication (SNI) extension is required for TLS, both in the case of MQTT and HTTPS.</p>
-<p>However, the following facts must be noted:</p>
+<p>However, note the following facts:</p>
 <ul class="simple">
 <li><p>SNI is required when connecting using a certificate that is created using the IoT console or the <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificateWithoutCA.html">RegisterCertificateWithoutCA</a> API, which registers the certificate with <code class="docutils literal notranslate"><span class="pre">certificateMode</span></code> <code class="docutils literal notranslate"><span class="pre">SNI_ONLY</span></code>.</p>
 <ul>
-<li><p>The devices that are currently connected to AWS IoT through MQTT and not using SNI will not be affected and such devices will continue to work with AWS IoT.</p></li>
+<li><p>The devices that are currently connected to AWS IoT through MQTT and not using SNI, are not affected and such devices continue to work with AWS IoT.</p></li>
 </ul>
 </li>
 <li><p>SNI is not required when connecting to AWS IoT through MQTT, using a CA certificate.</p>
 <ul>
-<li><p>AWS IoT uses the certificates provided in the TLS connection of MQTT to route the request to the right account using the CA certificate and not to the endpoint.
-This also means that when using a wrong account endpoint to connect to AWS IoT with a certificate that does not belong to that account endpoint, the request will be routed to the correct account endpoint.</p></li>
+<li><p>AWS IoT uses the certificates provided in the TLS connection of MQTT to route the request to the right account (not to the endpoint) using the CA certificate.
+This also means that when using a wrong account endpoint to connect to AWS IoT with a certificate that does not belong to that account endpoint, the request is routed to the correct account endpoint.</p></li>
 </ul>
 </li>
 <li><p>HTTP is handled separately and differently from MQTT and it requires that the SNI bit is set.</p></li>
 <li><p>New features such as <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#multiple-account-cert">Multi-Account registration</a> and <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-configurable.html">Configurable endpoints</a>, require SNI bits in MQTT connection.
-The SNI bit is significant when using these features and it is used by AWS IoT to route the request properly.</p></li>
+The SNI bit is significant when using these features and AWS IoT uses it to route the request properly.</p></li>
 </ul>
 </div>
 

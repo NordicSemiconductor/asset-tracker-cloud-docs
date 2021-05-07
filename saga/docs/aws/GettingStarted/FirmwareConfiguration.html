@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Configure the firmware &mdash; nRF Asset Tracker 7e63d0ace45893319070598ff2e5415b8523e34c documentation</title>
+  <title>Configure the firmware &mdash; nRF Asset Tracker 06ae33893cf7f6c9e01e7cec980c5d3d137803c5 documentation</title>
   
 
   
@@ -115,7 +115,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../UnwiredLabsAPI.html">Unwired Labs API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Authentication.html">Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../IoTShadowAndTopics.html">AWS IoT Shadow and topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IoTShadowAndTopics.html">AWS IoT Device Shadow service and MQTT topics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../LimitingShadowDocumentSize.html">Limiting the shadow document size</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../HistoricalData.html">Storage of historical data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../SNI.html">Server Name Indication</a></li>
@@ -207,8 +207,8 @@
            <div itemprop="articleBody">
             
   <div class="section" id="configure-the-firmware">
-<span id="firmware-configuration"></span><h1>Configure the firmware<a class="headerlink" href="#configure-the-firmware" title="Permalink to this headline">¶</a></h1>
-<p>To configure the <a class="reference internal" href="../../firmware/Index.html#firmware-index"><span class="std std-ref">firmware</span></a>, complete the following mandatory steps:</p>
+<span id="aws-firmware-configuration"></span><h1>Configure the firmware<a class="headerlink" href="#configure-the-firmware" title="Permalink to this headline">¶</a></h1>
+<p>To configure the <a class="reference internal" href="../../firmware/aws/Index.html#firmware-aws-index"><span class="std std-ref">firmware</span></a>, complete the following mandatory steps:</p>
 <ol class="arabic">
 <li><p>Run the following command to print the MQTT endpoint to which your devices will connect:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli info -o mqttEndpoint
@@ -218,7 +218,7 @@
 <li><p>Use this MQTT endpoint value as the value for the <code class="docutils literal notranslate"><span class="pre">CONFIG_AWS_IOT_BROKER_HOST_NAME</span></code> configuration variable.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">42</span></code> as the value for <code class="docutils literal notranslate"><span class="pre">CONFIG_AWS_IOT_SEC_TAG</span></code>.</p></li>
 </ol>
-<p>After completing the configuration, compile the firmware either <a class="reference internal" href="../../firmware/BuildingUsingLocalSystem.html#firmware-building"><span class="std std-ref">using your own development environment</span></a> or <a class="reference internal" href="../../firmware/BuildingUsingDocker.html#firmware-building-docker"><span class="std std-ref">using Docker</span></a> and then <a class="reference internal" href="DeviceCredentials.html#aws-device-credentials"><span class="std std-ref">create the device credentials</span></a>.</p>
+<p>After completing the configuration, compile the firmware either <a class="reference internal" href="../../firmware/aws/BuildingUsingLocalSystem.html#firmware-aws-building"><span class="std std-ref">using your own development environment</span></a> or <a class="reference internal" href="../../firmware/aws/BuildingUsingDocker.html#firmware-aws-building-docker"><span class="std std-ref">using Docker</span></a> and then <a class="reference internal" href="DeviceCredentials.html#aws-device-credentials"><span class="std std-ref">create the device credentials</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>See the documentation on <a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html">nRF9160: Asset Tracker v2 application</a> for all available configuration options.</p>

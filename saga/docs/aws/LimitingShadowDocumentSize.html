@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Limiting the shadow document size &mdash; nRF Asset Tracker 7e63d0ace45893319070598ff2e5415b8523e34c documentation</title>
+  <title>Limiting the shadow document size &mdash; nRF Asset Tracker 06ae33893cf7f6c9e01e7cec980c5d3d137803c5 documentation</title>
   
 
   
@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Storage of historical data" href="HistoricalData.html" />
-    <link rel="prev" title="AWS IoT Shadow and topics" href="IoTShadowAndTopics.html" /> 
+    <link rel="prev" title="AWS IoT Device Shadow service and MQTT topics" href="IoTShadowAndTopics.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -104,7 +104,7 @@
 <li class="toctree-l2"><a class="reference internal" href="UnwiredLabsAPI.html">Unwired Labs API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Authentication.html">Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">AWS IoT Shadow and topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">AWS IoT Device Shadow service and MQTT topics</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Limiting the shadow document size</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HistoricalData.html">Storage of historical data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SNI.html">Server Name Indication</a></li>
@@ -202,11 +202,11 @@ See the following contents of the <code class="file docutils literal notranslate
 <p class="caption"><span class="caption-text">nRF9160 Modem firmware 1.2.0 release notes content</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The nRF Asset Tracker sets up an IoT rule, which only publishes the <code class="docutils literal notranslate"><span class="pre">cfg</span></code> section of the <a class="reference external" href="../devices/cloud-protocol/state.reported.aws.json">shadow document</a> to a separate topic <code class="docutils literal notranslate"><span class="pre">$aws/things/&lt;thing</span> <span class="pre">name&gt;/shadow/get/accepted/desired/cfg</span></code> when devices receive their state after publishing an empty message to <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#get-pub-sub-topic">$aws/things/&lt;thing name&gt;/shadow/get</a>.</p>
-<p>The published object might be empty as shown, if the device has no shadow or if the configuration is not set:</p>
+<p>The published object can be empty as shown, if the device has no shadow or if the configuration is not set:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
 </pre></div>
 </div>
-<p>Otherwise, the message will contain a top-level key <code class="docutils literal notranslate"><span class="pre">cfg</span></code> and the desired device configuration as shown below:</p>
+<p>Otherwise, the message contains a top-level key <code class="docutils literal notranslate"><span class="pre">cfg</span></code> and the desired device configuration as shown below:</p>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;cfg&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;gpst&quot;</span><span class="p">:</span> <span class="mi">720</span><span class="p">,</span>
@@ -229,7 +229,7 @@ See the following contents of the <code class="file docutils literal notranslate
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="HistoricalData.html" class="btn btn-neutral float-right" title="Storage of historical data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="IoTShadowAndTopics.html" class="btn btn-neutral float-left" title="AWS IoT Shadow and topics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="IoTShadowAndTopics.html" class="btn btn-neutral float-left" title="AWS IoT Device Shadow service and MQTT topics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

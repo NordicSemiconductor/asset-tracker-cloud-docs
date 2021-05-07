@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Building the project using Docker &mdash; nRF Asset Tracker 06ae33893cf7f6c9e01e7cec980c5d3d137803c5 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Building the project using GitHub Actions" href="BuildingUsingGitHub.html" />
+    <link rel="prev" title="Building the project using your local system" href="BuildingUsingLocalSystem.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> nRF Asset Tracker
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                saga
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../project/Index.html">Project overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aws/Index.html">AWS cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../azure/Index.html">Azure cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../app/Index.html">Cat Tracker web application</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Index.html">Firmware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../aws/Index.html">Firmware for the AWS cloud components</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Index.html">Firmware for the Azure cloud components</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="BuildingUsingLocalSystem.html">Building the project using your local system</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Building the project using Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildingUsingGitHub.html">Building the project using GitHub Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/Index.html">Guides</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing to the project</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">nRF Asset Tracker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../Index.html">Firmware</a> &raquo;</li>
+        
+          <li><a href="Index.html">Firmware for the Azure cloud components</a> &raquo;</li>
+        
+      <li>Building the project using Docker</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/firmware/azure/BuildingUsingDocker.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="building-the-project-using-docker">
+<span id="firmware-azure-building-docker"></span><h1>Building the project using Docker<a class="headerlink" href="#building-the-project-using-docker" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#build-the-project" id="id1">Build the project</a></p>
+<ul>
+<li><p><a class="reference internal" href="#thingy-91-pca20035" id="id2">Thingy:91 (PCA20035)</a></p></li>
+<li><p><a class="reference internal" href="#nrf9160-dk-pca10090" id="id3">nRF9160 DK (PCA10090)</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#location-of-the-hex-file" id="id4">Location of the HEX file</a></p></li>
+</ul>
+</div>
+<p>Building using Docker is the simplest way to build the project on your local system.
+If you install <a class="reference external" href="https://www.docker.com/">Docker</a>, it will contain all the dependencies in the image, and prevents the need to install them separately in your system.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See <a class="reference external" href="https://devzone.nordicsemi.com/nordic/nrf-connect-sdk-guides/b/getting-started/posts/build-ncs-application-firmware-images-using-docker">Building nRF Connect SDK applications with Docker</a> for more information.</p>
+</div>
+<p>The Docker image is not intended to be shared.</p>
+<p>The Docker image is also used to automate the building of HEX files <a class="reference internal" href="BuildingUsingGitHub.html#firmware-azure-building-github-actions"><span class="std std-ref">using GitHub Actions</span></a>, which is used to <a class="reference internal" href="../../guides/AutomateHEXFileBuilding.html#guides-automate-hexfile-building"><span class="std std-ref">continuously deliver the firmware builds</span></a> in the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure">out-of-tree example repository</a>.</p>
+<p>To build the Docker image for this project, run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure nrf-asset-tracker-firmware-azure
+<span class="nb">cd</span> nrf-asset-tracker-firmware-azure
+docker build -t asset-tracker-firmware-docker .
+</pre></div>
+</div>
+<p>Then, follow the <a class="reference internal" href="../../azure/GettingStarted/FirmwareConfiguration.html#azure-firmware-configuration"><span class="std std-ref">configuration instructions for the firmware</span></a> and update the <code class="file docutils literal notranslate"><span class="pre">prj.conf</span></code> file.</p>
+<div class="section" id="build-the-project">
+<h2><a class="toc-backref" href="#id1">Build the project</a><a class="headerlink" href="#build-the-project" title="Permalink to this headline">¶</a></h2>
+<p>Build the project for your nRF9160-based device using the specified commands.</p>
+<div class="section" id="thingy-91-pca20035">
+<h3><a class="toc-backref" href="#id2">Thingy:91 (PCA20035)</a><a class="headerlink" href="#thingy-91-pca20035" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c <span class="s1">&#39;cd /workdir/ncs/firmware; west build -p always -b thingy91_nrf9160ns -- -DOVERLAY_CONFIG=&quot;overlay-debug.conf;asset-tracker-cloud-firmware-azure.conf&quot;&#39;</span>
+ls -la build/zephyr/merged.hex
+</pre></div>
+</div>
+</div>
+<div class="section" id="nrf9160-dk-pca10090">
+<h3><a class="toc-backref" href="#id3">nRF9160 DK (PCA10090)</a><a class="headerlink" href="#nrf9160-dk-pca10090" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c <span class="s1">&#39;cd /workdir/ncs/firmware; west build -p always -b nrf9160dk_nrf9160ns -- -DOVERLAY_CONFIG=&quot;overlay-debug.conf;asset-tracker-cloud-firmware-azure.conf&quot;&#39;</span>
+ls -la build/zephyr/merged.hex
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="location-of-the-hex-file">
+<h2><a class="toc-backref" href="#id4">Location of the HEX file</a><a class="headerlink" href="#location-of-the-hex-file" title="Permalink to this headline">¶</a></h2>
+<p>The built HEX file will be located in <code class="file docutils literal notranslate"><span class="pre">build/zephyr/merged.hex</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="BuildingUsingGitHub.html" class="btn btn-neutral float-right" title="Building the project using GitHub Actions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="BuildingUsingLocalSystem.html" class="btn btn-neutral float-left" title="Building the project using your local system" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>AWS IoT Shadow and topics &mdash; nRF Asset Tracker 7e63d0ace45893319070598ff2e5415b8523e34c documentation</title>
+  <title>AWS IoT Device Shadow service and MQTT topics &mdash; nRF Asset Tracker 06ae33893cf7f6c9e01e7cec980c5d3d137803c5 documentation</title>
   
 
   
@@ -104,7 +104,7 @@
 <li class="toctree-l2"><a class="reference internal" href="UnwiredLabsAPI.html">Unwired Labs API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Authentication.html">Authentication</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">AWS IoT Shadow and topics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AWS IoT Device Shadow service and MQTT topics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LimitingShadowDocumentSize.html">Limiting the shadow document size</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HistoricalData.html">Storage of historical data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SNI.html">Server Name Indication</a></li>
@@ -172,7 +172,7 @@
         
           <li><a href="Index.html">AWS cloud components</a> &raquo;</li>
         
-      <li>AWS IoT Shadow and topics</li>
+      <li>AWS IoT Device Shadow service and MQTT topics</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -193,17 +193,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="aws-iot-shadow-and-topics">
-<span id="aws-iot-shadow-topics"></span><h1>AWS IoT Shadow and topics<a class="headerlink" href="#aws-iot-shadow-and-topics" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="aws-iot-device-shadow-service-and-mqtt-topics">
+<span id="aws-iot-shadow-topics"></span><h1>AWS IoT Device Shadow service and MQTT topics<a class="headerlink" href="#aws-iot-device-shadow-service-and-mqtt-topics" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#reported-state" id="id1">Reported state</a></p></li>
 <li><p><a class="reference internal" href="#desired-state" id="id2">Desired state</a></p></li>
 </ul>
 </div>
-<p>On AWS, the <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Shadow</a> is used to send device data and configuration through the JSON shadow documents.
+<p>On AWS, the <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service</a> is used to send device data and configuration through the JSON shadow documents.
 A shadow document describes the different states of the device through a state property.
-Following are some examples of device states:</p>
+Examples of device states are:</p>
 <ul class="simple">
 <li><p>Reported state</p></li>
 <li><p>Desired state</p></li>
