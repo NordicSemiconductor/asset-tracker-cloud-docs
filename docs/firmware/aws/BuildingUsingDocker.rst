@@ -14,7 +14,7 @@ If you install `Docker <https://www.docker.com/>`_, it will contain all the depe
 
     See `Building nRF Connect SDK applications with Docker <https://devzone.nordicsemi.com/nordic/nrf-connect-sdk-guides/b/getting-started/posts/build-ncs-application-firmware-images-using-docker>`_ for more information.
 
-The Docker image is not intended to be shared, but to simplify the local building of project.
+The Docker image is not intended to be shared.
 
 The Docker image is also used to automate the building of HEX files :ref:`using GitHub Actions <firmware-aws-building-github-actions>`, which is used to :ref:`continuously deliver the firmware builds <guides-automate-hexfile-building>` in the `out-of-tree example repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws>`_.
 
