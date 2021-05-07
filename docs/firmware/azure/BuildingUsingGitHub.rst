@@ -1,6 +1,6 @@
 .. _firmware-azure-building-github-actions:
 
-Building the project using GitHub actions
+Building the project using GitHub Actions
 #########################################
 
 You can use GitHub Actions (which is free for open-source projects) to build the application.
