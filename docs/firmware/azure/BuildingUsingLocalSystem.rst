@@ -40,7 +40,7 @@ Create a folder, for example, ``ncs`` and initialize the project by running the 
 Configure the project
 *********************
 
-Follow the :ref:`configuration instructions for the firmware <azure-firmware-configuration>` and update the :file:`prj.conf`.
+Follow the :ref:`configuration instructions for the firmware <azure-firmware-configuration>` and update the :file:`prj.conf` file.
 
 Build the project
 *****************

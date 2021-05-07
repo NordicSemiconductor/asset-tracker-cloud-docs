@@ -11,6 +11,7 @@ Before building the project using your local system, complete the following step
 
 1. Prepare your system
 #. Clone the project and install the dependencies
+#. Configure the project
 
 Prepare your system
 *******************
@@ -40,7 +41,7 @@ Create a folder, for example, ``ncs`` and initialize the project by running the 
 Configure the project
 *********************
 
-Follow the :ref:`configuration instructions for the firmware <aws-firmware-configuration>` and update the :file:`prj.conf`.
+Follow the :ref:`configuration instructions for the firmware <aws-firmware-configuration>` and update the :file:`prj.conf` file.
 
 Build the project
 *****************
