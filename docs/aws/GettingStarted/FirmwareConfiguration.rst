@@ -1,10 +1,9 @@
-.. _firmware-configuration:
+.. _aws-firmware-configuration:
 
 Configure the firmware
 ######################
 
-To configure the :ref:`firmware <firmware-index>`, complete the following mandatory steps:
-
+To configure the :ref:`firmware <firmware-aws-index>`, complete the following mandatory steps:
 
 1. Run the following command to print the MQTT endpoint to which your devices will connect:
 
@@ -16,8 +15,7 @@ To configure the :ref:`firmware <firmware-index>`, complete the following mandat
 
 #. Use ``42`` as the value for ``CONFIG_AWS_IOT_SEC_TAG``.
 
-
-After completing the configuration, compile the firmware either :ref:`using your own development environment <firmware-building>` or :ref:`using Docker <firmware-building-docker>` and then :ref:`create the device credentials <aws-device-credentials>`.
+After completing the configuration, compile the firmware either :ref:`using your own development environment <firmware-aws-building>` or :ref:`using Docker <firmware-aws-building-docker>` and then :ref:`create the device credentials <aws-device-credentials>`.
 
 .. note::
 
