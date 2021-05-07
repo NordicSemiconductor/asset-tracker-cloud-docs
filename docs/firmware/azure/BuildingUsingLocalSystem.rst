@@ -11,6 +11,7 @@ Before building the project using your local system, complete the following step
 
 1. Prepare your system
 #. Clone the project and install the dependencies
+#. Configure the project
 
 Prepare your system
 *******************
