@@ -18,7 +18,7 @@ The Docker image is not intended to be shared.
 
 The Docker image is also used to automate the building of HEX files :ref:`using GitHub Actions <firmware-azure-building-github-actions>`, which is used to :ref:`continuously deliver the firmware builds <guides-automate-hexfile-building>` in the `out-of-tree example repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure>`_.
 
-To build the the Docker image for this project, run the following commands:
+To build the Docker image for this project, run the following commands:
 
 .. code-block:: bash
 
