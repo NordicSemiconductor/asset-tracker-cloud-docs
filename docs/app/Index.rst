@@ -9,6 +9,31 @@ The `source code for the web application <https://github.com/NordicSemiconductor
 
 To learn more about customizing the Cat Tracker web application, see the `Getting started guide on Create React App <https://create-react-app.dev/docs/getting-started/>`_.
 
+The web application offers the following features:
+
+* Registering the user
+
+  * Includes password recovery
+
+* Listing of asset trackers
+* Viewing of asset trackers
+  
+  * Current and historical device data
+    
+    * GPS location
+    * Battery voltage
+    * Accelerometer
+  
+  * Configuring the asset tracker
+    
+    * Update configuration
+    * Sensor threshold
+
+* Managing the asset trackers
+  
+  * Deleting the asset tracker
+  * Upgrading the firmware
+
 .. toctree::
    :titlesonly:
    :caption: Subpages:

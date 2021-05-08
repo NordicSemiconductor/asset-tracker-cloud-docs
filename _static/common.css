@@ -115,3 +115,9 @@ h6 {
 .rst-content td .line-block {
   margin-bottom: 0px;
 }
+
+svg {
+  width: 100%;
+  height: auto;
+  max-height: 95vh;
+}

@@ -6,13 +6,51 @@ on:
       - saga
       - "v*"
 
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 jobs:
+  docker:
+    name: Prepare Docker image
+    runs-on: ubuntu-latest
+    outputs:
+      docker_image: ${{ steps.docker-image-tag.outputs.docker_image }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Login to GHCR
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CR_PAT }}
+
+      - name: Determine Docker image name and tag
+        id: docker-image-tag
+        run: |
+          DOCKER_REPO_NAME=`echo ${GITHUB_REPOSITORY} | tr '[:upper:]' '[:lower:]'`
+          DOCKER_CHECKSUM=`cat Dockerfile scripts/dot2svg.sh | sha256sum | awk '{ print $1 }' | tr -d '\n'`
+          DOCKER_IMAGE=ghcr.io/${DOCKER_REPO_NAME}/graphviz:${DOCKER_CHECKSUM}
+          echo "::set-output name=docker_image::${DOCKER_IMAGE}"
+          echo "DOCKER_IMAGE=${DOCKER_IMAGE}" >> $GITHUB_ENV
+
+      - name: Check if Docker image exists
+        id: check-docker-image
+        continue-on-error: true
+        env:
+          DOCKER_CLI_EXPERIMENTAL: enabled
+        run: docker manifest inspect ${{ env.DOCKER_IMAGE }}
+
+      - name: Build Docker image
+        if: steps.check-docker-image.outcome == 'failure'
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          tags: ${{ env.DOCKER_IMAGE }}
+          push: true
+
   build:
     name: "Build the documentation"
     runs-on: ubuntu-latest
+
+    needs: [docker]
 
     strategy:
       matrix:
@@ -24,29 +62,31 @@ jobs:
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade --user pip setuptools
-          python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
+          python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme
+
+      - name: Login to GHCR
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CR_PAT }}
+
+      - name: Pull Docker image
+        run: |
+          docker pull ${{ needs.docker.outputs.docker_image }}
+          echo "DOCKER_IMAGE=${{ needs.docker.outputs.docker_image }}" >> $GITHUB_ENV
 
       - name: Build docs
         run: |
           export PATH=$PATH:/home/runner/.local/bin
-          errlog=$(mktemp)
           export AUDIENCE=${{ matrix.audience }}
           # Remove Azure from release builds
           if [[ "${{ matrix.audience }}" == "release" ]]; then
             rm -r docs/azure
             cat index.rst | grep -v docs/azure > index-no-azure.rst
             mv index-no-azure.rst index.rst
-            rm -r docs/firmware/azure
-            cat docs/firmware/Index.rst | grep -v azure/ > docs/firmware/Index-no-azure.rst
-            mv docs/firmware/Index-no-azure.rst docs/firmware/Index.rst
           fi
-          make html 2> $errlog
-          if [[ -s "$errlog" ]]; then
-            cat $errlog
-            exit 1
-          else
-              echo "OK"
-          fi
+          make html
 
       - uses: actions/upload-artifact@v2
         with:
@@ -119,7 +159,19 @@ jobs:
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade --user pip setuptools
-          python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
+          python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme
+
+      - name: Login to GHCR
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CR_PAT }}
+
+      - name: Pull Docker image
+        run: |
+          docker pull ${{ needs.docker.outputs.docker_image }}
+          echo "DOCKER_IMAGE=${{ needs.docker.outputs.docker_image }}" >> $GITHUB_ENV
 
       - name: Build documentation
         if:
@@ -158,7 +210,7 @@ jobs:
         if: env.HAS_CHANGES == '1'
         run: |
           cd asset-tracker-docs
-          echo "machine github.com login accesskey password ${GITHUB_TOKEN}" > ~/.netrc
+          echo "machine github.com login accesskey password ${{ secrets.GITHUB_TOKEN }}" > ~/.netrc
           git config --global user.email "actions@example.com"
           git config --global user.name "GitHub Actions"
           touch .nojekyll

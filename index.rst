@@ -33,3 +33,7 @@ Acknowledgements
 *Amazon Web Services*, the AWS logo are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries. 
 *Google* and the Google logo are registered trademarks of Google LLC. 
 *Microsoft* and *Azure* are registered trademarks of Microsoft Corporation in the United States and/or other countries.
+*Satellite* by Casey Fluster from the Noun Project.
+*Cell tower* by Rifai from the Noun Project.
+*Mobile Phone* by Davo Sime from the Noun Project.
+*Unwired Labs*, the Unwired Labs logo are trademarks of Unwired Labs (India) Pvt. Ltd.
