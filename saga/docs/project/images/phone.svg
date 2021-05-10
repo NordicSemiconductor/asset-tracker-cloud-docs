@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   data-name="Layer 1"
+   viewBox="0 0 50 85.820892"
+   x="0px"
+   y="0px"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="phone.svg"
+   width="50"
+   height="85.820892"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
+  <metadata
+     id="metadata18">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>mobile_phone</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1171"
+     id="namedview14"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="5.864"
+     inkscape:cx="26.8"
+     inkscape:cy="58.5"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <title
+     id="title2">mobile_phone</title>
+  <path
+     d="M 46.268657,0 H 3.731343 A 3.7313433,3.7313433 0 0 0 0,3.7313433 V 82.089552 a 3.7313433,3.7313433 0 0 0 3.731343,3.731344 H 46.268657 A 3.7313433,3.7313433 0 0 0 50,82.089552 V 3.7313433 A 3.7313433,3.7313433 0 0 0 46.268657,0 Z m 1.865671,82.089552 a 1.8656716,1.8656716 0 0 1 -1.865671,1.865672 H 3.731343 A 1.8656716,1.8656716 0 0 1 1.865672,82.089552 V 71.828358 h 46.268656 z m 0,-12.126865 H 1.865672 V 3.7313433 A 1.8656716,1.8656716 0 0 1 3.731343,1.8656716 h 42.537314 a 1.8656716,1.8656716 0 0 1 1.865671,1.8656717 z"
+     id="path4"
+     style="stroke-width:0.932836" />
+  <path
+     d="M 25,82.089552 A 4.2164179,4.2164179 0 1 0 20.783582,77.873134 4.2164179,4.2164179 0 0 0 25,82.089552 Z m 0,-6.93097 A 2.7238806,2.7238806 0 1 1 22.276119,77.882463 2.7238806,2.7238806 0 0 1 25,75.16791 Z"
+     id="path6"
+     style="stroke-width:0.932836" />
+</svg>
