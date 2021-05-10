@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Transport and Data Protocol &mdash; nRF Asset Tracker 2b59d7c7a686d29c0e9ec4460d9523bbcb664725 documentation</title>
+  <title>Transport and data protocol &mdash; nRF Asset Tracker 886c658ce7bd95cd00387bbf23760f647f49d2f8 documentation</title>
   
 
   
@@ -43,7 +43,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Device data and configuration" href="SensorDataAndConfiguration.html" />
-    <link rel="prev" title="Device-to-Cloud Protocol" href="Index.html" /> 
+    <link rel="prev" title="Device-to-cloud communication" href="Index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -103,8 +103,8 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../Index.html">Connect using a real device</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../FlashingCertificate/Index.html">Provisioning the certificate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../TroubleShooting.html">Troubleshooting</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="Index.html">Device-to-Cloud Protocol</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Transport and Data Protocol</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Index.html">Device-to-cloud communication</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Transport and data protocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="SensorDataAndConfiguration.html">Device data and configuration</a></li>
 </ul>
 </li>
@@ -168,9 +168,9 @@
         
           <li><a href="../Index.html">Connect using a real device</a> &raquo;</li>
         
-          <li><a href="Index.html">Device-to-Cloud Protocol</a> &raquo;</li>
+          <li><a href="Index.html">Device-to-cloud communication</a> &raquo;</li>
         
-      <li>Transport and Data Protocol</li>
+      <li>Transport and data protocol</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -192,14 +192,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="transport-and-data-protocol">
-<span id="transport-data-protocol"></span><h1>Transport and Data Protocol<a class="headerlink" href="#transport-and-data-protocol" title="Permalink to this headline">¶</a></h1>
+<span id="transport-data-protocol"></span><h1>Transport and data protocol<a class="headerlink" href="#transport-and-data-protocol" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#lte-m-for-the-cellular-connection" id="id1">LTE-M for the cellular connection</a></p></li>
 <li><p><a class="reference internal" href="#mqtt-as-the-transport-protocol" id="id2">MQTT as the transport protocol</a></p></li>
 <li><p><a class="reference internal" href="#json-as-the-data-format" id="id3">JSON as the data format</a></p>
 <ul>
-<li><p><a class="reference internal" href="#possible-optimizations" id="id4">Possible Optimizations</a></p></li>
+<li><p><a class="reference internal" href="#possible-optimizations" id="id4">Possible optimizations</a></p></li>
 </ul>
 </li>
 </ul>
@@ -209,7 +209,7 @@
 <h2><a class="toc-backref" href="#id1">LTE-M for the cellular connection</a><a class="headerlink" href="#lte-m-for-the-cellular-connection" title="Permalink to this headline">¶</a></h2>
 <p>The firmware is configured to operate in LTE-M mode to connect to the cellular network.
 LTE-M provides global roaming capabilities, which is a critical feature for an asset tracker.
-The firmware supports NB-IoT also.</p>
+The firmware supports also NB-IoT.</p>
 </div>
 <div class="section" id="mqtt-as-the-transport-protocol">
 <h2><a class="toc-backref" href="#id2">MQTT as the transport protocol</a><a class="headerlink" href="#mqtt-as-the-transport-protocol" title="Permalink to this headline">¶</a></h2>
@@ -219,12 +219,12 @@ This example currently focuses on AWS, Microsoft Azure, and Google Cloud.</p>
 </div>
 <div class="section" id="json-as-the-data-format">
 <h2><a class="toc-backref" href="#id3">JSON as the data format</a><a class="headerlink" href="#json-as-the-data-format" title="Permalink to this headline">¶</a></h2>
-<p>The nRF Asset Tracker uses JSON to represent all the transferred data.
-It offers a very good support in tooling and is human readable.
+<p>The nRF Asset Tracker uses JSON to represent all transferred data.
+It offers very good support in tooling and is human readable.
 JSON verbosity is valuable especially during development.</p>
 <div class="section" id="possible-optimizations">
-<h3><a class="toc-backref" href="#id4">Possible Optimizations</a><a class="headerlink" href="#possible-optimizations" title="Permalink to this headline">¶</a></h3>
-<p>As a data-optimization and power-optimization technique, it is recommended to explore the denser data protocols, especially since the majority of IoT applications (as in this example) will always send data in the same structure.
+<h3><a class="toc-backref" href="#id4">Possible optimizations</a><a class="headerlink" href="#possible-optimizations" title="Permalink to this headline">¶</a></h3>
+<p>For data optimization and power optimization, it is recommended to explore denser data protocols, because a great deal of IoT applications (as in this example, too) always send data in the same structure.
 Only the values change in the data.</p>
 <p>Consider the following GPS message:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -241,10 +241,12 @@ Only the values change in the data.</p>
 </pre></div>
 </div>
 <p>In JSON notation, this document (without newlines) has 114 bytes.
-If the message is to be transferred for example, using <a class="reference external" href="https://developers.google.com/protocol-buffers/">Protocol Buffers</a>, the data can be encoded with just 62 bytes (an improvement by 46%) (<a class="reference external" href="https://gist.github.com/coderbyheart/34a8e71ffe30af882407544567971efb">source code</a>).</p>
-<p>Note that even though the savings in transferred data over the lifetime of a device are significant, there is an extra cost of maintaining the source code on the device side and on the cloud side that enables the use of a protocol, which is not supported natively by the cloud provider.</p>
-<p>See <a class="reference external" href="http://tutorials.jenkov.com/rion/rion-performance-benchmarks.html">RION Performance Benchmarks</a> also.</p>
-<p><a class="reference external" href="https://google.github.io/flatbuffers/">FlatBuffers</a> seems to be <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues/59">a good candidate</a> for a resource-constrained device like the nRF9160 DK.</p>
+If the message is to be transferred for example, using <a class="reference external" href="https://developers.google.com/protocol-buffers/">protocol buffers</a>, the data can be encoded with just 62 bytes (an improvement by 46%) (<a class="reference external" href="https://gist.github.com/coderbyheart/34a8e71ffe30af882407544567971efb">source code</a>).</p>
+<p>The savings in transferred data over the lifetime of a device may be significant.
+However, there is an extra cost of maintaining the source code on the device side and on the cloud side.
+The code must enable the use of a protocol, which is not supported natively by the cloud provider.</p>
+<p>See also <a class="reference external" href="http://tutorials.jenkov.com/rion/rion-performance-benchmarks.html">RION Performance Benchmarks</a> .</p>
+<p><a class="reference external" href="https://google.github.io/flatbuffers/">FlatBuffers</a> could be <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues/59">a good candidate</a> for a resource-constrained device like the nRF9160 DK.</p>
 </div>
 </div>
 </div>
@@ -256,7 +258,7 @@ If the message is to be transferred for example, using <a class="reference exter
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="SensorDataAndConfiguration.html" class="btn btn-neutral float-right" title="Device data and configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="Index.html" class="btn btn-neutral float-left" title="Device-to-Cloud Protocol" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Index.html" class="btn btn-neutral float-left" title="Device-to-cloud communication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

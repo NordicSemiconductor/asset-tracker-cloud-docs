@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Provisioning using nRF Connect for Desktop &mdash; nRF Asset Tracker 2b59d7c7a686d29c0e9ec4460d9523bbcb664725 documentation</title>
+  <title>Provisioning using nRF Connect for Desktop &mdash; nRF Asset Tracker 886c658ce7bd95cd00387bbf23760f647f49d2f8 documentation</title>
   
 
   
@@ -107,7 +107,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../TroubleShooting.html">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
 </ul>
 </li>
 </ul>
@@ -193,16 +193,17 @@
             
   <div class="section" id="provisioning-using-nrf-connect-for-desktop">
 <span id="devices-provisioning-certificate-desktop"></span><h1>Provisioning using nRF Connect for Desktop<a class="headerlink" href="#provisioning-using-nrf-connect-for-desktop" title="Permalink to this headline">¶</a></h1>
-<p>You can use the <code class="file docutils literal notranslate"><span class="pre">certificates/device-&lt;deviceId&gt;.json</span></code> file with <em>Certificate Manager</em> in <a class="reference external" href="https://infocenter.nordicsemi.com/topic/ug_link_monitor/UG/link_monitor/lm_intro.html">LTE Link Monitor</a> (an application implemented as part of <a class="reference external" href="https://infocenter.nordicsemi.com/topic/struct_nrftools/struct/nrftools_nrfconnect.html">nRF Connect for Desktop</a>), to provision the certificate to the device.</p>
-<p><em>Certificate Manager</em> uses AT commands to write the certificate information to the secure storage of the modem and you need to program your device with a firmware that has the AT command host enabled.</p>
+<p>You can use the <code class="file docutils literal notranslate"><span class="pre">certificates/device-&lt;deviceId&gt;.json</span></code> file with <span class="guilabel">Certificate manager</span> in <a class="reference external" href="https://infocenter.nordicsemi.com/topic/ug_link_monitor/UG/link_monitor/lm_intro.html">LTE Link Monitor</a> (an application implemented as part of <a class="reference external" href="https://infocenter.nordicsemi.com/topic/struct_nrftools/struct/nrftools_nrfconnect.html">nRF Connect for Desktop</a>), to provision the certificate to the device.</p>
+<p><span class="guilabel">Certificate manager</span> uses AT commands to write the certificate information to the secure storage of the modem.
+You need to program your device with a firmware that has the AT command host enabled.</p>
 <p>To provision the certificate using LTE Link Monitor, complete the following steps:</p>
 <ol class="arabic">
-<li><p>Program the AT host using <a class="reference external" href="https://infocenter.nordicsemi.com/topic/ug_nrf91_dk_gsg/UG/nrf91_DK_gsg/provisioning_certificate.html">nRF Connect Programmer</a> application (part of nRF Connect for Desktop).</p>
+<li><p>Program the AT host using the <a class="reference external" href="https://infocenter.nordicsemi.com/topic/ug_nrf91_dk_gsg/UG/nrf91_DK_gsg/provisioning_certificate.html">Programmer</a> application (part of nRF Connect for Desktop).</p>
 <div class="figure align-default" id="id1">
 <img alt="nRF Connect for Desktop Programmer" src="../../../_images/programmer-desktop.png" />
 <p class="caption"><span class="caption-text">nRF Connect for Desktop Programmer</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>For programming, use the following files:</p>
+<p>Use the following files:</p>
 <ul class="simple">
 <li><p>Thingy:91 -  <a class="reference external" href="https://nordicsemiconductor.github.io/at_client-hex/at_client-thingy91_nrf9160ns.hex">thingy91_at_client_increased_buf.hex</a></p></li>
 <li><p>nRF9160 DK - <a class="reference external" href="https://nordicsemiconductor.github.io/at_client-hex/at_client-nrf9160dk_nrf9160ns.hex">91dk_at_client_increased_buf.hex</a></p></li>
@@ -210,28 +211,28 @@
 <p>For instructions, see <a class="reference internal" href="../Index.html#program-the-firmware"><span class="std std-ref">programming the firmware</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Make sure that the selected device is directly connected and not connected via the debugger.</p>
+<p>Make sure that the selected device is connected directly, not through the debugger.</p>
 </div>
 </li>
 <li><p>Open nRF Connect for Desktop and launch the LTE Link Monitor application.</p>
 <div class="figure align-default" id="id2">
 <img alt="nRF Connect for Desktop LTE Link Monitor" src="../../../_images/lte-link-monitor-desktop.png" />
-<p class="caption"><span class="caption-text">nRF Connect for Desktop LTE Link Monitor</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">nRF Connect for Desktop - LTE Link Monitor</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p>Click <span class="guilabel">Certificate Manager</span>.</p>
+<li><p>Click <span class="guilabel">Certificate manager</span>.</p>
 <div class="figure align-default" id="id3">
-<img alt="nRF Connect for Desktop Certificate Manager" src="../../../_images/certificate-manager-desktop.png" />
-<p class="caption"><span class="caption-text">LTE Link Monitor Certificate Manager</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<img alt="nRF Connect for Desktop Certificate manager" src="../../../_images/certificate-manager-desktop.png" />
+<p class="caption"><span class="caption-text">LTE Link Monitor - Certificate manager</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p>Drag and drop the JSON file into the <em>Certificate Manager</em> window or select the JSON file using the <span class="guilabel">Load from JSON</span> option.</p>
+<li><p>Drag and drop the <code class="file docutils literal notranslate"><span class="pre">JSON</span></code> file into the Certificate manager window or select the file using the <span class="guilabel">Load from JSON</span> button.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Change the security tag to <code class="docutils literal notranslate"><span class="pre">42</span></code>. The modem can hold multiple credentials, and the default security tag <code class="docutils literal notranslate"><span class="pre">16842753</span></code> is reserved for <a class="reference external" href="https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud">nRF Connect for Cloud</a> credentials.</p>
 </div>
 </li>
-<li><p>Click <span class="guilabel">Update certificates</span> and wait until the operation finishes.</p></li>
+<li><p>Click <span class="guilabel">Update certificates</span> and wait until the operation completes.</p></li>
 </ol>
 </div>
 

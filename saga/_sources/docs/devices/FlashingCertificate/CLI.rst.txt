@@ -12,9 +12,9 @@ Provisioning using the CLI
    Instead, :ref:`use nRF Connect for Desktop to provision your certificates <devices-provisioning-certificate-desktop>` and then :ref:`program the firmware <program-the-firmware>`.
 
    
-To provision the device certificate using CLI, you must have `Segger JLink <https://www.segger.com/downloads/jlink/>`_ installed in your path.
+First, make sure you have `Segger JLink <https://www.segger.com/downloads/jlink/>`_ installed in your path.
 
-Use the CLI to provision the device certificates:
+To provision the device certificates using the CLI, run the following command:
 
 .. parsed-literal::
    :class: highlight
@@ -35,8 +35,9 @@ Provisioning of the certificate using CLI also results in the following actions:
 
 .. only:: saga
 
-    1. Programming of the `AT client sample <https://github.com/NordicSemiconductor/at_client-hex>`_ onto the device
-    #. Provisioning of the created device credentials for the respective cloud flavour :ref:`AWS <aws-device-credentials>`, or :ref:`Azure <azure-device-credentials>`
-    #. Programming of the :ref:`configured and built firmware <aws-firmware-configuration>` to the device
+    * Programming of the `AT client sample <https://github.com/NordicSemiconductor/at_client-hex>`_ onto the device.
+    * Provisioning of the created device credentials for the respective cloud flavour :ref:`AWS <aws-device-credentials>`, or :ref:`Azure <azure-device-credentials>`.
+    * Programming of the :ref:`configured and built firmware <firmware-configuration>` to the device.
+
 
 .. body_end

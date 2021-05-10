@@ -3,7 +3,7 @@
 Provisioning the certificate
 ############################
 
-To connect your device, you need to complete the following steps:
+To connect your device, complete the following steps:
 
 * :ref:`Generate the certificates <devices-provisioning-certificate-generate>`
 * Provision the certificates to your device

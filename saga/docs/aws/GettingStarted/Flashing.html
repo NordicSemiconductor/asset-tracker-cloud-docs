@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Program the device firmware and provision the credentials &mdash; nRF Asset Tracker 2b59d7c7a686d29c0e9ec4460d9523bbcb664725 documentation</title>
+  <title>Program the device firmware and provision the credentials &mdash; nRF Asset Tracker 886c658ce7bd95cd00387bbf23760f647f49d2f8 documentation</title>
   
 
   
@@ -217,19 +217,19 @@
 For more information, see the <a class="reference external" href="https://github.com/microsoft/WSL/issues/4322">issue on WSL 2</a>.
 Instead, <a class="reference internal" href="../../devices/FlashingCertificate/Desktop.html#devices-provisioning-certificate-desktop"><span class="std std-ref">use nRF Connect for Desktop to provision your certificates</span></a> and then <a class="reference internal" href="../../devices/Index.html#program-the-firmware"><span class="std std-ref">program the firmware</span></a>.</p>
 </div>
-<p>To provision the device certificate using CLI, you must have <a class="reference external" href="https://www.segger.com/downloads/jlink/">Segger JLink</a> installed in your path.</p>
-<p>Use the CLI to provision the device certificates:</p>
+<p>First, make sure you have <a class="reference external" href="https://www.segger.com/downloads/jlink/">Segger JLink</a> installed in your path.</p>
+<p>To provision the device certificates using the CLI, run the following command:</p>
 <pre class="highlight literal-block"> node cli flash &quot;<em>imei</em>&quot; -f /path/to/firmware.hex
  # default secTag is 42
  # default board is the Thingy:91, use --dk to program a DK
  # when programming a Thingy:91, most likely you need to override the default port: -p /dev/ttyACM2
  # pass --help to see the additional options, for example, option that enables the use of a different secTag</pre>
 <p>Provisioning of the certificate using CLI also results in the following actions:</p>
-<ol class="arabic simple">
-<li><p>Programming of the <a class="reference external" href="https://github.com/NordicSemiconductor/at_client-hex">AT client sample</a> onto the device</p></li>
-<li><p>Provisioning of the created device credentials for the respective cloud flavour <a class="reference internal" href="DeviceCredentials.html#aws-device-credentials"><span class="std std-ref">AWS</span></a>, or <a class="reference internal" href="../../azure/GettingStarted/DeviceCredentials.html#azure-device-credentials"><span class="std std-ref">Azure</span></a></p></li>
-<li><p>Programming of the <a class="reference internal" href="FirmwareConfiguration.html#aws-firmware-configuration"><span class="std std-ref">configured and built firmware</span></a> to the device</p></li>
-</ol>
+<ul class="simple">
+<li><p>Programming of the <a class="reference external" href="https://github.com/NordicSemiconductor/at_client-hex">AT client sample</a> onto the device.</p></li>
+<li><p>Provisioning of the created device credentials for the respective cloud flavour <a class="reference internal" href="DeviceCredentials.html#aws-device-credentials"><span class="std std-ref">AWS</span></a>, or <a class="reference internal" href="../../azure/GettingStarted/DeviceCredentials.html#azure-device-credentials"><span class="std std-ref">Azure</span></a>.</p></li>
+<li><p>Programming of the <span class="xref std std-ref">configured and built firmware</span> to the device.</p></li>
+</ul>
 <p>After the programming of the firmware, the device reboots and connects to the AWS broker, and eventually reports its state to the cloud:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">00</span>:00:35.591,644<span class="o">]</span> &lt;inf&gt; event_manager: CLOUD_EVT_CONNECTED
 </pre></div>

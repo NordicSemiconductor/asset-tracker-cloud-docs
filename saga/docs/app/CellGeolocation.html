@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Cell geolocation &mdash; nRF Asset Tracker 2b59d7c7a686d29c0e9ec4460d9523bbcb664725 documentation</title>
+  <title>Cell geolocation &mdash; nRF Asset Tracker 886c658ce7bd95cd00387bbf23760f647f49d2f8 documentation</title>
   
 
   
@@ -191,13 +191,14 @@
 <li><p><a class="reference internal" href="#unwired-labs-api" id="id3">Unwired Labs’ API</a></p></li>
 </ul>
 </div>
-<p>If cell geolocation is implemented, the devices can be shown on the map based on the location of their cell, even before obtaining a GPS fix.
-It allows to locate devices within a radius of a few kilometers, which can be beneficial depending on your use case.
-It can be useful in the case of tracking assets like parcels, where the approximate location can be combined with known points of interest (for example, warehouses and ports), to know if a shipment has arrived at the destination.</p>
+<p>If cell geolocation is implemented, the devices can be shown on the map based on the location of their surrounding cells, even before obtaining a GPS fix.
+It allows to locate devices within a radius of a few kilometers.
+It can be useful, for example when tracking assets like parcels.
+The approximate location of a parcel can be combined with known points of interest (for example, warehouses and ports) and you can find out if a shipment has arrived at the destination.</p>
 <div class="section" id="locating-cells-based-on-device-data">
 <h2><a class="toc-backref" href="#id2">Locating cells based on device data</a><a class="headerlink" href="#locating-cells-based-on-device-data" title="Permalink to this headline">¶</a></h2>
-<p>GPS position fixes that are acquired by the devices and the cell information (cell id, area id, MCC/MNC) of these devices are stored together and it is used to <a class="reference external" href="https://github.com/NordicSemiconductor/cell-geolocation-helpers#cellfromgeolocations">calculate the location of the cell</a>.</p>
-<p>The following image shows the location calculation of a device using the device geolocation data:</p>
+<p>GPS position fixes that are acquired by the devices and the cell information (cell ID, area ID, MCC/MNC) of these devices are stored together and used to <a class="reference external" href="https://github.com/NordicSemiconductor/cell-geolocation-helpers#cellfromgeolocations">calculate the location of the cell</a>.</p>
+<p>The following image demonstrates how the location of a device is calculated using the device geolocation data:</p>
 <div class="figure align-default" id="id1">
 <img alt="Calculating the location of a cell using the device geolocation data" src="../../_images/map.gif" />
 <p class="caption"><span class="caption-text">Calculating the location of a cell using the device geolocation data</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -207,10 +208,13 @@ It can be useful in the case of tracking assets like parcels, where the approxim
 <div class="section" id="unwired-labs-api">
 <h2><a class="toc-backref" href="#id3">Unwired Labs’ API</a><a class="headerlink" href="#unwired-labs-api" title="Permalink to this headline">¶</a></h2>
 <p>The Unwired Labs’ geolocation API is a commercial third-party solution that provides an API for resolving cell information to geolocation.
-This is an optional feature, which you can enable.</p>
-<p>In this way, it is possible to calculate the rough location of a device as soon as it sends the roaming information to the cloud.
-The API provides the geolocation of nearly every cell tower and by using this information, devices can be located within a few kilometers around the location of the cell tower.</p>
-<p>Note that cellular signals can travel many kilometers and <a class="reference external" href="https://www.youtube.com/watch?v=p1_0OAlTcuY">the tests</a> show that a range of 10 km and more is possible in certain conditions.</p>
+This is an optional feature that you can enable.</p>
+<p>The API enables calculation of the rough location of a device as soon as it sends the roaming information to the cloud.
+The API provides the geolocation of nearly every cell tower and with this information, devices can be located within a few kilometers around the location of the cell tower.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cellular signals can travel many kilometers and <a class="reference external" href="https://www.youtube.com/watch?v=p1_0OAlTcuY">the tests</a> show that a range of 10 km and more is possible in certain conditions.</p>
+</div>
 <p>Follow the configuration guide in the respective implementation to enable Unwired Labs’ geolocation API:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../aws/UnwiredLabsAPI.html#aws-unwired-labs-api"><span class="std std-ref">AWS</span></a></p></li>
