@@ -30,12 +30,12 @@ Prepare your Azure account
    The setup process in Azure is more complicated when compared to the :ref:`AWS continuous integration setup <aws-continuous-integration>`, since it involves many manual steps, which cannot be automated.
    If you have ideas to simplify the process, `please provide your input <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_.
 
-Login and create the resource group
-===================================
+Log in and create the resource group
+====================================
 
 To create the resource group for the CI resources, complete the following steps:
 
-1. Login to the shell:
+1. Log in to the shell:
 
    .. code-block:: bash
 
@@ -57,15 +57,15 @@ To create the resource group for the CI resources, complete the following steps:
        az account list --output table
 
 #. Choose a resource group name for the solution and export it as ``RESOURCE_GROUP``.
-   In this example, we use ``nrfassettrackerci`` as the resource group name.
+   In this example, ``nrfassettrackerci`` is used as the resource group name.
 
    .. code-block:: bash
 
       export RESOURCE_GROUP="nrfassettrackerci"
     
 #. Choose a name for the solution and export it as ``APP_NAME``.
-   Use a short name (not more than 16 characters) composed of numbers and lower-case letters only.
-   In this example, we use ``nrfassettrackerci`` as the application name.
+   Use a short name (not more than 16 characters) composed of numbers and lowercase letters only.
+   In this example, ``nrfassettrackerci`` is used as the application name.
 
    .. parsed-literal::
       :class: highlight
@@ -73,7 +73,7 @@ To create the resource group for the CI resources, complete the following steps:
       export APP_NAME="nrfassettrackerci"
 
 #. Choose a resource group and a name for the Device Update instance and export it as ``ADU_RESOURCE_GROUP`` and ``ADU_INSTANCE_NAME``.
-   There is an undocumented limit of 2 instances per ADU account, so the CI should be run against a separate Device Update instance.
+   There is an undocumented limit of two instances per ADU account, so the CI must be run against a separate Device Update instance.
    In this example, we use ``nRFAssetTrackerADUCI`` as the resource group and Device Update instance name.
 
    .. code-block:: bash
