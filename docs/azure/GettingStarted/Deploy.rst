@@ -34,7 +34,7 @@ Deploy the solution to your account
       export APP_NAME="nrfassettracker"
 
 #. Choose a resource group and a name for the Device Update instance and export it as ``ADU_RESOURCE_GROUP`` and ``ADU_INSTANCE_NAME``.
-   There is a limit of `2 instances per subscription <https://docs.microsoft.com/en-us/azure/iot-hub-device-update/device-update-resources#device-update-instance>`_, so the ADU instance needs to be shared between multiple IoT hubs.
+   There is a limit of `two instances per subscription <https://docs.microsoft.com/en-us/azure/iot-hub-device-update/device-update-resources#device-update-instance>`_, so the ADU instance needs to be shared between multiple IoT hubs.
    In this example, we use ``nRFAssetTrackerADU`` as the resource group and Device Update instance name.
 
    .. code-block:: bash
