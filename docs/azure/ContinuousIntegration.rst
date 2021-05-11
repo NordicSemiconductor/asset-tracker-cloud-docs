@@ -65,7 +65,7 @@ To create the resource group for the CI resources, complete the following steps:
     
 #. Choose a name for the solution and export it as ``APP_NAME``.
    Use a short name (not more than 16 characters) composed of numbers and lower-case letters only.
-   In this example, we use ``nrfassettrackerci`` as the application name.
+   In this example, ``nrfassettrackerci`` is used as the application name.
 
    .. parsed-literal::
       :class: highlight
