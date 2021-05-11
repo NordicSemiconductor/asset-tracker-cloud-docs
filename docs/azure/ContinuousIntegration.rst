@@ -31,7 +31,7 @@ Prepare your Azure account
    If you have ideas to simplify the process, `please provide your input <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_.
 
 Log in and create the resource group
-===================================
+====================================
 
 To create the resource group for the CI resources, complete the following steps:
 
