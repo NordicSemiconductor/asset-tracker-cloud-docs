@@ -44,7 +44,7 @@ Deploy the solution to your account
       export ADU_INSTANCE_NAME="nRFAssetTrackerADU"
 
 #. Configure your preferred location (you can list the locations using ``az account list-locations``) and export it on the environment variable ``LOCATION``.
-   In this example, we use ``northeurope`` as the location name.
+   In this example, ``northeurope`` is used as the location name.
 
    .. code-block:: bash
 
