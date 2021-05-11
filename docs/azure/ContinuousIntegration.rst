@@ -35,7 +35,7 @@ Log in and create the resource group
 
 To create the resource group for the CI resources, complete the following steps:
 
-1. Login to the shell:
+1. Log in to the shell:
 
    .. code-block:: bash
 
