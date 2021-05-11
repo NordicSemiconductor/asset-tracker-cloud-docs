@@ -73,7 +73,7 @@ To create the resource group for the CI resources, complete the following steps:
       export APP_NAME="nrfassettrackerci"
 
 #. Choose a resource group and a name for the Device Update instance and export it as ``ADU_RESOURCE_GROUP`` and ``ADU_INSTANCE_NAME``.
-   There is an undocumented limit of 2 instances per ADU account, so the CI should be run against a separate Device Update instance.
+   There is an undocumented limit of two instances per ADU account, so the CI must be run against a separate Device Update instance.
    In this example, we use ``nRFAssetTrackerADUCI`` as the resource group and Device Update instance name.
 
    .. code-block:: bash
