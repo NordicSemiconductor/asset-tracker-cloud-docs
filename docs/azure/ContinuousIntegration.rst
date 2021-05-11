@@ -57,7 +57,7 @@ To create the resource group for the CI resources, complete the following steps:
        az account list --output table
 
 #. Choose a resource group name for the solution and export it as ``RESOURCE_GROUP``.
-   In this example, we use ``nrfassettrackerci`` as the resource group name.
+   In this example, ``nrfassettrackerci`` is used as the resource group name.
 
    .. code-block:: bash
 
