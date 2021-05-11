@@ -30,7 +30,7 @@ Prepare your Azure account
    The setup process in Azure is more complicated when compared to the :ref:`AWS continuous integration setup <aws-continuous-integration>`, since it involves many manual steps, which cannot be automated.
    If you have ideas to simplify the process, `please provide your input <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_.
 
-Login and create the resource group
+Log in and create the resource group
 ===================================
 
 To create the resource group for the CI resources, complete the following steps:
