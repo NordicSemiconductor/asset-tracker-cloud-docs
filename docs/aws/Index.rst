@@ -7,7 +7,7 @@ The nRF Asset Tracker provides a reference implementation of a serverless backen
 It is developed using `AWS CDK <https://aws.amazon.com/cdk/>`_ in `TypeScript <https://www.typescriptlang.org/>`_.
 
 The project also provides a description of the available (and implemented) features in a folder called `features <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/tree/saga/features>`_.
-The :file:`.feature` files in the folder are used to continuously verify the reference implementation using :ref:`Continuous Integration <aws-continuous-integration>`.
+The :file:`.feature` files in the folder are used to continuously verify the reference implementation using :ref:`aws-continuous-integration`.
 
 .. toctree::
    :titlesonly:
