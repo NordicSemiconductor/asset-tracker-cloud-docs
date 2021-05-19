@@ -3,7 +3,7 @@
 Create the working directory
 ############################
 
-Create an empty directory by running the following commands:
+To create an empty directory, run the following commands:
 
 .. code-block:: bash
 
