@@ -1,14 +1,17 @@
 .. _azure-getting-started-deploy:
 
-Deploy the solution to your account
-===================================
+Install the nRF Asset Tracker into your Azure account
+#####################################################
 
 .. note::
 
-   The setup process in Azure is more complicated when compared to the :ref:`AWS continuous integration setup <aws-continuous-integration>`, since it involves many manual steps, which cannot be automated.
-   If you have ideas to simplify the process, `please provide your input <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_.
+   The setup process in Azure is more complicated when compared to the :ref:`AWS continuous integration setup <aws-continuous-integration>` since it involves many manual steps that cannot be automated.
+   If you have ideas to simplify the process, `provide your input <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_.
 
-1. Export the identifier of the subscription which contains the nRF Asset Tracker resources to a new :file:`.envrc` file (:ref:`used with direnv <about-direnv>`), as shown in the following code:
+
+To install the nRF Asset Tracker into your Azure account, complete the following steps:
+
+1. Export the identifier of the subscription that contains the nRF Asset Tracker resources to a new :file:`.envrc` file (:ref:`used with direnv <about-direnv>`):
 
    .. parsed-literal::
       :class: highlight
@@ -17,7 +20,7 @@ Deploy the solution to your account
       export SUBSCRIPTION_ID="*Subscription ID*"
 
 #. Choose a resource group name for the solution and export it as ``RESOURCE_GROUP``.
-   In this example, we use ``nrfassettracker`` as the resource group name.
+   In this example, ``nrfassettracker`` is used as the resource group name.
 
    .. code-block:: bash
 
@@ -25,8 +28,8 @@ Deploy the solution to your account
       export RESOURCE_GROUP="nrfassettracker"
 
 #. Choose a name for the solution and export it as ``APP_NAME``.
-   Use a short name (not more than 16 characters) composed of numbers and lower-case letters only.
-   In this example, we use ``nrfassettracker`` as the application name.
+   Use a short name (not more than 16 characters) composed of numbers and lowercase letters only.
+   In this example, ``nrfassettracker`` is used as the application name.
 
    .. code-block:: bash
 
@@ -67,9 +70,9 @@ Deploy the solution to your account
 
    .. code-block:: bash
 
-         az account set --subscription $SUBSCRIPTION_ID 
-         # Verify that it is set to default
-         az account list --output table
+      az account set --subscription $SUBSCRIPTION_ID 
+      # Verify that it is set to default
+      az account list --output table
 
 #. Create the resource group for the solution:
 
@@ -78,7 +81,7 @@ Deploy the solution to your account
       az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${ADU_RESOURCE_GROUP:-nRFAssetTrackerADU}
       az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${RESOURCE_GROUP:-nrfassettracker}
 
-#. For creating an Azure Active Directory B2C in the next step, the namespace needs to be registered in the subscription:
+#. Register the namespace in the subscription for creating an Azure Active Directory B2C in the next step:
 
    .. code-block:: bash
 
@@ -88,7 +91,7 @@ Deploy the solution to your account
 
    a. Follow the instructions in the `tutorial for registering a web application in Azure Active Directory B2C <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications>`_ and create a B2C tenant and an application. Use ``http://localhost:3000/`` (for local development) and ``https://<your APP_NAME>app.z16.web.core.windows.net/`` as the redirect URLs.
 
-   #. Enable the *implicit grant and hybrid flows* for :guilabel:`Access tokens` and :guilabel:`ID tokens` and click :guilabel:`Save`.
+   #. Enable the implicit grant and hybrid flows for :guilabel:`Access tokens` and :guilabel:`ID tokens` and click :guilabel:`Save`.
 
 #. Create the user flow for sign-up, sign-in, and make sure to name the userflow as ``B2C_1_signup_signin``.
 
@@ -101,8 +104,8 @@ Deploy the solution to your account
    #. Click :guilabel:`+ Add a scope` and create a new scope with the following values and click :guilabel:`Add a scope`:
       
       * Scope name - ``nrfassettracker.admin``
-      * Admin consent display name - Admin access to the nRF Asset Tracker API
-      * Admin consent description - Allows admin access to all resources exposed through the nRF Asset Tracker API
+      * Admin consent display name - Administrator access to the nRF Asset Tracker API
+      * Admin consent description - Allows administrator access to all resources exposed through the nRF Asset Tracker API
 
    #. Click :guilabel:`API permissions` and then click :guilabel:`+ Add a permission`. Under :guilabel:`My APIs`, select the app registration.
    
@@ -111,7 +114,7 @@ Deploy the solution to your account
    #. Click :guilabel:`Grant admin consent for <your B2C directory>`.
    
 #. Save the initial domain name of the created Active Directory B2C to the environment variable ``B2C_TENANT``.
-   In this example, we use ``nrfassettrackerusers`` as the initial domain name.
+   In this example, ``nrfassettrackerusers`` is used as the initial domain name.
 
    .. code-block:: bash
 
