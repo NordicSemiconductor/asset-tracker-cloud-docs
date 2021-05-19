@@ -1,18 +1,20 @@
+.. _azure-install-cli:
+
 Install the Azure CLI
 #####################
 
-Follow the instructions from the `Azure CLI documentation <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest>`_ to install the CLI.
+To install the Azure CLI, follow the instructions in the `Azure CLI documentation <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest>`_.
 
-After installing the CLI, you must be able to execute the ``az`` command:
+After installing the CLI, you can execute the ``az`` command:
 
 .. code-block:: bash
 
-    az
+   az
 
 Dockerizing the az command
 ==========================
 
-In case you encounter the issue where the Azure CLI requires `an older Python version <https://github.com/Azure/azure-cli/issues/11239>`_, you can *dockerize* it as follows:
+In case you encounter the issue where the Azure CLI requires an `older Python version <https://github.com/Azure/azure-cli/issues/11239>`_, you can dockerize the ``az`` command:
 
 .. code-block:: bash
 
