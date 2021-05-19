@@ -9,7 +9,8 @@ Deploy the Cat Tracker web application
 
 To deploy the Cat Tracker web application to Azure, complete the following steps:
 
-1. Configure the web application
+1. Clone the project and install the dependencies
+#. Configure the web application
 #. Deploy the web application
 #. Register a new user
 
@@ -19,8 +20,8 @@ Before starting, navigate to the working directory :file:`~/nrf-asset-tracker`.
    :start-after: clone_web_app_start
    :end-before: clone_web_app_end
 
-Run-time configuration
-**********************
+Configure the web application
+*****************************
    
 .. include:: ../../app/Includes.rst
    :start-after: configure_web_app_start
@@ -58,7 +59,7 @@ Following is an example for the contents of the :file:`.env.local` file:
 Deploy the web application
 **************************
 
-To build and deploy the web application to the Storage Account created while setting up *Bifravst* in your Azure account, run the following commands:
+To build and deploy the web application to the Storage Account created while setting up the nRF Asset Tracker in your Azure account, run the following commands:
 
 .. code-block:: bash
 
@@ -71,7 +72,7 @@ To build and deploy the web application to the Storage Account created while set
    az storage blob upload-batch --connection-string ${APP_STORAGE_CONNECTION_STRING} --account-name ${APP_STORAGE_ACCOUNT_NAME} -s ./build -d '$web'
    echo "Done. Now open $PUBLIC_URL to view the web app."
 
-After running the above commands, you can open the domain name printed in ``APP_URL`` to view the web application.
+After running the above commands, you can open the domain name printed in ``APP_URL`` in your browser to view the web application.
 
 Register a new user
 *******************
