@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous integration of firmware &mdash; nRF Asset Tracker fbd0d9e2462b7afbab7662139ff2c5baee899d6b documentation</title>
+  <title>Continuous integration of firmware &mdash; nRF Asset Tracker c85fed7b8a63f5afe99d80998b422f17956762c1 documentation</title>
   
 
   
@@ -42,7 +42,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Firmware for the Azure cloud components" href="../firmware/azure/Index.html" />
+    <link rel="next" title="Connect using a real device" href="../devices/Index.html" />
     <link rel="prev" title="Building the project using GitHub actions" href="../firmware/aws/BuildingUsingGitHub.html" /> 
 </head>
 
@@ -106,7 +106,6 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Continuous integration of firmware</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../firmware/azure/Index.html">Firmware for the Azure cloud components</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
@@ -269,12 +268,11 @@ Secret Access Key: &quot;<em>AWS Secret Access Key</em>&quot;</pre>
 <ol class="arabic">
 <li><p>Download <a class="reference external" href="https://www.segger.com/downloads/jlink/">JLink</a> for your platform.</p></li>
 <li><p>Install <a class="reference external" href="https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git">firmware-ci-runner-aws</a> by running the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git
-<span class="nb">cd</span> firmware-ci-runner-aws
+<pre class="literal-block">git clone --branch v1.5.x --single-branch \
+  <a class="reference external" href="https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git">https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git</a>
+cd firmware-ci-runner-aws
 npm ci
-npx tsc
-</pre></div>
-</div>
+npx tsc</pre>
 </li>
 <li><p>Provide the following environment variables. Use the path to the JLink folder (for example, <code class="file docutils literal notranslate"><span class="pre">~/JLink_Linux_V686_arm64/</span></code>) that is created during the installation in step 1:</p>
 <pre class="highlight literal-block">export AWS_ACCESS_KEY_ID=&quot;<em>AWS Access Key ID printed above</em>&quot;
@@ -301,7 +299,7 @@ Create a new file <code class="file docutils literal notranslate"><span class="p
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../firmware/azure/Index.html" class="btn btn-neutral float-right" title="Firmware for the Azure cloud components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../devices/Index.html" class="btn btn-neutral float-right" title="Connect using a real device" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="../firmware/aws/BuildingUsingGitHub.html" class="btn btn-neutral float-left" title="Building the project using GitHub actions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

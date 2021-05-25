@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Clone the project and install the dependencies &mdash; nRF Asset Tracker fbd0d9e2462b7afbab7662139ff2c5baee899d6b documentation</title>
+  <title>Clone the project and install the dependencies &mdash; nRF Asset Tracker c85fed7b8a63f5afe99d80998b422f17956762c1 documentation</title>
   
 
   
@@ -210,18 +210,17 @@
             
   <div class="section" id="clone-the-project-and-install-the-dependencies">
 <span id="aws-getting-started-clone"></span><h1>Clone the project and install the dependencies<a class="headerlink" href="#clone-the-project-and-install-the-dependencies" title="Permalink to this headline">¶</a></h1>
-<p>To clone the latest version of the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js">nRF Asset Tracker for AWS</a> project and install the dependencies, use the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js.git aws
+<p>To clone the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js">nRF Asset Tracker for AWS</a> project and install the dependencies, use the following commands:</p>
+<pre class="literal-block">git clone --branch v1.5.x --single-branch \
+  <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js.git">https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js.git</a> aws
 
-<span class="nb">cd</span> aws
+cd aws
 
-<span class="c1"># Install the dependencies</span>
+# Install the dependencies
 npm ci
 
-<span class="c1"># Compile the TypeScript source</span>
-npx tsc
-</pre></div>
-</div>
+# Compile the TypeScript source
+npx tsc</pre>
 </div>
 
 

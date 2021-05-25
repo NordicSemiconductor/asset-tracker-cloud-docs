@@ -20,9 +20,10 @@ The Docker image is also used to automate the building of HEX files :ref:`using 
 
 To build the the Docker image for this project, run the following commands:
 
-.. code-block:: bash
+.. parsed-literal::
 
-    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws nrf-asset-tracker-firmware-aws
+    git clone --branch |version| --single-branch \\
+      https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws nrf-asset-tracker-firmware-aws
     cd nrf-asset-tracker-firmware-aws
     docker build -t asset-tracker-firmware-docker .
 
