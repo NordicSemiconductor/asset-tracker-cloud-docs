@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Azure cloud components &mdash; nRF Asset Tracker 19eb1f953d9f35de45111d2496ec3fbfa796131f documentation</title>
+  <title>Azure cloud components &mdash; nRF Asset Tracker a792277c696e7dffae1687b340087753a85aeec1 documentation</title>
   
 
   
@@ -192,22 +192,21 @@
             
   <div class="section" id="azure-cloud-components">
 <span id="index-azure"></span><h1>Azure cloud components<a class="headerlink" href="#azure-cloud-components" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>🚧 WORK IN PROGRESS 🚧</strong></p>
-<p>The Azure implementation of the nRF Asset Tracker is work in progress.
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Azure implementation of the nRF Asset Tracker is a work in progress.
 See <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/12">this issue</a> for more information.</p>
 </div>
 <p>The nRF Asset Tracker provides a reference implementation of a serverless backend for an IoT product using Azure.
 It is developed using <a class="reference external" href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview">Azure Resource Manager</a> in <a class="reference external" href="https://www.typescriptlang.org/">TypeScript</a>.</p>
-<p>The project also provides an easily understandable description of the available (and implemented) features, in a single folder called  <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/tree/saga/features">features</a>.</p>
+<p>The project also provides a description of the available (and implemented) features in a folder called <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/tree/saga/features">features</a>.
+The <code class="file docutils literal notranslate"><span class="pre">.feature</span></code> files in the folder are used to continuously verify the reference implementation using <a class="reference internal" href="ContinuousIntegration.html#azure-continuous-integration"><span class="std std-ref">Continuous integration</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>Recurring costs</strong></p>
-<p>The Azure solution is using <a class="reference external" href="https://docs.microsoft.com/en-us/azure/cosmos-db/introduction">Cosmos DB</a> for querying historical device data which costs around €25 per month.
-However, you can check if you are eligible for <a class="reference external" href="https://azure.microsoft.com/en-us/pricing/details/cosmos-db/">the free tier for new accounts</a>.</p>
-<p>The Azure solution is using <a class="reference external" href="https://azure.microsoft.com/en-us/services/iot-hub/">IoT Hub</a> with the S1 standard tier  which costs around €25 per month in order to use <a class="reference external" href="https://docs.microsoft.com/en-us/azure/iot-hub-device-update/understand-device-update">Device Update for IoT Hub</a>.</p>
-<p>Hence the minimum costs to run nRF Asset Tracker on Azure is around €25-50 per month.</p>
+<p>The Azure solution is using <a class="reference external" href="https://docs.microsoft.com/en-us/azure/cosmos-db/introduction">Cosmos DB</a> for querying historical device data and it costs around 25 EUR per month.
+However, you can check if you are eligible for <a class="reference external" href="https://azure.microsoft.com/en-us/pricing/details/cosmos-db/">the free tier for new accounts</a>.
+The Azure solution is using <a class="reference external" href="https://azure.microsoft.com/en-us/services/iot-hub/">IoT Hub</a> with the S1 standard tier and it costs around 25 EUR per month for using <a class="reference external" href="https://docs.microsoft.com/en-us/azure/iot-hub-device-update/understand-device-update">Device Update for IoT Hub</a>.
+Hence, the minimum costs to run nRF Asset Tracker on Azure is around 25-50 EUR per month.</p>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Subpages:</span></p>
@@ -217,7 +216,7 @@ However, you can check if you are eligible for <a class="reference external" hre
 <li class="toctree-l2"><a class="reference internal" href="GettingStarted/Clone.html">Clone the project and install the dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="GettingStarted/AzureCLI.html">Install the Azure CLI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="GettingStarted/AzureFunctionCoreTools.html">Install the Azure Functions Core Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GettingStarted/Deploy.html">Deploy the solution to your account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/Deploy.html">Install the nRF Asset Tracker into your Azure account</a></li>
 <li class="toctree-l2"><a class="reference internal" href="GettingStarted/FirmwareConfiguration.html">Configure the firmware</a></li>
 <li class="toctree-l2"><a class="reference internal" href="GettingStarted/DeviceCredentials.html">Create device credentials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="GettingStarted/Webapp.html">Deploy the Cat Tracker web application</a></li>

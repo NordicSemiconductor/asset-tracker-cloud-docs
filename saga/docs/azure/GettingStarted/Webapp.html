@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploy the Cat Tracker web application &mdash; nRF Asset Tracker 19eb1f953d9f35de45111d2496ec3fbfa796131f documentation</title>
+  <title>Deploy the Cat Tracker web application &mdash; nRF Asset Tracker a792277c696e7dffae1687b340087753a85aeec1 documentation</title>
   
 
   
@@ -103,7 +103,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Clone.html">Clone the project and install the dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AzureCLI.html">Install the Azure CLI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AzureFunctionCoreTools.html">Install the Azure Functions Core Tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Deploy.html">Deploy the solution to your account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Deploy.html">Install the nRF Asset Tracker into your Azure account</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FirmwareConfiguration.html">Configure the firmware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Create device credentials</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Deploy the Cat Tracker web application</a></li>
@@ -210,7 +210,7 @@
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#clone-the-project-and-install-the-dependencies" id="id2">Clone the project and install the dependencies</a></p></li>
-<li><p><a class="reference internal" href="#run-time-configuration" id="id3">Run-time configuration</a></p>
+<li><p><a class="reference internal" href="#configure-the-web-application" id="id3">Configure the web application</a></p>
 <ul>
 <li><p><a class="reference internal" href="#configure-the-ids-of-your-azure-resources" id="id4">Configure the IDs of your Azure resources</a></p></li>
 </ul>
@@ -221,6 +221,7 @@
 </div>
 <p>To deploy the Cat Tracker web application to Azure, complete the following steps:</p>
 <ol class="arabic simple">
+<li><p>Clone the project and install the dependencies</p></li>
 <li><p>Configure the web application</p></li>
 <li><p>Deploy the web application</p></li>
 <li><p>Register a new user</p></li>
@@ -235,8 +236,8 @@ npm ci
 </pre></div>
 </div>
 </div>
-<div class="section" id="run-time-configuration">
-<h2><a class="toc-backref" href="#id3">Run-time configuration</a><a class="headerlink" href="#run-time-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="configure-the-web-application">
+<h2><a class="toc-backref" href="#id3">Configure the web application</a><a class="headerlink" href="#configure-the-web-application" title="Permalink to this headline">¶</a></h2>
 <p>You need to configure the web application to be able to run it with your account.
 Create a file called <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code>, which <a class="reference external" href="https://create-react-app.dev/docs/adding-custom-environment-variables/">Create React App</a> uses to make the settings in the file available as environment variables during build time.</p>
 <div class="section" id="configure-the-ids-of-your-azure-resources">
@@ -270,7 +271,7 @@ node cli react-config &gt; ../cat-tracker-web-app/.env.local
 </div>
 <div class="section" id="deploy-the-web-application">
 <h2><a class="toc-backref" href="#id5">Deploy the web application</a><a class="headerlink" href="#deploy-the-web-application" title="Permalink to this headline">¶</a></h2>
-<p>To build and deploy the web application to the Storage Account created while setting up <em>Bifravst</em> in your Azure account, run the following commands:</p>
+<p>To build and deploy the web application to the Storage Account created while setting up the nRF Asset Tracker in your Azure account, run the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../azure
 <span class="nb">export</span> <span class="nv">PUBLIC_URL</span><span class="o">=</span><span class="sb">`</span>az storage account show -g <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> -n <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>app --query <span class="s1">&#39;primaryEndpoints.web&#39;</span> --output tsv <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>
 <span class="nb">export</span> <span class="nv">APP_STORAGE_CONNECTION_STRING</span><span class="o">=</span><span class="sb">`</span>az storage account show-connection-string --name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>app --query <span class="s1">&#39;connectionString&#39;</span><span class="sb">`</span>
@@ -281,7 +282,7 @@ az storage blob upload-batch --connection-string <span class="si">${</span><span
 <span class="nb">echo</span> <span class="s2">&quot;Done. Now open </span><span class="nv">$PUBLIC_URL</span><span class="s2"> to view the web app.&quot;</span>
 </pre></div>
 </div>
-<p>After running the above commands, you can open the domain name printed in <code class="docutils literal notranslate"><span class="pre">APP_URL</span></code> to view the web application.</p>
+<p>After running the above commands, you can open the domain name printed in <code class="docutils literal notranslate"><span class="pre">APP_URL</span></code> in your browser to view the web application.</p>
 </div>
 <div class="section" id="register-a-new-user">
 <h2><a class="toc-backref" href="#id6">Register a new user</a><a class="headerlink" href="#register-a-new-user" title="Permalink to this headline">¶</a></h2>

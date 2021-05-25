@@ -3,7 +3,7 @@
 Configure the firmware
 ######################
 
-To configure the :ref:`firmware <firmware-azure-index>`, complete the following *mandatory* steps:
+To configure the :ref:`firmware <firmware-azure-index>`, complete the following mandatory steps:
 
 1. // FIXME: Implement
 
@@ -11,4 +11,4 @@ After completing the configuration, compile the firmware either :ref:`using your
 
 .. note::
 
-   See the documentation on `nRF9160: Asset Tracker v2 application <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html>`_ for all the available configuration options.
+   See the documentation on `nRF9160: Asset Tracker v2 application <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html>`_ for all available configuration options.

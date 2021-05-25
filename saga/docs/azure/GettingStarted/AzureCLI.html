@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Install the Azure CLI &mdash; nRF Asset Tracker 19eb1f953d9f35de45111d2496ec3fbfa796131f documentation</title>
+  <title>Install the Azure CLI &mdash; nRF Asset Tracker a792277c696e7dffae1687b340087753a85aeec1 documentation</title>
   
 
   
@@ -103,7 +103,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Clone.html">Clone the project and install the dependencies</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Install the Azure CLI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AzureFunctionCoreTools.html">Install the Azure Functions Core Tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Deploy.html">Deploy the solution to your account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Deploy.html">Install the nRF Asset Tracker into your Azure account</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FirmwareConfiguration.html">Configure the firmware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Create device credentials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Webapp.html">Deploy the Cat Tracker web application</a></li>
@@ -206,15 +206,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="install-the-azure-cli">
-<h1>Install the Azure CLI<a class="headerlink" href="#install-the-azure-cli" title="Permalink to this headline">¶</a></h1>
-<p>Follow the instructions from the <a class="reference external" href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest">Azure CLI documentation</a> to install the CLI.</p>
-<p>After installing the CLI, you must be able to execute the <code class="docutils literal notranslate"><span class="pre">az</span></code> command:</p>
+<span id="azure-install-cli"></span><h1>Install the Azure CLI<a class="headerlink" href="#install-the-azure-cli" title="Permalink to this headline">¶</a></h1>
+<p>To install the Azure CLI, follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest">Azure CLI documentation</a>.</p>
+<p>After installing the CLI, you can execute the <code class="docutils literal notranslate"><span class="pre">az</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az
 </pre></div>
 </div>
 <div class="section" id="dockerizing-the-az-command">
 <h2>Dockerizing the az command<a class="headerlink" href="#dockerizing-the-az-command" title="Permalink to this headline">¶</a></h2>
-<p>In case you encounter the issue where the Azure CLI requires <a class="reference external" href="https://github.com/Azure/azure-cli/issues/11239">an older Python version</a>, you can <em>dockerize</em> it as follows:</p>
+<p>In case you encounter the issue where the Azure CLI requires an <a class="reference external" href="https://github.com/Azure/azure-cli/issues/11239">older Python version</a>, you can dockerize the <code class="docutils literal notranslate"><span class="pre">az</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 
 <span class="nb">set</span> -eu

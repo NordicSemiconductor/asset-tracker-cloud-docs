@@ -13,8 +13,8 @@ For creating device credentials, you must generate the following certificates:
 * CA intermediate certificate
 * Device certificate
 
-Create a CA root certificate
-============================
+Generate a CA root certificate
+******************************
 
 .. note::
 
@@ -25,35 +25,35 @@ To create a CA root certificate and register it with the Azure IoT Device Provis
 
 .. code-block:: bash
 
-      node cli create-ca-root
+   node cli create-ca-root
 
-The CA root certificate should not be shared.
+Do not share the CA root certificate.
 The number of CA root certificates is typically very small, and the minimum number of certificates required is one.
 
-Provide the proof your ownership of the CA with the following command:
+Provide the proof of your ownership of the CA with the following command:
 
 .. code-block:: bash
 
-      node cli proof-ca-root-possession
+   node cli proof-ca-root-possession
 
 .. note::
 
-      If you see the error *"A required certificate is not within its validity period when verifying against the current system clock or the timestamp in the signed file."*, confirm that your system clock is accurate.
+   If you see the error ``A required certificate is not within its validity period when verifying against the current system clock or the timestamp in the signed file.``, confirm that your system clock is accurate.
 
-Create a CA intermediate certificate
-====================================
+Generate a CA intermediate certificate
+**************************************
 
-To creates a CA intermediate certificate and an enrollment group for it, run the following command:
+To create a CA intermediate certificate and an enrollment group for it, run the following command:
 
 .. code-block:: bash
 
-      node cli create-ca-intermediate
+   node cli create-ca-intermediate
 
 You can share the CA intermediate certificate with the factory.
-Over time, you will have multiple intermediate certificates.
+You will have multiple intermediate certificates over time.
    
 Generate a device certificate
-=============================
+*****************************
 
 .. include:: ../../devices/FlashingCertificate/Generate.rst
    :start-after: body_start

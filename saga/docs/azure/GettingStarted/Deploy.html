@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploy the solution to your account &mdash; nRF Asset Tracker 19eb1f953d9f35de45111d2496ec3fbfa796131f documentation</title>
+  <title>Install the nRF Asset Tracker into your Azure account &mdash; nRF Asset Tracker a792277c696e7dffae1687b340087753a85aeec1 documentation</title>
   
 
   
@@ -103,7 +103,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Clone.html">Clone the project and install the dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AzureCLI.html">Install the Azure CLI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AzureFunctionCoreTools.html">Install the Azure Functions Core Tools</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Deploy the solution to your account</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Install the nRF Asset Tracker into your Azure account</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FirmwareConfiguration.html">Configure the firmware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Create device credentials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Webapp.html">Deploy the Cat Tracker web application</a></li>
@@ -184,7 +184,7 @@
         
           <li><a href="Index.html">Getting started</a> &raquo;</li>
         
-      <li>Deploy the solution to your account</li>
+      <li>Install the nRF Asset Tracker into your Azure account</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -205,28 +205,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="deploy-the-solution-to-your-account">
-<span id="azure-getting-started-deploy"></span><h1>Deploy the solution to your account<a class="headerlink" href="#deploy-the-solution-to-your-account" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="install-the-nrf-asset-tracker-into-your-azure-account">
+<span id="azure-getting-started-deploy"></span><h1>Install the nRF Asset Tracker into your Azure account<a class="headerlink" href="#install-the-nrf-asset-tracker-into-your-azure-account" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The setup process in Azure is more complicated when compared to the <a class="reference internal" href="../../aws/ContinuousIntegration.html#aws-continuous-integration"><span class="std std-ref">AWS continuous integration setup</span></a>, since it involves many manual steps, which cannot be automated.
-If you have ideas to simplify the process, <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1">please provide your input</a>.</p>
+<p>The setup process in Azure is more complicated when compared to the <a class="reference internal" href="../../aws/ContinuousIntegration.html#aws-continuous-integration"><span class="std std-ref">AWS continuous integration setup</span></a> since it involves many manual steps that cannot be automated.
+If you have ideas to simplify the process, <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1">provide your input</a>.</p>
 </div>
+<p>To install the nRF Asset Tracker into your Azure account, complete the following steps:</p>
 <ol class="arabic">
-<li><p>Export the identifier of the subscription which contains the nRF Asset Tracker resources to a new <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file (<a class="reference internal" href="../../guides/Direnv.html#about-direnv"><span class="std std-ref">used with direnv</span></a>), as shown in the following code:</p>
+<li><p>Export the identifier of the subscription that contains the nRF Asset Tracker resources to a new <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file (<a class="reference internal" href="../../guides/Direnv.html#about-direnv"><span class="std std-ref">used with direnv</span></a>):</p>
 <pre class="highlight literal-block"># add to .envrc
 export SUBSCRIPTION_ID=&quot;<em>Subscription ID</em>&quot;</pre>
 </li>
 <li><p>Choose a resource group name for the solution and export it as <code class="docutils literal notranslate"><span class="pre">RESOURCE_GROUP</span></code>.
-In this example, we use <code class="docutils literal notranslate"><span class="pre">nrfassettracker</span></code> as the resource group name.</p>
+In this example, <code class="docutils literal notranslate"><span class="pre">nrfassettracker</span></code> is used as the resource group name.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
 <span class="nb">export</span> <span class="nv">RESOURCE_GROUP</span><span class="o">=</span><span class="s2">&quot;nrfassettracker&quot;</span>
 </pre></div>
 </div>
 </li>
 <li><p>Choose a name for the solution and export it as <code class="docutils literal notranslate"><span class="pre">APP_NAME</span></code>.
-Use a short name (not more than 16 characters) composed of numbers and lower-case letters only.
-In this example, we use <code class="docutils literal notranslate"><span class="pre">nrfassettracker</span></code> as the application name.</p>
+Use a short name (not more than 16 characters) composed of numbers and lowercase letters only.
+In this example, <code class="docutils literal notranslate"><span class="pre">nrfassettracker</span></code> is used as the application name.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
 <span class="nb">export</span> <span class="nv">APP_NAME</span><span class="o">=</span><span class="s2">&quot;nrfassettracker&quot;</span>
 </pre></div>
@@ -271,7 +272,7 @@ az group create --subscription <span class="nv">$SUBSCRIPTION_ID</span> -l <span
 </pre></div>
 </div>
 </li>
-<li><p>For creating an Azure Active Directory B2C in the next step, the namespace needs to be registered in the subscription:</p>
+<li><p>Register the namespace in the subscription for creating an Azure Active Directory B2C in the next step:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az provider register --namespace Microsoft.AzureActiveDirectory
 </pre></div>
 </div>
@@ -279,7 +280,7 @@ az group create --subscription <span class="nv">$SUBSCRIPTION_ID</span> -l <span
 <li><p>Create an Azure Active Directory B2C. Currently, it is not possible to create an Active Directory B2C and application through the ARM template (see <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1">GitHub issue</a>).</p>
 <ol class="loweralpha simple">
 <li><p>Follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications">tutorial for registering a web application in Azure Active Directory B2C</a> and create a B2C tenant and an application. Use <code class="docutils literal notranslate"><span class="pre">http://localhost:3000/</span></code> (for local development) and <code class="docutils literal notranslate"><span class="pre">https://&lt;your</span> <span class="pre">APP_NAME&gt;app.z16.web.core.windows.net/</span></code> as the redirect URLs.</p></li>
-<li><p>Enable the <em>implicit grant and hybrid flows</em> for <span class="guilabel">Access tokens</span> and <span class="guilabel">ID tokens</span> and click <span class="guilabel">Save</span>.</p></li>
+<li><p>Enable the implicit grant and hybrid flows for <span class="guilabel">Access tokens</span> and <span class="guilabel">ID tokens</span> and click <span class="guilabel">Save</span>.</p></li>
 </ol>
 </li>
 <li><p>Create the user flow for sign-up, sign-in, and make sure to name the userflow as <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code>.</p>
@@ -293,8 +294,8 @@ az group create --subscription <span class="nv">$SUBSCRIPTION_ID</span> -l <span
 <li><p>Click <span class="guilabel">+ Add a scope</span> and create a new scope with the following values and click <span class="guilabel">Add a scope</span>:</p>
 <ul class="simple">
 <li><p>Scope name - <code class="docutils literal notranslate"><span class="pre">nrfassettracker.admin</span></code></p></li>
-<li><p>Admin consent display name - Admin access to the nRF Asset Tracker API</p></li>
-<li><p>Admin consent description - Allows admin access to all resources exposed through the nRF Asset Tracker API</p></li>
+<li><p>Admin consent display name - Administrator access to the nRF Asset Tracker API</p></li>
+<li><p>Admin consent description - Allows administrator access to all resources exposed through the nRF Asset Tracker API</p></li>
 </ul>
 </li>
 <li><p>Click <span class="guilabel">API permissions</span> and then click <span class="guilabel">+ Add a permission</span>. Under <span class="guilabel">My APIs</span>, select the app registration.</p></li>
@@ -303,7 +304,7 @@ az group create --subscription <span class="nv">$SUBSCRIPTION_ID</span> -l <span
 </ol>
 </li>
 <li><p>Save the initial domain name of the created Active Directory B2C to the environment variable <code class="docutils literal notranslate"><span class="pre">B2C_TENANT</span></code>.
-In this example, we use <code class="docutils literal notranslate"><span class="pre">nrfassettrackerusers</span></code> as the initial domain name.</p>
+In this example, <code class="docutils literal notranslate"><span class="pre">nrfassettrackerusers</span></code> is used as the initial domain name.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
 <span class="nb">export</span> <span class="nv">B2C_TENANT</span><span class="o">=</span><span class="s2">&quot;nrfassettrackerusers&quot;</span>
 </pre></div>
