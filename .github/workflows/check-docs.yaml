@@ -77,6 +77,7 @@ jobs:
         run: |
           export PATH=$PATH:/home/runner/.local/bin
           export AUDIENCE=${{ matrix.audience }}
+          export VERSION=${{ matrix.audience }}
           # Remove Azure from v1.5.x builds
           if [[ "${{ matrix.audience }}" == "v1.5.x" ]]; then
             rm -r docs/azure
