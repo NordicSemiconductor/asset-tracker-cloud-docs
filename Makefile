@@ -11,8 +11,8 @@ docs/project/%.svg: docs/project/%.dot
 
 RELEASE ?= 0.0.0-development
 VERSION ?= saga
-AUDIENCE ?= release
+AUDIENCE ?= saga
 
-html: Makefile dotincludes docs/project/system-overview.svg docs/project/system-overview-release.svg
+html: Makefile dotincludes docs/project/system-overview.svg docs/project/system-overview-v1.5.x.svg
 	./scripts/sphinx.sh
 	find docs -type f -name \*.json | xargs -I@ cp -v @ build/html/@

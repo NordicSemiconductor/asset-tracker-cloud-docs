@@ -11,7 +11,7 @@ Connection
 **********
 
 Error code -22
-==================
+==============
 
 If you see this error code, verify the client ID, the endpoint, and the certificates.
 
@@ -26,7 +26,7 @@ GPS
 ***
 
 Error: GPS_EVT_OPERATION_BLOCKED
-====================================
+================================
 
 This error occurs if the network provider does not grant Power Saving Mode (PSM) and the GPS takes a long time to acquire a fix.
 For more details, see the `DevZone post related to the GPS and LTE issue <https://devzone.nordicsemi.com/f/nordic-q-a/51962/gps-and-lte-issue/210272#210272>`_.
@@ -35,12 +35,12 @@ Try switching to a SIM card that grants PSM.
 
 Alternatively, use assisted GPS (A-GPS) to speed up the time to fix.
 
-.. only:: not saga
+.. only:: only v1.5.x
 
     One form of A-GPS is using SUPL and it can be optionally enabled in the firmware using the `SUPL client  <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/include/supl_os_client.html>`_.
     The `nRF Asset Tracker firmware project <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws/pull/9>`_ optionally supports building the firmware images with SUPL enabled.
 
-.. only:: saga
+.. only:: not v1.5.x
 
     One form of A-GPS is using SUPL and it can be optionally enabled in the firmware using the `SUPL client  <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/include/supl_os_client.html>`_.
     The nRF Asset Tracker firmware projects `for AWS <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws/pull/9>`_ and `for Azure <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure#supl-client>`_ optionally support building the firmware images with SUPL enabled.

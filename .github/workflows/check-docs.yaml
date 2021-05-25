@@ -49,7 +49,7 @@ jobs:
 
     strategy:
       matrix:
-        audience: [release, saga]
+        audience: [saga, v1.6.x, v1.5.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -77,8 +77,8 @@ jobs:
         run: |
           export PATH=$PATH:/home/runner/.local/bin
           export AUDIENCE=${{ matrix.audience }}
-          # Remove Azure from release builds
-          if [[ "${{ matrix.audience }}" == "release" ]]; then
+          # Remove Azure from v1.5.x builds
+          if [[ "${{ matrix.audience }}" == "v1.5.x" ]]; then
             rm -r docs/azure
             cat index.rst | grep -v docs/azure > index-no-azure.rst
             mv index-no-azure.rst index.rst

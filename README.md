@@ -16,15 +16,16 @@ Cat Tracker.
 
 ## Publishing the documentation
 
-This documentation is built using [Sphinx](https://www.sphinx-doc.org/), and
-is available in two versions under the following directories in the `gh-pages` branch of this repository:
+This documentation is built using [Sphinx](https://www.sphinx-doc.org/), and is
+available in two versions under the following directories in the `gh-pages`
+branch of this repository:
 
-* [`saga`](https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/tree/gh-pages/saga)
-* [`v1.5.x`](https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/tree/gh-pages/v1.5.x)
+- [`saga`](https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/tree/gh-pages/saga)
+- [`v1.6.x`](https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/tree/gh-pages/v1.6.x)
+- [`v1.5.x`](https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/tree/gh-pages/v1.5.x)
 
-A deployment is triggered by pushing commits to the respective branch and is automated using
-GitHub actions.
-See ``./github/workflows/test-and-release.yaml``.
+A deployment is triggered by pushing commits to the respective branch and is
+automated using GitHub actions. See `./github/workflows/test-and-release.yaml`.
 The build for the release (`v1.5.x`) does not include the Azure documentation.
-The two variants of the documentation are built from the same source and there is no ongoing
-maintenance for a _feature branch_.
+The three variants of the documentation are built from the same source and there
+is no ongoing maintenance for a _feature branch_.
