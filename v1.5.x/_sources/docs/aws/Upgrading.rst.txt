@@ -7,11 +7,17 @@ Upgrading an existing installation
    :local:
    :depth: 2
 
-If you already have an installation and you want to upgrade to the latest release, perform the following steps:
+Before starting an upgrade, read the release notes:
 
-1. See the `release notes for the nRF Asset Tracker for AWS <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/releases>`_ and pay close attention to *Breaking Changes*.
+* `Release notes for the nRF Asset Tracker for AWS <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/releases>`_
+* `Release notes for the Cat Tracker web application <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js/releases>`_
 
-#. Pull in the changes and perform the update:
+Pay close attention to Breaking changes.
+
+Upgrading nRF Asset Tracker for AWS
+***********************************
+
+If you already have an installation and you want to upgrade to the latest release, pull in the changes and perform the update:
 
    .. code-block:: bash
 
@@ -23,18 +29,11 @@ If you already have an installation and you want to upgrade to the latest releas
 Upgrading an existing Cat Tracker web application installation
 **************************************************************
 
-If you already have an installation and you want to upgrade to the latest release, perform the following steps:
-
-1. See the `release notes for the Cat Tracker web application <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js/releases>`_ and pay close attention to *Breaking Changes*.
-
-#. Pull in the changes and perform the update:
+If you already have an installation and you want to upgrade to the latest release, pull in the changes and perform the update:
 
    .. code-block:: bash
 
        git pull
        npm ci
 
-Publishing the upgraded Cat Tracker web application to AWS
-----------------------------------------------------------
-
-If you want to publish the upgrade to AWS, perform the steps for the initial installation as described in :ref:`Deploying the Cat Tracker web application <aws-getting-started-app>`.
+To publish the upgrade to AWS, perform the steps for the initial installation as described in :ref:`Deploying the Cat Tracker web application <aws-getting-started-app>`.

@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Cat Tracker web application &mdash; nRF Asset Tracker 11589ff09d3c1d2a550056bc01d7469730c860b3 documentation</title>
+  <title>Cat Tracker web application &mdash; nRF Asset Tracker fbd0d9e2462b7afbab7662139ff2c5baee899d6b documentation</title>
   
 
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
 
   
@@ -30,6 +32,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -106,7 +109,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture decision records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
@@ -184,6 +186,38 @@
 <a class="reference external" href="https://www.typescriptlang.org/">TypeScript</a>.
 The <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js">source code for the web application</a> is published on GitHub.</p>
 <p>To learn more about customizing the Cat Tracker web application, see the <a class="reference external" href="https://create-react-app.dev/docs/getting-started/">Getting started guide on Create React App</a>.</p>
+<p>The web application offers the following features:</p>
+<ul class="simple">
+<li><p>Registering the user</p>
+<ul>
+<li><p>Includes password recovery</p></li>
+</ul>
+</li>
+<li><p>Listing of asset trackers</p></li>
+<li><p>Viewing of asset trackers</p>
+<ul>
+<li><p>Current and historical device data</p>
+<ul>
+<li><p>GPS location</p></li>
+<li><p>Battery voltage</p></li>
+<li><p>Accelerometer</p></li>
+</ul>
+</li>
+<li><p>Configuring the asset tracker</p>
+<ul>
+<li><p>Update configuration</p></li>
+<li><p>Sensor threshold</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Managing the asset trackers</p>
+<ul>
+<li><p>Deleting the asset tracker</p></li>
+<li><p>Upgrading the firmware</p></li>
+</ul>
+</li>
+</ul>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Subpages:</span></p>
 <ul>

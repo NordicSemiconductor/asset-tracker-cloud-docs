@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Provisioning using the CLI &mdash; nRF Asset Tracker 11589ff09d3c1d2a550056bc01d7469730c860b3 documentation</title>
+  <title>Provisioning using the CLI &mdash; nRF Asset Tracker fbd0d9e2462b7afbab7662139ff2c5baee899d6b documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
 
   
@@ -30,6 +32,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
@@ -103,7 +106,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../TroubleShooting.html">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-Cloud Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
 </ul>
 </li>
 </ul>
@@ -112,7 +115,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../adr/README.html">Architecture decision records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
@@ -193,11 +195,11 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Provisioning the certificates and programming the firmware through CLI are not currently supported on WSL 2 since it lacks support for serial devices.
-For more information, see the <a class="reference external" href="https://github.com/microsoft/WSL/issues/4322">issue on WSL2</a>.
+For more information, see the <a class="reference external" href="https://github.com/microsoft/WSL/issues/4322">issue on WSL 2</a>.
 Instead, <a class="reference internal" href="Desktop.html#devices-provisioning-certificate-desktop"><span class="std std-ref">use nRF Connect for Desktop to provision your certificates</span></a> and then <a class="reference internal" href="../Index.html#program-the-firmware"><span class="std std-ref">program the firmware</span></a>.</p>
 </div>
-<p>To provision the device certificate using CLI, you must have <a class="reference external" href="https://www.segger.com/downloads/jlink/">Segger JLink</a> installed in your path.</p>
-<p>Use the CLI to provision the device certificates:</p>
+<p>First, make sure you have <a class="reference external" href="https://www.segger.com/downloads/jlink/">Segger JLink</a> installed in your path.</p>
+<p>To provision the device certificates using the CLI, run the following command:</p>
 <pre class="highlight literal-block"> node cli flash &quot;<em>imei</em>&quot; -f /path/to/firmware.hex
  # default secTag is 42
  # default board is the Thingy:91, use --dk to program a DK
@@ -205,9 +207,9 @@ Instead, <a class="reference internal" href="Desktop.html#devices-provisioning-c
  # pass --help to see the additional options, for example, option that enables the use of a different secTag</pre>
 <p>Provisioning of the certificate using CLI also results in the following actions:</p>
 <ol class="arabic simple">
-<li><p>Programming of the <a class="reference external" href="https://github.com/NordicSemiconductor/at_client-hex">AT client sample</a> onto the device</p></li>
-<li><p>Provisioning of the <a class="reference internal" href="../../aws/GettingStarted/DeviceCredentials.html#aws-device-credentials"><span class="std std-ref">created device credentials</span></a></p></li>
-<li><p>Programming of the <a class="reference internal" href="../../aws/GettingStarted/FirmwareConfiguration.html#firmware-configuration"><span class="std std-ref">configured and built firmware</span></a> to the device</p></li>
+<li><p>Programming of the <a class="reference external" href="https://github.com/NordicSemiconductor/at_client-hex">AT client sample</a> onto the device.</p></li>
+<li><p>Provisioning of the <a class="reference internal" href="../../aws/GettingStarted/DeviceCredentials.html#aws-device-credentials"><span class="std std-ref">created device credentials</span></a>.</p></li>
+<li><p>Programming of the <a class="reference internal" href="../../aws/GettingStarted/FirmwareConfiguration.html#aws-firmware-configuration"><span class="std std-ref">configured and built firmware</span></a> to the device.</p></li>
 </ol>
 </div>
 

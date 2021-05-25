@@ -15,8 +15,8 @@ Clone the latest version of the `Cat Tracker web application <https://github.com
 
 .. configure_web_app_start
 
-The web application needs to be configured to be able to run with your account.
-You need to create a file called :file:`.env.local`, which `Create React App <https://create-react-app.dev/docs/adding-custom-environment-variables/>`_ uses to make the settings in the file available as environment variables during build-time.
+You need to configure the web application to be able to run it with your account.
+Create a file called :file:`.env.local`, which `Create React App <https://create-react-app.dev/docs/adding-custom-environment-variables/>`_ uses to make the settings in the file available as environment variables during build time.
 
 .. configure_web_app_end
 

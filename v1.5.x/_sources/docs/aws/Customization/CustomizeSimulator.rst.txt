@@ -5,12 +5,12 @@ Customize the device simulator UI
 
 You can now implement the logic to generate the heart rate monitoring data by modifying the device simulator UI.
 Once this functionality is implemented, the simulator UI will allow to send heartrate data to the cloud using a :ref:`batch message <batch-messages>`.
-Following is an example for customization of the device simulator UI:
+Following is an example for customizing the device simulator UI:
 
-* Add a slider for the heart rate reading between 140 and 220 (which are considered as normal heart rates for a cat)
-* Use the `queueUpdate` method to send the readings as a batch message
+* Add a slider for the heart rate reading between 140 and 220 (which are considered as normal heart rates for a cat).
+* Use the ``queueUpdate`` method to send the readings as a batch message.
 
-The code for the necessary changes can be viewed in the `simulator-ui repository <https://github.com/acme-cat-tracker/simulator-ui/compare/add-heartrate-monitor-data>`_.
+You can view the code for the necessary changes in the `simulator-ui repository <https://github.com/acme-cat-tracker/simulator-ui/compare/add-heartrate-monitor-data>`_.
 
 The following image shows the customization done on the device simulator UI:
 

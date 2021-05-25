@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Install the nRF Asset Tracker into your AWS account &mdash; nRF Asset Tracker 11589ff09d3c1d2a550056bc01d7469730c860b3 documentation</title>
+  <title>Install the nRF Asset Tracker into your AWS account &mdash; nRF Asset Tracker fbd0d9e2462b7afbab7662139ff2c5baee899d6b documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
 
   
@@ -30,6 +32,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
@@ -115,7 +118,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../UnwiredLabsAPI.html">Unwired Labs API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Authentication.html">Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../IoTShadowAndTopics.html">AWS IoT Shadow and topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IoTShadowAndTopics.html">AWS IoT Device Shadow service and MQTT topics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../LimitingShadowDocumentSize.html">Limiting the shadow document size</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../HistoricalData.html">Storage of historical data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../SNI.html">Server Name Indication</a></li>
@@ -130,7 +133,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../adr/README.html">Architecture decision records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
@@ -227,13 +229,13 @@ npx cdk deploy <span class="s1">&#39;*&#39;</span>
 node dist/cdk/helper/addFakeRoute.js
 </pre></div>
 </div>
-<p>The <em>initial</em> deployment will take a few minutes because it sets up a <a class="reference external" href="https://aws.amazon.com/cloudfront/">CloudFront</a> distribution for the web application.</p>
+<p>The initial deployment will take a few minutes because it sets up a <a class="reference external" href="https://aws.amazon.com/cloudfront/">CloudFront</a> distribution for the web application.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The AWS CDK will provide a list of permission changes to your account, and you need to review them carefully whenever you make changes to the setup.
-However, this step is not mandatory, and it is safe to skip since the deployment happens in a blank account.
+<p>The AWS CDK provides a list of permission changes to your account, and you need to review them carefully whenever you make changes to the setup.
+However, this step is not mandatory and you can safely skip it, because you are deploying in a blank account.
 To skip this step in future, run <code class="docutils literal notranslate"><span class="pre">npx</span> <span class="pre">cdk</span> <span class="pre">deploy</span> <span class="pre">'*'</span> <span class="pre">--require-approval</span> <span class="pre">never</span></code>.
-This must be done only in standalone accounts for development purposes.</p>
+Do this only in standalone accounts for development purposes.</p>
 </div>
 </div>
 

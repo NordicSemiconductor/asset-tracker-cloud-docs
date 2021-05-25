@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Storage of historical data &mdash; nRF Asset Tracker 11589ff09d3c1d2a550056bc01d7469730c860b3 documentation</title>
+  <title>Storage of historical data &mdash; nRF Asset Tracker fbd0d9e2462b7afbab7662139ff2c5baee899d6b documentation</title>
   
 
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
 
   
@@ -30,6 +32,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -104,7 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="UnwiredLabsAPI.html">Unwired Labs API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Authentication.html">Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">AWS IoT Shadow and topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">AWS IoT Device Shadow service and MQTT topics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LimitingShadowDocumentSize.html">Limiting the shadow document size</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Storage of historical data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SNI.html">Server Name Indication</a></li>
@@ -119,7 +122,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture decision records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
@@ -196,8 +198,8 @@
   <div class="section" id="storage-of-historical-data">
 <span id="storage-historical-data"></span><h1>Storage of historical data<a class="headerlink" href="#storage-of-historical-data" title="Permalink to this headline">¶</a></h1>
 <p>The nRF Asset Tracker uses <a class="reference external" href="https://aws.amazon.com/timestream/">AWS Timestream</a> to analyze the historical data.
-This offers developers a serverless, schema-less data storage optimized for IoT with the capability of querying using SQL.</p>
-<p>It provides ease of maintenance, flexibility to change device messages, and cost-per-use pricing.</p>
+It offers developers a serverless and schemaless data storage optimized for IoT with the capability of querying using SQL.</p>
+<p>AWS Timestream provides ease of maintenance, flexibility to change device messages, and cost-per-use pricing.</p>
 </div>
 
 

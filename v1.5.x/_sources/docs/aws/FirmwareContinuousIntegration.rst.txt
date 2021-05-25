@@ -12,7 +12,7 @@ The AWS implementation of the nRF Asset Tracker provides the resources for conti
 Overview
 ********
 
-Every commit to the `firmware repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware>`_ will trigger a CI run.
+Every commit to the `firmware repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws>`_ will trigger a CI run.
 The CI run results in the following actions:
 
 1. Creating a new device and credentials on AWS IoT.

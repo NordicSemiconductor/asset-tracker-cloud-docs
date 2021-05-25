@@ -17,7 +17,6 @@ To use Unwired Labs' LocationAPI, provide the ``unwiredlabsApiKey`` parameter wh
         --template-file azuredeploy.json \
         --parameters \
             appName=${APP_NAME:-nrfassettracker} \
-            location=${LOCATION:-northeurope} \
             appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
             unwiredlabsApiKey=*your API key*

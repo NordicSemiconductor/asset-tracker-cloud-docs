@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>nRF Asset Tracker &mdash; nRF Asset Tracker 11589ff09d3c1d2a550056bc01d7469730c860b3 documentation</title>
+  <title>nRF Asset Tracker &mdash; nRF Asset Tracker fbd0d9e2462b7afbab7662139ff2c5baee899d6b documentation</title>
   
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/common.css" type="text/css" />
 
   
@@ -30,6 +32,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
@@ -102,7 +105,6 @@
 <li class="toctree-l1"><a class="reference internal" href="docs/guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="docs/Support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docs/adr/README.html">Architecture decision records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
@@ -176,7 +178,7 @@
             
   <div class="section" id="nrf-asset-tracker">
 <span id="readme"></span><h1>nRF Asset Tracker<a class="headerlink" href="#nrf-asset-tracker" title="Permalink to this headline">¶</a></h1>
-<p>The nRF Asset Tracker aims to provide a concrete end-to-end example for an ultra-low power cellular IoT product in the asset tracker space, specifically a Cat Tracker.</p>
+<p>The nRF Asset Tracker is an application that aims to provide a concrete end-to-end example for an ultra-low power cellular IoT product in the asset tracker space, specifically a Cat Tracker.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -216,7 +218,7 @@
 <li class="toctree-l2"><a class="reference internal" href="docs/aws/UnwiredLabsAPI.html">Unwired Labs API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/aws/Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/aws/Authentication.html">Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docs/aws/IoTShadowAndTopics.html">AWS IoT Shadow and topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/aws/IoTShadowAndTopics.html">AWS IoT Device Shadow service and MQTT topics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/aws/LimitingShadowDocumentSize.html">Limiting the shadow document size</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/aws/HistoricalData.html">Storage of historical data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/aws/SNI.html">Server Name Indication</a></li>
@@ -227,10 +229,19 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="docs/firmware/Index.html">Firmware</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="docs/firmware/BuildingUsingLocalSystem.html">Building the project using your local system</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docs/firmware/BuildingUsingDocker.html">Building the project using Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docs/firmware/BuildingUsingGitHub.html">Building the project using GitHub actions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docs/aws/FirmwareContinuousIntegration.html">Continuous integration of firmware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/firmware/aws/Index.html">Firmware for the AWS cloud components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="docs/firmware/aws/BuildingUsingLocalSystem.html">Building the project using your local system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/firmware/aws/BuildingUsingDocker.html">Building the project using Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/firmware/aws/BuildingUsingGitHub.html">Building the project using GitHub actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/aws/FirmwareContinuousIntegration.html">Continuous integration of firmware</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docs/firmware/azure/Index.html">Firmware for the Azure cloud components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="docs/firmware/azure/BuildingUsingLocalSystem.html">Building the project using your local system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/firmware/azure/BuildingUsingDocker.html">Building the project using Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/firmware/azure/BuildingUsingGitHub.html">Building the project using GitHub Actions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="docs/devices/Index.html">Connect using a real device</a><ul>
@@ -240,8 +251,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="docs/devices/TroubleShooting.html">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docs/devices/cloud-protocol/Index.html">Device-to-Cloud Protocol</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="docs/devices/cloud-protocol/TransportAndData.html">Transport and Data Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/devices/cloud-protocol/Index.html">Device-to-cloud communication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="docs/devices/cloud-protocol/TransportAndData.html">Transport and data protocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/devices/cloud-protocol/SensorDataAndConfiguration.html">Device data and configuration</a></li>
 </ul>
 </li>
@@ -258,20 +269,13 @@
 <li class="toctree-l2"><a class="reference internal" href="docs/guides/CellGeolocations.html">Cell geolocations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/guides/CloudDifferences.html">Cloud differences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docs/guides/ETSI-EN-303-645.html">Cyber security for consumer Internet of Things: baseline requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/guides/ETSI-EN-303-645.html">Cyber security for consumer Internet of Things</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/guides/Versioning.html">Versioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/guides/Direnv.html">Managing environment variables using direnv</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="docs/Support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docs/adr/README.html">Architecture decision records</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="docs/adr/002-use-npm-package-registry.html">ADR 002: Use NPM registry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docs/adr/003-use-saga-as-the-main-branch.html">ADR 003: Use saga as the name for the main branch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docs/adr/004-move-to-nordicsemiconductor-github-organization.html">ADR 004: Move to Nordic Semiconductor GitHub organization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docs/adr/005-clean-gitignore.html">ADR 005: Clean the gitignore file</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
@@ -280,7 +284,11 @@
 <h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
 <p><em>Amazon Web Services</em>, the AWS logo are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries.
 <em>Google</em> and the Google logo are registered trademarks of Google LLC.
-<em>Microsoft</em> and <em>Azure</em> are registered trademarks of Microsoft Corporation in the United States and/or other countries.</p>
+<em>Microsoft</em> and <em>Azure</em> are registered trademarks of Microsoft Corporation in the United States and/or other countries.
+<em>Satellite</em> by Casey Fluster from the Noun Project.
+<em>Cell tower</em> by Rifai from the Noun Project.
+<em>Mobile Phone</em> by Davo Sime from the Noun Project.
+<em>Unwired Labs</em>, the Unwired Labs logo are trademarks of Unwired Labs (India) Pvt. Ltd.</p>
 </div>
 </div>
 

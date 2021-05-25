@@ -1,7 +1,7 @@
 .. _etsi-baseline_req:
 
-Cyber security for consumer Internet of Things: baseline requirements
-#####################################################################
+Cyber security for consumer Internet of Things
+##############################################
 
 ETSI has released `ETSI EN 303 645 V2.1.1 <https://www.etsi.org/newsroom/press-releases/1789-2020-06-etsi-releases-world-leading-consumer-iot-security-standard>`_, which outlines 13 baseline requirements for secure consumer IoT devices:
 
@@ -19,6 +19,6 @@ ETSI has released `ETSI EN 303 645 V2.1.1 <https://www.etsi.org/newsroom/press-r
 * Make installation and maintenance of devices easy.
 * Validate input data.
 
-Since more and more B2B IoT solutions are getting commoditized, these requirements apply to the commercial solutions also.
+These requirements apply also to commercial solutions.
 
 See the `ETSI press release <https://www.etsi.org/newsroom/press-releases/1789-2020-06-etsi-releases-world-leading-consumer-iot-security-standard>`_ for more information.

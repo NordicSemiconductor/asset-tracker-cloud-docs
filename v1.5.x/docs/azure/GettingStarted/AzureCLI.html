@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Install the Azure CLI &mdash; nRF Asset Tracker 11589ff09d3c1d2a550056bc01d7469730c860b3 documentation</title>
+  <title>Install the Azure CLI &mdash; nRF Asset Tracker fbd0d9e2462b7afbab7662139ff2c5baee899d6b documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
 
   
@@ -30,6 +32,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
@@ -101,7 +104,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../adr/README.html">Architecture decision records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
@@ -174,15 +176,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="install-the-azure-cli">
-<h1>Install the Azure CLI<a class="headerlink" href="#install-the-azure-cli" title="Permalink to this headline">¶</a></h1>
-<p>Follow the instructions from the <a class="reference external" href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest">Azure CLI documentation</a> to install the CLI.</p>
-<p>After installing the CLI, you must be able to execute the <code class="docutils literal notranslate"><span class="pre">az</span></code> command:</p>
+<span id="azure-install-cli"></span><h1>Install the Azure CLI<a class="headerlink" href="#install-the-azure-cli" title="Permalink to this headline">¶</a></h1>
+<p>To install the Azure CLI, follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest">Azure CLI documentation</a>.</p>
+<p>After installing the CLI, you can execute the <code class="docutils literal notranslate"><span class="pre">az</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az
 </pre></div>
 </div>
 <div class="section" id="dockerizing-the-az-command">
 <h2>Dockerizing the az command<a class="headerlink" href="#dockerizing-the-az-command" title="Permalink to this headline">¶</a></h2>
-<p>In case you encounter the issue where the Azure CLI requires <a class="reference external" href="https://github.com/Azure/azure-cli/issues/11239">an older Python version</a>, you can <em>dockerize</em> it as follows:</p>
+<p>In case you encounter the issue where the Azure CLI requires an <a class="reference external" href="https://github.com/Azure/azure-cli/issues/11239">older Python version</a>, you can dockerize the <code class="docutils literal notranslate"><span class="pre">az</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 
 <span class="nb">set</span> -eu
