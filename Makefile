@@ -14,5 +14,5 @@ VERSION ?= saga
 AUDIENCE ?= saga
 
 html: Makefile dotincludes docs/project/system-overview.svg docs/project/system-overview-v1.5.x.svg
-	./scripts/sphinx.sh
+	RELEASE=$(RELEASE) VERSION=$(VERSION) AUDIENCE=$(AUDIENCE) ./scripts/sphinx.sh
 	find docs -type f -name \*.json | xargs -I@ cp -v @ build/html/@
