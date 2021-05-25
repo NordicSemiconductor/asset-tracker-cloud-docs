@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Run the device simulator UI &mdash; nRF Asset Tracker fbd0d9e2462b7afbab7662139ff2c5baee899d6b documentation</title>
+  <title>Run the device simulator UI &mdash; nRF Asset Tracker 0944a3cd3f2f1a73262063dec72502a7929e67c6 documentation</title>
   
 
   
@@ -209,11 +209,10 @@
 <ol class="arabic">
 <li><p>Navigate to the <a class="reference internal" href="../GettingStarted/WorkingDirectory.html#aws-working-directory"><span class="std std-ref">working directory</span></a>.</p></li>
 <li><p>Clone the device simulator UI and install the dependencies:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js simulator-ui
-<span class="nb">cd</span> simulator-ui
-npm ci
-</pre></div>
-</div>
+<pre class="literal-block">git clone --branch saga --single-branch \
+  <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js">https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js</a> simulator-ui
+cd simulator-ui
+npm ci</pre>
 </li>
 <li><p>Start the development server of the device simulator UI:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm start

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous integration of firmware &mdash; nRF Asset Tracker fbd0d9e2462b7afbab7662139ff2c5baee899d6b documentation</title>
+  <title>Continuous integration of firmware &mdash; nRF Asset Tracker 0944a3cd3f2f1a73262063dec72502a7929e67c6 documentation</title>
   
 
   
@@ -270,12 +270,11 @@ Secret Access Key: &quot;<em>AWS Secret Access Key</em>&quot;</pre>
 <ol class="arabic">
 <li><p>Download <a class="reference external" href="https://www.segger.com/downloads/jlink/">JLink</a> for your platform.</p></li>
 <li><p>Install <a class="reference external" href="https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git">firmware-ci-runner-aws</a> by running the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git
-<span class="nb">cd</span> firmware-ci-runner-aws
+<pre class="literal-block">git clone --branch saga --single-branch \
+  <a class="reference external" href="https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git">https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git</a>
+cd firmware-ci-runner-aws
 npm ci
-npx tsc
-</pre></div>
-</div>
+npx tsc</pre>
 </li>
 <li><p>Provide the following environment variables. Use the path to the JLink folder (for example, <code class="file docutils literal notranslate"><span class="pre">~/JLink_Linux_V686_arm64/</span></code>) that is created during the installation in step 1:</p>
 <pre class="highlight literal-block">export AWS_ACCESS_KEY_ID=&quot;<em>AWS Access Key ID printed above</em>&quot;

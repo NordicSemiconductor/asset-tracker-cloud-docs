@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Deploy the Cat Tracker web application &mdash; nRF Asset Tracker fbd0d9e2462b7afbab7662139ff2c5baee899d6b documentation</title>
+  <title>Deploy the Cat Tracker web application &mdash; nRF Asset Tracker 0944a3cd3f2f1a73262063dec72502a7929e67c6 documentation</title>
   
 
   
@@ -229,12 +229,11 @@
 <p>Before starting, navigate to the working directory <code class="file docutils literal notranslate"><span class="pre">~/nrf-asset-tracker</span></code>.</p>
 <div class="section" id="clone-the-project-and-install-the-dependencies">
 <h2><a class="toc-backref" href="#id2">Clone the project and install the dependencies</a><a class="headerlink" href="#clone-the-project-and-install-the-dependencies" title="Permalink to this headline">¶</a></h2>
-<p>Clone the latest version of the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js">Cat Tracker web application</a> project and install the dependencies:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git cat-tracker-web-app
-<span class="nb">cd</span> cat-tracker-web-app
-npm ci
-</pre></div>
-</div>
+<p>Clone the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js">Cat Tracker web application</a> project and install the dependencies:</p>
+<pre class="literal-block">git clone --branch saga --single-branch \
+  <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git">https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git</a> cat-tracker-web-app
+cd cat-tracker-web-app
+npm ci</pre>
 </div>
 <div class="section" id="configure-the-web-application">
 <h2><a class="toc-backref" href="#id3">Configure the web application</a><a class="headerlink" href="#configure-the-web-application" title="Permalink to this headline">¶</a></h2>

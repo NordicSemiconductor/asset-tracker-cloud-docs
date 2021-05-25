@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Building the project using Docker &mdash; nRF Asset Tracker fbd0d9e2462b7afbab7662139ff2c5baee899d6b documentation</title>
+  <title>Building the project using Docker &mdash; nRF Asset Tracker 0944a3cd3f2f1a73262063dec72502a7929e67c6 documentation</title>
   
 
   
@@ -214,11 +214,10 @@ If you install <a class="reference external" href="https://www.docker.com/">Dock
 <p>The Docker image is not intended to be shared.</p>
 <p>The Docker image is also used to automate the building of HEX files <a class="reference internal" href="BuildingUsingGitHub.html#firmware-aws-building-github-actions"><span class="std std-ref">using GitHub Actions</span></a>, which is used to <a class="reference internal" href="../../guides/AutomateHEXFileBuilding.html#guides-automate-hexfile-building"><span class="std std-ref">continuously deliver the firmware builds</span></a> in the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws">out-of-tree example repository</a>.</p>
 <p>To build the the Docker image for this project, run the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws nrf-asset-tracker-firmware-aws
-<span class="nb">cd</span> nrf-asset-tracker-firmware-aws
-docker build -t asset-tracker-firmware-docker .
-</pre></div>
-</div>
+<pre class="literal-block">git clone --branch saga --single-branch \
+  <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws">https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws</a> nrf-asset-tracker-firmware-aws
+cd nrf-asset-tracker-firmware-aws
+docker build -t asset-tracker-firmware-docker .</pre>
 <p>Then, follow the <a class="reference internal" href="../../aws/GettingStarted/FirmwareConfiguration.html#aws-firmware-configuration"><span class="std std-ref">configuration instructions for the firmware</span></a> and update the <code class="file docutils literal notranslate"><span class="pre">prj.conf</span></code> file.</p>
 <div class="section" id="build-the-project">
 <h2><a class="toc-backref" href="#id1">Build the project</a><a class="headerlink" href="#build-the-project" title="Permalink to this headline">¶</a></h2>
