@@ -8,9 +8,10 @@ To run the device simulator User Interface (UI), complete the following steps:
 1. Navigate to the :ref:`working directory <aws-working-directory>`.
 #. Clone the device simulator UI and install the dependencies:
 
-   .. code-block:: bash
+   .. parsed-literal::
 
-      git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js simulator-ui
+      git clone --branch |version| --single-branch \\
+        https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js simulator-ui
       cd simulator-ui
       npm ci
 

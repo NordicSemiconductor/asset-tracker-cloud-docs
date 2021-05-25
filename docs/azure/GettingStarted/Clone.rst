@@ -5,9 +5,10 @@ Clone the project and install the dependencies
 
 To clone the latest version of the `nRF Asset Tracker for Azure <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_ project and install the dependencies, use the following commands:
 
-.. code-block:: bash
+.. parsed-literal::
 
-    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js.git azure
+    git clone --branch |version| --single-branch \\
+      https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js.git azure
     
     cd azure 
     

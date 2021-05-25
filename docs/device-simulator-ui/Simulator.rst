@@ -52,9 +52,10 @@ Clone the project and install dependencies
 
 Clone the latest version of the device-ui project and install the dependencies:
 
-.. code-block:: bash
+.. parsed-literal::
 
-    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js device-ui
+    git clone --branch |version| --single-branch \\
+      https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js device-ui
     cd device-ui
     npm ci
 

@@ -93,9 +93,10 @@ To set up Firmware CI runner, complete the following steps:
 1. Download `JLink <https://www.segger.com/downloads/jlink/>`_ for your platform.
 #. Install `firmware-ci-runner-aws <https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git>`_ by running the following commands:
 
-   .. code-block:: bash
+   .. parsed-literal::
 
-      git clone https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git
+      git clone --branch |version| --single-branch \\
+        https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git
       cd firmware-ci-runner-aws
       npm ci
       npx tsc
