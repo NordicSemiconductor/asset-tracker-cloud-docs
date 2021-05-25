@@ -41,11 +41,11 @@ The API provides the geolocation of nearly every cell tower and with this inform
 
 Follow the configuration guide in the respective implementation to enable Unwired Labs' geolocation API:
 
-.. only:: only v1.5.x
+.. only:: v1_5_x
 
    * :ref:`AWS <aws-unwired-labs-api>`
 
-.. only:: not v1.5.x
+.. only:: not v1_5_x
 
    * :ref:`AWS <aws-unwired-labs-api>`
    * :ref:`Azure <azure-unwired-labs-api>`

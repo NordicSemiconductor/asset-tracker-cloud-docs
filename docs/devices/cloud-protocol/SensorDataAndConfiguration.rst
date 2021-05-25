@@ -9,7 +9,7 @@ Device data and configuration
 
 Sending and receiving data is different for each cloud operator.
 
-.. only:: not v1.5.x
+.. only:: not v1_5_x
 
    AWS
    ===
@@ -19,7 +19,7 @@ See the `state JSON document for an AWS example <./state.reported.aws.json>`_.
 
 See :ref:`aws-iot-shadow-topics` for the implementation details for AWS.
 
-.. only:: not v1.5.x
+.. only:: not v1_5_x
 
    Azure
    =====
