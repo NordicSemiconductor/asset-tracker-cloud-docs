@@ -3,7 +3,7 @@
 Clone the project and install the dependencies
 ##############################################
 
-To clone the latest version of the `nRF Asset Tracker for Azure <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_ project and install the dependencies, use the following commands:
+To clone the `nRF Asset Tracker for Azure <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_ project and install the dependencies, use the following commands:
 
 .. parsed-literal::
 
