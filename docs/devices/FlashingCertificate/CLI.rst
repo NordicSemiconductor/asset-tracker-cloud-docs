@@ -27,13 +27,13 @@ To provision the device certificates using the CLI, run the following command:
 
 Provisioning of the certificate using CLI also results in the following actions:
 
-.. only:: not saga
+.. only:: only v1.5.x
 
     1. Programming of the `AT client sample <https://github.com/NordicSemiconductor/at_client-hex>`_ onto the device.
     #. Provisioning of the :ref:`created device credentials <aws-device-credentials>`.
     #. Programming of the :ref:`configured and built firmware <aws-firmware-configuration>` to the device.
 
-.. only:: saga
+.. only:: not v1.5.x
 
     * Programming of the `AT client sample <https://github.com/NordicSemiconductor/at_client-hex>`_ onto the device.
     * Provisioning of the created device credentials for the respective cloud flavour :ref:`AWS <aws-device-credentials>`, or :ref:`Azure <azure-device-credentials>`.

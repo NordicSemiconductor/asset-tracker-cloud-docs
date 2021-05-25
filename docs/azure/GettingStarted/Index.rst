@@ -3,10 +3,6 @@
 Getting started
 ###############
 
-.. include:: ../Index.rst
-   :start-after: warning_start
-   :end-before: warning_end
-
 .. include:: ../../project/Index.rst
    :start-after: developer_xp_warning_start
    :end-before: developer_xp_warning_end

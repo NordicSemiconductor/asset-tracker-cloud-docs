@@ -54,7 +54,7 @@ jobs:
 
     strategy:
       matrix:
-        audience: [release, saga]
+        audience: [saga, v1.6.x, v1.5.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -80,8 +80,8 @@ jobs:
         run: |
           export PATH=$PATH:/home/runner/.local/bin
           export AUDIENCE=${{ matrix.audience }}
-          # Remove Azure from release builds
-          if [[ "${{ matrix.audience }}" == "release" ]]; then
+          # Remove Azure from v1.5.x builds
+          if [[ "${{ matrix.audience }}" == "v1.5.x" ]]; then
             rm -r docs/azure
             cat index.rst | grep -v docs/azure > index-no-azure.rst
             mv index-no-azure.rst index.rst
@@ -145,7 +145,7 @@ jobs:
           RELEASE=`git describe --abbrev=0 --tags --always | tr -d '\n'`
           echo "VERSION=saga" >> $GITHUB_ENV
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
-          echo "AUDIENCE=saga" >> $GITHUB_ENV
+          echo "AUDIENCE=all" >> $GITHUB_ENV
 
       - name: Determine documentation release (maintenance branches)
         if: github.ref != 'refs/heads/saga' && github.event_name == 'push'
@@ -154,7 +154,7 @@ jobs:
           VERSION=`git rev-parse --abbrev-ref HEAD | tr -d 'refs/heads/' | tr -d '\n'`
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "RELEASE=${{ github.sha }}" >> $GITHUB_ENV
-          echo "AUDIENCE=release" >> $GITHUB_ENV
+          echo "AUDIENCE=$VERSION" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: |
@@ -179,8 +179,9 @@ jobs:
         run: |
           echo "Updating documentation for version ${{ env.VERSION }} release ${{ env.RELEASE }}...";
           export PATH=$PATH:/home/runner/.local/bin
-          # Remove Azure from release builds
-          if [[ "${AUDIENCE}" == "release" ]]; then
+          # Remove Azure from v1.5.x builds
+          if [[ "${AUDIENCE}" == "v1.5.x" ]]; then
+            rm -r docs/azure
             cat index.rst | grep -v docs/azure > index-no-azure.rst
             mv index-no-azure.rst index.rst
           fi
