@@ -5,11 +5,9 @@ Azure cloud components
 
 .. warning_start
 
-.. warning::
+.. note::
 
-   **🚧 WORK IN PROGRESS 🚧**
-
-   The Azure implementation of the nRF Asset Tracker is work in progress.
+   The Azure implementation of the nRF Asset Tracker is a work in progress.
    See `this issue <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/12>`_ for more information.
 
 .. warning_end
@@ -22,14 +20,10 @@ The :file:`.feature` files in the folder are used to continuously verify the ref
 
 .. note::
 
-   **Recurring costs**
-
-   The Azure solution is using `Cosmos DB <https://docs.microsoft.com/en-us/azure/cosmos-db/introduction>`_ for querying historical device data which costs around €25 per month.
+   The Azure solution is using `Cosmos DB <https://docs.microsoft.com/en-us/azure/cosmos-db/introduction>`_ for querying historical device data and it costs around 25 EUR per month.
    However, you can check if you are eligible for `the free tier for new accounts <https://azure.microsoft.com/en-us/pricing/details/cosmos-db/>`_.
-
-   The Azure solution is using `IoT Hub <https://azure.microsoft.com/en-us/services/iot-hub/>`_ with the S1 standard tier  which costs around €25 per month in order to use `Device Update for IoT Hub <https://docs.microsoft.com/en-us/azure/iot-hub-device-update/understand-device-update>`_.
-
-   Hence the minimum costs to run nRF Asset Tracker on Azure is around €25-50 per month.
+   The Azure solution is using `IoT Hub <https://azure.microsoft.com/en-us/services/iot-hub/>`_ with the S1 standard tier and it costs around 25 EUR per month for using `Device Update for IoT Hub <https://docs.microsoft.com/en-us/azure/iot-hub-device-update/understand-device-update>`_.
+   Hence, the minimum costs to run nRF Asset Tracker on Azure is around 25-50 EUR per month.
 
 
 .. toctree::
