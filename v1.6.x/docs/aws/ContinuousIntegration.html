@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Continuous integration &mdash; nRF Asset Tracker 0944a3cd3f2f1a73262063dec72502a7929e67c6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="nRF Connect for Cloud API" href="nRFConnectForCloudAPI.html" />
+    <link rel="prev" title="Continuous deployment" href="ContinuousDeployment.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> nRF Asset Tracker
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v1.6.x
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">AWS cloud components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/Index.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Uninstalling.html">Uninstalling the nRF Asset Tracker from AWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Customization/Index.html">Customization of the nRF Asset Tracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Continuous integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nRFConnectForCloudAPI.html">nRF Connect for Cloud API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UnwiredLabsAPI.html">Unwired Labs API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">AWS IoT Device Shadow service and MQTT topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LimitingShadowDocumentSize.html">Limiting the shadow document size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HistoricalData.html">Storage of historical data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SNI.html">Server Name Indication</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Azure cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">nRF Asset Tracker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Index.html">AWS cloud components</a> &raquo;</li>
+        
+      <li>Continuous integration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v1.6.x/docs/aws/ContinuousIntegration.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="continuous-integration">
+<span id="aws-continuous-integration"></span><h1>Continuous integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#running-the-tests-during-development" id="id1">Running the tests during development</a></p></li>
+<li><p><a class="reference internal" href="#providing-the-environment-variables-in-github" id="id2">Providing the environment variables in GitHub</a></p></li>
+<li><p><a class="reference internal" href="#known-issues" id="id3">Known issues</a></p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is an advanced topic that is closely tied with the further development and customization of the nRF Asset Tracker for your purposes.
+See the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/">GitHub project page of the nRF Asset Tracker for AWS</a> for an implementation of the process outlined in this section.</p>
+</div>
+<p>Continuous integration involves the following actions:</p>
+<ul class="simple">
+<li><p>Every change to the project is tested against an AWS account.</p></li>
+<li><p>All necessary resources are set up using the AWS Cloud Development Kit (CDK) in a separate AWS account.
+This ensures that the definitions work.</p></li>
+<li><p>A Behavior Driven Development (BDD) test suite of end-to-end tests is run.
+The test suite is written in <a class="reference external" href="https://cucumber.io/docs/gherkin/">Gherkin</a>, which describes the tests in English.</p></li>
+</ul>
+<p>In this way, the tests are not tied to the implementation and you cannot accidentally drop tests during refactoring.
+Tests written for test runners like <a class="reference external" href="https://jestjs.io/">Jest</a> tend to be closely tied to the API of the source code implementation.
+In the case of larger refactoring, the tests often need to be refactored as well.
+Since the BDD tests are purely testing based on the public API of the project (which is the native AWS API), they can be kept unchanged during refactoring.</p>
+<div class="section" id="running-the-tests-during-development">
+<h2><a class="toc-backref" href="#id1">Running the tests during development</a><a class="headerlink" href="#running-the-tests-during-development" title="Permalink to this headline">¶</a></h2>
+<p>You can run the following test during development:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm run test:e2e
+</pre></div>
+</div>
+</div>
+<div class="section" id="providing-the-environment-variables-in-github">
+<h2><a class="toc-backref" href="#id2">Providing the environment variables in GitHub</a><a class="headerlink" href="#providing-the-environment-variables-in-github" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to run the tests in a separate, blank account.</p>
+</div>
+<p>To run the end-to-end tests using GitHub Actions, provide the following <a class="reference external" href="https://docs.github.com/en/actions/reference/environment-variables">environment variables</a>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GITHUB_TOKEN</span></code> - A GitHub token (used with <a class="reference external" href="https://github.com/semantic-release/semantic-release">semantic-release</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AWS_ACCESS_KEY_ID</span></code> - Access key ID of the user used to run the tests</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AWS_SECRET_ACCESS_KEY</span></code> - Secret access key of the user</p></li>
+</ul>
+</div>
+<div class="section" id="known-issues">
+<h2><a class="toc-backref" href="#id3">Known issues</a><a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
+<p>If the stack creation fails on the <code class="docutils literal notranslate"><span class="pre">AWS::ApiGatewayV2::Stage</span></code> resource with the following error, you need to update the <code class="docutils literal notranslate"><span class="pre">AWSLogDeliveryWrite20150319</span></code> policy (a built-in policy of the AWS account):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Insufficient permissions to enable logging (Service: AmazonApiGatewayV2;</span>
+<span class="go">Status Code: 400; Error Code: BadRequestException;</span>
+<span class="go">Request ID: 378c255b-c3ed-4d2c-8c00-c4cec2153dbf; Proxy: null)</span>
+</pre></div>
+</div>
+<p>Run the following command to update the <code class="docutils literal notranslate"><span class="pre">AWSLogDeliveryWrite20150319</span></code> policy:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aws logs put-resource-policy --policy-name AWSLogDeliveryWrite20150319 <span class="se">\</span>
+--policy-document <span class="s1">&#39;{&quot;Version&quot;:&quot;2012-10-17&quot;,&quot;Statement&quot;:[{&quot;Sid&quot;:&quot;AWSLogDeliveryWrite&quot;,&quot;Effect&quot;:&quot;Allow&quot;,&quot;Principal&quot;:{&quot;Service&quot;:&quot;delivery.logs.amazonaws.com&quot;},&quot;Action&quot;:[&quot;logs:CreateLogStream&quot;,&quot;logs:PutLogEvents&quot;],&quot;Resource&quot;:[&quot;*&quot;]}]}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="nRFConnectForCloudAPI.html" class="btn btn-neutral float-right" title="nRF Connect for Cloud API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ContinuousDeployment.html" class="btn btn-neutral float-left" title="Continuous deployment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
