@@ -50,7 +50,7 @@ The `device-ui <https://github.com/NordicSemiconductor/asset-tracker-cloud-devic
 Clone the project and install dependencies
 ==========================================
 
-Clone the latest version of the device-ui project and install the dependencies:
+Clone the device-ui project and install the dependencies:
 
 .. parsed-literal::
 
