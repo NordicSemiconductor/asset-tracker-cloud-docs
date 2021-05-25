@@ -3,7 +3,7 @@
 Getting started
 ###############
 
-.. only:: not v1.5.x
+.. only:: not v1_5_x
 
     Amazon Web Services (AWS)
     =========================
@@ -11,7 +11,7 @@ Getting started
 For installing the nRF Asset Tracker in your AWS account, follow the instructions in :ref:`AWS getting started guide <aws-getting-started>`.
 As next steps, you can deploy the :ref:`Cat Tracker web application <aws-getting-started-app>` and :ref:`connect a real device <connect-using-real-device>`.
 
-.. only:: not v1.5.x
+.. only:: not v1_5_x
 
     Microsoft Azure (Azure)
     =======================

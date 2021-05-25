@@ -7,12 +7,12 @@ System overview and technical considerations
    :local:
    :depth: 2
 
-.. only:: not v1.5.x
+.. only:: not v1_5_x
 
    .. raw:: html
      :file: ./system-overview.svg
 
-.. only:: only v1.5.x
+.. only:: v1_5_x
 
    .. raw:: html
      :file: ./system-overview-v1.5.x.svg
