@@ -82,6 +82,9 @@ jobs:
             rm -r docs/azure
             cat index.rst | grep -v docs/azure > index-no-azure.rst
             mv index-no-azure.rst index.rst
+            rm -r docs/firmware/azure
+            cat docs/firmware/Index.rst | grep -v azure/ > docs/firmware/Index-no-azure.rst
+            mv docs/firmware/Index-no-azure.rst docs/firmware/Index.rst
           fi
           make html
 
