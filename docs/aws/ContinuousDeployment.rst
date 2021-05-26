@@ -7,30 +7,29 @@ Continuous deployment
    :local:
    :depth: 2
 
-You can enable continuous deployment of the changes in your source repository to an AWS account.
+You can deploy all changes that you make to a fork of the nRF Asset Tracker for AWS automatically.
 
 .. note::
 
-   It is optional to keep the deployment in your account automatically synchronized with the source code repository.
+   It is optional to keep the deployment in your AWS account automatically synchronized with your fork's source code repository.
 
-For the continuous deployment to work, complete the following steps:
+Fork the nRF Asset Tracker repositories
+***************************************
 
-1. Fork the source code to register the webhook listener that triggers an upgrade of your deployment.
+To enable continuous deployment, complete the following steps:
 
-#. Make sure to update the ``repository.url`` in the :file:`package.json` file in your fork.
+1. Fork `the nRF Asset Tracker for AWS repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js>`_.
 
-   This sets up an AWS CodePipeline, which triggers a CodeBuild project for every push to the ``saga`` branch.
-   
-#. Configure the branch in the ``deploy.branch`` property of the :file:`package.json` file.
+#. Update the `repository.url <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/blob/3ddf0c117de7f22f02df46c3e1ca899915627d46/package.json#L15>`_ in the :file:`package.json` file in your fork. It should point to the repository URL of your fork.
 
-   The CodeBuild project upgrades the CloudFormation stack, which contains the nRF Asset Tracker resources.
+#. Fork `the Cat Tracker web application repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js>`_.
 
-A second CodePipeline will be set up for the web application, which triggers a CodeBuild project for every push to the :file:`saga` branch.
-Configure the repository URL and the branch for the web application in the ``deploy.webApp`` property of the :file:`package.json` file.
-The CodeBuild project upgrades the web application deployment on the S3 bucket.
+#. Update the `deploy.webApp.repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/blob/3ddf0c117de7f22f02df46c3e1ca899915627d46/package.json#L144>`_ in the :file:`package.json` file of your nRF Asset Tracker for AWS fork. It should point to the repository URL of your fork of the Cat Tracker web application.
 
 Provide GitHub credentials
 **************************
+
+This is a manual one-time step that is needed so the AWS CodePipeline project created when enabling continuous deployment below is able to register a webhook in the GitHub repository of your fork to be notified about changes.
 
 You need to create a `developer token <https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line>`_ with ``repo`` and ``admin:repo_hook`` permissions for an account that has write permissions to your repository.
 
@@ -38,14 +37,12 @@ You need to create a `developer token <https://help.github.com/en/articles/creat
 
    It is recommended to use a separate GitHub account instead of your personal GitHub account.
 
-To store the token in `AWS ParameterStore <https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html>`_, use the following command in the AWS CLI:
+To provide this token to the nRF Asset Tracker for AWS, use the following command:
 
 .. parsed-literal::
    :class: highlight
 
     node cli configure-api codebuild github token "*Github Token*"
-
-This is a manual one-time step.
 
 Enable continuous deployment
 ****************************
@@ -56,6 +53,17 @@ After providing the GitHub credentials, set up the continuous deployment by enab
 
     node cli configure-api context stack cd 1
     npx cdk deploy '*'
+
+This sets up an AWS CodePipeline, which triggers an AWS CodeBuild project for every push to the ``saga`` branch.
+You can customize the branch by providing the name in ``deploy.branch`` in the :file:`package.json` file of your nRF Asset Tracker for AWS fork.
+
+A second AWS CodePipeline will be set up for the web application, which triggers a CodeBuild project for every push to the :file:`saga` branch.
+Configure the repository URL and the branch for the web application in the ``deploy.webApp`` property of the :file:`package.json` file of your nRF Asset Tracker for AWS fork.
+
+Trigger a deployment
+********************
+
+Commit a change to your fork to trigger a deployment.
 
 Check the status of the continuous deployment
 *********************************************
