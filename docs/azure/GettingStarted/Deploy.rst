@@ -60,12 +60,6 @@ To install the nRF Asset Tracker into your Azure account, complete the following
 
       direnv allow
    
-#. Authenticate the CLI using the following command:
-
-   .. code-block:: bash
-
-      az login
-
 #. Make sure that you have enabled the right subscription by using the following commands:
 
    .. code-block:: bash
