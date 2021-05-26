@@ -3,21 +3,31 @@
 Continuous deployment
 #####################
 
-You can enable continuous deployment of the changes in your source repository to an Azure account.
+.. contents::
+   :local:
+   :depth: 2
+
+You can deploy all changes that you make to a fork of the nRF Asset Tracker for Azure automatically.
 
 .. note::
 
-   It is optional to keep the deployment in your account automatically synchronized with the source code repository.
+   It is optional to keep the deployment in your Azure account automatically synchronized with your fork's source code repository.
 
-For the continuous deployment to work, you need to fork the source code to register the webhook listener that triggers an upgrade of your deployment.
+Fork the nRF Asset Tracker repositories
+***************************************
 
-After forking, make sure to update the ``repository.url`` in the :file:`package.json` file in your fork.
-For continuous deployment, complete the following steps:
+To enable continuous deployment, complete the following steps:
 
-Acquire credentials for the CI runner
-*************************************
+1. Fork `the nRF Asset Tracker for Azure repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_.
 
-To acquire credentials for the CI runner, complete the following steps:
+#. Fork `the Cat Tracker web application repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js>`_.
+
+#. Update the `deploy.webApp.repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/blob/fd3777cde331286faf10e481bdf1a30327882008/package.json#L111>`_ in the :file:`package.json` file of your nRF Asset Tracker for Azure fork. It should point to the repository URL of your fork of the Cat Tracker web application.
+
+Acquire credentials for GitHub Actions
+**************************************
+
+To acquire credentials for GitHub Actions, complete the following steps:
 
 1. Login using the shell:
 
@@ -51,17 +61,37 @@ To acquire credentials for the CI runner, complete the following steps:
          --sdk-auth \
          > cd-credentials.json
 
-#. Fork the `nRF Asset Tracker for Azure project <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_ and add the following secrets to an environment called ``production``:
+Provide the credentials to GitHub Actions
+*****************************************
+
+1. Add the following `secrets <https://docs.github.com/en/rest/reference/actions#secrets>`_ to an `environment <https://docs.github.com/en/actions/reference/environments#creating-an-environment>`_ called ``production`` in your fork of the nRF Asset Tracker for Azure:
 
    * ``AZURE_CREDENTIALS`` - Store the contents of the JSON file created in the above step.
   
-#. Add the following following values from your :file:`.envrc` file as secrets as well (everything except ``SUBSCRIPTION_ID``):
+#. Add the following following values from your :file:`.envrc` file as secrets as well:
 
    * ``RESOURCE_GROUP``
+   * ``LOCATION``
    * ``APP_NAME``
    * ``B2C_TENANT``
    * ``APP_REG_CLIENT_ID``
 
-#. Commit a change.
+#. If you have enabled the :ref:`azure-unwired-labs-api` add your API key as a secret as well:
 
-   GitHub actions should now update your deployment.
+   * ``UNWIRED_LABS_API_KEY``
+
+Trigger a deployment
+********************
+
+Commit a change to your fork to trigger a deployment.
+
+Check the status of the continuous deployment
+*********************************************
+
+To check the status of the continuous deployment after you have made the changes navigate to the :guilabel:`Actions` tab of your fork.
+You should see a workflow run of the Continuous Deployment action:
+
+.. figure:: ./actions.png
+   :alt: GitHub Actions workflow run of Continuous Deployment
+
+   GitHub Actions workflow run of Continuous Deployment
