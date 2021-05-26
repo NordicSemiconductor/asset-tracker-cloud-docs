@@ -36,16 +36,6 @@ To install the nRF Asset Tracker into your Azure account, complete the following
       # add to .envrc
       export APP_NAME="nrfassettracker"
 
-#. Choose a resource group and a name for the Device Update instance and export it as ``ADU_RESOURCE_GROUP`` and ``ADU_INSTANCE_NAME``.
-   There is a limit of `two instances per subscription <https://docs.microsoft.com/en-us/azure/iot-hub-device-update/device-update-resources#device-update-instance>`_, so the ADU instance needs to be shared between multiple IoT hubs.
-   In this example, ``nRFAssetTrackerADU`` is used as the resource group and Device Update instance name.
-
-   .. code-block:: bash
-
-      # add to .envrc
-      export ADU_RESOURCE_GROUP="nRFAssetTrackerADU"
-      export ADU_INSTANCE_NAME="nRFAssetTrackerADU"
-
 #. Configure your preferred location (you can list the locations using ``az account list-locations``) and export it on the environment variable ``LOCATION``.
    In this example, ``northeurope`` is used as the location name.
 
@@ -72,7 +62,6 @@ To install the nRF Asset Tracker into your Azure account, complete the following
 
    .. code-block:: bash
 
-      az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${ADU_RESOURCE_GROUP:-nRFAssetTrackerADU}
       az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${RESOURCE_GROUP:-nrfassettracker}
 
 #. Register the namespace in the subscription for creating an Azure Active Directory B2C in the next step:
@@ -140,15 +129,6 @@ To install the nRF Asset Tracker into your Azure account, complete the following
             appName=${APP_NAME:-nrfassettracker} \
             appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=$B2C_TENANT \
-      && \
-      az deployment group create --resource-group ${ADU_RESOURCE_GROUP:-nRFAssetTrackerADU} \
-         --mode Incremental # Incremental is used here to allow the creation of an ADU instance per solution independently  \
-         --name initial-setup \
-         --template-file azuredeploy.adu.json \
-         --parameters \
-            aduInstanceName=${ADU_INSTANCE_NAME:-nRFAssetTrackerADU} \
-            nrfAssetTrackerResourceGroup=${RESOURCE_GROUP:-nrfassettracker} \
-            nrfAssetTrackerAppName=${APP_NAME:-nrfassettracker} \
       && \
       # Currently it is not possible to enable website hosting through the ARM template
       az storage blob service-properties update \
