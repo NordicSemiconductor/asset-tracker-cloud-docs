@@ -9,6 +9,12 @@ It is compatible with the :ref:`nRF Asset Tracker for Azure <index_azure>`.
 
 The `firmware GitHub repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure>`_ provides an example for using the application as an out-of-tree development copy, which optionally enables the SUPL client.
 
+.. note::
+
+   The current firmware-over-the-air (FOTA) update mechanism implementated in nRF Asset Tracker for Azure is based on `this tutorial <https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-firmware-update>`_.
+   In February 2021, Microsoft released `a preview of Device Update for IoT Hub <https://techcommunity.microsoft.com/t5/internet-of-things/streamline-device-management-with-device-update-for-iot-hub-now/ba-p/2167663>`_ which will replace the current, as soon as it is generally available.
+   Work on implementing it `has already started <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/12#discussioncomment-483383>`_.
+
 .. toctree::
    :titlesonly:
    :caption: Subpages:
