@@ -56,8 +56,7 @@ To acquire credentials for GitHub Actions, complete the following steps:
 
       az ad sp create-for-rbac --name 'https://nrfassettracker.invalid/cd' --role contributor \
          --scopes \
-            "/subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker} \
-            /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${ADU_RESOURCE_GROUP:-nRFAssetTrackerADU}" \
+            "/subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}" \
          --sdk-auth \
          > cd-credentials.json
 
