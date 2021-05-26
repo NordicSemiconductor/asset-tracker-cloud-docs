@@ -8,4 +8,7 @@ After installing the CLI, you can execute the ``az`` command:
 
 .. code-block:: bash
 
-   az
+   az --version
+   # ...
+   # azure-cli 2.24.0
+   # ...
