@@ -30,7 +30,7 @@ digraph G {
         labelloc=b
         fontsize=16
         bgcolor="#c6edf4" color="#cccccc" 
-        gellceo [ shape=component style=filled color="#00a9ce" fillcolor="#00a9ce" fontcolor="#ffffff" label="Gell Geolocation" ]
+        gellceo [ shape=component style=filled color="#00a9ce" fillcolor="#00a9ce" fontcolor="#ffffff" label="Cell Geolocation" ]
         agpscloud [ shape=component style=filled color="#00a9ce" fillcolor="#00a9ce" fontcolor="#ffffff" label="A-GPS" ]
     }
 
