@@ -7,7 +7,7 @@
 .. parsed-literal::
    :class: highlight
 
-   npm exec -- @nordicsemiconductor/asset-tracker-cloud-device-simulator-azure \
+   npm exec -- @nordicsemiconductor/asset-tracker-cloud-device-simulator-azure \\
       "*/path/to/certificate.json*"
 
 .. include:: ../device-simulator-ui/Simulator.rst
