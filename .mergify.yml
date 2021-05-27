@@ -13,3 +13,20 @@ pull_request_rules:
           - mergify
       rebase:
         bot_account: asset-tracker-cloud-ci
+  - name: merge when all requested reviews are valid
+    conditions:
+      - author!=^(dependabot\[bot\]|renovate\[bot\])$
+      - "#approved-reviews-by>=1"
+      - "#review-requested=0"
+      - "#changes-requested-reviews-by=0"
+      - status-success=pr
+    actions:
+      merge:
+        method: rebase
+        rebase_fallback: squash
+        bot_account: asset-tracker-cloud-ci
+      label:
+        add:
+          - mergify
+      rebase:
+        bot_account: asset-tracker-cloud-ci
