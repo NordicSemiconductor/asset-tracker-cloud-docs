@@ -9,7 +9,7 @@ Connect using the simulator
 
 The CLI provides a software implementation of Cat Tracker for testing purposes.
 It allows the verification of the cloud configuration.
-This feature is also used for testing the nRF Asset Tracker using Continuous Integration.
+This feature is also used for testing the nRF Asset Tracker using continuous integration.
 
 To connect to a device and control the device using the simulator, complete the following steps:
 
