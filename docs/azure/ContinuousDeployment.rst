@@ -76,7 +76,7 @@ Provide the credentials to GitHub Actions
    * ``B2C_TENANT``
    * ``APP_REG_CLIENT_ID``
 
-#. If you have enabled the :ref:`azure-unwired-labs-api` add your API key as a secret as well:
+#. If you have enabled the :ref:`azure-unwired-labs-api`, add your API key as a secret as well:
 
    * ``UNWIRED_LABS_API_KEY``
 
