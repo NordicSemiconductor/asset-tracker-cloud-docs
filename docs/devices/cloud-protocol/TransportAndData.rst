@@ -62,4 +62,4 @@ The code must enable the use of a protocol, which is not supported natively by t
 See also `RION Performance Benchmarks <http://tutorials.jenkov.com/rion/rion-performance-benchmarks.html>`_ .
 
 Protocol buffers are available in Zephyr using `Nanopb <https://jpa.kapsi.fi/nanopb/>`_.
-An example how to use them is implemented in the `Alexa Gadget Bluetooth Peripheral Sample in NCS <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/bluetooth/alexa_gadget/README.html>`_.
+An example on how to use them is implemented in the `Alexa Gadget Bluetooth Peripheral Sample in NCS <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/bluetooth/alexa_gadget/README.html>`_.
