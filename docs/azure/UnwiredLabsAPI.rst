@@ -21,11 +21,11 @@ To use Unwired Labs' LocationAPI, provide the ``unwiredlabsApiKey`` parameter wh
             b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
             unwiredlabsApiKey=*your API key*
 
-This command will enable the `geolocateCellFromUnwiredLabs` function to resolve cells.
-Otherwise, this function will return a ``402`` status on the API route ``cellgeolocation/unwired``.
+This command enables the `geolocateCellFromUnwiredLabs` function to resolve cells.
+Otherwise, this function returns a ``402`` status on the API route ``cellgeolocation/unwired``.
 
 .. note::
 
    Unwired Lab’s LocationAPI is free for low volumes.
-   However, `OpenCellid <https://opencellid.org/#zoom=16&lat=37.77889&lon=-122.41942>`_ allows free use of the underlying dataset.
-   If it is relevant for you, vote in the `Integrate OpenCelliD data issue <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/5>`_.
+   However, `OpenCellid <https://opencellid.org/#zoom=16&lat=37.77889&lon=-122.41942>`_ allows to use the underlying dataset for free.
+   If you find it relevant, vote in the `Integrate OpenCelliD data issue <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/5>`_.

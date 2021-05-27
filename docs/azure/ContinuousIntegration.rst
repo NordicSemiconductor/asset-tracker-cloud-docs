@@ -7,28 +7,30 @@ Continuous integration
    :local:
    :depth: 2
 
+.. note::
+
+   This is an advanced topic that is closely tied with the further development and customization of the nRF Asset Tracker for your purposes.
+   See the `GitHub project page of the nRF Asset Tracker for Azure  <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_ for an implementation of the process outlined in this section.
+
+
 Continuous integration involves the following actions:
 
 * Every change to the project is tested against an Azure account, which must be manually prepared.
-* A BDD test-suite of end-to-end tests written in `Gherkin <https://cucumber.io/docs/gherkin/>`_, which describes the tests in English, is run.
+* A Behavior Driven Development (BDD) test suite of end-to-end tests is run. The test suite is written in `Gherkin <https://cucumber.io/docs/gherkin/>`_, which describes the tests in English.
 
-In this way, the tests are not tied to the implementation and during refactoring, and you cannot accidentally drop tests.
-Tests written for test-runners like `Jest <https://jestjs.io/>`_ tend to be closely tied to the API of the source-code implementation.
-In the case of bigger refactoring, the tests themselves usually need to be refactored as well.
+In this way, the tests are not tied to the implementation and you cannot accidentally drop tests during refactoring.
+Tests written for test runners like `Jest <https://jestjs.io/>`_ tend to be closely tied to the API of the source code implementation.
+In the case of a larger refactoring, the tests often need to be refactored as well.
 Since the BDD tests are purely testing based on the public API of the project (which is a mix of the native Azure API and a custom REST API), they can be kept unchanged during refactoring.
 
-.. note::
-
-    This is an advanced topic for those who need to further develop and customize the nRF Asset Tracker.
-    See the `nRF Asset Tracker for Azure GitHub project page <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_, for the implementation of the process outlined in this section.
 
 Prepare your Azure account
 **************************
 
 .. note::
 
-   The setup process in Azure is more complicated when compared to the :ref:`AWS continuous integration setup <aws-continuous-integration>`, since it involves many manual steps, which cannot be automated.
-   If you have ideas to simplify the process, `please provide your input <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_.
+   The setup process in Azure is more complicated when compared to the :ref:`AWS continuous integration setup <aws-continuous-integration>` since it involves many manual steps, which cannot be automated.
+   If you have ideas to simplify the process, `provide your input <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_.
 
 Log in and create the resource group
 ====================================
@@ -39,16 +41,16 @@ To create the resource group for the CI resources, complete the following steps:
 
    .. code-block:: bash
 
-       az login
+      az login
 
-#. Export the identifier of the subscription which contains the nRF Asset Tracker resources:
+#. Export the identifier of the subscription that contains the nRF Asset Tracker resources:
 
    .. parsed-literal::
       :class: highlight
 
       export SUBSCRIPTION_ID="*subscription id*"
 
-#. Make sure that you have enabled the right subscription by using the following commands:
+#. Make sure that you have enabled the correct subscription by using the following commands:
 
    .. code-block:: bash
 
@@ -74,7 +76,7 @@ To create the resource group for the CI resources, complete the following steps:
 
 #. Choose a resource group and a name for the Device Update instance and export it as ``ADU_RESOURCE_GROUP`` and ``ADU_INSTANCE_NAME``.
    There is an undocumented limit of two instances per ADU account, so the CI must be run against a separate Device Update instance.
-   In this example, we use ``nRFAssetTrackerADUCI`` as the resource group and Device Update instance name.
+   In this example, ``nRFAssetTrackerADUCI`` is used as the resource group and Device Update instance name.
 
    .. code-block:: bash
 
@@ -83,7 +85,7 @@ To create the resource group for the CI resources, complete the following steps:
       export ADU_INSTANCE_NAME="nRFAssetTrackerADUCI"
 
 #. Configure your preferred location (you can list the locations using ``az account list-locations``) and export it on the environment variable ``LOCATION``.
-   In this example, we use ``northeurope`` as the location name.
+   In this example, ``northeurope`` is used as the location name.
 
    .. code-block:: bash
 
@@ -101,13 +103,13 @@ Create a secondary tenant (Azure Active Directory B2C)
 
 1. Create an Azure Active Directory B2C. Currently, it is not possible to create an Active Directory B2C and application through the ARM template (see `GitHub issue <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_).
 
-   a. Follow the instructions in the `tutorial for creasting an Azure Active Directory B2C tenant <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant>`_ and create a B2C tenant.
+   a. Follow the instructions in the `tutorial for creating an Azure Active Directory B2C tenant <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant>`_ and create a B2C tenant.
 
    #. Follow the instructions in the `tutorial for setting up a resource owner password credentials flow in Azure Active Directory B2C <https://docs.microsoft.com/en-us/azure/active-directory-b2c/add-ropc-policy?tabs=app-reg-ga&pivots=b2c-user-flow#register-an-application>`_ and register an application.
-      Make sure to:
+      Make sure to set the following parameters:
 
-      - set the :guilabel:`Supported account types` to :guilabel:`All users`     
-      - update the manifest and set
+      * Set the :guilabel:`Supported account types` to :guilabel:`All users`     
+      * Update the Azure Active Directory app manifest and allow implicit grant flow for OAuth2: 
         
         .. code-block:: json
 
@@ -128,7 +130,7 @@ Create a secondary tenant (Azure Active Directory B2C)
       export APP_REG_CLIENT_ID="*Application (client) id*"
       export B2C_TENANT_ID="*Directory (tenant) ID*"
 
-#. For enabling the test-runner to programmatically login users, enable `the resource owner password credentials (ROPC) flow <https://docs.microsoft.com/EN-US/azure/active-directory-b2c/configure-ropc?tabs=app-reg-ga>`_ with the following settings on the Active Directory B2C:
+#. For enabling the test-runner to programmatically log in users, enable `the resource owner password credentials (ROPC) flow <https://docs.microsoft.com/EN-US/azure/active-directory-b2c/configure-ropc?tabs=app-reg-ga>`_ with the following settings on the Active Directory B2C:
 
    a. Name - ``B2C_1_developer``.
    #. Click :guilabel:`Application claims`, select :guilabel:`Show more ...` and then mark :guilabel:`Email Addresses` as a return claim.
@@ -144,8 +146,8 @@ Create a secondary tenant (Azure Active Directory B2C)
    #. Click :guilabel:`+ Add a scope` and create a new scope with the following values and click :guilabel:`Add a scope`:
       
       * Scope name - ``nrfassettracker.admin``
-      * Admin consent display name - Admin access to the nRF Asset Tracker API
-      * Admin consent description - Allows admin access to all resources exposed through the nRF Asset Tracker API
+      * Admin consent display name - Administrator access to the nRF Asset Tracker API
+      * Admin consent description - Allows administrator access to all resources exposed through the nRF Asset Tracker API
 
    #. Click :guilabel:`API permissions` and then click :guilabel:`+ Add a permission`. Under :guilabel:`My APIs`, select the app registration.
    
@@ -162,8 +164,8 @@ Create a secondary tenant (Azure Active Directory B2C)
 
 #. Link this Azure AD B2C tenant to the subscription for CI by following the `Billing guide <https://docs.microsoft.com/en-us/azure/active-directory-b2c/billing#link-an-azure-ad-b2c-tenant-to-a-subscription>`_.
 
-Setup continuous integration on GitHub
-**************************************
+Set up continuous integration on GitHub
+***************************************
 
 1. Create the CI credentials:
 
@@ -195,7 +197,7 @@ Commit and push a change
 Now, commit and push a change to your repository.
 This will trigger the CI run.
 
-You can also manually trigger a deploy on the *Test and Release* workflow.
+You can also manually trigger a deployment on the Test and Release workflow.
 
 Running the solution during development
 ***************************************

@@ -29,9 +29,8 @@ Docker variant (in case you get a ``Permission denied.`` error):
     docker run --rm -v ${PWD}:/workdir -v ${HOME}/.azure:/root/.azure ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js:latest \
         func azure functionapp publish ${APP_NAME:-nrfassettracker}API --typescript
 
-.. tip::
 
-   You can verify the validity of a template using the following command:
+To verify the validity of a template, use the following command:
 
    .. code-block:: bash
 
