@@ -5,15 +5,7 @@ Configure the firmware
 
 To configure the :ref:`firmware <firmware-azure-index>`, complete the following mandatory steps:
 
-1. Run the following command to print the Azure IoT DPS hostname to which your devices will connect:
-
-   .. code-block:: bash
-
-      node cli info -o iotHubDpsHostname
-
-#. Use this hostname as the value for the ``CONFIG_AZURE_IOT_HUB_DPS_HOSTNAME`` configuration variable.
-
-#. Run the following command to print the Azure IoT DPS ID scope to which your devices use during device provisioning:
+1. Run the following command to print the Azure IoT DPS ID scope to which your devices use during device provisioning:
 
    .. code-block:: bash
 
