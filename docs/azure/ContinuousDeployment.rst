@@ -88,7 +88,7 @@ Commit a change to your fork to trigger a deployment.
 Check the status of the continuous deployment
 *********************************************
 
-To check the status of the continuous deployment after you have made the changes navigate to the :guilabel:`Actions` tab of your fork.
+To check the status of the continuous deployment after making the changes, navigate to the :guilabel:`Actions` tab of your fork.
 You should see a workflow run of the Continuous Deployment action:
 
 .. figure:: ./actions.png
