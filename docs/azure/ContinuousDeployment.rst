@@ -22,7 +22,7 @@ To enable continuous deployment, complete the following steps:
 
 #. Fork the `Cat Tracker web application repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js>`_.
 
-#. Update the `deploy.webApp.repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/blob/fd3777cde331286faf10e481bdf1a30327882008/package.json#L111>`_ in the :file:`package.json` file of your nRF Asset Tracker for Azure fork. It should point to the repository URL of your fork of the Cat Tracker web application.
+#. Update the `deploy.webApp.repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/blob/fd3777cde331286faf10e481bdf1a30327882008/package.json#L111>`_ in the :file:`package.json` file of your nRF Asset Tracker for Azure fork. It must point to the repository URL of your fork of the Cat Tracker web application.
 
 Acquire credentials for GitHub Actions
 **************************************
