@@ -29,7 +29,9 @@ To enable continuous deployment, complete the following steps:
 Provide GitHub credentials
 **************************
 
-This is a manual one-time step that is needed so the AWS CodePipeline project created when enabling continuous deployment below is able to register a webhook in the GitHub repository of your fork to be notified about changes.
+Enabling continuous deployment creates an AWS CodePipeline project.
+You need to provide it with GitHub credentials to be able to register a webhook in the GitHub repository of your fork to be notified about changes.
+This is a manual one-time step.
 
 You need to create a `developer token <https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line>`_ with ``repo`` and ``admin:repo_hook`` permissions for an account that has write permissions to your repository.
 
