@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Upgrading an existing installation &mdash; nRF Asset Tracker 8583107666120e343380c3cc9715893740346b86 documentation</title>
+  <title>Upgrading an existing installation &mdash; nRF Asset Tracker 4dcbe2018bae28b3d613bb4ab1aa6af9fec0409f documentation</title>
   
 
   
@@ -216,10 +216,9 @@ func azure functionapp publish <span class="si">${</span><span class="nv">APP_NA
     func azure functionapp publish <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>API --typescript
 </pre></div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>You can verify the validity of a template using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group validate <span class="se">\</span>
+<p>To verify the validity of a template, use the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group validate <span class="se">\</span>
     --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
     --mode Complete <span class="se">\</span>
     --name update-<span class="sb">`</span>uuidgen<span class="sb">`</span> <span class="se">\</span>
@@ -231,7 +230,7 @@ func azure functionapp publish <span class="si">${</span><span class="nv">APP_NA
         <span class="nv">unwiredlabsApiKey</span><span class="o">=</span><span class="si">${</span><span class="nv">UNWIRED_LABS_API_KEY</span><span class="si">}</span>
 </pre></div>
 </div>
-</div>
+</div></blockquote>
 <p>If the command gives an error, you can find the detailed log message using the following command:</p>
 <pre class="highlight literal-block"> az monitor activity-log list --correlation-id &quot;<em>tracking id</em>&quot;      | jq '.[].properties.statusMessage | fromjson'</pre>
 <p>It can take a few minutes for the detailed log message to be populated.</p>

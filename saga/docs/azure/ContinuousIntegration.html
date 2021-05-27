@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous integration &mdash; nRF Asset Tracker 8583107666120e343380c3cc9715893740346b86 documentation</title>
+  <title>Continuous integration &mdash; nRF Asset Tracker 4dcbe2018bae28b3d613bb4ab1aa6af9fec0409f documentation</title>
   
 
   
@@ -202,31 +202,31 @@
 <li><p><a class="reference internal" href="#create-a-secondary-tenant-azure-active-directory-b2c" id="id3">Create a secondary tenant (Azure Active Directory B2C)</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#setup-continuous-integration-on-github" id="id4">Setup continuous integration on GitHub</a></p></li>
+<li><p><a class="reference internal" href="#set-up-continuous-integration-on-github" id="id4">Set up continuous integration on GitHub</a></p></li>
 <li><p><a class="reference internal" href="#commit-and-push-a-change" id="id5">Commit and push a change</a></p></li>
 <li><p><a class="reference internal" href="#running-the-solution-during-development" id="id6">Running the solution during development</a></p></li>
 </ul>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is an advanced topic that is closely tied with the further development and customization of the nRF Asset Tracker for your purposes.
+See the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js">GitHub project page of the nRF Asset Tracker for Azure</a> for an implementation of the process outlined in this section.</p>
+</div>
 <p>Continuous integration involves the following actions:</p>
 <ul class="simple">
 <li><p>Every change to the project is tested against an Azure account, which must be manually prepared.</p></li>
-<li><p>A BDD test-suite of end-to-end tests written in <a class="reference external" href="https://cucumber.io/docs/gherkin/">Gherkin</a>, which describes the tests in English, is run.</p></li>
+<li><p>A Behavior Driven Development (BDD) test suite of end-to-end tests is run. The test suite is written in <a class="reference external" href="https://cucumber.io/docs/gherkin/">Gherkin</a>, which describes the tests in English.</p></li>
 </ul>
-<p>In this way, the tests are not tied to the implementation and during refactoring, and you cannot accidentally drop tests.
-Tests written for test-runners like <a class="reference external" href="https://jestjs.io/">Jest</a> tend to be closely tied to the API of the source-code implementation.
-In the case of bigger refactoring, the tests themselves usually need to be refactored as well.
+<p>In this way, the tests are not tied to the implementation and you cannot accidentally drop tests during refactoring.
+Tests written for test runners like <a class="reference external" href="https://jestjs.io/">Jest</a> tend to be closely tied to the API of the source code implementation.
+In the case of a larger refactoring, the tests often need to be refactored as well.
 Since the BDD tests are purely testing based on the public API of the project (which is a mix of the native Azure API and a custom REST API), they can be kept unchanged during refactoring.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is an advanced topic for those who need to further develop and customize the nRF Asset Tracker.
-See the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js">nRF Asset Tracker for Azure GitHub project page</a>, for the implementation of the process outlined in this section.</p>
-</div>
 <div class="section" id="prepare-your-azure-account">
 <h2><a class="toc-backref" href="#id1">Prepare your Azure account</a><a class="headerlink" href="#prepare-your-azure-account" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The setup process in Azure is more complicated when compared to the <a class="reference internal" href="../aws/ContinuousIntegration.html#aws-continuous-integration"><span class="std std-ref">AWS continuous integration setup</span></a>, since it involves many manual steps, which cannot be automated.
-If you have ideas to simplify the process, <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1">please provide your input</a>.</p>
+<p>The setup process in Azure is more complicated when compared to the <a class="reference internal" href="../aws/ContinuousIntegration.html#aws-continuous-integration"><span class="std std-ref">AWS continuous integration setup</span></a> since it involves many manual steps, which cannot be automated.
+If you have ideas to simplify the process, <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1">provide your input</a>.</p>
 </div>
 <div class="section" id="log-in-and-create-the-resource-group">
 <h3><a class="toc-backref" href="#id2">Log in and create the resource group</a><a class="headerlink" href="#log-in-and-create-the-resource-group" title="Permalink to this headline">¶</a></h3>
@@ -237,10 +237,10 @@ If you have ideas to simplify the process, <a class="reference external" href="h
 </pre></div>
 </div>
 </li>
-<li><p>Export the identifier of the subscription which contains the nRF Asset Tracker resources:</p>
+<li><p>Export the identifier of the subscription that contains the nRF Asset Tracker resources:</p>
 <pre class="highlight literal-block">export SUBSCRIPTION_ID=&quot;<em>subscription id</em>&quot;</pre>
 </li>
-<li><p>Make sure that you have enabled the right subscription by using the following commands:</p>
+<li><p>Make sure that you have enabled the correct subscription by using the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az account <span class="nb">set</span> --subscription <span class="nv">$SUBSCRIPTION_ID</span>
 <span class="c1"># Verify that it is set to default</span>
 az account list --output table
@@ -262,7 +262,7 @@ In this example, <code class="docutils literal notranslate"><span class="pre">nr
 </li>
 <li><p>Choose a resource group and a name for the Device Update instance and export it as <code class="docutils literal notranslate"><span class="pre">ADU_RESOURCE_GROUP</span></code> and <code class="docutils literal notranslate"><span class="pre">ADU_INSTANCE_NAME</span></code>.
 There is an undocumented limit of two instances per ADU account, so the CI must be run against a separate Device Update instance.
-In this example, we use <code class="docutils literal notranslate"><span class="pre">nRFAssetTrackerADUCI</span></code> as the resource group and Device Update instance name.</p>
+In this example, <code class="docutils literal notranslate"><span class="pre">nRFAssetTrackerADUCI</span></code> is used as the resource group and Device Update instance name.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
 <span class="nb">export</span> <span class="nv">ADU_RESOURCE_GROUP</span><span class="o">=</span><span class="s2">&quot;nRFAssetTrackerADUCI&quot;</span>
 <span class="nb">export</span> <span class="nv">ADU_INSTANCE_NAME</span><span class="o">=</span><span class="s2">&quot;nRFAssetTrackerADUCI&quot;</span>
@@ -270,7 +270,7 @@ In this example, we use <code class="docutils literal notranslate"><span class="
 </div>
 </li>
 <li><p>Configure your preferred location (you can list the locations using <code class="docutils literal notranslate"><span class="pre">az</span> <span class="pre">account</span> <span class="pre">list-locations</span></code>) and export it on the environment variable <code class="docutils literal notranslate"><span class="pre">LOCATION</span></code>.
-In this example, we use <code class="docutils literal notranslate"><span class="pre">northeurope</span></code> as the location name.</p>
+In this example, <code class="docutils literal notranslate"><span class="pre">northeurope</span></code> is used as the location name.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LOCATION</span><span class="o">=</span><span class="s2">&quot;northeurope&quot;</span>
 </pre></div>
 </div>
@@ -288,12 +288,12 @@ az group create --name <span class="si">${</span><span class="nv">RESOURCE_GROUP
 <ol class="arabic">
 <li><p>Create an Azure Active Directory B2C. Currently, it is not possible to create an Active Directory B2C and application through the ARM template (see <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1">GitHub issue</a>).</p>
 <ol class="loweralpha">
-<li><p>Follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant">tutorial for creasting an Azure Active Directory B2C tenant</a> and create a B2C tenant.</p></li>
+<li><p>Follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant">tutorial for creating an Azure Active Directory B2C tenant</a> and create a B2C tenant.</p></li>
 <li><p>Follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/add-ropc-policy?tabs=app-reg-ga&amp;pivots=b2c-user-flow#register-an-application">tutorial for setting up a resource owner password credentials flow in Azure Active Directory B2C</a> and register an application.
-Make sure to:</p>
+Make sure to set the following parameters:</p>
 <ul>
-<li><p>set the <span class="guilabel">Supported account types</span> to <span class="guilabel">All users</span></p></li>
-<li><p>update the manifest and set</p>
+<li><p>Set the <span class="guilabel">Supported account types</span> to <span class="guilabel">All users</span></p></li>
+<li><p>Update the Azure Active Directory app manifest and allow implicit grant flow for OAuth2:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;oauth2AllowImplicitFlow&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -309,7 +309,7 @@ Make sure to:</p>
 <pre class="highlight literal-block">export APP_REG_CLIENT_ID=&quot;<em>Application (client) id</em>&quot;
 export B2C_TENANT_ID=&quot;<em>Directory (tenant) ID</em>&quot;</pre>
 </li>
-<li><p>For enabling the test-runner to programmatically login users, enable <a class="reference external" href="https://docs.microsoft.com/EN-US/azure/active-directory-b2c/configure-ropc?tabs=app-reg-ga">the resource owner password credentials (ROPC) flow</a> with the following settings on the Active Directory B2C:</p>
+<li><p>For enabling the test-runner to programmatically log in users, enable <a class="reference external" href="https://docs.microsoft.com/EN-US/azure/active-directory-b2c/configure-ropc?tabs=app-reg-ga">the resource owner password credentials (ROPC) flow</a> with the following settings on the Active Directory B2C:</p>
 <ol class="loweralpha simple">
 <li><p>Name - <code class="docutils literal notranslate"><span class="pre">B2C_1_developer</span></code>.</p></li>
 <li><p>Click <span class="guilabel">Application claims</span>, select <span class="guilabel">Show more …</span> and then mark <span class="guilabel">Email Addresses</span> as a return claim.</p></li>
@@ -326,8 +326,8 @@ export B2C_TENANT_ID=&quot;<em>Directory (tenant) ID</em>&quot;</pre>
 <li><p>Click <span class="guilabel">+ Add a scope</span> and create a new scope with the following values and click <span class="guilabel">Add a scope</span>:</p>
 <ul class="simple">
 <li><p>Scope name - <code class="docutils literal notranslate"><span class="pre">nrfassettracker.admin</span></code></p></li>
-<li><p>Admin consent display name - Admin access to the nRF Asset Tracker API</p></li>
-<li><p>Admin consent description - Allows admin access to all resources exposed through the nRF Asset Tracker API</p></li>
+<li><p>Admin consent display name - Administrator access to the nRF Asset Tracker API</p></li>
+<li><p>Admin consent description - Allows administrator access to all resources exposed through the nRF Asset Tracker API</p></li>
 </ul>
 </li>
 <li><p>Click <span class="guilabel">API permissions</span> and then click <span class="guilabel">+ Add a permission</span>. Under <span class="guilabel">My APIs</span>, select the app registration.</p></li>
@@ -342,8 +342,8 @@ export B2C_TENANT_ID=&quot;<em>Directory (tenant) ID</em>&quot;</pre>
 </ol>
 </div>
 </div>
-<div class="section" id="setup-continuous-integration-on-github">
-<h2><a class="toc-backref" href="#id4">Setup continuous integration on GitHub</a><a class="headerlink" href="#setup-continuous-integration-on-github" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="set-up-continuous-integration-on-github">
+<h2><a class="toc-backref" href="#id4">Set up continuous integration on GitHub</a><a class="headerlink" href="#set-up-continuous-integration-on-github" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Create the CI credentials:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az ad sp create-for-rbac --name <span class="s1">&#39;https://nrfassettracker.invalid/ci&#39;</span> <span class="se">\</span>
@@ -374,7 +374,7 @@ export B2C_TENANT_ID=&quot;<em>Directory (tenant) ID</em>&quot;</pre>
 <h2><a class="toc-backref" href="#id5">Commit and push a change</a><a class="headerlink" href="#commit-and-push-a-change" title="Permalink to this headline">¶</a></h2>
 <p>Now, commit and push a change to your repository.
 This will trigger the CI run.</p>
-<p>You can also manually trigger a deploy on the <em>Test and Release</em> workflow.</p>
+<p>You can also manually trigger a deployment on the Test and Release workflow.</p>
 </div>
 <div class="section" id="running-the-solution-during-development">
 <h2><a class="toc-backref" href="#id6">Running the solution during development</a><a class="headerlink" href="#running-the-solution-during-development" title="Permalink to this headline">¶</a></h2>
