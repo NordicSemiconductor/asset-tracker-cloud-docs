@@ -69,7 +69,16 @@ To build and deploy the web application to the Storage Account created while set
    export APP_STORAGE_ACCOUNT_NAME=${APP_NAME:-nrfassettracker}app
    cd ../cat-tracker-web-app
    npm run build
-   az storage blob upload-batch --connection-string ${APP_STORAGE_CONNECTION_STRING} --account-name ${APP_STORAGE_ACCOUNT_NAME} -s ./build -d '$web'
+   az storage blob service-properties update \
+      --connection-string ${APP_STORAGE_CONNECTION_STRING} \
+      --account-name ${APP_STORAGE_ACCOUNT_NAME} \
+      --static-website \
+      --404-document index.html \
+      --index-document index.html
+   az storage blob upload-batch \
+      --connection-string ${APP_STORAGE_CONNECTION_STRING} \
+      --account-name ${APP_STORAGE_ACCOUNT_NAME} \
+      -s ./build -d '$web'
    echo "Done. Now open $PUBLIC_URL to view the web app."
 
 After running the above commands, you can open the domain name printed in ``APP_URL`` in your browser to view the web application.
