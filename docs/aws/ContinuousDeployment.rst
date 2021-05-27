@@ -57,7 +57,8 @@ After providing the GitHub credentials, set up the continuous deployment by enab
 This sets up an AWS CodePipeline, which triggers an AWS CodeBuild project for every push to the ``saga`` branch.
 You can customize the branch by providing the name in ``deploy.branch`` in the :file:`package.json` file of your nRF Asset Tracker for AWS fork.
 
-A second AWS CodePipeline will be set up for the web application, which triggers a CodeBuild project for every push to the :file:`saga` branch.
+Another AWS CodePipeline is set up for the web application.
+It triggers a CodeBuild project for every push to the :file:`saga` branch.
 Configure the repository URL and the branch for the web application in the ``deploy.webApp`` property of the :file:`package.json` file of your nRF Asset Tracker for AWS fork.
 
 Trigger a deployment
