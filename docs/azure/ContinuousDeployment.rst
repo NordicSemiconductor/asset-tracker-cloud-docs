@@ -7,7 +7,7 @@ Continuous deployment
    :local:
    :depth: 2
 
-You can deploy all changes that you make to a fork of the nRF Asset Tracker for Azure automatically.
+You can automatically deploy all changes that you make to a fork of the nRF Asset Tracker for Azure.
 
 .. note::
 
