@@ -11,13 +11,7 @@ After you have forked the repository, `enable GitHub Actions <https://help.githu
 Configuration for firmware connecting to the nRF Asset Tracker for Azure
 ========================================================================
 
-Navigate to the settings of the repository and configure two new Secrets ``AZURE_IOT_HUB_DPS_HOSTNAME``, and ``AZURE_IOT_HUB_DPS_ID_SCOPE`` and assign the DPS host name and DPS ID scope of your Azure IoT Hub MQTT broker to the secrets.
-
-You can retrieve the value for the Azure IoT DPS hostname secret using the following command:
-
-   .. code-block:: bash
-
-      node cli info -o iotHubDpsHostname
+Navigate to the settings of the repository and configure the secret ``AZURE_IOT_HUB_DPS_ID_SCOPE`` and assign the DPS ID scope of your Azure IoT Hub Device Provisioning to it.
 
 You can retrieve the value for the Azure IoT DPS ID scope secret using the following command:
 
