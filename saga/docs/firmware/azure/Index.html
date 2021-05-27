@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Firmware for the Azure cloud components &mdash; nRF Asset Tracker 0bf2fffee5d53109406c514e5390127b4e27d395 documentation</title>
+  <title>Firmware for the Azure cloud components &mdash; nRF Asset Tracker 8583107666120e343380c3cc9715893740346b86 documentation</title>
   
 
   
@@ -194,6 +194,12 @@
 <p>The firmware of the <a class="reference internal" href="../../project/Index.html#project"><span class="std std-ref">nRF Asset Tracker</span></a> is the <a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html">nRF9160: Asset Tracker v2</a>, which is a reference application developed using the <a class="reference external" href="https://github.com/nrfconnect/sdk-nrf">nRF Connect SDK</a>.</p>
 <p>It is compatible with the <a class="reference internal" href="../../azure/Index.html#index-azure"><span class="std std-ref">nRF Asset Tracker for Azure</span></a>.</p>
 <p>The <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure">firmware GitHub repository</a> provides an example for using the application as an out-of-tree development copy, which optionally enables the SUPL client.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The current firmware-over-the-air (FOTA) update mechanism implemented in nRF Asset Tracker for Azure is based on the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-firmware-update">Microsoft Azure tutorial for implementing a device firmware update process</a>.
+In February 2021, Microsoft released <a class="reference external" href="https://techcommunity.microsoft.com/t5/internet-of-things/streamline-device-management-with-device-update-for-iot-hub-now/ba-p/2167663">a preview of Device Update for IoT Hub</a> which will replace the current mechanism, as soon as it is generally available.
+See the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/12#discussioncomment-483383">Azure support discussion</a> for details about the ongoing work to implement the new update mechanism.</p>
+</div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Subpages:</span></p>
 <ul>
