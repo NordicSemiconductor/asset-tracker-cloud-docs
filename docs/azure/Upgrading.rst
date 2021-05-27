@@ -45,12 +45,16 @@ To verify the validity of a template, use the following command:
                b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
                unwiredlabsApiKey=${UNWIRED_LABS_API_KEY}
 
-If the command gives an error, you can find the detailed log message using the following command:
+If the command gives an error, you can find the detailed log message using the printed tracking ID and the following command:
 
 .. parsed-literal::
-   :class: highlight
+    :class: highlight
 
-    az monitor activity-log list --correlation-id "*tracking id*" \\
+    az monitor activity-log list --correlation-id "*tracking ID*" \\
         | jq '.[].properties.statusMessage | fromjson'
 
 It can take a few minutes for the detailed log message to be populated.
+
+If the error message does not include a tracking ID navigate to the resource group in the Azure portal and review the deployments.
+There should be a failed deployment called ``initial-setup``.
+Examine its error details.
