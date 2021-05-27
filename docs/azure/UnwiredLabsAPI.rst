@@ -10,15 +10,15 @@ To use Unwired Labs' LocationAPI, provide the ``unwiredlabsApiKey`` parameter wh
 .. parsed-literal::
    :class: highlight
 
-    az deployment group create \
-        --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
-        --mode Complete \
-        --name enable-unwiredlabs \
+    az deployment group create \\
+        --resource-group ${RESOURCE_GROUP:-nrfassettracker} \\
+        --mode Complete \\
+        --name enable-unwiredlabs \\
         --template-file azuredeploy.json \
-        --parameters \
-            appName=${APP_NAME:-nrfassettracker} \
-            appRegistrationClientId=$APP_REG_CLIENT_ID \
-            b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
+        --parameters \\
+            appName=${APP_NAME:-nrfassettracker} \\
+            appRegistrationClientId=$APP_REG_CLIENT_ID \\
+            b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \\
             unwiredlabsApiKey=*your API key*
 
 This command enables the `geolocateCellFromUnwiredLabs` function to resolve cells.
