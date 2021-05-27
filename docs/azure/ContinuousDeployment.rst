@@ -18,7 +18,7 @@ Fork the nRF Asset Tracker repositories
 
 To enable continuous deployment, complete the following steps:
 
-1. Fork `the nRF Asset Tracker for Azure repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_.
+1. Fork the `nRF Asset Tracker for Azure repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_.
 
 #. Fork `the Cat Tracker web application repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js>`_.
 
