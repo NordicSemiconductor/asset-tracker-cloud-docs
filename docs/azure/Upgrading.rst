@@ -55,6 +55,6 @@ If the command gives an error, you can find the detailed log message using the p
 
 It can take a few minutes for the detailed log message to be populated.
 
-If the error message does not include a tracking ID navigate to the resource group in the Azure portal and review the deployments.
-There should be a failed deployment called ``initial-setup``.
+If the error message does not include a tracking ID, navigate to the resource group in the Azure portal and review the deployments.
+There is a failed deployment called ``initial-setup``.
 Examine its error details.
