@@ -13,7 +13,7 @@ Configuration for firmware connecting to the nRF Asset Tracker for Azure
 
 Navigate to the settings of the repository and configure the secret ``AZURE_IOT_HUB_DPS_ID_SCOPE`` and assign the DPS ID scope of your Azure IoT Hub Device Provisioning to it.
 
-You can retrieve the value for the Azure IoT DPS ID scope secret using the following command:
+To retrieve the value for the Azure IoT DPS ID scope secret, use the following command:
 
    .. code-block:: bash
 
