@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Configure the firmware &mdash; nRF Asset Tracker 0944a3cd3f2f1a73262063dec72502a7929e67c6 documentation</title>
+  <title>Configure the firmware &mdash; nRF Asset Tracker 2be292f20a0ded2c5020c5cfe9a8e12d1c4994c0 documentation</title>
   
 
   
@@ -208,8 +208,15 @@
   <div class="section" id="configure-the-firmware">
 <span id="azure-firmware-configuration"></span><h1>Configure the firmware<a class="headerlink" href="#configure-the-firmware" title="Permalink to this headline">¶</a></h1>
 <p>To configure the <a class="reference internal" href="../../firmware/azure/Index.html#firmware-azure-index"><span class="std std-ref">firmware</span></a>, complete the following mandatory steps:</p>
-<ol class="arabic simple">
-<li><p>// FIXME: Implement</p></li>
+<ol class="arabic">
+<li><p>Run the following command to print the Azure IoT DPS ID scope, which your devices use during device provisioning:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli info -o iotHubDpsIdScope
+</pre></div>
+</div>
+</li>
+<li><p>Use this ID scope as the value for the <code class="docutils literal notranslate"><span class="pre">CONFIG_AZURE_IOT_HUB_DPS_ID_SCOPE</span></code> configuration variable.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">11</span></code> as the value for <code class="docutils literal notranslate"><span class="pre">CONFIG_AZURE_IOT_HUB_SEC_TAG</span></code>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">11</span></code> as the value for <code class="docutils literal notranslate"><span class="pre">CONFIG_AZURE_FOTA_SEC_TAG</span></code>.</p></li>
 </ol>
 <p>After completing the configuration, compile the firmware either <a class="reference internal" href="../../firmware/azure/BuildingUsingLocalSystem.html#firmware-azure-building"><span class="std std-ref">using your own development environment</span></a> or <a class="reference internal" href="../../firmware/azure/BuildingUsingDocker.html#firmware-azure-building-docker"><span class="std std-ref">using Docker</span></a> and then <a class="reference internal" href="DeviceCredentials.html#azure-device-credentials"><span class="std std-ref">create the device credentials</span></a>.</p>
 <div class="admonition note">

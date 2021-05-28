@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Upgrading an existing installation &mdash; nRF Asset Tracker 0944a3cd3f2f1a73262063dec72502a7929e67c6 documentation</title>
+  <title>Upgrading an existing installation &mdash; nRF Asset Tracker 2be292f20a0ded2c5020c5cfe9a8e12d1c4994c0 documentation</title>
   
 
   
@@ -216,10 +216,9 @@ func azure functionapp publish <span class="si">${</span><span class="nv">APP_NA
     func azure functionapp publish <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>API --typescript
 </pre></div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>You can verify the validity of a template using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group validate <span class="se">\</span>
+<p>To verify the validity of a template, use the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group validate <span class="se">\</span>
     --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
     --mode Complete <span class="se">\</span>
     --name update-<span class="sb">`</span>uuidgen<span class="sb">`</span> <span class="se">\</span>
@@ -231,10 +230,14 @@ func azure functionapp publish <span class="si">${</span><span class="nv">APP_NA
         <span class="nv">unwiredlabsApiKey</span><span class="o">=</span><span class="si">${</span><span class="nv">UNWIRED_LABS_API_KEY</span><span class="si">}</span>
 </pre></div>
 </div>
-</div>
-<p>If the command gives an error, you can find the detailed log message using the following command:</p>
-<pre class="highlight literal-block"> az monitor activity-log list --correlation-id &quot;<em>tracking id</em>&quot;      | jq '.[].properties.statusMessage | fromjson'</pre>
+</div></blockquote>
+<p>If the command gives an error, you can find the detailed log message using the printed tracking ID and the following command:</p>
+<pre class="highlight literal-block">az monitor activity-log list --correlation-id &quot;<em>tracking ID</em>&quot; \
+    | jq '.[].properties.statusMessage | fromjson'</pre>
 <p>It can take a few minutes for the detailed log message to be populated.</p>
+<p>If the error message does not include a tracking ID, navigate to the resource group in the Azure portal and review the deployments.
+There is a failed deployment called <code class="docutils literal notranslate"><span class="pre">initial-setup</span></code>.
+Examine its error details.</p>
 </div>
 
 

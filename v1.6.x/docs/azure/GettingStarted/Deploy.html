@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Install the nRF Asset Tracker into your Azure account &mdash; nRF Asset Tracker 0944a3cd3f2f1a73262063dec72502a7929e67c6 documentation</title>
+  <title>Install the nRF Asset Tracker into your Azure account &mdash; nRF Asset Tracker 2be292f20a0ded2c5020c5cfe9a8e12d1c4994c0 documentation</title>
   
 
   
@@ -233,15 +233,6 @@ In this example, <code class="docutils literal notranslate"><span class="pre">nr
 </pre></div>
 </div>
 </li>
-<li><p>Choose a resource group and a name for the Device Update instance and export it as <code class="docutils literal notranslate"><span class="pre">ADU_RESOURCE_GROUP</span></code> and <code class="docutils literal notranslate"><span class="pre">ADU_INSTANCE_NAME</span></code>.
-There is a limit of <a class="reference external" href="https://docs.microsoft.com/en-us/azure/iot-hub-device-update/device-update-resources#device-update-instance">two instances per subscription</a>, so the ADU instance needs to be shared between multiple IoT hubs.
-In this example, <code class="docutils literal notranslate"><span class="pre">nRFAssetTrackerADU</span></code> is used as the resource group and Device Update instance name.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
-<span class="nb">export</span> <span class="nv">ADU_RESOURCE_GROUP</span><span class="o">=</span><span class="s2">&quot;nRFAssetTrackerADU&quot;</span>
-<span class="nb">export</span> <span class="nv">ADU_INSTANCE_NAME</span><span class="o">=</span><span class="s2">&quot;nRFAssetTrackerADU&quot;</span>
-</pre></div>
-</div>
-</li>
 <li><p>Configure your preferred location (you can list the locations using <code class="docutils literal notranslate"><span class="pre">az</span> <span class="pre">account</span> <span class="pre">list-locations</span></code>) and export it on the environment variable <code class="docutils literal notranslate"><span class="pre">LOCATION</span></code>.
 In this example, <code class="docutils literal notranslate"><span class="pre">northeurope</span></code> is used as the location name.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
@@ -254,11 +245,6 @@ In this example, <code class="docutils literal notranslate"><span class="pre">no
 </pre></div>
 </div>
 </li>
-<li><p>Authenticate the CLI using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az login
-</pre></div>
-</div>
-</li>
 <li><p>Make sure that you have enabled the right subscription by using the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az account <span class="nb">set</span> --subscription <span class="nv">$SUBSCRIPTION_ID</span>
 <span class="c1"># Verify that it is set to default</span>
@@ -267,8 +253,7 @@ az account list --output table
 </div>
 </li>
 <li><p>Create the resource group for the solution:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az group create --subscription <span class="nv">$SUBSCRIPTION_ID</span> -l <span class="nv">$LOCATION</span> -n <span class="si">${</span><span class="nv">ADU_RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span>
-az group create --subscription <span class="nv">$SUBSCRIPTION_ID</span> -l <span class="nv">$LOCATION</span> -n <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az group create --subscription <span class="nv">$SUBSCRIPTION_ID</span> -l <span class="nv">$LOCATION</span> -n <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>
 </pre></div>
 </div>
 </li>
@@ -277,21 +262,28 @@ az group create --subscription <span class="nv">$SUBSCRIPTION_ID</span> -l <span
 </pre></div>
 </div>
 </li>
-<li><p>Create an Azure Active Directory B2C. Currently, it is not possible to create an Active Directory B2C and application through the ARM template (see <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1">GitHub issue</a>).</p>
-<ol class="loweralpha simple">
-<li><p>Follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications">tutorial for registering a web application in Azure Active Directory B2C</a> and create a B2C tenant and an application. Use <code class="docutils literal notranslate"><span class="pre">http://localhost:3000/</span></code> (for local development) and <code class="docutils literal notranslate"><span class="pre">https://&lt;your</span> <span class="pre">APP_NAME&gt;app.z16.web.core.windows.net/</span></code> as the redirect URLs.</p></li>
-<li><p>Enable the implicit grant and hybrid flows for <span class="guilabel">Access tokens</span> and <span class="guilabel">ID tokens</span> and click <span class="guilabel">Save</span>.</p></li>
-</ol>
+<li><p>Follow the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant">tutorial for creating an Azure Active Directory B2C</a>. On the creation screen, select the resource group you have created above. Currently, it is not possible to create an Active Directory B2C and application through the ARM template (see <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1">GitHub issue</a>).</p></li>
+<li><p>Save the initial domain name of the created Active Directory B2C to the environment variable <code class="docutils literal notranslate"><span class="pre">B2C_TENANT</span></code>.
+In this example, <code class="docutils literal notranslate"><span class="pre">nrfassettrackerusers</span></code> is used as the initial domain name.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
+<span class="nb">export</span> <span class="nv">B2C_TENANT</span><span class="o">=</span><span class="s2">&quot;nrfassettrackerusers&quot;</span>
+</pre></div>
+</div>
 </li>
-<li><p>Create the user flow for sign-up, sign-in, and make sure to name the userflow as <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code>.</p>
-<ol class="loweralpha simple">
-<li><p>Click <span class="guilabel">Application claims</span>, select <span class="guilabel">Show more …</span> and then mark <span class="guilabel">Email Addresses</span> as a return claim.</p></li>
-</ol>
+<li><p>Select <span class="guilabel">User flows</span>, create the user flow for sign up and sign in (recommended version), and make sure to name the userflow as <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code>.</p></li>
+<li><p>Follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=app-reg-ga#register-a-web-application">tutorial for registering a web application in Azure Active Directory B2C</a> and register a web application. Use <code class="docutils literal notranslate"><span class="pre">https://&lt;your</span> <span class="pre">APP_NAME&gt;app.z16.web.core.windows.net/</span></code> as the redirect URL.</p></li>
+<li><p>Select <span class="guilabel">Authentication</span>, enable the implicit grant and hybrid flows for <span class="guilabel">Access tokens</span> and <span class="guilabel">ID tokens</span> and click <span class="guilabel">Save</span>.</p></li>
+<li><p>Save the <code class="docutils literal notranslate"><span class="pre">application</span> <span class="pre">(client)</span> <span class="pre">id</span></code> to the environment variable <code class="docutils literal notranslate"><span class="pre">APP_REG_CLIENT_ID</span></code> in the <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
+<span class="nb">export</span> <span class="nv">APP_REG_CLIENT_ID</span><span class="o">=</span>...
+</pre></div>
+</div>
 </li>
-<li><p>Grant the B2C directory API permissions for the function app:</p>
+<li><p>Grant the app registration directory API permissions for the function app:</p>
 <ol class="loweralpha simple">
-<li><p>Click <span class="guilabel">Expose an API</span> and  set the <code class="docutils literal notranslate"><span class="pre">Application</span> <span class="pre">ID</span> <span class="pre">URI</span></code> field to <code class="docutils literal notranslate"><span class="pre">api</span></code>.</p></li>
-<li><p>Click <span class="guilabel">+ Add a scope</span> and create a new scope with the following values and click <span class="guilabel">Add a scope</span>:</p>
+<li><p>Click <span class="guilabel">Expose an API</span>.</p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">Application</span> <span class="pre">ID</span> <span class="pre">URI</span></code> field to <code class="docutils literal notranslate"><span class="pre">api</span></code> and click <span class="guilabel">Save and continue</span>.</p></li>
+<li><p>Create a new scope with the following values and click <span class="guilabel">Add a scope</span>:</p>
 <ul class="simple">
 <li><p>Scope name - <code class="docutils literal notranslate"><span class="pre">nrfassettracker.admin</span></code></p></li>
 <li><p>Admin consent display name - Administrator access to the nRF Asset Tracker API</p></li>
@@ -302,19 +294,6 @@ az group create --subscription <span class="nv">$SUBSCRIPTION_ID</span> -l <span
 <li><p>Enable the <code class="docutils literal notranslate"><span class="pre">nrfassettracker.admin</span></code> permission and click <span class="guilabel">Add permission</span>.</p></li>
 <li><p>Click <span class="guilabel">Grant admin consent for &lt;your B2C directory&gt;</span>.</p></li>
 </ol>
-</li>
-<li><p>Save the initial domain name of the created Active Directory B2C to the environment variable <code class="docutils literal notranslate"><span class="pre">B2C_TENANT</span></code>.
-In this example, <code class="docutils literal notranslate"><span class="pre">nrfassettrackerusers</span></code> is used as the initial domain name.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
-<span class="nb">export</span> <span class="nv">B2C_TENANT</span><span class="o">=</span><span class="s2">&quot;nrfassettrackerusers&quot;</span>
-</pre></div>
-</div>
-</li>
-<li><p>Save the <code class="docutils literal notranslate"><span class="pre">application</span> <span class="pre">(client)</span> <span class="pre">id</span></code> to the environment variable <code class="docutils literal notranslate"><span class="pre">APP_REG_CLIENT_ID</span></code> in the <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
-<span class="nb">export</span> <span class="nv">APP_REG_CLIENT_ID</span><span class="o">=</span>...
-</pre></div>
-</div>
 </li>
 <li><p>Run the following command to allow the changed file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>direnv allow
@@ -331,15 +310,6 @@ In this example, <code class="docutils literal notranslate"><span class="pre">nr
       <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
       <span class="nv">b2cTenant</span><span class="o">=</span><span class="nv">$B2C_TENANT</span> <span class="se">\</span>
 <span class="o">&amp;&amp;</span> <span class="se">\</span>
-az deployment group create --resource-group <span class="si">${</span><span class="nv">ADU_RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span> <span class="se">\</span>
-   --mode Incremental <span class="c1"># Incremental is used here to allow the creation of an ADU instance per solution independently  \</span>
-   --name initial-setup <span class="se">\</span>
-   --template-file azuredeploy.adu.json <span class="se">\</span>
-   --parameters <span class="se">\</span>
-      <span class="nv">aduInstanceName</span><span class="o">=</span><span class="si">${</span><span class="nv">ADU_INSTANCE_NAME</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span> <span class="se">\</span>
-      <span class="nv">nrfAssetTrackerResourceGroup</span><span class="o">=</span><span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
-      <span class="nv">nrfAssetTrackerAppName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
-<span class="o">&amp;&amp;</span> <span class="se">\</span>
 <span class="c1"># Currently it is not possible to enable website hosting through the ARM template</span>
 az storage blob service-properties update <span class="se">\</span>
    --account-name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>app <span class="se">\</span>
@@ -349,9 +319,13 @@ az storage blob service-properties update <span class="se">\</span>
 func azure functionapp publish <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>API --typescript
 </pre></div>
 </div>
-<p>If the command gives an error, you can find the detailed log message using the following command:</p>
-<pre class="highlight literal-block">az monitor activity-log list --correlation-id &quot;<em>tracking id</em>&quot;    | jq '.[].properties.statusMessage | fromjson'</pre>
+<p>If the command gives an error, you can find the detailed log message using the printed tracking ID and the following command:</p>
+<pre class="highlight literal-block">az monitor activity-log list --correlation-id &quot;<em>tracking ID</em>&quot; \
+   | jq '.[].properties.statusMessage | fromjson'</pre>
 <p>It can take a few minutes for the detailed log message to be populated.</p>
+<p>If the error message does not include a tracking ID, navigate to the resource group in the Azure portal and review the deployments.
+There is a failed deployment called <code class="docutils literal notranslate"><span class="pre">initial-setup</span></code>.
+Examine its error details.</p>
 </li>
 </ol>
 </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Install the Azure CLI &mdash; nRF Asset Tracker 0944a3cd3f2f1a73262063dec72502a7929e67c6 documentation</title>
+  <title>Install the Azure CLI &mdash; nRF Asset Tracker 2be292f20a0ded2c5020c5cfe9a8e12d1c4994c0 documentation</title>
   
 
   
@@ -207,24 +207,13 @@
             
   <div class="section" id="install-the-azure-cli">
 <span id="azure-install-cli"></span><h1>Install the Azure CLI<a class="headerlink" href="#install-the-azure-cli" title="Permalink to this headline">¶</a></h1>
-<p>To install the Azure CLI, follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest">Azure CLI documentation</a>.</p>
-<p>After installing the CLI, you can execute the <code class="docutils literal notranslate"><span class="pre">az</span></code> command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az
+<p>To install the Azure CLI, follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest">Azure CLI documentation</a>.
+After installing the CLI, you can execute the <code class="docutils literal notranslate"><span class="pre">az</span></code> command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az --version
+<span class="c1"># ...</span>
+<span class="c1"># azure-cli 2.24.0</span>
+<span class="c1"># ...</span>
 </pre></div>
-</div>
-<div class="section" id="dockerizing-the-az-command">
-<h2>Dockerizing the az command<a class="headerlink" href="#dockerizing-the-az-command" title="Permalink to this headline">¶</a></h2>
-<p>In case you encounter the issue where the Azure CLI requires an <a class="reference external" href="https://github.com/Azure/azure-cli/issues/11239">older Python version</a>, you can dockerize the <code class="docutils literal notranslate"><span class="pre">az</span></code> command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
-
-<span class="nb">set</span> -eu
-
-<span class="nv">command</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
-
-docker run --rm --volume <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>:/root --volume <span class="nv">$HOME</span>/.azure:/root/.azure -w<span class="o">=</span>/root mcr.microsoft.com/azure-cli az <span class="nv">$command</span>
-</pre></div>
-</div>
-<p>Add the command to an executable file in your path.</p>
 </div>
 </div>
 

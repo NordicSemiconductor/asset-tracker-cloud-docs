@@ -29,13 +29,13 @@ Provisioning of the certificate using CLI also results in the following actions:
 
 .. only:: v1_5_x
 
-    1. Programming of the `AT client sample <https://github.com/NordicSemiconductor/at_client-hex>`_ onto the device.
+    1. Programming of the `AT host sample <https://github.com/NordicSemiconductor/at_host-hex>`_ onto the device.
     #. Provisioning of the :ref:`created device credentials <aws-device-credentials>`.
     #. Programming of the :ref:`configured and built firmware <aws-firmware-configuration>` to the device.
 
 .. only:: not v1_5_x
 
-    * Programming of the `AT client sample <https://github.com/NordicSemiconductor/at_client-hex>`_ onto the device.
+    * Programming of the `AT host sample <https://github.com/NordicSemiconductor/at_host-hex>`_ onto the device.
     * Provisioning of the created device credentials for the respective cloud flavour :ref:`AWS <aws-device-credentials>`, or :ref:`Azure <azure-device-credentials>`.
     * Programming of the :ref:`configured and built firmware <firmware-configuration>` to the device.
 

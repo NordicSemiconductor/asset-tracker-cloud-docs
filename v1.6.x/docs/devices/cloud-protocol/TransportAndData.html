@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Transport and data protocol &mdash; nRF Asset Tracker 0944a3cd3f2f1a73262063dec72502a7929e67c6 documentation</title>
+  <title>Transport and data protocol &mdash; nRF Asset Tracker 2be292f20a0ded2c5020c5cfe9a8e12d1c4994c0 documentation</title>
   
 
   
@@ -246,7 +246,8 @@ If the message is to be transferred for example, using <a class="reference exter
 However, there is an extra cost of maintaining the source code on the device side and on the cloud side.
 The code must enable the use of a protocol, which is not supported natively by the cloud provider.</p>
 <p>See also <a class="reference external" href="http://tutorials.jenkov.com/rion/rion-performance-benchmarks.html">RION Performance Benchmarks</a> .</p>
-<p><a class="reference external" href="https://google.github.io/flatbuffers/">FlatBuffers</a> could be <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues/59">a good candidate</a> for a resource-constrained device like the nRF9160 DK.</p>
+<p>Protocol buffers are available in Zephyr using <a class="reference external" href="https://jpa.kapsi.fi/nanopb/">Nanopb</a>.
+An example on how to use them is implemented in the <a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/bluetooth/alexa_gadget/README.html">Alexa Gadget Bluetooth Peripheral Sample in NCS</a>.</p>
 </div>
 </div>
 </div>
