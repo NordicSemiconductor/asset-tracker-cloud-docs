@@ -61,4 +61,5 @@ The code must enable the use of a protocol, which is not supported natively by t
 
 See also `RION Performance Benchmarks <http://tutorials.jenkov.com/rion/rion-performance-benchmarks.html>`_ .
 
-`FlatBuffers <https://google.github.io/flatbuffers/>`_ could be `a good candidate <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues/59>`_ for a resource-constrained device like the nRF9160 DK.
+Protocol buffers are available in Zephyr using `Nanopb <https://jpa.kapsi.fi/nanopb/>`_.
+An example on how to use them is implemented in the `Alexa Gadget Bluetooth Peripheral Sample in NCS <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/bluetooth/alexa_gadget/README.html>`_.
