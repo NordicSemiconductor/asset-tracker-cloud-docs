@@ -84,7 +84,7 @@ To install the nRF Asset Tracker into your Azure account, complete the following
 
 #. Follow the instructions in the `tutorial for registering a web application in Azure Active Directory B2C <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=app-reg-ga#register-a-web-application>`_ and register a web application. Use ``https://<your APP_NAME>app.z16.web.core.windows.net/`` as the redirect URL.
 
-#. After registering the application, under :guilabel:`Authentication`, enable the implicit grant and hybrid flows for :guilabel:`Access tokens` and :guilabel:`ID tokens` and click :guilabel:`Save`.
+#. Select :guilabel:`Authentication`, enable the implicit grant and hybrid flows for :guilabel:`Access tokens` and :guilabel:`ID tokens` and click :guilabel:`Save`.
 
 #. Save the ``application (client) id`` to the environment variable ``APP_REG_CLIENT_ID`` in the :file:`.envrc` file:
 
