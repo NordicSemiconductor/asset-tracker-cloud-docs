@@ -5,7 +5,7 @@ Configure the firmware
 
 To configure the :ref:`firmware <firmware-azure-index>`, complete the following mandatory steps:
 
-1. Run the following command to print the Azure IoT DPS ID scope to which your devices use during device provisioning:
+1. Run the following command to print the Azure IoT DPS ID scope, which your devices use during device provisioning:
 
    .. code-block:: bash
 
