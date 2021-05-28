@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous deployment &mdash; nRF Asset Tracker a0b8180b94c856f1793b136b0ee47aff300377cd documentation</title>
+  <title>Continuous deployment &mdash; nRF Asset Tracker d0ba2ee4e29de4b6d39959adcebf8a1cb8b12c17 documentation</title>
   
 
   
@@ -239,8 +239,7 @@ az account list --output table
 <li><p>Create the CI credentials:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az ad sp create-for-rbac --name <span class="s1">&#39;https://nrfassettracker.invalid/cd&#39;</span> --role contributor <span class="se">\</span>
    --scopes <span class="se">\</span>
-      <span class="s2">&quot;/subscriptions/</span><span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span><span class="s2">/resourceGroups/</span><span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span><span class="s2"> \</span>
-<span class="s2">      /subscriptions/</span><span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span><span class="s2">/resourceGroups/</span><span class="si">${</span><span class="nv">ADU_RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADU</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
+      <span class="s2">&quot;/subscriptions/</span><span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span><span class="s2">/resourceGroups/</span><span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
    --sdk-auth <span class="se">\</span>
    &gt; cd-credentials.json
 </pre></div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous integration &mdash; nRF Asset Tracker a0b8180b94c856f1793b136b0ee47aff300377cd documentation</title>
+  <title>Continuous integration &mdash; nRF Asset Tracker d0ba2ee4e29de4b6d39959adcebf8a1cb8b12c17 documentation</title>
   
 
   
@@ -260,15 +260,6 @@ In this example, <code class="docutils literal notranslate"><span class="pre">nr
 </pre></div>
 </div>
 </li>
-<li><p>Choose a resource group and a name for the Device Update instance and export it as <code class="docutils literal notranslate"><span class="pre">ADU_RESOURCE_GROUP</span></code> and <code class="docutils literal notranslate"><span class="pre">ADU_INSTANCE_NAME</span></code>.
-There is an undocumented limit of two instances per ADU account, so the CI must be run against a separate Device Update instance.
-In this example, <code class="docutils literal notranslate"><span class="pre">nRFAssetTrackerADUCI</span></code> is used as the resource group and Device Update instance name.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
-<span class="nb">export</span> <span class="nv">ADU_RESOURCE_GROUP</span><span class="o">=</span><span class="s2">&quot;nRFAssetTrackerADUCI&quot;</span>
-<span class="nb">export</span> <span class="nv">ADU_INSTANCE_NAME</span><span class="o">=</span><span class="s2">&quot;nRFAssetTrackerADUCI&quot;</span>
-</pre></div>
-</div>
-</li>
 <li><p>Configure your preferred location (you can list the locations using <code class="docutils literal notranslate"><span class="pre">az</span> <span class="pre">account</span> <span class="pre">list-locations</span></code>) and export it on the environment variable <code class="docutils literal notranslate"><span class="pre">LOCATION</span></code>.
 In this example, <code class="docutils literal notranslate"><span class="pre">northeurope</span></code> is used as the location name.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LOCATION</span><span class="o">=</span><span class="s2">&quot;northeurope&quot;</span>
@@ -276,8 +267,7 @@ In this example, <code class="docutils literal notranslate"><span class="pre">no
 </div>
 </li>
 <li><p>Create a resource group for the CI resources:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az group create --name <span class="si">${</span><span class="nv">ADU_RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADUCI</span><span class="si">}</span> --location <span class="si">${</span><span class="nv">LOCATION</span><span class="k">:-</span><span class="nv">northeurope</span><span class="si">}</span>
-az group create --name <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettrackerci</span><span class="si">}</span> --location <span class="si">${</span><span class="nv">LOCATION</span><span class="k">:-</span><span class="nv">northeurope</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az group create --name <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettrackerci</span><span class="si">}</span> --location <span class="si">${</span><span class="nv">LOCATION</span><span class="k">:-</span><span class="nv">northeurope</span><span class="si">}</span>
 </pre></div>
 </div>
 </li>
@@ -349,8 +339,7 @@ export B2C_TENANT_ID=&quot;<em>Directory (tenant) ID</em>&quot;</pre>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az ad sp create-for-rbac --name <span class="s1">&#39;https://nrfassettracker.invalid/ci&#39;</span> <span class="se">\</span>
    --role contributor <span class="se">\</span>
    --scopes <span class="se">\</span>
-      <span class="s2">&quot;/subscriptions/</span><span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span><span class="s2">/resourceGroups/</span><span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span><span class="s2"> \</span>
-<span class="s2">      /subscriptions/</span><span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span><span class="s2">/resourceGroups/</span><span class="si">${</span><span class="nv">ADU_RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nRFAssetTrackerADUCI</span><span class="si">}</span><span class="s2">&quot;</span><span class="se">\</span>
+      <span class="s2">&quot;/subscriptions/</span><span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span><span class="s2">/resourceGroups/</span><span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span><span class="s2">&quot;</span><span class="se">\</span>
    --sdk-auth <span class="se">\</span>
    &gt; ci-credentials.json
 </pre></div>
