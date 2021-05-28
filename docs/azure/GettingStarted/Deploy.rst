@@ -80,7 +80,7 @@ To install the nRF Asset Tracker into your Azure account, complete the following
       # add to .envrc
       export B2C_TENANT="nrfassettrackerusers"
 
-#. After creating the Active Directory B2C, under :guilabel:`User flows`, create the user flow for sign up and sign in (recommended version), and make sure to name the userflow as ``B2C_1_signup_signin``.
+#. Select :guilabel:`User flows`, create the user flow for sign up and sign in (recommended version), and make sure to name the userflow as ``B2C_1_signup_signin``.
 
 #. Follow the instructions in the `tutorial for registering a web application in Azure Active Directory B2C <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=app-reg-ga#register-a-web-application>`_ and register a web application. Use ``https://<your APP_NAME>app.z16.web.core.windows.net/`` as the redirect URL.
 
