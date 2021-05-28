@@ -97,7 +97,7 @@ To install the nRF Asset Tracker into your Azure account, complete the following
 
    a. Click :guilabel:`Expose an API`.
    
-   #. Set the ``Application ID URI`` field to ``api``. Click :guilabel:`Save and continue`. 
+   #. Set the ``Application ID URI`` field to ``api`` and click :guilabel:`Save and continue`. 
    
    #. Create a new scope with the following values and click :guilabel:`Add a scope`:
       
