@@ -17,7 +17,7 @@ Cat Tracker.
 ## Publishing the documentation
 
 This documentation is built using [Sphinx](https://www.sphinx-doc.org/), and is
-available in two versions under the following directories in the `gh-pages`
+available in three versions under the following directories in the `gh-pages`
 branch of this repository:
 
 - [`saga`](https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/tree/gh-pages/saga)
