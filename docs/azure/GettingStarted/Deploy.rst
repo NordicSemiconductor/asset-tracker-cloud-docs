@@ -148,6 +148,6 @@ To install the nRF Asset Tracker into your Azure account, complete the following
 
    It can take a few minutes for the detailed log message to be populated.
 
-   If the error message does not include a tracking ID navigate to the resource group in the Azure portal and review the deployments.
-   There should be a failed deployment called ``initial-setup``.
+   If the error message does not include a tracking ID, navigate to the resource group in the Azure portal and review the deployments.
+   There is a failed deployment called ``initial-setup``.
    Examine its error details.
