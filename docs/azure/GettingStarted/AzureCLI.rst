@@ -16,8 +16,8 @@ After installing the CLI, you can execute the ``az`` command:
 Create the az alias when using Docker
 *********************************************
 
-The installation instructions expect the :file:`az` command to be run from the current directory.
-Therfore an alias needs to be created, when using the dockerized Azure CLI.
+The installation instructions expect that you run the ``az`` command from the current directory.
+Therfore, you need to create an alias, when using the dockerized Azure CLI.
 
 1. Copy the script to an executable file in your path, for example :file:`~/bin/az`:
 
