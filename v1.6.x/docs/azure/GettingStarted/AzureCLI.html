@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Install the Azure CLI &mdash; nRF Asset Tracker 2be292f20a0ded2c5020c5cfe9a8e12d1c4994c0 documentation</title>
+  <title>Install the Azure CLI &mdash; nRF Asset Tracker bafba5beffa98d07a2c72ea1d44da0398e0b0cf4 documentation</title>
   
 
   
@@ -214,6 +214,34 @@ After installing the CLI, you can execute the <code class="docutils literal notr
 <span class="c1"># azure-cli 2.24.0</span>
 <span class="c1"># ...</span>
 </pre></div>
+</div>
+<div class="section" id="create-the-az-alias-when-using-docker">
+<h2>Create the az alias when using Docker<a class="headerlink" href="#create-the-az-alias-when-using-docker" title="Permalink to this headline">¶</a></h2>
+<p>The installation instructions expect that you run the <code class="docutils literal notranslate"><span class="pre">az</span></code> command from the current directory.
+Therefore, you need to create an alias, when using the dockerized Azure CLI.</p>
+<ol class="arabic">
+<li><p>Copy the script to an executable file in your path, for example <code class="file docutils literal notranslate"><span class="pre">~/bin/az</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash </span>
+
+<span class="nb">set</span> -eu
+
+<span class="nv">command</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+
+docker run --rm --volume <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>:/root <span class="se">\</span>
+    --volume <span class="nv">$HOME</span>/.azure:/root/.azure <span class="se">\</span>
+    -w<span class="o">=</span>/root mcr.microsoft.com/azure-cli <span class="se">\</span>
+    az <span class="nv">$command</span>
+</pre></div>
+</div>
+</li>
+<li><p>Make sure that you can call it using <code class="docutils literal notranslate"><span class="pre">az</span></code> (the folder <code class="file docutils literal notranslate"><span class="pre">~/bin</span></code> needs to be in your <code class="docutils literal notranslate"><span class="pre">$PATH</span></code>).
+This enables you to execute <code class="docutils literal notranslate"><span class="pre">az</span></code> when using the dockerized Azure CLI.</p></li>
+<li><p>Log in again to continue with the next step:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az login
+</pre></div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 
