@@ -13,7 +13,7 @@ After installing the CLI, you can execute the ``az`` command:
    # azure-cli 2.24.0
    # ...
 
-Create the :file:`az` alias when using Docker
+Create the az alias when using Docker
 *********************************************
 
 The installation instructions expect the :file:`az` command to be run from the current directory.
