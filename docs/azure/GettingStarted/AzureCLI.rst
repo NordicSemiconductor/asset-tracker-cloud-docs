@@ -24,8 +24,8 @@ Therfore an alias needs to be created, when using the dockerized Azure CLI.
    .. literalinclude:: ./scripts/az
       :language: bash
 
-#. Make sure that you can call it using :file:`az` (the folder :file:`~/bin` needs to be in your ``$PATH``).
-   This enables you to execute :file:`az` when using the dockerized Azure CLI.
+#. Make sure that you can call it using ``az`` (the folder :file:`~/bin` needs to be in your ``$PATH``).
+   This enables you to execute ``az`` when using the dockerized Azure CLI.
 
 #. Log-in again, in order to continue with the next step:
 
