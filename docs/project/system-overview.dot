@@ -69,17 +69,17 @@ digraph G {
     asset_tracker_v2 -> azure_iot [ dir=back ]
     asset_tracker_v2 -> agps [ dir=back ]
 
-    agpscloud -> nrfconnectforcloud [ dir=back headlabel="REST" ltail=cluster4 ]
+    agpscloud -> nrfconnectforcloud [ dir=back headlabel="HTTPs" ltail=cluster4 ]
     gellceo -> nrfconnectforcloud [ dir=back ltail=cluster4 ]
-    gellceo -> unwiredlabs [ dir=back headlabel="REST" ltail=cluster4 ]
+    gellceo -> unwiredlabs [ dir=back headlabel="HTTPs" ltail=cluster4 ]
     AWS -> gellceo [ dir=back ltail=cluster0 lhead=cluster4 ]
 
-    AWS -> aws_api [ label="REST" ltail=cluster0 lhead=cluster2 ]
-    Azure -> azure_api [ label="REST" ltail=cluster0 lhead=cluster2 ]
+    AWS -> aws_api [ label="HTTPs" ltail=cluster0 lhead=cluster2 ]
+    Azure -> azure_api [ label="HTTPs" ltail=cluster0 lhead=cluster2 ]
 
     aws_api -> web_app
     azure_api -> web_app
 
-    web_app -> phone [ headlabel="REST" ltail=cluster2 dir=back ]
+    web_app -> phone [ ltail=cluster2 dir=back ]
 }
 
