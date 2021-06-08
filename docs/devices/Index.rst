@@ -18,7 +18,7 @@ To connect the device to your account, complete the following steps:
 #. Program the application firmware according to the instructions in the documentation:
 
    * `nRF9160 DK application firmware update <https://infocenter.nordicsemi.com/topic/ug_nrf91_dk_gsg/UG/nrf91_DK_gsg/updating_application_firmware.html>`_
-   * `Thingy:91 application firmware update <https://infocenter.nordicsemi.com/topic/ug_nc_programmer/UG/nrf_connect_programmer/ncp_pgming_thingy91_usb.html>`_
+   * `Thingy:91 application firmware update <https://infocenter.nordicsemi.com/topic/ug_nc_programmer/UG/nrf_connect_programmer/ncp_pgm_thingy91_debugprobe.html>`_
 
 
 .. toctree::
