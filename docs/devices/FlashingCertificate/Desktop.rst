@@ -39,15 +39,15 @@ To provision the certificate using LTE Link Monitor, complete the following step
 
 #. Click :guilabel:`Certificate manager`.
 
-   .. figure:: ./images/certificate-manager-desktop.png
-      :alt: nRF Connect for Desktop Certificate manager
-
-      LTE Link Monitor - Certificate manager
-
 #. Drag and drop the :file:`JSON` file into the Certificate manager window or select the file using the :guilabel:`Load from JSON` button.
 
    .. note::
 
       Change the security tag to ``42``. The modem can hold multiple credentials, and the default security tag ``16842753`` is reserved for `nRF Connect for Cloud <https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud>`_ credentials.
+
+   .. figure:: ./images/certificate-manager-desktop.png
+      :alt: nRF Connect for Desktop Certificate manager
+
+      LTE Link Monitor - Certificate manager
 
 #. Click :guilabel:`Update certificates` and wait until the operation completes.
