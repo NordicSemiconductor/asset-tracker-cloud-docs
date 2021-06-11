@@ -22,8 +22,6 @@ To provide the AWS credentials to the nRF Asset Tracker, complete the following 
 
        This action will create a user with full access rights to the account, and therefore it must only be created in an account dedicated for the nRF Asset Tracker.
 
-#.  Create Security credentials for the user.
-
 #.  Add the Access key ID and Secret access key, to a new :file:`.envrc` file (:ref:`used with direnv <about-direnv>`), as shown in the following code:
 
     .. parsed-literal::
