@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Generating a certificate &mdash; nRF Asset Tracker 658f61e334c7901ec564fd4aebca66e53c8309e8 documentation</title>
+  <title>Generating a certificate &mdash; nRF Asset Tracker 0778e4f83ffc44608cc639d5d4db2395c12fd05d documentation</title>
   
 
   
@@ -189,6 +189,11 @@ The IMEI is also typically printed on a sticker on the device.</p>
 </div>
 <p>Use the IMEI when generating the certificate:</p>
 <pre class="highlight literal-block"> node cli create-device-cert -d &quot;<em>imei</em>&quot;</pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default lifetime for device certificates is 30 years.
+Run <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">cli</span> <span class="pre">create-device-cert</span> <span class="pre">--help</span></code> to learn how to customize the lifetime.</p>
+</div>
 </div>
 
 
