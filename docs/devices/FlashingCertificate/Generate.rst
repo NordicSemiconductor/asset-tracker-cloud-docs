@@ -26,7 +26,7 @@ Use the IMEI when generating the certificate:
 
 .. note::
 
-    The default lifetime for device certificates is 30 year.
+    The default lifetime for device certificates is 30 years.
     Run ``node cli create-device-cert --help`` to learn how to customize the lifetime.
 
 .. body_end
