@@ -29,6 +29,11 @@ Run the following script to generate and register a CA certificate in your AWS a
     cd ~/nrf-asset-tracker/aws
     node cli create-ca
 
+.. note::
+
+   The default lifetime for CA certificates is 1 year.
+   Run ``node cli create-ca --help`` to learn how to customize the lifetime.
+
 Generate a device certificate
 *****************************
 
