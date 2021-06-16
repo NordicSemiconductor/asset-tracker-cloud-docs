@@ -17,20 +17,18 @@ The CI run results in the following actions:
 
 1. Creating a new device and credentials on AWS IoT.
 #. Building a firmware that has the device ID hardcoded for the MQTT client ID.
-#. Creating an AWS IoT job with the firmware and the credentials, which is selected by the `Firmware CI runner <https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js>`_. See :ref:`firmware_ci_runner_setup`.
+#. Scheduling a run on a self-hosted GitHub Actions runner. See :ref:`firmware_ci_runner_setup`.
 #. Observing the firmware CI run until completion.
-#. Downloading the log result from Amazon S3 bucket.
 #. Running assertions against the log result.
 
-The Firmware CI runner is running on a Raspberry Pi connected to AWS IoT, where it receives the jobs to execute.
+The Firmware CI runner is running on a Raspberry Pi connected to GitHub Actions, where it receives the jobs to execute.
 Following are the actions performed by the Firmware CI runner:
 
 1. Programming the firmware and the optional credentials using the connected debugger to the connected nRF9160 DK or Thingy:91.
-#. Collecting all the log output until one of the following conditions occur:
+#. Logging all output until one of the following conditions occur:
 
    a. A timeout is reached
    #. A stop condition is reached. (Wait for a log output to match a string.)
-#. Uploading the logs to S3 bucket
 
 .. note::
 
@@ -62,26 +60,12 @@ Print the AWS Key for the CI runner on GitHub Actions using the following comman
    Access Key ID: "*AWS Access Key ID*"
    Secret Access Key: "*AWS Secret Access Key*"
 
-At this stage, you can create a new IoT Thing to be used for a Firmware CI runner, by running the following command:
-
-.. code-block:: bash
-
-   node cli firmware-ci -c
-
-To delete a device, use the following command:
-
-.. parsed-literal::
-   :class: highlight
-
-   node cli firmware-ci -r "*deviceId*"
-
 Configure the following parameters as secrets on the firmware GitHub repository:
 
 * ``AWS_ACCESS_KEY_ID`` (as printed above)
 * ``AWS_SECRET_ACCESS_KEY`` (as printed above)
 * ``AWS_REGION`` (as printed above)
 * ``STACK_NAME`` (the stack name of your production environment, usually ``nrf-asset-tracker``)
-* ``DEVICE_ID`` (the created Firmware CI runner device, for example, ``firmware-ci-3c431c57-e524-4010-b269-371cb53538b6``)
 
 .. _firmware_ci_runner_setup:
 
@@ -91,39 +75,8 @@ Firmware CI runner setup
 To set up Firmware CI runner, complete the following steps:
 
 1. Download `JLink <https://www.segger.com/downloads/jlink/>`_ for your platform.
-#. Install `firmware-ci-runner-aws <https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git>`_ by running the following commands:
 
-   .. parsed-literal::
-
-      git clone --branch |version| --single-branch \\
-        https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner-js.git
-      cd firmware-ci-runner-aws
-      npm ci
-      npx tsc
-
-#. Provide the following environment variables. Use the path to the JLink folder (for example, :file:`~/JLink_Linux_V686_arm64/`) that is created during the installation in step 1:
-
-   .. parsed-literal::
-      :class: highlight
-
-      export AWS_ACCESS_KEY_ID="*AWS Access Key ID printed above*"
-      export AWS_SECRET_ACCESS_KEY="*AWS Secret Access Key printed above*"
-      export REGION="*Region printed above*"
-      export BUCKET_NAME="*Bucket name printed above*"
-      export PATH="*Path to JLINK*":$PATH
-
-   The recommended workflow is to use a `direnv <https://direnv.net/>`_ plugin for your shell, which locates the environment variables in a :file:`.envrc` file in the project folder and automatically exports them.
-   Create a new file :file:`.envrc` in the project folder and add the credentials that are provided to you after you have created the new user.
-
-#. Copy the JSON file containing the certificate.
-
-#. Run the following command:
-
-   .. parsed-literal::
-      :class: highlight
-
-      node cli run "*device*" "*path to certificate.json*"
-
-   :file:`device` is the Linux file to which the device is connected, for example, ``/dev/ttyACM0``.
+#. Follow `the instruction about self-hosted runners <https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners>`_ to set up a runner for your firmware repository.
+   Ensure to use ``firmware-ci`` when prompted for the labels.
 
 The Firmware CI starts to process all the scheduled jobs one after another.
