@@ -26,7 +26,7 @@ To configure Azure AD B2C as the identity provider for your Function Apps, compl
 
    Wait for the Function App to be deployed, then click :guilabel:`Go to resource` to view it.
 
-#. Note the URL shown for your newly deployed app.
+#. Note the URL shown in the :guilabel:`Overview` section for your newly deployed app.
 #. Create a new B2C application.
 
    a. In the Azure portal, click :guilabel:`More services`.
@@ -38,17 +38,17 @@ To configure Azure AD B2C as the identity provider for your Function Apps, compl
 
          App Service Authentication
 
-   #. Configure the following fields:
+   #. Configure the following options:
 
       * Provide the app name.
       * Click :guilabel:`Yes` for the :guilabel:`Web App/ Web API` option.
-      * In the :guilabel:`Reply URL` field, enter the unique Azure Function App URL that you noted in Step 4 and append  ``/.auth/login/aad/callback`` to it.
+      * In the :guilabel:`Reply Url` field, enter the unique Azure Function App URL that you noted in Step 4 and append  ``/.auth/login/aad/callback`` to it.
         For example:
 
         .. parsed-literal::
            :class: highlight
 
-           https://\ *functionapp*\ .azurewebsites.net/.auth/login/aad/callback.
+           https://\ *functionappname*\ .azurewebsites.net/.auth/login/aad/callback.
 
    #. Click :guilabel:`Create`.
 
