@@ -7,7 +7,7 @@ Deploy the Cat Tracker web application
    :local:
    :depth: 2
 
-To deploy the Cat Tracker web application to Azure, complete the following steps:
+To deploy the :ref:`index-cat-tracker-web-app` to Azure, complete the following steps:
 
 1. Clone the project and install the dependencies
 #. Configure the web application

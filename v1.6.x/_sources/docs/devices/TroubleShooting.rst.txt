@@ -15,6 +15,16 @@ Error code -22
 
 If you see this error code, verify the client ID, the endpoint, and the certificates.
 
+getaddrinfo, error -11
+======================
+
+.. code-block:: text
+
+    <err> aws_iot: getaddrinfo, error -11
+    <err> aws_iot: client_broker_init, error: -10
+
+If you see this error, verify that your SIM did not run out of data.
+
 Cellular connection
 ===================
 

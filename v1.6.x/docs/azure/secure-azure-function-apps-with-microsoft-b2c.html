@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Using Azure AD B2C to secure your Azure Functions Apps &mdash; nRF Asset Tracker 0778e4f83ffc44608cc639d5d4db2395c12fd05d documentation</title>
+  <title>Using Azure Active Directory B2C &mdash; nRF Asset Tracker 53eaa27ffe8f5ded4e6589902cb8449a031c98b5 documentation</title>
   
 
   
@@ -107,7 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="UnwiredLabsAPI.html">Unwired Labs API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">Azure IoT Shadow and topics</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Using Azure AD B2C to secure your Azure Functions Apps</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using Azure Active Directory B2C</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
@@ -171,7 +171,7 @@
         
           <li><a href="Index.html">Azure cloud components</a> &raquo;</li>
         
-      <li>Using Azure AD B2C to secure your Azure Functions Apps</li>
+      <li>Using Azure Active Directory B2C</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -192,73 +192,120 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="using-azure-ad-b2c-to-secure-your-azure-functions-apps">
-<h1>Using Azure AD B2C to secure your Azure Functions Apps<a class="headerlink" href="#using-azure-ad-b2c-to-secure-your-azure-functions-apps" title="Permalink to this headline">¶</a></h1>
-<p>Manual Guide by <a class="reference external" href="https://docs.microsoft.com/answers/answers/40449/view.html">Saurabh Sharma</a>.</p>
-<p>If you want to use Azure Function Apps and need a way to secure access to your Function Apps – that is, only allowing authenticated users, then Azure AD B2C is a great solution.
-It allows users to create their own accounts or using a social identity provider, and gain access to the your Function apps only after they have successfully authenticated.
-This document is a step-by-step guide to configuring Azure AD B2C, as the identity provider for your Azure Function Apps.</p>
+  <div class="section" id="using-azure-active-directory-b2c">
+<span id="azure-adb2c"></span><h1>Using Azure Active Directory B2C<a class="headerlink" href="#using-azure-active-directory-b2c" title="Permalink to this headline">¶</a></h1>
+<p>To secure access to your Azure Function Apps and to allow access only to authenticated users, you can use Azure Active Directory B2C.
+It allows users to create their own accounts or sign in with credentials provided by a social identity provider.
+Users can access the Function Apps only after a successful authentication.</p>
+<p>To configure Azure AD B2C as the identity provider for your Function Apps, complete the following steps:</p>
 <ol class="arabic">
-<li><p>Create your Azure function app – easiest way is to select <strong>+Create a Resource</strong> , type in “function app” to find it, select Function App, and select <strong>Create</strong></p>
-<img alt="1" src="../../_images/01.png" />
+<li><p>Log in to the <a class="reference external" href="https://portal.azure.com/#home">Azure portal</a>.</p></li>
+<li><p>Click <span class="guilabel">Create a resource</span> to create your Azure Function App.</p>
+<ol class="loweralpha">
+<li><p>Search for <code class="docutils literal notranslate"><span class="pre">function</span> <span class="pre">app</span></code>.</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">Function</span> <span class="pre">App</span></code>, click <span class="guilabel">Create</span>.</p>
+<div class="figure align-default" id="id1">
+<img alt="Function App" src="../../_images/functionapp.png" />
+<p class="caption"><span class="caption-text">Function App</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 </li>
-<li><p>Enter your unique Azure Function App name – copy the name to a text editor -we will need it in subsequent steps.
-Complete the rest of the information and select <strong>Create</strong>.</p>
-<img alt="2" src="../../_images/02.png" />
+</ol>
 </li>
-<li><p>Go back to the Function App blade in the Azure Portal, and select the Azure function app that you created.
-From the Function App blade, select Platform Features and then select Authentication/Authorization.</p>
-<img alt="3" src="../../_images/03.png" />
+<li><p>Enter a unique name for your Function App, and fill the remaining information.
+You must fill the information in the <span class="guilabel">Basics</span> tab, and can then either fill in the information in the other tabs or go straight to the <span class="guilabel">Review + Create</span> tab.
+Check that all information is correct and click <span class="guilabel">Create</span>.</p>
+<p>Wait for the Function App to be deployed, then click <span class="guilabel">Go to resource</span> to view it.</p>
 </li>
-<li><p>Move the App Service Authentication to the On Position, which then expose a number of settings available for Authentication.
-Note that the default is “Allow Anonymous request” – allowing any user to access your function application.</p>
-<img alt="4" src="../../_images/04.png" />
+<li><p>Note the URL shown in the <span class="guilabel">Overview</span> section for your newly deployed app.</p></li>
+<li><p>Create a new B2C application.</p>
+<ol class="loweralpha">
+<li><p>In the Azure portal, click <span class="guilabel">More services</span>.</p></li>
+<li><p>Click <span class="guilabel">Identity</span> in the sidebar, then select <span class="guilabel">Azure AD B2C</span>.
+The <span class="guilabel">New Application</span> blade opens.</p>
+<div class="figure align-default" id="id2">
+<img alt="App Service Authentication" src="../../_images/azureadb2c.png" />
+<p class="caption"><span class="caption-text">App Service Authentication</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 </li>
-<li><p>We will now select “Log in with Azure Active Directory”, which is one of the available options in the drop down box labeled “Action to take when request is not authenticated”</p>
-<img alt="5" src="../../_images/05.png" />
+<li><p>Configure the following options:</p>
+<ul>
+<li><p>Provide the app name.</p></li>
+<li><p>Click <span class="guilabel">Yes</span> for the <span class="guilabel">Web App/ Web API</span> option.</p></li>
+<li><p>In the <span class="guilabel">Reply Url</span> field, enter the unique Azure Function App URL that you noted in Step 4 and append  <code class="docutils literal notranslate"><span class="pre">/.auth/login/aad/callback</span></code> to it.
+For example:</p>
+<pre class="highlight literal-block"><a class="reference external" href="https://">https://</a><em>functionappname</em>.azurewebsites.net/.auth/login/aad/callback.</pre>
 </li>
-<li><p>After this select “Azure Active Directory” under the list of Authentication Providers, this will open a new configuration blade, select “Advanced” and note the required fields, including Client ID and Issuer Uri – the Client Secret and Allowed Token Audiences are option fields.
-Go to the next steps to collect the application Client ID and Issuer URI values from B2C.</p>
-<img alt="6" src="../../_images/06.png" />
+</ul>
 </li>
-<li><p>Create a new B2C application.
-From the Azure Portal (optionally, you can open a separate browser tab or new browser session, keeping the previous blade open/available), go to your B2C Tenant Blade, and select Applications, then select +Add to create a New Application.
-In the New Application blade, give the app a friendly name, Select <em>Yes</em> for Web App/ Web API option, in the Reply URL section, enter in the full Azure website name that you created in step 2, and append it with: <code class="docutils literal notranslate"><span class="pre">/.auth/login/aad/callback</span></code>. For example: <code class="docutils literal notranslate"><span class="pre">https://myAppSecuredByB2C.azurewebites.net/.auth/login/aad/callback</span></code>.
-Select Create.</p>
-<img alt="7" src="../../_images/07.png" />
+<li><p>Click <span class="guilabel">Create</span>.</p></li>
+</ol>
 </li>
-<li><p>Collect B2C Application ID.
-After successfully creating the application, go back to the B2C Admin Portal Application blade, find your newly created application and open the profile to collect the Application ID – copy this B2C application ID – this will be used to finish the Azure Function configuration.</p>
-<img alt="8" src="../../_images/08.png" />
+<li><p>Determine the <em>B2C Application ID</em>:</p>
+<ol class="loweralpha simple">
+<li><p>In the Azure portal, select the <span class="guilabel">Azure AD B2C</span> blade.</p></li>
+<li><p>Click on <span class="guilabel">Applications</span> and then click on the entry for your newly created application to open the application profile.</p></li>
+<li><p>Obtain the <em>Application ID</em> from the <span class="guilabel">Properties</span> blade of the application.</p></li>
+</ol>
+<p>This ID is used to complete the Azure Function configuration.</p>
 </li>
-<li><p>Collect B2C OpenID Connect Metadata URL endpoint.
-Go to the top level Azure AD B2C blade, and select User Journeys, and select a Sign In Sign Up policy (or any other policy that you have created, and select the “Run user flow” button – once the blade is opened copy the Openid Metadata endpoint</p>
-<img alt="9" src="../../_images/09.png" />
+<li><p>Determine the <em>B2C OpenID Connect Metadata URL</em> endpoint:</p>
+<ol class="loweralpha">
+<li><p>In the Azure portal, select the <span class="guilabel">Azure AD B2C</span> blade.</p></li>
+<li><p>Under <span class="guilabel">Policies</span>, select <span class="guilabel">User flows</span>.</p></li>
+<li><p>Select the <span class="guilabel">Sign up and sign in</span> policy (or any other policy that you have created) and click <span class="guilabel">Run user flow</span>.</p>
+<p>The <span class="guilabel">Run user flow</span> blade opens.</p>
 </li>
-<li><p>Return to the Azure Function blade, and navigate to the Platform Settings -&gt; Authentication/Authorization -&gt; Azure Active Directory Settings – enter the B2C Application ID into the <strong>Client ID</strong> property.
-Similarly, enter in the B2C Open ID Connect metadata URL into the <strong>Issuer URI</strong> property.
-Select OK to finish the configuration.</p>
-<img alt="10" src="../../_images/10.png" />
+<li><p>Copy the OpenID Metadata URL endpoint that is displayed in the top right corner.</p></li>
+</ol>
 </li>
-<li><p>Validation and Testing.
-The configuration on both the B2C application side as well as the Azure Function is now complete.</p>
+<li><p>Select <span class="guilabel">Authentication (classic)</span> in the sidebar.</p></li>
+<li><p>Toggle <span class="guilabel">App Service Authentication</span> to <code class="docutils literal notranslate"><span class="pre">On</span></code>.
+Several authentication provider configurations are now displayed.</p>
+<p>The default action when a request is not authenticated is <code class="docutils literal notranslate"><span class="pre">Allow</span> <span class="pre">Anonymous</span> <span class="pre">request</span></code>.
+This allows any user to access your Function App.</p>
+<div class="figure align-default" id="id3">
+<img alt="App Service Authentication" src="../../_images/appserviceauthentication.png" />
+<p class="caption"><span class="caption-text">App Service Authentication</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Select <span class="guilabel">Log in with Azure Active Directory</span> in the <span class="guilabel">Action to take when request is not authenticated</span> dropdown.</p></li>
+<li><p>Select <span class="guilabel">Azure Active Directory</span> under the <span class="guilabel">Authentication Providers</span> list.</p>
+<p>This opens <span class="guilabel">Azure Active Directory Settings</span>.</p>
+</li>
+<li><p>Set the <span class="guilabel">Management mode</span> as <span class="guilabel">Advanced</span>, then fill in <span class="guilabel">Client ID</span> and <span class="guilabel">Issuer Url</span>.</p>
+<ol class="loweralpha">
+<li><p>Enter the B2C Application ID from Step 6 into the <span class="guilabel">Client ID</span> field.</p></li>
+<li><p>Enter the B2C Open ID Connect metadata URL from Step 7 into the <span class="guilabel">Issuer Url</span> field.</p>
+<div class="figure align-default" id="id4">
+<img alt="Active Directory Settings" src="../../_images/activedirectorysettings.png" />
+<p class="caption"><span class="caption-text">Active Directory Settings</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>If you wish to fill in <span class="guilabel">Client Secret</span>, click <span class="guilabel">Show secret</span> to display the appropriate field.
+You can fill in <span class="guilabel">Allowed Token Audiences</span> if you wish as well.</p></li>
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</li>
+</ol>
+<p>The configuration for B2C application and the Azure Function is now complete.</p>
+<p>To validate the configurations, you must perform tests.</p>
+<p>Confirm that users without authentication gets prompted to complete their B2C sign-in before being allowed access to your Function App:</p>
 <ol class="arabic">
-<li><p>Attempting to access your Function App will now require authentication.
-Validate that un-authenticated users will get prompted to complete their B2C sign-in before being allowed access to your Function App.
-This can be easily executed from the Run userflow button from each B2C User Flow Policy.
-Make sure to select the Application representing your Azure Function App in the Application drop down picker dialog, and the associated Reply URL (in some cases you many have more than one reply URL).</p>
-<img alt="11" src="../../_images/11.png" />
+<li><p>In the <span class="guilabel">Azure AD B2C</span> blade, navigate to <span class="guilabel">User flows</span> under <span class="guilabel">Policies</span> and click the <span class="guilabel">Run user flow</span> button for each B2C User flow policy.</p>
+<p>The <span class="guilabel">Run user flow</span> blade opens for the selected user flow.</p>
 </li>
-<li><p>Other tests</p>
-<ol class="arabic simple">
-<li><p>Clear browser session cookies, validate that user must authenticate when attempt to access your Azure Function.</p></li>
-<li><p>After successful Function App access, try opening a separate browser tab, and validate that you can automatically sign-in.</p></li>
-<li><p>Try to run other user flows, such as password reset or profile edit, with your Azure Function – after the users complete these flows, the will be redirected to the Azure Function App.</p></li>
+<li><p>Select the entry that corresponds to your Azure Function App in the <span class="guilabel">Application</span> field.</p></li>
+<li><p>Select the associated <span class="guilabel">Reply Url</span>.
+In some cases you might have more than one reply URL.</p></li>
+<li><p>Click the <span class="guilabel">Run user flow</span> button.</p></li>
 </ol>
-</li>
-</ol>
-</li>
-</ol>
+<p>Also complete the following tests:</p>
+<ul class="simple">
+<li><p>Clear the browser session cookies and confirm that the user needs to authenticate during an attempt to access your Azure Function.
+After a successful access to the Function App, open a separate browser tab and validate that you can automatically sign in.</p></li>
+<li><p>Run other user flows, such as password reset or profile edit, with your Azure Function.
+After the users complete these flows, they are redirected to the Azure Function App.</p></li>
+</ul>
 </div>
 
 
