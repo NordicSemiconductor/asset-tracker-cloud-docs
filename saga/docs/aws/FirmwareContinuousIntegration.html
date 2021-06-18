@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous integration of firmware &mdash; nRF Asset Tracker v13.13.1 documentation</title>
+  <title>Continuous integration of firmware &mdash; nRF Asset Tracker 2c8fde3da0d6f1535f510a0da95e7bdc41da7cec documentation</title>
   
 
   
@@ -259,7 +259,10 @@ Secret Access Key: &quot;<em>AWS Secret Access Key</em>&quot;</pre>
 <span id="id1"></span><h2><a class="toc-backref" href="#id4">Firmware CI runner setup</a><a class="headerlink" href="#firmware-ci-runner-setup" title="Permalink to this headline">¶</a></h2>
 <p>To set up Firmware CI runner, complete the following steps:</p>
 <ol class="arabic simple">
-<li><p>Download <a class="reference external" href="https://www.segger.com/downloads/jlink/">JLink</a> for your platform.</p></li>
+<li><p>Prepare an environment that fulfills the <a class="reference internal" href="../project/SystemRequirements.html#system-requirements"><span class="std std-ref">necessary system requirements</span></a>.</p></li>
+</ol>
+<ol class="arabic simple">
+<li><p>Download <a class="reference external" href="https://www.segger.com/downloads/jlink/">JLink</a> for your platform, and ensure that <code class="file docutils literal notranslate"><span class="pre">JLinkExe</span></code> is in your path.</p></li>
 <li><p>Follow <a class="reference external" href="https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners">the instruction about self-hosted runners</a> to set up a runner for your firmware repository.
 Ensure to use <code class="docutils literal notranslate"><span class="pre">firmware-ci</span></code> when prompted for the labels.</p></li>
 </ol>
