@@ -27,7 +27,7 @@ To build the Docker image for this project, run the following commands:
     cd nrf-asset-tracker-firmware-azure
     docker build -t asset-tracker-firmware-docker .
 
-Then, follow the :ref:`configuration instructions for the firmware <azure-firmware-configuration>` and update the :file:`prj.conf` file.
+Then, follow the :ref:`configuration instructions for the firmware <azure-firmware-configuration>` and update the :file:`prj.conf` file and the :file:`overlay-debug.conf` file.
 
 Build the project
 *****************
