@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Configure the firmware &mdash; nRF Asset Tracker v13.13.3 documentation</title>
+  <title>Configure the firmware &mdash; nRF Asset Tracker v13.13.4 documentation</title>
   
 
   
@@ -208,15 +208,56 @@
   <div class="section" id="configure-the-firmware">
 <span id="azure-firmware-configuration"></span><h1>Configure the firmware<a class="headerlink" href="#configure-the-firmware" title="Permalink to this headline">¶</a></h1>
 <p>To configure the <a class="reference internal" href="../../firmware/azure/Index.html#firmware-azure-index"><span class="std std-ref">firmware</span></a>, complete the following mandatory steps:</p>
-<ol class="arabic">
-<li><p>Run the following command to print the Azure IoT DPS ID scope, which your devices use during device provisioning:</p>
+<ol class="arabic simple">
+<li><p>Run the following command to print the Azure IoT DPS ID scope, which your devices use during device provisioning:</p></li>
+</ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli info -o iotHubDpsIdScope
 </pre></div>
 </div>
-</li>
+<ol class="arabic">
 <li><p>Use this ID scope as the value for the <code class="docutils literal notranslate"><span class="pre">CONFIG_AZURE_IOT_HUB_DPS_ID_SCOPE</span></code> configuration variable.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">11</span></code> as the value for <code class="docutils literal notranslate"><span class="pre">CONFIG_AZURE_IOT_HUB_SEC_TAG</span></code>.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">11</span></code> as the value for <code class="docutils literal notranslate"><span class="pre">CONFIG_AZURE_FOTA_SEC_TAG</span></code>.</p></li>
+<li><p>Comment in the remaining Azure settings in the <code class="file docutils literal notranslate"><span class="pre">prj.conf</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CONFIG_AZURE_IOT_HUB</span><span class="o">=</span>y
+<span class="nv">CONFIG_AZURE_IOT_HUB_DPS</span><span class="o">=</span>y
+<span class="nv">CONFIG_AZURE_IOT_HUB_AUTO_DEVICE_TWIN_REQUEST</span><span class="o">=</span>y
+<span class="nv">CONFIG_AZURE_IOT_HUB_DEVICE_ID_APP</span><span class="o">=</span>y
+<span class="nv">CONFIG_AZURE_IOT_HUB_MQTT_PAYLOAD_BUFFER_LEN</span><span class="o">=</span><span class="m">2048</span>
+<span class="nv">CONFIG_AZURE_IOT_HUB_MQTT_RX_TX_BUFFER_LEN</span><span class="o">=</span><span class="m">2048</span>
+<span class="nv">CONFIG_AZURE_IOT_HUB_TOPIC_PROPERTY_BAG_PREFIX</span><span class="o">=</span>n
+<span class="nv">CONFIG_AZURE_IOT_HUB_STACK_SIZE</span><span class="o">=</span><span class="m">4096</span>
+<span class="nv">CONFIG_AZURE_FOTA</span><span class="o">=</span>y
+<span class="nv">CONFIG_AZURE_FOTA_TLS</span><span class="o">=</span>y
+</pre></div>
+</div>
+</li>
+<li><p>Comment in the Azure logging settings in the <code class="file docutils literal notranslate"><span class="pre">overlay-debug.conf</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CONFIG_AZURE_FOTA_LOG_LEVEL_DBG</span><span class="o">=</span>y
+<span class="nv">CONFIG_AZURE_IOT_LOG_LEVEL_DBG</span><span class="o">=</span>y
+<span class="nv">CONFIG_AZURE_JOBS_LOG_LEVEL_DBG</span><span class="o">=</span>y
+</pre></div>
+</div>
+</li>
+<li><p>Comment out the nRF Connect for Cloud settings in the <code class="file docutils literal notranslate"><span class="pre">prj.conf</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># CONFIG_AGPS=y</span>
+<span class="c1"># CONFIG_AGPS_SRC_NRF_CLOUD=y</span>
+<span class="c1"># CONFIG_NRF_CLOUD=y</span>
+<span class="c1"># CONFIG_NRF_CLOUD_AGPS=y</span>
+<span class="c1"># CONFIG_NRF_CLOUD_CONNECTION_POLL_THREAD=y</span>
+<span class="c1"># CONFIG_NRF_CLOUD_PGPS=n</span>
+<span class="c1"># CONFIG_NRF_CLOUD_SEND_TIMEOUT=y</span>
+<span class="c1"># CONFIG_GPS_MODULE_NMEA=y</span>
+</pre></div>
+</div>
+</li>
+<li><p>Comment out the nRF Connect for Cloud logging settings in the <code class="file docutils literal notranslate"><span class="pre">overlay-debug.conf</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># CONFIG_NRF_CLOUD_FOTA_LOG_LEVEL_DBG=y</span>
+<span class="c1"># CONFIG_NRF_CLOUD_GPS_LOG_LEVEL_DBG=y</span>
+<span class="c1"># CONFIG_NRF_CLOUD_LOG_LEVEL_DBG=y</span>
+</pre></div>
+</div>
+</li>
 </ol>
 <p>After completing the configuration, compile the firmware either <a class="reference internal" href="../../firmware/azure/BuildingUsingLocalSystem.html#firmware-azure-building"><span class="std std-ref">using your own development environment</span></a> or <a class="reference internal" href="../../firmware/azure/BuildingUsingDocker.html#firmware-azure-building-docker"><span class="std std-ref">using Docker</span></a> and then <a class="reference internal" href="DeviceCredentials.html#azure-device-credentials"><span class="std std-ref">create the device credentials</span></a>.</p>
 <div class="admonition note">
