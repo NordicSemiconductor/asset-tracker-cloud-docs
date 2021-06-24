@@ -41,7 +41,7 @@ Create a folder, for example, ``ncs`` and initialize the project by running the 
 Configure the project
 *********************
 
-Follow the :ref:`configuration instructions for the firmware <aws-firmware-configuration>` and update the :file:`prj.conf` and :file:`overlay-debug.conf` file.
+Follow the :ref:`configuration instructions for the firmware <aws-firmware-configuration>` and update the :file:`prj.conf` file and the :file:`overlay-debug.conf` file.
 
 Build the project
 *****************
