@@ -27,7 +27,7 @@ To build the the Docker image for this project, run the following commands:
     cd nrf-asset-tracker-firmware-aws
     docker build -t asset-tracker-firmware-docker .
 
-Then, follow the :ref:`configuration instructions for the firmware <aws-firmware-configuration>` and update the :file:`prj.conf` file.
+Then, follow the :ref:`configuration instructions for the firmware <aws-firmware-configuration>` and update the :file:`prj.conf` and :file:`overlay-debug.conf` file.
 
 Build the project
 *****************
