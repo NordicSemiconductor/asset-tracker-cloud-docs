@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Configure the firmware &mdash; nRF Asset Tracker 886eecdbfa729adcb568dd31709ac9b930c230c5 documentation</title>
+  <title>Configure the firmware &mdash; nRF Asset Tracker v13.13.3 documentation</title>
   
 
   
@@ -220,6 +220,45 @@
 </li>
 <li><p>Use this MQTT endpoint value as the value for the <code class="docutils literal notranslate"><span class="pre">CONFIG_AWS_IOT_BROKER_HOST_NAME</span></code> configuration variable.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">42</span></code> as the value for <code class="docutils literal notranslate"><span class="pre">CONFIG_AWS_IOT_SEC_TAG</span></code>.</p></li>
+<li><p>Comment in the remaining AWS settings in the <code class="file docutils literal notranslate"><span class="pre">prj.conf</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CONFIG_AWS_IOT</span><span class="o">=</span>y
+<span class="nv">CONFIG_AWS_IOT_APP_SUBSCRIPTION_LIST_COUNT</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">CONFIG_AWS_IOT_AUTO_DEVICE_SHADOW_REQUEST</span><span class="o">=</span>y
+<span class="nv">CONFIG_AWS_IOT_CLIENT_ID_APP</span><span class="o">=</span>y
+<span class="nv">CONFIG_AWS_IOT_MQTT_PAYLOAD_BUFFER_LEN</span><span class="o">=</span><span class="m">2048</span>
+<span class="nv">CONFIG_AWS_IOT_MQTT_RX_TX_BUFFER_LEN</span><span class="o">=</span><span class="m">2048</span>
+<span class="nv">CONFIG_AWS_IOT_TOPIC_GET_REJECTED_SUBSCRIBE</span><span class="o">=</span>y
+<span class="nv">CONFIG_AWS_IOT_TOPIC_UPDATE_DELTA_SUBSCRIBE</span><span class="o">=</span>y
+<span class="nv">CONFIG_AWS_FOTA</span><span class="o">=</span>y
+</pre></div>
+</div>
+</li>
+<li><p>Comment in the AWS logging settings in the <code class="file docutils literal notranslate"><span class="pre">overlay-debug.conf</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CONFIG_AWS_FOTA_LOG_LEVEL_DBG</span><span class="o">=</span>y
+<span class="nv">CONFIG_AWS_IOT_LOG_LEVEL_DBG</span><span class="o">=</span>y
+<span class="nv">CONFIG_AWS_JOBS_LOG_LEVEL_DBG</span><span class="o">=</span>y
+</pre></div>
+</div>
+</li>
+<li><p>Comment out the nRF Connect for Cloud settings in the <code class="file docutils literal notranslate"><span class="pre">prj.conf</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># CONFIG_AGPS=y</span>
+<span class="c1"># CONFIG_AGPS_SRC_NRF_CLOUD=y</span>
+<span class="c1"># CONFIG_NRF_CLOUD=y</span>
+<span class="c1"># CONFIG_NRF_CLOUD_AGPS=y</span>
+<span class="c1"># CONFIG_NRF_CLOUD_CONNECTION_POLL_THREAD=y</span>
+<span class="c1"># CONFIG_NRF_CLOUD_PGPS=n</span>
+<span class="c1"># CONFIG_NRF_CLOUD_SEND_TIMEOUT=y</span>
+<span class="c1"># CONFIG_GPS_MODULE_NMEA=y</span>
+</pre></div>
+</div>
+</li>
+<li><p>Comment out the nRF Connect for Cloud logging settings in the <code class="file docutils literal notranslate"><span class="pre">overlay-debug.conf</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># CONFIG_NRF_CLOUD_FOTA_LOG_LEVEL_DBG=y</span>
+<span class="c1"># CONFIG_NRF_CLOUD_GPS_LOG_LEVEL_DBG=y</span>
+<span class="c1"># CONFIG_NRF_CLOUD_LOG_LEVEL_DBG=y</span>
+</pre></div>
+</div>
+</li>
 </ol>
 <p>After completing the configuration, compile the firmware either <a class="reference internal" href="../../firmware/aws/BuildingUsingLocalSystem.html#firmware-aws-building"><span class="std std-ref">using your own development environment</span></a> or <a class="reference internal" href="../../firmware/aws/BuildingUsingDocker.html#firmware-aws-building-docker"><span class="std std-ref">using Docker</span></a> and then <a class="reference internal" href="DeviceCredentials.html#aws-device-credentials"><span class="std std-ref">create the device credentials</span></a>.</p>
 <div class="admonition note">
