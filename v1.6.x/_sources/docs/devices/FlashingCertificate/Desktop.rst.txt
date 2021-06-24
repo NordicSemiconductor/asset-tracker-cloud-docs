@@ -10,7 +10,7 @@ You need to program your device with a firmware that has the AT command host ena
 
 To provision the certificate using LTE Link Monitor, complete the following steps:
 
-#. Program the AT host using the `Programmer <https://infocenter.nordicsemi.com/topic/ug_nrf91_dk_gsg/UG/nrf91_DK_gsg/provisioning_certificate.html>`_ application (part of nRF Connect for Desktop). 
+#. Program the `AT Client sample <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/at_client/README.html>`_ using the `Programmer <https://infocenter.nordicsemi.com/topic/ug_nrf91_dk_gsg/UG/nrf91_DK_gsg/provisioning_certificate.html>`_ application (part of nRF Connect for Desktop). 
 
    .. figure:: ./images/programmer-desktop.png
       :alt: nRF Connect for Desktop Programmer
