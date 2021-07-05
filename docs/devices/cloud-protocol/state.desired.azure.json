@@ -6,7 +6,8 @@
     "actwt": 60,
     "mvres": 60,
     "mvt": 3600,
-    "acct": 1.2
+    "acct": 1.2,
+    "nod": []
   },
   "firmware": {
     "fwVersion": "1.2.0",
