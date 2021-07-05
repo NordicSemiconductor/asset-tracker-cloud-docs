@@ -41,6 +41,10 @@ Button is a UI element and in the case of push buttons, there is no state, which
 The messages published by the device are described in detail in the `messages JSON schema file <./messages.schema.json>`_.
 For more information, see the `messages JSON document <./message.json>`_ for an example device state.
 
+The neighboring cell measurement report is also not stored in the digital twin of the device but published via a separate topic because depending on the cloud platform its size can exceed the allowed size of the digital twin document.
+The neighboring cell measurement report published by the device is described in detail in the `ncellmeas JSON schema file <./ncellmeas.schema.json>`_.
+For more information, see the `ncellmeas JSON document <./ncellmeas.json>`_ for an example device state.
+
 .. _batch-messages:
 
 Batch data

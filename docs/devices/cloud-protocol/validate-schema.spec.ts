@@ -77,4 +77,17 @@ describe('schemas', () => {
 			expect(valid).toBeTruthy()
 		})
 	})
+
+	describe('ncellmeas.schema.json', () => {
+		it('should validate ncellmeas.json', async () => {
+			const validate = ajv.getSchema(
+				'https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/devices/cloud-protocol/ncellmeas.schema.json',
+			)
+			expect(validate).toBeDefined()
+			const message = f('ncellmeas.json')
+			const valid = await validate?.(JSON.parse(message))
+			expect(validate?.errors).toBeNull()
+			expect(valid).toBeTruthy()
+		})
+	})
 })
