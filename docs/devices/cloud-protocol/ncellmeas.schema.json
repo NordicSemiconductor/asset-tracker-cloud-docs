@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/devices/cloud-protocol/ncellmeas.schema.json",
   "title": "Asset Tracker v2 neighboring cell measurement report ",
-  "description": "Describes the format which is used by the device to report neighboring cell measurements, which is produced by the %NCELLMEAS AT command. See https://infocenter.nordicsemi.com/topic/ref_at_commands/REF/at_commands/mob_termination_ctrl_status/ncellmeas.html",
+  "description": "Describes the format which is used by the device to report neighboring cell measurements. The report is produced by the %NCELLMEAS AT command. See https://infocenter.nordicsemi.com/topic/ref_at_commands/REF/at_commands/mob_termination_ctrl_status/ncellmeas.html",
   "type": "object",
   "properties": {
     "mccmnc": {
