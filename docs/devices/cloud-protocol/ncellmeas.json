@@ -1,9 +1,10 @@
 {
-  "mccmnc": 24202,
+  "mcc": 242,
+  "mnc": 2,
   "cell": 21679716,
   "area": 40401,
   "earfcn": 6446,
-  "timingAdvance": 80,
+  "adv": 80,
   "rsrp": 50,
   "rsrq": 28,
   "nmr": [
