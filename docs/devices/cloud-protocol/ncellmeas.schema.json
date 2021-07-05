@@ -7,7 +7,7 @@
   "properties": {
     "mcc": {
       "type": "integer",
-      "description": "Mobile country code. In contrast to roaming information (which uses the LinkController data), neighboring cell measurement reports contain mcc and mnc as separate integers, instead of a string.",
+      "description": "Mobile country code. In contrast to roaming information (which uses the Modem Information data), neighboring cell measurement reports contain mcc and mnc as separate integers, instead of a string.",
       "minimum": 100,
       "maximum": 999,
       "examples": [242]
