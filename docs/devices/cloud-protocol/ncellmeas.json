@@ -1,0 +1,24 @@
+{
+  "mccmnc": 24202,
+  "cell": 21679716,
+  "area": 40401,
+  "earfcn": 6446,
+  "timingAdvance": 80,
+  "rsrp": 50,
+  "rsrq": 28,
+  "nmr": [
+    {
+      "earfcn": 262143,
+      "cell": 501,
+      "rsrp": 44,
+      "rsrq": 25
+    },
+    {
+      "earfcn": 262265,
+      "cell": 503,
+      "rsrp": 49,
+      "rsrq": 20
+    }
+  ],
+  "ts": 1584533788029
+}

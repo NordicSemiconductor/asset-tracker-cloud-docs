@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/devices/cloud-protocol/ncellmeas.schema.json",
+  "title": "Asset Tracker v2 neighboring cell measurement report ",
+  "description": "Describes the format which is used by the device to report neighboring cell measurements, which is produced by the %NCELLMEAS AT command. See https://infocenter.nordicsemi.com/topic/ref_at_commands/REF/at_commands/mob_termination_ctrl_status/ncellmeas.html",
+  "type": "object",
+  "properties": {
+    "mccmnc": {
+      "type": "integer",
+      "description": "Mobile country code and mobile network code",
+      "minimum": 10000,
+      "maximum": 99999,
+      "examples": [24202]
+    },
+    "cell": {
+      "type": "integer",
+      "description": "The cell ID the User Equipment (UE) is camped on. 4-byte Evolved Terrestrial Radio Access Network (E-UTRAN) cell ID.",
+      "minimum": 1,
+      "examples": [33703719]
+    },
+    "area": {
+      "type": "integer",
+      "description": "Area code.",
+      "minimum": 1,
+      "examples": [12]
+    },
+    "rsrp": {
+      "type": "integer",
+      "description": "Reference Signal Received Power (RSRP). The average power level received from a single reference signal in an LTE (Long-term Evolution) network. (–17: When –156 dBm <= RSRP, –16: When –156 ≤ RSRP < –155 dBm, ..., –3: When –143 ≤ RSRP < –142 dBm, –2: When –142 ≤ RSRP < –141 dBm, –1: When –141 ≤ RSRP < –140 dBm, 0: RSRP < −140 dBm, 1: – When −140 dBm ≤ RSRP < −139 dBm, 2: When −139 dBm ≤ RSRP < −138 dBm,...95: When −46 dBm ≤ RSRP < −45 dBm, 96: When −45 dBm ≤ RSRP < −44 dBm, 97: When −44 dBm ≤ RSRP, 255: Not known or not detectable)",
+      "minimum": -17,
+      "maximum": 255,
+      "examples": [0, 95, 255]
+    },
+    "rsrq": {
+      "type": "integer",
+      "description": "Reference Signals Received Quality (RSRQ) of the current cell. (–30: When RSRQ < –34 dB, –29: When –34 ≤ RSRQ < –33.5 dB, ..., –2: When –20.5 ≤ RSRQ < –20 dB, –1: When –20 ≤ RSRQ < –19.5 dB, 0: When RSRQ < –19.5 dB, 1: When –19.5 ≤ RSRQ < –19 dB, 2: When –19 ≤ RSRQ < –18.5 dB, ..., 32: When –4 ≤ RSRQ < –3.5 dB, 33: When –3.5 ≤ RSRQ < –3 dB, 34: When –3 ≤ RSRQ dB, 35: When –3 ≤ RSRQ < –2.5 dB, 36: When –2.5 ≤ RSRQ < –2 dB, ..., 45: When 2 ≤ RSRQ < 2.5 dB, 46: When 2.5 ≤ RSRQ dB, 255: Not known or not detectable)",
+      "minimum": -30,
+      "maximum": 255,
+      "examples": [0, 95, 255]
+    },
+    "earfcn": {
+      "type": "integer",
+      "description": "E-UTRA Absolute Radio Frequency Channel Number (EARFCN) of the current cell where the EARFCN is as defined in 3GPP TS 36.101. LTE carrier channel number for unique identification of LTE band and carrier frequency.",
+      "minimum": 1,
+      "examples": [262143]
+    },
+    "timingAdvance": {
+      "type": "integer",
+      "description": "Timing advance value (Ts). Time units as specified in 3GPP TS 36.211. (0–20512: When timing advance is valid, 65535: When timing advance is not valid)",
+      "minimum": 0,
+      "maximum": 65535,
+      "examples": [80]
+    },
+    "nmr": {
+      "type": "array",
+      "description": "The neighboring cells",
+      "items": {
+        "type": "object",
+        "properties": {
+          "earfcn": {
+            "type": "integer",
+            "description": "E-UTRA Absolute Radio Frequency Channel Number (EARFCN) of the current cell where the EARFCN is as defined in 3GPP TS 36.101. LTE carrier channel number for unique identification of LTE band and carrier frequency.",
+            "minimum": 1,
+            "examples": [262143]
+          },
+          "cell": {
+            "type": "integer",
+            "description": "Physical cell ID of the neighboring cell.",
+            "minimum": 1,
+            "examples": [33703719]
+          },
+          "rsrp": {
+            "type": "integer",
+            "description": "Reference Signal Received Power (RSRP). The average power level received from a single reference signal in an LTE (Long-term Evolution) network. (–17: When –156 dBm <= RSRP, –16: When –156 ≤ RSRP < –155 dBm, ..., –3: When –143 ≤ RSRP < –142 dBm, –2: When –142 ≤ RSRP < –141 dBm, –1: When –141 ≤ RSRP < –140 dBm, 0: RSRP < −140 dBm, 1: – When −140 dBm ≤ RSRP < −139 dBm, 2: When −139 dBm ≤ RSRP < −138 dBm,...95: When −46 dBm ≤ RSRP < −45 dBm, 96: When −45 dBm ≤ RSRP < −44 dBm, 97: When −44 dBm ≤ RSRP, 255: Not known or not detectable)",
+            "minimum": -17,
+            "maximum": 255,
+            "examples": [0, 95, 255]
+          },
+          "rsrq": {
+            "type": "integer",
+            "description": "Reference Signals Received Quality (RSRQ) of the current cell. (–30: When RSRQ < –34 dB, –29: When –34 ≤ RSRQ < –33.5 dB, ..., –2: When –20.5 ≤ RSRQ < –20 dB, –1: When –20 ≤ RSRQ < –19.5 dB, 0: When RSRQ < –19.5 dB, 1: When –19.5 ≤ RSRQ < –19 dB, 2: When –19 ≤ RSRQ < –18.5 dB, ..., 32: When –4 ≤ RSRQ < –3.5 dB, 33: When –3.5 ≤ RSRQ < –3 dB, 34: When –3 ≤ RSRQ dB, 35: When –3 ≤ RSRQ < –2.5 dB, 36: When –2.5 ≤ RSRQ < –2 dB, ..., 45: When 2 ≤ RSRQ < 2.5 dB, 46: When 2.5 ≤ RSRQ dB, 255: Not known or not detectable)",
+            "minimum": -30,
+            "maximum": 255,
+            "examples": [0, 95, 255]
+          }
+        },
+        "required": ["earfcn", "cell", "rsrp", "rsrq"],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "ts": {
+      "description": "Timestamp as Unix epoch with millisecond precision (UTC) when the neighboring cell measurement report was received",
+      "type": "integer",
+      "minimum": 1234567890123,
+      "examples": [1584533788029]
+    }
+  },
+  "required": [
+    "mccmnc",
+    "cell",
+    "area",
+    "rsrp",
+    "rsrq",
+    "earfcn",
+    "timingAdvance",
+    "ts"
+  ],
+  "additionalProperties": false
+}
