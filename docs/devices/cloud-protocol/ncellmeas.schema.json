@@ -5,12 +5,19 @@
   "description": "Describes the format which is used by the device to report neighboring cell measurements. The report is produced by the %NCELLMEAS AT command. See https://infocenter.nordicsemi.com/topic/ref_at_commands/REF/at_commands/mob_termination_ctrl_status/ncellmeas.html",
   "type": "object",
   "properties": {
-    "mccmnc": {
+    "mcc": {
       "type": "integer",
-      "description": "Mobile country code and mobile network code",
-      "minimum": 10000,
-      "maximum": 99999,
-      "examples": [24202]
+      "description": "Mobile country code. In contrast to roaming information (which uses the LinkController data), neighboring cell measurement reports contain mcc and mnc as separate integers, instead of a string.",
+      "minimum": 100,
+      "maximum": 999,
+      "examples": [242]
+    },
+    "mnc": {
+      "type": "integer",
+      "description": "Mobile network code.",
+      "minimum": 1,
+      "maximum": 99,
+      "examples": [2]
     },
     "cell": {
       "type": "integer",
@@ -44,7 +51,7 @@
       "minimum": 1,
       "examples": [262143]
     },
-    "timingAdvance": {
+    "adv": {
       "type": "integer",
       "description": "Timing advance value (Ts). Time units as specified in 3GPP TS 36.211. (0–20512: When timing advance is valid, 65535: When timing advance is not valid)",
       "minimum": 0,
@@ -97,13 +104,14 @@
     }
   },
   "required": [
-    "mccmnc",
+    "mcc",
+    "mnc",
     "cell",
     "area",
     "rsrp",
     "rsrq",
     "earfcn",
-    "timingAdvance",
+    "adv",
     "ts"
   ],
   "additionalProperties": false
