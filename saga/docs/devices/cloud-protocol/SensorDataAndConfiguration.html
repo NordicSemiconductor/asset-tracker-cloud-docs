@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Device data and configuration &mdash; nRF Asset Tracker 3a8430be79d892e19842d5b9e53ba7ea68fe6005 documentation</title>
+  <title>Device data and configuration &mdash; nRF Asset Tracker v13.15.0 documentation</title>
   
 
   
@@ -221,6 +221,10 @@ For example, button pushes are sent as messages and are not stored in the digita
 Button is a UI element and in the case of push buttons, there is no state, which could be restored on the device or a state that persists over a longer time.</p>
 <p>The messages published by the device are described in detail in the <a class="reference external" href="./messages.schema.json">messages JSON schema file</a>.
 For more information, see the <a class="reference external" href="./message.json">messages JSON document</a> for an example device state.</p>
+<p>The neighboring cell measurement report is another piece of data that is not stored in the digital twin of the device.
+It is published through a separate topic, because depending on the cloud platform, its size can exceed the allowed size of the digital twin document.
+The neighboring cell measurement report published by the device is described in detail in the <a class="reference external" href="./ncellmeas.schema.json">ncellmeas JSON schema file</a>.
+For more information, see the <a class="reference external" href="./ncellmeas.json">ncellmeas JSON document</a> for an example device state.</p>
 </div>
 <div class="section" id="batch-data">
 <span id="batch-messages"></span><h2><a class="toc-backref" href="#id2">Batch data</a><a class="headerlink" href="#batch-data" title="Permalink to this headline">¶</a></h2>

@@ -186,8 +186,8 @@
           "properties": {
             "rsrp": {
               "type": "integer",
-              "description": "Reference Signal Received Power (RSRP). The average power level received from a single reference signal in an LTE (Long-term Evolution) network. (0: RSRP < −140 dBm, 1: – When −140 dBm ≤ RSRP < −139 dBm, 2: When −139 dBm ≤ RSRP < −138 dBm,...95: When −46 dBm ≤ RSRP < −45 dBm, 96: When −45 dBm ≤ RSRP < −44 dBm, 97: When −44 dBm ≤ RSRP, 255: Not known or not detectable)",
-              "minimum": 0,
+              "description": "Reference Signal Received Power (RSRP). The average power level received from a single reference signal in an LTE (Long-term Evolution) network. (–17: When –156 dBm <= RSRP, –16: When –156 ≤ RSRP < –155 dBm, ..., –3: When –143 ≤ RSRP < –142 dBm, –2: When –142 ≤ RSRP < –141 dBm, –1: When –141 ≤ RSRP < –140 dBm, 0: RSRP < −140 dBm, 1: – When −140 dBm ≤ RSRP < −139 dBm, 2: When −139 dBm ≤ RSRP < −138 dBm,...95: When −46 dBm ≤ RSRP < −45 dBm, 96: When −45 dBm ≤ RSRP < −44 dBm, 97: When −44 dBm ≤ RSRP, 255: Not known or not detectable)",
+              "minimum": -17,
               "maximum": 255,
               "examples": [0, 95, 255]
             },
