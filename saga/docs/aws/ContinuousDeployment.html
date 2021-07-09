@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Continuous deployment &mdash; nRF Asset Tracker 6ec7c6363ad5c83f58b10287a8697a91d00041d3 documentation</title>
+  <title>Continuous deployment &mdash; nRF Asset Tracker v13.15.1 documentation</title>
   
 
   
@@ -233,12 +233,12 @@ This is a manual one-time step.</p>
 <p>It is recommended to use a separate GitHub account instead of your personal GitHub account.</p>
 </div>
 <p>To provide this token to the nRF Asset Tracker for AWS, use the following command:</p>
-<pre class="highlight literal-block"> node cli configure-api codebuild github token &quot;<em>Github Token</em>&quot;</pre>
+<pre class="highlight literal-block"> node cli configure codebuild github token &quot;<em>Github Token</em>&quot;</pre>
 </div>
 <div class="section" id="enable-continuous-deployment">
 <h2><a class="toc-backref" href="#id4">Enable continuous deployment</a><a class="headerlink" href="#enable-continuous-deployment" title="Permalink to this headline">¶</a></h2>
 <p>After providing the GitHub credentials, set up the continuous deployment by enabling it before deploying the stack:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli configure-api context stack <span class="nb">cd</span> <span class="m">1</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli configure context stack <span class="nb">cd</span> <span class="m">1</span>
 npx cdk deploy <span class="s1">&#39;*&#39;</span>
 </pre></div>
 </div>
