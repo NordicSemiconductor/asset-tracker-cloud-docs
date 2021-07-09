@@ -44,7 +44,7 @@ To provide this token to the nRF Asset Tracker for AWS, use the following comman
 .. parsed-literal::
    :class: highlight
 
-    node cli configure-api codebuild github token "*Github Token*"
+    node cli configure codebuild github token "*Github Token*"
 
 Enable continuous deployment
 ****************************
@@ -53,7 +53,7 @@ After providing the GitHub credentials, set up the continuous deployment by enab
 
 .. code-block:: bash
 
-    node cli configure-api context stack cd 1
+    node cli configure context stack cd 1
     npx cdk deploy '*'
 
 This sets up an AWS CodePipeline, which triggers an AWS CodeBuild project for every push to the ``saga`` branch.

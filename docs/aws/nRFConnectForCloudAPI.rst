@@ -16,8 +16,8 @@ Use the following commands:
 .. parsed-literal::
     :class: highlight
 
-    node cli configure-api cellGeoLocation nrfconnectforcloud apiKey *API key*
-    node cli configure-api context stack nrfconnectforcloud 1
+    node cli configure thirdParty nrfconnectforcloud apiKey *API key*
+    node cli configure context stack nrfconnectforcloud 1
     npx cdk deploy '*'
 
 This will update the StateMachine, which resolves cells from devices to use the nRF Connect for Cloud's API as a resolver.
