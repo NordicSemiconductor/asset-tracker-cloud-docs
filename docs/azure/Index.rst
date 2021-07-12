@@ -28,6 +28,6 @@ The :file:`.feature` files in the folder are used to continuously verify the ref
    RunningInDocker.rst
    DeviceCredentials.rst
    Simulator.rst
-   UnwiredLabsAPI.rst
+   UnwiredLabsCellGeolocation.rst
    IoTShadowAndTopics.rst
    secure-azure-function-apps-with-microsoft-b2c.rst

@@ -4,7 +4,7 @@ Next steps
 ##########
 
 You have now completed the initial setup of the nRF Asset Tracker.
-An interesting topic to explore is how to enable :ref:`Cell Geolocation <azure-unwired-labs-api>`.
+An interesting topic to explore is how to enable :ref:`Cell Geolocation <azure-unwired-labs-cell-geolocation>`.
 
 Once you start modifying the firmware, see also the following topics:
 

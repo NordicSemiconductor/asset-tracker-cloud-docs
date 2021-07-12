@@ -65,8 +65,8 @@ Third-party APIs and services like `UnwiredLabs <https://unwiredlabs.com/>`_ and
 
 .. only:: v1_5_x
 
-    The nRF Asset Tracker implements the optional resolution on the cloud side using :ref:`UnwiredLabs on AWS <aws-unwired-labs-api>` for the cells that have not been geolocated by the devices.
+    The nRF Asset Tracker implements the optional resolution on the cloud side using :ref:`UnwiredLabs on AWS <aws-unwired-labs-cell-geolocation>` for the cells that have not been geolocated by the devices.
 
 .. only:: not v1_5_x
 
-    The nRF Asset Tracker implements the optional resolution on the cloud side using :ref:`UnwiredLabs on AWS <aws-unwired-labs-api>` and :ref:`UnwiredLabs on Azure <azure-unwired-labs-api>` for the cells that have not been geolocated by the devices.
+    The nRF Asset Tracker implements the optional resolution on the cloud side using :ref:`UnwiredLabs on AWS <aws-unwired-labs-cell-geolocation>` and :ref:`UnwiredLabs on Azure <azure-unwired-labs-cell-geolocation>` for the cells that have not been geolocated by the devices.

@@ -19,8 +19,8 @@ The :file:`.feature` files in the folder are used to continuously verify the ref
    Customization/Index.rst
    ContinuousDeployment.rst
    ContinuousIntegration.rst
-   nRFConnectForCloudAPI.rst
-   UnwiredLabsAPI.rst
+   nRFConnectForCloudLocationServices.rst
+   UnwiredLabsCellGeolocation.rst
    Simulator.rst
    Authentication.rst
    IoTShadowAndTopics.rst

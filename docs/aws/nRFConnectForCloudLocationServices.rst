@@ -1,9 +1,9 @@
-.. _aws-nrf-connect-for-cloud-api:
+.. _aws-nrf-connect-for-cloud-location-services:
 
-nRF Connect for Cloud API
-#########################
+nRF Connect for Cloud Location Services
+#######################################
 
-You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for the application using the `nRF Connect for Cloud's geolocation API <https://api.nrfcloud.com/v1/#operation/GetSingleCellLocation>`_  in your deployment.
+You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for single cells and neighboring cell reports for the application using the `nRF Connect for Cloud's geolocation API <https://api.nrfcloud.com/v1/#operation/GetSingleCellLocation>`_  in your deployment.
 
 To use the API, complete the following steps:
 

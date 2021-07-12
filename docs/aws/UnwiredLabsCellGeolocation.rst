@@ -1,9 +1,9 @@
-.. _aws-unwired-labs-api:
+.. _aws-unwired-labs-cell-geolocation:
 
-Unwired Labs API
-################
+Unwired Labs Cell Geolocation
+#############################
 
-You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for the application using `Unwired Labs' <https://unwiredlabs.com/>`_ geolocation API in your deployment.
+You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for single cells for the application using `Unwired Labs' <https://unwiredlabs.com/>`_ geolocation API in your deployment.
 
 To use the API, complete the following steps:
 
