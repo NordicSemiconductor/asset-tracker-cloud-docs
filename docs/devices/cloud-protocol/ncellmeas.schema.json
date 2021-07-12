@@ -15,7 +15,7 @@
     "mnc": {
       "type": "integer",
       "description": "Mobile network code.",
-      "minimum": 1,
+      "minimum": 0,
       "maximum": 99,
       "examples": [2]
     },
