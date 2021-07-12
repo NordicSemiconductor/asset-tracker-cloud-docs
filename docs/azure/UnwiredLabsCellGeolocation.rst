@@ -1,9 +1,9 @@
-.. _azure-unwired-labs-api:
+.. _azure-unwired-labs-cell-geolocation:
 
-Unwired Labs API
-################
+Unwired Labs Cell Geolocation
+#############################
 
-You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for the application using `Unwired Labs' <https://unwiredlabs.com/>`_ geolocation API in your deployment.
+You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for single cells for the application using `Unwired Labs' <https://unwiredlabs.com/>`_ geolocation API in your deployment.
 
 To use Unwired Labs' LocationAPI, provide the ``unwiredlabsApiKey`` parameter when deploying the solution:
 
