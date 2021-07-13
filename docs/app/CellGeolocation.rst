@@ -12,7 +12,7 @@ It allows to locate devices within a radius of a few kilometers.
 It can be useful, for example when tracking assets like parcels.
 The approximate location of a parcel can be combined with known points of interest (for example, warehouses and ports) and you can find out if a shipment has arrived at the destination.
 
-Precision of cell geolocation can be improved by using neighbor cell measurement reports which were introduced in version 1.3.0 of the nRF9160 modem firmware.
+Precision of cell geolocation can be improved by using neighbor cell measurement reports that were introduced in version 1.3.0 of the nRF9160 modem firmware.
 With very little energy costs, the modem can collect a report of all cells in the mobile phone network it currently can see.
 This additional information can be used to provide location estimation with improved accuracy.
 
