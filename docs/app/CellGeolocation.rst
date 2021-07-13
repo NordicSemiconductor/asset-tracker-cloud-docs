@@ -38,7 +38,7 @@ nRF Asset Tracker implements the following third-party location APIs:
  - nRF Connect for Cloud Location Services
  - Unwired Labs
 
-These are commercial third-party solution that provide an API for resolving cell information to geolocation.
+These are commercial third-party solutions that provide an API for resolving cell information to geolocation.
 This is an optional feature that you can enable.
 
 These APIs enable calculation of the rough location of a device as soon as it sends the roaming information to the cloud.
