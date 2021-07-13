@@ -14,7 +14,7 @@ The approximate location of a parcel can be combined with known points of intere
 
 Precision of cell geolocation can be improved by using neighbor cell measurement reports that were introduced in version 1.3.0 of the nRF9160 modem firmware.
 With very little energy costs, the modem can collect a report of all cells in the mobile phone network it currently can see.
-This additional information can be used to provide location estimation with improved accuracy.
+This additional information can be used to improve the accuracy of the location estimation.
 
 Locating cells based on device data
 ***********************************
