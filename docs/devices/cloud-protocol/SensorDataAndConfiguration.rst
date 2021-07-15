@@ -52,6 +52,8 @@ Other messages
 If supported through enabling :ref:`aws-nrf-connect-for-cloud-location-services`, the device can request A-GPS data through MQTT.
 The message published by the device is described in detail in the `A-GPS JSON schema file <./agps-request.schema.json>`_.
 See the `A-GPS request JSON document <./agps-request.json>`_ for an example request.
+The cloud publishes the requested types as binary to the ``<device Id>/agps`` topic.
+If the device requests ephemerides (type 2), this message is to large to combine with other types and will be published in a seperate message.
 
 
 .. _batch-messages:
