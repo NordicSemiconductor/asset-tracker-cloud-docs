@@ -39,7 +39,7 @@
     },
     "types": {
       "type": "array",
-      "description": "The A-GPS data types to return. 1: UTC parameters, 2: Ephemerides, 3: Almanac, 4: Klobuchar ionospheric correction parameters, 5: NeQuick ionospheric correction parameters, 6: GPS time of week, 7: GPS system clock and time of week, 8: approximate location, 9: Satellite integrity data.",
+      "description": "The A-GPS data types to return. 1: UTC parameters, 2: Ephemerides, 3: Almanac, 4: Klobuchar ionospheric correction parameters, 6: GPS time of week, 7: GPS system clock and time of week, 8: approximate location, 9: Satellite integrity data.",
       "minItems": 1,
       "items": {
         "type": "integer",
@@ -49,8 +49,8 @@
         "examples": [1]
       },
       "examples": [
-        [1, 2, 3, 4, 5, 6, 7, 8, 9],
-        [1, 2, 3, 4, 5, 6]
+        [1, 2, 3, 4, 6, 7, 8, 9],
+        [1, 2, 3, 4, 6]
       ]
     }
   },
