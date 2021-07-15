@@ -9,85 +9,35 @@ const f = (name: string): string =>
 		'utf-8',
 	)
 
+const ajv = new Ajv({
+	schemas: glob
+		.sync(
+			`${path.resolve(
+				process.cwd(),
+				'docs',
+				'devices',
+				'cloud-protocol',
+			)}/*.schema.json`,
+		)
+		.map((f) => JSON.parse(readFileSync(f, 'utf-8'))),
+})
+
 describe('schemas', () => {
-	let ajv: Ajv
-	beforeEach(async () => {
-		ajv = new Ajv({
-			schemas: glob
-				.sync(
-					`${path.resolve(
-						process.cwd(),
-						'docs',
-						'devices',
-						'cloud-protocol',
-					)}/*.schema.json`,
-				)
-				.map((f) => JSON.parse(readFileSync(f, 'utf-8'))),
-		})
-	})
-
-	describe('state.reported.aws.schema.json', () => {
-		it('should validate state.reported.aws.json', async () => {
-			const validate = ajv.getSchema(
-				'https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/devices/cloud-protocol/state.reported.aws.schema.json',
-			)
-			expect(validate).toBeDefined()
-			const state = f('state.reported.aws.json')
-			const valid = await validate?.(JSON.parse(state))
-			expect(validate?.errors).toBeNull()
-			expect(valid).toBeTruthy()
-		})
-	})
-
-	describe('state.reported.azure.schema.json', () => {
-		it('should validate state.reported.azure.json', async () => {
-			const validate = ajv.getSchema(
-				'https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/devices/cloud-protocol/state.reported.azure.schema.json',
-			)
-			expect(validate).toBeDefined()
-			const state = f('state.reported.azure.json')
-			const valid = await validate?.(JSON.parse(state))
-			expect(validate?.errors).toBeNull()
-			expect(valid).toBeTruthy()
-		})
-	})
-
-	describe('messages.schema.json', () => {
-		it('should validate message.json', async () => {
-			const validate = ajv.getSchema(
-				'https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/devices/cloud-protocol/messages.schema.json',
-			)
-			expect(validate).toBeDefined()
-			const message = f('message.json')
-			const valid = await validate?.(JSON.parse(message))
-			expect(validate?.errors).toBeNull()
-			expect(valid).toBeTruthy()
-		})
-	})
-
-	describe('batch.schema.json', () => {
-		it('should validate batch-message.json', async () => {
-			const validate = ajv.getSchema(
-				'https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/devices/cloud-protocol/batch.schema.json',
-			)
-			expect(validate).toBeDefined()
-			const state = f('batch-message.json')
-			const valid = await validate?.(JSON.parse(state))
-			expect(validate?.errors).toBeNull()
-			expect(valid).toBeTruthy()
-		})
-	})
-
-	describe('ncellmeas.schema.json', () => {
-		it('should validate ncellmeas.json', async () => {
-			const validate = ajv.getSchema(
-				'https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/devices/cloud-protocol/ncellmeas.schema.json',
-			)
-			expect(validate).toBeDefined()
-			const message = f('ncellmeas.json')
-			const valid = await validate?.(JSON.parse(message))
-			expect(validate?.errors).toBeNull()
-			expect(valid).toBeTruthy()
-		})
+	it.each([
+		['state.reported.aws', undefined],
+		['state.reported.azure', undefined],
+		['messages', 'message.json'],
+		['batch', 'batch-message.json'],
+		['ncellmeas', undefined],
+		['agps-request', undefined],
+	])('%s should validate', async (schema, example) => {
+		const validate = ajv.getSchema(
+			`https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/devices/cloud-protocol/${schema}.schema.json`,
+		)
+		expect(validate).toBeDefined()
+		const json = f(example ?? `${schema}.json`)
+		const valid = await validate?.(JSON.parse(json))
+		expect(validate?.errors).toBeNull()
+		expect(valid).toBeTruthy()
 	})
 })
