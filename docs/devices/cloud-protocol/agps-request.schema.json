@@ -33,7 +33,7 @@
     },
     "phycell": {
       "type": "integer",
-      "description": "The physical cell ID",
+      "description": "The physical cell ID. Optional.",
       "minimum": 1,
       "examples": [503]
     },
@@ -53,6 +53,6 @@
       ]
     }
   },
-  "required": ["mcc", "mnc", "cell", "area", "phycell", "types"],
+  "required": ["mcc", "mnc", "cell", "area", "types"],
   "additionalProperties": false
 }
