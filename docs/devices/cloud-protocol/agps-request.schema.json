@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/devices/cloud-protocol/agps-request.schema.json",
   "title": "Asset Tracker v2 A-GPS request",
-  "description": "Describes the format which is used by the device to request A-GPS data.",
+  "description": "Describes the format used by the device to request A-GPS data.",
   "type": "object",
   "properties": {
     "mcc": {
