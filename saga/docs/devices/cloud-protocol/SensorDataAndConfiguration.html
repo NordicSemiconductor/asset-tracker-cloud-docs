@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Device data and configuration &mdash; nRF Asset Tracker 7a272c882e75ba6b43603cc0fd3a67f58a56342b documentation</title>
+  <title>Device data and configuration &mdash; nRF Asset Tracker v13.17.0 documentation</title>
   
 
   
@@ -195,8 +195,12 @@
 <span id="device-data-configuration"></span><h1>Device data and configuration<a class="headerlink" href="#device-data-and-configuration" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#comparing-state-with-messages" id="id1">Comparing state with messages</a></p></li>
-<li><p><a class="reference internal" href="#batch-data" id="id2">Batch data</a></p></li>
+<li><p><a class="reference internal" href="#comparing-state-with-messages" id="id1">Comparing state with messages</a></p>
+<ul>
+<li><p><a class="reference internal" href="#other-messages" id="id2">Other messages</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#batch-data" id="id3">Batch data</a></p></li>
 </ul>
 </div>
 <p>Sending and receiving data is different for each cloud operator.</p>
@@ -220,14 +224,22 @@ However, some data does not fit well into this model because of its ephemeral na
 For example, button pushes are sent as messages and are not stored in the digital twin.
 Button is a UI element and in the case of push buttons, there is no state, which could be restored on the device or a state that persists over a longer time.</p>
 <p>The messages published by the device are described in detail in the <a class="reference external" href="./messages.schema.json">messages JSON schema file</a>.
-For more information, see the <a class="reference external" href="./message.json">messages JSON document</a> for an example device state.</p>
+See the <a class="reference external" href="./message.json">messages JSON document</a> for an example message.</p>
 <p>The neighboring cell measurement report is another piece of data that is not stored in the digital twin of the device.
 It is published through a separate topic, because depending on the cloud platform, its size can exceed the allowed size of the digital twin document.
 The neighboring cell measurement report published by the device is described in detail in the <a class="reference external" href="./ncellmeas.schema.json">ncellmeas JSON schema file</a>.
-For more information, see the <a class="reference external" href="./ncellmeas.json">ncellmeas JSON document</a> for an example device state.</p>
+See the <a class="reference external" href="./ncellmeas.json">ncellmeas JSON document</a> for an example report.</p>
+<div class="section" id="other-messages">
+<h3><a class="toc-backref" href="#id2">Other messages</a><a class="headerlink" href="#other-messages" title="Permalink to this headline">¶</a></h3>
+<p>If supported through enabling <a class="reference internal" href="../../aws/nRFConnectForCloudLocationServices.html#aws-nrf-connect-for-cloud-location-services"><span class="std std-ref">nRF Connect for Cloud Location Services</span></a>, the device can request A-GPS data through MQTT.
+The message published by the device is described in detail in the <a class="reference external" href="./agps-request.schema.json">A-GPS JSON schema file</a>.
+See the <a class="reference external" href="./agps-request.json">A-GPS request JSON document</a> for an example request.
+The cloud publishes the requested types as binary to the <code class="docutils literal notranslate"><span class="pre">&lt;device</span> <span class="pre">Id&gt;/agps</span></code> topic.
+If the device requests ephemerides (type 2), this message is too large to combine with other types and will be published in a separate message.</p>
+</div>
 </div>
 <div class="section" id="batch-data">
-<span id="batch-messages"></span><h2><a class="toc-backref" href="#id2">Batch data</a><a class="headerlink" href="#batch-data" title="Permalink to this headline">¶</a></h2>
+<span id="batch-messages"></span><h2><a class="toc-backref" href="#id3">Batch data</a><a class="headerlink" href="#batch-data" title="Permalink to this headline">¶</a></h2>
 <p>The firmware may send data as batch, using the schema that is described in the <a class="reference external" href="./batch.schema.json">JSON schema file</a>.
 See the <a class="reference external" href="./batch-message.json">JSON document</a> for an example batch message.</p>
 <p>For sending batched data from the device, the topic <code class="docutils literal notranslate"><span class="pre">&lt;deviceId&gt;/batch</span></code> is used.</p>
