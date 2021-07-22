@@ -39,12 +39,22 @@ For example, button pushes are sent as messages and are not stored in the digita
 Button is a UI element and in the case of push buttons, there is no state, which could be restored on the device or a state that persists over a longer time.
 
 The messages published by the device are described in detail in the `messages JSON schema file <./messages.schema.json>`_.
-For more information, see the `messages JSON document <./message.json>`_ for an example device state.
+See the `messages JSON document <./message.json>`_ for an example message.
 
 The neighboring cell measurement report is another piece of data that is not stored in the digital twin of the device.
 It is published through a separate topic, because depending on the cloud platform, its size can exceed the allowed size of the digital twin document.
 The neighboring cell measurement report published by the device is described in detail in the `ncellmeas JSON schema file <./ncellmeas.schema.json>`_.
-For more information, see the `ncellmeas JSON document <./ncellmeas.json>`_ for an example device state.
+See the `ncellmeas JSON document <./ncellmeas.json>`_ for an example report.
+
+Other messages
+--------------
+
+If supported through enabling :ref:`aws-nrf-connect-for-cloud-location-services`, the device can request A-GPS data through MQTT.
+The message published by the device is described in detail in the `A-GPS JSON schema file <./agps-request.schema.json>`_.
+See the `A-GPS request JSON document <./agps-request.json>`_ for an example request.
+The cloud publishes the requested types as binary to the ``<device Id>/agps`` topic.
+If the device requests ephemerides (type 2), this message is too large to combine with other types and will be published in a separate message.
+
 
 .. _batch-messages:
 
