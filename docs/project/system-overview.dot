@@ -20,7 +20,7 @@ digraph G {
         label="Cloud-native implementation"
         labelloc=b
         fontsize=16
-        bgcolor="#c6edf4" color="#cccccc" 
+        bgcolor="#D9E1E2" color="#cccccc" 
         AWS [ image="./images/aws.svg" label="" shape="none" URL="https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js" width="1" height="1" imagescale=true ];
         Azure [ image="./images/azure.svg" label="" shape="none" URL="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js" width="2" height="2" imagescale=true ];
     }
@@ -29,30 +29,30 @@ digraph G {
         label="Optional features"
         labelloc=b
         fontsize=16
-        bgcolor="#c6edf4" color="#cccccc" 
-        gellceo [ shape=component style=filled color="#00a9ce" fillcolor="#00a9ce" fontcolor="#ffffff" label="Cell Geolocation" ]
-        agpscloud [ shape=component style=filled color="#00a9ce" fillcolor="#00a9ce" fontcolor="#ffffff" label="A-GPS" ]
+        bgcolor="#D9E1E2" color="#cccccc" 
+        gellceo [ shape=component style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" label="Cell Geolocation" ]
+        agpscloud [ shape=component style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" label="A-GPS" ]
     }
 
     subgraph cluster1 {
         label="nRF Connect SDK"
         labelloc=b
         fontsize=16
-        bgcolor="#c6edf4" color="#cccccc" 
+        bgcolor="#D9E1E2" color="#cccccc" 
         aws_iot [ shape=component style=filled color="#fe9900" fillcolor="#fe9900" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/aws_iot/README.html" ]
         azure_iot [ shape=component style=filled color="#0089d7" fillcolor="#0089d7" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/azure_iot_hub/README.html" ]
-        asset_tracker_v2 [ shape=component style=filled color="#00a9ce" fillcolor="#00a9ce" fontcolor="#ffffff" color="#00a9ce" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html" ]
-        agps [ shape=component style=filled color="#00a9ce" fillcolor="#00a9ce" fontcolor="#ffffff" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/agps/README.html" ]
+        asset_tracker_v2 [ shape=component style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" color="#00A9CE" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html" ]
+        agps [ shape=component style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/agps/README.html" ]
     }
 
     subgraph cluster2 {
         label="Cat Tracker Web Application"
         labelloc=b
         fontsize=16
-        bgcolor="#c6edf4" color="#cccccc" 
+        bgcolor="#D9E1E2" color="#cccccc" 
         aws_api [ label="aws/api" shape=component style=filled color="#fe9900" fillcolor="#fe9900" ]
         azure_api [ label="azure/api" shape=component style=filled color="#0089d7" fillcolor="#0089d7" ]
-        web_app [ label="React SPA" shape=box style=filled color="#00a9ce" fillcolor="#00a9ce" fontcolor="#ffffff" URL="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js" ]
+        web_app [ label="React SPA" shape=box style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" URL="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js" ]
     }
 
         nrfconnectforcloud [ label="" labelloc=b tooltip="nRF Connect for Cloud" image="./images/nrfconnectforcloud.svg" shape="none" width="1" height="1" imagescale=true URL="https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-Cloud" ]
