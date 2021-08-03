@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>nRF Connect for Cloud Location Services &mdash; nRF Asset Tracker v13.17.1 documentation</title>
+  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker v13.17.2 documentation</title>
   
 
   
@@ -103,7 +103,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Customization/Index.html">Customization of the nRF Asset Tracker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ContinuousIntegration.html">Continuous integration</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">nRF Connect for Cloud Location Services</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">nRF Cloud Location Services</a></li>
 <li class="toctree-l2"><a class="reference internal" href="UnwiredLabsCellGeolocation.html">Unwired Labs Cell Geolocation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Authentication.html">Authentication</a></li>
@@ -175,14 +175,14 @@
         
           <li><a href="Index.html">AWS cloud components</a> &raquo;</li>
         
-      <li>nRF Connect for Cloud Location Services</li>
+      <li>nRF Cloud Location Services</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/aws/nRFConnectForCloudLocationServices.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/aws/nRFCloudLocationServices.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -196,9 +196,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="nrf-connect-for-cloud-location-services">
-<span id="aws-nrf-connect-for-cloud-location-services"></span><h1>nRF Connect for Cloud Location Services<a class="headerlink" href="#nrf-connect-for-cloud-location-services" title="Permalink to this headline">¶</a></h1>
-<p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for single cells and neighboring cell reports for the application using the <a class="reference external" href="https://api.nrfcloud.com/v1/#operation/GetSingleCellLocation">nRF Connect for Cloud’s geolocation API</a>  in your deployment.</p>
+  <div class="section" id="nrf-cloud-location-services">
+<span id="aws-nrf-cloud-location-services"></span><h1>nRF Cloud Location Services<a class="headerlink" href="#nrf-cloud-location-services" title="Permalink to this headline">¶</a></h1>
+<p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for single cells and neighboring cell reports for the application using the <a class="reference external" href="https://api.nrfcloud.com/v1/#operation/GetSingleCellLocation">nRF Cloud’s geolocation API</a>  in your deployment.</p>
 <p>To use the API, complete the following steps:</p>
 <ol class="arabic simple">
 <li><p>Configure your API key.</p></li>
@@ -206,10 +206,10 @@
 <li><p>Redeploy the stack.</p></li>
 </ol>
 <p>Use the following commands:</p>
-<pre class="highlight literal-block">node cli configure thirdParty nrfconnectforcloud apiKey <em>API key</em>
-node cli configure context stack nrfconnectforcloud 1
+<pre class="highlight literal-block">node cli configure thirdParty nrfcloud apiKey <em>API key</em>
+node cli configure context stack nrfcloud 1
 npx cdk deploy '*'</pre>
-<p>This will update the StateMachine, which resolves cells from devices to use the nRF Connect for Cloud’s API as a resolver.</p>
+<p>This will update the StateMachine, which resolves cells from devices to use the nRF Cloud’s API as a resolver.</p>
 </div>
 
 

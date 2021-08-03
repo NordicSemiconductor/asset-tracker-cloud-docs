@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Device data and configuration &mdash; nRF Asset Tracker v13.17.1 documentation</title>
+  <title>Device data and configuration &mdash; nRF Asset Tracker v13.17.2 documentation</title>
   
 
   
@@ -231,7 +231,7 @@ The neighboring cell measurement report published by the device is described in 
 See the <a class="reference external" href="./ncellmeas.json">ncellmeas JSON document</a> for an example report.</p>
 <div class="section" id="other-messages">
 <h3><a class="toc-backref" href="#id2">Other messages</a><a class="headerlink" href="#other-messages" title="Permalink to this headline">¶</a></h3>
-<p>If supported through enabling <a class="reference internal" href="../../aws/nRFConnectForCloudLocationServices.html#aws-nrf-connect-for-cloud-location-services"><span class="std std-ref">nRF Connect for Cloud Location Services</span></a>, the device can request A-GPS data through MQTT.
+<p>If supported through enabling <a class="reference internal" href="../../aws/nRFCloudLocationServices.html#aws-nrf-cloud-location-services"><span class="std std-ref">nRF Cloud Location Services</span></a>, the device can request A-GPS data through MQTT.
 The message published by the device is described in detail in the <a class="reference external" href="./agps-request.schema.json">A-GPS JSON schema file</a>.
 See the <a class="reference external" href="./agps-request.json">A-GPS request JSON document</a> for an example request.
 The cloud publishes the requested types as binary to the <code class="docutils literal notranslate"><span class="pre">&lt;device</span> <span class="pre">Id&gt;/agps</span></code> topic.

@@ -43,7 +43,7 @@ To provision the certificate using LTE Link Monitor, complete the following step
 
    .. note::
 
-      Change the security tag to ``42``. The modem can hold multiple credentials, and the default security tag ``16842753`` is reserved for `nRF Connect for Cloud <https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud>`_ credentials.
+      Change the security tag to ``42``. The modem can hold multiple credentials, and the default security tag ``16842753`` is reserved for `nRF Cloud <https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Cloud>`_ credentials.
 
    .. figure:: ./images/certificate-manager-desktop.png
       :alt: nRF Connect for Desktop Certificate manager

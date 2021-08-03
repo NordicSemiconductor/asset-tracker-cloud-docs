@@ -35,7 +35,7 @@ Third-party location APIs
 
 nRF Asset Tracker implements the following third-party location APIs:
 
- - nRF Connect for Cloud Location Services
+ - nRF Cloud Location Services
  - Unwired Labs
 
 These are commercial third-party solutions that provide an API for resolving cell information to geolocation.
@@ -48,11 +48,11 @@ They provide the geolocation of nearly every cell tower and with this informatio
 
    Cellular signals can travel many kilometers and `the tests <https://www.youtube.com/watch?v=p1_0OAlTcuY>`_ show that a range of 10 km and more is possible in certain conditions.
 
-Follow the configuration guide in the respective implementation to enable nRF Connect for Cloud's cell geolocation API:
+Follow the configuration guide in the respective implementation to enable nRF Cloud's cell geolocation API:
 
 .. only:: not v1_5_x
 
-* :ref:`AWS <aws-nrf-connect-for-cloud-location-services>`
+* :ref:`AWS <aws-nrf-cloud-location-services>`
 
 Follow the configuration guide in the respective implementation to enable Unwired Labs' cell geolocation API:
 
