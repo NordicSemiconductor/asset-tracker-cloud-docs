@@ -49,7 +49,7 @@ See the `ncellmeas JSON document <./ncellmeas.json>`_ for an example report.
 Other messages
 --------------
 
-If supported through enabling :ref:`aws-nrf-connect-for-cloud-location-services`, the device can request A-GPS data through MQTT.
+If supported through enabling :ref:`aws-nrf-cloud-location-services`, the device can request A-GPS data through MQTT.
 The message published by the device is described in detail in the `A-GPS JSON schema file <./agps-request.schema.json>`_.
 See the `A-GPS request JSON document <./agps-request.json>`_ for an example request.
 The cloud publishes the requested types as binary to the ``<device Id>/agps`` topic.
