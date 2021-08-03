@@ -51,7 +51,7 @@ To configure the :ref:`firmware <firmware-aws-index>`, complete the following ma
          CONFIG_AWS_IOT_LOG_LEVEL_DBG=y
          CONFIG_AWS_JOBS_LOG_LEVEL_DBG=y
 
-   #. Comment out the nRF Connect for Cloud settings in the :file:`prj.conf` file:
+   #. Comment out the nRF Cloud settings in the :file:`prj.conf` file:
 
       .. code-block:: bash
 
@@ -64,7 +64,7 @@ To configure the :ref:`firmware <firmware-aws-index>`, complete the following ma
          # CONFIG_NRF_CLOUD_SEND_TIMEOUT=y
          # CONFIG_GPS_MODULE_NMEA=y
       
-   #. Comment out the nRF Connect for Cloud logging settings in the :file:`overlay-debug.conf` file:
+   #. Comment out the nRF Cloud logging settings in the :file:`overlay-debug.conf` file:
 
       .. code-block:: bash
 
