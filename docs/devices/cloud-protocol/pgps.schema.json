@@ -23,7 +23,7 @@
         },
         "time": {
             "type": "integer",
-            "description": "The start time of the prediction set as seconds in day. Defaults to 0. Valid range 0..86399",
+            "description": "The start time of the prediction set as seconds in day. Defaults to 0.",
             "minimum": 0,
             "maximum": 86399,
             "examples": [40655]
