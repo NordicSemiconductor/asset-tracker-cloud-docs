@@ -5,12 +5,12 @@
     "description": "Describes the format which is used by the device to request P-GPS data.",
     "type": "object",
     "properties": {
-        "count": {
+        "n": {
             "type": "integer",
             "description": "The number of predictions requested. Default is 42 (7 days, 6 predictions per day)",
             "examples": [42]
         },
-        "interval": {
+        "int": {
             "type": "integer",
             "description": "The time between predictions (in minutes). Defaults to 240 (4 hours).",
             "enum": [120, 240, 360, 480]
