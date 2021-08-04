@@ -56,10 +56,11 @@ See the `A-GPS request JSON document <./agps-request.json>`_ for an example requ
 The cloud publishes the requested types as binary to the ``<device Id>/agps`` topic. 
 If the device requests ephemerides (type 2), this message is too large to combine with other types and will be published in a separate message.
 
-The P-GPS message published by the device is described in the `P-GPS JSON schema file <./pgps.schema.json>`_. 
-See the `P-GPS request JSON document <./pgps.json>`_ for an example request. 
-The cloud publishes the requested types as binary to the ``<device Id>/pgps`` topic.
-
+The P-GPS message published by the device is described in the `P-GPS request JSON schema file <./pgps-request.schema.json>`_. 
+See the `P-GPS request JSON document <./pgps-request.json>`_ for an example request. 
+The cloud publishes a link to the data to the ``<device Id>/pgps`` topic in the format described in detail in the `P-GPS response JSON schema file <./pgps-response.schema.json>`_.
+See the `P-GPS response JSON document <./pgps-response.json>`_ for an example response.
+The device then can use HTTP(s) to download the P-GPS data.
 
 .. _batch-messages:
 
