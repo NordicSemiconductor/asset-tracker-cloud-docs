@@ -16,6 +16,7 @@ The nRF Asset Tracker is an application that aims to provide a concrete end-to-e
    docs/app/Index.rst
    docs/firmware/Index.rst
    docs/devices/Index.rst
+   docs/cloud-protocol/Index.rst
 
 .. toctree::
    :titlesonly:
