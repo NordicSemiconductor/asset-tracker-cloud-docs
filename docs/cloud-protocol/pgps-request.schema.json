@@ -17,9 +17,9 @@
     },
     "day": {
       "type": "integer",
-      "description": "The start day of the prediction set as GPS Day (days since the GPS epoch). Defaults to current GPS day.",
-      "minimum": 0,
-      "examples": [15160]
+      "description": "The start day of the prediction set as GPS Day (days since the GPS epoch). Defaults to current GPS day. The minimum is dynamic and always the current GPS Day because devices should not request historic P-GPS data.",
+      "minimum": 15188,
+      "examples": [15188]
     },
     "time": {
       "type": "integer",
