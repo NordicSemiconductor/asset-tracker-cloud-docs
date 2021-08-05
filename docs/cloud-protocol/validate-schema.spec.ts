@@ -5,19 +5,14 @@ import * as glob from 'glob'
 
 const f = (name: string): string =>
 	readFileSync(
-		path.resolve(process.cwd(), 'docs', 'devices', 'cloud-protocol', name),
+		path.resolve(process.cwd(), 'docs', 'cloud-protocol', name),
 		'utf-8',
 	)
 
 const ajv = new Ajv({
 	schemas: glob
 		.sync(
-			`${path.resolve(
-				process.cwd(),
-				'docs',
-				'devices',
-				'cloud-protocol',
-			)}/*.schema.json`,
+			`${path.resolve(process.cwd(), 'docs', 'cloud-protocol')}/*.schema.json`,
 		)
 		.map((f) => JSON.parse(readFileSync(f, 'utf-8'))),
 })
@@ -34,7 +29,7 @@ describe('schemas', () => {
 		['pgps-response', undefined],
 	])('%s should validate', async (schema, example) => {
 		const validate = ajv.getSchema(
-			`https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/devices/cloud-protocol/${schema}.schema.json`,
+			`https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/${schema}.schema.json`,
 		)
 		expect(validate).toBeDefined()
 		const json = f(example ?? `${schema}.json`)

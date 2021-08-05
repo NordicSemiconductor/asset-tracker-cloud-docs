@@ -17,8 +17,8 @@ Examples of device states are:
 Reported state
 **************
 
-The document is described in `JSON schema file <../devices/cloud-protocol/state.reported.aws.schema.json>`_.
-See `JSON document <../devices/cloud-protocol/state.reported.aws.json>`_ for a sample device state.
+The document is described in `JSON schema file <../cloud-protocol/state.reported.aws.schema.json>`_.
+See `JSON document <../cloud-protocol/state.reported.aws.json>`_ for a sample device state.
 
 Desired state
 *************

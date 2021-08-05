@@ -27,4 +27,3 @@ To connect the device to your account, complete the following steps:
 
    FlashingCertificate/Index.rst
    TroubleShooting.rst
-   cloud-protocol/Index.rst
