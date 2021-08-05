@@ -17,13 +17,13 @@ Examples of device states are:
 Reported state
 **************
 
-The document is described in the `JSON schema file for the reported state <../devices/cloud-protocol/state.reported.azure.schema.json>`_.
+The document is described in the `JSON schema file for the reported state <../cloud-protocol/state.reported.azure.schema.json>`_.
 
-See `JSON document containing a reported state <../devices/cloud-protocol/state.reported.azure.json>`_ for a sample device state.
+See `JSON document containing a reported state <../cloud-protocol/state.reported.azure.json>`_ for a sample device state.
 
 Desired state
 *************
 
-The document is described in the `JSON schema file for the desired state <../devices/cloud-protocol/state.desired.azure.schema.json>`_.
+The document is described in the `JSON schema file for the desired state <../cloud-protocol/state.desired.azure.schema.json>`_.
 
-See the `JSON document containing a desired state <../devices/cloud-protocol/state.desired.azure.json>`_ for a sample device state.
+See the `JSON document containing a desired state <../cloud-protocol/state.desired.azure.json>`_ for a sample device state.

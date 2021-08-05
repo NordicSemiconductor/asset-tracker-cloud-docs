@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Limiting the shadow document size &mdash; nRF Asset Tracker v13.18.0 documentation</title>
+  <title>Limiting the shadow document size &mdash; nRF Asset Tracker v13.19.0 documentation</title>
   
 
   
@@ -117,6 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul>
@@ -204,7 +205,7 @@ See the following contents of the <code class="file docutils literal notranslate
 <img alt="nRF9160 Modem firmware 1.2.0 release notes content" src="../../_images/mfw_1.2.0_release_notes.png" />
 <p class="caption"><span class="caption-text">nRF9160 Modem firmware 1.2.0 release notes content</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>The nRF Asset Tracker sets up an IoT rule, which only publishes the <code class="docutils literal notranslate"><span class="pre">cfg</span></code> section of the <a class="reference external" href="../devices/cloud-protocol/state.reported.aws.json">shadow document</a> to a separate topic <code class="docutils literal notranslate"><span class="pre">$aws/things/&lt;thing</span> <span class="pre">name&gt;/shadow/get/accepted/desired/cfg</span></code> when devices receive their state after publishing an empty message to <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#get-pub-sub-topic">$aws/things/&lt;thing name&gt;/shadow/get</a>.</p>
+<p>The nRF Asset Tracker sets up an IoT rule, which only publishes the <code class="docutils literal notranslate"><span class="pre">cfg</span></code> section of the <a class="reference external" href="../cloud-protocol/state.reported.aws.json">shadow document</a> to a separate topic <code class="docutils literal notranslate"><span class="pre">$aws/things/&lt;thing</span> <span class="pre">name&gt;/shadow/get/accepted/desired/cfg</span></code> when devices receive their state after publishing an empty message to <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#get-pub-sub-topic">$aws/things/&lt;thing name&gt;/shadow/get</a>.</p>
 <p>The published object can be empty as shown, if the device has no shadow or if the configuration is not set:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
 </pre></div>
