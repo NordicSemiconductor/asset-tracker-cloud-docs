@@ -60,7 +60,7 @@ The P-GPS message published by the device is described in the `P-GPS request JSO
 See the `P-GPS request JSON document <./pgps-request.json>`_ for an example request. 
 The cloud publishes a link to the data to the ``<device Id>/pgps`` topic in the format described in detail in the `P-GPS response JSON schema file <./pgps-response.schema.json>`_.
 See the `P-GPS response JSON document <./pgps-response.json>`_ for an example response.
-The device then can use HTTP(s) to download the P-GPS data.
+The device can then use HTTP or HTTPS to download the P-GPS data.
 
 .. _batch-messages:
 
