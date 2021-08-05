@@ -30,6 +30,8 @@ describe('schemas', () => {
 		['batch', 'batch-message.json'],
 		['ncellmeas', undefined],
 		['agps-request', undefined],
+		['pgps-request', undefined],
+		['pgps-response', undefined],
 	])('%s should validate', async (schema, example) => {
 		const validate = ajv.getSchema(
 			`https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/devices/cloud-protocol/${schema}.schema.json`,
