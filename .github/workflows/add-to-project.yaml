@@ -12,6 +12,11 @@ jobs:
   assign_to_project:
     runs-on: ubuntu-latest
     steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "$GITHUB_CONTEXT"
       - name: Assign new issues to the To Do columen of the project
         uses: srggrs/assign-one-project-github-action@1.2.1
         if: github.event_name == 'issues'
