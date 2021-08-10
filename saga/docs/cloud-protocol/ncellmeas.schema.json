@@ -32,18 +32,18 @@
       "examples": [12]
     },
     "rsrp": {
-      "type": "integer",
-      "description": "Reference Signal Received Power (RSRP). The average power level received from a single reference signal in an LTE (Long-term Evolution) network. (–17: When –156 dBm <= RSRP, –16: When –156 ≤ RSRP < –155 dBm, ..., –3: When –143 ≤ RSRP < –142 dBm, –2: When –142 ≤ RSRP < –141 dBm, –1: When –141 ≤ RSRP < –140 dBm, 0: RSRP < −140 dBm, 1: – When −140 dBm ≤ RSRP < −139 dBm, 2: When −139 dBm ≤ RSRP < −138 dBm,...95: When −46 dBm ≤ RSRP < −45 dBm, 96: When −45 dBm ≤ RSRP < −44 dBm, 97: When −44 dBm ≤ RSRP, 255: Not known or not detectable)",
-      "minimum": -17,
-      "maximum": 255,
-      "examples": [0, 95, 255]
+      "type": "number",
+      "description": "Reference Signal Received Power (RSRP). The average power level in dBm received from a single reference signal in an LTE (Long-term Evolution) network. Typically this value ranges from -140 to -40 dBm. ",
+      "minimum": -199,
+      "maximum": 0,
+      "examples": [-97, -104]
     },
     "rsrq": {
-      "type": "integer",
-      "description": "Reference Signals Received Quality (RSRQ) of the current cell. (–30: When RSRQ < –34 dB, –29: When –34 ≤ RSRQ < –33.5 dB, ..., –2: When –20.5 ≤ RSRQ < –20 dB, –1: When –20 ≤ RSRQ < –19.5 dB, 0: When RSRQ < –19.5 dB, 1: When –19.5 ≤ RSRQ < –19 dB, 2: When –19 ≤ RSRQ < –18.5 dB, ..., 32: When –4 ≤ RSRQ < –3.5 dB, 33: When –3.5 ≤ RSRQ < –3 dB, 34: When –3 ≤ RSRQ dB, 35: When –3 ≤ RSRQ < –2.5 dB, 36: When –2.5 ≤ RSRQ < –2 dB, ..., 45: When 2 ≤ RSRQ < 2.5 dB, 46: When 2.5 ≤ RSRQ dB, 255: Not known or not detectable)",
-      "minimum": -30,
-      "maximum": 255,
-      "examples": [0, 95, 255]
+      "type": "number",
+      "description": "Reference Signals Received Quality (RSRQ) of the current cell. Typically this value ranges from -19.5 to −3 dBm.",
+      "minimum": -99,
+      "maximum": 0,
+      "examples": [-11, -18]
     },
     "earfcn": {
       "type": "integer",
@@ -77,18 +77,18 @@
             "examples": [33703719]
           },
           "rsrp": {
-            "type": "integer",
-            "description": "Reference Signal Received Power (RSRP). The average power level received from a single reference signal in an LTE (Long-term Evolution) network. (–17: When –156 dBm <= RSRP, –16: When –156 ≤ RSRP < –155 dBm, ..., –3: When –143 ≤ RSRP < –142 dBm, –2: When –142 ≤ RSRP < –141 dBm, –1: When –141 ≤ RSRP < –140 dBm, 0: RSRP < −140 dBm, 1: – When −140 dBm ≤ RSRP < −139 dBm, 2: When −139 dBm ≤ RSRP < −138 dBm,...95: When −46 dBm ≤ RSRP < −45 dBm, 96: When −45 dBm ≤ RSRP < −44 dBm, 97: When −44 dBm ≤ RSRP, 255: Not known or not detectable)",
-            "minimum": -17,
-            "maximum": 255,
-            "examples": [0, 95, 255]
+            "type": "number",
+            "description": "Reference Signal Received Power (RSRP). The average power level in dBm received from a single reference signal in an LTE (Long-term Evolution) network. Typically this value ranges from -140 to -40 dBm. ",
+            "minimum": -199,
+            "maximum": 0,
+            "examples": [-97, -104]
           },
           "rsrq": {
-            "type": "integer",
-            "description": "Reference Signals Received Quality (RSRQ) of the current cell. (–30: When RSRQ < –34 dB, –29: When –34 ≤ RSRQ < –33.5 dB, ..., –2: When –20.5 ≤ RSRQ < –20 dB, –1: When –20 ≤ RSRQ < –19.5 dB, 0: When RSRQ < –19.5 dB, 1: When –19.5 ≤ RSRQ < –19 dB, 2: When –19 ≤ RSRQ < –18.5 dB, ..., 32: When –4 ≤ RSRQ < –3.5 dB, 33: When –3.5 ≤ RSRQ < –3 dB, 34: When –3 ≤ RSRQ dB, 35: When –3 ≤ RSRQ < –2.5 dB, 36: When –2.5 ≤ RSRQ < –2 dB, ..., 45: When 2 ≤ RSRQ < 2.5 dB, 46: When 2.5 ≤ RSRQ dB, 255: Not known or not detectable)",
-            "minimum": -30,
-            "maximum": 255,
-            "examples": [0, 95, 255]
+            "type": "number",
+            "description": "Reference Signals Received Quality (RSRQ) of the current cell. Typically this value ranges from -19.5 to −3 dBm.",
+            "minimum": -99,
+            "maximum": 0,
+            "examples": [-11, -18]
           }
         },
         "required": ["earfcn", "cell", "rsrp", "rsrq"],
