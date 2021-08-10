@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker 146c3a85b850e420b3466911be5015bca8d91082 documentation</title>
+  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker v14.1.0 documentation</title>
   
 
   
@@ -199,18 +199,51 @@
             
   <div class="section" id="nrf-cloud-location-services">
 <span id="aws-nrf-cloud-location-services"></span><h1>nRF Cloud Location Services<a class="headerlink" href="#nrf-cloud-location-services" title="Permalink to this headline">¶</a></h1>
-<p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for single cells and neighboring cell reports for the application using the <a class="reference external" href="https://api.nrfcloud.com/v1/#operation/GetSingleCellLocation">nRF Cloud’s geolocation API</a>  in your deployment.</p>
+<div class="section" id="cell-location-service">
+<h2>Cell Location Service<a class="headerlink" href="#cell-location-service" title="Permalink to this headline">¶</a></h2>
+<p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for single cells and neighboring cell reports for the application using <a class="reference external" href="https://api.nrfcloud.com/v1#tag/Locate">nRF Cloud’s Cell Location Service API</a> in your deployment.</p>
 <p>To use the API, complete the following steps:</p>
 <ol class="arabic simple">
-<li><p>Configure your API key.</p></li>
+<li><p>Configure your service key.</p></li>
 <li><p>Enable the API using the CLI.</p></li>
 <li><p>Redeploy the stack.</p></li>
 </ol>
 <p>Use the following commands:</p>
-<pre class="highlight literal-block">node cli configure thirdParty nrfcloud apiKey <em>API key</em>
-node cli configure context stack nrfcloud 1
+<pre class="highlight literal-block">cat <em>location of your Cell Location Service Key file</em> | node cli configure thirdParty nrfcloud cellLocationServiceKey
+node cli configure context stack nrfcloudCellLocation 1
 npx cdk deploy '*'</pre>
-<p>This will update the StateMachine, which resolves cells from devices to use the nRF Cloud’s API as a resolver.</p>
+<p>This will update the StateMachine, which resolves cells from devices to use the nRF Cloud API as a resolver.</p>
+</div>
+<div class="section" id="assisted-gps-location-service">
+<h2>Assisted GPS Location Service<a class="headerlink" href="#assisted-gps-location-service" title="Permalink to this headline">¶</a></h2>
+<p>You can enable your devices to request assisted GPS data using <a class="reference external" href="https://api.nrfcloud.com/v1#tag/Assisted-GPS">nRF Cloud’s Assisted GPS Location Service API</a> in your deployment.</p>
+<p>To use the API, complete the following steps:</p>
+<ol class="arabic simple">
+<li><p>Configure your service key.</p></li>
+<li><p>Enable the API using the CLI.</p></li>
+<li><p>Redeploy the stack.</p></li>
+</ol>
+<p>Use the following commands:</p>
+<pre class="highlight literal-block">cat <em>location of your Assisted GPS Location Service key file</em> | node cli configure thirdParty nrfcloud agpsLocationServiceKey
+node cli configure context stack nrfcloudAGPS 1
+npx cdk deploy '*'</pre>
+<p>This will update the StateMachine, which resolves A-GPS request from devices to use the nRF Cloud API as a resolver.</p>
+</div>
+<div class="section" id="predicted-gps-location-service">
+<h2>Predicted GPS Location Service<a class="headerlink" href="#predicted-gps-location-service" title="Permalink to this headline">¶</a></h2>
+<p>You can enable your devices to request predicted GPS data using <a class="reference external" href="https://api.nrfcloud.com/v1#tag/Predicted-GPS">nRF Cloud’s Predicted GPS Location Service API</a> in your deployment.</p>
+<p>To use the API, complete the following steps:</p>
+<ol class="arabic simple">
+<li><p>Configure your service key.</p></li>
+<li><p>Enable the API using the CLI.</p></li>
+<li><p>Redeploy the stack.</p></li>
+</ol>
+<p>Use the following commands:</p>
+<pre class="highlight literal-block">cat <em>location of your Predicted GPS Location Service key file</em> | node cli configure thirdParty nrfcloud pgpsLocationServiceKey
+node cli configure context stack nrfcloudPGPS 1
+npx cdk deploy '*'</pre>
+<p>This will update the StateMachine, which resolves P-GPS request from devices to use the nRF Cloud API as a resolver.</p>
+</div>
 </div>
 
 
