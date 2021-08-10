@@ -14,6 +14,10 @@ Cat Tracker.
 
 > [Read the complete nRF Asset Tracker documentation](https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/).
 
+## Extending the documentation
+
+The documentation is written in reStructuredText, following the [nRF Connect SDK guidelines](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/doc_styleguide.html#rst-gl).
+
 ## Publishing the documentation
 
 This documentation is built using [Sphinx](https://www.sphinx-doc.org/), and is
