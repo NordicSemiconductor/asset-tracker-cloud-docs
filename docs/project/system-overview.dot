@@ -4,7 +4,7 @@ digraph G {
 
     imagepath="/workdir/docs/project"
 
-    bgcolor="#fcfcfc"
+    bgcolor="#ffffff"
 
     compound=true
 
@@ -12,7 +12,7 @@ digraph G {
 
     edge [ color="#666666" ]
     
-    celltower [ label="" image="./images/celltower.svg" shape="none" width="1" height="1" imagescale=true ]
+    celltower [ label="" image="./images/celltower.svg" shape="none" width="2" height="1" imagescale=true ]
     satellite [ label="" image="./images/satellite.svg" shape="none" width="1" height="1" imagescale=true ]
     thingy91 [ label="" tooltip="Thingy:91" image="./images/thingy91.svg" shape="none" width="1" height="1" imagescale=true URL="https://www.nordicsemi.com/Software-and-tools/Prototyping-platforms/Nordic-Thingy-91" ]
 
@@ -46,7 +46,7 @@ digraph G {
     }
 
     subgraph cluster2 {
-        label="Cat Tracker Web Application"
+        label="Cat Tracker web application"
         labelloc=b
         fontsize=16
         bgcolor="#D9E1E2" color="#cccccc" 
@@ -63,13 +63,13 @@ digraph G {
     azure_iot -> Azure  [ label="TLS+MQTT+JSON" dir=back ltail=cluster1 lhead=cluster0 ]
     thingy91 -> asset_tracker_v2 [ dir=none lhead=cluster1 ]
     satellite -> thingy91 [ label=GPS ]
-    celltower -> thingy91 [ label="LTE-m/\nNB-IoT" ]
+    celltower -> thingy91 [ label="LTE-M/\nNB-IoT" ]
 
     asset_tracker_v2 -> aws_iot [ dir=back ]
     asset_tracker_v2 -> azure_iot [ dir=back ]
     asset_tracker_v2 -> agps [ dir=back ]
 
-    agpscloud -> nrfcloud [ dir=back headlabel="HTTPs" ltail=cluster4 ]
+    agpscloud -> nrfcloud [ dir=back taillabel="HTTPs" ltail=cluster4 labeldistance="6"]
     gellceo -> nrfcloud [ dir=back ltail=cluster4 ]
     gellceo -> unwiredlabs [ dir=back headlabel="HTTPs" ltail=cluster4 ]
     AWS -> gellceo [ dir=back ltail=cluster0 lhead=cluster4 ]
