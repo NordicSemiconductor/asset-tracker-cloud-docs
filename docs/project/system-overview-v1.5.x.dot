@@ -4,15 +4,17 @@ digraph G {
 
     imagepath="/workdir/docs/project"
 
-    bgcolor="#fcfcfc"
+    bgcolor=transparent
 
     compound=true
 
     labelfloat=true
 
     edge [ color="#666666" ]
+
+    splines=false
     
-    celltower [ label="" image="./images/celltower.svg" shape="none" width="1" height="1" imagescale=true ]
+    celltower [ label="" image="./images/celltower.svg" shape="none" width="2" height="1" imagescale=true ]
     satellite [ label="" image="./images/satellite.svg" shape="none" width="1" height="1" imagescale=true ]
     thingy91 [ label="" tooltip="Thingy:91" image="./images/thingy91.svg" shape="none" width="1" height="1" imagescale=true URL="https://www.nordicsemi.com/Software-and-tools/Prototyping-platforms/Nordic-Thingy-91" ]
 
@@ -29,8 +31,8 @@ digraph G {
         labelloc=b
         fontsize=16
         bgcolor="#D9E1E2" color="#cccccc" 
-        gellceo [ shape=component style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" label="Cell Geolocation" ]
-        agpscloud [ shape=component style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" label="A-GPS" ]
+        gellceo [ shape=box style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" label="Cell Geolocation" ]
+        agpscloud [ shape=box style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" label="A-GPS" ]
     }
 
     subgraph cluster1 {
@@ -38,17 +40,17 @@ digraph G {
         labelloc=b
         fontsize=16
         bgcolor="#D9E1E2" color="#cccccc" 
-        aws_iot [ shape=component style=filled color="#fe9900" fillcolor="#fe9900" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/aws_iot/README.html" ]
-        asset_tracker_v2 [ shape=component style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" color="#00A9CE" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html" ]
-        agps [ shape=component style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/agps/README.html" ]
+        aws_iot [label="aws iot" width="1.5" shape=box style=filled color="#fe9900" fillcolor="#fe9900" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/aws_iot/README.html" ]
+        asset_tracker_v2 [label="asset tracker v2" width="1.5" shape=box style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" color="#00A9CE" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html" ]
+        agps [ shape=box width="1.5" style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/agps/README.html" ]
     }
 
     subgraph cluster2 {
-        label="Cat Tracker Web Application"
+        label="Cat Tracker web application"
         labelloc=b
         fontsize=16
         bgcolor="#D9E1E2" color="#cccccc" 
-        aws_api [ label="aws/api" shape=component style=filled color="#fe9900" fillcolor="#fe9900" ]
+        aws_api [ label="aws api" widts="1.5" shape=box style=filled color="#fe9900" fillcolor="#fe9900" ]
         web_app [ label="React SPA" shape=box style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" URL="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js" ]
     }
 
@@ -59,12 +61,12 @@ digraph G {
     aws_iot -> AWS  [ dir=back ltail=cluster1 lhead=cluster0 ]
     thingy91 -> asset_tracker_v2 [ dir=none lhead=cluster1 ]
     satellite -> thingy91 [ label=GPS ]
-    celltower -> thingy91 [ label="LTE-m/\nNB-IoT" ]
+    celltower -> thingy91 [ label="LTE-M/\nNB-IoT" ]
 
     asset_tracker_v2 -> aws_iot [ dir=back ]
     asset_tracker_v2 -> agps [ dir=back ]
 
-    agpscloud -> nrfcloud [ dir=back headlabel="HTTPs" ltail=cluster4 ]
+    agpscloud -> nrfcloud [ dir=back taillabel="HTTPs" ltail=cluster4 labeldistance="6"]
     gellceo -> nrfcloud [ dir=back ltail=cluster4 ]
     gellceo -> unwiredlabs [ dir=back headlabel="HTTPs" ltail=cluster4 ]
     AWS -> gellceo [ dir=back ltail=cluster0 lhead=cluster4 ]
