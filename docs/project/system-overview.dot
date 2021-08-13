@@ -62,26 +62,25 @@ digraph G {
         phone [ label="" image="./images/phone.svg" shape="none" width="1" height="1" imagescale=true ]
 
     aws_iot -> AWS  [ dir=back ltail=cluster1 lhead=cluster0 ]
-    azure_iot -> Azure  [ label="TLS+MQTT+JSON" dir=back ltail=cluster1 lhead=cluster0]
+    azure_iot -> Azure  [ label=" TLS+MQTT+JSON " dir=back ltail=cluster1 lhead=cluster0]
     thingy91 -> asset_tracker_v2 [ dir=none lhead=cluster1 ]
-    satellite -> thingy91 [ label=GPS ]
-    celltower -> thingy91 [ label="LTE-M/\nNB-IoT" ]
+    satellite -> thingy91 [ label=" GPS " ]
+    celltower -> thingy91 [ label=" LTE-M/\nNB-IoT " ]
 
     asset_tracker_v2 -> aws_iot [ dir=back ]
     asset_tracker_v2 -> azure_iot [ dir=back ]
     asset_tracker_v2 -> agps [ dir=back ]
 
-    agpscloud -> nrfcloud [ dir=back taillabel="HTTPs" ltail=cluster4 labeldistance="6"]
+    agpscloud -> nrfcloud [ dir=back taillabel=" HTTPs " ltail=cluster4 labeldistance="6"]
     gellceo -> nrfcloud [ dir=back ltail=cluster4 ]
-    gellceo -> unwiredlabs [ dir=back headlabel="HTTPs" ltail=cluster4 ]
+    gellceo -> unwiredlabs [ dir=back headlabel=" HTTPs " ltail=cluster4 ]
     AWS -> gellceo [ dir=back ltail=cluster0 lhead=cluster4 ]
 
-    AWS -> aws_api [ label="HTTPs" ltail=cluster0 lhead=cluster2 ]
-    Azure -> azure_api [ label="HTTPs" ltail=cluster0 lhead=cluster2 ]
+    AWS -> aws_api [ label=" HTTPs " ltail=cluster0 lhead=cluster2 ]
+    Azure -> azure_api [ label=" HTTPs " ltail=cluster0 lhead=cluster2 ]
 
     aws_api -> web_app
     azure_api -> web_app
 
     web_app -> phone [ ltail=cluster2 dir=back ]
 }
-
