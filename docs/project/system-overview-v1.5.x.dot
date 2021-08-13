@@ -50,7 +50,7 @@ digraph G {
         labelloc=b
         fontsize=16
         bgcolor="#D9E1E2" color="#cccccc" 
-        aws_api [ label="aws api" widts="1.5" shape=box style=filled color="#fe9900" fillcolor="#fe9900" ]
+        aws_api [ label="aws api" width="1.5" shape=box style=filled color="#fe9900" fillcolor="#fe9900" ]
         web_app [ label="React SPA" shape=box style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" URL="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js" ]
     }
 
