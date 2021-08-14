@@ -6,7 +6,7 @@ nRF Cloud Location Services
 Cell Location Service
 *********************
 
-You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for single cells and neighboring cell reports for the application using `nRF Cloud's Cell Location Service API <https://api.nrfcloud.com/v1#tag/Locate>`_ in your deployment.
+You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for single cells and neighboring cell reports for the application using `nRF Cloud's Cell Location Service API <https://api.nrfcloud.com/v1#tag/Cell-Position>`_ in your deployment.
 
 To use the API, complete the following steps:
 
