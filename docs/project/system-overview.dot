@@ -61,8 +61,8 @@ digraph G {
         unwiredlabs [ label="" tooltip="Unwired Labs" image="./images/unwiredlabs.png" shape="none" width="1" height="1" imagescale=true URL="https://unwiredlabs.com/" ]
         phone [ label="" image="./images/phone.svg" shape="none" width="1" height="1" imagescale=true ]
 
-    aws_iot -> AWS  [ dir=back ltail=cluster1 lhead=cluster0 ]
-    azure_iot -> Azure  [ label=" TLS+MQTT+JSON " dir=back ltail=cluster1 lhead=cluster0]
+    aws_iot -> AWS  [ label=" TLS \n +MQTT \n +JSON " dir=back ltail=cluster1 lhead=cluster0 ]
+    azure_iot -> Azure  [ dir=back ltail=cluster1 lhead=cluster0]
     thingy91 -> asset_tracker_v2 [ dir=none lhead=cluster1 ]
     satellite -> thingy91 [ label=" GPS " ]
     celltower -> thingy91 [ label=" LTE-M/\nNB-IoT " ]
