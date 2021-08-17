@@ -31,8 +31,8 @@
     "@nordicsemiconductor/eslint-config-asset-tracker-cloud-typescript": "8.0.6",
     "@types/ajv": "1.0.0",
     "@types/glob": "7.1.4",
-    "@types/jest": "26.0.24",
-    "@types/node": "16.4.10",
+    "@types/jest": "27.0.1",
+    "@types/node": "16.6.1",
     "ajv": "8.6.2",
     "eslint": "7.32.0",
     "glob": "7.1.7",
@@ -41,7 +41,7 @@
     "lint-staged": "11.1.2",
     "pinst": "2.1.6",
     "prettier": "2.3.2",
-    "ts-jest": "27.0.4",
+    "ts-jest": "27.0.5",
     "typescript": "4.3.5"
   },
   "lint-staged": {
