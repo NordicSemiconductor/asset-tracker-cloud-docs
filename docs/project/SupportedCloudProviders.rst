@@ -12,13 +12,13 @@ Hence, in this project, the best practices of the respective cloud vendor for bu
 
 See the below table for a list of supported cloud providers:
 
-+-----------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------------------+
-|                       | Amazon Web Services                           | Microsoft Azure                                 | Google Cloud                                                |
-+=======================+===============================================+=================================================+=============================================================+
-| LTE-M: TCP and MQTT   | :ref:`feature complete <aws-getting-started>` | :ref:`feature complete <azure-getting-started>` | `On hold <https://github.com/bifravst/bifravst/issues/25>`_ |
-+-----------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------------------+
-| NB-IoT: UDP and LwM2M | In consideration                              | In consideration                                |                                                             |
-+-----------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------------------+
++-----------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+|                       | Amazon Web Services                           | Microsoft Azure                                                                                     | Google Cloud                                                |
++=======================+===============================================+=====================================================================================================+=============================================================+
+| LTE-M: TCP and MQTT   | :ref:`feature complete <aws-getting-started>` | `feature complete <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/12>` | `On hold <https://github.com/bifravst/bifravst/issues/25>`_ |
++-----------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| NB-IoT: UDP and LwM2M | In consideration                              | In consideration                                                                                    |                                                             |
++-----------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 In the case of cloud providers without native UDP and LwM2M support, the option of using a bridge such as `Eclipse Californium <https://github.com/eclipse/californium>`_, was evaluated.
 For more information, see `Leshan LwM2M AWS IoT Gateway <https://github.com/coderbyheart/leshan-aws>`_.

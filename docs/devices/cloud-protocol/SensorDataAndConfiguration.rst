@@ -9,25 +9,10 @@ Device data and configuration
 
 Sending and receiving data is different for each cloud operator.
 
-.. only:: not v1_5_x
-
-   AWS
-   ===
-
 The data published by the device and the configuration options are described in detail in the `state JSON schema file for AWS <./state.reported.aws.schema.json>`_.
 See the `state JSON document for an AWS example <./state.reported.aws.json>`_.
 
 See :ref:`aws-iot-shadow-topics` for the implementation details for AWS.
-
-.. only:: not v1_5_x
-
-   Azure
-   =====
-
-   The data published by the device and the configuration options are described in detail in the `state JSON schema file for Azure <./state.reported.azure.schema.json>`_.
-   See the `state JSON document for an Azure example <./state.reported.azure.json>`_.
-
-   See :ref:`azure-iot-shadow-topics` for the implementation details for AWS.
 
 Comparing state with messages
 *****************************

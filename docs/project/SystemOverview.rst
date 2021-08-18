@@ -7,15 +7,8 @@ System overview and technical considerations
    :local:
    :depth: 2
 
-.. only:: not v1_5_x
-
-   .. raw:: html
-     :file: ./system-overview.svg
-
-.. only:: v1_5_x
-
-   .. raw:: html
-     :file: ./system-overview-v1.5.x.svg
+.. raw:: html
+   :file: ./system-overview.svg
 
 Devices connect to the message broker using TLS over TCP.
 The messaging protocol is JSON over MQTT.

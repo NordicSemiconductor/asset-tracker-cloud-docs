@@ -39,19 +39,6 @@ describe('schemas', () => {
 		})
 	})
 
-	describe('state.reported.azure.schema.json', () => {
-		it('should validate state.reported.azure.json', async () => {
-			const validate = ajv.getSchema(
-				'https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/devices/cloud-protocol/state.reported.azure.schema.json',
-			)
-			expect(validate).toBeDefined()
-			const state = f('state.reported.azure.json')
-			const valid = await validate?.(JSON.parse(state))
-			expect(validate?.errors).toBeNull()
-			expect(valid).toBeTruthy()
-		})
-	})
-
 	describe('messages.schema.json', () => {
 		it('should validate message.json', async () => {
 			const validate = ajv.getSchema(
