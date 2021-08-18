@@ -63,10 +63,4 @@ Geolocating cells using third-party APIs
 
 Third-party APIs and services like `UnwiredLabs <https://unwiredlabs.com/>`_ and `CellMapper <https://www.cellmapper.net/>`_ have a database of cell tower locations and provide an API to query their locations.
 
-.. only:: v1_5_x
-
-    The nRF Asset Tracker implements the optional resolution on the cloud side using :ref:`UnwiredLabs on AWS <aws-unwired-labs-api>` for the cells that have not been geolocated by the devices.
-
-.. only:: not v1_5_x
-
-    The nRF Asset Tracker implements the optional resolution on the cloud side using :ref:`UnwiredLabs on AWS <aws-unwired-labs-api>` and :ref:`UnwiredLabs on Azure <azure-unwired-labs-api>` for the cells that have not been geolocated by the devices.
+The nRF Asset Tracker implements the optional resolution on the cloud side using :ref:`UnwiredLabs on AWS <aws-unwired-labs-api>` and :ref:`UnwiredLabs on Azure <azure-unwired-labs-api>` for the cells that have not been geolocated by the devices.

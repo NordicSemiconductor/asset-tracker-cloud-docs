@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Device data and configuration &mdash; nRF Asset Tracker c973402c1678a4d6da40d69aae9766fa6425c8bc documentation</title>
+  <title>Device data and configuration &mdash; nRF Asset Tracker 56fc83af60ad7841a0faa405edede5935b356a16 documentation</title>
   
 
   
@@ -92,7 +92,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../project/Index.html">Project overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../GettingStarted.html">Getting started</a></li>
@@ -111,7 +111,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Resources</span></p>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
@@ -195,25 +195,29 @@
 <span id="device-data-configuration"></span><h1>Device data and configuration<a class="headerlink" href="#device-data-and-configuration" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#comparing-state-with-messages" id="id1">Comparing state with messages</a></p></li>
-<li><p><a class="reference internal" href="#batch-data" id="id2">Batch data</a></p></li>
+<li><p><a class="reference internal" href="#aws" id="id1">AWS</a></p></li>
+<li><p><a class="reference internal" href="#azure" id="id2">Azure</a></p>
+<ul>
+<li><p><a class="reference internal" href="#comparing-state-with-messages" id="id3">Comparing state with messages</a></p></li>
+<li><p><a class="reference internal" href="#batch-data" id="id4">Batch data</a></p></li>
+</ul>
+</li>
 </ul>
 </div>
 <p>Sending and receiving data is different for each cloud operator.</p>
 <div class="section" id="aws">
-<h2>AWS<a class="headerlink" href="#aws" title="Permalink to this headline">¶</a></h2>
-</div>
+<h2><a class="toc-backref" href="#id1">AWS</a><a class="headerlink" href="#aws" title="Permalink to this headline">¶</a></h2>
 <p>The data published by the device and the configuration options are described in detail in the <a class="reference external" href="./state.reported.aws.schema.json">state JSON schema file for AWS</a>.
 See the <a class="reference external" href="./state.reported.aws.json">state JSON document for an AWS example</a>.</p>
 <p>See <a class="reference internal" href="../../aws/IoTShadowAndTopics.html#aws-iot-shadow-topics"><span class="std std-ref">AWS IoT Device Shadow service and MQTT topics</span></a> for the implementation details for AWS.</p>
+</div>
 <div class="section" id="azure">
-<h2>Azure<a class="headerlink" href="#azure" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Azure</a><a class="headerlink" href="#azure" title="Permalink to this headline">¶</a></h2>
 <p>The data published by the device and the configuration options are described in detail in the <a class="reference external" href="./state.reported.azure.schema.json">state JSON schema file for Azure</a>.
 See the <a class="reference external" href="./state.reported.azure.json">state JSON document for an Azure example</a>.</p>
 <p>See <a class="reference internal" href="../../azure/IoTShadowAndTopics.html#azure-iot-shadow-topics"><span class="std std-ref">Azure IoT Shadow and topics</span></a> for the implementation details for AWS.</p>
-</div>
 <div class="section" id="comparing-state-with-messages">
-<h2><a class="toc-backref" href="#id1">Comparing state with messages</a><a class="headerlink" href="#comparing-state-with-messages" title="Permalink to this headline">¶</a></h2>
+<h3><a class="toc-backref" href="#id3">Comparing state with messages</a><a class="headerlink" href="#comparing-state-with-messages" title="Permalink to this headline">¶</a></h3>
 <p>Most of the data is stored in the digital twin of the device.
 This is useful for a quick query of the last known data from the device.
 However, some data does not fit well into this model because of its ephemeral nature.
@@ -223,10 +227,11 @@ Button is a UI element and in the case of push buttons, there is no state, which
 For more information, see the <a class="reference external" href="./message.json">messages JSON document</a> for an example device state.</p>
 </div>
 <div class="section" id="batch-data">
-<span id="batch-messages"></span><h2><a class="toc-backref" href="#id2">Batch data</a><a class="headerlink" href="#batch-data" title="Permalink to this headline">¶</a></h2>
+<span id="batch-messages"></span><h3><a class="toc-backref" href="#id4">Batch data</a><a class="headerlink" href="#batch-data" title="Permalink to this headline">¶</a></h3>
 <p>The firmware may send data as batch, using the schema that is described in the <a class="reference external" href="./batch.schema.json">JSON schema file</a>.
 See the <a class="reference external" href="./batch-message.json">JSON document</a> for an example batch message.</p>
 <p>For sending batched data from the device, the topic <code class="docutils literal notranslate"><span class="pre">&lt;deviceId&gt;/batch</span></code> is used.</p>
+</div>
 </div>
 </div>
 
