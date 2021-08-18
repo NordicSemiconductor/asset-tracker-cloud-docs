@@ -52,10 +52,6 @@ jobs:
 
     needs: [docker]
 
-    strategy:
-      matrix:
-        audience: [saga, v1.6.x, v1.5.x]
-
     steps:
       - uses: actions/checkout@v2
 
@@ -79,18 +75,12 @@ jobs:
       - name: Build docs
         run: |
           export PATH=$PATH:/home/runner/.local/bin
-          export AUDIENCE=${{ matrix.audience }}
-          # Remove Azure from v1.5.x builds
-          if [[ "${{ matrix.audience }}" == "v1.5.x" ]]; then
-            rm -r docs/azure
-            cat index.rst | grep -v docs/azure > index-no-azure.rst
-            mv index-no-azure.rst index.rst
-          fi
+          export AUDIENCE=${GITHUB_REF##*/}
           make html
 
       - uses: actions/upload-artifact@v2
         with:
-          name: asset-tracker-docs-${{ matrix.audience }}-${{ github.sha }}
+          name: asset-tracker-docs-${{ github.sha }}
           path: build/html/
 
   test:
@@ -140,17 +130,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Determine documentation release (saga)
-        if: github.ref == 'refs/heads/saga' && github.event_name == 'push'
+      - name: Determine documentation release
+        if: github.ref == 'refs/heads/saga'
         run: |
           git pull --ff-only
           RELEASE=`git describe --abbrev=0 --tags --always | tr -d '\n'`
           echo "VERSION=saga" >> $GITHUB_ENV
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
-          echo "AUDIENCE=saga" >> $GITHUB_ENV
+          VERSION=`git rev-parse --abbrev-ref HEAD | tr -d 'refs/heads/' | tr -d '\n'`
+          echo "AUDIENCE=$VERSION" >> $GITHUB_ENV
 
       - name: Determine documentation release (maintenance branches)
-        if: github.ref != 'refs/heads/saga' && github.event_name == 'push'
+        if: github.ref != 'refs/heads/saga'
         run: |
           git pull --ff-only
           VERSION=`git rev-parse --abbrev-ref HEAD | tr -d 'refs/heads/' | tr -d '\n'`
@@ -176,20 +167,10 @@ jobs:
           echo "DOCKER_IMAGE=${{ needs.docker.outputs.docker_image }}" >> $GITHUB_ENV
 
       - name: Build documentation
-        if:
-          env.RELEASE != '' && env.VERSION != '' && github.event_name == 'push'
+        if: env.RELEASE != '' && env.VERSION != ''
         run: |
           echo "Updating documentation for version ${{ env.VERSION }} release ${{ env.RELEASE }}...";
           export PATH=$PATH:/home/runner/.local/bin
-          # Remove Azure from v1.5.x builds
-          if [[ "${AUDIENCE}" == "v1.5.x" ]]; then
-            rm -r docs/azure
-            cat index.rst | grep -v docs/azure > index-no-azure.rst
-            mv index-no-azure.rst index.rst
-            rm -r docs/firmware/azure
-            cat docs/firmware/Index.rst | grep -v azure/ > docs/firmware/Index-no-azure.rst
-            mv docs/firmware/Index-no-azure.rst docs/firmware/Index.rst
-          fi
           # Generate Documentation
           make html
           # Clone gh-pages branch
@@ -197,12 +178,6 @@ jobs:
           git -C asset-tracker-docs rm -r ${{ env.VERSION }}/\*
           mkdir -p asset-tracker-docs/${{ env.VERSION }}
           cp -r build/html/* asset-tracker-docs/${{ env.VERSION }}
-          # Maintain legacy URLs
-          if [[ "${{ env.VERSION }}" == "v1.5.x" ]]; then
-            REDIRECT=./GettingStarted/Index.html node scripts/redirect.mjs > asset-tracker-docs/${{ env.VERSION }}/docs/aws/GettingStarted.html
-            mkdir asset-tracker-docs/${{ env.VERSION }}/docs/device-cloud-protocol
-            REDIRECT=../guides/FourKindsOfData.html node scripts/redirect.mjs > asset-tracker-docs/${{ env.VERSION }}/docs/device-cloud-protocol/FourKindsOfData.html
-          fi;
           git -C asset-tracker-docs add -A ${{ env.VERSION }}
           if [[ `git -C asset-tracker-docs status --porcelain` ]]; then
             echo "HAS_CHANGES=1" >> $GITHUB_ENV

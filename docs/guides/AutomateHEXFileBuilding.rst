@@ -3,16 +3,8 @@
 Automate building of HEX files for your nRF Connect SDK application
 ###################################################################
 
-.. only:: v1_5_x
-
-    Continuous delivery shortens the time to market of a product.
-    The nRF9160 DK supports `firmware over-the-air (FOTA) upgrades <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/aws_fota/README.html>`_.
-    As a developer, you most probably want to update the latest firmware, using FOTA, in your development kit every time the application changes.
-
-.. only:: not v1_5_x
-
-    Continuous delivery shortens the time to market of a product. The nRF9160 DK supports firmware over-the-air (FOTA) upgrades `for AWS <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/aws_fota/README.html>`_ and `for Azure <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/azure_fota/README.html>`_.
-    As a developer, you most probably want to update the latest firmware, using FOTA, in your development kit every time the application changes.
+Continuous delivery shortens the time to market of a product. The nRF9160 DK supports firmware over-the-air (FOTA) upgrades `for AWS <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/aws_fota/README.html>`_ and `for Azure <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/azure_fota/README.html>`_.
+As a developer, you most probably want to update the latest firmware, using FOTA, in your development kit every time the application changes.
 
 Continuous delivery requires automation of the process that builds the HEX file of an application.
 
