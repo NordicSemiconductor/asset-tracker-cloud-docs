@@ -135,16 +135,16 @@ jobs:
         run: |
           git pull --ff-only
           RELEASE=`git describe --abbrev=0 --tags --always | tr -d '\n'`
+          VERSION=`git rev-parse --abbrev-ref HEAD | tr -d '\n'`
           echo "VERSION=saga" >> $GITHUB_ENV
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
-          VERSION=`git rev-parse --abbrev-ref HEAD | tr -d 'refs/heads/' | tr -d '\n'`
           echo "AUDIENCE=$VERSION" >> $GITHUB_ENV
 
       - name: Determine documentation release (maintenance branches)
         if: github.ref != 'refs/heads/saga'
         run: |
           git pull --ff-only
-          VERSION=`git rev-parse --abbrev-ref HEAD | tr -d 'refs/heads/' | tr -d '\n'`
+          VERSION=`git rev-parse --abbrev-ref HEAD | tr -d '\n'`
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "RELEASE=${{ github.sha }}" >> $GITHUB_ENV
           echo "AUDIENCE=$VERSION" >> $GITHUB_ENV
