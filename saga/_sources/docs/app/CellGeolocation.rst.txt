@@ -54,5 +54,5 @@ Follow the configuration guide in the respective implementation to enable nRF Cl
 
 Follow the configuration guide in the respective implementation to enable Unwired Labs' cell geolocation API:
 
- * :ref:`AWS <aws-unwired-labs-cell-geolocation>`
- * :ref:`Azure <azure-unwired-labs-cell-geolocation>`
+* :ref:`AWS <aws-unwired-labs-cell-geolocation>`
+* :ref:`Azure <azure-unwired-labs-cell-geolocation>`
