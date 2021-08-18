@@ -75,7 +75,6 @@ jobs:
       - name: Build docs
         run: |
           export PATH=$PATH:/home/runner/.local/bin
-          export AUDIENCE=${GITHUB_REF##*/}
           make html
 
       - uses: actions/upload-artifact@v2
@@ -133,20 +132,17 @@ jobs:
       - name: Determine documentation release
         if: github.ref == 'refs/heads/saga'
         run: |
-          git pull --ff-only
+          git fetch --tags
           RELEASE=`git describe --abbrev=0 --tags --always | tr -d '\n'`
           VERSION=`git rev-parse --abbrev-ref HEAD | tr -d '\n'`
           echo "VERSION=saga" >> $GITHUB_ENV
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
-          echo "AUDIENCE=$VERSION" >> $GITHUB_ENV
 
       - name: Determine documentation release (maintenance branches)
         if: github.ref != 'refs/heads/saga'
         run: |
-          git pull --ff-only
-          echo "VERSION=${{ github.head_ref }}" >> $GITHUB_ENV
+          echo "VERSION=$(echo ${GITHUB_REF#refs/heads/} | tr / -)" >> $GITHUB_ENV
           echo "RELEASE=${{ github.sha }}" >> $GITHUB_ENV
-          echo "AUDIENCE=${{ github.head_ref }}" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: |

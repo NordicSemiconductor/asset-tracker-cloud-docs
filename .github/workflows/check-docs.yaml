@@ -73,7 +73,6 @@ jobs:
         run: |
           echo "VERSION=${{ github.head_ref }}" >> $GITHUB_ENV
           echo "RELEASE=${{ github.sha }}" >> $GITHUB_ENV
-          echo "AUDIENCE=${{ github.head_ref }}" >> $GITHUB_ENV
 
       - name: Build docs
         run: |
