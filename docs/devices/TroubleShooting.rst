@@ -47,12 +47,12 @@ Alternatively, use assisted GPS (A-GPS) to speed up the time to fix.
 
 .. only:: v1_5_x
 
-    One form of A-GPS is using SUPL and it can be optionally enabled in the firmware using the `SUPL client  <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/include/supl_os_client.html>`_.
+    One form of A-GPS is using SUPL and it can be optionally enabled in the firmware using the `SUPL client  <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/1.5.1/nrf/include/supl_os_client.html>`_.
     The `nRF Asset Tracker firmware project <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws/pull/9>`_ optionally supports building the firmware images with SUPL enabled.
 
 .. only:: not v1_5_x
 
-    One form of A-GPS is using SUPL and it can be optionally enabled in the firmware using the `SUPL client  <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/include/supl_os_client.html>`_.
+    One form of A-GPS is using SUPL and it can be optionally enabled in the firmware using the `SUPL client  <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/libraries/others/supl_os_client.html>`_.
     The nRF Asset Tracker firmware projects `for AWS <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws/pull/9>`_ and `for Azure <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure#supl-client>`_ optionally support building the firmware images with SUPL enabled.
 
 .. note::
