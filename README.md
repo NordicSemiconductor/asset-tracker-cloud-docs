@@ -16,20 +16,15 @@ Cat Tracker.
 
 ## Extending the documentation
 
-The documentation is written in reStructuredText, following the [nRF Connect SDK guidelines](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/doc_styleguide.html#rst-gl).
+The documentation is written in reStructuredText, following the
+[nRF Connect SDK guidelines](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/doc_styleguide.html#rst-gl).
 
 ## Publishing the documentation
 
 This documentation is built using [Sphinx](https://www.sphinx-doc.org/), and is
-available in three versions under the following directories in the `gh-pages`
-branch of this repository:
-
-- [`saga`](https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/tree/gh-pages/saga)
-- [`v1.6.x`](https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/tree/gh-pages/v1.6.x)
-- [`v1.5.x`](https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/tree/gh-pages/v1.5.x)
+available for the `saga` branch and for the major
+[nRF Connect SDK](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/index.html)
+release versions in sub-directories in the `gh-pages` branch of this repository.
 
 A deployment is triggered by pushing commits to the respective branch and is
 automated using GitHub actions. See `./github/workflows/test-and-release.yaml`.
-The build for the release (`v1.5.x`) does not include the Azure documentation.
-The three variants of the documentation are built from the same source and there
-is no ongoing maintenance for a _feature branch_.

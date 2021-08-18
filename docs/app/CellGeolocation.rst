@@ -50,17 +50,9 @@ They provide the geolocation of nearly every cell tower and with this informatio
 
 Follow the configuration guide in the respective implementation to enable nRF Cloud's cell geolocation API:
 
-.. only:: not v1_5_x
-
 * :ref:`AWS <aws-nrf-cloud-location-services>`
 
 Follow the configuration guide in the respective implementation to enable Unwired Labs' cell geolocation API:
 
-.. only:: v1_5_x
-
-   * :ref:`AWS <aws-unwired-labs-cell-geolocation>`
-
-.. only:: not v1_5_x
-
-   * :ref:`AWS <aws-unwired-labs-cell-geolocation>`
-   * :ref:`Azure <azure-unwired-labs-cell-geolocation>`
+ * :ref:`AWS <aws-unwired-labs-cell-geolocation>`
+ * :ref:`Azure <azure-unwired-labs-cell-geolocation>`
