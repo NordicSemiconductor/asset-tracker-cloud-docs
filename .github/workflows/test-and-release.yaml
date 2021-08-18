@@ -144,10 +144,9 @@ jobs:
         if: github.ref != 'refs/heads/saga'
         run: |
           git pull --ff-only
-          VERSION=`git rev-parse --abbrev-ref HEAD | tr -d '\n'`
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "VERSION=${{ github.head_ref }}" >> $GITHUB_ENV
           echo "RELEASE=${{ github.sha }}" >> $GITHUB_ENV
-          echo "AUDIENCE=$VERSION" >> $GITHUB_ENV
+          echo "AUDIENCE=${{ github.head_ref }}" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: |
