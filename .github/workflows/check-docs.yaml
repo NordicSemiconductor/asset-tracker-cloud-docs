@@ -47,10 +47,6 @@ jobs:
 
     needs: [docker]
 
-    strategy:
-      matrix:
-        audience: [saga, v1.6.x, v1.5.x]
-
     steps:
       - uses: actions/checkout@v2
         with:
@@ -73,20 +69,14 @@ jobs:
           docker pull ${{ needs.docker.outputs.docker_image }}
           echo "DOCKER_IMAGE=${{ needs.docker.outputs.docker_image }}" >> $GITHUB_ENV
 
+      - name: Determine documentation release
+        run: |
+          echo "VERSION=${{ github.head_ref }}" >> $GITHUB_ENV
+          echo "RELEASE=${{ github.sha }}" >> $GITHUB_ENV
+
       - name: Build docs
         run: |
           export PATH=$PATH:/home/runner/.local/bin
-          export AUDIENCE=${{ matrix.audience }}
-          export VERSION=${{ matrix.audience }}
-          # Remove Azure from v1.5.x builds
-          if [[ "${{ matrix.audience }}" == "v1.5.x" ]]; then
-            rm -r docs/azure
-            cat index.rst | grep -v docs/azure > index-no-azure.rst
-            mv index-no-azure.rst index.rst
-            rm -r docs/firmware/azure
-            cat docs/firmware/Index.rst | grep -v azure/ > docs/firmware/Index-no-azure.rst
-            mv docs/firmware/Index-no-azure.rst docs/firmware/Index.rst
-          fi
           make html
 
       - run: |
@@ -95,7 +85,7 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: asset-tracker-docs-${{ matrix.audience }}-${{ github.sha }}
+          name: asset-tracker-docs-${{ github.sha }}
           path: build/html/
 
   test:
