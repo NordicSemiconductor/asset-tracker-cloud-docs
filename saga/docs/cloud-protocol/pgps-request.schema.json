@@ -8,6 +8,8 @@
     "n": {
       "type": "integer",
       "description": "The number of predictions requested. Default is 42 (7 days, 6 predictions per day at default time between predictions).",
+      "minimum": 1,
+      "maximum": 168,
       "examples": [42]
     },
     "int": {
