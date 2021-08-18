@@ -26,7 +26,7 @@ See the `state JSON document for an Azure example <./state.reported.azure.json>`
 See :ref:`azure-iot-shadow-topics` for the implementation details for AWS.
 
 Comparing state with messages
-*****************************
+=============================
 
 Most of the data is stored in the digital twin of the device.
 This is useful for a quick query of the last known data from the device.
@@ -42,8 +42,8 @@ It is published through a separate topic, because depending on the cloud platfor
 The neighboring cell measurement report published by the device is described in detail in the `ncellmeas JSON schema file <./ncellmeas.schema.json>`_.
 See the `ncellmeas JSON document <./ncellmeas.json>`_ for an example report.
 
-Other messages
---------------
+A-GPS and P-GPS data
+====================
 
 If supported through enabling :ref:`aws-nrf-cloud-location-services`, the device can request A-GPS and P-GPS data through MQTT.
 
@@ -61,7 +61,7 @@ The device can then use HTTP or HTTPS to download the P-GPS data.
 .. _batch-messages:
 
 Batch data
-**********
+==========
 
 The firmware may send data as batch, using the schema that is described in the `JSON schema file <./batch.schema.json>`_.
 See the `JSON document <./batch-message.json>`_ for an example batch message.
