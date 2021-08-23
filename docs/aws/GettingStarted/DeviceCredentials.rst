@@ -34,9 +34,9 @@ Run the following script to generate and register a CA certificate in your AWS a
    The default lifetime for CA certificates is 1 year.
    Run ``node cli create-ca --help`` to learn how to customize the lifetime.
 
-Generate a device certificate
-*****************************
+Generate and provision the device certificate
+*********************************************
 
-.. include:: ../../devices/FlashingCertificate/Generate.rst
+.. include:: ../../devices/FlashingCertificate/Provision.rst
    :start-after: body_start
    :end-before: body_end

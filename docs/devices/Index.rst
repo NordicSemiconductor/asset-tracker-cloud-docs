@@ -25,5 +25,4 @@ To connect the device to your account, complete the following steps:
    :titlesonly:
    :caption: Subpages:
 
-   FlashingCertificate/Index.rst
    TroubleShooting.rst

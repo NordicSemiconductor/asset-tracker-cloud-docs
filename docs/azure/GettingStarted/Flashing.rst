@@ -1,4 +1,4 @@
-.. _aws-flashing:
+.. _azure-flashing:
 
 Program the device firmware
 ###########################
@@ -7,7 +7,7 @@ Program the device firmware
    :start-after: body_start
    :end-before: body_end
 
-After the programming of the firmware, the device reboots and connects to the AWS broker, and eventually reports its state to the cloud:
+After the programming of the firmware, the device reboots and connects to the Azure IoT Hub, and eventually reports its state to the cloud:
 
 .. code-block:: bash
 
