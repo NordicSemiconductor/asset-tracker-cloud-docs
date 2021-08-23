@@ -14,4 +14,3 @@ The `firmware GitHub repository <https://github.com/NordicSemiconductor/asset-tr
    :caption: Subpages:
 
    aws/Index.rst
-   azure/Index.rst
