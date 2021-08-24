@@ -8,7 +8,7 @@ First, make sure you have `Segger JLink <https://www.segger.com/downloads/jlink/
 
 .. note::
 
-    Programming the firmware through CLI is currently not supported on WSL 2 since it lacks support for serial devices.
+    Programming the firmware through CLI is currently not supported on WSL 2 because it lacks support for serial devices.
     For more information, see the `issue on WSL 2 <https://github.com/microsoft/WSL/issues/4322>`_.
 
 To flash the :ref:`configured and built firmware <firmware-configuration>` using the CLI, run the following command:
