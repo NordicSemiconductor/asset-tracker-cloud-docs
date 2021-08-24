@@ -1,9 +1,9 @@
-.. _aws-flashing:
+.. _aws-programming:
 
-Program the device firmware and provision the credentials
-#########################################################
+Program the device firmware
+###########################
 
-.. include:: ../../devices/FlashingCertificate/CLI.rst
+.. include:: ../../firmware/Programming.rst
    :start-after: body_start
    :end-before: body_end
 

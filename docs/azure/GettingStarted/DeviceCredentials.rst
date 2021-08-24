@@ -61,10 +61,10 @@ To create a CA intermediate certificate and an enrollment group for it, run the 
 
 You can share the CA intermediate certificate with the factory.
 You will have multiple intermediate certificates over time.
-   
-Generate a device certificate
-*****************************
 
-.. include:: ../../devices/FlashingCertificate/Generate.rst
+Generate and provision the device certificate
+*********************************************
+   
+.. include:: ../../devices/FlashingCertificate/Provision.rst
    :start-after: body_start
    :end-before: body_end
