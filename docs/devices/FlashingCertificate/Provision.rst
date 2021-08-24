@@ -4,7 +4,7 @@ First, make sure you have `Segger JLink <https://www.segger.com/downloads/jlink/
 
 .. note::
 
-    Provisioning the certificates through CLI is currently not supported on WSL 2 since it lacks support for serial devices.
+    Provisioning the certificates through CLI is currently not supported on WSL 2 because it lacks support for serial devices.
     For more information, see the `issue on WSL 2 <https://github.com/microsoft/WSL/issues/4322>`_.
 
 Use the CLI to generate and provision a certificate for your device:
