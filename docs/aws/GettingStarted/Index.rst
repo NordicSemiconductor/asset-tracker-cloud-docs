@@ -24,7 +24,7 @@ Before you start setting up the nRF Asset Tracker on AWS, make sure that you ful
    Deploy.rst
    FirmwareConfiguration.rst
    DeviceCredentials.rst
-   Flashing.rst
+   Programming.rst
    Webapp.rst
    NextSteps.rst
 

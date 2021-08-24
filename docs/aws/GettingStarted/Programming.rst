@@ -1,9 +1,9 @@
-.. _aws-flashing:
+.. _aws-programming:
 
 Program the device firmware
 ###########################
 
-.. include:: ../../firmware/Flashing.rst
+.. include:: ../../firmware/Programming.rst
    :start-after: body_start
    :end-before: body_end
 

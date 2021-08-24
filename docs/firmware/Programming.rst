@@ -1,6 +1,6 @@
 
 Programming the firmware
-#####################
+########################
 
 .. body_start
 

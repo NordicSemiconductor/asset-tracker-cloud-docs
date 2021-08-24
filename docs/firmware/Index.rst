@@ -15,4 +15,4 @@ The firmware GitHub repositories `for AWS <https://github.com/NordicSemiconducto
 
    aws/Index.rst
    azure/Index.rst
-   Flashing.rst
+   Programming.rst
