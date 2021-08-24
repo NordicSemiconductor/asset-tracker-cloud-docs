@@ -1,5 +1,5 @@
 
-Flashing the Firmware
+Programming the firmware
 #####################
 
 .. body_start
