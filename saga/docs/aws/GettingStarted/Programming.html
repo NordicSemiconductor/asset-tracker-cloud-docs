@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Program the device firmware and provision the credentials &mdash; nRF Asset Tracker 6f6a853a394cc136e0ccc67964247f2ccd89ca0a documentation</title>
+  <title>Program the device firmware &mdash; nRF Asset Tracker v15.0.0 documentation</title>
   
 
   
@@ -104,7 +104,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Deploy.html">Install the nRF Asset Tracker into your AWS account</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FirmwareConfiguration.html">Configure the firmware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Create device credentials</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Program the device firmware and provision the credentials</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Program the device firmware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Webapp.html">Deploy the Cat Tracker web application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="NextSteps.html">Next steps</a></li>
 </ul>
@@ -189,14 +189,14 @@
         
           <li><a href="Index.html">Getting started</a> &raquo;</li>
         
-      <li>Program the device firmware and provision the credentials</li>
+      <li>Program the device firmware</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/aws/GettingStarted/Flashing.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/aws/GettingStarted/Programming.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -210,27 +210,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="program-the-device-firmware-and-provision-the-credentials">
-<span id="aws-flashing"></span><h1>Program the device firmware and provision the credentials<a class="headerlink" href="#program-the-device-firmware-and-provision-the-credentials" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="program-the-device-firmware">
+<span id="aws-programming"></span><h1>Program the device firmware<a class="headerlink" href="#program-the-device-firmware" title="Permalink to this headline">¶</a></h1>
+<p>First, make sure you have <a class="reference external" href="https://www.segger.com/downloads/jlink/">Segger JLink</a> installed in your path.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Provisioning the certificates and programming the firmware through CLI are not currently supported on WSL 2 since it lacks support for serial devices.
-For more information, see the <a class="reference external" href="https://github.com/microsoft/WSL/issues/4322">issue on WSL 2</a>.
-Instead, <a class="reference internal" href="../../devices/FlashingCertificate/Desktop.html#devices-provisioning-certificate-desktop"><span class="std std-ref">use nRF Connect for Desktop to provision your certificates</span></a> and then <a class="reference internal" href="../../devices/Index.html#program-the-firmware"><span class="std std-ref">program the firmware</span></a>.</p>
+<p>Programming the firmware through CLI is currently not supported on WSL 2 because it lacks support for serial devices.
+For more information, see the <a class="reference external" href="https://github.com/microsoft/WSL/issues/4322">issue on WSL 2</a>.</p>
 </div>
-<p>First, make sure you have <a class="reference external" href="https://www.segger.com/downloads/jlink/">Segger JLink</a> installed in your path.</p>
-<p>To provision the device certificates using the CLI, run the following command:</p>
-<pre class="highlight literal-block"> node cli flash &quot;<em>imei</em>&quot; -f /path/to/firmware.hex
- # default secTag is 42
- # default board is the Thingy:91, use --dk to program a DK
- # when programming a Thingy:91, most likely you need to override the default port: -p /dev/ttyACM2
- # pass --help to see the additional options, for example, option that enables the use of a different secTag</pre>
-<p>Provisioning of the certificate using CLI also results in the following actions:</p>
-<ul class="simple">
-<li><p>Programming of the <a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/at_client/README.html">AT Client sample</a> onto the device.</p></li>
-<li><p>Provisioning of the created device credentials for the respective cloud flavour <a class="reference internal" href="DeviceCredentials.html#aws-device-credentials"><span class="std std-ref">AWS</span></a>, or <a class="reference internal" href="../../azure/GettingStarted/DeviceCredentials.html#azure-device-credentials"><span class="std std-ref">Azure</span></a>.</p></li>
-<li><p>Programming of the <span class="xref std std-ref">configured and built firmware</span> to the device.</p></li>
-</ul>
+<p>To program the <span class="xref std std-ref">configured and built firmware</span> using the CLI, run the following command:</p>
+<div class="highlight highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">node</span> <span class="n">cli</span> <span class="n">flash</span><span class="o">-</span><span class="n">firmware</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">firmware</span><span class="o">.</span><span class="n">hex</span>
+ <span class="c1"># default board is the Thingy:91, use --dk to program a DK</span>
+ <span class="c1"># pass --help to see the additional options</span>
+</pre></div>
+</div>
 <p>After the programming of the firmware, the device reboots and connects to the AWS broker, and eventually reports its state to the cloud:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">00</span>:00:35.591,644<span class="o">]</span> &lt;inf&gt; event_manager: CLOUD_EVT_CONNECTED
 </pre></div>

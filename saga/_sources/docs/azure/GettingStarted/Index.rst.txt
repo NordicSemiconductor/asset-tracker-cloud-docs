@@ -25,5 +25,6 @@ Before you start the setup of the nRF Asset Tracker on Azure, make sure that you
    Deploy.rst
    FirmwareConfiguration.rst
    DeviceCredentials.rst
+   Programming.rst
    Webapp.rst
    NextSteps.rst
