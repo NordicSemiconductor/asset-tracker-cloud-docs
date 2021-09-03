@@ -20,15 +20,8 @@ If you already have an installation and you want to upgrade to the latest releas
             appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
             unwiredlabsApiKey=${UNWIRED_LABS_API_KEY}
-    func azure functionapp publish ${APP_NAME:-nrfassettracker}API --typescript
-
-Docker variant (in case you get a ``Permission denied.`` error):
-
-.. code-block:: bash
-
-    docker run --rm -v ${PWD}:/workdir -v ${HOME}/.azure:/root/.azure ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js:latest \
-        func azure functionapp publish ${APP_NAME:-nrfassettracker}API --typescript
-
+    node dist/pack/package-function-app.js functionapp.zip
+    az functionapp deployment source config-zip -g ${RESOURCE_GROUP:-nrfassettracker} -n ${APP_NAME:-nrfassettracker}api --src functionapp.zip
 
 To verify the validity of a template, use the following command:
 

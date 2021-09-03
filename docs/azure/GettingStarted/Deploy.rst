@@ -128,15 +128,14 @@ To install the nRF Asset Tracker into your Azure account, complete the following
          --parameters \
             appName=${APP_NAME:-nrfassettracker} \
             appRegistrationClientId=$APP_REG_CLIENT_ID \
-            b2cTenant=$B2C_TENANT \
-      && \
+            b2cTenant=$B2C_TENANT
       # Currently it is not possible to enable website hosting through the ARM template
       az storage blob service-properties update \
          --account-name ${APP_NAME:-nrfassettracker}app \
-         --static-website --index-document index.html \
-      && \
+         --static-website --index-document index.html
       # Deploy the functions
-      func azure functionapp publish ${APP_NAME:-nrfassettracker}API --typescript
+      node dist/pack/package-function-app.js functionapp.zip
+      az functionapp deployment source config-zip -g ${RESOURCE_GROUP:-nrfassettracker} -n ${APP_NAME:-nrfassettracker}api --src functionapp.zip
 
    If the command gives an error, you can find the detailed log message using the printed tracking ID and the following command:
 
