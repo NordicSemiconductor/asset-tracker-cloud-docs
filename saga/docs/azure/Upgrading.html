@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Upgrading an existing installation &mdash; nRF Asset Tracker a3c4f655e99b045ece0735b8f8a20792fb8d39a6 documentation</title>
+  <title>Upgrading an existing installation &mdash; nRF Asset Tracker v15.1.1 documentation</title>
   
 
   
@@ -209,12 +209,8 @@ az deployment group create <span class="se">\</span>
         <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
         <span class="nv">b2cTenant</span><span class="o">=</span><span class="si">${</span><span class="nv">B2C_TENANT</span><span class="k">:-</span><span class="nv">nrfassettrackerusers</span><span class="si">}</span> <span class="se">\</span>
         <span class="nv">unwiredlabsApiKey</span><span class="o">=</span><span class="si">${</span><span class="nv">UNWIRED_LABS_API_KEY</span><span class="si">}</span>
-func azure functionapp publish <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>API --typescript
-</pre></div>
-</div>
-<p>Docker variant (in case you get a <code class="docutils literal notranslate"><span class="pre">Permission</span> <span class="pre">denied.</span></code> error):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir -v <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.azure:/root/.azure ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js:latest <span class="se">\</span>
-    func azure functionapp publish <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>API --typescript
+node dist/pack/package-function-app.js functionapp.zip
+az functionapp deployment <span class="nb">source</span> config-zip -g <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> -n <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>api --src functionapp.zip
 </pre></div>
 </div>
 <p>To verify the validity of a template, use the following command:</p>
