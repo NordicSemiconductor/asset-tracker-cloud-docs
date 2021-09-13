@@ -14,6 +14,22 @@ Cat Tracker.
 
 > [Read the complete nRF Asset Tracker documentation](https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/).
 
+## Building the docs locally
+
+Build the Docker image:
+
+    docker build -t nordicsemiconductor/asset-tracker-cloud-docs/builder ./
+
+Then build the docs:
+
+    make html
+
+The result will be placed in `./build/html`.
+
+You can use `node-static` to serve it from this folder:
+
+    npx node-static build/html
+
 ## Extending the documentation
 
 The documentation is written in reStructuredText, following the
