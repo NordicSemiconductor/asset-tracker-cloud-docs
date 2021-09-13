@@ -27,7 +27,7 @@ jobs:
         run: |
           DOCKER_REPO_NAME=`echo ${GITHUB_REPOSITORY} | tr '[:upper:]' '[:lower:]'`
           DOCKER_CHECKSUM=`cat Dockerfile scripts/dot2svg.sh | sha256sum | awk '{ print $1 }' | tr -d '\n'`
-          DOCKER_IMAGE=ghcr.io/${DOCKER_REPO_NAME}/graphviz:${DOCKER_CHECKSUM}
+          DOCKER_IMAGE=ghcr.io/${DOCKER_REPO_NAME}/builder:${DOCKER_CHECKSUM}
           echo "::set-output name=docker_image::${DOCKER_IMAGE}"
           echo "DOCKER_IMAGE=${DOCKER_IMAGE}" >> $GITHUB_ENV
 
@@ -55,11 +55,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: |
-          python3 -m pip install --upgrade --user pip setuptools
-          python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme
-
       - name: Login to GHCR
         uses: docker/login-action@v1
         with:
@@ -73,9 +68,7 @@ jobs:
           echo "DOCKER_IMAGE=${{ needs.docker.outputs.docker_image }}" >> $GITHUB_ENV
 
       - name: Build docs
-        run: |
-          export PATH=$PATH:/home/runner/.local/bin
-          make html
+        run: make html
 
       - uses: actions/upload-artifact@v2
         with:
@@ -144,11 +137,6 @@ jobs:
           echo "VERSION=$(echo ${GITHUB_REF#refs/heads/} | tr / -)" >> $GITHUB_ENV
           echo "RELEASE=${{ github.sha }}" >> $GITHUB_ENV
 
-      - name: Install dependencies
-        run: |
-          python3 -m pip install --upgrade --user pip setuptools
-          python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme
-
       - name: Login to GHCR
         uses: docker/login-action@v1
         with:
@@ -165,7 +153,6 @@ jobs:
         if: env.RELEASE != '' && env.VERSION != ''
         run: |
           echo "Updating documentation for version ${{ env.VERSION }} release ${{ env.RELEASE }}...";
-          export PATH=$PATH:/home/runner/.local/bin
           # Generate Documentation
           make html
           # Clone gh-pages branch

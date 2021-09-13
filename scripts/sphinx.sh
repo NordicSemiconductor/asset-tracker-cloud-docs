@@ -11,4 +11,5 @@ if [[ -s "$errlog" ]]; then
     exit 1
 else
     echo "Sphinx build succeeded."
+    find docs -type f -name \*.json | xargs -I@ cp -v @ build/html/@
 fi
