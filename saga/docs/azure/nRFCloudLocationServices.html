@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>License &mdash; nRF Asset Tracker v15.2.0 documentation</title>
+  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker v15.2.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Getting started" href="../GettingStarted.html" />
-    <link rel="prev" title="System requirements" href="SystemRequirements.html" /> 
+    <link rel="next" title="Unwired Labs Cell Geolocation" href="UnwiredLabsCellGeolocation.html" />
+    <link rel="prev" title="Connect using the simulator" href="Simulator.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,17 +87,23 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Project overview</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="CorePrinciples.html">Core principles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SystemOverview.html">System overview and technical considerations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SupportedCloudProviders.html">Supported cloud providers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SystemRequirements.html">System requirements</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">License</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Azure cloud components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Azure cloud components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/Index.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousIntegration.html">Continuous integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RunningInDocker.html">Running the application locally with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">nRF Cloud Location Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UnwiredLabsCellGeolocation.html">Unwired Labs Cell Geolocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">Azure IoT Shadow and topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secure-azure-function-apps-with-microsoft-b2c.html">Using Azure Active Directory B2C</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
@@ -155,16 +161,16 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="Index.html">Project overview</a> &raquo;</li>
+          <li><a href="Index.html">Azure cloud components</a> &raquo;</li>
         
-      <li>License</li>
+      <li>nRF Cloud Location Services</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/project/License.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/azure/nRFCloudLocationServices.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -178,9 +184,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="license">
-<h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
-<p>The nRF Asset Tracker is licensed under the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/LICENSE">3-clause BSD license</a> (software) and the <a class="reference external" href="https://github.com/nrfconnect/sdk-nrf/blob/master/LICENSE">Nordic 5-clause license</a> (firmware).</p>
+  <div class="section" id="nrf-cloud-location-services">
+<span id="azure-nrf-cloud-location-services"></span><h1>nRF Cloud Location Services<a class="headerlink" href="#nrf-cloud-location-services" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cell-location-service">
+<h2>Cell Location Service<a class="headerlink" href="#cell-location-service" title="Permalink to this headline">¶</a></h2>
+<p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for single cells and neighboring cell reports for the application using <a class="reference external" href="https://api.nrfcloud.com/v1#tag/Cell-Position">nRF Cloud’s Cell Location Service API</a> in your deployment.</p>
+<p>To use the API, set the <code class="docutils literal notranslate"><span class="pre">enableNrfCloudCellLocation</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">true</span></code> and set the <code class="docutils literal notranslate"><span class="pre">nrfCloudTeamId</span></code> parameter to your team ID when deploying the solution.</p>
+<pre class="highlight literal-block">
+ az deployment group create \
+     --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
+     --mode Complete \
+     --name enable-unwiredlabs \
+     --template-file azuredeploy.json \
+     --parameters \
+         appName=${APP_NAME:-nrfassettracker} \
+         appRegistrationClientId=$APP_REG_CLIENT_ID \
+         b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
+         keyVaultName=${APP_NAME:-nrfassettracker} \
+         enableNrfCloudCellLocation=true \
+         nrfCloudTeamId=*your team ID*
+</pre>
+<p>This command enables the <code class="docutils literal notranslate"><span class="pre">geolocateCellFromNrfCloud</span></code> function to resolve cells.
+Otherwise, this function returns a <code class="docutils literal notranslate"><span class="pre">402</span></code> status on the API route <code class="docutils literal notranslate"><span class="pre">cellgeolocation/nrfcloud</span></code>.</p>
+<p>Store the service key into the key vault as follows:</p>
+<pre class="highlight literal-block">
+az keyvault secret set --vault-name ${APP_NAME:-nrfassettracker} \
+  --name nrfCloudCellLocationServiceKey \
+  --file <em>location of your Cell Location Service Key file</em>
+</pre>
+</div>
 </div>
 
 
@@ -191,10 +223,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../GettingStarted.html" class="btn btn-neutral float-right" title="Getting started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="UnwiredLabsCellGeolocation.html" class="btn btn-neutral float-right" title="Unwired Labs Cell Geolocation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="SystemRequirements.html" class="btn btn-neutral float-left" title="System requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Simulator.html" class="btn btn-neutral float-left" title="Connect using the simulator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

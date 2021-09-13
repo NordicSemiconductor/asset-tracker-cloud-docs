@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Install the nRF Asset Tracker into your Azure account &mdash; nRF Asset Tracker caa71caa430d14e6ae1f37dba5ef74a26ef6a8e0 documentation</title>
+  <title>Install the nRF Asset Tracker into your Azure account &mdash; nRF Asset Tracker v15.2.0 documentation</title>
   
 
   
@@ -109,6 +109,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../RunningInDocker.html">Running the application locally with Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../DeviceCredentials.html">Device credentials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nRFCloudLocationServices.html">nRF Cloud Location Services</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../UnwiredLabsCellGeolocation.html">Unwired Labs Cell Geolocation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../IoTShadowAndTopics.html">Azure IoT Shadow and topics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../secure-azure-function-apps-with-microsoft-b2c.html">Using Azure Active Directory B2C</a></li>
@@ -304,7 +305,8 @@ In this example, <code class="docutils literal notranslate"><span class="pre">nr
    --parameters <span class="se">\</span>
       <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
       <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
-      <span class="nv">b2cTenant</span><span class="o">=</span><span class="nv">$B2C_TENANT</span>
+      <span class="nv">b2cTenant</span><span class="o">=</span><span class="nv">$B2C_TENANT</span> <span class="se">\</span>
+      <span class="nv">keyVaultName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>
 <span class="c1"># Currently it is not possible to enable website hosting through the ARM template</span>
 az storage blob service-properties update <span class="se">\</span>
    --account-name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>app <span class="se">\</span>

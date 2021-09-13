@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Unwired Labs Cell Geolocation &mdash; nRF Asset Tracker caa71caa430d14e6ae1f37dba5ef74a26ef6a8e0 documentation</title>
+  <title>Unwired Labs Cell Geolocation &mdash; nRF Asset Tracker v15.2.0 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Azure IoT Shadow and topics" href="IoTShadowAndTopics.html" />
-    <link rel="prev" title="Connect using the simulator" href="Simulator.html" /> 
+    <link rel="prev" title="nRF Cloud Location Services" href="nRFCloudLocationServices.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,6 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="RunningInDocker.html">Running the application locally with Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nRFCloudLocationServices.html">nRF Cloud Location Services</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Unwired Labs Cell Geolocation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">Azure IoT Shadow and topics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="secure-azure-function-apps-with-microsoft-b2c.html">Using Azure Active Directory B2C</a></li>
@@ -186,20 +187,26 @@
   <div class="section" id="unwired-labs-cell-geolocation">
 <span id="azure-unwired-labs-cell-geolocation"></span><h1>Unwired Labs Cell Geolocation<a class="headerlink" href="#unwired-labs-cell-geolocation" title="Permalink to this headline">¶</a></h1>
 <p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for single cells for the application using <a class="reference external" href="https://unwiredlabs.com/">Unwired Labs’</a> geolocation API in your deployment.</p>
-<p>To use Unwired Labs’ LocationAPI, provide the <code class="docutils literal notranslate"><span class="pre">unwiredlabsApiKey</span></code> parameter when deploying the solution:</p>
-<pre class="highlight literal-block">
- az deployment group create \
-     --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
-     --mode Complete \
-     --name enable-unwiredlabs \
-     --template-file azuredeploy.json      --parameters \
-         appName=${APP_NAME:-nrfassettracker} \
-         appRegistrationClientId=$APP_REG_CLIENT_ID \
-         b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
-         unwiredlabsApiKey=*your API key*
-</pre>
-<p>This command enables the <cite>geolocateCellFromUnwiredLabs</cite> function to resolve cells.
+<p>To use Unwired Labs’ LocationAPI, set the <code class="docutils literal notranslate"><span class="pre">enableUnwiredLabsCellLocation</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">true</span></code> when deploying the solution:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group create <span class="se">\</span>
+    --resource-group <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+    --mode Complete <span class="se">\</span>
+    --name enable-unwiredlabs <span class="se">\</span>
+    --template-file azuredeploy.json <span class="se">\</span>
+    --parameters <span class="se">\</span>
+        <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+        <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
+        <span class="nv">b2cTenant</span><span class="o">=</span><span class="si">${</span><span class="nv">B2C_TENANT</span><span class="k">:-</span><span class="nv">nrfassettrackerusers</span><span class="si">}</span> <span class="se">\</span>
+        <span class="nv">keyVaultName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+        <span class="nv">enableUnwiredLabsCellLocation</span><span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>This command enables the <code class="docutils literal notranslate"><span class="pre">geolocateCellFromUnwiredLabs</span></code> function to resolve cells.
 Otherwise, this function returns a <code class="docutils literal notranslate"><span class="pre">402</span></code> status on the API route <code class="docutils literal notranslate"><span class="pre">cellgeolocation/unwired</span></code>.</p>
+<p>Store the API key into the key vault as follows:</p>
+<pre class="highlight literal-block">
+az keyvault secret set --vault-name ${APP_NAME:-nrfassettracker} --name unwiredlabsApiKey --value <em>your API key</em>
+</pre>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Unwired Lab’s LocationAPI is free for low volumes.
@@ -219,7 +226,7 @@ If you find it relevant, vote in the <a class="reference external" href="https:/
         <a href="IoTShadowAndTopics.html" class="btn btn-neutral float-right" title="Azure IoT Shadow and topics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Simulator.html" class="btn btn-neutral float-left" title="Connect using the simulator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="nRFCloudLocationServices.html" class="btn btn-neutral float-left" title="nRF Cloud Location Services" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
