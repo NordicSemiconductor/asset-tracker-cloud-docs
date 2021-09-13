@@ -19,7 +19,7 @@ If you already have an installation and you want to upgrade to the latest releas
             appName=${APP_NAME:-nrfassettracker} \
             appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
-            unwiredlabsApiKey=${UNWIRED_LABS_API_KEY}
+            keyVaultName=${APP_NAME:-nrfassettracker}
     node dist/pack/package-function-app.js functionapp.zip
     az functionapp deployment source config-zip -g ${RESOURCE_GROUP:-nrfassettracker} -n ${APP_NAME:-nrfassettracker}api --src functionapp.zip
 
@@ -36,7 +36,7 @@ To verify the validity of a template, use the following command:
                appName=${APP_NAME:-nrfassettracker} \
                appRegistrationClientId=$APP_REG_CLIENT_ID \
                b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
-               unwiredlabsApiKey=${UNWIRED_LABS_API_KEY}
+               keyVaultName=${APP_NAME:-nrfassettracker}
 
 If the command gives an error, you can find the detailed log message using the printed tracking ID and the following command:
 

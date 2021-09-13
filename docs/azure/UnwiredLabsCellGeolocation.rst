@@ -5,24 +5,31 @@ Unwired Labs Cell Geolocation
 
 You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for single cells for the application using `Unwired Labs' <https://unwiredlabs.com/>`_ geolocation API in your deployment.
 
-To use Unwired Labs' LocationAPI, provide the ``unwiredlabsApiKey`` parameter when deploying the solution:
+To use Unwired Labs' LocationAPI, set the ``enableUnwiredLabsCellLocation`` parameter to ``true`` when deploying the solution:
+
+.. code-block:: bash
+
+    az deployment group create \
+        --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
+        --mode Complete \
+        --name enable-unwiredlabs \
+        --template-file azuredeploy.json \
+        --parameters \
+            appName=${APP_NAME:-nrfassettracker} \
+            appRegistrationClientId=$APP_REG_CLIENT_ID \
+            b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
+            keyVaultName=${APP_NAME:-nrfassettracker} \
+            enableUnwiredLabsCellLocation=true
+
+This command enables the `geolocateCellFromUnwiredLabs` function to resolve cells.
+Otherwise, this function returns a ``402`` status on the API route ``cellgeolocation/unwired``.
+
+The API key needs to be stored in the key vault:
 
 .. parsed-literal::
    :class: highlight
 
-    az deployment group create \\
-        --resource-group ${RESOURCE_GROUP:-nrfassettracker} \\
-        --mode Complete \\
-        --name enable-unwiredlabs \\
-        --template-file azuredeploy.json \
-        --parameters \\
-            appName=${APP_NAME:-nrfassettracker} \\
-            appRegistrationClientId=$APP_REG_CLIENT_ID \\
-            b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \\
-            unwiredlabsApiKey=*your API key*
-
-This command enables the `geolocateCellFromUnwiredLabs` function to resolve cells.
-Otherwise, this function returns a ``402`` status on the API route ``cellgeolocation/unwired``.
+   az keyvault secret set --vault-name ${APP_NAME:-nrfassettracker} --name unwiredlabsApiKey --value *your API key*
 
 .. note::
 
