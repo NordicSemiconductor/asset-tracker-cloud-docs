@@ -1,45 +1,39 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Customize the Cat Tracker web application &mdash; nRF Asset Tracker 05a05534ee2099481494164ea20b6ef8d994b18c documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
-
-  
+  <title>Customize the Cat Tracker web application &mdash; nRF Asset Tracker caa71caa430d14e6ae1f37dba5ef74a26ef6a8e0 documentation</title>
   
 
   
   
-
+  
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Continuous deployment" href="../ContinuousDeployment.html" />
@@ -84,7 +78,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -92,7 +85,7 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../project/Index.html">Project overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../GettingStarted.html">Getting started</a></li>
@@ -124,7 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
@@ -136,7 +129,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -171,13 +163,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
           <li><a href="../Index.html">AWS cloud components</a> &raquo;</li>
         
@@ -188,7 +178,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             
               <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/aws/Customization/CustomizeWebApp.rst" class="fa fa-github"> Edit on GitHub</a>
             
@@ -210,30 +200,31 @@
 The heart rate readings must be visualized in a new chart on the <a class="reference internal" href="../../app/Index.html#index-cat-tracker-web-app"><span class="std std-ref">Cat Tracker web application</span></a>.</p>
 <p>To customize the web application, complete the following steps:</p>
 <ol class="arabic">
-<li><p>Navigate to the web application directory created while <a class="reference internal" href="../GettingStarted/Webapp.html#aws-getting-started-app"><span class="std std-ref">deploying the cat tracker web application to AWS</span></a>:</p>
+<li><p class="first">Navigate to the web application directory created while <a class="reference internal" href="../GettingStarted/Webapp.html#aws-getting-started-app"><span class="std std-ref">deploying the cat tracker web application to AWS</span></a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/nrf-asset-tracker/cat-tracker-web-app
 <span class="c1"># ~/nrf-asset-tracker/cat-tracker-web-app</span>
 </pre></div>
 </div>
 </li>
-<li><p>Run the development server:</p>
+<li><p class="first">Run the development server:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm start
 </pre></div>
 </div>
 </li>
-<li><p>Open the web application by typing <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> in the address bar and select the entry for the simulated cat.</p>
-<div class="figure align-default">
+<li><p class="first">Open the web application by typing <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> in the address bar and select the entry for the simulated cat.</p>
+<div class="figure">
 <img alt="The Cat Tracker web application" src="../../../_images/web-app.png" />
 </div>
 <p>At this point, you can start modifying the web application and add a new chart section that displays the latest heart rate readings.</p>
 </li>
-<li><p>Define the SQL query that fetches the data of interest from <a class="reference external" href="https://docs.aws.amazon.com/timestream/latest/developerguide/what-is-timestream.html">Timestream</a>.
+<li><p class="first">Define the SQL query that fetches the data of interest from <a class="reference external" href="https://docs.aws.amazon.com/timestream/latest/developerguide/what-is-timestream.html">Timestream</a>.
 As shown in the following image, you can use the Timestream Query Browser on the AWS Console for defining the query:</p>
-<div class="figure align-default">
+<div class="figure">
 <img alt="Timestream query browser" src="../../../_images/timestream-query-browser.png" />
 </div>
 <p>The following query selects the last 100 heart rate readings for the device:</p>
-<pre class="highlight literal-block">SELECT
+<pre class="highlight literal-block">
+SELECT
 -- <cite>date</cite> and <cite>value</cite> are column names used in the React component that renders the chart
 time as date,
 measure_value::double as value
@@ -241,15 +232,17 @@ FROM '<em>table</em>'
 WHERE deviceId='<em>catId</em>'
 AND measure_name = 'heartrate'
 ORDER BY time DESC
-LIMIT 100</pre>
+LIMIT 100
+</pre>
 <p>To learn more about the syntax, see <a class="reference external" href="https://docs.aws.amazon.com/timestream/latest/developerguide/reference.html">Timestream Query language</a>.</p>
 </li>
-<li><p>After defining the query, add a new chart to the Cat Tracker web application that displays the data in a line chart.</p></li>
+<li><p class="first">After defining the query, add a new chart to the Cat Tracker web application that displays the data in a line chart.</p>
+</li>
 </ol>
 <p>You can view the code for the necessary changes in the <a class="reference external" href="https://github.com/acme-cat-tracker/web-app/compare/add-heartrate-monitor-data">simulator-ui repository</a>.</p>
-<div class="figure align-default" id="id1">
+<div class="figure" id="id1">
 <img alt="Cat Tracker web application showing the heart rate readings" src="../../../_images/web-app-with-heart-rate-readings.png" />
-<p class="caption"><span class="caption-text">Cat Tracker web application showing the heart rate readings</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Cat Tracker web application showing the heart rate readings</span></p>
 </div>
 <p>At this point, you have successfully customized the Cat Tracker web application.</p>
 <p>If you want to save your changes to the Cat Tracker web application in your own repository, maintain a fork and add the source repository as <code class="docutils literal notranslate"><span class="pre">upstream</span></code>:</p>
@@ -268,29 +261,29 @@ git rebase upstream/saga
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../ContinuousDeployment.html" class="btn btn-neutral float-right" title="Continuous deployment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="CustomizeSimulator.html" class="btn btn-neutral float-left" title="Customize the device simulator UI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="../ContinuousDeployment.html" class="btn btn-neutral float-right" title="Continuous deployment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="CustomizeSimulator.html" class="btn btn-neutral float-left" title="Customize the device simulator UI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+        &copy; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -298,6 +291,7 @@ git rebase upstream/saga
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

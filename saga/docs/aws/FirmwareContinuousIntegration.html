@@ -1,45 +1,39 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Continuous integration of firmware &mdash; nRF Asset Tracker 05a05534ee2099481494164ea20b6ef8d994b18c documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
-
-  
+  <title>Continuous integration of firmware &mdash; nRF Asset Tracker caa71caa430d14e6ae1f37dba5ef74a26ef6a8e0 documentation</title>
   
 
   
   
-
+  
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Firmware for the Azure cloud components" href="../firmware/azure/Index.html" />
@@ -84,7 +78,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -92,7 +85,7 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
@@ -114,7 +107,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
@@ -126,7 +119,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -161,13 +153,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
         
           <li><a href="../firmware/Index.html">Firmware</a> &raquo;</li>
         
@@ -178,7 +168,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             
               <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/aws/FirmwareContinuousIntegration.rst" class="fa fa-github"> Edit on GitHub</a>
             
@@ -198,9 +188,9 @@
 <span id="aws-firmware-ci"></span><h1>Continuous integration of firmware<a class="headerlink" href="#continuous-integration-of-firmware" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
-<li><p><a class="reference internal" href="#preparation" id="id3">Preparation</a></p></li>
-<li><p><a class="reference internal" href="#firmware-ci-runner-setup" id="id4">Firmware CI runner setup</a></p></li>
+<li><a class="reference internal" href="#overview" id="id2">Overview</a></li>
+<li><a class="reference internal" href="#preparation" id="id3">Preparation</a></li>
+<li><a class="reference internal" href="#firmware-ci-runner-setup" id="id4">Firmware CI runner setup</a></li>
 </ul>
 </div>
 <p>The AWS implementation of the nRF Asset Tracker provides the resources for continuous testing of the firmware using real hardware.</p>
@@ -209,26 +199,25 @@
 <p>Every commit to the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws">firmware repository</a> will trigger a CI run.
 The CI run results in the following actions:</p>
 <ol class="arabic simple">
-<li><p>Creating a new device and credentials on AWS IoT.</p></li>
-<li><p>Building a firmware that has the device ID hardcoded for the MQTT client ID.</p></li>
-<li><p>Scheduling a run on a self-hosted GitHub Actions runner. See <a class="reference internal" href="#firmware-ci-runner-setup"><span class="std std-ref">Firmware CI runner setup</span></a>.</p></li>
-<li><p>Observing the firmware CI run until completion.</p></li>
-<li><p>Running assertions against the log result.</p></li>
+<li>Creating a new device and credentials on AWS IoT.</li>
+<li>Building a firmware that has the device ID hardcoded for the MQTT client ID.</li>
+<li>Scheduling a run on a self-hosted GitHub Actions runner. See <a class="reference internal" href="#firmware-ci-runner-setup"><span class="std std-ref">Firmware CI runner setup</span></a>.</li>
+<li>Observing the firmware CI run until completion.</li>
+<li>Running assertions against the log result.</li>
 </ol>
 <p>The Firmware CI runner is running on a Raspberry Pi connected to GitHub Actions, where it receives the jobs to execute.
 Following are the actions performed by the Firmware CI runner:</p>
 <ol class="arabic simple">
-<li><p>Programming the firmware and the optional credentials using the connected debugger to the connected nRF9160 DK or Thingy:91.</p></li>
-<li><p>Logging all output until one of the following conditions occur:</p>
-<ol class="loweralpha simple">
-<li><p>A timeout is reached</p></li>
-<li><p>A stop condition is reached. (Wait for a log output to match a string.)</p></li>
+<li>Programming the firmware and the optional credentials using the connected debugger to the connected nRF9160 DK or Thingy:91.</li>
+<li>Logging all output until one of the following conditions occur:<ol class="loweralpha">
+<li>A timeout is reached</li>
+<li>A stop condition is reached. (Wait for a log output to match a string.)</li>
 </ol>
 </li>
 </ol>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>These devices connect to the existing instance of the nRF Asset Tracker, so the firmware tests will not set up a new empty nRF Asset Tracker AWS environment for every test.
+<p class="first admonition-title">Note</p>
+<p class="last">These devices connect to the existing instance of the nRF Asset Tracker, so the firmware tests will not set up a new empty nRF Asset Tracker AWS environment for every test.
 It runs against the production environment.
 This is to ensure that the firmware release will work with the existing solution.
 This approach is designed for <a class="reference external" href="https://thinkinglabs.io/talks/feature-branching-considered-evil.html">trunk-based development</a>.</p>
@@ -243,30 +232,32 @@ npx cdk deploy <span class="s1">&#39;*&#39;</span>
 </pre></div>
 </div>
 <p>Print the AWS Key for the CI runner on GitHub Actions using the following command:</p>
-<pre class="highlight literal-block">node cli firmware-ci -s
+<pre class="highlight literal-block">
+node cli firmware-ci -s
 
 Region: &quot;<em>Region</em>&quot;
 Bucket name: &quot;<em>Bucket name</em>&quot;
 Access Key ID: &quot;<em>AWS Access Key ID</em>&quot;
-Secret Access Key: &quot;<em>AWS Secret Access Key</em>&quot;</pre>
+Secret Access Key: &quot;<em>AWS Secret Access Key</em>&quot;
+</pre>
 <p>Configure the following parameters as secrets on the firmware GitHub repository:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">AWS_ACCESS_KEY_ID</span></code> (as printed above)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AWS_SECRET_ACCESS_KEY</span></code> (as printed above)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AWS_REGION</span></code> (as printed above)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">STACK_NAME</span></code> (the stack name of your production environment, usually <code class="docutils literal notranslate"><span class="pre">nrf-asset-tracker</span></code>)</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">AWS_ACCESS_KEY_ID</span></code> (as printed above)</li>
+<li><code class="docutils literal notranslate"><span class="pre">AWS_SECRET_ACCESS_KEY</span></code> (as printed above)</li>
+<li><code class="docutils literal notranslate"><span class="pre">AWS_REGION</span></code> (as printed above)</li>
+<li><code class="docutils literal notranslate"><span class="pre">STACK_NAME</span></code> (the stack name of your production environment, usually <code class="docutils literal notranslate"><span class="pre">nrf-asset-tracker</span></code>)</li>
 </ul>
 </div>
 <div class="section" id="firmware-ci-runner-setup">
 <span id="id1"></span><h2><a class="toc-backref" href="#id4">Firmware CI runner setup</a><a class="headerlink" href="#firmware-ci-runner-setup" title="Permalink to this headline">¶</a></h2>
 <p>To set up Firmware CI runner, complete the following steps:</p>
 <ol class="arabic simple">
-<li><p>Prepare an environment that fulfills the <a class="reference internal" href="../project/SystemRequirements.html#system-requirements"><span class="std std-ref">necessary system requirements</span></a>.</p></li>
+<li>Prepare an environment that fulfills the <a class="reference internal" href="../project/SystemRequirements.html#system-requirements"><span class="std std-ref">necessary system requirements</span></a>.</li>
 </ol>
 <ol class="arabic simple">
-<li><p>Download <a class="reference external" href="https://www.segger.com/downloads/jlink/">JLink</a> for your platform, and ensure that <code class="file docutils literal notranslate"><span class="pre">JLinkExe</span></code> is in your path.</p></li>
-<li><p>Follow <a class="reference external" href="https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners">the instruction about self-hosted runners</a> to set up a runner for your firmware repository.
-Ensure to use <code class="docutils literal notranslate"><span class="pre">firmware-ci</span></code> when prompted for the labels.</p></li>
+<li>Download <a class="reference external" href="https://www.segger.com/downloads/jlink/">JLink</a> for your platform, and ensure that <code class="file docutils literal notranslate"><span class="pre">JLinkExe</span></code> is in your path.</li>
+<li>Follow <a class="reference external" href="https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners">the instruction about self-hosted runners</a> to set up a runner for your firmware repository.
+Ensure to use <code class="docutils literal notranslate"><span class="pre">firmware-ci</span></code> when prompted for the labels.</li>
 </ol>
 <p>The Firmware CI starts to process all the scheduled jobs one after another.</p>
 </div>
@@ -277,29 +268,29 @@ Ensure to use <code class="docutils literal notranslate"><span class="pre">firmw
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../firmware/azure/Index.html" class="btn btn-neutral float-right" title="Firmware for the Azure cloud components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../firmware/aws/BuildingUsingGitHub.html" class="btn btn-neutral float-left" title="Building the project using GitHub actions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="../firmware/azure/Index.html" class="btn btn-neutral float-right" title="Firmware for the Azure cloud components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../firmware/aws/BuildingUsingGitHub.html" class="btn btn-neutral float-left" title="Building the project using GitHub actions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+        &copy; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -307,6 +298,7 @@ Ensure to use <code class="docutils literal notranslate"><span class="pre">firmw
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

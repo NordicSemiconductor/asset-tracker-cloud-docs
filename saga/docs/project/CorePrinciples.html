@@ -1,45 +1,39 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Core principles &mdash; nRF Asset Tracker 05a05534ee2099481494164ea20b6ef8d994b18c documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
-
-  
+  <title>Core principles &mdash; nRF Asset Tracker caa71caa430d14e6ae1f37dba5ef74a26ef6a8e0 documentation</title>
   
 
   
   
-
+  
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="System overview and technical considerations" href="SystemOverview.html" />
@@ -84,7 +78,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -92,7 +85,7 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="Index.html">Project overview</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Core principles</a></li>
@@ -110,7 +103,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
@@ -122,7 +115,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -157,13 +149,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
         
           <li><a href="Index.html">Project overview</a> &raquo;</li>
         
@@ -172,7 +162,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             
               <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/project/CorePrinciples.rst" class="fa fa-github"> Edit on GitHub</a>
             
@@ -191,28 +181,29 @@
   <div class="section" id="core-principles">
 <span id="id1"></span><h1>Core principles<a class="headerlink" href="#core-principles" title="Permalink to this headline">¶</a></h1>
 <p>The nRF Asset Tracker is built on the following principles:</p>
-<dl class="simple">
-<dt>Teach by showing</dt><dd><p>All the examples are designed to solve a concrete use case (a Cat Tracker) instead of providing generic or abstract solutions.
-It is not a framework, but a real application.</p>
-</dd>
-<dt>Err on the side of security</dt><dd><p>It follows the most robust security recommendations of the respective cloud provider.</p>
-</dd>
-<dt>Single tenancy</dt><dd><p>It implements a scenario in which all the authenticated users can be trusted to access all the devices.
-This is a typical scenario for cellular IoT products, and it simplifies the onboarding of new devices.</p>
-</dd>
-<dt>Serverless</dt><dd><p>It uses a serverless architecture as much as possible to have near-zero costs for the operation during the development, and to provide horizontal scaling of resources to be used in a production system if needed.</p>
-</dd>
-<dt>Cloud native</dt><dd><p>It follows the best practices of the respective cloud provider to reduce development efforts due to abstraction and offer the best integration into the cloud provider’s ecosystem.</p>
-</dd>
-<dt>Being offline is not an exception</dt><dd><p>Highly-mobile cellular IoT products need to handle unreliable connections gracefully, by implementing the mechanisms to retry the failed sending of data.
-This also means that the sensor measurements need to be timestamped when they are created, and not when they arrive at the cloud.</p>
-</dd>
-<dt>Maximize power saving</dt><dd><p>The firmware examples highlight the power saving features of the nRF9160 since this is a critical aspect for developing small form-factor devices that need to run on the battery charge of a single battery cell for years.</p>
-<ul class="simple">
-<li><p>Power saving is used as much as possible in all the operating states of the device.</p></li>
-<li><p>All the necessary computation that can be done on the device must be done on the device itself.</p></li>
-<li><p>The least amount of data is sent to the cloud (optimize for message size).</p></li>
-<li><p>Data is encoded in the most efficient way for the device (optimize for computation cycles).</p></li>
+<dl class="docutils">
+<dt>Teach by showing</dt>
+<dd>All the examples are designed to solve a concrete use case (a Cat Tracker) instead of providing generic or abstract solutions.
+It is not a framework, but a real application.</dd>
+<dt>Err on the side of security</dt>
+<dd>It follows the most robust security recommendations of the respective cloud provider.</dd>
+<dt>Single tenancy</dt>
+<dd>It implements a scenario in which all the authenticated users can be trusted to access all the devices.
+This is a typical scenario for cellular IoT products, and it simplifies the onboarding of new devices.</dd>
+<dt>Serverless</dt>
+<dd>It uses a serverless architecture as much as possible to have near-zero costs for the operation during the development, and to provide horizontal scaling of resources to be used in a production system if needed.</dd>
+<dt>Cloud native</dt>
+<dd>It follows the best practices of the respective cloud provider to reduce development efforts due to abstraction and offer the best integration into the cloud provider’s ecosystem.</dd>
+<dt>Being offline is not an exception</dt>
+<dd>Highly-mobile cellular IoT products need to handle unreliable connections gracefully, by implementing the mechanisms to retry the failed sending of data.
+This also means that the sensor measurements need to be timestamped when they are created, and not when they arrive at the cloud.</dd>
+<dt>Maximize power saving</dt>
+<dd><p class="first">The firmware examples highlight the power saving features of the nRF9160 since this is a critical aspect for developing small form-factor devices that need to run on the battery charge of a single battery cell for years.</p>
+<ul class="last simple">
+<li>Power saving is used as much as possible in all the operating states of the device.</li>
+<li>All the necessary computation that can be done on the device must be done on the device itself.</li>
+<li>The least amount of data is sent to the cloud (optimize for message size).</li>
+<li>Data is encoded in the most efficient way for the device (optimize for computation cycles).</li>
 </ul>
 </dd>
 </dl>
@@ -223,29 +214,29 @@ This also means that the sensor measurements need to be timestamped when they ar
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="SystemOverview.html" class="btn btn-neutral float-right" title="System overview and technical considerations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="Index.html" class="btn btn-neutral float-left" title="Project overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="SystemOverview.html" class="btn btn-neutral float-right" title="System overview and technical considerations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Index.html" class="btn btn-neutral float-left" title="Project overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+        &copy; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -253,6 +244,7 @@ This also means that the sensor measurements need to be timestamped when they ar
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

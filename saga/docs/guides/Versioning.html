@@ -1,45 +1,39 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Versioning &mdash; nRF Asset Tracker 05a05534ee2099481494164ea20b6ef8d994b18c documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
-
-  
+  <title>Versioning &mdash; nRF Asset Tracker caa71caa430d14e6ae1f37dba5ef74a26ef6a8e0 documentation</title>
   
 
   
   
-
+  
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Managing environment variables using direnv" href="Direnv.html" />
@@ -84,7 +78,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -92,7 +85,7 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
@@ -103,7 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<p class="caption"><span class="caption-text">Resources</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="Index.html">Guides</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="FourKindsOfData.html">Four kinds of data</a></li>
@@ -125,7 +118,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -160,13 +152,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
         
           <li><a href="Index.html">Guides</a> &raquo;</li>
         
@@ -175,7 +165,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             
               <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/guides/Versioning.rst" class="fa fa-github"> Edit on GitHub</a>
             
@@ -195,28 +185,26 @@
 <span id="id1"></span><h1>Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#releasing-a-new-version-of-a-package" id="id2">Releasing a new version of a package</a></p>
-<ul>
-<li><p><a class="reference internal" href="#patch-release-fix" id="id3">Patch release (fix)</a></p></li>
-<li><p><a class="reference internal" href="#feature-release-feat" id="id4">Feature release (feat)</a></p></li>
-<li><p><a class="reference internal" href="#breaking-release-breaking-change" id="id5">Breaking Release (BREAKING CHANGE:)</a></p></li>
+<li><a class="reference internal" href="#releasing-a-new-version-of-a-package" id="id2">Releasing a new version of a package</a><ul>
+<li><a class="reference internal" href="#patch-release-fix" id="id3">Patch release (fix)</a></li>
+<li><a class="reference internal" href="#feature-release-feat" id="id4">Feature release (feat)</a></li>
+<li><a class="reference internal" href="#breaking-release-breaking-change" id="id5">Breaking Release (BREAKING CHANGE:)</a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#typical-changes" id="id6">Typical changes</a></p>
-<ul>
-<li><p><a class="reference internal" href="#updating-the-dependencies" id="id7">Updating the dependencies</a></p></li>
-<li><p><a class="reference internal" href="#refactoring" id="id8">Refactoring</a></p></li>
+<li><a class="reference internal" href="#typical-changes" id="id6">Typical changes</a><ul>
+<li><a class="reference internal" href="#updating-the-dependencies" id="id7">Updating the dependencies</a></li>
+<li><a class="reference internal" href="#refactoring" id="id8">Refactoring</a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#publishing-the-releases" id="id9">Publishing the releases</a></p></li>
+<li><a class="reference internal" href="#publishing-the-releases" id="id9">Publishing the releases</a></li>
 </ul>
 </div>
 <p>The <a class="reference external" href="https://github.com/semantic-release/semantic-release">semantic-release</a> tool is used to automatically determine the next version of the project and publish a release in the GitHub project as well as release it to the <code class="docutils literal notranslate"><span class="pre">&#64;NordicSemiconductor</span></code> npm organization.</p>
 <p>The next version is determined by scanning the commit messages.
 The commit messages must follow the <a class="reference external" href="https://github.com/semantic-release/semantic-release#commit-message-format">Angular commit message rules</a>, and in every library <a class="reference external" href="https://github.com/marionebl/commitlint">a hook</a> will check the commit messages against these rules.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <code class="file docutils literal notranslate"><span class="pre">package.json</span></code> file of a project must contain only <code class="docutils literal notranslate"><span class="pre">0.0.0-development</span></code> as the <code class="docutils literal notranslate"><span class="pre">version</span></code> property.
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="file docutils literal notranslate"><span class="pre">package.json</span></code> file of a project must contain only <code class="docutils literal notranslate"><span class="pre">0.0.0-development</span></code> as the <code class="docutils literal notranslate"><span class="pre">version</span></code> property.
 Semantic-release will ignore the value.
 Only the published package on npm will contain the correct version number.</p>
 </div>
@@ -227,32 +215,42 @@ Only the published package on npm will contain the correct version number.</p>
 Use commit messages that follow the <a class="reference external" href="https://github.com/semantic-release/semantic-release#commit-message-format">schema for a commit message</a>.</p>
 <p>Examples of commit messages that trigger a release:</p>
 <ul>
-<li><p>Patch release</p>
-<pre class="highlight literal-block"> fix: <em>commit message</em></pre>
+<li><p class="first">Patch release</p>
+<pre class="highlight literal-block">
+ fix: <em>commit message</em>
+</pre>
 </li>
-<li><p>Feature release</p>
-<pre class="highlight literal-block">feat: <em>commit message</em></pre>
+<li><p class="first">Feature release</p>
+<pre class="highlight literal-block">
+feat: <em>commit message</em>
+</pre>
 </li>
-<li><p>Breaking release</p>
-<pre class="highlight literal-block"><em>scope</em>: <em>commit message</em>
+<li><p class="first">Breaking release</p>
+<pre class="highlight literal-block">
+<em>scope</em>: <em>commit message</em>
 
 BREAKING CHANGE:
 
-<em>description of breaking change</em></pre>
+<em>description of breaking change</em>
+</pre>
 </li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A commit message with different format will not trigger a release.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">A commit message with different format will not trigger a release.</p>
 </div>
 <div class="section" id="patch-release-fix">
 <h3><a class="toc-backref" href="#id3">Patch release (fix)</a><a class="headerlink" href="#patch-release-fix" title="Permalink to this headline">¶</a></h3>
 <p>A fix is a change to the implementation, which removes a bug without changing the public API (method names and signatures, exports) of the library.
 The consumer of the library does not need to change their implementation when installing the fixed version.</p>
 <p>To release a fix (that updates the version from <code class="docutils literal notranslate"><span class="pre">2.3.4</span></code> to <code class="docutils literal notranslate"><span class="pre">2.3.5</span></code>), use the type <code class="docutils literal notranslate"><span class="pre">fix</span></code> in the commit message:</p>
-<pre class="highlight literal-block"> fix: <em>commit message</em></pre>
+<pre class="highlight literal-block">
+ fix: <em>commit message</em>
+</pre>
 <p>You can optionally add a scope, which is a lowercase string that is used to identify the affected component.</p>
-<pre class="highlight literal-block"> fix(<em>scope</em>): <em>commit message</em></pre>
+<pre class="highlight literal-block">
+ fix(<em>scope</em>): <em>commit message</em>
+</pre>
 <p>Scopes are useful when working with a large project.</p>
 </div>
 <div class="section" id="feature-release-feat">
@@ -260,7 +258,9 @@ The consumer of the library does not need to change their implementation when in
 <p>A feature is a change to the implementation of a library which adds additional functionality without changing the public API of the library.</p>
 <p>You may add new exports, methods and extra method arguments that are optional, but the consumer of the library does not need to change their implementation when installing the library with the new feature.</p>
 <p>To release a feature (that updates the version from <code class="docutils literal notranslate"><span class="pre">2.3.4</span></code> to <code class="docutils literal notranslate"><span class="pre">2.4.0</span></code>), use the type <code class="docutils literal notranslate"><span class="pre">feat</span></code> in the commit message:</p>
-<pre class="highlight literal-block"> feat: <em>commit message</em></pre>
+<pre class="highlight literal-block">
+ feat: <em>commit message</em>
+</pre>
 <p>You can optionally add a scope as well.</p>
 </div>
 <div class="section" id="breaking-release-breaking-change">
@@ -268,18 +268,20 @@ The consumer of the library does not need to change their implementation when in
 <p>Whenever the public API of the library changes in a way that requires the consumer to update their implementation, you must mark the change as breaking.
 This can happen in the following conditions:</p>
 <ul class="simple">
-<li><p>Method names and arguments are renamed.</p></li>
-<li><p>Previously optional arguments become mandatory.</p></li>
-<li><p>Arguments are removed.</p></li>
-<li><p>Classes are renamed.</p></li>
+<li>Method names and arguments are renamed.</li>
+<li>Previously optional arguments become mandatory.</li>
+<li>Arguments are removed.</li>
+<li>Classes are renamed.</li>
 </ul>
 <p>Even if the change is very small, as soon as you break the library’s contract (its public API), it is a breaking change according to <a class="reference external" href="https://semver.org/#spec-item-8">Semantic Versioning 2.0.0</a>.</p>
 <p>To do a breaking release (that updates the version from <code class="docutils literal notranslate"><span class="pre">2.3.4</span></code> to <code class="docutils literal notranslate"><span class="pre">3.0.0</span></code>), use the text <code class="code docutils literal notranslate"><span class="pre">BREAKING</span> <span class="pre">CHANGE:</span></code> (followed by a space of two new lines) in the commit message:</p>
-<pre class="highlight literal-block"> refactor: <em>commit message</em>
+<pre class="highlight literal-block">
+ refactor: <em>commit message</em>
 
  BREAKING CHANGE:
 
- <em>description of breaking change</em></pre>
+ <em>description of breaking change</em>
+</pre>
 <p>You can optionally add a scope as well.</p>
 <p>In the case of a breaking release, the message type (<code class="docutils literal notranslate"><span class="pre">refactor</span></code> in the example) can be any valid type.</p>
 </div>
@@ -314,29 +316,29 @@ If the list of commits contains at least one breaking change, then the major ver
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Direnv.html" class="btn btn-neutral float-right" title="Managing environment variables using direnv" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="ETSI-EN-303-645.html" class="btn btn-neutral float-left" title="Cyber security for consumer Internet of Things" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="Direnv.html" class="btn btn-neutral float-right" title="Managing environment variables using direnv" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ETSI-EN-303-645.html" class="btn btn-neutral float-left" title="Cyber security for consumer Internet of Things" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+        &copy; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -344,6 +346,7 @@ If the list of commits contains at least one breaking change, then the major ver
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

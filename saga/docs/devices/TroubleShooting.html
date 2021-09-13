@@ -1,45 +1,39 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Troubleshooting &mdash; nRF Asset Tracker 05a05534ee2099481494164ea20b6ef8d994b18c documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
-
-  
+  <title>Troubleshooting &mdash; nRF Asset Tracker caa71caa430d14e6ae1f37dba5ef74a26ef6a8e0 documentation</title>
   
 
   
   
-
+  
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Device-to-cloud communication" href="../cloud-protocol/Index.html" />
@@ -84,7 +78,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -92,7 +85,7 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
@@ -106,7 +99,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
@@ -118,7 +111,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -153,13 +145,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
         
           <li><a href="Index.html">Connect using a real device</a> &raquo;</li>
         
@@ -168,7 +158,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             
               <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/devices/TroubleShooting.rst" class="fa fa-github"> Edit on GitHub</a>
             
@@ -188,17 +178,15 @@
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#connection" id="id1">Connection</a></p>
-<ul>
-<li><p><a class="reference internal" href="#error-code-22" id="id2">Error code -22</a></p></li>
-<li><p><a class="reference internal" href="#getaddrinfo-error-11" id="id3">getaddrinfo, error -11</a></p></li>
-<li><p><a class="reference internal" href="#cellular-connection" id="id4">Cellular connection</a></p></li>
+<li><a class="reference internal" href="#connection" id="id1">Connection</a><ul>
+<li><a class="reference internal" href="#error-code-22" id="id2">Error code -22</a></li>
+<li><a class="reference internal" href="#getaddrinfo-error-11" id="id3">getaddrinfo, error -11</a></li>
+<li><a class="reference internal" href="#cellular-connection" id="id4">Cellular connection</a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#gps" id="id5">GPS</a></p>
-<ul>
-<li><p><a class="reference internal" href="#error-gps-evt-operation-blocked" id="id6">Error: GPS_EVT_OPERATION_BLOCKED</a></p></li>
-<li><p><a class="reference internal" href="#gps-timeout-configuration" id="id7">GPS timeout configuration</a></p></li>
+<li><a class="reference internal" href="#gps" id="id5">GPS</a><ul>
+<li><a class="reference internal" href="#error-gps-evt-operation-blocked" id="id6">Error: GPS_EVT_OPERATION_BLOCKED</a></li>
+<li><a class="reference internal" href="#gps-timeout-configuration" id="id7">GPS timeout configuration</a></li>
 </ul>
 </li>
 </ul>
@@ -235,8 +223,8 @@ For more details, see the <a class="reference external" href="https://devzone.no
 <p>One form of A-GPS is using SUPL and it can be optionally enabled in the firmware using the <a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/libraries/others/supl_os_client.html">SUPL client</a>.
 The nRF Asset Tracker firmware projects <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws/pull/9">for AWS</a> and <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure#supl-client">for Azure</a> optionally support building the firmware images with SUPL enabled.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A-GPS data is downloaded after every restart of the device and the data is around 30 KB in size.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">A-GPS data is downloaded after every restart of the device and the data is around 30 KB in size.</p>
 </div>
 </div>
 <div class="section" id="gps-timeout-configuration">
@@ -252,29 +240,29 @@ Therefore, select a timeout of at least 1000 seconds in the web application.</p>
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../cloud-protocol/Index.html" class="btn btn-neutral float-right" title="Device-to-cloud communication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="Index.html" class="btn btn-neutral float-left" title="Connect using a real device" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="../cloud-protocol/Index.html" class="btn btn-neutral float-right" title="Device-to-cloud communication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Index.html" class="btn btn-neutral float-left" title="Connect using a real device" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+        &copy; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -282,6 +270,7 @@ Therefore, select a timeout of at least 1000 seconds in the web application.</p>
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,45 +1,39 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Run the device simulator UI &mdash; nRF Asset Tracker 05a05534ee2099481494164ea20b6ef8d994b18c documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
-
-  
+  <title>Run the device simulator UI &mdash; nRF Asset Tracker caa71caa430d14e6ae1f37dba5ef74a26ef6a8e0 documentation</title>
   
 
   
   
-
+  
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Customize the device simulator UI" href="CustomizeSimulator.html" />
@@ -84,7 +78,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -92,7 +85,7 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../project/Index.html">Project overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../GettingStarted.html">Getting started</a></li>
@@ -124,7 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
@@ -136,7 +129,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -171,13 +163,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
           <li><a href="../Index.html">AWS cloud components</a> &raquo;</li>
         
@@ -188,7 +178,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             
               <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/aws/Customization/RunSimulator.rst" class="fa fa-github"> Edit on GitHub</a>
             
@@ -208,38 +198,41 @@
 <span id="aws-customization-run-device-simulator-ui"></span><h1>Run the device simulator UI<a class="headerlink" href="#run-the-device-simulator-ui" title="Permalink to this headline">¶</a></h1>
 <p>To run the device simulator User Interface (UI), complete the following steps:</p>
 <ol class="arabic">
-<li><p>Navigate to the <a class="reference internal" href="../GettingStarted/WorkingDirectory.html#aws-working-directory"><span class="std std-ref">working directory</span></a>.</p></li>
-<li><p>Clone the device simulator UI and install the dependencies:</p>
-<pre class="literal-block">git clone --branch saga --single-branch \
+<li><p class="first">Navigate to the <a class="reference internal" href="../GettingStarted/WorkingDirectory.html#aws-working-directory"><span class="std std-ref">working directory</span></a>.</p>
+</li>
+<li><p class="first">Clone the device simulator UI and install the dependencies:</p>
+<pre class="literal-block">
+git clone --branch saga --single-branch \
   <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js">https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js</a> simulator-ui
 cd simulator-ui
-npm ci</pre>
+npm ci
+</pre>
 </li>
-<li><p>Start the development server of the device simulator UI:</p>
+<li><p class="first">Start the development server of the device simulator UI:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm start
 </pre></div>
 </div>
-<div class="figure align-default" id="id1">
+<div class="figure" id="id1">
 <img alt="Device simulator UI development server" src="../../../_images/device-simulator-ui-development-server.png" />
-<p class="caption"><span class="caption-text">Device simulator UI development server</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Device simulator UI development server</span></p>
 </div>
 <p>The command launches a browser with <a class="reference external" href="http://localhost:8080">http://localhost:8080</a> in the address bar as shown in the following image:</p>
-<div class="figure align-default" id="id2">
+<div class="figure" id="id2">
 <img alt="Device simulator UI" src="../../../_images/device-simulator-ui.png" />
-<p class="caption"><span class="caption-text">Device simulator UI</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Device simulator UI</span></p>
 </div>
 <p>The device simulator UI loads in the browser.</p>
 </li>
-<li><p>Create a new device for use with the simulator by generating a new device certificate:</p>
+<li><p class="first">Create a new device for use with the simulator by generating a new device certificate:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/nrf-asset-tracker/aws
 <span class="c1"># Create a new certificate</span>
 node cli create-simulator-cert
 </pre></div>
 </div>
 </li>
-<li><p>After executing the above command, copy the endpoint printed from <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">exec</span> <span class="pre">--</span> <span class="pre">&#64;nordicsemiconductor/asset-tracker-cloud-device-simulator-aws</span> <span class="pre">&quot;&lt;/path/to/certificate.json&gt;&quot;</span></code> (for example, <code class="docutils literal notranslate"><span class="pre">http://localhost:25336</span></code>) and use it in the device simulator UI.</p>
+<li><p class="first">After executing the above command, copy the endpoint printed from <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">exec</span> <span class="pre">--</span> <span class="pre">&#64;nordicsemiconductor/asset-tracker-cloud-device-simulator-aws</span> <span class="pre">&quot;&lt;/path/to/certificate.json&gt;&quot;</span></code> (for example, <code class="docutils literal notranslate"><span class="pre">http://localhost:25336</span></code>) and use it in the device simulator UI.</p>
 <p>As shown in the following image, the UI connects to the simulator, which is run through the CLI:</p>
-<div class="figure align-default">
+<div class="figure">
 <img alt="Device simulator UI connected" src="../../../_images/device-simulator-ui-connected.png" />
 </div>
 </li>
@@ -251,29 +244,29 @@ node cli create-simulator-cert
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="CustomizeSimulator.html" class="btn btn-neutral float-right" title="Customize the device simulator UI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="Index.html" class="btn btn-neutral float-left" title="Customization of the nRF Asset Tracker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="CustomizeSimulator.html" class="btn btn-neutral float-right" title="Customize the device simulator UI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Index.html" class="btn btn-neutral float-left" title="Customization of the nRF Asset Tracker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+        &copy; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -281,6 +274,7 @@ node cli create-simulator-cert
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

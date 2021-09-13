@@ -1,45 +1,39 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Configure the firmware &mdash; nRF Asset Tracker 05a05534ee2099481494164ea20b6ef8d994b18c documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
-
-  
+  <title>Configure the firmware &mdash; nRF Asset Tracker caa71caa430d14e6ae1f37dba5ef74a26ef6a8e0 documentation</title>
   
 
   
   
-
+  
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Create device credentials" href="DeviceCredentials.html" />
@@ -84,7 +78,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -92,7 +85,7 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../project/Index.html">Project overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../GettingStarted.html">Getting started</a></li>
@@ -126,7 +119,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/Index.html">Guides</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
@@ -138,7 +131,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -173,13 +165,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
           <li><a href="../Index.html">Azure cloud components</a> &raquo;</li>
         
@@ -190,7 +180,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             
               <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/azure/GettingStarted/FirmwareConfiguration.rst" class="fa fa-github"> Edit on GitHub</a>
             
@@ -210,16 +200,19 @@
 <span id="azure-firmware-configuration"></span><h1>Configure the firmware<a class="headerlink" href="#configure-the-firmware" title="Permalink to this headline">¶</a></h1>
 <p>To configure the <a class="reference internal" href="../../firmware/azure/Index.html#firmware-azure-index"><span class="std std-ref">firmware</span></a>, complete the following mandatory steps:</p>
 <ol class="arabic simple">
-<li><p>Run the following command to print the Azure IoT DPS ID scope, which your devices use during device provisioning:</p></li>
+<li>Run the following command to print the Azure IoT DPS ID scope, which your devices use during device provisioning:</li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli info -o iotHubDpsIdScope
 </pre></div>
 </div>
 <ol class="arabic">
-<li><p>Use this ID scope as the value for the <code class="docutils literal notranslate"><span class="pre">CONFIG_AZURE_IOT_HUB_DPS_ID_SCOPE</span></code> configuration variable.</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">11</span></code> as the value for <code class="docutils literal notranslate"><span class="pre">CONFIG_AZURE_IOT_HUB_SEC_TAG</span></code>.</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">11</span></code> as the value for <code class="docutils literal notranslate"><span class="pre">CONFIG_AZURE_FOTA_SEC_TAG</span></code>.</p></li>
-<li><p>Comment in the remaining Azure settings in the <code class="file docutils literal notranslate"><span class="pre">prj.conf</span></code> file:</p>
+<li><p class="first">Use this ID scope as the value for the <code class="docutils literal notranslate"><span class="pre">CONFIG_AZURE_IOT_HUB_DPS_ID_SCOPE</span></code> configuration variable.</p>
+</li>
+<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">11</span></code> as the value for <code class="docutils literal notranslate"><span class="pre">CONFIG_AZURE_IOT_HUB_SEC_TAG</span></code>.</p>
+</li>
+<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">11</span></code> as the value for <code class="docutils literal notranslate"><span class="pre">CONFIG_AZURE_FOTA_SEC_TAG</span></code>.</p>
+</li>
+<li><p class="first">Comment in the remaining Azure settings in the <code class="file docutils literal notranslate"><span class="pre">prj.conf</span></code> file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CONFIG_AZURE_IOT_HUB</span><span class="o">=</span>y
 <span class="nv">CONFIG_AZURE_IOT_HUB_DPS</span><span class="o">=</span>y
 <span class="nv">CONFIG_AZURE_IOT_HUB_AUTO_DEVICE_TWIN_REQUEST</span><span class="o">=</span>y
@@ -233,14 +226,14 @@
 </pre></div>
 </div>
 </li>
-<li><p>Comment in the Azure logging settings in the <code class="file docutils literal notranslate"><span class="pre">overlay-debug.conf</span></code> file:</p>
+<li><p class="first">Comment in the Azure logging settings in the <code class="file docutils literal notranslate"><span class="pre">overlay-debug.conf</span></code> file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CONFIG_AZURE_FOTA_LOG_LEVEL_DBG</span><span class="o">=</span>y
 <span class="nv">CONFIG_AZURE_IOT_LOG_LEVEL_DBG</span><span class="o">=</span>y
 <span class="nv">CONFIG_AZURE_JOBS_LOG_LEVEL_DBG</span><span class="o">=</span>y
 </pre></div>
 </div>
 </li>
-<li><p>Comment out the nRF Cloud settings in the <code class="file docutils literal notranslate"><span class="pre">prj.conf</span></code> file:</p>
+<li><p class="first">Comment out the nRF Cloud settings in the <code class="file docutils literal notranslate"><span class="pre">prj.conf</span></code> file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># CONFIG_AGPS=y</span>
 <span class="c1"># CONFIG_AGPS_SRC_NRF_CLOUD=y</span>
 <span class="c1"># CONFIG_NRF_CLOUD=y</span>
@@ -252,7 +245,7 @@
 </pre></div>
 </div>
 </li>
-<li><p>Comment out the nRF Cloud logging settings in the <code class="file docutils literal notranslate"><span class="pre">overlay-debug.conf</span></code> file:</p>
+<li><p class="first">Comment out the nRF Cloud logging settings in the <code class="file docutils literal notranslate"><span class="pre">overlay-debug.conf</span></code> file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># CONFIG_NRF_CLOUD_FOTA_LOG_LEVEL_DBG=y</span>
 <span class="c1"># CONFIG_NRF_CLOUD_GPS_LOG_LEVEL_DBG=y</span>
 <span class="c1"># CONFIG_NRF_CLOUD_LOG_LEVEL_DBG=y</span>
@@ -262,8 +255,8 @@
 </ol>
 <p>After completing the configuration, compile the firmware either <a class="reference internal" href="../../firmware/azure/BuildingUsingLocalSystem.html#firmware-azure-building"><span class="std std-ref">using your own development environment</span></a> or <a class="reference internal" href="../../firmware/azure/BuildingUsingDocker.html#firmware-azure-building-docker"><span class="std std-ref">using Docker</span></a> and then <a class="reference internal" href="DeviceCredentials.html#azure-device-credentials"><span class="std std-ref">create the device credentials</span></a>.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See the documentation on <a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html">nRF9160: Asset Tracker v2 application</a> for all available configuration options.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">See the documentation on <a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html">nRF9160: Asset Tracker v2 application</a> for all available configuration options.</p>
 </div>
 </div>
 
@@ -272,29 +265,29 @@
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="DeviceCredentials.html" class="btn btn-neutral float-right" title="Create device credentials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="Deploy.html" class="btn btn-neutral float-left" title="Install the nRF Asset Tracker into your Azure account" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="DeviceCredentials.html" class="btn btn-neutral float-right" title="Create device credentials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Deploy.html" class="btn btn-neutral float-left" title="Install the nRF Asset Tracker into your Azure account" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+        &copy; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -302,6 +295,7 @@
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {
