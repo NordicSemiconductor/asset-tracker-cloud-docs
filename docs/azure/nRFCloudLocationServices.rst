@@ -29,7 +29,7 @@ To use nRF Cloud's Cell Location Service API, set the ``enableNrfCloudCellLocati
 This command enables the `geolocateCellFromNrfCloud` function to resolve cells.
 Otherwise, this function returns a ``402`` status on the API route ``cellgeolocation/nrfcloud``.
 
-The service key needs to be stored in the key vault:
+Store the service key into the key vault as follows:
 
 .. parsed-literal::
    :class: highlight
