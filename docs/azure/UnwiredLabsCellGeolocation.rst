@@ -21,7 +21,7 @@ To use Unwired Labs' LocationAPI, set the ``enableUnwiredLabsCellLocation`` para
             keyVaultName=${APP_NAME:-nrfassettracker} \
             enableUnwiredLabsCellLocation=true
 
-This command enables the `geolocateCellFromUnwiredLabs` function to resolve cells.
+This command enables the ``geolocateCellFromUnwiredLabs`` function to resolve cells.
 Otherwise, this function returns a ``402`` status on the API route ``cellgeolocation/unwired``.
 
 Store the API key into the key vault as follows:
