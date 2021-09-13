@@ -34,6 +34,11 @@ Store the service key into the key vault as follows:
 .. parsed-literal::
    :class: highlight
 
+   # Grant the current user set permission to the key vault secrets
+   USER_OBJECT_ID=`az ad signed-in-user show --query objectId -o tsv`
+   az keyvault set-policy --name ${keyVaultName} --object-id ${USER_OBJECT_ID} --secret-permissions set
+    
+   # Store the API key
    az keyvault secret set --vault-name ${APP_NAME:-nrfassettracker} \\
      --name nrfCloudCellLocationServiceKey \\
      --file *location of your Cell Location Service Key file*

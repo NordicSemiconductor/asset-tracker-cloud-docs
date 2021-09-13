@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker v15.2.0 documentation</title>
+  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker v15.2.1 documentation</title>
   
 
   
@@ -208,6 +208,11 @@
 Otherwise, this function returns a <code class="docutils literal notranslate"><span class="pre">402</span></code> status on the API route <code class="docutils literal notranslate"><span class="pre">cellgeolocation/nrfcloud</span></code>.</p>
 <p>Store the service key into the key vault as follows:</p>
 <pre class="highlight literal-block">
+# Grant the current user set permission to the key vault secrets
+USER_OBJECT_ID=`az ad signed-in-user show --query objectId -o tsv`
+az keyvault set-policy --name ${keyVaultName} --object-id ${USER_OBJECT_ID} --secret-permissions set
+
+# Store the API key
 az keyvault secret set --vault-name ${APP_NAME:-nrfassettracker} \
   --name nrfCloudCellLocationServiceKey \
   --file <em>location of your Cell Location Service Key file</em>
