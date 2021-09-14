@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Running the application locally with Docker &mdash; nRF Asset Tracker v15.2.1 documentation</title>
+  <title>Running the application locally with Docker &mdash; nRF Asset Tracker v15.2.2 documentation</title>
   
 
   
@@ -201,16 +201,9 @@
 </li>
 <li><p class="first">Run the function app by using the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm --net<span class="o">=</span>host -P <span class="se">\</span>
-    -e IOT_HUB_CONNECTION_STRING <span class="se">\</span>
-    -e AVATAR_STORAGE_ACCOUNT_NAME <span class="se">\</span>
-    -e AVATAR_STORAGE_ACCESS_KEY <span class="se">\</span>
-    -e FOTA_STORAGE_ACCOUNT_NAME <span class="se">\</span>
-    -e FOTA_STORAGE_ACCESS_KEY <span class="se">\</span>
-    -e HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING <span class="se">\</span>
-    -e UNWIREDLABS_API_KEY <span class="se">\</span>
-    -e UNWIREDLABS_API_ENDPOINT <span class="se">\</span>
     -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/workdir ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js <span class="se">\</span>
-    func start --typescript
+    func start <span class="se">\</span>
+    --functions <span class="sb">`</span>find ./ -type f -name <span class="k">function</span>.json <span class="p">|</span> grep -v mock-http-api <span class="p">|</span> xargs dirname <span class="p">|</span> tr <span class="s1">&#39;./\n&#39;</span> <span class="s1">&#39; &#39;</span><span class="sb">`</span>
 </pre></div>
 </div>
 </li>

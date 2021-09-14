@@ -24,15 +24,8 @@ To run the application locally with Docker, complete the following steps:
    .. code-block:: bash
 
        docker run --rm --net=host -P \
-           -e IOT_HUB_CONNECTION_STRING \
-           -e AVATAR_STORAGE_ACCOUNT_NAME \
-           -e AVATAR_STORAGE_ACCESS_KEY \
-           -e FOTA_STORAGE_ACCOUNT_NAME \
-           -e FOTA_STORAGE_ACCESS_KEY \
-           -e HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING \
-           -e UNWIREDLABS_API_KEY \
-           -e UNWIREDLABS_API_ENDPOINT \
            -v ${PWD}:/workdir ghcr.io/nordicsemiconductor/asset-tracker-cloud-azure-js \
-           func start --typescript
+           func start \
+           --functions `find ./ -type f -name function.json | grep -v mock-http-api | xargs dirname | tr './\n' ' '`
 
 You can now use ``http://localhost:7071/`` as your ``REACT_APP_AZURE_API_ENDPOINT`` for the app.
