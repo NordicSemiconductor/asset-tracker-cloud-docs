@@ -8,7 +8,7 @@ Cell Location Service
 
 You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>` for single cells and neighboring cell reports for the application using `nRF Cloud's Cell Location Service API <https://api.nrfcloud.com/v1#tag/Cell-Position>`_ in your deployment.
 
-To use the API, set the ``enableNrfCloudCellLocation`` parameter to ``true`` and set the ``nrfCloudTeamId`` parameter to your team ID when deploying the solution.
+To use the API, set the ``enableNrfCloudCellLocationService`` parameter to ``true`` and set the ``nrfCloudTeamId`` parameter to your team ID when deploying the solution.
 
 .. parsed-literal::
    :class: highlight
@@ -23,7 +23,7 @@ To use the API, set the ``enableNrfCloudCellLocation`` parameter to ``true`` and
             appRegistrationClientId=$APP_REG_CLIENT_ID \\
             b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \\
             keyVaultName=${APP_NAME:-nrfassettracker} \\
-            enableNrfCloudCellLocation=true \\
+            enableNrfCloudCellLocationService=true \\
             nrfCloudTeamId=*your team ID*
 
 This command enables the ``geolocateCellFromNrfCloud`` function to resolve cells.
