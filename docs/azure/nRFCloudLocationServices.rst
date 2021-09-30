@@ -46,7 +46,7 @@ Store the service key into the key vault as follows:
 Assisted GPS Location Service
 *****************************
 
-You can enable your devices to request assisted GPS data using `nRF Cloud's Assisted GPS Location Service API <https://api.nrfcloud.com/v1#tag/Assisted-GPS>`_ in your deployment.
+You can enable your devices to request assisted GPS (A-GPS) data using `nRF Cloud's Assisted GPS Location Service API <https://api.nrfcloud.com/v1#tag/Assisted-GPS>`_ in your deployment.
 
 To use the API, set the ``enableNrfCloudAGPSLocationService`` parameter to ``true`` and set the ``nrfCloudTeamId`` parameter to your team ID when deploying the solution.
 
