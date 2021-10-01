@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker v15.2.3 documentation</title>
+  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker v15.3.0 documentation</title>
   
 
   
@@ -189,7 +189,7 @@
 <div class="section" id="cell-location-service">
 <h2>Cell Location Service<a class="headerlink" href="#cell-location-service" title="Permalink to this headline">¶</a></h2>
 <p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for single cells and neighboring cell reports for the application using <a class="reference external" href="https://api.nrfcloud.com/v1#tag/Cell-Position">nRF Cloud’s Cell Location Service API</a> in your deployment.</p>
-<p>To use the API, set the <code class="docutils literal notranslate"><span class="pre">enableNrfCloudCellLocation</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">true</span></code> and set the <code class="docutils literal notranslate"><span class="pre">nrfCloudTeamId</span></code> parameter to your team ID when deploying the solution.</p>
+<p>To use the API, set the <code class="docutils literal notranslate"><span class="pre">enableNrfCloudCellLocationService</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">true</span></code> and set the <code class="docutils literal notranslate"><span class="pre">nrfCloudTeamId</span></code> parameter to your team ID when deploying the solution.</p>
 <pre class="highlight literal-block">
  az deployment group create \
      --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
@@ -201,7 +201,7 @@
          appRegistrationClientId=$APP_REG_CLIENT_ID \
          b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
          keyVaultName=${APP_NAME:-nrfassettracker} \
-         enableNrfCloudCellLocation=true \
+         enableNrfCloudCellLocationService=true \
          nrfCloudTeamId=*your team ID*
 </pre>
 <p>This command enables the <code class="docutils literal notranslate"><span class="pre">geolocateCellFromNrfCloud</span></code> function to resolve cells.
@@ -216,6 +216,37 @@ az keyvault set-policy --name ${keyVaultName} --object-id ${USER_OBJECT_ID} --se
 az keyvault secret set --vault-name ${APP_NAME:-nrfassettracker} \
   --name nrfCloudCellLocationServiceKey \
   --file <em>location of your Cell Location Service Key file</em>
+</pre>
+</div>
+<div class="section" id="assisted-gps-location-service">
+<h2>Assisted GPS Location Service<a class="headerlink" href="#assisted-gps-location-service" title="Permalink to this headline">¶</a></h2>
+<p>You can enable your devices to request assisted GPS (A-GPS) data using <a class="reference external" href="https://api.nrfcloud.com/v1#tag/Assisted-GPS">nRF Cloud’s Assisted GPS Location Service API</a> in your deployment.</p>
+<p>To use the API, set the <code class="docutils literal notranslate"><span class="pre">enableNrfCloudAGPSLocationService</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">true</span></code> and set the <code class="docutils literal notranslate"><span class="pre">nrfCloudTeamId</span></code> parameter to your team ID when deploying the solution.</p>
+<pre class="highlight literal-block">
+ az deployment group create \
+     --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
+     --mode Complete \
+     --name enable-unwiredlabs \
+     --template-file azuredeploy.json \
+     --parameters \
+         appName=${APP_NAME:-nrfassettracker} \
+         appRegistrationClientId=$APP_REG_CLIENT_ID \
+         b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
+         keyVaultName=${APP_NAME:-nrfassettracker} \
+         enableNrfCloudAGPSLocationService=true \
+         nrfCloudTeamId=*your team ID*
+</pre>
+<p>This command enables the <code class="docutils literal notranslate"><span class="pre">agpsQueuedDeviceRequestsHandler</span></code> function to resolve A-GPS requests from devices using the nRF Cloud Assisted GPS Location Service API.</p>
+<p>Store the service key into the key vault as follows:</p>
+<pre class="highlight literal-block">
+# Grant the current user set permission to the key vault secrets
+USER_OBJECT_ID=`az ad signed-in-user show --query objectId -o tsv`
+az keyvault set-policy --name ${keyVaultName} --object-id ${USER_OBJECT_ID} --secret-permissions set
+
+# Store the API key
+az keyvault secret set --vault-name ${APP_NAME:-nrfassettracker} \
+  --name nrfCloudAGPSLocationServiceKey \
+  --file <em>location of your Assisted GPS Location Service Key file</em>
 </pre>
 </div>
 </div>
