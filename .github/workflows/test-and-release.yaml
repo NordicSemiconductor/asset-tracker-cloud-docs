@@ -179,5 +179,5 @@ jobs:
           touch .nojekyll
           git add .nojekyll
           git commit -m "docs(${{ env.VERSION }}): update documentation for release ${{ env.RELEASE }}"
-          git pull --ff-only
+          git pull --rebase
           git push
