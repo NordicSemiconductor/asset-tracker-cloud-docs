@@ -7,7 +7,7 @@ The firmware of the :ref:`nRF Asset Tracker <project>` is the `nRF9160: Asset Tr
 
 It is compatible with the :ref:`nRF Asset Tracker for AWS <index_aws>` and the :ref:`nRF Asset Tracker for Azure <index_azure>`.
 
-The firmware GitHub repositories `for AWS <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws>`_ and `for Azure <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure>`_ provide an example for using the application as an out-of-tree development copy, which optionally enables the SUPL client.
+The firmware GitHub repositories `for AWS <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws>`_ and `for Azure <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure>`_ provide an example for using the application as an out-of-tree development copy.
 
 .. toctree::
    :titlesonly:
