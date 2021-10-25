@@ -43,14 +43,7 @@ For more details, see the `DevZone post related to the GPS and LTE issue <https:
 
 Try switching to a SIM card that grants PSM.
 
-Alternatively, use assisted GPS (A-GPS) to speed up the time to fix.
-
-One form of A-GPS is using SUPL and it can be optionally enabled in the firmware using the `SUPL client  <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/libraries/others/supl_os_client.html>`_.
-The nRF Asset Tracker firmware projects `for AWS <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws/pull/9>`_ and `for Azure <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure#supl-client>`_ optionally support building the firmware images with SUPL enabled.
-
-.. note::
-
-    A-GPS data is downloaded after every restart of the device and the data is around 30 KB in size.
+Alternatively, use the nRF Cloud Assisted GPS Location Service to speed up the time to fix.
 
 GPS timeout configuration
 =========================
