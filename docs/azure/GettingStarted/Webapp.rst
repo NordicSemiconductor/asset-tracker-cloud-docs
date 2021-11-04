@@ -64,20 +64,19 @@ To build and deploy the web application to the Storage Account created while set
 .. code-block:: bash
 
    cd ../azure
-   export PUBLIC_URL=`az storage account show -g ${RESOURCE_GROUP:-nrfassettracker} -n ${APP_NAME:-nrfassettracker}app --query 'primaryEndpoints.web' --output tsv | tr -d '\n'`
-   export APP_STORAGE_CONNECTION_STRING=`az storage account show-connection-string --name ${APP_NAME:-nrfassettracker}app --query 'connectionString'`
-   export APP_STORAGE_ACCOUNT_NAME=${APP_NAME:-nrfassettracker}app
+   export PUBLIC_URL=`az storage account show -g ${RESOURCE_GROUP:-nrfassettracker} -n ${STORAGE_ACCOUNT_NAME:-nrfassettracker} --query 'primaryEndpoints.web' --output tsv | tr -d '\n'`
+   export APP_STORAGE_CONNECTION_STRING=`az storage account show-connection-string --name ${STORAGE_ACCOUNT_NAME:-nrfassettracker} --query 'connectionString'`
    cd ../cat-tracker-web-app
    npm run build
    az storage blob service-properties update \
       --connection-string ${APP_STORAGE_CONNECTION_STRING} \
-      --account-name ${APP_STORAGE_ACCOUNT_NAME} \
+      --account-name ${STORAGE_ACCOUNT_NAME} \
       --static-website \
       --404-document index.html \
       --index-document index.html
    az storage blob upload-batch \
       --connection-string ${APP_STORAGE_CONNECTION_STRING} \
-      --account-name ${APP_STORAGE_ACCOUNT_NAME} \
+      --account-name ${STORAGE_ACCOUNT_NAME} \
       -s ./build -d '$web'
    echo "Done. Now open $PUBLIC_URL to view the web app."
 

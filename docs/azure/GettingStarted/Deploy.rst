@@ -36,6 +36,15 @@ To install the nRF Asset Tracker into your Azure account, complete the following
       # add to .envrc
       export APP_NAME="nrfassettracker"
 
+#. Choose a unique name for the storage account and export it as ``STORAGE_ACCOUNT_NAME``.
+   Storage account names must be between 3 and 24 characters in length and may contain numbers and lowercase letters only.
+   In this example, ``nrfassettracker`` is used as the storage account name.
+
+   .. code-block:: bash
+
+      # add to .envrc
+      export STORAGE_ACCOUNT_NAME="nrfassettracker"
+
 #. Configure your preferred location (you can list the locations using ``az account list-locations``) and export it on the environment variable ``LOCATION``.
    In this example, ``northeurope`` is used as the location name.
 
@@ -127,12 +136,13 @@ To install the nRF Asset Tracker into your Azure account, complete the following
          --template-file azuredeploy.json \
          --parameters \
             appName=${APP_NAME:-nrfassettracker} \
+            storageAccountName=${STORAGE_ACCOUNT_NAME:-nrfassettracker} \
             appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=$B2C_TENANT \
             keyVaultName=${APP_NAME:-nrfassettracker}
       # Currently it is not possible to enable website hosting through the ARM template
       az storage blob service-properties update \
-         --account-name ${APP_NAME:-nrfassettracker}app \
+         --account-name ${STORAGE_ACCOUNT_NAME:-nrfassettracker} \
          --static-website --index-document index.html
       # Deploy the functions
       node dist/pack/package-function-app.js functionapp.zip
