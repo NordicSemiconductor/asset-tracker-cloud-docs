@@ -16,6 +16,7 @@ To use Unwired Labs' LocationAPI, set the ``enableUnwiredLabsCellLocation`` para
         --template-file azuredeploy.json \
         --parameters \
             appName=${APP_NAME:-nrfassettracker} \
+            storageAccountName=${STORAGE_ACCOUNT_NAME:-nrfassettracker} \
             appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
             keyVaultName=${APP_NAME:-nrfassettracker} \
