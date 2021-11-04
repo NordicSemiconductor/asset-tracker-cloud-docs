@@ -37,7 +37,7 @@ To install the nRF Asset Tracker into your Azure account, complete the following
       export APP_NAME="nrfassettracker"
 
 #. Choose a unique name for the storage account and export it as ``STORAGE_ACCOUNT_NAME``.
-   Storage account names must be between 3 and 24 characters in length and may contain numbers and lowercase letters only.
+   Storage account names must be between 3 and 24 characters and may contain numbers and lowercase letters only.
    In this example, ``nrfassettracker`` is used as the storage account name.
 
    .. code-block:: bash
