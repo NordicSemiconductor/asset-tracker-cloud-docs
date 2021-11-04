@@ -34,6 +34,7 @@ digraph G {
         bgcolor="#D9E1E2" color="#cccccc" 
         gellceo [ shape=box style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" label="Cell Geolocation" ]
         agpscloud [ shape=box style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" label="A-GPS" ]
+        pgpscloud [ shape=box style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" label="P-GPS" ]
     }
 
     subgraph cluster1 {
@@ -72,6 +73,7 @@ digraph G {
     asset_tracker_v2 -> agps [ dir=back ]
 
     agpscloud -> nrfcloud [ dir=back taillabel=" HTTPs " ltail=cluster4 labeldistance="6"]
+    pgpscloud -> nrfcloud [ dir=back taillabel=" HTTPs " ltail=cluster4 labeldistance="6"]
     gellceo -> nrfcloud [ dir=back ltail=cluster4 ]
     gellceo -> unwiredlabs [ dir=back headlabel=" HTTPs " ltail=cluster4 ]
     AWS -> gellceo [ dir=back ltail=cluster0 lhead=cluster4 ]

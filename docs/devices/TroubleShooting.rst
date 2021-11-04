@@ -48,5 +48,5 @@ Alternatively, use the nRF Cloud Assisted GPS Location Service to speed up the t
 GPS timeout configuration
 =========================
 
-Since the `firmware does not currently support A-GPS <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/9>`_, depending on the device location, it can take a long time to acquire a GPS fix.
+If the nRF Cloud Assisted GPS Location Service is not used, it can take a long time to acquire a GPS fix.
 Therefore, select a timeout of at least 1000 seconds in the web application.
