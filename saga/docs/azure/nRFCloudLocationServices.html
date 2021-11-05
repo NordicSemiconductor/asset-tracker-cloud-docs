@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker v15.5.0 documentation</title>
+  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker v15.5.1 documentation</title>
   
 
   
@@ -198,6 +198,7 @@
      --template-file azuredeploy.json \
      --parameters \
          appName=${APP_NAME:-nrfassettracker} \
+         storageAccountName=${STORAGE_ACCOUNT_NAME:-nrfassettracker} \
          appRegistrationClientId=$APP_REG_CLIENT_ID \
          b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
          keyVaultName=${APP_NAME:-nrfassettracker} \
@@ -230,6 +231,7 @@ az keyvault secret set --vault-name ${APP_NAME:-nrfassettracker} \
      --template-file azuredeploy.json \
      --parameters \
          appName=${APP_NAME:-nrfassettracker} \
+         storageAccountName=${STORAGE_ACCOUNT_NAME:-nrfassettracker} \
          appRegistrationClientId=$APP_REG_CLIENT_ID \
          b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
          keyVaultName=${APP_NAME:-nrfassettracker} \
@@ -261,6 +263,7 @@ az keyvault secret set --vault-name ${APP_NAME:-nrfassettracker} \
      --template-file azuredeploy.json \
      --parameters \
          appName=${APP_NAME:-nrfassettracker} \
+         storageAccountName=${STORAGE_ACCOUNT_NAME:-nrfassettracker} \
          appRegistrationClientId=$APP_REG_CLIENT_ID \
          b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
          keyVaultName=${APP_NAME:-nrfassettracker} \

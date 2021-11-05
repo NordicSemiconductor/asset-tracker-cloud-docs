@@ -20,6 +20,7 @@ To use the API, set the ``enableNrfCloudCellLocationService`` parameter to ``tru
         --template-file azuredeploy.json \\
         --parameters \\
             appName=${APP_NAME:-nrfassettracker} \\
+            storageAccountName=${STORAGE_ACCOUNT_NAME:-nrfassettracker} \\
             appRegistrationClientId=$APP_REG_CLIENT_ID \\
             b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \\
             keyVaultName=${APP_NAME:-nrfassettracker} \\
@@ -60,6 +61,7 @@ To use the API, set the ``enableNrfCloudAGPSLocationService`` parameter to ``tru
         --template-file azuredeploy.json \\
         --parameters \\
             appName=${APP_NAME:-nrfassettracker} \\
+            storageAccountName=${STORAGE_ACCOUNT_NAME:-nrfassettracker} \\
             appRegistrationClientId=$APP_REG_CLIENT_ID \\
             b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \\
             keyVaultName=${APP_NAME:-nrfassettracker} \\
@@ -99,6 +101,7 @@ To use the API, set the ``enableNrfCloudPGPSLocationService`` parameter to ``tru
         --template-file azuredeploy.json \\
         --parameters \\
             appName=${APP_NAME:-nrfassettracker} \\
+            storageAccountName=${STORAGE_ACCOUNT_NAME:-nrfassettracker} \\
             appRegistrationClientId=$APP_REG_CLIENT_ID \\
             b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \\
             keyVaultName=${APP_NAME:-nrfassettracker} \\

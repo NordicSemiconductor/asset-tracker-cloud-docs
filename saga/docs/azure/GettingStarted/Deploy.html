@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Install the nRF Asset Tracker into your Azure account &mdash; nRF Asset Tracker v15.5.0 documentation</title>
+  <title>Install the nRF Asset Tracker into your Azure account &mdash; nRF Asset Tracker v15.5.1 documentation</title>
   
 
   
@@ -227,6 +227,14 @@ In this example, <code class="docutils literal notranslate"><span class="pre">nr
 </pre></div>
 </div>
 </li>
+<li><p class="first">Choose a unique name for the storage account and export it as <code class="docutils literal notranslate"><span class="pre">STORAGE_ACCOUNT_NAME</span></code>.
+Storage account names must be between 3 and 24 characters and may contain numbers and lowercase letters only.
+In this example, <code class="docutils literal notranslate"><span class="pre">nrfassettracker</span></code> is used as the storage account name.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
+<span class="nb">export</span> <span class="nv">STORAGE_ACCOUNT_NAME</span><span class="o">=</span><span class="s2">&quot;nrfassettracker&quot;</span>
+</pre></div>
+</div>
+</li>
 <li><p class="first">Configure your preferred location (you can list the locations using <code class="docutils literal notranslate"><span class="pre">az</span> <span class="pre">account</span> <span class="pre">list-locations</span></code>) and export it on the environment variable <code class="docutils literal notranslate"><span class="pre">LOCATION</span></code>.
 In this example, <code class="docutils literal notranslate"><span class="pre">northeurope</span></code> is used as the location name.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add to .envrc</span>
@@ -304,12 +312,13 @@ In this example, <code class="docutils literal notranslate"><span class="pre">nr
    --template-file azuredeploy.json <span class="se">\</span>
    --parameters <span class="se">\</span>
       <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+      <span class="nv">storageAccountName</span><span class="o">=</span><span class="si">${</span><span class="nv">STORAGE_ACCOUNT_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
       <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
       <span class="nv">b2cTenant</span><span class="o">=</span><span class="nv">$B2C_TENANT</span> <span class="se">\</span>
       <span class="nv">keyVaultName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>
 <span class="c1"># Currently it is not possible to enable website hosting through the ARM template</span>
 az storage blob service-properties update <span class="se">\</span>
-   --account-name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>app <span class="se">\</span>
+   --account-name <span class="si">${</span><span class="nv">STORAGE_ACCOUNT_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
    --static-website --index-document index.html
 <span class="c1"># Deploy the functions</span>
 node dist/pack/package-function-app.js functionapp.zip

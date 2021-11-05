@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Upgrading an existing installation &mdash; nRF Asset Tracker v15.5.0 documentation</title>
+  <title>Upgrading an existing installation &mdash; nRF Asset Tracker v15.5.1 documentation</title>
   
 
   
@@ -197,6 +197,7 @@ az deployment group create <span class="se">\</span>
     --template-file azuredeploy.json <span class="se">\</span>
     --parameters <span class="se">\</span>
         <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+        <span class="nv">storageAccountName</span><span class="o">=</span><span class="si">${</span><span class="nv">STORAGE_ACCOUNT_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
         <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
         <span class="nv">b2cTenant</span><span class="o">=</span><span class="si">${</span><span class="nv">B2C_TENANT</span><span class="k">:-</span><span class="nv">nrfassettrackerusers</span><span class="si">}</span> <span class="se">\</span>
         <span class="nv">keyVaultName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>
@@ -213,6 +214,7 @@ az functionapp deployment <span class="nb">source</span> config-zip -g <span cla
     --template-file azuredeploy.json <span class="se">\</span>
     --parameters <span class="se">\</span>
         <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
+        <span class="nv">storageAccountName</span><span class="o">=</span><span class="si">${</span><span class="nv">STORAGE_ACCOUNT_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
         <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
         <span class="nv">b2cTenant</span><span class="o">=</span><span class="si">${</span><span class="nv">B2C_TENANT</span><span class="k">:-</span><span class="nv">nrfassettrackerusers</span><span class="si">}</span> <span class="se">\</span>
         <span class="nv">keyVaultName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>

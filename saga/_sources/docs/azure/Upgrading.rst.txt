@@ -17,6 +17,7 @@ If you already have an installation and you want to upgrade to the latest releas
         --template-file azuredeploy.json \
         --parameters \
             appName=${APP_NAME:-nrfassettracker} \
+            storageAccountName=${STORAGE_ACCOUNT_NAME:-nrfassettracker} \
             appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
             keyVaultName=${APP_NAME:-nrfassettracker}
@@ -34,6 +35,7 @@ To verify the validity of a template, use the following command:
            --template-file azuredeploy.json \
            --parameters \
                appName=${APP_NAME:-nrfassettracker} \
+               storageAccountName=${STORAGE_ACCOUNT_NAME:-nrfassettracker} \
                appRegistrationClientId=$APP_REG_CLIENT_ID \
                b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
                keyVaultName=${APP_NAME:-nrfassettracker}
