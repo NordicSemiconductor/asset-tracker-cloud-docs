@@ -12,7 +12,7 @@ Use the CLI to generate and provision a certificate for your device:
 .. parsed-literal::
    :class: highlight
 
-    node cli create-device-cert
+    node cli create-and-provision-device-cert
     # default secTag is 42
     # default board is the Thingy:91, use --dk to program a DK
     # when programming a Thingy:91, most likely you need to override the default port: -p /dev/ttyACM2
