@@ -28,7 +28,7 @@
     "@nordicsemiconductor/asset-tracker-cloud-code-style": "9.2.16",
     "@types/ajv": "1.0.0",
     "@types/glob": "7.2.0",
-    "@types/jest": "27.0.2",
+    "@types/jest": "27.0.3",
     "@types/node": "16.11.7",
     "ajv": "8.8.1",
     "glob": "7.2.0",
