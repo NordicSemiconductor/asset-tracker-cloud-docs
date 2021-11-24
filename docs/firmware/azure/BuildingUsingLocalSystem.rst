@@ -40,7 +40,7 @@ Create a folder, for example, ``ncs`` and initialize the project by running the 
 Configure the project
 *********************
 
-Follow the :ref:`configuration instructions for the firmware <azure-firmware-configuration>` and update the :file:`prj.conf` file and the :file:`overlay-debug.conf` file.
+Follow the :ref:`configuration instructions for the firmware <azure-firmware-configuration>` and add your settings to the :file:`firmware.conf` file.
 
 Build the project
 *****************
@@ -52,14 +52,14 @@ Thingy:91 (PCA20035)
 
 .. code-block:: bash
 
-    west build -p always -b thingy91_nrf9160ns
+    west build -p always -b thingy91_nrf9160ns -- -DOVERLAY_CONFIG="overlay-azure.conf;overlay-debug.conf;asset-tracker-cloud-firmware-azure.conf;firmware.conf"
 
 nRF9160 DK (PCA10090)
 =====================
 
 .. code-block:: bash
 
-    west build -p always -b nrf9160_pca10090ns
+    west build -p always -b nrf9160_pca10090ns -- -DOVERLAY_CONFIG="overlay-aws.conf;overlay-debug.conf;asset-tracker-cloud-firmware-azure.conf;firmware.conf"
 
 Location of the HEX file
 ************************

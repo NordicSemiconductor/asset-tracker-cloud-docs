@@ -27,7 +27,7 @@ To build the Docker image for this project, run the following commands:
     cd nrf-asset-tracker-firmware-azure
     docker build -t asset-tracker-firmware-docker .
 
-Then, follow the :ref:`configuration instructions for the firmware <azure-firmware-configuration>` and update the :file:`prj.conf` file and the :file:`overlay-debug.conf` file.
+Then, follow the :ref:`configuration instructions for the firmware <azure-firmware-configuration>` and add your settings to the :file:`firmware.conf` file.
 
 Build the project
 *****************
@@ -39,7 +39,7 @@ Thingy:91 (PCA20035)
 
 .. code-block:: bash
 
-    docker run --rm -v ${PWD}:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b thingy91_nrf9160ns -- -DOVERLAY_CONFIG="overlay-debug.conf;asset-tracker-cloud-firmware-azure.conf"'
+    docker run --rm -v ${PWD}:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b thingy91_nrf9160ns -- -DOVERLAY_CONFIG="overlay-azure.conf;overlay-debug.conf;asset-tracker-cloud-firmware-azure.conf;firmware.conf"'
     ls -la build/zephyr/merged.hex
 
 nRF9160 DK (PCA10090)
@@ -47,7 +47,7 @@ nRF9160 DK (PCA10090)
 
 .. code-block:: bash
 
-    docker run --rm -v ${PWD}:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b nrf9160dk_nrf9160ns -- -DOVERLAY_CONFIG="overlay-debug.conf;asset-tracker-cloud-firmware-azure.conf"'
+    docker run --rm -v ${PWD}:/workdir/ncs/firmware asset-tracker-firmware-docker /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b nrf9160dk_nrf9160ns -- -DOVERLAY_CONFIG="overlay-azure.conf;overlay-debug.conf;asset-tracker-cloud-firmware-azure.conf;firmware.conf"'
     ls -la build/zephyr/merged.hex
 
 Location of the HEX file
