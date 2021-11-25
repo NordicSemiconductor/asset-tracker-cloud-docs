@@ -5,13 +5,15 @@ Configure the firmware
 
 To configure the :ref:`firmware <firmware-aws-index>`, complete the following mandatory steps:
 
-1. Run the following command to print the MQTT endpoint to which your devices will connect:
+1. Create the file :file:`firmware.conf` to be used for your configuration overrides.
+
+#. Run the following command to print the MQTT endpoint to which your devices will connect:
 
    .. code-block:: bash
 
       node cli info -o mqttEndpoint
 
-#. Add the setting to a file called :file:`firmware.conf`:
+#. Add the ``CONFIG_AWS_IOT_BROKER_HOST_NAME`` setting to the :file:`firmware.conf` file, using the endpoint value from the previous step as the value:
 
    .. parsed-literal::
       :class: highlight
