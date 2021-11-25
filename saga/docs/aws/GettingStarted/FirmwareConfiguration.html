@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Configure the firmware &mdash; nRF Asset Tracker 3517e2d531fc45b7f538cacde8680a5ca1ace7f0 documentation</title>
+  <title>Configure the firmware &mdash; nRF Asset Tracker v16.0.0 documentation</title>
   
 
   
@@ -204,53 +204,17 @@
 <span id="aws-firmware-configuration"></span><h1>Configure the firmware<a class="headerlink" href="#configure-the-firmware" title="Permalink to this headline">¶</a></h1>
 <p>To configure the <a class="reference internal" href="../../firmware/aws/Index.html#firmware-aws-index"><span class="std std-ref">firmware</span></a>, complete the following mandatory steps:</p>
 <ol class="arabic">
+<li><p class="first">Create the file <code class="file docutils literal notranslate"><span class="pre">firmware.conf</span></code> to be used for your configuration overrides.</p>
+</li>
 <li><p class="first">Run the following command to print the MQTT endpoint to which your devices will connect:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli info -o mqttEndpoint
 </pre></div>
 </div>
 </li>
-<li><p class="first">Use this MQTT endpoint value as the value for the <code class="docutils literal notranslate"><span class="pre">CONFIG_AWS_IOT_BROKER_HOST_NAME</span></code> configuration variable.</p>
-</li>
-<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">42</span></code> as the value for <code class="docutils literal notranslate"><span class="pre">CONFIG_AWS_IOT_SEC_TAG</span></code>.</p>
-</li>
-<li><p class="first">Comment in the remaining AWS settings in the <code class="file docutils literal notranslate"><span class="pre">prj.conf</span></code> file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CONFIG_AWS_IOT</span><span class="o">=</span>y
-<span class="nv">CONFIG_AWS_IOT_APP_SUBSCRIPTION_LIST_COUNT</span><span class="o">=</span><span class="m">1</span>
-<span class="nv">CONFIG_AWS_IOT_AUTO_DEVICE_SHADOW_REQUEST</span><span class="o">=</span>y
-<span class="nv">CONFIG_AWS_IOT_CLIENT_ID_APP</span><span class="o">=</span>y
-<span class="nv">CONFIG_AWS_IOT_MQTT_PAYLOAD_BUFFER_LEN</span><span class="o">=</span><span class="m">2048</span>
-<span class="nv">CONFIG_AWS_IOT_MQTT_RX_TX_BUFFER_LEN</span><span class="o">=</span><span class="m">2048</span>
-<span class="nv">CONFIG_AWS_IOT_TOPIC_GET_REJECTED_SUBSCRIBE</span><span class="o">=</span>y
-<span class="nv">CONFIG_AWS_IOT_TOPIC_UPDATE_DELTA_SUBSCRIBE</span><span class="o">=</span>y
-<span class="nv">CONFIG_AWS_FOTA</span><span class="o">=</span>y
-</pre></div>
-</div>
-</li>
-<li><p class="first">Comment in the AWS logging settings in the <code class="file docutils literal notranslate"><span class="pre">overlay-debug.conf</span></code> file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CONFIG_AWS_FOTA_LOG_LEVEL_DBG</span><span class="o">=</span>y
-<span class="nv">CONFIG_AWS_IOT_LOG_LEVEL_DBG</span><span class="o">=</span>y
-<span class="nv">CONFIG_AWS_JOBS_LOG_LEVEL_DBG</span><span class="o">=</span>y
-</pre></div>
-</div>
-</li>
-<li><p class="first">Comment out the nRF Cloud settings in the <code class="file docutils literal notranslate"><span class="pre">prj.conf</span></code> file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># CONFIG_AGPS=y</span>
-<span class="c1"># CONFIG_AGPS_SRC_NRF_CLOUD=y</span>
-<span class="c1"># CONFIG_NRF_CLOUD=y</span>
-<span class="c1"># CONFIG_NRF_CLOUD_AGPS=y</span>
-<span class="c1"># CONFIG_NRF_CLOUD_CONNECTION_POLL_THREAD=y</span>
-<span class="c1"># CONFIG_NRF_CLOUD_PGPS=n</span>
-<span class="c1"># CONFIG_NRF_CLOUD_SEND_TIMEOUT=y</span>
-<span class="c1"># CONFIG_GPS_MODULE_NMEA=y</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Comment out the nRF Cloud logging settings in the <code class="file docutils literal notranslate"><span class="pre">overlay-debug.conf</span></code> file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># CONFIG_NRF_CLOUD_FOTA_LOG_LEVEL_DBG=y</span>
-<span class="c1"># CONFIG_NRF_CLOUD_GPS_LOG_LEVEL_DBG=y</span>
-<span class="c1"># CONFIG_NRF_CLOUD_LOG_LEVEL_DBG=y</span>
-</pre></div>
-</div>
+<li><p class="first">Add the <code class="docutils literal notranslate"><span class="pre">CONFIG_AWS_IOT_BROKER_HOST_NAME</span></code> setting to the <code class="file docutils literal notranslate"><span class="pre">firmware.conf</span></code> file, using the endpoint value from the previous step as the value:</p>
+<pre class="highlight literal-block">
+CONFIG_AWS_IOT_BROKER_HOST_NAME=&quot;<em>your MQTT endpoint</em>&quot;
+</pre>
 </li>
 </ol>
 <p>After completing the configuration, compile the firmware either <a class="reference internal" href="../../firmware/aws/BuildingUsingLocalSystem.html#firmware-aws-building"><span class="std std-ref">using your own development environment</span></a> or <a class="reference internal" href="../../firmware/aws/BuildingUsingDocker.html#firmware-aws-building-docker"><span class="std std-ref">using Docker</span></a> and then <a class="reference internal" href="DeviceCredentials.html#aws-device-credentials"><span class="std std-ref">create the device credentials</span></a>.</p>
