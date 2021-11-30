@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Azure cloud components &mdash; nRF Asset Tracker 82898490cd02204fcbef6457b63c709f670d0728 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Getting started" href="GettingStarted/Index.html" />
+    <link rel="prev" title="Server Name Indication" href="../aws/SNI.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> nRF Asset Tracker
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v1.8.x
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Azure cloud components</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/Index.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousIntegration.html">Continuous integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RunningInDocker.html">Running the application locally with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nRFCloudLocationServices.html">nRF Cloud Location Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UnwiredLabsCellGeolocation.html">Unwired Labs Cell Geolocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">Azure IoT Shadow and topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secure-azure-function-apps-with-microsoft-b2c.html">Using Azure Active Directory B2C</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">nRF Asset Tracker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Azure cloud components</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v1.8.x/docs/azure/Index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="azure-cloud-components">
+<span id="index-azure"></span><h1>Azure cloud components<a class="headerlink" href="#azure-cloud-components" title="Permalink to this headline">¶</a></h1>
+<p>The nRF Asset Tracker provides a reference implementation of a serverless backend for an IoT product using Azure.
+It is developed using <a class="reference external" href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview">Azure Resource Manager</a> in <a class="reference external" href="https://www.typescriptlang.org/">TypeScript</a>.</p>
+<p>The project also provides a description of the available (and implemented) features in a folder called <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/tree/saga/features">features</a>.
+The <code class="file docutils literal notranslate"><span class="pre">.feature</span></code> files in the folder are used to continuously verify the reference implementation using <a class="reference internal" href="ContinuousIntegration.html#azure-continuous-integration"><span class="std std-ref">Continuous integration</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Azure solution is using <a class="reference external" href="https://docs.microsoft.com/en-us/azure/cosmos-db/introduction">Cosmos DB</a> for querying historical device data and it costs around 25 EUR per month.
+However, you can check if you are eligible for <a class="reference external" href="https://azure.microsoft.com/en-us/pricing/details/cosmos-db/">the free tier for new accounts</a>.
+The Azure solution is using <a class="reference external" href="https://azure.microsoft.com/en-us/services/iot-hub/">IoT Hub</a> with the S1 standard tier and it costs around 25 EUR per month for using <a class="reference external" href="https://docs.microsoft.com/en-us/azure/iot-hub-device-update/understand-device-update">Device Update for IoT Hub</a>.
+Hence, the minimum costs to run nRF Asset Tracker on Azure is around 25-50 EUR per month.</p>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Subpages:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted/Index.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/WorkingDirectory.html">Create the working directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/Clone.html">Clone the project and install the dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/AzureCLI.html">Install the Azure CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/Deploy.html">Install the nRF Asset Tracker into your Azure account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/FirmwareConfiguration.html">Configure the firmware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/DeviceCredentials.html">Create device credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/Programming.html">Program the device firmware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/Webapp.html">Deploy the Cat Tracker web application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/NextSteps.html">Next steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ContinuousIntegration.html">Continuous integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RunningInDocker.html">Running the application locally with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nRFCloudLocationServices.html">nRF Cloud Location Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UnwiredLabsCellGeolocation.html">Unwired Labs Cell Geolocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IoTShadowAndTopics.html">Azure IoT Shadow and topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secure-azure-function-apps-with-microsoft-b2c.html">Using Azure Active Directory B2C</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="GettingStarted/Index.html" class="btn btn-neutral float-right" title="Getting started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../aws/SNI.html" class="btn btn-neutral float-left" title="Server Name Indication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

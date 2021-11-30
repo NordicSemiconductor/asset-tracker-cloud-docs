@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deploy the Cat Tracker web application &mdash; nRF Asset Tracker 82898490cd02204fcbef6457b63c709f670d0728 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Next steps" href="NextSteps.html" />
+    <link rel="prev" title="Program the device firmware" href="Programming.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> nRF Asset Tracker
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v1.8.x
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../project/Index.html">Project overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStarted.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Index.html">AWS cloud components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="Index.html">Getting started</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="WorkingDirectory.html">Create the working directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AWSCredentials.html">Provide your AWS credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Clone.html">Clone the project and install the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Deploy.html">Install the nRF Asset Tracker into your AWS account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FirmwareConfiguration.html">Configure the firmware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Create device credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Programming.html">Program the device firmware</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Deploy the Cat Tracker web application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NextSteps.html">Next steps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Uninstalling.html">Uninstalling the nRF Asset Tracker from AWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Customization/Index.html">Customization of the nRF Asset Tracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ContinuousDeployment.html">Continuous deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ContinuousIntegration.html">Continuous integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nRFCloudLocationServices.html">nRF Cloud Location Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../UnwiredLabsCellGeolocation.html">Unwired Labs Cell Geolocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IoTShadowAndTopics.html">AWS IoT Device Shadow service and MQTT topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LimitingShadowDocumentSize.html">Limiting the shadow document size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HistoricalData.html">Storage of historical data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SNI.html">Server Name Indication</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../azure/Index.html">Azure cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../app/Index.html">Cat Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../firmware/Index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devices/Index.html">Connect using a real device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/Index.html">Guides</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing to the project</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">nRF Asset Tracker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../Index.html">AWS cloud components</a> &raquo;</li>
+        
+          <li><a href="Index.html">Getting started</a> &raquo;</li>
+        
+      <li>Deploy the Cat Tracker web application</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v1.8.x/docs/aws/GettingStarted/Webapp.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="deploy-the-cat-tracker-web-application">
+<span id="aws-getting-started-app"></span><h1>Deploy the Cat Tracker web application<a class="headerlink" href="#deploy-the-cat-tracker-web-application" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#clone-the-project-and-install-the-dependencies" id="id1">Clone the project and install the dependencies</a></li>
+<li><a class="reference internal" href="#configure-the-web-application" id="id2">Configure the web application</a><ul>
+<li><a class="reference internal" href="#version-string" id="id3">Version string</a></li>
+<li><a class="reference internal" href="#example-for-the-env-local-file" id="id4">Example for the .env.local file</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#deploy-the-web-application" id="id5">Deploy the web application</a></li>
+<li><a class="reference internal" href="#register-a-new-user" id="id6">Register a new user</a></li>
+<li><a class="reference internal" href="#view-your-device" id="id7">View your device</a></li>
+</ul>
+</div>
+<p>To deploy the <a class="reference internal" href="../../app/Index.html#index-cat-tracker-web-app"><span class="std std-ref">Cat Tracker web application</span></a> to AWS, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Clone the project and install the dependencies</li>
+<li>Configure the web application</li>
+<li>Deploy the web application</li>
+<li>Register a new user</li>
+</ol>
+<p>Before starting, navigate to the working directory <code class="file docutils literal notranslate"><span class="pre">~/nrf-asset-tracker</span></code>.</p>
+<div class="section" id="clone-the-project-and-install-the-dependencies">
+<h2><a class="toc-backref" href="#id1">Clone the project and install the dependencies</a><a class="headerlink" href="#clone-the-project-and-install-the-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Clone the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js">Cat Tracker web application</a> project and install the dependencies:</p>
+<pre class="literal-block">
+git clone --branch v1.8.x --single-branch \
+  <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git">https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git</a> cat-tracker-web-app
+cd cat-tracker-web-app
+npm ci
+</pre>
+</div>
+<div class="section" id="configure-the-web-application">
+<h2><a class="toc-backref" href="#id2">Configure the web application</a><a class="headerlink" href="#configure-the-web-application" title="Permalink to this headline">¶</a></h2>
+<p>You need to configure the web application to be able to run it with your account.</p>
+<p>The web application requires the IDs of the AWS resources that were created during the setup of the stack.
+Run the following command in the <code class="file docutils literal notranslate"><span class="pre">cat-tracker-web-app</span></code> directory to copy the output that contain the IDs to the <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../aws
+node cli react-config &gt; ../cat-tracker-web-app/.env.local
+<span class="nb">cd</span> ../cat-tracker-web-app
+</pre></div>
+</div>
+<div class="section" id="version-string">
+<h3><a class="toc-backref" href="#id3">Version string</a><a class="headerlink" href="#version-string" title="Permalink to this headline">¶</a></h3>
+<p>Run the following command to provide the version to the application:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">REACT_APP_VERSION</span><span class="o">=</span><span class="sb">`</span>git describe --tags <span class="k">$(</span>git rev-list --tags --max-count<span class="o">=</span><span class="m">1</span><span class="k">)</span><span class="sb">`</span> &gt;&gt; .env.local
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-for-the-env-local-file">
+<h3><a class="toc-backref" href="#id4">Example for the .env.local file</a><a class="headerlink" href="#example-for-the-env-local-file" title="Permalink to this headline">¶</a></h3>
+<p>Following is an example for the contents of the <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">REACT_APP_REGION</span><span class="o">=</span>eu-west-1
+<span class="nv">REACT_APP_HISTORICALDATA_TABLE_INFO</span><span class="o">=</span>historicalDatadb40B23029-Qzk2Jrr88tOy<span class="p">|</span>historicalDatatableD9D795E1-zdSByjtTqoAE
+<span class="nv">REACT_APP_USER_IOT_POLICY_ARN</span><span class="o">=</span>arn:aws:iot:eu-west-1:249963682018:policy/nrf-asset-tracker-userIotPolicy-OMYBF5CI5Q6A
+<span class="nv">REACT_APP_DFU_BUCKET_NAME</span><span class="o">=</span>nrf-asset-tracker-dfustoragebucket2cc839ff-qz8k9bslldrf
+<span class="nv">REACT_APP_JITP_ROLE_ARN</span><span class="o">=</span>arn:aws:iam::249963682018:role/nrf-asset-tracker-iotJitpRole7B509A5D-5Y6BQY6KD9TX
+<span class="nv">REACT_APP_THING_GROUP_NAME</span><span class="o">=</span>assetTrackerThings
+<span class="nv">REACT_APP_AVATAR_BUCKET_NAME</span><span class="o">=</span>nrf-asset-tracker-avatarsbucket8221a59f-1usxf1qi1qj1r
+<span class="nv">REACT_APP_USER_POOL_CLIENT_ID</span><span class="o">=</span>1rh4eacmu5c5ppq2pspnq8tcu5
+<span class="nv">REACT_APP_MQTT_ENDPOINT</span><span class="o">=</span>a3g4yd69u8cu7b-ats.iot.eu-west-1.amazonaws.com
+<span class="nv">REACT_APP_DEVELOPER_PROVIDER_NAME</span><span class="o">=</span>developerAuthenticated
+<span class="nv">REACT_APP_THING_POLICY_ARN</span><span class="o">=</span>arn:aws:iot:eu-west-1:249963682018:policy/nrf-asset-tracker-thingPolicy-1GR1TP3RXOO0G
+<span class="nv">REACT_APP_USER_POOL_ID</span><span class="o">=</span>eu-west-1_FiY6h4xjd
+<span class="nv">REACT_APP_IDENTITY_POOL_ID</span><span class="o">=</span>eu-west-1:52cc8188-ec90-47d7-b3ee-634187fa6413
+<span class="nv">REACT_APP_WEB_APP_DOMAIN_NAME</span><span class="o">=</span>d250wnpv81c7q9.cloudfront.net
+<span class="nv">REACT_APP_WEB_APP_BUCKET_NAME</span><span class="o">=</span>nrf-asset-tracker-webapps-webapphostingbucketc58d3c2b-1or3is1vmmq5q
+<span class="nv">REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP</span><span class="o">=</span>EGNO6F61DSJ5Y
+<span class="nv">REACT_APP_VERSION</span><span class="o">=</span>v3.6.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="deploy-the-web-application">
+<h2><a class="toc-backref" href="#id5">Deploy the web application</a><a class="headerlink" href="#deploy-the-web-application" title="Permalink to this headline">¶</a></h2>
+<p>To build and deploy the web application to the S3 bucket created while setting up the nRF Asset Tracker in your AWS account, run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="k">$(</span>cat .env.local <span class="p">|</span> xargs<span class="k">)</span>
+<span class="nb">export</span> <span class="nv">EXTEND_ESLINT</span><span class="o">=</span><span class="nb">true</span>
+<span class="nb">export</span> <span class="nv">PUBLIC_URL</span><span class="o">=</span><span class="s2">&quot;https://</span><span class="nv">$REACT_APP_WEB_APP_DOMAIN_NAME</span><span class="s2">&quot;</span>
+npm run build
+aws s3 cp build s3://<span class="nv">$REACT_APP_WEB_APP_BUCKET_NAME</span> <span class="se">\</span>
+  --recursive --metadata-directive REPLACE <span class="se">\</span>
+  --cache-control <span class="s1">&#39;public,max-age=600&#39;</span> --expires <span class="s1">&#39;&#39;</span>
+aws cloudfront create-invalidation --distribution-id <span class="se">\</span>
+  <span class="nv">$REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP</span> --paths /,/index.html
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;Done. Now open </span><span class="nv">$PUBLIC_URL</span><span class="s2"> to view the web app.&quot;</span>
+</pre></div>
+</div>
+<p>After running the commands, you can open the domain name printed in <code class="docutils literal notranslate"><span class="pre">REACT_APP_WEB_APP_DOMAIN_NAME</span></code> in your browser to view the web application.</p>
+</div>
+<div class="section" id="register-a-new-user">
+<h2><a class="toc-backref" href="#id6">Register a new user</a><a class="headerlink" href="#register-a-new-user" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The user pool is configured to use the email address as the username.</p>
+</div>
+<p>Since there are no predefined user accounts in the user pool, you need to register a new user.
+Open the application in the browser.</p>
+<div class="figure">
+<img alt="Login form of the web application" src="../../../_images/create-account.png" />
+</div>
+<p>In the login form, Click <span class="guilabel">Create Account</span> and fill in your email and a password.
+You will receive an email with a confirmation code that you need to enter to confirm your email address.
+Once you have confirmed your email address, you can login with your email address and your password.</p>
+</div>
+<div class="section" id="view-your-device">
+<h2><a class="toc-backref" href="#id7">View your device</a><a class="headerlink" href="#view-your-device" title="Permalink to this headline">¶</a></h2>
+<p>After logging in, your device that was provisioned previously shows up in the list of cats.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="NextSteps.html" class="btn btn-neutral float-right" title="Next steps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Programming.html" class="btn btn-neutral float-left" title="Program the device firmware" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/pgps-response.schema.json",
+  "title": "Asset Tracker v2 P-GPS response",
+  "description": "Describes the format which is used by the cloud to provide P-GPS data to a device.",
+  "type": "object",
+  "properties": {
+    "host": {
+      "type": "string",
+      "description": "The hostname for downloading the data.",
+      "examples": ["example.com"],
+      "minLength": 1,
+      "maxLength": 253
+    },
+    "path": {
+      "type": "string",
+      "description": "The path for downloading the data, without leading slash.",
+      "enum": ["public/15131-0_15135-72000.bin"],
+      "minLength": 1
+    }
+  },
+  "required": ["host", "path"],
+  "additionalProperties": false
+}
