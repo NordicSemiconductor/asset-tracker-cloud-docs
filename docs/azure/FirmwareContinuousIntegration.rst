@@ -1,4 +1,4 @@
-.. _aws-firmware-ci:
+.. _azure-firmware-ci:
 
 Continuous integration of firmware
 ##################################
@@ -7,17 +7,17 @@ Continuous integration of firmware
    :local:
    :depth: 2
 
-The AWS implementation of the nRF Asset Tracker provides the resources for continuous testing of the firmware using real hardware.
+The Azure implementation of the nRF Asset Tracker provides the resources for continuous testing of the firmware using real hardware.
 
 Overview
 ********
 
-Every commit to the `firmware repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws>`_ will trigger a CI run.
+Every commit to the `firmware repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure>`_ will trigger a CI run.
 The CI run results in the following actions:
 
 1. Creating a new device and credentials on AWS IoT.
 #. Building a firmware that has the device ID hardcoded for the MQTT client ID.
-#. Scheduling a run on a self-hosted GitHub Actions runner. See :ref:`aws-firmware_ci_runner_setup`.
+#. Scheduling a run on a self-hosted GitHub Actions runner. See :ref:`azure-firmware_ci_runner_setup`.
 #. Observing the firmware CI run until completion.
 #. Running assertions against the log result.
 
@@ -32,7 +32,7 @@ Following are the actions performed by the Firmware CI runner:
 
 .. note::
 
-   These devices connect to the existing instance of the nRF Asset Tracker, so the firmware tests will not set up a new empty nRF Asset Tracker AWS environment for every test.
+   These devices connect to the existing instance of the nRF Asset Tracker, so the firmware tests will not set up a new empty nRF Asset Tracker Azure environment for every test.
    It runs against the production environment.
    This is to ensure that the firmware release will work with the existing solution.
    This approach is designed for `trunk-based development <https://thinkinglabs.io/talks/feature-branching-considered-evil.html>`_.
@@ -40,34 +40,29 @@ Following are the actions performed by the Firmware CI runner:
 Preparation
 ***********
 
-Enable the Firmware CI resources of the nRF Asset Tracker that allow GitHub Actions to create test devices.
-Also enable the Firmware CI runner to connect before deploying the stack (see :ref:`Getting Started <aws-getting-started>`).
+Make sure you have successfully deployed the solution (see :ref:`Getting Started <azure-getting-started-deploy>`).
+
+Generate credentials that allow GitHub Actions to create test devices:
 
 .. code-block:: bash
 
-   node cli configure context stack firmware-ci 1
-   npx cdk deploy '*'
+   az ad sp create-for-rbac --name 'https://nrfassettracker.invalid/firmware-ci' \                         
+      --role contributor \
+      --scopes \
+         "/subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}" \
+      --sdk-auth \
+      > ci-credentials.json
 
-Print the AWS Key for the CI runner on GitHub Actions using the following command:
+Assign access permissions to IoT hub for the role: 
 
-.. parsed-literal::
-   :class: highlight
+.. code-block:: bash
 
-   node cli firmware-ci -s
-    
-   Region: "*Region*"
-   Bucket name: "*Bucket name*"
-   Access Key ID: "*AWS Access Key ID*"
-   Secret Access Key: "*AWS Secret Access Key*"
+   az role assignment create \
+      --assignee $(az ad sp list --display-name "https://nrfassettracker.invalid/firmware-ci" | jq -r '.[0].objectId') \
+      --role $(az role definition list --output json | jq -r '.[] | select(.roleName=="IoT Hub Data Contributor") | .id') \
+      --scope "/subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP}/providers/Microsoft.Devices/IotHubs/${APP_NAME}IotHub"
 
-Configure the following parameters as secrets on the firmware GitHub repository:
-
-* ``AWS_ACCESS_KEY_ID`` (as printed above)
-* ``AWS_SECRET_ACCESS_KEY`` (as printed above)
-* ``AWS_REGION`` (as printed above)
-* ``STACK_NAME`` (the stack name of your production environment, usually ``nrf-asset-tracker``)
-
-.. _aws-firmware_ci_runner_setup:
+.. _azure-firmware_ci_runner_setup:
 
 Firmware CI runner setup
 ************************
