@@ -22,3 +22,5 @@ The `firmware GitHub repository <https://github.com/NordicSemiconductor/asset-tr
    BuildingUsingLocalSystem.rst
    BuildingUsingDocker.rst
    BuildingUsingGitHub.rst
+   ../../azure/FirmwareContinuousIntegration.rst
+
