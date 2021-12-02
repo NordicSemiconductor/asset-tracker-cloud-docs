@@ -22,18 +22,18 @@ The CI run results in the following actions:
 #. Running assertions against the log result.
 
 The Firmware CI runner is running on a PC connected to GitHub Actions, where it receives the jobs to execute.
-Following are the actions performed by the Firmware CI runner:
+The Firmware CI runner performs the following actions:
 
 1. Programming the firmware and the optional credentials using the connected debugger to the connected nRF9160 DK or Thingy:91.
 #. Logging all output until one of the following conditions occur:
 
-   a. A timeout is reached
-   #. A stop condition is reached. (Wait for a log output to match a string.)
+   * A timeout is reached
+   * A stop condition is reached. (Wait for a log output to match a string.)
 
 .. note::
 
    These devices connect to the existing instance of the nRF Asset Tracker, so the firmware tests will not set up a new empty nRF Asset Tracker AWS environment for every test.
-   It runs against the production environment.
+   The test runs against the production environment.
    This is to ensure that the firmware release will work with the existing solution.
    This approach is designed for `trunk-based development <https://thinkinglabs.io/talks/feature-branching-considered-evil.html>`_.
 
@@ -72,13 +72,13 @@ Configure the following parameters as secrets on the firmware GitHub repository:
 Firmware CI runner setup
 ************************
 
-To set up Firmware CI runner, complete the following steps:
+To set up the Firmware CI runner, complete the following steps:
 
 1. Prepare an environment that fulfills the :ref:`necessary system requirements <system-requirements>`.
 
-1. Download `JLink <https://www.segger.com/downloads/jlink/>`_ for your platform, and ensure that :file:`JLinkExe` is in your path.
+#. Download `JLink <https://www.segger.com/downloads/jlink/>`_ for your platform, and ensure that :file:`JLinkExe` is in your path.
 
 #. Follow `the instruction about self-hosted runners <https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners>`_ to set up a runner for your firmware repository.
-   Ensure to use ``firmware-ci`` when prompted for the labels.
+   Make sure to use ``firmware-ci`` when prompted for the labels.
 
 The Firmware CI starts to process all the scheduled jobs one after another.
