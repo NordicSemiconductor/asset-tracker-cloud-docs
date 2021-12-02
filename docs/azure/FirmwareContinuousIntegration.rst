@@ -70,9 +70,7 @@ Firmware CI runner setup
 To set up the Firmware CI runner, complete the following steps:
 
 1. Prepare an environment that fulfills the :ref:`necessary system requirements <system-requirements>`.
-
 #. Download `JLink <https://www.segger.com/downloads/jlink/>`_ for your platform, and ensure that :file:`JLinkExe` is in your path.
-
 #. Follow `the instruction about self-hosted runners <https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners>`_ to set up a runner for your firmware repository.
    Make sure to use ``firmware-ci`` when prompted for the labels.
 
