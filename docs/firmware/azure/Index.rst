@@ -13,7 +13,7 @@ The `firmware GitHub repository <https://github.com/NordicSemiconductor/asset-tr
 
    The current firmware-over-the-air (FOTA) update mechanism implemented in nRF Asset Tracker for Azure is based on the `Microsoft Azure tutorial for implementing a device firmware update process <https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-firmware-update>`_.
    In February 2021, Microsoft released `a preview of Device Update for IoT Hub <https://techcommunity.microsoft.com/t5/internet-of-things/streamline-device-management-with-device-update-for-iot-hub-now/ba-p/2167663>`_ which will replace the current mechanism, as soon as it is generally available.
-   See the `Azure support discussion <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/12#discussioncomment-483383>`_ for details about the ongoing work to implement the new update mechanism.
+   See the `Azure Device Update for IoT Hub support issue <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues/340>`_ for details about the ongoing work to implement the new update mechanism.
 
 .. toctree::
    :titlesonly:
