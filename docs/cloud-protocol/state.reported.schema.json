@@ -82,8 +82,8 @@
       },
       "required": ["v", "ts"]
     },
-    "gps": {
-      "description": "The GPS reading",
+    "gnss": {
+      "description": "The GNSS reading",
       "type": "object",
       "properties": {
         "v": {

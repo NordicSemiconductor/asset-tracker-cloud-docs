@@ -1,6 +1,6 @@
 {
   "cfg": {
-    "gpst": 720,
+    "gnst": 720,
     "act": false,
     "actwt": 60,
     "mvres": 60,

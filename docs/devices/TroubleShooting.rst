@@ -32,21 +32,21 @@ Since 5G support is currently being deployed by mobile phone network operators, 
 
 Try multiple SIM cards from different vendors if you experience connectivity issues.
 
-GPS
-***
+GNSS
+****
 
-Error: GPS_EVT_OPERATION_BLOCKED
-================================
+Error: GNSS_EVT_OPERATION_BLOCKED
+=================================
 
-This error occurs if the network provider does not grant Power Saving Mode (PSM) and the GPS takes a long time to acquire a fix.
-For more details, see the `DevZone post related to the GPS and LTE issue <https://devzone.nordicsemi.com/f/nordic-q-a/51962/gps-and-lte-issue/210272#210272>`_.
+This error occurs if the network provider does not grant Power Saving Mode (PSM) and the GNSS takes a long time to acquire a fix.
+For more details, see the `DevZone post related to the GNSS and LTE issue <https://devzone.nordicsemi.com/f/nordic-q-a/51962/gps-and-lte-issue/210272#210272>`_.
 
 Try switching to a SIM card that grants PSM.
 
 Alternatively, use the nRF Cloud Assisted GPS Location Service to speed up the time to fix.
 
-GPS timeout configuration
-=========================
+GNSS timeout configuration
+==========================
 
-If the nRF Cloud Assisted GPS Location Service is not used, it can take a long time to acquire a GPS fix.
+If the nRF Cloud Assisted GPS Location Service is not used, it can take a long time to acquire a GNSS fix.
 Therefore, select a timeout of at least 1000 seconds in the web application.

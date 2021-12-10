@@ -7,7 +7,7 @@ Cell geolocation
    :local:
    :depth: 2
 
-If cell geolocation is implemented, the devices can be shown on the map based on the location of their surrounding cells, even before obtaining a GPS fix.
+If cell geolocation is implemented, the devices can be shown on the map based on the location of their surrounding cells, even before obtaining a GNSS fix.
 It allows to locate devices within a radius of a few kilometers.
 It can be useful, for example when tracking assets like parcels.
 The approximate location of a parcel can be combined with known points of interest (for example, warehouses and ports) and you can find out if a shipment has arrived at the destination.
@@ -19,7 +19,7 @@ This additional information can be used to improve the accuracy of the location 
 Locating cells based on device data
 ***********************************
 
-GPS position fixes that are acquired by the devices and the cell information (cell ID, area ID, MCC/MNC) of these devices are stored together and used to `calculate the location of the cell <https://github.com/NordicSemiconductor/cell-geolocation-helpers#cellfromgeolocations>`_.
+GNSS position fixes that are acquired by the devices and the cell information (cell ID, area ID, MCC/MNC) of these devices are stored together and used to `calculate the location of the cell <https://github.com/NordicSemiconductor/cell-geolocation-helpers#cellfromgeolocations>`_.
 
 The following image demonstrates how the location of a device is calculated using the device geolocation data:
 

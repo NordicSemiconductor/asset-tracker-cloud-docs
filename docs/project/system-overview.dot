@@ -65,7 +65,7 @@ digraph G {
     aws_iot -> AWS  [ label=" TLS \n +MQTT \n +JSON " dir=back ltail=cluster1 lhead=cluster0 ]
     azure_iot -> Azure  [ dir=back ltail=cluster1 lhead=cluster0]
     thingy91 -> asset_tracker_v2 [ dir=none lhead=cluster1 ]
-    satellite -> thingy91 [ label=" GPS " ]
+    satellite -> thingy91 [ label=" GNSS " ]
     celltower -> thingy91 [ label=" LTE-M/\nNB-IoT " ]
 
     asset_tracker_v2 -> aws_iot [ dir=back ]
