@@ -135,18 +135,6 @@
         "v": {
           "type": "object",
           "properties": {
-            "band": {
-              "type": "integer",
-              "description": "Band",
-              "minimum": 1,
-              "examples": [3]
-            },
-            "nw": {
-              "type": "string",
-              "description": "Network mode",
-              "minLength": 1,
-              "examples": ["LTE-M", "NB-IoT GPS"]
-            },
             "iccid": {
               "type": "string",
               "description": "SIM ICCID",
@@ -167,7 +155,7 @@
               "examples": ["thingy91_nrf9160"]
             }
           },
-          "required": ["band", "nw", "iccid", "modV", "brdV"]
+          "required": ["iccid", "modV", "brdV"]
         },
         "ts": {
           "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
@@ -184,6 +172,18 @@
         "v": {
           "type": "object",
           "properties": {
+            "band": {
+              "type": "integer",
+              "description": "Band",
+              "minimum": 1,
+              "examples": [3]
+            },
+            "nw": {
+              "type": "string",
+              "description": "Network mode",
+              "minLength": 1,
+              "examples": ["LTE-M", "NB-IoT GPS"]
+            },
             "rsrp": {
               "type": "number",
               "description": "Reference Signal Received Power (RSRP). The average power level in dBm received from a single reference signal in an LTE (Long-term Evolution) network. Typically this value ranges from -140 to -40 dBm.",
@@ -221,7 +221,7 @@
               ]
             }
           },
-          "required": ["rsrp", "area", "mccmnc", "cell", "ip"]
+          "required": ["band", "nw", "rsrp", "area", "mccmnc", "cell", "ip"]
         },
         "ts": {
           "description": "Timestamp as Unix epoch with millisecond precision (UTC)",

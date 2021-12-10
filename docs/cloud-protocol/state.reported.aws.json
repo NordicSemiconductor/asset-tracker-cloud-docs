@@ -40,8 +40,6 @@
   },
   "dev": {
     "v": {
-      "band": 3,
-      "nw": "NB-IoT GPS",
       "iccid": "89450421180216216095",
       "modV": "mfw_nrf9160_1.0.0",
       "brdV": "thingy91_nrf9160",
@@ -51,6 +49,8 @@
   },
   "roam": {
     "v": {
+      "band": 3,
+      "nw": "NB-IoT GPS",
       "rsrp": -97,
       "area": 12,
       "mccmnc": 24202,
