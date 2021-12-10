@@ -37,13 +37,6 @@
       "maximum": 2147483647,
       "examples": [60]
     },
-    "celt": {
-      "description": "Cellular timeout (in seconds): Timeout for acquiring a cellular connection.",
-      "type": "integer",
-      "minimum": 1,
-      "maximum": 2147483647,
-      "examples": [600]
-    },
     "acct": {
       "description": "Accelerometer threshold in m/s²: Minimal absolute value for an accelerometer reading to be considered movement.",
       "type": "number",
@@ -62,5 +55,5 @@
       "examples": [["gnss"], ["ncell"], ["gnss", "ncell"]]
     }
   },
-  "required": ["act", "actwt", "mvres", "mvt", "gpst", "acct", "celt", "nod"]
+  "required": ["act", "actwt", "mvres", "mvt", "gpst", "acct", "nod"]
 }
