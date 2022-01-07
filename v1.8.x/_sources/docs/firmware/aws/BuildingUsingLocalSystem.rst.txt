@@ -53,7 +53,7 @@ Thingy:91 (PCA20035)
 
 .. code-block:: bash
 
-    west build -p always -b thingy91_nrf9160ns -- -DOVERLAY_CONFIG="overlay-aws.conf;overlay-debug.conf;asset-tracker-cloud-firmware-aws.conf;firmware.conf"
+    west build -p always -b thingy91_nrf9160_ns -- -DOVERLAY_CONFIG="overlay-aws.conf;overlay-debug.conf;asset-tracker-cloud-firmware-aws.conf;firmware.conf"
 
 nRF9160 DK (PCA10090)
 =====================

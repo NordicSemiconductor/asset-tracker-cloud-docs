@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Install the nRF Asset Tracker into your AWS account &mdash; nRF Asset Tracker 1d96d7c2e0e82040ea6caef407ff0a08beb7e7c2 documentation</title>
+  <title>Install the nRF Asset Tracker into your AWS account &mdash; nRF Asset Tracker f6ce9468c91b4818be239c3dd1f8e0a9440e8e81 documentation</title>
   
 
   
@@ -207,7 +207,7 @@
 npx cdk -a <span class="s1">&#39;node dist/cdk/cloudformation-sourcecode.js&#39;</span> deploy
 
 <span class="c1"># One-time operation to support large CloudFormation templates in CDK</span>
-npx cdk bootstrap
+npx cdk bootstrap aws://<span class="sb">`</span>aws sts get-caller-identity <span class="p">|</span> jq -r <span class="s1">&#39;.Account&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>/<span class="si">${</span><span class="nv">AWS_REGION</span><span class="si">}</span>
 
 <span class="c1"># Deploy the example (see the note below)</span>
 <span class="c1">#   It will prompt:</span>
