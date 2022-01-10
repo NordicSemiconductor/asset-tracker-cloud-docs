@@ -20,7 +20,7 @@ The web application offers the following features:
   
   * Current and historical device data
     
-    * GPS location
+    * GNSS location
     * Battery voltage
     * Accelerometer
   

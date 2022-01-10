@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cell geolocation &mdash; nRF Asset Tracker 755a9cf789370daba3c1a88feb947453c76f04df documentation</title>
+  <title>Cell geolocation &mdash; nRF Asset Tracker v18.0.0 documentation</title>
   
 
   
@@ -182,7 +182,7 @@
 <li><a class="reference internal" href="#third-party-location-apis" id="id3">Third-party location APIs</a></li>
 </ul>
 </div>
-<p>If cell geolocation is implemented, the devices can be shown on the map based on the location of their surrounding cells, even before obtaining a GPS fix.
+<p>If cell geolocation is implemented, the devices can be shown on the map based on the location of their surrounding cells, even before obtaining a GNSS fix.
 It allows to locate devices within a radius of a few kilometers.
 It can be useful, for example when tracking assets like parcels.
 The approximate location of a parcel can be combined with known points of interest (for example, warehouses and ports) and you can find out if a shipment has arrived at the destination.</p>
@@ -191,7 +191,7 @@ With very little power cost, the modem collects a report of all cells it current
 This additional information can be used to improve the accuracy of the location estimation.</p>
 <div class="section" id="locating-cells-based-on-device-data">
 <h2><a class="toc-backref" href="#id2">Locating cells based on device data</a><a class="headerlink" href="#locating-cells-based-on-device-data" title="Permalink to this headline">¶</a></h2>
-<p>GPS position fixes that are acquired by the devices and the cell information (cell ID, area ID, MCC/MNC) of these devices are stored together and used to <a class="reference external" href="https://github.com/NordicSemiconductor/cell-geolocation-helpers#cellfromgeolocations">calculate the location of the cell</a>.</p>
+<p>GNSS position fixes that are acquired by the devices and the cell information (cell ID, area ID, MCC/MNC) of these devices are stored together and used to <a class="reference external" href="https://github.com/NordicSemiconductor/cell-geolocation-helpers#cellfromgeolocations">calculate the location of the cell</a>.</p>
 <p>The following image demonstrates how the location of a device is calculated using the device geolocation data:</p>
 <div class="figure" id="id1">
 <img alt="Calculating the location of a cell using the device geolocation data" src="../../_images/map.gif" />

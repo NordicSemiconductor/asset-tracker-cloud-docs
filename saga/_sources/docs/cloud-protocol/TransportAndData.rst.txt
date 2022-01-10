@@ -36,7 +36,7 @@ Possible optimizations
 For data optimization and power optimization, it is recommended to explore denser data protocols, because a great deal of IoT applications (as in this example, too) always send data in the same structure.
 Only the values change in the data.
 
-Consider the following GPS message:
+Consider the following GNSS message:
 
 .. code-block:: json
 
