@@ -35,7 +35,7 @@ Try multiple SIM cards from different vendors if you experience connectivity iss
 GNSS
 ****
 
-Error: GNSS_EVT_OPERATION_BLOCKED
+Error: NRF_MODEM_GNSS_EVT_BLOCKED
 =================================
 
 This error occurs if the network provider does not grant Power Saving Mode (PSM) and the GNSS takes a long time to acquire a fix.
