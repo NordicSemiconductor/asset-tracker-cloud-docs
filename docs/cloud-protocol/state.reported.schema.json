@@ -182,7 +182,7 @@
               "type": "string",
               "description": "Network mode",
               "minLength": 1,
-              "examples": ["LTE-M", "NB-IoT GPS"]
+              "examples": ["LTE-M", "NB-IoT"]
             },
             "rsrp": {
               "type": "number",
