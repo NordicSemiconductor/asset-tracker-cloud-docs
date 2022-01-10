@@ -39,7 +39,7 @@ The firmware is optimized for ultra-low power consumption, and the design aims i
 A device made smart decides on sending the data based on the situation.
 
 In passive mode, data is sent when movement is detected.
-The accelerometer wakes up the application thread, which then tries to acquire a GPS fix and a cellular connection.
+The accelerometer wakes up the application thread, which then tries to acquire a GNSS fix and a cellular connection.
 If movement is no longer detected, the modem is turned off and the application returns to the sleep state.
 The passive mode is designed to conserve energy as much as possible.
 Nevertheless, it is preferred that the device sends an update occasionally, so that the battery condition is known and conditions such as non-functioning of motion sensor can be detected.
@@ -56,7 +56,7 @@ All these challenges mandate the ability to configure the device, which allows t
 
 An interesting configuration option is the sensitivity of the motion sensor.
 An action that is considered as a movement varies from one tracked subject to another.
-A device has various timeout settings such as the waiting time to acquire a GPS fix, or the waiting time between updates that are sent when the device is in motion.
+A device has various timeout settings such as the waiting time to acquire a GNSS fix, or the waiting time between updates that are sent when the device is in motion.
 The timeout settings have a significant influence on power and data consumption.
 
 When the device is set in an active mode, it sends updates based on a configurable interval regardless of whether motion is detected or not.
@@ -78,7 +78,7 @@ Time-stamping
 =============
 
 Device state and configuration are timeless data that are always required.
-The device sends a GPS position over the cellular connection and the digital twin is updated.
+The device sends a GNSS position over the cellular connection and the digital twin is updated.
 Thus, the current location of the device is known.
 When the device configuration is changed (``A -> A'``) the device will eventually apply the new configuration, and if another configuration change was made while the device was not connected (``A' -> A''``) the device can directly transition to ``A''``.
 To make state and configuration changes available over time, all changes can be stored on the cloud side with associated timestamps and made available for retrieval in a time-series manner.
@@ -95,7 +95,7 @@ This can be achieved by combining the following time sources:
 
 * Relative device timestamp (a relative time with microsecond resolution that counts upwards from zero after the device is powered on).
 * Cellular network time.
-* Time from the GPS sensor.
+* Time from the GNSS sensor.
 
 .. figure:: ./images/timestamping.jpg
    :alt: Time-stamping
@@ -103,7 +103,7 @@ This can be achieved by combining the following time sources:
    Time-stamping
 
 Whenever a sensor is read, the value is recorded with the device timestamp.
-Once these recorded measurements are ready to be sent (in the presence of a cellular connection and the network time is known), the relative timestamps can be converted to absolute timestamps using the relative timestamps of the network or the GPS time.
+Once these recorded measurements are ready to be sent (in the presence of a cellular connection and the network time is known), the relative timestamps can be converted to absolute timestamps using the relative timestamps of the network or the GNSS time.
 
 In this way, all data is sent with precise timestamps to the cloud where the device time is used when visualizing the data to accurately reflect the creation time of the datum.
 
@@ -114,7 +114,7 @@ There can be scenarios when the position updates are collected only when a cellu
 Consider a reindeer tracker, which tracks the position of a herd.
 The reindeer tracker reports movement only along ridges, but never in valleys.
 This is because the cellular signal does not have coverage in remote valleys.
-However, the GPS signal is received from the tracker since the satellites, which are high on the horizon, can send the signal down into the valley.
+However, the GNSS signal is received from the tracker since the satellites, which are high on the horizon, can send the signal down into the valley.
 
 There are many scenarios where the cellular connection might not be available or might be unreliable, but the reading sensors work.
 Robust ultra-mobile IoT products must incorporate such conditions into the normal mode of operation.

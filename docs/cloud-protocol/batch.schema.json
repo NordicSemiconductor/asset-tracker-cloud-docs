@@ -19,11 +19,11 @@
         "$ref": "state.reported.schema.json#/properties/acc"
       }
     },
-    "gps": {
-      "description": "GPS readings",
+    "gnss": {
+      "description": "GNSS readings",
       "type": "array",
       "items": {
-        "$ref": "state.reported.schema.json#/properties/gps"
+        "$ref": "state.reported.schema.json#/properties/gnss"
       }
     },
     "roam": {
