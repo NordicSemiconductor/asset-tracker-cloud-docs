@@ -9,8 +9,7 @@
 [![ESLint: TypeScript](https://img.shields.io/badge/ESLint-TypeScript-blue.svg)](https://github.com/typescript-eslint/typescript-eslint)
 
 The nRF Asset Tracker aims to provide a concrete end-to-end example for an
-ultra-low power cellular IoT product in the asset tracker space, specifically a
-Cat Tracker.
+ultra-low power cellular IoT product in the asset tracker space.
 
 > [Read the complete nRF Asset Tracker documentation](https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/).
 
