@@ -6,7 +6,7 @@ Core principles
 The nRF Asset Tracker is built on the following principles:
 
 Teach by showing
-  All the examples are designed to solve a concrete use case (a Cat Tracker) instead of providing generic or abstract solutions.
+  All the examples are designed to solve a concrete use case (an asset tracker) instead of providing generic or abstract solutions.
   It is not a framework, but a real application.
 
 Err on the side of security

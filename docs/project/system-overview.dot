@@ -49,7 +49,7 @@ digraph G {
     }
 
     subgraph cluster2 {
-        label="Cat Tracker web application"
+        label="nRF Asset Tracker web application"
         labelloc=b
         fontsize=16
         bgcolor="#D9E1E2" color="#cccccc" 

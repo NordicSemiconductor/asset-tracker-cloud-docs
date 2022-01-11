@@ -7,7 +7,7 @@ Connect using the simulator
     :local:
     :depth: 2
 
-The CLI provides a software implementation of Cat Tracker for testing purposes.
+The CLI provides a software implementation of a nRF9160-based asset tracker for testing purposes.
 It allows the verification of the cloud configuration.
 This feature is also used for testing the nRF Asset Tracker using continuous integration.
 

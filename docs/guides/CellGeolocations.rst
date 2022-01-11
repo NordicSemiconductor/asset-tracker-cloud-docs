@@ -6,7 +6,7 @@ Cell geolocations
    :depth: 2
 
 Locating a device is an important aspect of any IoT solution.
-It is one of the primary functions in the case of an asset tracker (like the Cat Tracker).
+It is one of the primary functions in the case of an asset tracker.
 Sometimes, acquiring a GNSS fix is not possible, for example, when the device is indoors.
 In such case, other data can be used to approximately calculate the location of the device.
 If the device has a cellular connection, the ID of the cells with which the device modem communicates can be used to calculate its location.
@@ -15,8 +15,8 @@ The approximate location of the device is then used by the GNSS module to speed 
 
 However, smartphones are powerful devices and there is a concrete need to have the location information on the device instantly (for example, for showing the location of the user in a navigation application while the device is indoors).
 Smartphones have location-dependent features, while most of the IoT devices do not have such features.
-For example, the Cat Tracker has no feature that depends on a location, it only reports the location to the cloud backend.
-In this case, only the mobile app that visualizes the location of the Cat Tracker requires the location of the device.
+For example, the nRF Asset Tracker has no feature that depends on a location, it only reports the location to the cloud backend.
+In this case, only the mobile app that visualizes the location of the nRF Asset Tracker requires the location of the device.
 
 .. note::
 
@@ -25,7 +25,7 @@ In this case, only the mobile app that visualizes the location of the Cat Tracke
 Assisted GPS (A-GPS)
 ********************
 
-The only location-dependent feature on the Cat Tracker is A-GPS, which speeds up the time to acquire the first GNSS fix (seconds instead of minutes). 
+The only location-dependent feature of the nRF Asset Tracker is A-GPS, which speeds up the time to acquire the first GNSS fix (seconds instead of minutes). 
 Complex location triangulation based on mobile network cells or Wi-Fi MAC addresses is not required.
 It is sufficient to have an up-to-date `GPS almanac <https://en.wikipedia.org/wiki/GPS_signals#Almanac>`_ and an approximate location, which can be derived from the mobile network operator's country code.
 This data enables the GNSS module to calculate a GPS fix quickly.
