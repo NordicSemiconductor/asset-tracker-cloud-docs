@@ -1,7 +1,7 @@
 .. _aws-getting-started-app:
 
-Deploy the Cat Tracker web application
-######################################
+Deploy the nRF Asset Tracker web application
+############################################
 
 .. contents::
    :local:

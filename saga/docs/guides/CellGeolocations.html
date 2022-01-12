@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cell geolocations &mdash; nRF Asset Tracker 60124ed8943d4af38e13166ae39d66c5d4a04709 documentation</title>
+  <title>Cell geolocations &mdash; nRF Asset Tracker v18.1.0 documentation</title>
   
 
   
@@ -91,7 +91,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Azure cloud components</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">nRF Asset Tracker web application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
@@ -194,7 +194,7 @@
 </ul>
 </div>
 <p>Locating a device is an important aspect of any IoT solution.
-It is one of the primary functions in the case of an asset tracker (like the Cat Tracker).
+It is one of the primary functions in the case of an asset tracker.
 Sometimes, acquiring a GNSS fix is not possible, for example, when the device is indoors.
 In such case, other data can be used to approximately calculate the location of the device.
 If the device has a cellular connection, the ID of the cells with which the device modem communicates can be used to calculate its location.
@@ -202,15 +202,15 @@ Smartphones use this technique and combine the data from other wireless networks
 The approximate location of the device is then used by the GNSS module to speed up the time to the first GNSS fix since it can limit the number of GNSS satellites that must be queried to the ones that are currently visible in the sky.</p>
 <p>However, smartphones are powerful devices and there is a concrete need to have the location information on the device instantly (for example, for showing the location of the user in a navigation application while the device is indoors).
 Smartphones have location-dependent features, while most of the IoT devices do not have such features.
-For example, the Cat Tracker has no feature that depends on a location, it only reports the location to the cloud backend.
-In this case, only the mobile app that visualizes the location of the Cat Tracker requires the location of the device.</p>
+For example, the nRF Asset Tracker has no feature that depends on a location, it only reports the location to the cloud backend.
+In this case, only the mobile app that visualizes the location of the nRF Asset Tracker requires the location of the device.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Since it is efficient to resolve cell geolocations on the cloud, this can be ideally the responsibility of the cloud backend.</p>
 </div>
 <div class="section" id="assisted-gps-a-gps">
 <h2><a class="toc-backref" href="#id1">Assisted GPS (A-GPS)</a><a class="headerlink" href="#assisted-gps-a-gps" title="Permalink to this headline">¶</a></h2>
-<p>The only location-dependent feature on the Cat Tracker is A-GPS, which speeds up the time to acquire the first GNSS fix (seconds instead of minutes).
+<p>The only location-dependent feature of the nRF Asset Tracker is A-GPS, which speeds up the time to acquire the first GNSS fix (seconds instead of minutes).
 Complex location triangulation based on mobile network cells or Wi-Fi MAC addresses is not required.
 It is sufficient to have an up-to-date <a class="reference external" href="https://en.wikipedia.org/wiki/GPS_signals#Almanac">GPS almanac</a> and an approximate location, which can be derived from the mobile network operator’s country code.
 This data enables the GNSS module to calculate a GPS fix quickly.</p>

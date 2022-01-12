@@ -10,7 +10,7 @@ Upgrading an existing installation
 Before starting an upgrade, read the release notes:
 
 * `Release notes for the nRF Asset Tracker for AWS <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/releases>`_
-* `Release notes for the Cat Tracker web application <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js/releases>`_
+* `Release notes for the nRF Asset Tracker web application <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js/releases>`_
 
 Pay close attention to Breaking changes.
 
@@ -26,8 +26,8 @@ If you already have an installation and you want to upgrade to the latest releas
        npx tsc
        npx cdk deploy '*' 
 
-Upgrading an existing Cat Tracker web application installation
-**************************************************************
+Upgrading an existing nRF Asset Tracker web application installation
+********************************************************************
 
 If you already have an installation and you want to upgrade to the latest release, pull in the changes and perform the update:
 
@@ -36,4 +36,4 @@ If you already have an installation and you want to upgrade to the latest releas
        git pull
        npm ci
 
-To publish the upgrade to AWS, perform the steps for the initial installation as described in :ref:`Deploying the Cat Tracker web application <aws-getting-started-app>`.
+To publish the upgrade to AWS, perform the steps for the initial installation as described in :ref:`Deploying the nRF Asset Tracker web application <aws-getting-started-app>`.
