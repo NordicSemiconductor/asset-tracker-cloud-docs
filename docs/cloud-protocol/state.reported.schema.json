@@ -135,6 +135,13 @@
         "v": {
           "type": "object",
           "properties": {
+            "imei": {
+              "type": "string",
+              "description": "Board IMEI",
+              "minLength": 15,
+              "maxLength": 16,
+              "examples": ["352656106111232"]
+            },
             "iccid": {
               "type": "string",
               "description": "SIM ICCID",
@@ -155,7 +162,7 @@
               "examples": ["thingy91_nrf9160"]
             }
           },
-          "required": ["iccid", "modV", "brdV"]
+          "required": ["imei", "iccid", "modV", "brdV"]
         },
         "ts": {
           "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
