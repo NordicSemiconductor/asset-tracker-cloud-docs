@@ -42,9 +42,14 @@
               "type": "number",
               "minimum": 1,
               "maximum": 100
+            },
+            "atmp": {
+              "description": "Atmospheric pressure reading from external sensor in kPa",
+              "type": "number",
+              "minimum": 0
             }
           },
-          "required": ["hum", "temp"]
+          "required": ["hum", "temp", "atmp"]
         },
         "ts": {
           "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
