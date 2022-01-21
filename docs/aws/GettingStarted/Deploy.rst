@@ -7,11 +7,11 @@ The following commands set up the necessary resources in your AWS account:
 
 .. code-block:: bash
 
+    # One-time operation to support large CloudFormation templates in CDK
+    npx cdk -a 'node dist/cdk/cloudformation-sourcecode.js' bootstrap aws://`aws sts get-caller-identity | jq -r '.Account' | tr -d '\n'`/${AWS_REGION}
+
     # Create the S3 Bucket for publishing the lambdas
     npx cdk -a 'node dist/cdk/cloudformation-sourcecode.js' deploy
-
-    # One-time operation to support large CloudFormation templates in CDK
-    npx cdk bootstrap aws://`aws sts get-caller-identity | jq -r '.Account' | tr -d '\n'`/${AWS_REGION}
     
     # Deploy the example (see the note below)
     #   It will prompt:
