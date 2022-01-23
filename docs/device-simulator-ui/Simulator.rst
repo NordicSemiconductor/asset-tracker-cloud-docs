@@ -66,7 +66,7 @@ To run the device simulator UI, use the following command:
 
 .. code-block:: bash
 
-    npm run start
+    npm start
 
 After executing the above command, copy the endpoint printed above (for example, ``http://localhost:25336``) and use it in the simulator UI.
 
