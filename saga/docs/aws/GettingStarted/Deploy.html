@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Install the nRF Asset Tracker into your AWS account &mdash; nRF Asset Tracker 52842c1a070732472a57fd4b616920166107bd5b documentation</title>
+  <title>Install the nRF Asset Tracker into your AWS account &mdash; nRF Asset Tracker v19.0.2 documentation</title>
   
 
   
@@ -214,7 +214,7 @@ npx cdk -a <span class="s1">&#39;node dist/cdk/cloudformation-sourcecode.js&#39;
 <span class="c1">#     Do you wish to deploy these changes (y/n)?</span>
 <span class="c1">#   twice (the first is for the main stack, and the second is when deploying the web application stack)</span>
 <span class="c1">#   Both need to be confirmed with &#39;y&#39;</span>
-npx cdk deploy <span class="s1">&#39;*&#39;</span>
+npx cdk deploy --all
 
 <span class="c1"># This is a fix for a bug with AWS CloudFormation and HTTP APIs</span>
 <span class="c1"># See https://github.com/bifravst/aws/issues/455</span>
@@ -226,7 +226,7 @@ node dist/cdk/helper/addFakeRoute.js
 <p class="first admonition-title">Note</p>
 <p class="last">The AWS CDK provides a list of permission changes to your account, and you need to review them carefully whenever you make changes to the setup.
 However, this step is not mandatory and you can safely skip it, because you are deploying in a blank account.
-To skip this step in future, run <code class="docutils literal notranslate"><span class="pre">npx</span> <span class="pre">cdk</span> <span class="pre">deploy</span> <span class="pre">'*'</span> <span class="pre">--require-approval</span> <span class="pre">never</span></code>.
+To skip this step in future, run <code class="docutils literal notranslate"><span class="pre">npx</span> <span class="pre">cdk</span> <span class="pre">deploy</span> <span class="pre">--all</span> <span class="pre">--require-approval</span> <span class="pre">never</span></code>.
 Do this only in standalone accounts for development purposes.</p>
 </div>
 </div>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker 52842c1a070732472a57fd4b616920166107bd5b documentation</title>
+  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker v19.0.2 documentation</title>
   
 
   
@@ -202,7 +202,7 @@
 <pre class="highlight literal-block">
 cat <em>location of your Cell Location Service Key file</em> | node cli configure thirdParty nrfcloud cellLocationServiceKey
 node cli configure context stack nrfcloudCellLocation 1
-npx cdk deploy '*'
+npx cdk deploy --all
 </pre>
 <p>This will update the StateMachine, which resolves cells from devices to use the nRF Cloud API as a resolver.</p>
 </div>
@@ -219,7 +219,7 @@ npx cdk deploy '*'
 <pre class="highlight literal-block">
 cat <em>location of your Assisted GPS Location Service key file</em> | node cli configure thirdParty nrfcloud agpsLocationServiceKey
 node cli configure context stack nrfcloudAGPS 1
-npx cdk deploy '*'
+npx cdk deploy --all
 </pre>
 <p>This will update the StateMachine, which resolves A-GPS request from devices to use the nRF Cloud API as a resolver.</p>
 </div>
@@ -236,7 +236,7 @@ npx cdk deploy '*'
 <pre class="highlight literal-block">
 cat <em>location of your Predicted GPS Location Service key file</em> | node cli configure thirdParty nrfcloud pgpsLocationServiceKey
 node cli configure context stack nrfcloudPGPS 1
-npx cdk deploy '*'
+npx cdk deploy --all
 </pre>
 <p>This will update the StateMachine, which resolves P-GPS request from devices to use the nRF Cloud API as a resolver.</p>
 </div>

@@ -46,7 +46,7 @@ Also enable the Firmware CI runner to connect before deploying the stack (see :r
 .. code-block:: bash
 
    node cli configure context stack firmware-ci 1
-   npx cdk deploy '*'
+   npx cdk deploy --all
 
 Print the AWS Key for the CI runner on GitHub Actions using the following command:
 

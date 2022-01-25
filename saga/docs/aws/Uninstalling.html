@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Uninstalling the nRF Asset Tracker from AWS &mdash; nRF Asset Tracker 52842c1a070732472a57fd4b616920166107bd5b documentation</title>
+  <title>Uninstalling the nRF Asset Tracker from AWS &mdash; nRF Asset Tracker v19.0.2 documentation</title>
   
 
   
@@ -201,12 +201,12 @@ node cli purge-cas
 <span class="c1"># Delete the nRF Asset Tracker Stack</span>
 <span class="c1"># Note that the action can take around 20 minutes</span>
 <span class="c1"># The CloudFormation distributions especially take a long time to get deleted</span>
-npx cdk destroy <span class="s1">&#39;*&#39;</span>
+npx cdk destroy --all
 
 <span class="c1"># Delete the Source Code Stack</span>
 <span class="nv">SOURCE_CODE_BUCKET</span><span class="o">=</span><span class="sb">`</span>aws cloudformation describe-stacks --stack-name <span class="si">${</span><span class="nv">STACK_NAME</span><span class="k">:-</span><span class="nv">nrf</span><span class="p">-asset-tracker</span><span class="si">}</span>-sourcecode <span class="p">|</span> jq -r <span class="s1">&#39;.Stacks[0].Outputs[] | select(.OutputKey == &quot;bucketName&quot;) | .OutputValue&#39;</span><span class="sb">`</span>
 aws s3 rb s3://<span class="nv">$SOURCE_CODE_BUCKET</span> --force
-npx cdk -a <span class="s1">&#39;node dist/cdk/cloudformation-sourcecode.js&#39;</span> destroy <span class="s1">&#39;*&#39;</span>
+npx cdk -a <span class="s1">&#39;node dist/cdk/cloudformation-sourcecode.js&#39;</span> destroy --all
 </pre></div>
 </div>
 </div>

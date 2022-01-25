@@ -18,7 +18,7 @@ The following commands set up the necessary resources in your AWS account:
     #     Do you wish to deploy these changes (y/n)?
     #   twice (the first is for the main stack, and the second is when deploying the web application stack)
     #   Both need to be confirmed with 'y'
-    npx cdk deploy '*'
+    npx cdk deploy --all
 
     # This is a fix for a bug with AWS CloudFormation and HTTP APIs
     # See https://github.com/bifravst/aws/issues/455
@@ -30,5 +30,5 @@ The initial deployment will take a few minutes because it sets up a `CloudFront 
 
     The AWS CDK provides a list of permission changes to your account, and you need to review them carefully whenever you make changes to the setup.
     However, this step is not mandatory and you can safely skip it, because you are deploying in a blank account.
-    To skip this step in future, run ``npx cdk deploy '*' --require-approval never``.
+    To skip this step in future, run ``npx cdk deploy --all --require-approval never``.
     Do this only in standalone accounts for development purposes.
