@@ -24,7 +24,7 @@ If you already have an installation and you want to upgrade to the latest releas
        git pull
        npm ci
        npx tsc
-       npx cdk deploy '*' 
+       npx cdk deploy --all 
 
 Upgrading an existing nRF Asset Tracker web application installation
 ********************************************************************

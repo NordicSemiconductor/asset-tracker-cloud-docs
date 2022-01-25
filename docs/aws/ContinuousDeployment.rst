@@ -54,7 +54,7 @@ After providing the GitHub credentials, set up the continuous deployment by enab
 .. code-block:: bash
 
     node cli configure context stack cd 1
-    npx cdk deploy '*'
+    npx cdk deploy --all
 
 This sets up an AWS CodePipeline, which triggers an AWS CodeBuild project for every push to the ``saga`` branch.
 You can customize the branch by providing the name in ``deploy.branch`` in the :file:`package.json` file of your nRF Asset Tracker for AWS fork.
