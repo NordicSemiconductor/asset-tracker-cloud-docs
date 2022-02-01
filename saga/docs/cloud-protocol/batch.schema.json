@@ -12,13 +12,6 @@
         "$ref": "state.reported.schema.json#/properties/bat"
       }
     },
-    "acc": {
-      "description": "Accelerometer readings",
-      "type": "array",
-      "items": {
-        "$ref": "state.reported.schema.json#/properties/acc"
-      }
-    },
     "gnss": {
       "description": "GNSS readings",
       "type": "array",
