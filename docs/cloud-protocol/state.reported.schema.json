@@ -59,34 +59,6 @@
       },
       "required": ["v", "ts"]
     },
-    "acc": {
-      "description": "The accelerometer reading",
-      "type": "object",
-      "properties": {
-        "v": {
-          "description": "Accelerometer reading in m/s² per axis",
-          "type": "object",
-          "properties": {
-            "x": {
-              "type": "number"
-            },
-            "y": {
-              "type": "number"
-            },
-            "z": {
-              "type": "number"
-            }
-          },
-          "required": ["x", "y", "z"]
-        },
-        "ts": {
-          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
-          "type": "integer",
-          "minimum": 1234567890123
-        }
-      },
-      "required": ["v", "ts"]
-    },
     "gnss": {
       "description": "The GNSS reading",
       "type": "object",
@@ -123,7 +95,7 @@
               "maximum": 360
             }
           },
-          "required": ["lng", "lat", "acc", "alt", "spd", "hdg"]
+          "required": ["lng", "lat", "alt", "spd", "hdg"]
         },
         "ts": {
           "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
