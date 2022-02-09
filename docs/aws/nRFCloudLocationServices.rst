@@ -8,7 +8,7 @@ Prerequisites
 
 To use any nRF Cloud Location Service, you need to configure your team ID.
 
-Use the following command to configure your team ID:
+Run the following command to configure your team ID:
 
 .. parsed-literal::
     :class: highlight
