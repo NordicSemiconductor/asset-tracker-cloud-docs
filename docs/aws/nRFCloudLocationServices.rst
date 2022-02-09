@@ -6,7 +6,7 @@ nRF Cloud Location Services
 Prerequisites
 *************
 
-Any nRF Cloud Location Service requires the configuration of your team ID.
+To use any nRF Cloud Location Service, you need to configure your team ID.
 
 Use the following command to configure your team ID:
 
