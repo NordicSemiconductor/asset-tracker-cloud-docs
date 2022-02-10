@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker f6ce9468c91b4818be239c3dd1f8e0a9440e8e81 documentation</title>
+  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker 8f0cfede82bc07e89545ce6becbc85c94b29e212 documentation</title>
   
 
   
@@ -189,6 +189,14 @@
             
   <div class="section" id="nrf-cloud-location-services">
 <span id="aws-nrf-cloud-location-services"></span><h1>nRF Cloud Location Services<a class="headerlink" href="#nrf-cloud-location-services" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>To use any nRF Cloud Location Service, you need to configure your team ID.</p>
+<p>Run the following command to configure your team ID:</p>
+<pre class="highlight literal-block">
+node cli configure thirdParty nrfcloud teamId <em>your team ID</em>
+</pre>
+</div>
 <div class="section" id="cell-location-service">
 <h2>Cell Location Service<a class="headerlink" href="#cell-location-service" title="Permalink to this headline">¶</a></h2>
 <p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for single cells and neighboring cell reports for the application using <a class="reference external" href="https://api.nrfcloud.com/v1#tag/Cell-Position">nRF Cloud’s Cell Location Service API</a> in your deployment.</p>
