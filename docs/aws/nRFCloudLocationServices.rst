@@ -3,6 +3,18 @@
 nRF Cloud Location Services
 ###########################
 
+Prerequisites
+*************
+
+To use any nRF Cloud Location Service, you need to configure your team ID.
+
+Run the following command to configure your team ID:
+
+.. parsed-literal::
+    :class: highlight
+
+    node cli configure thirdParty nrfcloud teamId *your team ID*
+
 Cell Location Service
 *********************
 
