@@ -68,11 +68,15 @@
           "properties": {
             "lng": {
               "description": "Longitude",
-              "type": "number"
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180
             },
             "lat": {
               "description": "Latitude",
-              "type": "number"
+              "type": "number",
+              "minimum": -90,
+              "maximum": 90
             },
             "acc": {
               "description": "Accuracy (2D 1-sigma) in meters",
