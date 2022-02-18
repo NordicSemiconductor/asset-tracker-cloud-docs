@@ -7,7 +7,7 @@ Device data and configuration
    :local:
    :depth: 2
 
-The schemas referenced below define the data format used by the device to encode data.
+The schemas referenced on this page define the data format used by the device to encode data.
 Currently, :ref:`JSON <json-format>` is the only supported encoding format.
 
 While the schemas mark properties as required, the device can always send partial updates.
