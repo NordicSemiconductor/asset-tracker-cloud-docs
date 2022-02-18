@@ -8,7 +8,7 @@ Device data and configuration
    :depth: 2
 
 The schemas referenced below define the data format used by the device to encode data.
-Currently :ref:`JSON is the only supported encoding format <json-format>`.
+Currently, :ref:`JSON <json-format>` is the only supported encoding format.
 
 While the schemas mark properties as required, the device can always send partial updates.
 For example, the device might initially after boot report the full roaming information, but later only send the changed values (typically RSRP) to the cloud in order conserve data and power.
