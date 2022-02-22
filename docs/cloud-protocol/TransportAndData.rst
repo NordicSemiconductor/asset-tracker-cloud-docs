@@ -23,6 +23,8 @@ The nRF Asset Tracker uses MQTT to connect the device to the cloud provider.
 MQTT is the default protocol used for IoT in the cloud solutions of the various cloud providers.
 This example currently focuses on AWS, Microsoft Azure, and Google Cloud.
 
+.. _json-format:
+
 JSON as the data format
 ***********************
 
