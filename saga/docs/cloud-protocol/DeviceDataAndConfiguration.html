@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Device data and configuration &mdash; nRF Asset Tracker 638fee911f779dbdfcc5e1fad02d9d6955a60cad documentation</title>
+  <title>Device data and configuration &mdash; nRF Asset Tracker v20.1.0 documentation</title>
   
 
   
@@ -186,6 +186,11 @@
 <li><a class="reference internal" href="#batch-data" id="id5">Batch data</a></li>
 </ul>
 </div>
+<p>The schemas referenced on this page define the data format used by the device to encode data.
+Currently, <a class="reference internal" href="TransportAndData.html#json-format"><span class="std std-ref">JSON</span></a> is the only supported encoding format.</p>
+<p>While the schemas mark properties as required, the device can always send partial updates.
+For example, the device might initially report the full roaming information after boot, but later only send the changed values, for example Reference Signal Received Power (RSRP), to the cloud to conserve data and power.
+It is the responsibility of the cloud to store the updates in a way that full objects can be constructed from partial updates.</p>
 <p>Sending and receiving data is different for each cloud operator.</p>
 <div class="section" id="aws">
 <h2><a class="toc-backref" href="#id1">AWS</a><a class="headerlink" href="#aws" title="Permalink to this headline">¶</a></h2>
