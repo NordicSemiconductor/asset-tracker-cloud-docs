@@ -1,76 +1,36 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Connect using the simulator &mdash; nRF Asset Tracker fc63f7fba8e6fe9e1ceae344d90b30d03292f92f documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>Connect using the simulator &mdash; nRF Asset Tracker f2fff594bcd6650f0e8b2764f10aeefbaf71e70c documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html" class="icon icon-home"> nRF Asset Tracker
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 v1.5.x
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -78,18 +38,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
@@ -108,75 +57,32 @@
 <li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">nRF Asset Tracker</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Connect using the simulator</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v1.5.x/docs/device-simulator-ui/Simulator.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="connect-using-the-simulator">
-<h1>Connect using the simulator<a class="headerlink" href="#connect-using-the-simulator" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="connect-using-the-simulator">
+<h1>Connect using the simulator<a class="headerlink" href="#connect-using-the-simulator" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#creating-certificates-for-the-device" id="id2">Creating certificates for the device</a></p></li>
@@ -198,86 +104,72 @@ This feature is also used for testing the nRF Asset Tracker using continuous int
 <li><p>Run the device simulator.</p></li>
 <li><p>Use the device simulator UI to control the simulated device.</p></li>
 </ul>
-<div class="section" id="creating-certificates-for-the-device">
-<h2><a class="toc-backref" href="#id2">Creating certificates for the device</a><a class="headerlink" href="#creating-certificates-for-the-device" title="Permalink to this headline">¶</a></h2>
+<section id="creating-certificates-for-the-device">
+<h2><a class="toc-backref" href="#id2">Creating certificates for the device</a><a class="headerlink" href="#creating-certificates-for-the-device" title="Permalink to this headline"></a></h2>
 <p>To create certificates for a simulated device, run the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli create-device-cert
 </pre></div>
 </div>
-</div>
-<div class="section" id="running-the-device-simulator">
-<h2><a class="toc-backref" href="#id3">Running the device simulator</a><a class="headerlink" href="#running-the-device-simulator" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="running-the-device-simulator">
+<h2><a class="toc-backref" href="#id3">Running the device simulator</a><a class="headerlink" href="#running-the-device-simulator" title="Permalink to this headline"></a></h2>
 <p>To run a simulated device using the generated certificate, run the following command:</p>
 <p>The device simulator will print an endpoint to use with the device simulator UI.</p>
-</div>
-<div class="section" id="using-the-device-simulator-ui">
-<h2><a class="toc-backref" href="#id4">Using the device simulator UI</a><a class="headerlink" href="#using-the-device-simulator-ui" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="using-the-device-simulator-ui">
+<h2><a class="toc-backref" href="#id4">Using the device simulator UI</a><a class="headerlink" href="#using-the-device-simulator-ui" title="Permalink to this headline"></a></h2>
 <p>The <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js">device-ui</a> project provides a browser-based UI to control the simulated device.</p>
-<div class="figure align-default" id="id1">
+<figure class="align-default" id="id1">
 <img alt="Device simulator UI" src="../../_images/device-simulator.png" />
-<p class="caption"><span class="caption-text">Device simulator UI</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-<div class="section" id="clone-the-project-and-install-dependencies">
-<h3><a class="toc-backref" href="#id5">Clone the project and install dependencies</a><a class="headerlink" href="#clone-the-project-and-install-dependencies" title="Permalink to this headline">¶</a></h3>
+<figcaption>
+<p><span class="caption-text">Device simulator UI</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="clone-the-project-and-install-dependencies">
+<h3><a class="toc-backref" href="#id5">Clone the project and install dependencies</a><a class="headerlink" href="#clone-the-project-and-install-dependencies" title="Permalink to this headline"></a></h3>
 <p>Clone the device-ui project and install the dependencies:</p>
 <pre class="literal-block">git clone --branch v1.5.x --single-branch \
   <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js">https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js</a> device-ui
 cd device-ui
 npm ci</pre>
-</div>
-<div class="section" id="run-the-device-simulator-ui">
-<h3><a class="toc-backref" href="#id6">Run the device simulator UI</a><a class="headerlink" href="#run-the-device-simulator-ui" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="run-the-device-simulator-ui">
+<h3><a class="toc-backref" href="#id6">Run the device simulator UI</a><a class="headerlink" href="#run-the-device-simulator-ui" title="Permalink to this headline"></a></h3>
 <p>To run the device simulator UI, use the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm run
 </pre></div>
 </div>
 <p>After executing the above command, copy the endpoint printed above (for example, <code class="docutils literal notranslate"><span class="pre">http://localhost:25336</span></code>) and use it in the simulator UI.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
-
-    </p>
+    <p>&#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
