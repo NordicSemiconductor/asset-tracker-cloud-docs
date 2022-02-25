@@ -19,7 +19,7 @@ Running end-to-end tests during development
 
 The end-to-end tests run against an instance of the :ref:`nRF Asset Tracker for AWS <index_aws>`.
 
-Either, use the credentials you created, :ref:`when setting up the solution <aws-getting-started>`, or enable the Web App CI feature and use the dedicated credentials created for this task.
+Use either the credentials you created, :ref:`when setting up the solution <aws-getting-started>`, or enable the Web App CI feature and use the dedicated credentials created for this task.
 The latter option is the recommended approach since it limits the permission scope to only the needed ones. 
 They can also be used to :ref:`run the end-to-end tests on GitHub Actions <aws-continuous-integration-web-app-github>`.
 
