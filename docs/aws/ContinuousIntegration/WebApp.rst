@@ -40,9 +40,6 @@ Run the following command to allow the changed ``.envrc`` file:
 
   direnv allow
 
-Running the tests
------------------
-
 You can then run the tests using
 
 .. code-block:: bash
