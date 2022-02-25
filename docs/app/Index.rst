@@ -3,7 +3,7 @@
 nRF Asset Tracker web application
 #################################
 
-The nRF Asset Tracker web application is a reference single-page application (SPA) developed using in
+The nRF Asset Tracker web application is a reference single-page application (SPA) developed using 
 `TypeScript <https://www.typescriptlang.org/>`_.
 The source code is published on GitHub:
 
