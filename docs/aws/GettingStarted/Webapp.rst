@@ -34,7 +34,7 @@ Configure the web application
 You need to configure the web application to be able to run it with your account.
 
 The web application requires the IDs of the AWS resources that were created during the setup of the stack.
-Run the following command in the :file:`web-app` directory to copy the output that contain the IDs to the :file:`.envrc` file:
+Run the following command in the :file:`web-app` directory to copy the output containing the IDs to the :file:`.envrc` file:
 
 .. code-block:: bash
 
