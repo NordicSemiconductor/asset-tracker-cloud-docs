@@ -13,7 +13,7 @@ Continuous integration of the AWS web application
     See the `GitHub project page of the nRF Asset Tracker Web Application for AWS <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-aws-js/>`_ for an implementation of the process outlined in this section.
 
 Every change to the project is tested using a head-less browser with the `Playwright <https://Playwright.dev>`_ framework.
-This ensure that all dependencies of the web application work as intended and present the data in the correct way.
+This ensures that all dependencies of the web application work as intended and present the data in the correct way.
 
 Running end-to-end tests during development
 *******************************************
