@@ -35,7 +35,7 @@ You can also use the credentials to :ref:`run the end-to-end tests on GitHub Act
        export AWS_SECRET_ACCESS_KEY="*value of Secret access key*"
        export WEBAPP_STACK_NAME="*name of your web application stack*"
 
-#. Run the following command to allow the changed ``.envrc`` file:
+#. Run the following command to allow the changed :file:`.envrc` file:
 
    .. code-block:: bash
 
