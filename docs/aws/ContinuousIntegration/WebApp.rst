@@ -87,7 +87,7 @@ Set these secrets:
 - ``AWS_SECRET_ACCESS_KEY``
 - ``WEBAPP_STACK_NAME``
 
-You can acquire them using the nRF Asset Tracker for AWS CLI:
+Acquire the secrets using the nRF Asset Tracker for AWS CLI:
 
 .. code-block:: bash
 
