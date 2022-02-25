@@ -97,7 +97,7 @@ For this to be possible, you need to configure AWS credentials as `GitHub enviro
      - ``AWS_SECRET_ACCESS_KEY``
      - ``WEBAPP_STACK_NAME``
 
-  #. set the secrets using the GitHub CLI
+  #. Set the secrets using the GitHub CLI
 
      Alternatively, you can use the `GitHub CLI <https://cli.github.com/>`_  with the
      environment settings from above:
