@@ -84,7 +84,7 @@ For this to be possible, you need to configure AWS credentials as `GitHub enviro
 
      node cli web-app-ci -s
 
-#. Set the secrets
+#. Set the secrets:
 
   a. Set the secrets using the GitHub UI:
 
