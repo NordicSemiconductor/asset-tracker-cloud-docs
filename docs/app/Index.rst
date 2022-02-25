@@ -22,7 +22,7 @@ The web application offers the following features:
   * Current and historical device data
     
     * GNSS location
-    * approximate location using :ref:`nRF Cloud Location Services <app-cellgeolocation>` and other third-party providers
+    * Approximate location using :ref:`nRF Cloud Location Services <app-cellgeolocation>` and other third-party providers
     * Battery voltage
     * Temperature
     * ... and more
