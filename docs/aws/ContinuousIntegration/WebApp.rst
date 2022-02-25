@@ -69,8 +69,8 @@ The tests run against this instance.
 Typically, it is the production instance, to ensure that the web application works with the current production setup.
 Follow the :ref:`Getting started guide <aws-getting-started>` to set up the instance to be used for the tests.
 
-The test runner needs to interact with the instance to retrieve the app configuration and to provide test data.
-For this to be possible, you need to configure AWS credentials as `GitHub environment secrets <https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-environment>`_.
+The test runner needs to interact with the instance to retrieve the application configuration and to provide test data.
+You need to configure AWS credentials as `GitHub environment secrets <https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-environment>`_.
 
 1. Enable the web application CI of the nRF Asset Tracker for AWS:
 
