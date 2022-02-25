@@ -63,7 +63,7 @@ To enable the inspector during the tests, run:
 Running end-to-end tests using GitHub Actions
 *********************************************
 
-`This workflow <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-aws-js/blob/41705dae8a5d4d7067c023297a3d38a2f0d1106e/.github/workflows/test-and-release.yaml>`_ runs the end-to-end tests for every commit.
+`The Test and Release workflow <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-aws-js/blob/41705dae8a5d4d7067c023297a3d38a2f0d1106e/.github/workflows/test-and-release.yaml>`_ runs the end-to-end tests for every commit.
 For this to work, you need a running instance of :ref:`nRF Asset Tracker for AWS <index_aws>`.
 The tests run against this instance.
 Typically it is the production instance, to ensure that the web application works with the current production setup.
