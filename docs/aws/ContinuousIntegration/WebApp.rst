@@ -34,7 +34,7 @@ Add these environment variables to your ``.envrc`` file:
     export AWS_SECRET_ACCESS_KEY="*value of Secret access key*"
     export WEBAPP_STACK_NAME="*name of your web application stack*"
 
-Run the following command to allow the changed ``.envrc`` file
+Run the following command to allow the changed ``.envrc`` file:
 
 .. code-block:: bash
 
