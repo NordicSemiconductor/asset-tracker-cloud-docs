@@ -25,14 +25,12 @@ The web application offers the following features:
     * Approximate location using :ref:`nRF Cloud Location Services <app-cellgeolocation>` and other third-party providers
     * Battery voltage
     * Temperature
-    * ... and more
   
-* Managing the asset trackers
+* Managing the asset trackers, for example
   
   * Updating the real-time configuration
   * Upgrading the firmware overt the air (FOTA)
   * Deleting the asset tracker
-  * ... and more
 
 .. toctree::
    :titlesonly:

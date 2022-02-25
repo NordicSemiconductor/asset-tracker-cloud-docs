@@ -23,28 +23,28 @@ Use either the credentials you created, :ref:`when setting up the solution <aws-
 The latter option is the recommended approach since it limits the permissions to only the ones needed. 
 You can also use the credentials to :ref:`run the end-to-end tests on GitHub Actions <aws-continuous-integration-web-app-github>`.
 
-Add these environment variables to your ``.envrc`` file:
+1. Add these environment variables to your ``.envrc`` file:
 
-.. parsed-literal::
-    :class: highlight
+   .. parsed-literal::
+       :class: highlight
 
-    # add to .envrc
-    export AWS_REGION="*your preferred AWS region*"
-    export AWS_ACCESS_KEY_ID="*value of Access key ID*"
-    export AWS_SECRET_ACCESS_KEY="*value of Secret access key*"
-    export WEBAPP_STACK_NAME="*name of your web application stack*"
+       # add to .envrc
+       export AWS_REGION="*your preferred AWS region*"
+       export AWS_ACCESS_KEY_ID="*value of Access key ID*"
+       export AWS_SECRET_ACCESS_KEY="*value of Secret access key*"
+       export WEBAPP_STACK_NAME="*name of your web application stack*"
 
-Run the following command to allow the changed ``.envrc`` file:
+#. Run the following command to allow the changed ``.envrc`` file:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-  direnv allow
+     direnv allow
 
-You can then run the tests using
+#. You can then run the tests using
 
-.. code-block:: bash
+   .. code-block:: bash
 
-  npx playwright test
+     npx playwright test
 
 Playwright Inspector
 --------------------
@@ -71,33 +71,39 @@ Follow the :ref:`Getting started guide <aws-getting-started>` to set up the inst
 The test runner needs to interact with the instance to retrieve the app configuration and to provide test data.
 For this to be possible, you need to configure AWS credentials as `GitHub environment secrets <https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-environment>`_.
 
-Enable the web application CI of the nRF Asset Tracker for AWS:
+1. Enable the web application CI of the nRF Asset Tracker for AWS:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-  node cli configure context stack web-app-ci 1
+     node cli configure context stack web-app-ci 1
 
-Set these secrets:
+#. Acquire the secrets using the nRF Asset Tracker for AWS CLI:
 
-- ``AWS_REGION``
-- ``AWS_ACCESS_KEY_ID``
-- ``AWS_SECRET_ACCESS_KEY``
-- ``WEBAPP_STACK_NAME``
+   .. code-block:: bash
 
-Acquire the secrets using the nRF Asset Tracker for AWS CLI:
+     node cli web-app-ci -s
 
-.. code-block:: bash
+#. Set the secrets
 
-  node cli web-app-ci -s
+  a. set the secrets using the GitHub UI
 
-You can set the secrets through the GitHub UI (make sure to create the ``production`` `environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first).
+     You can set the secrets through the GitHub UI (make sure to create the ``production`` `environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first).
 
-Alternatively, you can use the `GitHub CLI <https://cli.github.com/>`_  with the
-environment settings from above:
+     Set these secrets:
 
-.. code-block:: bash
+     - ``AWS_REGION``
+     - ``AWS_ACCESS_KEY_ID``
+     - ``AWS_SECRET_ACCESS_KEY``
+     - ``WEBAPP_STACK_NAME``
 
-  gh secret set AWS_REGION --env production --body "${AWS_REGION}"
-  gh secret set AWS_ACCESS_KEY_ID --env production --body "${AWS_ACCESS_KEY_ID}"
-  gh secret set AWS_SECRET_ACCESS_KEY --env production --body "${AWS_SECRET_ACCESS_KEY}"
-  gh secret set WEBAPP_STACK_NAME --env production --body "${WEBAPP_STACK_NAME}"
+  #. set the secrets using the GitHub CLI
+
+     Alternatively, you can use the `GitHub CLI <https://cli.github.com/>`_  with the
+     environment settings from above:
+
+     .. code-block:: bash
+
+       gh secret set AWS_REGION --env production --body "${AWS_REGION}"
+       gh secret set AWS_ACCESS_KEY_ID --env production --body "${AWS_ACCESS_KEY_ID}"
+       gh secret set AWS_SECRET_ACCESS_KEY --env production --body "${AWS_SECRET_ACCESS_KEY}"
+       gh secret set WEBAPP_STACK_NAME --env production --body "${WEBAPP_STACK_NAME}"
