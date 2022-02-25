@@ -50,7 +50,7 @@ You can also use the credentials to :ref:`run the end-to-end tests on GitHub Act
 Playwright Inspector
 --------------------
 
-For developing tests it is helpful to run the `Playwright Inspector <https://playwright.dev/docs/inspector>`_.
+For developing tests, it is helpful to run the `Playwright Inspector <https://playwright.dev/docs/inspector>`_.
 
 To enable the inspector during the tests, run:
 
