@@ -90,6 +90,7 @@ You need to configure AWS credentials as `GitHub environment secrets <https://do
 
     You can set the secrets through the GitHub UI (make sure to create the ``production`` `environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first).
     Set these secrets:
+    
     - ``AWS_REGION``
     - ``AWS_ACCESS_KEY_ID``
     - ``AWS_SECRET_ACCESS_KEY``
