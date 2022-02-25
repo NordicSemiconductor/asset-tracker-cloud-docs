@@ -86,7 +86,7 @@ For this to be possible, you need to configure AWS credentials as `GitHub enviro
 
 #. Set the secrets
 
-  a. set the secrets using the GitHub UI
+  a. Set the secrets using the GitHub UI:
 
      You can set the secrets through the GitHub UI (make sure to create the ``production`` `environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first).
 
