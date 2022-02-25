@@ -86,25 +86,23 @@ You need to configure AWS credentials as `GitHub environment secrets <https://do
 
 #. Set the secrets:
 
-  a. Set the secrets using the GitHub UI:
+  - Set the secrets using the GitHub UI:
 
-     You can set the secrets through the GitHub UI (make sure to create the ``production`` `environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first).
+    You can set the secrets through the GitHub UI (make sure to create the ``production`` `environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first).
+    Set these secrets:
+    - ``AWS_REGION``
+    - ``AWS_ACCESS_KEY_ID``
+    - ``AWS_SECRET_ACCESS_KEY``
+    - ``WEBAPP_STACK_NAME``
 
-     Set these secrets:
+  - Set the secrets using the GitHub CLI
 
-     - ``AWS_REGION``
-     - ``AWS_ACCESS_KEY_ID``
-     - ``AWS_SECRET_ACCESS_KEY``
-     - ``WEBAPP_STACK_NAME``
+    Alternatively, you can use the `GitHub CLI <https://cli.github.com/>`_  with the
+    environment settings from above:
 
-  #. Set the secrets using the GitHub CLI
+    .. code-block:: bash
 
-     Alternatively, you can use the `GitHub CLI <https://cli.github.com/>`_  with the
-     environment settings from above:
-
-     .. code-block:: bash
-
-       gh secret set AWS_REGION --env production --body "${AWS_REGION}"
-       gh secret set AWS_ACCESS_KEY_ID --env production --body "${AWS_ACCESS_KEY_ID}"
-       gh secret set AWS_SECRET_ACCESS_KEY --env production --body "${AWS_SECRET_ACCESS_KEY}"
-       gh secret set WEBAPP_STACK_NAME --env production --body "${WEBAPP_STACK_NAME}"
+      gh secret set AWS_REGION --env production --body "${AWS_REGION}"
+      gh secret set AWS_ACCESS_KEY_ID --env production --body "${AWS_ACCESS_KEY_ID}"
+      gh secret set AWS_SECRET_ACCESS_KEY --env production --body "${AWS_SECRET_ACCESS_KEY}"
+      gh secret set WEBAPP_STACK_NAME --env production --body "${WEBAPP_STACK_NAME}"

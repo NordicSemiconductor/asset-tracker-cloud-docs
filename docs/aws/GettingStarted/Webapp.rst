@@ -33,26 +33,26 @@ Configure the web application
 
 You need to configure the web application to be able to run it with your account.
 
-The web application requires the IDs of the AWS resources that were created during the setup of the stack.
-Run the following command in the :file:`web-app` directory to copy the output containing the IDs to the :file:`.envrc` file:
+1. The web application requires the IDs of the AWS resources that were created during the setup of the stack.
+   Run the following command in the :file:`web-app` directory to copy the output containing the IDs to the :file:`.envrc` file:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   cd ../aws
-   node cli web-app-config > ../web-app/.envrc
-   cd ../web-app
+      cd ../aws
+      node cli web-app-config > ../web-app/.envrc
+      cd ../web-app
 
-Run the following command to provide the version to the application:
+#. Run the following command to provide the version to the application:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-    echo "export PUBLIC_VERSION=\"`git describe --tags $(git rev-list --tags --max-count=1)`\"" >> .envrc
+       echo "export PUBLIC_VERSION=\"`git describe --tags $(git rev-list --tags --max-count=1)`\"" >> .envrc
 
-Run the following command to allow the changed file:
+#. Run the following command to allow the changed file:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-  direnv allow
+     direnv allow
 
 Example for the .envrc file
 ---------------------------
