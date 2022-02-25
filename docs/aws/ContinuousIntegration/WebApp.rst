@@ -23,7 +23,7 @@ Use either the credentials you created, :ref:`when setting up the solution <aws-
 The latter option is the recommended approach since it limits the permissions to only the ones needed. 
 You can also use the credentials to :ref:`run the end-to-end tests on GitHub Actions <aws-continuous-integration-web-app-github>`.
 
-1. Add these environment variables to your ``.envrc`` file:
+1. Add the following environment variables to your :file:`.envrc` file:
 
    .. parsed-literal::
        :class: highlight
