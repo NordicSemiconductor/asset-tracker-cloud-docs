@@ -10,7 +10,7 @@ Upgrading an existing installation
 Before starting an upgrade, read the release notes:
 
 * `Release notes for the nRF Asset Tracker for AWS <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/releases>`_
-* `Release notes for the nRF Asset Tracker web application <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js/releases>`_
+* `Release notes for the nRF Asset Tracker web application for AWS <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-aws-js/releases>`_
 
 Pay close attention to Breaking changes.
 

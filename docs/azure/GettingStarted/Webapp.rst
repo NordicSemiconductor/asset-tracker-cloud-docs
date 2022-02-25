@@ -7,7 +7,7 @@ Deploy the nRF Asset Tracker web application
    :local:
    :depth: 2
 
-To deploy the :ref:`index-cat-tracker-web-app` to Azure, complete the following steps:
+To deploy the :ref:`index-web-app` to Azure, complete the following steps:
 
 1. Clone the project and install the dependencies
 #. Configure the web application
@@ -16,32 +16,43 @@ To deploy the :ref:`index-cat-tracker-web-app` to Azure, complete the following 
 
 Before starting, navigate to the working directory :file:`~/nrf-asset-tracker`.
 
-.. include:: ../../app/Includes.rst
-   :start-after: clone_web_app_start
-   :end-before: clone_web_app_end
+Clone the project and install the dependencies
+**********************************************
+
+Clone the `nRF Asset Tracker web application <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js>`_ project and install the dependencies:
+
+.. parsed-literal::
+
+    git clone --branch |version| --single-branch \\
+      https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git web-app
+    cd web-app
+    npm ci
 
 Configure the web application
 *****************************
    
-.. include:: ../../app/Includes.rst
-   :start-after: configure_web_app_start
-   :end-before: configure_web_app_end
+You need to configure the web application to be able to run it with your account.
 
 Configure the IDs of your Azure resources
 =========================================
 
 The web application requires the IDs of the Azure resources that were created during the setup of the stack.
-Run the following command in the :file:`cat-tracker-web-app` directory to copy the output to the :file:`.env.local` file:
+Run the following command in the :file:`web-app` directory to copy the output to the :file:`.env.local` file:
 
 .. code-block:: bash
 
    cd ../azure
-   node cli react-config > ../cat-tracker-web-app/.env.local
-   cd ../cat-tracker-web-app
+   node cli react-config > ../web-app/.env.local
+   cd ../web-app
 
-.. include:: ../../app/Includes.rst
-   :start-after: provide_versionstring_start
-   :end-before: provide_versionstring_end
+Version string
+--------------
+
+Run the following command to provide the version to the application:
+
+.. code-block:: bash
+
+    echo REACT_APP_VERSION=`git describe --tags $(git rev-list --tags --max-count=1)` >> .env.local
 
 Example for the .env.local file
 -------------------------------
@@ -66,7 +77,7 @@ To build and deploy the web application to the Storage Account created while set
    cd ../azure
    export PUBLIC_URL=`az storage account show -g ${RESOURCE_GROUP:-nrfassettracker} -n ${STORAGE_ACCOUNT_NAME:-nrfassettracker} --query 'primaryEndpoints.web' --output tsv | tr -d '\n'`
    export APP_STORAGE_CONNECTION_STRING=`az storage account show-connection-string --name ${STORAGE_ACCOUNT_NAME:-nrfassettracker} --query 'connectionString'`
-   cd ../cat-tracker-web-app
+   cd ../web-app
    npm run build
    az storage blob service-properties update \
       --connection-string ${APP_STORAGE_CONNECTION_STRING} \

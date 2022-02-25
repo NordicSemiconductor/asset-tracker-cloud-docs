@@ -18,7 +18,7 @@
 # -- Project information ---------------------------------------------------------------------------------------------
 
 project = 'nRF Asset Tracker'
-copyright = '2019-2021, Nordic Semiconductor ASA | nordicsemi.no'
+copyright = '2019-2022, Nordic Semiconductor ASA | nordicsemi.no'
 author = 'Nordic Semiconductor ASA | nordicsemi.no'
 
 # -- General configuration -------------------------------------------------------------------------------------------

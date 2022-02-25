@@ -1,7 +1,7 @@
-.. _aws-continuous-integration:
+.. _aws-continuous-integration-cloud:
 
-Continuous integration
-######################
+Continuous integration of the AWS cloud components
+##################################################
 
 .. contents::
    :local:
