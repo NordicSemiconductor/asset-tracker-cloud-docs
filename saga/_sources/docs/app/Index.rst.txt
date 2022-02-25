@@ -1,13 +1,13 @@
-.. _index-cat-tracker-web-app:
+.. _index-web-app:
 
 nRF Asset Tracker web application
 #################################
 
-The nRF Asset Tracker web application is a reference single-page application (SPA) developed using `create-react-app <https://github.com/facebook/create-react-app>`_ in
-`TypeScript <https://www.typescriptlang.org/>`_.
-The `source code for the web application <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js>`_ is published on GitHub.
+The nRF Asset Tracker web application is a reference single-page application (SPA) developed using `TypeScript <https://www.typescriptlang.org/>`_.
+The source code is published on GitHub:
 
-To learn more about customizing the nRF Asset Tracker web application, see the `Getting started guide on Create React App <https://create-react-app.dev/docs/getting-started/>`_.
+- `nRF Asset Tracker Web Application for AWS <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-aws-js>`_
+- `nRF Asset Tracker Web Application for Azure <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js>`_
 
 The web application offers the following features:
 
@@ -18,21 +18,18 @@ The web application offers the following features:
 * Listing of asset trackers
 * Viewing of asset trackers
   
-  * Current and historical device data
+  * Current and historical device data, for example
     
     * GNSS location
+    * Approximate location using :ref:`nRF Cloud Location Services <app-cellgeolocation>` and other third-party providers
     * Battery voltage
-    * Accelerometer
+    * Temperature
   
-  * Configuring the asset tracker
-    
-    * Update configuration
-    * Sensor threshold
-
-* Managing the asset trackers
+* Managing the asset trackers, for example
   
+  * Updating the real-time configuration
+  * Upgrading the firmware overt the air (FOTA)
   * Deleting the asset tracker
-  * Upgrading the firmware
 
 .. toctree::
    :titlesonly:

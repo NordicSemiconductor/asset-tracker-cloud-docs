@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Deploy the nRF Asset Tracker web application &mdash; nRF Asset Tracker a340160bc04a876d8d8af552bd0d0377b2cdeba4 documentation</title>
+  <title>Deploy the nRF Asset Tracker web application &mdash; nRF Asset Tracker v21.0.0 documentation</title>
   
 
   
@@ -210,7 +210,7 @@
 <li><a class="reference internal" href="#register-a-new-user" id="id6">Register a new user</a></li>
 </ul>
 </div>
-<p>To deploy the <a class="reference internal" href="../../app/Index.html#index-cat-tracker-web-app"><span class="std std-ref">nRF Asset Tracker web application</span></a> to Azure, complete the following steps:</p>
+<p>To deploy the <a class="reference internal" href="../../app/Index.html#index-web-app"><span class="std std-ref">nRF Asset Tracker web application</span></a> to Azure, complete the following steps:</p>
 <ol class="arabic simple">
 <li>Clone the project and install the dependencies</li>
 <li>Configure the web application</li>
@@ -223,8 +223,8 @@
 <p>Clone the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js">nRF Asset Tracker web application</a> project and install the dependencies:</p>
 <pre class="literal-block">
 git clone --branch saga --single-branch \
-  <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git">https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git</a> cat-tracker-web-app
-cd cat-tracker-web-app
+  <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git">https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git</a> web-app
+cd web-app
 npm ci
 </pre>
 </div>
@@ -234,10 +234,10 @@ npm ci
 <div class="section" id="configure-the-ids-of-your-azure-resources">
 <h3><a class="toc-backref" href="#id4">Configure the IDs of your Azure resources</a><a class="headerlink" href="#configure-the-ids-of-your-azure-resources" title="Permalink to this headline">¶</a></h3>
 <p>The web application requires the IDs of the Azure resources that were created during the setup of the stack.
-Run the following command in the <code class="file docutils literal notranslate"><span class="pre">cat-tracker-web-app</span></code> directory to copy the output to the <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code> file:</p>
+Run the following command in the <code class="file docutils literal notranslate"><span class="pre">web-app</span></code> directory to copy the output to the <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code> file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../azure
-node cli react-config &gt; ../cat-tracker-web-app/.env.local
-<span class="nb">cd</span> ../cat-tracker-web-app
+node cli react-config &gt; ../web-app/.env.local
+<span class="nb">cd</span> ../web-app
 </pre></div>
 </div>
 <div class="section" id="version-string">
@@ -266,7 +266,7 @@ node cli react-config &gt; ../cat-tracker-web-app/.env.local
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../azure
 <span class="nb">export</span> <span class="nv">PUBLIC_URL</span><span class="o">=</span><span class="sb">`</span>az storage account show -g <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> -n <span class="si">${</span><span class="nv">STORAGE_ACCOUNT_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> --query <span class="s1">&#39;primaryEndpoints.web&#39;</span> --output tsv <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>
 <span class="nb">export</span> <span class="nv">APP_STORAGE_CONNECTION_STRING</span><span class="o">=</span><span class="sb">`</span>az storage account show-connection-string --name <span class="si">${</span><span class="nv">STORAGE_ACCOUNT_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> --query <span class="s1">&#39;connectionString&#39;</span><span class="sb">`</span>
-<span class="nb">cd</span> ../cat-tracker-web-app
+<span class="nb">cd</span> ../web-app
 npm run build
 az storage blob service-properties update <span class="se">\</span>
    --connection-string <span class="si">${</span><span class="nv">APP_STORAGE_CONNECTION_STRING</span><span class="si">}</span> <span class="se">\</span>
@@ -313,7 +313,7 @@ az storage blob upload-batch <span class="se">\</span>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no
+        &copy; Copyright 2019-2022, Nordic Semiconductor ASA | nordicsemi.no
 
     </p>
   </div>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>nRF Asset Tracker web application &mdash; nRF Asset Tracker a340160bc04a876d8d8af552bd0d0377b2cdeba4 documentation</title>
+  <title>nRF Asset Tracker web application &mdash; nRF Asset Tracker v21.0.0 documentation</title>
   
 
   
@@ -173,11 +173,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="nrf-asset-tracker-web-application">
-<span id="index-cat-tracker-web-app"></span><h1>nRF Asset Tracker web application<a class="headerlink" href="#nrf-asset-tracker-web-application" title="Permalink to this headline">¶</a></h1>
-<p>The nRF Asset Tracker web application is a reference single-page application (SPA) developed using <a class="reference external" href="https://github.com/facebook/create-react-app">create-react-app</a> in
-<a class="reference external" href="https://www.typescriptlang.org/">TypeScript</a>.
-The <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js">source code for the web application</a> is published on GitHub.</p>
-<p>To learn more about customizing the nRF Asset Tracker web application, see the <a class="reference external" href="https://create-react-app.dev/docs/getting-started/">Getting started guide on Create React App</a>.</p>
+<span id="index-web-app"></span><h1>nRF Asset Tracker web application<a class="headerlink" href="#nrf-asset-tracker-web-application" title="Permalink to this headline">¶</a></h1>
+<p>The nRF Asset Tracker web application is a reference single-page application (SPA) developed using <a class="reference external" href="https://www.typescriptlang.org/">TypeScript</a>.
+The source code is published on GitHub:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-aws-js">nRF Asset Tracker Web Application for AWS</a></li>
+<li><a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js">nRF Asset Tracker Web Application for Azure</a></li>
+</ul>
 <p>The web application offers the following features:</p>
 <ul class="simple">
 <li>Registering the user<ul>
@@ -186,22 +188,19 @@ The <a class="reference external" href="https://github.com/NordicSemiconductor/a
 </li>
 <li>Listing of asset trackers</li>
 <li>Viewing of asset trackers<ul>
-<li>Current and historical device data<ul>
+<li>Current and historical device data, for example<ul>
 <li>GNSS location</li>
+<li>Approximate location using <a class="reference internal" href="CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">nRF Cloud Location Services</span></a> and other third-party providers</li>
 <li>Battery voltage</li>
-<li>Accelerometer</li>
-</ul>
-</li>
-<li>Configuring the asset tracker<ul>
-<li>Update configuration</li>
-<li>Sensor threshold</li>
+<li>Temperature</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Managing the asset trackers<ul>
+<li>Managing the asset trackers, for example<ul>
+<li>Updating the real-time configuration</li>
+<li>Upgrading the firmware overt the air (FOTA)</li>
 <li>Deleting the asset tracker</li>
-<li>Upgrading the firmware</li>
 </ul>
 </li>
 </ul>
@@ -233,7 +232,7 @@ The <a class="reference external" href="https://github.com/NordicSemiconductor/a
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no
+        &copy; Copyright 2019-2022, Nordic Semiconductor ASA | nordicsemi.no
 
     </p>
   </div>

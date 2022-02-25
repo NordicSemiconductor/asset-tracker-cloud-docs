@@ -22,7 +22,7 @@ To enable continuous deployment, complete the following steps:
 
 #. Update the `repository.url <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/blob/3ddf0c117de7f22f02df46c3e1ca899915627d46/package.json#L15>`_ in the :file:`package.json` file in your fork. It must point to the repository URL of your fork.
 
-#. Fork the `nRF Asset Tracker web application repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js>`_.
+#. Fork the `nRF Asset Tracker web application repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-aws-js>`_.
 
 #. Update the `deploy.webApp.repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js/blob/3ddf0c117de7f22f02df46c3e1ca899915627d46/package.json#L144>`_ in the :file:`package.json` file of your nRF Asset Tracker for AWS fork. It must point to the repository URL of your fork of the nRF Asset Tracker web application.
 
