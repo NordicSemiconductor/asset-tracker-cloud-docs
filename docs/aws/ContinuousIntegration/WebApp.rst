@@ -41,7 +41,7 @@ You can also use the credentials to :ref:`run the end-to-end tests on GitHub Act
 
      direnv allow
 
-#. You can then run the tests using
+#. You can then run the tests using the following command:
 
    .. code-block:: bash
 
