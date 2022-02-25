@@ -67,8 +67,8 @@ Running end-to-end tests using GitHub Actions
 
 `This workflow <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-aws-js/blob/41705dae8a5d4d7067c023297a3d38a2f0d1106e/.github/workflows/test-and-release.yaml>`_ runs the end-to-end tests for every commit.
 For this to work, you need a running instance of :ref:`nRF Asset Tracker for AWS <index_aws>`.
-The tests will be run agains this instance.
-Typically it will be the production instance, to ensure that the web application works with the current production setup.
+The tests run against this instance.
+Typically it is the production instance, to ensure that the web application works with the current production setup.
 Follow the :ref:`Getting started guide <aws-getting-started>` to set up the instance to be used for the tests.
 
 The test runner needs to interact with the instance to retrieve the app configuration and to provide test data.
