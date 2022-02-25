@@ -54,7 +54,7 @@ Playwright Inspector
 
 For developing tests it is helpful to run the `Playwright Inspector <https://playwright.dev/docs/inspector>`_.
 
-You can enabled the inspector during the tests by running
+To enable the inspector during the tests, run:
 
 .. code-block:: bash
 
