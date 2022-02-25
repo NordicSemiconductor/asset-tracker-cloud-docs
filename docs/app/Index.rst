@@ -29,7 +29,7 @@ The web application offers the following features:
   
 * Managing the asset trackers
   
-  * Update real-time configuration
+  * Updating the real-time configuration
   * Upgrading the firmware overt the air (FOTA)
   * Deleting the asset tracker
   * ... and more
