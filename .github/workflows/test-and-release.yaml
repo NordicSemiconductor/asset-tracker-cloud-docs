@@ -13,7 +13,7 @@ jobs:
     outputs:
       docker_image: ${{ steps.docker-image-tag.outputs.docker_image }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Login to GHCR
         uses: docker/login-action@v1
@@ -53,7 +53,7 @@ jobs:
     needs: [docker]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Login to GHCR
         uses: docker/login-action@v1
@@ -80,7 +80,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3
         with:
@@ -103,7 +103,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build, test]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/download-artifact@v2
       - name: Semantic release
         env:
@@ -120,7 +120,7 @@ jobs:
     needs: [build, test, release, docker]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Determine documentation release
         if: github.ref == 'refs/heads/saga'
