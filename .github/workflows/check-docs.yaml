@@ -74,7 +74,7 @@ jobs:
 
       - run: make check
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: asset-tracker-docs-${{ github.sha }}
           path: build/html/
