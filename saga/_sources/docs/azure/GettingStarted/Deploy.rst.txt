@@ -145,8 +145,8 @@ To install the nRF Asset Tracker into your Azure account, complete the following
          --account-name ${STORAGE_ACCOUNT_NAME:-nrfassettracker} \
          --static-website --index-document index.html
       # Deploy the functions
-      node dist/pack/package-function-app.js functionapp.zip
-      az functionapp deployment source config-zip -g ${RESOURCE_GROUP:-nrfassettracker} -n ${APP_NAME:-nrfassettracker}api --src functionapp.zip
+      node scripts/pack-app.js
+      az functionapp deployment source config-zip -g ${RESOURCE_GROUP:-nrfassettracker} -n ${APP_NAME:-nrfassettracker}api --src dist/functionapp.zip
 
    If the command gives an error, you can find the detailed log message using the printed tracking ID and the following command:
 
