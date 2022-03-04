@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Install the nRF Asset Tracker into your Azure account &mdash; nRF Asset Tracker 911cbddce975ab27b806dcae9c65630b36211fd2 documentation</title>
+  <title>Install the nRF Asset Tracker into your Azure account &mdash; nRF Asset Tracker d45b6f9b4d9ffa8609f50dd18c31c16cc4f29d18 documentation</title>
   
 
   
@@ -321,8 +321,8 @@ az storage blob service-properties update <span class="se">\</span>
    --account-name <span class="si">${</span><span class="nv">STORAGE_ACCOUNT_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> <span class="se">\</span>
    --static-website --index-document index.html
 <span class="c1"># Deploy the functions</span>
-node dist/pack/package-function-app.js functionapp.zip
-az functionapp deployment <span class="nb">source</span> config-zip -g <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> -n <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>api --src functionapp.zip
+node scripts/pack-app.js
+az functionapp deployment <span class="nb">source</span> config-zip -g <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span> -n <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>api --src dist/functionapp.zip
 </pre></div>
 </div>
 <p>If the command gives an error, you can find the detailed log message using the printed tracking ID and the following command:</p>
