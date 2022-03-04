@@ -21,8 +21,8 @@ If you already have an installation and you want to upgrade to the latest releas
             appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \
             keyVaultName=${APP_NAME:-nrfassettracker}
-    node dist/pack/package-function-app.js functionapp.zip
-    az functionapp deployment source config-zip -g ${RESOURCE_GROUP:-nrfassettracker} -n ${APP_NAME:-nrfassettracker}api --src functionapp.zip
+    node scripts/pack-app.js
+    az functionapp deployment source config-zip -g ${RESOURCE_GROUP:-nrfassettracker} -n ${APP_NAME:-nrfassettracker}api --src dist/functionapp.zip
 
 To verify the validity of a template, use the following command:
 
