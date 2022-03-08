@@ -59,7 +59,7 @@ nRF9160 DK (PCA10090)
 
 .. code-block:: bash
 
-    west build -p always -b nrf9160dk_nrf9160_ns -- -DOVERLAY_CONFIG="overlay-aws.conf;overlay-debug.conf;asset-tracker-cloud-firmware-azure.conf;firmware.conf"
+    west build -p always -b nrf9160dk_nrf9160_ns -- -DOVERLAY_CONFIG="overlay-azure.conf;overlay-debug.conf;asset-tracker-cloud-firmware-azure.conf;firmware.conf"
 
 Location of the HEX file
 ************************
