@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Building the project using your local system &mdash; nRF Asset Tracker v21.0.2 documentation</title>
+  <title>Building the project using your local system &mdash; nRF Asset Tracker v21.0.3 documentation</title>
   
 
   
@@ -241,7 +241,7 @@ sudo pip3 install -r mcuboot/scripts/requirements.txt
 </div>
 <div class="section" id="nrf9160-dk-pca10090">
 <h3><a class="toc-backref" href="#id6">nRF9160 DK (PCA10090)</a><a class="headerlink" href="#nrf9160-dk-pca10090" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>west build -p always -b nrf9160dk_nrf9160_ns -- -DOVERLAY_CONFIG<span class="o">=</span><span class="s2">&quot;overlay-aws.conf;overlay-debug.conf;asset-tracker-cloud-firmware-azure.conf;firmware.conf&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>west build -p always -b nrf9160dk_nrf9160_ns -- -DOVERLAY_CONFIG<span class="o">=</span><span class="s2">&quot;overlay-azure.conf;overlay-debug.conf;asset-tracker-cloud-firmware-azure.conf;firmware.conf&quot;</span>
 </pre></div>
 </div>
 </div>
