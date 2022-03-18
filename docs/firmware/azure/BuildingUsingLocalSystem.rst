@@ -33,7 +33,7 @@ Create a folder, for example, ``ncs`` and initialize the project by running the 
     sudo pip3 install -r zephyr/scripts/requirements.txt
     sudo pip3 install pc_ble_driver_py
     sudo pip3 install -r nrf/scripts/requirements.txt
-    sudo pip3 install -r mcuboot/scripts/requirements.txt
+    sudo pip3 install -r bootloader/mcuboot/scripts/requirements.txt
     # this sets $ZEPHYR_TOOLCHAIN_VARIANT and $GNUARMEMB_TOOLCHAIN_PATH
     source zephyr/zephyr-env.sh
 
