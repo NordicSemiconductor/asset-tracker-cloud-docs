@@ -2,6 +2,7 @@ FROM ubuntu:22.04 as base
 WORKDIR /workdir
 
 RUN \
+    export DEBIAN_FRONTEND=noninteractive && \
     # Update system
     apt-get -y update && \
     apt-get -y upgrade && \
