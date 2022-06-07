@@ -20,7 +20,6 @@ To connect the device to your account, complete the following steps:
    * `nRF9160 DK application firmware update <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160_gs.html#updating-the-application-firmware>`_
    * `Thingy:91 application firmware update <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#updating-firmware>`_
 
-
 .. toctree::
    :titlesonly:
    :caption: Subpages:

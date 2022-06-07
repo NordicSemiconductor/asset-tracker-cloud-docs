@@ -12,7 +12,6 @@ Continuous integration
    This is an advanced topic that is closely tied with the further development and customization of the nRF Asset Tracker for your purposes.
    See the `GitHub project page of the nRF Asset Tracker for Azure  <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_ for an implementation of the process outlined in this section.
 
-
 Continuous integration involves the following actions:
 
 * Every change to the project is tested against an Azure account, which must be manually prepared.
@@ -22,7 +21,6 @@ In this way, the tests are not tied to the implementation and you cannot acciden
 Tests written for test runners like `Jest <https://jestjs.io/>`_ tend to be closely tied to the API of the source code implementation.
 In the case of a larger refactoring, the tests often need to be refactored as well.
 Since the BDD tests are purely testing based on the public API of the project (which is a mix of the native Azure API and a custom REST API), they can be kept unchanged during refactoring.
-
 
 Prepare your Azure account
 **************************
