@@ -99,7 +99,7 @@ You need to configure AWS credentials as `GitHub environment secrets <https://do
   - Set the secrets using the GitHub CLI:
 
     Alternatively, you can use the `GitHub CLI <https://cli.github.com/>`_  with the
-    environment settings from above:
+    environment settings from above (make sure to create the ``production`` `environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first):
 
     .. code-block:: bash
 

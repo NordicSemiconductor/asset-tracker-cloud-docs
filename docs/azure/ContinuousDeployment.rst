@@ -56,12 +56,12 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
 
    - Set the secrets using the GitHub CLI:
 
-     Alternatively, you can use the `GitHub CLI <https://cli.github.com/>`_  with the environment settings from above:
+     Alternatively, you can use the `GitHub CLI <https://cli.github.com/>`_  with the environment settings from above (make sure to create the ``production`` `environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first):
 
     .. code-block:: bash
 
-       export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/cd") | .appId'`
-       export AZURE_TENANT_ID=`az ad sp show --id ${AZURE_CLIENT_ID} | jq -r '.appOwnerOrganizationId'`
+       export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/cd") | .appId' | tr -d '\n'`
+       export AZURE_TENANT_ID=`az ad sp show --id ${AZURE_CLIENT_ID} | jq -r '.appOwnerOrganizationId' | tr -d '\n'`
        gh secret set AZURE_CLIENT_ID --env production --body "${AZURE_CLIENT_ID}"
        gh secret set AZURE_TENANT_ID --env production --body "${AZURE_TENANT_ID}"
        gh secret set AZURE_SUBSCRIPTION_ID --env production --body "${SUBSCRIPTION_ID}"
@@ -75,7 +75,7 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
 
    .. code-block:: bash
 
-      export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/cd") | .appId'`
+      export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/cd") | .appId' | tr -d '\n'`
       az role assignment create --role Contributor \
          --assignee ${AZURE_CLIENT_ID} \
          --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}
@@ -84,6 +84,7 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
 
    .. code-block:: bash
 
+      export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/cd") | .appId' | tr -d '\n'`
       az role assignment create --role "Key Vault Secrets Officer" \
          --assignee ${AZURE_CLIENT_ID} \
          --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}/providers/Microsoft.KeyVault/vaults/${APP_NAME:-nrfassettracker}

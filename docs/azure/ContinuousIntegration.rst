@@ -194,35 +194,35 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
 
    - Set the secrets using the GitHub CLI:
 
-     Alternatively, you can use the `GitHub CLI <https://cli.github.com/>`_  with the environment settings from above:
+     Alternatively, you can use the `GitHub CLI <https://cli.github.com/>`_  with the environment settings from above (make sure to create the ``ci`` `environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first):
 
     .. code-block:: bash
 
-       export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/ci") | .appId'`
-       export AZURE_TENANT_ID=`az ad sp show --id ${AZURE_CLIENT_ID} | jq -r '.appOwnerOrganizationId'`
-       gh secret set AZURE_CLIENT_ID --env production --body "${AZURE_CLIENT_ID}"
-       gh secret set AZURE_TENANT_ID --env production --body "${AZURE_TENANT_ID}"
-       gh secret set AZURE_SUBSCRIPTION_ID --env production --body "${SUBSCRIPTION_ID}"
-       gh secret set RESOURCE_GROUP --env production --body "${RESOURCE_GROUP}"
-       gh secret set LOCATION --env production --body "${LOCATION}"
-       gh secret set APP_NAME --env production --body "${APP_NAME}"
-       gh secret set B2C_TENANT --env production --body "${B2C_TENANT}"
-       gh secret set APP_REG_CLIENT_ID --env production --body "${APP_REG_CLIENT_ID}"
+       export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/ci") | .appId' | tr -d '\n'`
+       export AZURE_TENANT_ID=`az ad sp show --id ${AZURE_CLIENT_ID} | jq -r '.appOwnerOrganizationId' | tr -d '\n'`
+       gh secret set AZURE_CLIENT_ID --env ci --body "${AZURE_CLIENT_ID}"
+       gh secret set AZURE_TENANT_ID --env ci --body "${AZURE_TENANT_ID}"
+       gh secret set AZURE_SUBSCRIPTION_ID --env ci --body "${SUBSCRIPTION_ID}"
+       gh secret set RESOURCE_GROUP --env ci --body "${RESOURCE_GROUP}"
+       gh secret set LOCATION --env ci --body "${LOCATION}"
+       gh secret set APP_NAME --env ci --body "${APP_NAME}"
+       gh secret set B2C_TENANT --env ci --body "${B2C_TENANT}"
+       gh secret set APP_REG_CLIENT_ID --env ci --body "${APP_REG_CLIENT_ID}"
 
-#. Grant the application created in step 1 Contributor permissions for your resource group:
+#. Grant the application created in step 1 Contributor permissions for your subscription:
 
    .. code-block:: bash
 
-      export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/ci") | .appId'`
+      export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/ci") | .appId' | tr -d '\n'`
       az role assignment create --role Contributor \
          --assignee ${AZURE_CLIENT_ID} \
-         --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettrackerci}
+         --scope /subscriptions/${SUBSCRIPTION_ID}
 
 #. Grant the application created in step 1 "Key Vault Secrets Officer" to the KeyVault:
 
    .. code-block:: bash
 
-      export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/ci") | .appId'`
+      export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/ci") | .appId' | tr -d '\n'`
       az role assignment create --role "Key Vault Secrets Officer" \
          --assignee ${AZURE_CLIENT_ID} \
          --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettrackerci}/providers/Microsoft.KeyVault/vaults/${APP_NAME:-nrfassettrackerci}
