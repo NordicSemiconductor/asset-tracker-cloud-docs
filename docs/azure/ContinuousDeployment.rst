@@ -24,49 +24,21 @@ To enable continuous deployment, complete the following steps:
 
 #. Update the `deploy.webApp.repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/blob/fd3777cde331286faf10e481bdf1a30327882008/package.json#L111>`_ in the :file:`package.json` file of your nRF Asset Tracker for Azure fork. It must point to the repository URL of your fork of the nRF Asset Tracker web application.
 
-Acquire credentials for GitHub Actions
-**************************************
+Authenticate GitHub Actions against Azure using OpenID Connect
+**************************************************************
 
-To acquire credentials for GitHub Actions, complete the following steps:
+To allow the continuous deployment GitHub Action workflow to authenticate against Azure with short-lived credentials using a service principal, complete the following steps:
 
-1. Login using the shell:
+1. Follow the instructions to `Configure a service principal with a Federated Credential to use OIDC based authentication <https://github.com/Azure/login#configure-a-service-principal-with-a-federated-credential-to-use-oidc-based-authentication>`_.
 
-   .. code-block:: bash
+#. Add the following `secrets <https://docs.github.com/en/rest/reference/actions#secrets>`_ to an `environment <https://docs.github.com/en/actions/reference/environments#creating-an-environment>`_ called ``production`` in your fork of the nRF Asset Tracker for Azure:
 
-      az login
+   * ``AZURE_CLIENT_ID`` - Store the application (client) ID of the service principal app registration created in step in the above step.
 
-#. Export the identifier of the subscription which contains the nRF Asset Tracker resources:
+   * ``AZURE_TENANT_ID`` - Store the directory (tenant) ID of the service principal app registration created in step in the above step.
 
-   .. parsed-literal::
-      :class: highlight
+   * ``AZURE_SUBSCRIPTION_ID`` - Store the ID of the subscription which contains the nRF Asset Tracker resources.
 
-      export SUBSCRIPTION_ID="*subscription id*"
-
-#. Make sure that you have enabled the correct subscription by running the following commands:
-
-   .. code-block:: bash
-
-      az account set --subscription $SUBSCRIPTION_ID
-      # Verify that it is set to default
-      az account list --output table
-
-#. Create the CI credentials:
-
-   .. code-block:: bash
-
-      az ad sp create-for-rbac --name 'https://nrfassettracker.invalid/cd' --role contributor \
-         --scopes \
-            "/subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}" \
-         --sdk-auth \
-         > cd-credentials.json
-
-Provide the credentials to GitHub Actions
-*****************************************
-
-1. Add the following `secrets <https://docs.github.com/en/rest/reference/actions#secrets>`_ to an `environment <https://docs.github.com/en/actions/reference/environments#creating-an-environment>`_ called ``production`` in your fork of the nRF Asset Tracker for Azure:
-
-   * ``AZURE_CREDENTIALS`` - Store the contents of the JSON file created in the above step.
-  
 #. Add the following following values from your :file:`.envrc` file as secrets as well:
 
    * ``RESOURCE_GROUP``
@@ -78,6 +50,16 @@ Provide the credentials to GitHub Actions
 #. If you have enabled the :ref:`azure-unwired-labs-cell-geolocation`, add your API key as a secret as well:
 
    * ``UNWIRED_LABS_API_KEY``
+
+#. Grant the application created in step 1 Contributor permissions for your subscription by following the instructions in `Use the portal to create an Azure AD application and service principal that can access resources: Assign a role to the application <https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#assign-a-role-to-the-application>`_
+
+#. Grant the application created in step 1 "Key Vault Secrets Officer" to the KeyVault (make sure to first set the environment variable ``AZURE_CLIENT_ID`` to the value used in step 2):
+
+   .. code-block:: bash
+
+      az role assignment create --role "Key Vault Secrets Officer" \
+         --assignee ${AZURE_CLIENT_ID} \
+         --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}/providers/Microsoft.KeyVault/vaults/${APP_NAME:-nrfassettracker}
 
 Trigger a deployment
 ********************
@@ -94,3 +76,8 @@ You can see a workflow run of the Continuous Deployment action:
    :alt: GitHub Actions workflow run of Continuous Deployment
 
    GitHub Actions workflow run of Continuous Deployment
+
+More information
+****************
+
+You can read more about how GitHub Actions uses OIDC on `About security hardening with OpenID Connect <https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect>`_ in the GitHub Actions documentation.
