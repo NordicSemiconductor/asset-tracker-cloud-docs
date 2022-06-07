@@ -16,7 +16,6 @@ The :file:`.feature` files in the folder are used to continuously verify the ref
    The Azure solution is using `IoT Hub <https://azure.microsoft.com/en-us/services/iot-hub/>`_ with the S1 standard tier and it costs around 25 EUR per month for using `Device Update for IoT Hub <https://docs.microsoft.com/en-us/azure/iot-hub-device-update/understand-device-update>`_.
    Hence, the minimum costs to run nRF Asset Tracker on Azure is around 25-50 EUR per month.
 
-
 .. toctree::
    :titlesonly:
    :caption: Subpages:

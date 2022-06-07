@@ -18,7 +18,6 @@ Not only does that mean you can provide up-to-date HEX files with zero effort, b
 
 .. note::
 
-
     By default, the semantic-release gets the ``reposityUrl`` from the :file:`package.json` file. It uses the URL to determine the changes between releases.
     After forking the ``firmware`` repository, the URL will still point to ``https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware.git``.
     Either update that to the URL of your fork, or `provide it as an argument <https://semantic-release.gitbook.io/semantic-release/usage/configuration#repositoryurl>`_ to the semantic-release CLI.

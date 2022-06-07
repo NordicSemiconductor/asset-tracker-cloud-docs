@@ -8,7 +8,6 @@ Install the nRF Asset Tracker into your Azure account
    The setup process in Azure is more complicated when compared to the :ref:`AWS continuous integration setup <aws-continuous-integration>` since it involves many manual steps that cannot be automated.
    If you have ideas to simplify the process, `provide your input <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1>`_.
 
-
 To install the nRF Asset Tracker into your Azure account, complete the following steps:
 
 1. Export the identifier of the subscription that contains the nRF Asset Tracker resources to a new :file:`.envrc` file (:ref:`used with direnv <about-direnv>`):

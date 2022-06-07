@@ -18,7 +18,6 @@ The commit messages must follow the `Angular commit message rules <https://githu
    Semantic-release will ignore the value.
    Only the published package on npm will contain the correct version number.
 
-
 .. _guides-versionining-how-to-release-a-new-version-of-a-package:
 
 Releasing a new version of a package
