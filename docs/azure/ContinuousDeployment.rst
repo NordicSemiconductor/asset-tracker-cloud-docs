@@ -30,30 +30,57 @@ Authenticate GitHub Actions against Azure using OpenID Connect
 To allow the continuous deployment GitHub Action workflow to authenticate against Azure with short-lived credentials using a service principal, complete the following steps:
 
 1. Follow the instructions to `Configure a service principal with a Federated Credential to use OIDC based authentication <https://github.com/Azure/login#configure-a-service-principal-with-a-federated-credential-to-use-oidc-based-authentication>`_.
+   Use ``https://nrfassettracker.invalid/cd`` as the name.
 
-#. Add the following `secrets <https://docs.github.com/en/rest/reference/actions#secrets>`_ to an `environment <https://docs.github.com/en/actions/reference/environments#creating-an-environment>`_ called ``production`` in your fork of the nRF Asset Tracker for Azure:
+#. Set the secrets:
 
-   * ``AZURE_CLIENT_ID`` - Store the application (client) ID of the service principal app registration created in step in the above step.
+   - Set the secrets using the GitHub UI:
 
-   * ``AZURE_TENANT_ID`` - Store the directory (tenant) ID of the service principal app registration created in step in the above step.
+     Set the following `secrets <https://docs.github.com/en/rest/reference/actions#secrets>`_ through the GitHub UI to an `environment <https://docs.github.com/en/actions/reference/environments#creating-an-environment>`_ called ``production`` in your fork of the nRF Asset Tracker for Azure:
 
-   * ``AZURE_SUBSCRIPTION_ID`` - Store the ID of the subscription which contains the nRF Asset Tracker resources.
+     * ``AZURE_CLIENT_ID`` - Store the application (client) ID of the service principal app registration created in step in the above step.
+     * ``AZURE_TENANT_ID`` - Store the directory (tenant) ID of the service principal app registration created in step in the above step.
+     * ``AZURE_SUBSCRIPTION_ID`` - Store the ID of the subscription which contains the nRF Asset Tracker resources.
 
-#. Add the following following values from your :file:`.envrc` file as secrets as well:
+     Set the following following values from your :file:`.envrc` file as secrets as well:
 
-   * ``RESOURCE_GROUP``
-   * ``LOCATION``
-   * ``APP_NAME``
-   * ``B2C_TENANT``
-   * ``APP_REG_CLIENT_ID``
+     * ``RESOURCE_GROUP``
+     * ``LOCATION``
+     * ``APP_NAME``
+     * ``B2C_TENANT``
+     * ``APP_REG_CLIENT_ID``
 
-#. If you have enabled the :ref:`azure-unwired-labs-cell-geolocation`, add your API key as a secret as well:
+     If you have enabled the :ref:`azure-unwired-labs-cell-geolocation`, add your API key as a secret as well:
 
-   * ``UNWIRED_LABS_API_KEY``
+     * ``UNWIRED_LABS_API_KEY``
 
-#. Grant the application created in step 1 Contributor permissions for your subscription by following the instructions in `Use the portal to create an Azure AD application and service principal that can access resources: Assign a role to the application <https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#assign-a-role-to-the-application>`_
+   - Set the secrets using the GitHub CLI:
 
-#. Grant the application created in step 1 "Key Vault Secrets Officer" to the KeyVault (make sure to first set the environment variable ``AZURE_CLIENT_ID`` to the value used in step 2):
+     Alternatively, you can use the `GitHub CLI <https://cli.github.com/>`_  with the environment settings from above:
+
+    .. code-block:: bash
+
+       export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/cd") | .appId'`
+       export AZURE_TENANT_ID=`az ad sp show --id ${AZURE_CLIENT_ID} | jq -r '.appOwnerOrganizationId'`
+       gh secret set AZURE_CLIENT_ID --env production --body "${AZURE_CLIENT_ID}"
+       gh secret set AZURE_TENANT_ID --env production --body "${AZURE_TENANT_ID}"
+       gh secret set AZURE_SUBSCRIPTION_ID --env production --body "${SUBSCRIPTION_ID}"
+       gh secret set RESOURCE_GROUP --env production --body "${RESOURCE_GROUP}"
+       gh secret set LOCATION --env production --body "${LOCATION}"
+       gh secret set APP_NAME --env production --body "${APP_NAME}"
+       gh secret set B2C_TENANT --env production --body "${B2C_TENANT}"
+       gh secret set APP_REG_CLIENT_ID --env production --body "${APP_REG_CLIENT_ID}"
+
+#. Grant the application created in step 1 Contributor permissions for your resource group:
+
+   .. code-block:: bash
+
+      export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/cd") | .appId'`
+      az role assignment create --role Contributor \
+         --assignee ${AZURE_CLIENT_ID} \
+         --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}
+
+#. Grant the application created in step 1 "Key Vault Secrets Officer" to the KeyVault:
 
    .. code-block:: bash
 
