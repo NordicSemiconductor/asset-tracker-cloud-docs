@@ -170,6 +170,16 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
 1. Follow the instructions to `Configure a service principal with a Federated Credential to use OIDC based authentication <https://github.com/Azure/login#configure-a-service-principal-with-a-federated-credential-to-use-oidc-based-authentication>`_.
    Use ``https://nrfassettracker.invalid/ci`` as the name.
 
+   From the command line this can be achieved using:
+
+   .. code-block:: bash
+
+      az ad app create --display-name 'https://nrfassettracker.invalid/ci'
+      export APPLICATION_OBJECT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/ci") | .id' | tr -d '\n'`
+      az rest --method POST --uri "https://graph.microsoft.com/beta/applications/${APPLICATION_OBJECT_ID}/federatedIdentityCredentials" --body '{"name":"GitHub Actions","issuer":"https://token.actions.githubusercontent.com","subject":"repo:NordicSemiconductor/asset-tracker-cloud-azure-js:environment:ci","description":"Allow GitHub Actions to modify Azure resources","audiences":["api://AzureADTokenExchange"]}' 
+
+   Make sure to use the organization and repository name of your fork instead of ``NordicSemiconductor/asset-tracker-cloud-azure-js`` in the command above.
+
 #. Set the secrets:
 
    - Set the secrets using the GitHub UI:
@@ -209,12 +219,12 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
        gh secret set B2C_TENANT --env ci --body "${B2C_TENANT}"
        gh secret set APP_REG_CLIENT_ID --env ci --body "${APP_REG_CLIENT_ID}"
 
-#. Grant the application created in step 1 Contributor permissions for your subscription:
+#. Grant the application created in step 1 Owner permissions for your subscription:
 
    .. code-block:: bash
 
       export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/ci") | .appId' | tr -d '\n'`
-      az role assignment create --role Contributor \
+      az role assignment create --role Owner \
          --assignee ${AZURE_CLIENT_ID} \
          --scope /subscriptions/${SUBSCRIPTION_ID}
 
