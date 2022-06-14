@@ -7,6 +7,8 @@ To clone the `nRF Asset Tracker for Azure <https://github.com/NordicSemiconducto
 
 .. parsed-literal::
 
+    # ~/nrf-asset-tracker
+    
     git clone --branch |version| --single-branch \\
       https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js.git azure
     
