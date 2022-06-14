@@ -27,6 +27,8 @@ To provide the AWS credentials to the nRF Asset Tracker, complete the following 
     .. parsed-literal::
        :class: highlight
 
+       # ~/nrf-asset-tracker
+
        # add to .envrc
        export AWS_ACCESS_KEY_ID="*value of Access key ID*"
        export AWS_SECRET_ACCESS_KEY="*value of Secret access key*"
@@ -36,6 +38,8 @@ To provide the AWS credentials to the nRF Asset Tracker, complete the following 
     .. parsed-literal::
        :class: highlight
 
+       # ~/nrf-asset-tracker
+       
        # add to .envrc
        export AWS_DEFAULT_REGION="*your preferred AWS region*"
        export AWS_REGION="*your preferred AWS region*"
