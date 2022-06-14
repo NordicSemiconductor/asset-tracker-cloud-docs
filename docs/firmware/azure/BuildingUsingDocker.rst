@@ -25,7 +25,15 @@ To clone the firmware repository, run the following command:
     git clone --branch |version| --single-branch \\
       https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure firmware
 
-Then, follow the :ref:`configuration instructions for the firmware <azure-firmware-configuration>` and add your settings to the :file:`firmware.conf` file in the ``firmware`` folder.
+If you haven't configured the firmware yet, follow the :ref:`configure the firmware instructions <azure-firmware-configuration>`.
+
+Then, move the :file:`~/nrf-asset-tracker/firmware.conf` file into ``~/nrf-asset-tracker/firmware``.
+
+.. code-block:: bash
+
+    # ~/nrf-asset-tracker
+
+    mv ~/nrf-asset-tracker/firmware.conf ~/nrf-asset-tracker/firmware/
 
 Build the project
 *****************
@@ -52,3 +60,8 @@ Location of the HEX file
 ************************
 
 The built HEX file will be located in :file:`build/zephyr/merged.hex`.
+
+Device credentials
+******************
+
+For the device to be able to connect to the nRF Asset Tracker for Azure, now :ref:`create device credentials <azure-device-credentials>`.

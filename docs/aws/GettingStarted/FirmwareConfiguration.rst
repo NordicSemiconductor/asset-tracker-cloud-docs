@@ -5,7 +5,7 @@ Configure the firmware
 
 To configure the :ref:`firmware <firmware-aws-index>`, complete the following mandatory steps:
 
-1. Create the file :file:`firmware.conf` to be used for your configuration overrides.
+1. Create the file :file:`firmware.conf` in the ``~/nrf-asset-tracker`` folder for your configuration overrides.
 
 #. Run the following command to print the MQTT endpoint to which your devices will connect:
 
