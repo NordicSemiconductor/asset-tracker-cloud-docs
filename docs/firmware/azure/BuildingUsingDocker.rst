@@ -20,6 +20,8 @@ To clone the firmware repository, run the following command:
 
 .. parsed-literal::
 
+    # ~/nrf-asset-tracker
+    
     git clone --branch |version| --single-branch \\
       https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure firmware
 

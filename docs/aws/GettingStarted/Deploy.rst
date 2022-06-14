@@ -7,6 +7,8 @@ The following commands set up the necessary resources in your AWS account:
 
 .. code-block:: bash
 
+    # ~/nrf-asset-tracker/aws
+
     # One-time operation to support large CloudFormation templates in CDK
     npx cdk -a 'node dist/cdk/cloudformation-sourcecode.js' bootstrap aws://`aws sts get-caller-identity | jq -r '.Account' | tr -d '\n'`/${AWS_REGION}
 
