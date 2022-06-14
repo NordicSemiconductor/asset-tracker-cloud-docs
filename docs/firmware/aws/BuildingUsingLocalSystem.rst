@@ -17,7 +17,6 @@ Prepare your system
 *******************
 
 Follow the `Getting Started Guide <http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html>`_ of the nRF Connect SDK to set up your system for building the project.
-Follow the instructions on `Installing the nRF Connect SDK <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/gs_assistant.html>`_.
 
 Clone the project and install the dependencies
 **********************************************
@@ -25,6 +24,8 @@ Clone the project and install the dependencies
 Create a folder, for example, ``ncs`` and initialize the project by running the following commands:
 
 .. code-block:: bash
+
+    # ~/nrf-asset-tracker
 
     cd ./ncs
     sudo pip3 install -U --pre west
@@ -41,7 +42,15 @@ Create a folder, for example, ``ncs`` and initialize the project by running the 
 Configure the project
 *********************
 
-Follow the :ref:`configuration instructions for the firmware <aws-firmware-configuration>` and add your settings to the :file:`firmware.conf` file.
+If you haven't configured the firmware yet, follow the :ref:`configure the firmware instructions <aws-firmware-configuration>`.
+
+Then, move the :file:`~/nrf-asset-tracker/firmware.conf` file into ``~/nrf-asset-tracker/ncs/firmware``.
+
+.. code-block:: bash
+
+    # ~/nrf-asset-tracker
+
+    mv ~/nrf-asset-tracker/firmware.conf ~/nrf-asset-tracker/ncs/firmware/
 
 Build the project
 *****************
@@ -66,3 +75,8 @@ Location of the HEX file
 ************************
 
 The built HEX file will be located in :file:`./ncs/firmware/build/zephyr/merged.hex`.
+
+Device credentials
+******************
+
+For the device to be able to connect to the nRF Asset Tracker for AWS, now :ref:`create device credentials <aws-device-credentials>`.
