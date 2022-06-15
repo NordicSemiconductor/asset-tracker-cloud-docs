@@ -91,7 +91,7 @@ To build and deploy the web application to the S3 bucket created while setting u
    aws cloudfront create-invalidation --distribution-id \
       $PUBLIC_CLOUDFRONT_DISTRIBUTION_ID --paths /,/index.html
    echo ""
-   echo "Done. Now open https://$PUBLIC_WEB_APP_DOMAIN_NAME to view the web app."
+   echo "Done. Open https://$PUBLIC_WEB_APP_DOMAIN_NAME to view the web app."
 
 After running the commands, you can open the domain name printed in ``PUBLIC_WEB_APP_DOMAIN_NAME`` in your browser to view the web application.
 

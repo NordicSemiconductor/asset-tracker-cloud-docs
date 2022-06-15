@@ -89,7 +89,7 @@ To build and deploy the web application to the Storage Account created while set
       --connection-string ${APP_STORAGE_CONNECTION_STRING} \
       --account-name ${STORAGE_ACCOUNT_NAME} \
       -s ./build -d '$web'
-   echo "Done. Now open $PUBLIC_URL to view the web app."
+   echo "Done. Open $PUBLIC_URL to view the web app."
 
 After running the above commands, you can open the domain name printed in ``APP_URL`` in your browser to view the web application.
 
