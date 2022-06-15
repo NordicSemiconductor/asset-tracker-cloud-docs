@@ -25,7 +25,7 @@ To clone the firmware repository, run the following command:
     git clone --branch |version| --single-branch \\
       https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure firmware
 
-If you haven't configured the firmware yet, follow the :ref:`configure the firmware instructions <azure-firmware-configuration>`.
+If you have not configured the firmware yet, follow the :ref:`instructions for configuring the firmware <azure-firmware-configuration>`.
 
 Then, move the :file:`~/nrf-asset-tracker/firmware.conf` file into ``~/nrf-asset-tracker/firmware``.
 
