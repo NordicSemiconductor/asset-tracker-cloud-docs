@@ -27,7 +27,7 @@ To clone the firmware repository, run the following command:
 
 If you have not configured the firmware yet, follow the :ref:`instructions for configuring the firmware <azure-firmware-configuration>`.
 
-Then, move the :file:`~/nrf-asset-tracker/firmware.conf` file into ``~/nrf-asset-tracker/firmware``.
+Then, move the :file:`~/nrf-asset-tracker/firmware.conf` file into the :file:`~/nrf-asset-tracker/firmware` folder.
 
 .. code-block:: bash
 
