@@ -64,4 +64,4 @@ The built HEX file will be located in :file:`build/zephyr/merged.hex`.
 Device credentials
 ******************
 
-For the device to be able to connect to the nRF Asset Tracker for AWS, now :ref:`create device credentials <aws-device-credentials>`.
+For the device to be able to connect to the nRF Asset Tracker for AWS, you must :ref:`create device credentials <aws-device-credentials>`.
