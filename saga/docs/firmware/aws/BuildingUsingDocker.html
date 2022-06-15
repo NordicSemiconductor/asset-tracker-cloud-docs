@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Building the project using Docker &mdash; nRF Asset Tracker v21.1.4 documentation</title>
+  <title>Building the project using Docker &mdash; nRF Asset Tracker v21.1.5 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
@@ -107,6 +107,7 @@
 </ul>
 </li>
 <li><p><a class="reference internal" href="#location-of-the-hex-file" id="id4">Location of the HEX file</a></p></li>
+<li><p><a class="reference internal" href="#device-credentials" id="id5">Device credentials</a></p></li>
 </ul>
 </div>
 <p>Building using Docker is the simplest way to build the project on your local system.
@@ -121,7 +122,13 @@ If you install <a class="reference external" href="https://www.docker.com/">Dock
 
 git clone --branch saga --single-branch \
   <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws">https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws</a> firmware</pre>
-<p>Then, follow the <a class="reference internal" href="../../aws/GettingStarted/FirmwareConfiguration.html#aws-firmware-configuration"><span class="std std-ref">configuration instructions for the firmware</span></a> and add your settings to the <code class="file docutils literal notranslate"><span class="pre">firmware.conf</span></code> file in the <code class="docutils literal notranslate"><span class="pre">firmware</span></code> folder.</p>
+<p>If you have not configured the firmware yet, follow the <a class="reference internal" href="../../aws/GettingStarted/FirmwareConfiguration.html#aws-firmware-configuration"><span class="std std-ref">instructions for configuring the firmware</span></a>.</p>
+<p>Then, move the <code class="file docutils literal notranslate"><span class="pre">~/nrf-asset-tracker/firmware.conf</span></code> file into the <code class="file docutils literal notranslate"><span class="pre">~/nrf-asset-tracker/firmware</span></code> folder.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ~/nrf-asset-tracker</span>
+
+mv ~/nrf-asset-tracker/firmware.conf ~/nrf-asset-tracker/firmware/
+</pre></div>
+</div>
 <section id="build-the-project">
 <h2><a class="toc-backref" href="#id1">Build the project</a><a class="headerlink" href="#build-the-project" title="Permalink to this headline"></a></h2>
 <p>Build the project for your nRF9160-based device using the specified commands.</p>
@@ -143,6 +150,10 @@ ls -la build/zephyr/merged.hex
 <section id="location-of-the-hex-file">
 <h2><a class="toc-backref" href="#id4">Location of the HEX file</a><a class="headerlink" href="#location-of-the-hex-file" title="Permalink to this headline"></a></h2>
 <p>The built HEX file will be located in <code class="file docutils literal notranslate"><span class="pre">build/zephyr/merged.hex</span></code>.</p>
+</section>
+<section id="device-credentials">
+<h2><a class="toc-backref" href="#id5">Device credentials</a><a class="headerlink" href="#device-credentials" title="Permalink to this headline"></a></h2>
+<p>For the device to be able to connect to the nRF Asset Tracker for AWS, you must <a class="reference internal" href="../../aws/GettingStarted/DeviceCredentials.html#aws-device-credentials"><span class="std std-ref">create device credentials</span></a>.</p>
 </section>
 </section>
 

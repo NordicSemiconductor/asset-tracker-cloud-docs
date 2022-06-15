@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Configure the firmware &mdash; nRF Asset Tracker v21.1.4 documentation</title>
+  <title>Configure the firmware &mdash; nRF Asset Tracker v21.1.5 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
@@ -115,9 +115,11 @@
 <span id="aws-firmware-configuration"></span><h1>Configure the firmware<a class="headerlink" href="#configure-the-firmware" title="Permalink to this headline"></a></h1>
 <p>To configure the <a class="reference internal" href="../../firmware/aws/Index.html#firmware-aws-index"><span class="std std-ref">firmware</span></a>, complete the following mandatory steps:</p>
 <ol class="arabic">
-<li><p>Create the file <code class="file docutils literal notranslate"><span class="pre">firmware.conf</span></code> to be used for your configuration overrides.</p></li>
+<li><p>Create the file <code class="file docutils literal notranslate"><span class="pre">firmware.conf</span></code> in the <code class="file docutils literal notranslate"><span class="pre">~/nrf-asset-tracker</span></code> folder for your configuration overrides.</p></li>
 <li><p>Run the following command to print the MQTT endpoint to which your devices will connect:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli info -o mqttEndpoint
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ~/nrf-asset-tracker/aws</span>
+
+node cli info -o mqttEndpoint
 </pre></div>
 </div>
 </li>
