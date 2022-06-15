@@ -25,6 +25,8 @@ Create a folder, for example, ``ncs`` and initialize the project by running the 
 
 .. code-block:: bash
 
+    # ~/nrf-asset-tracker
+
     cd ./ncs
     sudo pip3 install -U --pre west
     west init -m https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure \
@@ -40,7 +42,15 @@ Create a folder, for example, ``ncs`` and initialize the project by running the 
 Configure the project
 *********************
 
-Follow the :ref:`configuration instructions for the firmware <azure-firmware-configuration>` and add your settings to the :file:`firmware.conf` file.
+If you have not configured the firmware yet, follow the :ref:`instructions for configuring the firmware <azure-firmware-configuration>`.
+
+Then, move the :file:`~/nrf-asset-tracker/firmware.conf` file into the :file:`~/nrf-asset-tracker/ncs/firmware` folder.
+
+.. code-block:: bash
+
+    # ~/nrf-asset-tracker
+
+    mv ~/nrf-asset-tracker/firmware.conf ~/nrf-asset-tracker/ncs/firmware/
 
 Build the project
 *****************
@@ -65,3 +75,8 @@ Location of the HEX file
 ************************
 
 The built HEX file will be located in :file:`./ncs/firmware/build/zephyr/merged.hex`.
+
+Device credentials
+******************
+
+For the device to be able to connect to the nRF Asset Tracker for Azure, you must :ref:`create device credentials <azure-device-credentials>`.

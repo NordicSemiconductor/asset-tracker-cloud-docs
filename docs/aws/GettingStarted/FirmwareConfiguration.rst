@@ -5,12 +5,14 @@ Configure the firmware
 
 To configure the :ref:`firmware <firmware-aws-index>`, complete the following mandatory steps:
 
-1. Create the file :file:`firmware.conf` to be used for your configuration overrides.
+1. Create the file :file:`firmware.conf` in the :file:`~/nrf-asset-tracker` folder for your configuration overrides.
 
 #. Run the following command to print the MQTT endpoint to which your devices will connect:
 
    .. code-block:: bash
 
+      # ~/nrf-asset-tracker/aws
+      
       node cli info -o mqttEndpoint
 
 #. Add the ``CONFIG_AWS_IOT_BROKER_HOST_NAME`` setting to the :file:`firmware.conf` file, using the endpoint value from the previous step as the value:
