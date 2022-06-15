@@ -79,4 +79,4 @@ The built HEX file will be located in :file:`./ncs/firmware/build/zephyr/merged.
 Device credentials
 ******************
 
-For the device to be able to connect to the nRF Asset Tracker for Azure, now :ref:`create device credentials <azure-device-credentials>`.
+For the device to be able to connect to the nRF Asset Tracker for Azure, you must :ref:`create device credentials <azure-device-credentials>`.
