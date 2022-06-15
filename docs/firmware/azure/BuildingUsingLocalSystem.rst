@@ -44,7 +44,7 @@ Configure the project
 
 If you have not configured the firmware yet, follow the :ref:`instructions for configuring the firmware <azure-firmware-configuration>`.
 
-Then, move the :file:`~/nrf-asset-tracker/firmware.conf` file into ``~/nrf-asset-tracker/ncs/firmware``.
+Then, move the :file:`~/nrf-asset-tracker/firmware.conf` file into the :file:`~/nrf-asset-tracker/ncs/firmware` folder.
 
 .. code-block:: bash
 
