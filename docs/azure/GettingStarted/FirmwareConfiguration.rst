@@ -5,7 +5,7 @@ Configure the firmware
 
 To configure the :ref:`firmware <firmware-azure-index>`, complete the following mandatory steps:
 
-1. Create the file :file:`firmware.conf` in the ``~/nrf-asset-tracker`` folder for your configuration overrides.
+1. Create the file :file:`firmware.conf` in the :file:`~/nrf-asset-tracker` folder for your configuration overrides.
 
 #. Run the following command to print the Azure IoT DPS ID scope, which your devices use during device provisioning:
 
