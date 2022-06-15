@@ -42,7 +42,7 @@ Create a folder, for example, ``ncs`` and initialize the project by running the 
 Configure the project
 *********************
 
-If you haven't configured the firmware yet, follow the :ref:`configure the firmware instructions <azure-firmware-configuration>`.
+If you have not configured the firmware yet, follow the :ref:`instructions for configuring the firmware <azure-firmware-configuration>`.
 
 Then, move the :file:`~/nrf-asset-tracker/firmware.conf` file into ``~/nrf-asset-tracker/ncs/firmware``.
 
