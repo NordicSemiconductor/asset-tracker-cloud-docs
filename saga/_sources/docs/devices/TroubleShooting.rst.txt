@@ -25,6 +25,15 @@ getaddrinfo, error -11
 
 If you see this error, verify that your SIM did not run out of data.
 
+Error code -128
+===============
+
+.. code-block:: text
+
+    <err> aws_iot: Cloud MQTT input error: -128
+
+If you see this error code, verify that you have a policy attached to the thing group in the AWS IoT console.
+
 Cellular connection
 ===================
 
