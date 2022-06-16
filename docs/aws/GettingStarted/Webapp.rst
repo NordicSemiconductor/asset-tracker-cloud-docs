@@ -54,7 +54,6 @@ You need to configure the web application to be able to run it with your account
 
       source_up
 
-   in the :file:`.envrc` in our current folder, :file:`web-app`. 
 
 #. Run the following command to allow the changed file:
 
