@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deploy the nRF Asset Tracker web application &mdash; nRF Asset Tracker v21.1.7 documentation</title>
+  <title>Deploy the nRF Asset Tracker web application &mdash; nRF Asset Tracker v21.1.8 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
@@ -159,6 +159,11 @@ node cli web-app-config &gt; ../web-app/.envrc
 </pre></div>
 </div>
 </li>
+<li><p>To get the variables from the <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file in the parent folder (<code class="file docutils literal notranslate"><span class="pre">~/nrf-asset-tracker</span></code>), you also need to add the following entry in the <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file of the current <code class="file docutils literal notranslate"><span class="pre">web-app</span></code> folder:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>source_up
+</pre></div>
+</div>
+</li>
 <li><p>Run the following command to allow the changed file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>direnv allow
 </pre></div>
@@ -168,7 +173,8 @@ node cli web-app-config &gt; ../web-app/.envrc
 <section id="example-for-the-envrc-file">
 <h3><a class="toc-backref" href="#id3">Example for the .envrc file</a><a class="headerlink" href="#example-for-the-envrc-file" title="Permalink to this headline"></a></h3>
 <p>Following is an example for the contents of the <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PUBLIC_REGION</span><span class="o">=</span><span class="s2">&quot;eu-west-1&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>source_up
+<span class="nb">export</span> <span class="nv">PUBLIC_REGION</span><span class="o">=</span><span class="s2">&quot;eu-west-1&quot;</span>
 <span class="nb">export</span> <span class="nv">PUBLIC_HISTORICALDATA_TABLE_INFO</span><span class="o">=</span><span class="s2">&quot;historicalDatadb40B23029-Qzk2Jrr88tOy|historicalDatatableD9D795E1-zdSByjtTqoAE&quot;</span>
 <span class="nb">export</span> <span class="nv">PUBLIC_USER_IOT_POLICY_NAME</span><span class="o">=</span><span class="s2">&quot;nrf-asset-tracker-userIotPolicy-OMYBF5CI5Q6A&quot;</span>
 <span class="nb">export</span> <span class="nv">PUBLIC_FOTA_BUCKET_NAME</span><span class="o">=</span><span class="s2">&quot;nrf-asset-tracker-dfustoragebucket2cc839ff-qz8k9bslldrf&quot;</span>

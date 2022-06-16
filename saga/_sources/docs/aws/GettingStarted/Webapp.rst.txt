@@ -48,6 +48,13 @@ You need to configure the web application to be able to run it with your account
 
        echo "export PUBLIC_VERSION=\"`git describe --tags $(git rev-list --tags --max-count=1)`\"" >> .envrc
 
+#. To get the variables from the :file:`.envrc` file in the parent folder (:file:`~/nrf-asset-tracker`), you also need to add the following entry in the :file:`.envrc` file of the current :file:`web-app` folder:
+
+   .. code-block:: bash
+
+      source_up
+
+
 #. Run the following command to allow the changed file:
 
    .. code-block:: bash
@@ -61,6 +68,7 @@ Following is an example for the contents of the :file:`.envrc` file:
 
 .. code-block:: bash
 
+    source_up
     export PUBLIC_REGION="eu-west-1"
     export PUBLIC_HISTORICALDATA_TABLE_INFO="historicalDatadb40B23029-Qzk2Jrr88tOy|historicalDatatableD9D795E1-zdSByjtTqoAE"
     export PUBLIC_USER_IOT_POLICY_NAME="nrf-asset-tracker-userIotPolicy-OMYBF5CI5Q6A"
