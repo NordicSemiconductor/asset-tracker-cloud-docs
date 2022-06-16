@@ -48,7 +48,7 @@ You need to configure the web application to be able to run it with your account
 
        echo "export PUBLIC_VERSION=\"`git describe --tags $(git rev-list --tags --max-count=1)`\"" >> .envrc
 
-#. To get the variables from the :file:`.envrc` file in the parent folder (:file:`nrf-asset-tracker`), you also need to add the following entry in the :file:`.envrc` file of the current :file:`web-app` folder:
+#. To get the variables from the :file:`.envrc` file in the parent folder (:file:`~/nrf-asset-tracker`), you also need to add the following entry in the :file:`.envrc` file of the current :file:`web-app` folder:
 
    .. code-block:: bash
 
