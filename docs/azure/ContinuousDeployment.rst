@@ -52,7 +52,7 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
      * ``AZURE_TENANT_ID`` - Store the directory (tenant) ID of the service principal app registration created in the previous step.
      * ``AZURE_SUBSCRIPTION_ID`` - Store the ID of the subscription containing the nRF Asset Tracker resources.
 
-     Set the following following values from your :file:`.envrc` file as secrets as well:
+     Set also the following values from your :file:`.envrc` file as secrets:
 
      * ``RESOURCE_GROUP``
      * ``LOCATION``
