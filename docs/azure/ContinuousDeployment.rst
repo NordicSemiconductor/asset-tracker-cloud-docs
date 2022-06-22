@@ -32,7 +32,7 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
 1. Follow the instructions to `Configure a service principal with a Federated Credential to use OIDC based authentication <https://github.com/Azure/login#configure-a-service-principal-with-a-federated-credential-to-use-oidc-based-authentication>`_.
    Use ``https://nrfassettracker.invalid/cd`` as the name.
 
-   From the command line this can be achieved using:
+   On the command line, use the following commands:
 
    .. code-block:: bash
 
