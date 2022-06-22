@@ -60,7 +60,7 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
      * ``B2C_TENANT``
      * ``APP_REG_CLIENT_ID``
 
-     If you have enabled the :ref:`azure-unwired-labs-cell-geolocation`, add your API key as a secret as well:
+     If you have enabled the :ref:`azure-unwired-labs-cell-geolocation`, add your API key ``UNWIRED_LABS_API_KEY`` as a secret as well.
 
      * ``UNWIRED_LABS_API_KEY``
 
