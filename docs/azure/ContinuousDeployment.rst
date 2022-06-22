@@ -29,6 +29,8 @@ Authenticate GitHub Actions against Azure using OpenID Connect
 
 To allow the continuous deployment GitHub Action workflow to authenticate against Azure with short-lived credentials using a service principal, complete the following steps:
 
+.. _azure-continuous-deployment-configure-service-principal:
+
 1. Follow the instructions to `Configure a service principal with a Federated Credential to use OIDC based authentication <https://github.com/Azure/login#configure-a-service-principal-with-a-federated-credential-to-use-oidc-based-authentication>`_.
    Use ``https://nrfassettracker.invalid/cd`` as the name.
 
@@ -80,7 +82,7 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
        gh secret set B2C_TENANT --env production --body "${B2C_TENANT}"
        gh secret set APP_REG_CLIENT_ID --env production --body "${APP_REG_CLIENT_ID}"
 
-#. Grant the application created in step 1 Owner permissions for your resource group:
+#. Grant the application created in :ref:`step 1 <azure-continuous-deployment-configure-service-principal>` Owner permissions for your resource group:
 
    .. code-block:: bash
 
@@ -89,7 +91,7 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
          --assignee ${AZURE_CLIENT_ID} \
          --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}
 
-#. Grant the application created in Step 1 "Key Vault Secrets Officer" rights to the KeyVault:
+#. Grant the application created in :ref:`step 1 <azure-continuous-deployment-configure-service-principal>` "Key Vault Secrets Officer" rights to the KeyVault:
 
    .. code-block:: bash
 
