@@ -118,4 +118,4 @@ You can see a workflow run of the Continuous Deployment action:
 More information
 ****************
 
-You can read more about how GitHub Actions uses OIDC on `About security hardening with OpenID Connect <https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect>`_ in the GitHub Actions documentation.
+For more details about how GitHub Actions uses OIDC, read `About security hardening with OpenID Connect <https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect>`_ in the GitHub Actions documentation.
