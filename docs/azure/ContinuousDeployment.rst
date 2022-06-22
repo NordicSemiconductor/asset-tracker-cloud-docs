@@ -46,7 +46,7 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
 
    - Set the secrets using the GitHub UI:
 
-     Set the following `secrets <https://docs.github.com/en/rest/reference/actions#secrets>`_ through the GitHub UI to an `environment <https://docs.github.com/en/actions/reference/environments#creating-an-environment>`_ called ``production`` in your fork of the nRF Asset Tracker for Azure:
+     Set the following `secrets <https://docs.github.com/en/rest/reference/actions#secrets>`_ to an `environment <https://docs.github.com/en/actions/reference/environments#creating-an-environment>`_ called ``production`` in your fork of the nRF Asset Tracker for Azure:
 
      * ``AZURE_CLIENT_ID`` - Store the application (client) ID of the service principal app registration created in step in the above step.
      * ``AZURE_TENANT_ID`` - Store the directory (tenant) ID of the service principal app registration created in step in the above step.
