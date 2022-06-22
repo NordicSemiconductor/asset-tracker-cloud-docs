@@ -89,7 +89,7 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
          --assignee ${AZURE_CLIENT_ID} \
          --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}
 
-#. Grant the application created in step 1 "Key Vault Secrets Officer" to the KeyVault:
+#. Grant the application created in Step 1 "Key Vault Secrets Officer" rights to the KeyVault:
 
    .. code-block:: bash
 
