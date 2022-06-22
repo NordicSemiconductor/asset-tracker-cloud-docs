@@ -2,6 +2,9 @@ name: PR checks
 
 on: pull_request
 
+permissions:
+  packages: write
+
 jobs:
   docker:
     name: Prepare Docker image
@@ -16,7 +19,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.CR_PAT }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Determine Docker image name and tag
         id: docker-image-tag
@@ -57,7 +60,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.CR_PAT }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Pull Docker image
         run: |
