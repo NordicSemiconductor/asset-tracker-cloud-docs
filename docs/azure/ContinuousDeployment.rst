@@ -65,7 +65,7 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
 
    - Alternatively, set the secrets using the `GitHub CLI <https://cli.github.com/>`_:
 
-     Alternatively, you can use the `GitHub CLI <https://cli.github.com/>`_  with the environment settings from above (make sure to create the ``production`` `environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first):
+     You can use the `GitHub CLI <https://cli.github.com/>`_  with the environment settings from above (make sure to create the ``production`` `environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first):
 
     .. code-block:: bash
 
