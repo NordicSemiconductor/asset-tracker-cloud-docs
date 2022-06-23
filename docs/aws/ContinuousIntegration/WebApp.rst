@@ -21,7 +21,7 @@ Running end-to-end tests during development
 The end-to-end tests run against an instance of the :ref:`nRF Asset Tracker for AWS <index_aws>`.
 
 Use either the credentials you created, :ref:`when setting up the solution <aws-getting-started>`, or enable the Web App CI feature and use the dedicated credentials created for this task.
-The latter option is the recommended approach since it limits the permissions to only the ones needed. 
+The latter option is the recommended approach since it limits the permissions to only the ones needed.
 You can also use the credentials to :ref:`run the end-to-end tests on GitHub Actions <aws-continuous-integration-web-app-github>`.
 
 1. Add the following environment variables to your :file:`.envrc` file:
@@ -88,18 +88,16 @@ You need to configure AWS credentials as `GitHub environment secrets <https://do
 
   - Set the secrets using the GitHub UI:
 
-    You can set the secrets through the GitHub UI (make sure to create the ``production`` `environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first).
-    Set these secrets:
-    
+    Set the following `secrets <https://docs.github.com/en/rest/reference/actions#secrets>`_ to an `environment <https://docs.github.com/en/actions/reference/environments#creating-an-environment>`_ called ``production`` in your fork of the nRF Asset Tracker for AWS:
+
     - ``AWS_REGION``
     - ``AWS_ACCESS_KEY_ID``
     - ``AWS_SECRET_ACCESS_KEY``
     - ``WEBAPP_STACK_NAME``
 
-  - Alternatively, set the secrets using the `GitHub CLI <https://cli.github.com/>`_ (before this, create the ``production`` `environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository):
+  - Alternatively, set the secrets using the `GitHub CLI <https://cli.github.com/>`_:
 
-    Alternatively, you can use the `GitHub CLI <https://cli.github.com/>`_  with the
-    environment settings from above (make sure to create the ``production`` `environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first):
+    You can use the `GitHub CLI <https://cli.github.com/>`_  with the environment settings from above (make sure to create the ``production`` `deployment environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first):
 
     .. code-block:: bash
 

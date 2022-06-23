@@ -52,7 +52,7 @@ To create the resource group for the CI resources, complete the following steps:
 
    .. code-block:: bash
 
-       az account set --subscription $SUBSCRIPTION_ID 
+       az account set --subscription $SUBSCRIPTION_ID
        # Verify that it is set to default
        az account list --output table
 
@@ -62,7 +62,7 @@ To create the resource group for the CI resources, complete the following steps:
    .. code-block:: bash
 
       export RESOURCE_GROUP="nrfassettrackerci"
-    
+
 #. Choose a name for the solution and export it as ``APP_NAME``.
    Use a short name (not more than 16 characters) composed of numbers and lowercase letters only.
    In this example, ``nrfassettrackerci`` is used as the application name.
@@ -95,13 +95,13 @@ Create a secondary tenant (Azure Active Directory B2C)
    #. Follow the instructions in the `tutorial for setting up a resource owner password credentials flow in Azure Active Directory B2C <https://docs.microsoft.com/en-us/azure/active-directory-b2c/add-ropc-policy?tabs=app-reg-ga&pivots=b2c-user-flow#register-an-application>`_ and register an application.
       Make sure to set the following parameters:
 
-      * Set the :guilabel:`Supported account types` to :guilabel:`All users`     
-      * Update the Azure Active Directory app manifest and allow implicit grant flow for OAuth2: 
-        
+      * Set the :guilabel:`Supported account types` to :guilabel:`All users`
+      * Update the Azure Active Directory app manifest and allow implicit grant flow for OAuth2:
+
         .. code-block:: json
 
            {"oauth2AllowImplicitFlow": true}
-   
+
 #. Export the initial domain name that you used:
 
    .. parsed-literal::
@@ -127,21 +127,21 @@ Create a secondary tenant (Azure Active Directory B2C)
    a. In the left menu, under :guilabel:`Manage`, select :guilabel:`API permissions`. Add the permission to manage user accounts (:guilabel:`Microsoft Graph` -> :guilabel:`Application permission` -> :guilabel:`User.ReadWrite.All`).
 
 #. Grant the B2C directory API permissions for the function app:
-   
+
    a. Click :guilabel:`Expose an API` and  set the :guilabel:`Application ID URI` field to ``api``.
-   
+
    #. Click :guilabel:`+ Add a scope` and create a new scope with the following values and click :guilabel:`Add a scope`:
-      
+
       * Scope name - ``nrfassettracker.admin``
       * Admin consent display name - Administrator access to the nRF Asset Tracker API
       * Admin consent description - Allows administrator access to all resources exposed through the nRF Asset Tracker API
 
    #. Click :guilabel:`API permissions` and then click :guilabel:`+ Add a permission`. Under :guilabel:`My APIs`, select the app registration.
-   
+
    #. Enable the ``nrfassettracker.admin`` permission and click :guilabel:`Add permission`.
-   
+
 #. Click :guilabel:`Grant admin consent for <your B2C directory>`.
-   
+
 #. Create a new client secret for the App registration (for example, ``12OzW72ie-U.vlmzik-eO5gX.x26jLTI6U``) and note it down.
 
    .. parsed-literal::
@@ -176,7 +176,7 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
 
       az ad app create --display-name 'https://nrfassettracker.invalid/ci'
       export APPLICATION_OBJECT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/ci") | .id' | tr -d '\n'`
-      az rest --method POST --uri "https://graph.microsoft.com/beta/applications/${APPLICATION_OBJECT_ID}/federatedIdentityCredentials" --body '{"name":"GitHub Actions","issuer":"https://token.actions.githubusercontent.com","subject":"repo:NordicSemiconductor/asset-tracker-cloud-azure-js:environment:ci","description":"Allow GitHub Actions to modify Azure resources","audiences":["api://AzureADTokenExchange"]}' 
+      az rest --method POST --uri "https://graph.microsoft.com/beta/applications/${APPLICATION_OBJECT_ID}/federatedIdentityCredentials" --body '{"name":"GitHub Actions","issuer":"https://token.actions.githubusercontent.com","subject":"repo:NordicSemiconductor/asset-tracker-cloud-azure-js:environment:ci","description":"Allow GitHub Actions to modify Azure resources","audiences":["api://AzureADTokenExchange"]}'
 
    Make sure to use the organization and repository name of your fork instead of ``NordicSemiconductor/asset-tracker-cloud-azure-js`` in the command above.
 
@@ -200,9 +200,9 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
 
      If you have enabled the :ref:`azure-unwired-labs-cell-geolocation`, add your API key ``UNWIRED_LABS_API_KEY`` as a secret as well.
 
-   - Set the secrets using the GitHub CLI:
+   - Alternatively, set the secrets using the GitHub CLI:
 
-     Alternatively, you can use the `GitHub CLI <https://cli.github.com/>`_  with the environment settings from above (make sure to create the ``ci`` `deployment environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first):
+     You can use the `GitHub CLI <https://cli.github.com/>`_  with the environment settings from above (make sure to create the ``ci`` `deployment environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first):
 
     .. code-block:: bash
 
