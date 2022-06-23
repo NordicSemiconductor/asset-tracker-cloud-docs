@@ -24,60 +24,80 @@ To enable continuous deployment, complete the following steps:
 
 #. Update the `deploy.webApp.repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/blob/fd3777cde331286faf10e481bdf1a30327882008/package.json#L111>`_ in the :file:`package.json` file of your nRF Asset Tracker for Azure fork. It must point to the repository URL of your fork of the nRF Asset Tracker web application.
 
-Acquire credentials for GitHub Actions
-**************************************
+Authenticate GitHub Actions against Azure using OpenID Connect
+**************************************************************
 
-To acquire credentials for GitHub Actions, complete the following steps:
+To allow the continuous deployment GitHub Action workflow to authenticate against Azure with short-lived credentials using a service principal, complete the following steps:
 
-1. Login using the shell:
+.. _azure-continuous-deployment-configure-service-principal:
 
-   .. code-block:: bash
+1. Follow the instructions to `Configure a service principal with a Federated Credential to use OIDC based authentication <https://github.com/Azure/login#configure-a-service-principal-with-a-federated-credential-to-use-oidc-based-authentication>`_.
+   Use ``https://nrfassettracker.invalid/cd`` as the name.
 
-      az login
-
-#. Export the identifier of the subscription which contains the nRF Asset Tracker resources:
-
-   .. parsed-literal::
-      :class: highlight
-
-      export SUBSCRIPTION_ID="*subscription id*"
-
-#. Make sure that you have enabled the correct subscription by running the following commands:
+   On the command line, use the following commands:
 
    .. code-block:: bash
 
-      az account set --subscription $SUBSCRIPTION_ID
-      # Verify that it is set to default
-      az account list --output table
+      az ad app create --display-name 'https://nrfassettracker.invalid/cd'
+      export APPLICATION_OBJECT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/cd") | .id' | tr -d '\n'`
+      az rest --method POST --uri "https://graph.microsoft.com/beta/applications/${APPLICATION_OBJECT_ID}/federatedIdentityCredentials" --body '{"name":"GitHub Actions","issuer":"https://token.actions.githubusercontent.com","subject":"repo:NordicSemiconductor/asset-tracker-cloud-azure-js:environment:production","description":"Allow GitHub Actions to modify Azure resources","audiences":["api://AzureADTokenExchange"]}' 
 
-#. Create the CI credentials:
+   Use the organization and repository name of your fork instead of ``NordicSemiconductor/asset-tracker-cloud-azure-js`` in the command.
+
+#. Set the secrets:
+
+   - Set the secrets using the GitHub UI:
+
+     Set the following `secrets <https://docs.github.com/en/rest/reference/actions#secrets>`_ to an `environment <https://docs.github.com/en/actions/reference/environments#creating-an-environment>`_ called ``production`` in your fork of the nRF Asset Tracker for Azure:
+
+     * ``AZURE_CLIENT_ID`` - Store the application (client) ID of the service principal app registration created in the previous step.
+     * ``AZURE_TENANT_ID`` - Store the directory (tenant) ID of the service principal app registration created in the previous step.
+     * ``AZURE_SUBSCRIPTION_ID`` - Store the ID of the subscription containing the nRF Asset Tracker resources.
+
+     Set also the following values from your :file:`.envrc` file as secrets:
+
+     * ``RESOURCE_GROUP``
+     * ``LOCATION``
+     * ``APP_NAME``
+     * ``B2C_TENANT``
+     * ``APP_REG_CLIENT_ID``
+
+     If you have enabled the :ref:`azure-unwired-labs-cell-geolocation`, add your API key ``UNWIRED_LABS_API_KEY`` as a secret as well.
+
+   - Alternatively, set the secrets using the `GitHub CLI <https://cli.github.com/>`_:
+
+     You can use the `GitHub CLI <https://cli.github.com/>`_  with the environment settings from above (make sure to create the ``production`` `deployment environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first):
+
+    .. code-block:: bash
+
+       export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/cd") | .appId' | tr -d '\n'`
+       export AZURE_TENANT_ID=`az ad sp show --id ${AZURE_CLIENT_ID} | jq -r '.appOwnerOrganizationId' | tr -d '\n'`
+       gh secret set AZURE_CLIENT_ID --env production --body "${AZURE_CLIENT_ID}"
+       gh secret set AZURE_TENANT_ID --env production --body "${AZURE_TENANT_ID}"
+       gh secret set AZURE_SUBSCRIPTION_ID --env production --body "${SUBSCRIPTION_ID}"
+       gh secret set RESOURCE_GROUP --env production --body "${RESOURCE_GROUP}"
+       gh secret set LOCATION --env production --body "${LOCATION}"
+       gh secret set APP_NAME --env production --body "${APP_NAME}"
+       gh secret set B2C_TENANT --env production --body "${B2C_TENANT}"
+       gh secret set APP_REG_CLIENT_ID --env production --body "${APP_REG_CLIENT_ID}"
+
+#. Grant the application created in :ref:`step 1 <azure-continuous-deployment-configure-service-principal>` Owner permissions for your resource group:
 
    .. code-block:: bash
 
-      az ad sp create-for-rbac --name 'https://nrfassettracker.invalid/cd' --role contributor \
-         --scopes \
-            "/subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}" \
-         --sdk-auth \
-         > cd-credentials.json
+      export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/cd") | .appId' | tr -d '\n'`
+      az role assignment create --role Owner \
+         --assignee ${AZURE_CLIENT_ID} \
+         --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}
 
-Provide the credentials to GitHub Actions
-*****************************************
+#. Grant the application created in :ref:`step 1 <azure-continuous-deployment-configure-service-principal>` "Key Vault Secrets Officer" rights to the KeyVault:
 
-1. Add the following `secrets <https://docs.github.com/en/rest/reference/actions#secrets>`_ to an `environment <https://docs.github.com/en/actions/reference/environments#creating-an-environment>`_ called ``production`` in your fork of the nRF Asset Tracker for Azure:
+   .. code-block:: bash
 
-   * ``AZURE_CREDENTIALS`` - Store the contents of the JSON file created in the above step.
-  
-#. Add the following following values from your :file:`.envrc` file as secrets as well:
-
-   * ``RESOURCE_GROUP``
-   * ``LOCATION``
-   * ``APP_NAME``
-   * ``B2C_TENANT``
-   * ``APP_REG_CLIENT_ID``
-
-#. If you have enabled the :ref:`azure-unwired-labs-cell-geolocation`, add your API key as a secret as well:
-
-   * ``UNWIRED_LABS_API_KEY``
+      export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/cd") | .appId' | tr -d '\n'`
+      az role assignment create --role "Key Vault Secrets Officer" \
+         --assignee ${AZURE_CLIENT_ID} \
+         --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}/providers/Microsoft.KeyVault/vaults/${APP_NAME:-nrfassettracker}
 
 Trigger a deployment
 ********************
@@ -94,3 +114,8 @@ You can see a workflow run of the Continuous Deployment action:
    :alt: GitHub Actions workflow run of Continuous Deployment
 
    GitHub Actions workflow run of Continuous Deployment
+
+More information
+****************
+
+For more details about how GitHub Actions uses OIDC, read `About security hardening with OpenID Connect <https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect>`_ in the GitHub Actions documentation.
