@@ -52,7 +52,7 @@ To create the resource group for the CI resources, complete the following steps:
 
    .. code-block:: bash
 
-       az account set --subscription $SUBSCRIPTION_ID 
+       az account set --subscription $SUBSCRIPTION_ID
        # Verify that it is set to default
        az account list --output table
 
@@ -62,7 +62,7 @@ To create the resource group for the CI resources, complete the following steps:
    .. code-block:: bash
 
       export RESOURCE_GROUP="nrfassettrackerci"
-    
+
 #. Choose a name for the solution and export it as ``APP_NAME``.
    Use a short name (not more than 16 characters) composed of numbers and lowercase letters only.
    In this example, ``nrfassettrackerci`` is used as the application name.
@@ -95,13 +95,13 @@ Create a secondary tenant (Azure Active Directory B2C)
    #. Follow the instructions in the `tutorial for setting up a resource owner password credentials flow in Azure Active Directory B2C <https://docs.microsoft.com/en-us/azure/active-directory-b2c/add-ropc-policy?tabs=app-reg-ga&pivots=b2c-user-flow#register-an-application>`_ and register an application.
       Make sure to set the following parameters:
 
-      * Set the :guilabel:`Supported account types` to :guilabel:`All users`     
-      * Update the Azure Active Directory app manifest and allow implicit grant flow for OAuth2: 
-        
+      * Set the :guilabel:`Supported account types` to :guilabel:`All users`
+      * Update the Azure Active Directory app manifest and allow implicit grant flow for OAuth2:
+
         .. code-block:: json
 
            {"oauth2AllowImplicitFlow": true}
-   
+
 #. Export the initial domain name that you used:
 
    .. parsed-literal::
@@ -127,21 +127,21 @@ Create a secondary tenant (Azure Active Directory B2C)
    a. In the left menu, under :guilabel:`Manage`, select :guilabel:`API permissions`. Add the permission to manage user accounts (:guilabel:`Microsoft Graph` -> :guilabel:`Application permission` -> :guilabel:`User.ReadWrite.All`).
 
 #. Grant the B2C directory API permissions for the function app:
-   
+
    a. Click :guilabel:`Expose an API` and  set the :guilabel:`Application ID URI` field to ``api``.
-   
+
    #. Click :guilabel:`+ Add a scope` and create a new scope with the following values and click :guilabel:`Add a scope`:
-      
+
       * Scope name - ``nrfassettracker.admin``
       * Admin consent display name - Administrator access to the nRF Asset Tracker API
       * Admin consent description - Allows administrator access to all resources exposed through the nRF Asset Tracker API
 
    #. Click :guilabel:`API permissions` and then click :guilabel:`+ Add a permission`. Under :guilabel:`My APIs`, select the app registration.
-   
+
    #. Enable the ``nrfassettracker.admin`` permission and click :guilabel:`Add permission`.
-   
+
 #. Click :guilabel:`Grant admin consent for <your B2C directory>`.
-   
+
 #. Create a new client secret for the App registration (for example, ``12OzW72ie-U.vlmzik-eO5gX.x26jLTI6U``) and note it down.
 
    .. parsed-literal::
@@ -151,31 +151,90 @@ Create a secondary tenant (Azure Active Directory B2C)
 
 #. Link this Azure AD B2C tenant to the subscription for CI by following the `Billing guide <https://docs.microsoft.com/en-us/azure/active-directory-b2c/billing#link-an-azure-ad-b2c-tenant-to-a-subscription>`_.
 
+Fork the nRF Asset Tracker repositories
+***************************************
+
+To enable continuous deployment, complete the following steps:
+
+1. Fork the `nRF Asset Tracker for Azure repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_.
+#. Fork the `nRF Asset Tracker web application repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js>`_.
+#. Update the `deploy.webApp.repository <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/blob/fd3777cde331286faf10e481bdf1a30327882008/package.json#L111>`_ in the :file:`package.json` file of your nRF Asset Tracker for Azure fork. It must point to the repository URL of your fork of the nRF Asset Tracker web application.
+
 Set up continuous integration on GitHub
 ***************************************
 
-1. Create the CI credentials:
+To allow the continuous deployment GitHub Action workflow to authenticate against Azure with short-lived credentials using a service principal, complete the following steps:
+
+.. _azure-continuous-integration-configure-service-principal:
+
+1. Follow the instructions to `Configure a service principal with a Federated Credential to use OIDC based authentication <https://github.com/Azure/login#configure-a-service-principal-with-a-federated-credential-to-use-oidc-based-authentication>`_.
+   Use ``https://nrfassettracker.invalid/ci`` as the name.
+
+   From the command line this can be achieved using:
 
    .. code-block:: bash
 
-      az ad sp create-for-rbac --name 'https://nrfassettracker.invalid/ci' \
-         --role contributor \
-         --scopes \
-            "/subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}"\
-         --sdk-auth \
-         > ci-credentials.json
+      az ad app create --display-name 'https://nrfassettracker.invalid/ci'
+      export APPLICATION_OBJECT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/ci") | .id' | tr -d '\n'`
+      az rest --method POST --uri "https://graph.microsoft.com/beta/applications/${APPLICATION_OBJECT_ID}/federatedIdentityCredentials" --body '{"name":"GitHub Actions","issuer":"https://token.actions.githubusercontent.com","subject":"repo:NordicSemiconductor/asset-tracker-cloud-azure-js:environment:ci","description":"Allow GitHub Actions to modify Azure resources","audiences":["api://AzureADTokenExchange"]}'
 
-#. Fork the `nRF Asset Tracker for Azure project <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js>`_.
+   Make sure to use the organization and repository name of your fork instead of ``NordicSemiconductor/asset-tracker-cloud-azure-js`` in the command above.
 
-#. Add the following secrets to an environment called ``ci``:
+#. Set the secrets:
 
-   *  ``RESOURCE_GROUP``
-   *  ``APP_REG_CLIENT_ID``
-   *  ``AZURE_CREDENTIALS`` (the contents of :file:`ci-credentials.json`)
-   *  ``B2C_CLIENT_SECRET``
-   *  ``B2C_TENANT_ID``
-   *  ``APP_NAME``
-   *  ``B2C_TENANT``
+   - Set the secrets using the GitHub UI:
+
+     Set the following `secrets <https://docs.github.com/en/rest/reference/actions#secrets>`_ through the GitHub UI to an `environment <https://docs.github.com/en/actions/reference/environments#creating-an-environment>`_ called ``production`` in your fork of the nRF Asset Tracker for Azure:
+
+     * ``AZURE_CLIENT_ID`` - Store the application (client) ID of the service principal app registration created in step in the above step.
+     * ``AZURE_TENANT_ID`` - Store the directory (tenant) ID of the service principal app registration created in step in the above step.
+     * ``AZURE_SUBSCRIPTION_ID`` - Store the ID of the subscription which contains the nRF Asset Tracker resources.
+
+     Set the following following values from your :file:`.envrc` file as secrets as well:
+
+     * ``RESOURCE_GROUP``
+     * ``LOCATION``
+     * ``APP_NAME``
+     * ``B2C_TENANT``
+     * ``APP_REG_CLIENT_ID``
+
+     If you have enabled the :ref:`azure-unwired-labs-cell-geolocation`, add your API key ``UNWIRED_LABS_API_KEY`` as a secret as well.
+
+   - Alternatively, set the secrets using the GitHub CLI:
+
+     You can use the `GitHub CLI <https://cli.github.com/>`_  with the environment settings from above (make sure to create the ``ci`` `deployment environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first):
+
+    .. code-block:: bash
+
+       export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/ci") | .appId' | tr -d '\n'`
+       export AZURE_TENANT_ID=`az ad sp show --id ${AZURE_CLIENT_ID} | jq -r '.appOwnerOrganizationId' | tr -d '\n'`
+       gh secret set AZURE_CLIENT_ID --env ci --body "${AZURE_CLIENT_ID}"
+       gh secret set AZURE_TENANT_ID --env ci --body "${AZURE_TENANT_ID}"
+       gh secret set AZURE_SUBSCRIPTION_ID --env ci --body "${SUBSCRIPTION_ID}"
+       gh secret set RESOURCE_GROUP --env ci --body "${RESOURCE_GROUP}"
+       gh secret set LOCATION --env ci --body "${LOCATION}"
+       gh secret set APP_NAME --env ci --body "${APP_NAME}"
+       gh secret set B2C_TENANT --env ci --body "${B2C_TENANT}"
+       gh secret set APP_REG_CLIENT_ID --env ci --body "${APP_REG_CLIENT_ID}"
+
+#. Grant the application created in :ref:`step 1 <azure-continuous-integration-configure-service-principal>` Owner permissions for your subscription:
+
+   .. code-block:: bash
+
+      export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/ci") | .appId' | tr -d '\n'`
+      az role assignment create --role Owner \
+         --assignee ${AZURE_CLIENT_ID} \
+         --scope /subscriptions/${SUBSCRIPTION_ID}
+
+#. Grant the application created in :ref:`step 1 <azure-continuous-integration-configure-service-principal>` "Key Vault Secrets Officer" to the KeyVault:
+
+   .. code-block:: bash
+
+      export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/ci") | .appId' | tr -d '\n'`
+      az role assignment create --role "Key Vault Secrets Officer" \
+         --assignee ${AZURE_CLIENT_ID} \
+         --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettrackerci}/providers/Microsoft.KeyVault/vaults/${APP_NAME:-nrfassettrackerci}
+
 
 Commit and push a change
 ************************
@@ -205,4 +264,10 @@ To run the end-to-end tests against the solution during development, run the fol
 
 .. note::
 
-   Azure functions allow only one Client ID and Issuer URL in the Active Directory authentication configuration. So, you cannot interact with this instance from the end-to-end tests and the web application since the user flow name differs (``B2C_1_developer`` for end-to-end tests and ``B2C_1_signup_signin`` for the web application) and it is part of the Issuer URL (for example, ``https://${TENANT_DOMAIN}.b2clogin.com/${TENANT_DOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_developer``).
+   Azure functions allow only one Client ID and Issuer URL in the Active Directory authentication configuration. 
+   You cannot interact with this instance from the end-to-end tests and the web application, because the user flow names are different (``B2C_1_developer`` for end-to-end tests and ``B2C_1_signup_signin`` for the web application) and it is part of the Issuer URL (for example, ``https://${TENANT_DOMAIN}.b2clogin.com/${TENANT_DOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_developer``).
+
+More information
+****************
+
+You can read more about how GitHub Actions uses OIDC on `About security hardening with OpenID Connect <https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect>`_ in the GitHub Actions documentation.

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Continuous integration of the AWS web application &mdash; nRF Asset Tracker 403d723aaf9cc45950b0e3f7857300458b090107 documentation</title>
+  <title>Continuous integration of the AWS web application &mdash; nRF Asset Tracker v21.2.0 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
@@ -108,12 +108,12 @@
 <span id="aws-continuous-integration-web-app"></span><h1>Continuous integration of the AWS web application<a class="headerlink" href="#continuous-integration-of-the-aws-web-application" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#running-end-to-end-tests-during-development" id="id2">Running end-to-end tests during development</a></p>
+<li><p><a class="reference internal" href="#running-end-to-end-tests-during-development" id="id3">Running end-to-end tests during development</a></p>
 <ul>
-<li><p><a class="reference internal" href="#playwright-inspector" id="id3">Playwright Inspector</a></p></li>
+<li><p><a class="reference internal" href="#playwright-inspector" id="id4">Playwright Inspector</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#running-end-to-end-tests-using-github-actions" id="id4">Running end-to-end tests using GitHub Actions</a></p></li>
+<li><p><a class="reference internal" href="#running-end-to-end-tests-using-github-actions" id="id5">Running end-to-end tests using GitHub Actions</a></p></li>
 </ul>
 </div>
 <div class="admonition note">
@@ -124,7 +124,7 @@ See the <a class="reference external" href="https://github.com/NordicSemiconduct
 <p>Every change to the project is tested using a head-less browser with the <a class="reference external" href="https://Playwright.dev">Playwright</a> framework.
 This ensures that all dependencies of the web application work as intended and present the data in the correct way.</p>
 <section id="running-end-to-end-tests-during-development">
-<h2><a class="toc-backref" href="#id2">Running end-to-end tests during development</a><a class="headerlink" href="#running-end-to-end-tests-during-development" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id3">Running end-to-end tests during development</a><a class="headerlink" href="#running-end-to-end-tests-during-development" title="Permalink to this headline"></a></h2>
 <p>The end-to-end tests run against an instance of the <a class="reference internal" href="../Index.html#index-aws"><span class="std std-ref">nRF Asset Tracker for AWS</span></a>.</p>
 <p>Use either the credentials you created, <a class="reference internal" href="../GettingStarted/Index.html#aws-getting-started"><span class="std std-ref">when setting up the solution</span></a>, or enable the Web App CI feature and use the dedicated credentials created for this task.
 The latter option is the recommended approach since it limits the permissions to only the ones needed.
@@ -149,7 +149,7 @@ export WEBAPP_STACK_NAME=&quot;<em>name of your web application stack</em>&quot;
 </li>
 </ol>
 <section id="playwright-inspector">
-<h3><a class="toc-backref" href="#id3">Playwright Inspector</a><a class="headerlink" href="#playwright-inspector" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id4">Playwright Inspector</a><a class="headerlink" href="#playwright-inspector" title="Permalink to this headline"></a></h3>
 <p>For developing tests, it is helpful to run the <a class="reference external" href="https://playwright.dev/docs/inspector">Playwright Inspector</a>.</p>
 <p>To enable the inspector during the tests, run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">PWDEBUG</span><span class="o">=</span><span class="m">1</span> npx playwright <span class="nb">test</span>
@@ -158,7 +158,7 @@ export WEBAPP_STACK_NAME=&quot;<em>name of your web application stack</em>&quot;
 </section>
 </section>
 <section id="running-end-to-end-tests-using-github-actions">
-<span id="aws-continuous-integration-web-app-github"></span><h2><a class="toc-backref" href="#id4">Running end-to-end tests using GitHub Actions</a><a class="headerlink" href="#running-end-to-end-tests-using-github-actions" title="Permalink to this headline"></a></h2>
+<span id="aws-continuous-integration-web-app-github"></span><h2><a class="toc-backref" href="#id5">Running end-to-end tests using GitHub Actions</a><a class="headerlink" href="#running-end-to-end-tests-using-github-actions" title="Permalink to this headline"></a></h2>
 <p><a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-aws-js/blob/41705dae8a5d4d7067c023297a3d38a2f0d1106e/.github/workflows/test-and-release.yaml">The Test and Release workflow</a> runs the end-to-end tests for every commit.
 For this to work, you need a running instance of <a class="reference internal" href="../Index.html#index-aws"><span class="std std-ref">nRF Asset Tracker for AWS</span></a>.
 The tests run against this instance.
@@ -182,8 +182,7 @@ You need to configure AWS credentials as <a class="reference external" href="htt
 <blockquote>
 <div><ul>
 <li><p>Set the secrets using the GitHub UI:</p>
-<p>You can set the secrets through the GitHub UI (make sure to create the <code class="docutils literal notranslate"><span class="pre">production</span></code> <a class="reference external" href="https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment">environment</a> in your repository first).
-Set these secrets:</p>
+<p>Set the following <a class="reference external" href="https://docs.github.com/en/rest/reference/actions#secrets">secrets</a> to an <a class="reference external" href="https://docs.github.com/en/actions/reference/environments#creating-an-environment">environment</a> called <code class="docutils literal notranslate"><span class="pre">production</span></code> in your fork of the nRF Asset Tracker for AWS:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">AWS_REGION</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">AWS_ACCESS_KEY_ID</span></code></p></li>
@@ -191,9 +190,8 @@ Set these secrets:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">WEBAPP_STACK_NAME</span></code></p></li>
 </ul>
 </li>
-<li><p>Set the secrets using the GitHub CLI:</p>
-<p>Alternatively, you can use the <a class="reference external" href="https://cli.github.com/">GitHub CLI</a>  with the
-environment settings from above:</p>
+<li><p>Alternatively, set the secrets using the <a class="reference external" href="https://cli.github.com/">GitHub CLI</a>:</p>
+<p>You can use the <a class="reference external" href="https://cli.github.com/">GitHub CLI</a>  with the environment settings from above (make sure to create the <code class="docutils literal notranslate"><span class="pre">production</span></code> <a class="reference external" href="https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment">deployment environment</a> in your repository first):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh secret <span class="nb">set</span> AWS_REGION --env production --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">AWS_REGION</span><span class="si">}</span><span class="s2">&quot;</span>
 gh secret <span class="nb">set</span> AWS_ACCESS_KEY_ID --env production --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">AWS_ACCESS_KEY_ID</span><span class="si">}</span><span class="s2">&quot;</span>
 gh secret <span class="nb">set</span> AWS_SECRET_ACCESS_KEY --env production --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="si">}</span><span class="s2">&quot;</span>

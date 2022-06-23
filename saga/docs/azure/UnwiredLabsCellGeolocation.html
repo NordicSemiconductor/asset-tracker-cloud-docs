@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unwired Labs Cell Geolocation &mdash; nRF Asset Tracker 403d723aaf9cc45950b0e3f7857300458b090107 documentation</title>
+  <title>Unwired Labs Cell Geolocation &mdash; nRF Asset Tracker v21.2.0 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
@@ -120,7 +120,7 @@ Otherwise, this function returns a <code class="docutils literal notranslate"><s
 <p>Store the API key into the key vault as follows:</p>
 <pre class="highlight literal-block"># Grant the current user set permission to the key vault secrets
 USER_OBJECT_ID=`az ad signed-in-user show --query objectId -o tsv`
-az keyvault set-policy --name ${keyVaultName} --object-id ${USER_OBJECT_ID} --secret-permissions set
+az role assignment create --role &quot;Key Vault Secrets Officer&quot;    --assignee-object-id ${USER_OBJECT_ID}    --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}/providers/Microsoft.KeyVault/vaults/${APP_NAME:-nrfassettracker}
 
 # Store the API key
 az keyvault secret set --vault-name ${APP_NAME:-nrfassettracker} \
