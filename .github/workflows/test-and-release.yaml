@@ -179,7 +179,7 @@ jobs:
           cd asset-tracker-docs
           echo "machine github.com login accesskey password ${{ secrets.GITHUB_TOKEN }}" > ~/.netrc
           git config --global user.email "actions@example.com"
-          git config --global user.name "GitHub Actions"
+          git config --global user.name "github-actions[bot]"
           touch .nojekyll
           git add .nojekyll
           git commit -m "docs(${{ env.VERSION }}): update documentation for release ${{ env.RELEASE }}"
