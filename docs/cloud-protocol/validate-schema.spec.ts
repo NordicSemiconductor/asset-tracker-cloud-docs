@@ -1,7 +1,7 @@
 import Ajv from 'ajv'
 import { readFileSync } from 'fs'
-import * as path from 'path'
 import * as glob from 'glob'
+import * as path from 'path'
 
 const f = (name: string): string =>
 	readFileSync(
