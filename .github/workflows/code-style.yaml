@@ -33,13 +33,13 @@ jobs:
       - name: Compile TypeScript
         run: npx tsc
 
-      - name: Format source code with prettier
-        run: npx prettier --write ./
-
       - name: Check source code with eslint
         run:
           npx eslint --fix --ext .js,.ts,.jsx,.tsx --ignore-pattern
           commitlint.config.js --ignore-path .gitignore ./
+
+      - name: Format source code with prettier
+        run: npx prettier --write ./
 
       - name: Commit changes
         run: |
