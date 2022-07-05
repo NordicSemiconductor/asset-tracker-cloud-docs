@@ -37,12 +37,26 @@
       "maximum": 2147483647,
       "examples": [60]
     },
-    "acct": {
-      "description": "Accelerometer threshold in m/s²: Minimal absolute value for an accelerometer reading to be considered movement.",
+    "accath": {
+      "description": "Accelerometer activity threshold in m/s²: Minimal absolute value for an accelerometer reading to be considered movement.",
       "type": "number",
       "minimum": 0,
-      "maximum": 19.6133,
-      "examples": [0.1]
+      "maximum": 78.4532,
+      "examples": [10.0]
+    },
+    "accith": {
+      "description": "Accelerometer inactivity threshold in m/s²: Maximum absolute value for an accelerometer reading to be considered stillness. Should be lower than the activity threshold.",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 78.4532,
+      "examples": [5.0]
+    },
+    "accito": {
+      "description": "Accelerometer inactivity timeout in s: Hysteresis timeout for stillness detection.",
+      "type": "number",
+      "minimum": 0.080,
+      "maximum": 5242.880,
+      "examples": [1.0]
     },
     "nod": {
       "description": "List of modules which should be disabled when sampling data.",
@@ -55,5 +69,5 @@
       "examples": [["gnss"], ["ncell"], ["gnss", "ncell"]]
     }
   },
-  "required": ["act", "actwt", "mvres", "mvt", "gnsst", "acct", "nod"]
+  "required": ["act", "actwt", "mvres", "mvt", "gnsst", "accath", "accith", "accito", "nod"]
 }
