@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker 360c341f524367786519c53ad6e3cabcce667cc9 documentation</title>
+  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker v22.0.0 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
@@ -105,7 +105,7 @@
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline"></a></h2>
 <p>To use any nRF Cloud Location Service, you need to configure your team ID.</p>
 <p>Run the following command to configure your team ID:</p>
-<pre class="highlight literal-block">node cli configure thirdParty nrfcloud teamId <em>your team ID</em></pre>
+<pre class="highlight literal-block">./cli.sh configure thirdParty nrfcloud teamId <em>your team ID</em></pre>
 </section>
 <section id="cell-location-service">
 <h2>Cell Location Service<a class="headerlink" href="#cell-location-service" title="Permalink to this headline"></a></h2>
@@ -117,8 +117,8 @@
 <li><p>Redeploy the stack.</p></li>
 </ol>
 <p>Use the following commands:</p>
-<pre class="highlight literal-block">cat <em>location of your Cell Location Service Key file</em> | node cli configure thirdParty nrfcloud cellLocationServiceKey
-node cli configure context stack nrfcloudCellLocation 1
+<pre class="highlight literal-block">cat <em>location of your Cell Location Service Key file</em> | ./cli.sh configure thirdParty nrfcloud cellLocationServiceKey
+./cli.sh configure context stack nrfcloudCellLocation 1
 npx cdk deploy --all</pre>
 <p>This will update the StateMachine, which resolves cells from devices to use the nRF Cloud API as a resolver.</p>
 </section>
@@ -132,8 +132,8 @@ npx cdk deploy --all</pre>
 <li><p>Redeploy the stack.</p></li>
 </ol>
 <p>Use the following commands:</p>
-<pre class="highlight literal-block">cat <em>location of your Assisted GPS Location Service key file</em> | node cli configure thirdParty nrfcloud agpsLocationServiceKey
-node cli configure context stack nrfcloudAGPS 1
+<pre class="highlight literal-block">cat <em>location of your Assisted GPS Location Service key file</em> | ./cli.sh configure thirdParty nrfcloud agpsLocationServiceKey
+./cli.sh configure context stack nrfcloudAGPS 1
 npx cdk deploy --all</pre>
 <p>This will update the StateMachine, which resolves A-GPS request from devices to use the nRF Cloud API as a resolver.</p>
 </section>
@@ -147,8 +147,8 @@ npx cdk deploy --all</pre>
 <li><p>Redeploy the stack.</p></li>
 </ol>
 <p>Use the following commands:</p>
-<pre class="highlight literal-block">cat <em>location of your Predicted GPS Location Service key file</em> | node cli configure thirdParty nrfcloud pgpsLocationServiceKey
-node cli configure context stack nrfcloudPGPS 1
+<pre class="highlight literal-block">cat <em>location of your Predicted GPS Location Service key file</em> | ./cli.sh configure thirdParty nrfcloud pgpsLocationServiceKey
+./cli.sh configure context stack nrfcloudPGPS 1
 npx cdk deploy --all</pre>
 <p>This will update the StateMachine, which resolves P-GPS request from devices to use the nRF Cloud API as a resolver.</p>
 </section>

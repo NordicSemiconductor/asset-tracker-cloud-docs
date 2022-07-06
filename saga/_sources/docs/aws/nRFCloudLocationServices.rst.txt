@@ -13,7 +13,7 @@ Run the following command to configure your team ID:
 .. parsed-literal::
     :class: highlight
 
-    node cli configure thirdParty nrfcloud teamId *your team ID*
+    ./cli.sh configure thirdParty nrfcloud teamId *your team ID*
 
 Cell Location Service
 *********************
@@ -31,8 +31,8 @@ Use the following commands:
 .. parsed-literal::
     :class: highlight
 
-    cat *location of your Cell Location Service Key file* | node cli configure thirdParty nrfcloud cellLocationServiceKey
-    node cli configure context stack nrfcloudCellLocation 1
+    cat *location of your Cell Location Service Key file* | ./cli.sh configure thirdParty nrfcloud cellLocationServiceKey
+    ./cli.sh configure context stack nrfcloudCellLocation 1
     npx cdk deploy --all
 
 This will update the StateMachine, which resolves cells from devices to use the nRF Cloud API as a resolver.
@@ -53,8 +53,8 @@ Use the following commands:
 .. parsed-literal::
     :class: highlight
 
-    cat *location of your Assisted GPS Location Service key file* | node cli configure thirdParty nrfcloud agpsLocationServiceKey
-    node cli configure context stack nrfcloudAGPS 1
+    cat *location of your Assisted GPS Location Service key file* | ./cli.sh configure thirdParty nrfcloud agpsLocationServiceKey
+    ./cli.sh configure context stack nrfcloudAGPS 1
     npx cdk deploy --all
 
 This will update the StateMachine, which resolves A-GPS request from devices to use the nRF Cloud API as a resolver.
@@ -75,8 +75,8 @@ Use the following commands:
 .. parsed-literal::
     :class: highlight
 
-    cat *location of your Predicted GPS Location Service key file* | node cli configure thirdParty nrfcloud pgpsLocationServiceKey
-    node cli configure context stack nrfcloudPGPS 1
+    cat *location of your Predicted GPS Location Service key file* | ./cli.sh configure thirdParty nrfcloud pgpsLocationServiceKey
+    ./cli.sh configure context stack nrfcloudPGPS 1
     npx cdk deploy --all
 
 This will update the StateMachine, which resolves P-GPS request from devices to use the nRF Cloud API as a resolver.

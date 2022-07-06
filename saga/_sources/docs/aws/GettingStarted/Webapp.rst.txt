@@ -39,7 +39,7 @@ You need to configure the web application to be able to run it with your account
    .. code-block:: bash
 
       cd ../aws
-      node cli web-app-config > ../web-app/.envrc
+      ./cli.sh web-app-config > ../web-app/.envrc
       cd ../web-app
 
 #. Run the following command to provide the version to the application:

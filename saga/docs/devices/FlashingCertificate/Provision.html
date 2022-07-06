@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; nRF Asset Tracker 360c341f524367786519c53ad6e3cabcce667cc9 documentation</title>
+  <title>&lt;no title&gt; &mdash; nRF Asset Tracker v22.0.0 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
@@ -88,7 +88,7 @@
 For more information, see the <a class="reference external" href="https://github.com/microsoft/WSL/issues/4322">issue on WSL 2</a>.</p>
 </div>
 <p>Use the CLI to generate and provision a certificate for your device:</p>
-<div class="highlight highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">node</span> <span class="n">cli</span> <span class="n">create</span><span class="o">-</span><span class="ow">and</span><span class="o">-</span><span class="n">provision</span><span class="o">-</span><span class="n">device</span><span class="o">-</span><span class="n">cert</span>
+<div class="highlight highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">./</span><span class="n">cli</span><span class="o">.</span><span class="n">sh</span> <span class="n">create</span><span class="o">-</span><span class="ow">and</span><span class="o">-</span><span class="n">provision</span><span class="o">-</span><span class="n">device</span><span class="o">-</span><span class="n">cert</span>
  <span class="c1"># default secTag is 42</span>
  <span class="c1"># default board is the Thingy:91, use --dk to program a DK</span>
  <span class="c1"># when programming a Thingy:91, most likely you need to override the default port: -p /dev/ttyACM2</span>
@@ -98,7 +98,7 @@ For more information, see the <a class="reference external" href="https://github
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The default lifetime for device certificates is 30 years.
-Run <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">cli</span> <span class="pre">create-and-provision-device-cert</span> <span class="pre">--help</span></code> to learn how to customize the lifetime.</p>
+Run <code class="docutils literal notranslate"><span class="pre">./cli.sh</span> <span class="pre">create-and-provision-device-cert</span> <span class="pre">--help</span></code> to learn how to customize the lifetime.</p>
 </div>
 <p>This will generate a new key on the device using the <code class="docutils literal notranslate"><span class="pre">%KEYGEN</span></code> AT command and then sign the generated certificate using the CA certificate.
 The generated certificate is then provisioned onto the device.

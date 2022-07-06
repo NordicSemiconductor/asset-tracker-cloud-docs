@@ -11,7 +11,7 @@ To run the application locally with Docker, complete the following steps:
 
    .. code-block:: bash
 
-      node cli functions-settings > local.settings.json
+      ./cli.sh functions-settings > local.settings.json
 
 #. Either `Authenticate against the Google Container registry <https://docs.github.com/en/packages/guides/pushing-and-pulling-docker-images#authenticating-to-github-container-registry>`_  or build the Docker image using the following command:
 

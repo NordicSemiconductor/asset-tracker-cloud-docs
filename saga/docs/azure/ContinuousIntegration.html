@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Continuous integration &mdash; nRF Asset Tracker 360c341f524367786519c53ad6e3cabcce667cc9 documentation</title>
+  <title>Continuous integration &mdash; nRF Asset Tracker v22.0.0 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
@@ -331,9 +331,9 @@ This will trigger the CI run.</p>
 npm ci
 
 <span class="c1"># One time operation: create an intermediate CA certificate</span>
-node cli create-ca-root
-node cli proof-ca-root-possession
-node cli create-ca-intermediate
+./cli.sh create-ca-root
+./cli.sh proof-ca-root-possession
+./cli.sh create-ca-intermediate
 
 <span class="c1"># Run tests</span>
 npm run test:e2e

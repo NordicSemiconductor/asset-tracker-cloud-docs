@@ -76,13 +76,13 @@ You need to configure AWS credentials as `GitHub environment secrets <https://do
 
    .. code-block:: bash
 
-     node cli configure context stack web-app-ci 1
+     ./cli.sh configure context stack web-app-ci 1
 
 #. Acquire the secrets using the nRF Asset Tracker for AWS CLI:
 
    .. code-block:: bash
 
-     node cli web-app-ci -s
+     ./cli.sh web-app-ci -s
 
 #. Set the secrets:
 

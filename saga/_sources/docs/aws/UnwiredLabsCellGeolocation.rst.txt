@@ -16,8 +16,8 @@ Use the following commands:
 .. parsed-literal::
     :class: highlight
 
-    node cli configure thirdParty unwiredlabs apiKey *API key*
-    node cli configure context stack unwiredlabs 1
+    ./cli.sh configure thirdParty unwiredlabs apiKey *API key*
+    ./cli.sh configure context stack unwiredlabs 1
     npx cdk deploy --all
 
 This will update the StateMachine, which resolves cells from devices to use the Unwired Labs' API as a resolver.

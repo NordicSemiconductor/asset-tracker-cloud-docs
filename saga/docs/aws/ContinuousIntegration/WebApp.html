@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Continuous integration of the AWS web application &mdash; nRF Asset Tracker 360c341f524367786519c53ad6e3cabcce667cc9 documentation</title>
+  <title>Continuous integration of the AWS web application &mdash; nRF Asset Tracker v22.0.0 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
@@ -168,12 +168,12 @@ Follow the <a class="reference internal" href="../GettingStarted/Index.html#aws-
 You need to configure AWS credentials as <a class="reference external" href="https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-environment">GitHub environment secrets</a>.</p>
 <ol class="arabic">
 <li><p>Enable the web application CI of the nRF Asset Tracker for AWS:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli configure context stack web-app-ci <span class="m">1</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cli.sh configure context stack web-app-ci <span class="m">1</span>
 </pre></div>
 </div>
 </li>
 <li><p>Acquire the secrets using the nRF Asset Tracker for AWS CLI:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli web-app-ci -s
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cli.sh web-app-ci -s
 </pre></div>
 </div>
 </li>

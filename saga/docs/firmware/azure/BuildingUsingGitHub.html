@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Building the project using GitHub Actions &mdash; nRF Asset Tracker 360c341f524367786519c53ad6e3cabcce667cc9 documentation</title>
+  <title>Building the project using GitHub Actions &mdash; nRF Asset Tracker v22.0.0 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
@@ -106,7 +106,7 @@ Using the <a class="reference external" href="https://github.com/NordicSemicondu
 <p>Navigate to the settings of the repository and configure the secret <code class="docutils literal notranslate"><span class="pre">AZURE_IOT_HUB_DPS_ID_SCOPE</span></code> and assign the DPS ID scope of your Azure IoT Hub Device Provisioning to it.</p>
 <p>To retrieve the value for the Azure IoT DPS ID scope secret, use the following command:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli info -o iotHubDpsIdScope
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cli.sh info -o iotHubDpsIdScope
 </pre></div>
 </div>
 </div></blockquote>

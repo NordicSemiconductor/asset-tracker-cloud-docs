@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unwired Labs Cell Geolocation &mdash; nRF Asset Tracker 360c341f524367786519c53ad6e3cabcce667cc9 documentation</title>
+  <title>Unwired Labs Cell Geolocation &mdash; nRF Asset Tracker v22.0.0 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
@@ -109,8 +109,8 @@
 <li><p>Redeploy the stack.</p></li>
 </ol>
 <p>Use the following commands:</p>
-<pre class="highlight literal-block">node cli configure thirdParty unwiredlabs apiKey <em>API key</em>
-node cli configure context stack unwiredlabs 1
+<pre class="highlight literal-block">./cli.sh configure thirdParty unwiredlabs apiKey <em>API key</em>
+./cli.sh configure context stack unwiredlabs 1
 npx cdk deploy --all</pre>
 <p>This will update the StateMachine, which resolves cells from devices to use the Unwired Labs’ API as a resolver.</p>
 <div class="admonition note">

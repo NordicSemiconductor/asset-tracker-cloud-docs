@@ -13,7 +13,7 @@ To configure the :ref:`firmware <firmware-aws-index>`, complete the following ma
 
       # ~/nrf-asset-tracker/aws
       
-      node cli info -o mqttEndpoint
+      ./cli.sh info -o mqttEndpoint
 
 #. Add the ``CONFIG_AWS_IOT_BROKER_HOST_NAME`` setting to the :file:`firmware.conf` file, using the endpoint value from the previous step as the value:
 

@@ -24,7 +24,7 @@ To create certificates for a simulated device, run the following command:
 
 .. code-block:: bash
 
-    node cli create-simulator-cert
+    ./cli.sh create-simulator-cert
 
 Running the device simulator
 ****************************

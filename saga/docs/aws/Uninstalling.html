@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Uninstalling the nRF Asset Tracker from AWS &mdash; nRF Asset Tracker 360c341f524367786519c53ad6e3cabcce667cc9 documentation</title>
+  <title>Uninstalling the nRF Asset Tracker from AWS &mdash; nRF Asset Tracker v22.0.0 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
@@ -106,9 +106,9 @@
 <p class="admonition-title">Note</p>
 <p>The commands are destructive. Therefore, execute them very carefully.</p>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli purge-buckets
-node cli purge-iot-user-policy-principals
-node cli purge-cas
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cli.sh purge-buckets
+./cli.sh purge-iot-user-policy-principals
+./cli.sh purge-cas
 
 <span class="c1"># Delete the nRF Asset Tracker Stack</span>
 <span class="c1"># Note that the action can take around 20 minutes</span>

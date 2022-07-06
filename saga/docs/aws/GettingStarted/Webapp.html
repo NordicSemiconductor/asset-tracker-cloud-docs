@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deploy the nRF Asset Tracker web application &mdash; nRF Asset Tracker 360c341f524367786519c53ad6e3cabcce667cc9 documentation</title>
+  <title>Deploy the nRF Asset Tracker web application &mdash; nRF Asset Tracker v22.0.0 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
@@ -149,7 +149,7 @@ npm ci</pre>
 <li><p>The web application requires the IDs of the AWS resources that were created during the setup of the stack.
 Run the following command in the <code class="file docutils literal notranslate"><span class="pre">web-app</span></code> directory to copy the output containing the IDs to the <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../aws
-node cli web-app-config &gt; ../web-app/.envrc
+./cli.sh web-app-config &gt; ../web-app/.envrc
 <span class="nb">cd</span> ../web-app
 </pre></div>
 </div>
