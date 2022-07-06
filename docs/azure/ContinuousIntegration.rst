@@ -255,9 +255,9 @@ To run the end-to-end tests against the solution during development, run the fol
       npm ci
 
       # One time operation: create an intermediate CA certificate
-      node cli create-ca-root
-      node cli proof-ca-root-possession
-      node cli create-ca-intermediate
+      ./cli.sh create-ca-root
+      ./cli.sh proof-ca-root-possession
+      ./cli.sh create-ca-intermediate
 
       # Run tests
       npm run test:e2e

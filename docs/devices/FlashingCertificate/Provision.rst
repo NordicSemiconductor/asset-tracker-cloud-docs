@@ -12,7 +12,7 @@ Use the CLI to generate and provision a certificate for your device:
 .. parsed-literal::
    :class: highlight
 
-    node cli create-and-provision-device-cert
+    ./cli.sh create-and-provision-device-cert
     # default secTag is 42
     # default board is the Thingy:91, use --dk to program a DK
     # when programming a Thingy:91, most likely you need to override the default port: -p /dev/ttyACM2
@@ -21,7 +21,7 @@ Use the CLI to generate and provision a certificate for your device:
 .. note::
 
     The default lifetime for device certificates is 30 years.
-    Run ``node cli create-and-provision-device-cert --help`` to learn how to customize the lifetime.
+    Run ``./cli.sh create-and-provision-device-cert --help`` to learn how to customize the lifetime.
 
 This will generate a new key on the device using the ``%KEYGEN`` AT command and then sign the generated certificate using the CA certificate.
 The generated certificate is then provisioned onto the device.

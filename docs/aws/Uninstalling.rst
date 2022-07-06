@@ -11,9 +11,9 @@ To uninstall the nRF Asset Tracker, execute the listed commands.
 
 .. code-block:: bash
 
-    node cli purge-buckets
-    node cli purge-iot-user-policy-principals
-    node cli purge-cas
+    ./cli.sh purge-buckets
+    ./cli.sh purge-iot-user-policy-principals
+    ./cli.sh purge-cas
     
     # Delete the nRF Asset Tracker Stack 
     # Note that the action can take around 20 minutes  

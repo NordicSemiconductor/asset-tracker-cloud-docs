@@ -42,7 +42,7 @@ Run the following command in the :file:`web-app` directory to copy the output to
 .. code-block:: bash
 
    cd ../azure
-   node cli react-config > ../web-app/.env.local
+   ./cli.sh react-config > ../web-app/.env.local
    cd ../web-app
 
 Version string

@@ -13,7 +13,7 @@ To configure the :ref:`firmware <firmware-azure-index>`, complete the following 
 
       # ~/nrf-asset-tracker/aws
 
-      node cli info -o iotHubDpsIdScope
+      ./cli.sh info -o iotHubDpsIdScope
 
 #. Add the ``CONFIG_AZURE_IOT_HUB_DPS_ID_SCOPE`` setting to the :file:`firmware.conf` file, using the Azure IoT DPS ID scope value from the previous step as the value:
 

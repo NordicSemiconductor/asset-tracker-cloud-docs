@@ -17,6 +17,6 @@ To retrieve the value for the Azure IoT DPS ID scope secret, use the following c
 
    .. code-block:: bash
 
-      node cli info -o iotHubDpsIdScope
+      ./cli.sh info -o iotHubDpsIdScope
 
 Commit a change to your repository and the GitHub Action will build the application and attach the HEX files to a release.

@@ -25,12 +25,12 @@ To create a CA root certificate and register it with the Azure IoT Device Provis
 
 .. code-block:: bash
 
-   node cli create-ca-root
+   ./cli.sh create-ca-root
 
 .. note::
 
    The default lifetime for root CA certificates is 1 year.
-   Run ``node cli create-ca-root --help`` to learn how to customize the lifetime.
+   Run ``./cli.sh create-ca-root --help`` to learn how to customize the lifetime.
 
 Do not share the CA root certificate.
 The number of CA root certificates is typically very small, and the minimum number of certificates required is one.
@@ -39,7 +39,7 @@ Provide the proof of your ownership of the CA with the following command:
 
 .. code-block:: bash
 
-   node cli proof-ca-root-possession
+   ./cli.sh proof-ca-root-possession
 
 .. note::
 
@@ -52,12 +52,12 @@ To create a CA intermediate certificate and an enrollment group for it, run the 
 
 .. code-block:: bash
 
-   node cli create-ca-intermediate
+   ./cli.sh create-ca-intermediate
 
 .. note::
 
    The default lifetime for intermediate CA certificates is 1 year.
-   Run ``node cli create-ca-intermediate --help`` to learn how to customize the lifetime.
+   Run ``./cli.sh create-ca-intermediate --help`` to learn how to customize the lifetime.
 
 You can share the CA intermediate certificate with the factory.
 You will have multiple intermediate certificates over time.

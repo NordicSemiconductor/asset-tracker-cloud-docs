@@ -16,7 +16,7 @@ To program the :ref:`configured and built firmware <firmware-configuration>` usi
 .. parsed-literal::
    :class: highlight
 
-    node cli flash-firmware -f /path/to/firmware.hex
+    ./cli.sh flash-firmware -f /path/to/firmware.hex
     # default board is the Thingy:91, use --dk to program a DK
     # pass --help to see the additional options
 
