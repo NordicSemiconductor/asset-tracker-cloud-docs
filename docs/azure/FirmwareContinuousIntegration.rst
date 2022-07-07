@@ -42,25 +42,94 @@ Preparation
 
 Make sure you have successfully deployed the solution (see :ref:`Getting Started <azure-getting-started-deploy>`).
 
-Generate credentials that allow GitHub Actions to create test devices:
+Authenticate GitHub Actions against Azure using OpenID Connect
+**************************************************************
 
-.. code-block:: bash
+To allow the continuous deployment GitHub Action workflow to authenticate against Azure with short-lived credentials using a service principal, complete the following steps:
 
-   az ad sp create-for-rbac --name 'https://nrfassettracker.invalid/firmware-ci' \                         
-      --role contributor \
-      --scopes \
-         "/subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}" \
-      --sdk-auth \
-      > ci-credentials.json
+.. _azure-firmware-ci-configure-service-principal:
 
-Assign access permissions to the IoT hub for the role: 
+1. Follow the instructions to `Configure a service principal with a Federated Credential to use OIDC based authentication <https://github.com/Azure/login#configure-a-service-principal-with-a-federated-credential-to-use-oidc-based-authentication>`_.
+   Use ``https://nrfassettracker.invalid/firmware-ci`` as the name.
 
-.. code-block:: bash
+   On the command line, use the following commands:
 
-   az role assignment create \
-      --assignee $(az ad sp list --display-name "https://nrfassettracker.invalid/firmware-ci" | jq -r '.[0].objectId') \
-      --role $(az role definition list --output json | jq -r '.[] | select(.roleName=="IoT Hub Data Contributor") | .id') \
-      --scope "/subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP}/providers/Microsoft.Devices/IotHubs/${APP_NAME}IotHub"
+   .. code-block:: bash
+
+      az ad app create --display-name 'https://nrfassettracker.invalid/firmware-ci'
+      export APPLICATION_OBJECT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/firmware-ci") | .objectId' | tr -d '\n'`
+      # Spaces replaced with _ because of https://github.com/Azure/azure-cli/issues/22550
+      az rest --method POST --uri "https://graph.microsoft.com/beta/applications/${APPLICATION_OBJECT_ID}/federatedIdentityCredentials" --body '{"name":"GitHub_Actions","issuer":"https://token.actions.githubusercontent.com","subject":"repo:NordicSemiconductor/asset-tracker-cloud-firmware-azure:environment:production","description":"Allow_GitHub_Actions_to_modify_Azure_resources","audiences":["api://AzureADTokenExchange"]}' 
+
+   Use the organization and repository name of your fork instead of ``NordicSemiconductor/asset-tracker-cloud-firmware-azure`` in the command.
+
+#. Set the secrets:
+
+   - Set the secrets using the GitHub UI:
+
+     Set the following `secrets <https://docs.github.com/en/rest/reference/actions#secrets>`_ to an `environment <https://docs.github.com/en/actions/reference/environments#creating-an-environment>`_ called ``production`` in your fork of the nRF Asset Tracker for Azure:
+
+     * ``AZURE_CLIENT_ID`` - Store the application (client) ID of the service principal app registration created in the previous step.
+     * ``AZURE_TENANT_ID`` - Store the directory (tenant) ID of the service principal app registration created in the previous step.
+     * ``AZURE_SUBSCRIPTION_ID`` - Store the ID of the subscription containing the nRF Asset Tracker resources.
+
+     Set also the following values from your :file:`.envrc` file as secrets:
+
+     * ``RESOURCE_GROUP``
+     * ``LOCATION``
+     * ``APP_NAME``
+
+     Set the ``AZURE_IOT_HUB_DPS_ID_SCOPE`` to the output of ``./cli.sh info -o iotHubDpsIdScope``:
+
+     .. code-block:: bash
+
+        # ~/nrf-asset-tracker/azure
+  
+        ./cli.sh info -o iotHubDpsIdScope
+
+   - Alternatively, set the secrets using the `GitHub CLI <https://cli.github.com/>`_:
+
+     You can use the `GitHub CLI <https://cli.github.com/>`_  with the environment settings from above (make sure to create the ``production`` `deployment environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first):
+
+    .. code-block:: bash
+
+       # ~/nrf-asset-tracker/azure
+
+       export AZURE_CLIENT_ID=`az ad app list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/firmware-ci") | .appId' | tr -d '\n'`
+       export AZURE_TENANT_ID=`az account show | jq -r '.tenantId' | tr -d '\n'`
+       export AZURE_IOT_HUB_DPS_ID_SCOPE=`./cli.sh info -o iotHubDpsIdScope`
+
+       cd ../firmware
+
+       # ~/nrf-asset-tracker/firmware
+
+       gh secret set AZURE_CLIENT_ID --env production --body "${AZURE_CLIENT_ID}"
+       gh secret set AZURE_TENANT_ID --env production --body "${AZURE_TENANT_ID}"
+       gh secret set AZURE_IOT_HUB_DPS_ID_SCOPE --env production --body "${AZURE_IOT_HUB_DPS_ID_SCOPE}"
+       gh secret set AZURE_SUBSCRIPTION_ID --env production --body "${SUBSCRIPTION_ID}"
+       gh secret set RESOURCE_GROUP --env production --body "${RESOURCE_GROUP}"
+       gh secret set LOCATION --env production --body "${LOCATION}"
+       gh secret set APP_NAME --env production --body "${APP_NAME}"
+ 
+#. Create a service principal for the application:
+
+   .. code-block:: bash
+
+      # ~/nrf-asset-tracker/azure
+
+      export APPLICATION_OBJECT_ID=`az ad sp list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/firmware-ci") | .objectId' | tr -d '\n'`
+      az ad sp create --id $APPLICATION_OBJECT_ID
+
+#. Grant the application created in :ref:`step 1 <azure-firmware-ci-configure-service-principal>` Owner permissions for your resource group:
+
+   .. code-block:: bash
+
+      # ~/nrf-asset-tracker/azure
+
+      export APPLICATION_ID=`az ad sp list --display-name https://nrfassettracker.invalid/firmware-ci | jq -r '.[] | .appId'  | tr -d '\n'`
+      az role assignment create --role Owner \
+         --assignee ${APPLICATION_ID} \
+         --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}
 
 .. _azure-firmware_ci_runner_setup:
 
