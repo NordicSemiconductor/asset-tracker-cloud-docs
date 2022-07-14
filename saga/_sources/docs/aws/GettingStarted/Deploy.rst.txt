@@ -10,10 +10,10 @@ The following commands set up the necessary resources in your AWS account:
     # ~/nrf-asset-tracker/aws
 
     # One-time operation to support large CloudFormation templates in CDK
-    npx cdk -a 'node dist/cdk/cloudformation-sourcecode.js' bootstrap aws://`aws sts get-caller-identity | jq -r '.Account' | tr -d '\n'`/${AWS_REGION}
+    npx cdk -a 'node --loader tsx cdk/cloudformation-sourcecode.ts' bootstrap aws://`aws sts get-caller-identity | jq -r '.Account' | tr -d '\n'`/${AWS_REGION}
 
     # Create the S3 Bucket for publishing the lambdas
-    npx cdk -a 'node dist/cdk/cloudformation-sourcecode.js' deploy
+    npx cdk -a 'node --loader tsx cdk/cloudformation-sourcecode.ts' deploy
     
     # Deploy the example (see the note below)
     #   It will prompt:
@@ -24,7 +24,7 @@ The following commands set up the necessary resources in your AWS account:
 
     # This is a fix for a bug with AWS CloudFormation and HTTP APIs
     # See https://github.com/bifravst/aws/issues/455
-    node dist/cdk/helper/addFakeRoute.js
+     node --loader tsx cdk/helper/addFakeRoute.ts
 
 The initial deployment will take a few minutes because it sets up a `CloudFront <https://aws.amazon.com/cloudfront/>`_ distribution for the web application.
 
