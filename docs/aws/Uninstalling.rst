@@ -23,4 +23,4 @@ To uninstall the nRF Asset Tracker, execute the listed commands.
     # Delete the Source Code Stack 
     SOURCE_CODE_BUCKET=`aws cloudformation describe-stacks --stack-name ${STACK_NAME:-nrf-asset-tracker}-sourcecode | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "bucketName") | .OutputValue'` 
     aws s3 rb s3://$SOURCE_CODE_BUCKET --force
-    npx cdk -a 'node dist/cdk/cloudformation-sourcecode.js' destroy --all
+    npx cdk -a 'node --loader tsx cdk/cloudformation-sourcecode.ts' destroy -f '*'
