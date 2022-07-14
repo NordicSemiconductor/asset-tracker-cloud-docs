@@ -17,5 +17,3 @@ To clone the `nRF Asset Tracker for AWS <https://github.com/NordicSemiconductor/
     # Install the dependencies
     npm ci
     
-    # Compile the TypeScript source
-    npx tsc
