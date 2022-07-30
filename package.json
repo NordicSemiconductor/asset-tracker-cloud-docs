@@ -28,7 +28,7 @@
     "@types/ajv": "1.0.0",
     "@types/glob": "7.2.0",
     "@types/jest": "28.1.6",
-    "@types/node": "16.11.45",
+    "@types/node": "16.11.47",
     "ajv": "8.11.0",
     "glob": "8.0.3",
     "jest": "28.1.3"
