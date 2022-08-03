@@ -131,6 +131,18 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
          --assignee ${APPLICATION_ID} \
          --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}
 
+#. Grant the application created in :ref:`step 1 <azure-firmware-ci-configure-service-principal>` IoT Hub Data Contributor permissions for your IoT hub:
+
+   .. code-block:: bash
+
+      # ~/nrf-asset-tracker/azure
+
+      export APPLICATION_ID=`az ad sp list --display-name https://nrfassettracker.invalid/firmware-ci | jq -r '.[] | .appId'  | tr -d '\n'`
+       # role ID 4fc6c259-987e-4a07-842e-c321cc9d413f is "IoT Hub Data Contributor"
+       az role assignment create --role 4fc6c259-987e-4a07-842e-c321cc9d413f \
+         --assignee ${APPLICATION_ID} \
+         --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}/providers/Microsoft.Devices/IotHubs/${APP_NAME}IotHub
+
 .. _azure-firmware_ci_runner_setup:
 
 Firmware CI runner setup
