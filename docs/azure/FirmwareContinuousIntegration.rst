@@ -143,6 +143,18 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
          --assignee ${APPLICATION_ID} \
          --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}/providers/Microsoft.Devices/IotHubs/${APP_NAME}IotHub
 
+#. Grant the application created in :ref:`step 1 <azure-firmware-ci-configure-service-principal>` Storage Blob Data Contributor permissions for your storage account:
+
+   .. code-block:: bash
+
+      # ~/nrf-asset-tracker/azure
+
+      export APPLICATION_ID=`az ad sp list --display-name https://nrfassettracker.invalid/firmware-ci | jq -r '.[] | .appId'  | tr -d '\n'`
+      # role ID ba92f5b4-2d11-453d-a403-e96b0029c9fe is "Storage Blob Data Contributor"
+      az role assignment create --role ba92f5b4-2d11-453d-a403-e96b0029c9fe \
+      --assignee ${APPLICATION_ID} \
+      --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}/providers/Microsoft.Storage/storageAccounts/${APP_NAME}storage
+
 .. _azure-firmware_ci_runner_setup:
 
 Firmware CI runner setup
