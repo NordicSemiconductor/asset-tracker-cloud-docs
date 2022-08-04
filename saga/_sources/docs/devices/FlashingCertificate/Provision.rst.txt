@@ -13,7 +13,6 @@ Use the CLI to generate and provision a certificate for your device:
    :class: highlight
 
     ./cli.sh create-and-provision-device-cert
-    # default secTag is 42
     # default board is the Thingy:91, use --dk to program a DK
     # when programming a Thingy:91, most likely you need to override the default port: -p /dev/ttyACM2
     # pass --help to see the additional options, for example, option that enables the use of a different secTag
