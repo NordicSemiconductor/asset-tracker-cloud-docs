@@ -120,7 +120,7 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
       export APPLICATION_OBJECT_ID=`az ad sp list | jq -r '.[] | select(.displayName=="https://nrfassettracker.invalid/firmware-ci") | .objectId' | tr -d '\n'`
       az ad sp create --id $APPLICATION_OBJECT_ID
 
-#. Grant the application created in :ref:`step 1 <azure-firmware-ci-configure-service-principal>` Owner permissions for your resource group:
+#. Grant the application created in :ref:`Step 1 <azure-firmware-ci-configure-service-principal>` Owner permissions for your resource group:
 
    .. code-block:: bash
 
