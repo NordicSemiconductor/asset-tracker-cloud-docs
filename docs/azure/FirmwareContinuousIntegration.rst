@@ -143,7 +143,7 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
          --assignee ${APPLICATION_ID} \
          --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}/providers/Microsoft.Devices/IotHubs/${APP_NAME}IotHub
 
-#. Grant the application created in :ref:`step 1 <azure-firmware-ci-configure-service-principal>` Storage Blob Data Contributor permissions for your storage account:
+#. Grant the application created in :ref:`Step 1 <azure-firmware-ci-configure-service-principal>` Storage Blob Data Contributor permissions for your storage account:
 
    .. code-block:: bash
 
