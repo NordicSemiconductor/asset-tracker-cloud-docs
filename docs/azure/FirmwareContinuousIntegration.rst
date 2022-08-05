@@ -131,7 +131,7 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
          --assignee ${APPLICATION_ID} \
          --scope /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RESOURCE_GROUP:-nrfassettracker}
 
-#. Grant the application created in :ref:`step 1 <azure-firmware-ci-configure-service-principal>` IoT Hub Data Contributor permissions for your IoT hub:
+#. Grant the application created in :ref:`Step 1 <azure-firmware-ci-configure-service-principal>` IoT Hub Data Contributor permissions for your IoT hub:
 
    .. code-block:: bash
 
