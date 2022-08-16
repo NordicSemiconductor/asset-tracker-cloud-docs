@@ -12,13 +12,13 @@ Hence, in this project, the best practices of the respective cloud vendor for bu
 
 See the below table for a list of supported cloud providers:
 
-+-----------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
-|                       | Amazon Web Services                                                                              | Microsoft Azure                                                                                  | Google Cloud                                                |
-+=======================+==================================================================================================+==================================================================================================+=============================================================+
-| LTE-M: TCP and MQTT   | :ref:`Feature complete <aws-getting-started>`                                                    | :ref:`Feature complete <azure-getting-started>`                                                  | `On hold <https://github.com/bifravst/bifravst/issues/25>`_ |
-+-----------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
-| NB-IoT: UDP and LwM2M | `In consideration <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues/338>`_ | `In consideration <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues/338>`_ |                                                             |
-+-----------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
++-----------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+|                       | Amazon Web Services                                                                              | Microsoft Azure                                                                                  |
++=======================+==================================================================================================+==================================================================================================+
+| LTE-M: TCP and MQTT   | :ref:`Feature complete <aws-getting-started>`                                                    | :ref:`Feature complete <azure-getting-started>`                                                  |
++-----------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| NB-IoT: UDP and LwM2M | `In consideration <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues/338>`_ | `In consideration <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues/338>`_ |
++-----------------------+--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 
 In the case of cloud providers without native UDP and LwM2M support, the option of using a bridge such as `Eclipse Californium <https://github.com/eclipse/californium>`_, was evaluated.
 For more information, see `Leshan LwM2M AWS IoT Gateway <https://github.com/coderbyheart/leshan-aws>`_.
@@ -33,7 +33,7 @@ The following table provides a comparison between the results of the IoT cloud v
 +=================+========================+========================+========================+=================================================================================================================================+
 | AWS             | 1\. 100%               | 1\. 100%               | 1\. 100%               | 1\. 100%                                                                                                                        |
 +-----------------+------------------------+------------------------+------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| Google          | 2\. 54% ▼              | 2\. 68% ▼              | 2\. 79%                | 3\. 73%                                                                                                                         |
+| Google¹         | 2\. 54% ▼              | 2\. 68% ▼              | 2\. 79%                | 3\. 73%                                                                                                                         |
 +-----------------+------------------------+------------------------+------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | Azure           | 3\. 50% ▼              | 3\. 66%                | 3\. 66%                | 2\. 84%                                                                                                                         |
 +-----------------+------------------------+------------------------+------------------------+---------------------------------------------------------------------------------------------------------------------------------+
@@ -45,3 +45,5 @@ The following table provides a comparison between the results of the IoT cloud v
 These survey results can have an influence on the cloud provider selection.
 
 A value of ``100%`` in the chart corresponds to the majority of answers given for a specific cloud provider in the survey, while the rest of the percentage values for the different cloud providers (with less answers) are given relatively to the majority of answers for a specific cloud provider per year.
+
+¹ As of August 16th 2022, Google has announced the retirement of Google IoT Core by August 16th 2023.
