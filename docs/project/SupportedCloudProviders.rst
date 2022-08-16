@@ -46,4 +46,4 @@ These survey results can have an influence on the cloud provider selection.
 
 A value of ``100%`` in the chart corresponds to the majority of answers given for a specific cloud provider in the survey, while the rest of the percentage values for the different cloud providers (with less answers) are given relatively to the majority of answers for a specific cloud provider per year.
 
-¹ As of August 16th 2022, Google has announce the retirement of Google IoT Core by August 16th 2023.
+¹ As of August 16th 2022, Google has announced the retirement of Google IoT Core by August 16th 2023.
