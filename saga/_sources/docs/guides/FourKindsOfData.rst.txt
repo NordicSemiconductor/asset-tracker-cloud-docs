@@ -152,8 +152,6 @@ Even though the concrete implementation differs for each cloud provider, the gen
 |                                     |                         |                  |           |                   |
 |                                     | ``reported``            | ``desired``      |           |                   |
 +-------------------------------------+-------------------------+------------------+-----------+-------------------+
-| :abbr:`GCP (Google Cloud Platform)` | `Device configuration`_ | `Device state`_  | MQTT      |                   |
-+-------------------------------------+-------------------------+------------------+-----------+-------------------+
 | :abbr:`Azure (Microsoft Azure)`     | `Device twins`_         | `Device twins`_  | MQTT      | `MQTT and HTTPS`_ |
 |                                     |                         |                  |           |                   |
 |                                     | ``reported``            | ``desired``      |           |                   |
@@ -161,7 +159,5 @@ Even though the concrete implementation differs for each cloud provider, the gen
 
 .. _Device shadow: https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html
 .. _Jobs: https://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html
-.. _Device configuration: https://cloud.google.com/iot/docs/concepts/devices#device_configuration>
-.. _Device state: https://cloud.google.com/iot/docs/concepts/devices#device_state
 .. _Device twins: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins
 .. _MQTT and HTTPS: https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-firmware-update
