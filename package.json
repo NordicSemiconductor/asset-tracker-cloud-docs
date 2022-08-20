@@ -23,7 +23,7 @@
   "author": "Nordic Semiconductor ASA | nordicsemi.no",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "@nordicsemiconductor/asset-tracker-cloud-code-style": "11.0.110",
+    "@nordicsemiconductor/asset-tracker-cloud-code-style": "11.0.112",
     "@swc/jest": "0.2.22",
     "@types/ajv": "1.0.0",
     "@types/glob": "7.2.0",
