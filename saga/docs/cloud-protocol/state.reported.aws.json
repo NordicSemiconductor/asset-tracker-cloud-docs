@@ -28,9 +28,7 @@
     "actwt": 60,
     "mvres": 60,
     "mvt": 3600,
-    "accath": 10.0,
-    "accith": 5.0,
-    "accito": 1.0,
+    "acct": 1.2,
     "nod": []
   },
   "dev": {
