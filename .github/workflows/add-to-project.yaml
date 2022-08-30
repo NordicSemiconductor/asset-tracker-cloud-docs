@@ -8,7 +8,7 @@ jobs:
   assign_to_project:
     runs-on: ubuntu-latest
     steps:
-      - name: Add PR to the nRF Asset Tracker Development project
+      - name: Add to project
         uses: actions/add-to-project@RELEASE_VERSION
         with:
           project-url: https://github.com/orgs/NordicSemiconductor/projects/3
