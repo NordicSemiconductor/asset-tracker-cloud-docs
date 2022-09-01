@@ -9,11 +9,11 @@ As a first step, see :ref:`Code of Conduct <code-of-conduct>`.
 Finding open issues
 *******************
 
-A list of `help-wanted issues <https://github.com/orgs/NordicSemiconductor/projects/2?card_filter_query=label%3A%22help+wanted%22>`_ is maintained in the project board.
+A list of `help-wanted issues <https://github.com/orgs/NordicSemiconductor/projects/3/views/16>`_ is maintained in the project board.
 These issues are good starting points for contributing to the project.
 Some of them require in-depth knowledge about the technology in use.
 
-Issues tagged with `good first issues <https://github.com/orgs/NordicSemiconductor/projects/2?card_filter_query=label%3A%22good+first+issue%22>`_ are very small issues that can help you to get familiar with the codebase.
+Issues tagged with `good first issues <https://github.com/orgs/NordicSemiconductor/projects/3/views/11>`_ are very small issues that can help you to get familiar with the codebase.
 
 Improving documentation
 ***********************
