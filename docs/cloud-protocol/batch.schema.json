@@ -33,6 +33,13 @@
         "$ref": "messages.schema.json#/properties/btn"
       }
     },
+    "impact": {
+      "description": "Motion impact events.",
+      "type": "array",
+      "items": {
+        "$ref": "messages.schema.json#/properties/impact"
+      }
+    },
     "env": {
       "description": "Environmental sensors.",
       "type": "array",
