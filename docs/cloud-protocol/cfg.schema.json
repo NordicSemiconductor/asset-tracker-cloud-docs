@@ -54,8 +54,8 @@
     "accito": {
       "description": "Accelerometer inactivity timeout in s: Hysteresis timeout for stillness detection.",
       "type": "number",
-      "minimum": 0.080,
-      "maximum": 5242.880,
+      "minimum": 0.08,
+      "maximum": 5242.88,
       "examples": [1.0]
     },
     "nod": {
@@ -69,5 +69,15 @@
       "examples": [["gnss"], ["ncell"], ["gnss", "ncell"]]
     }
   },
-  "required": ["act", "actwt", "mvres", "mvt", "gnsst", "accath", "accith", "accito", "nod"]
+  "required": [
+    "act",
+    "actwt",
+    "mvres",
+    "mvt",
+    "gnsst",
+    "accath",
+    "accith",
+    "accito",
+    "nod"
+  ]
 }
