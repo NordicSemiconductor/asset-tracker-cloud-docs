@@ -10,7 +10,7 @@ To clone the `nRF Asset Tracker for AWS <https://github.com/NordicSemiconductor/
     # ~/nrf-asset-tracker
     
     git clone --branch |version| --single-branch \\
-      https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js.git aws
+      https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js aws
     
     cd aws 
     
