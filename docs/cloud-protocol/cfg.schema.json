@@ -42,21 +42,21 @@
       "type": "number",
       "minimum": 0,
       "maximum": 78.4532,
-      "examples": [10.0]
+      "examples": [10.5]
     },
     "accith": {
       "description": "Accelerometer inactivity threshold in m/s²: Maximum absolute value for an accelerometer reading to be considered stillness. Should be lower than the activity threshold.",
       "type": "number",
       "minimum": 0,
       "maximum": 78.4532,
-      "examples": [5.0]
+      "examples": [5.2]
     },
     "accito": {
       "description": "Accelerometer inactivity timeout in s: Hysteresis timeout for stillness detection.",
       "type": "number",
       "minimum": 0.08,
       "maximum": 5242.88,
-      "examples": [1.0]
+      "examples": [1.7]
     },
     "nod": {
       "description": "List of modules which should be disabled when sampling data.",

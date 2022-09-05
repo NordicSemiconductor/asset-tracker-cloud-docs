@@ -21,6 +21,7 @@ describe('schemas', () => {
 	it.each([
 		['state.reported.aws', undefined],
 		['state.reported.azure', undefined],
+		['state.desired.azure', undefined],
 		['messages', 'message.json'],
 		['batch', 'batch-message.json'],
 		['ncellmeas', undefined],
