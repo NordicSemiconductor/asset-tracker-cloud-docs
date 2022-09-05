@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Troubleshooting &mdash; nRF Asset Tracker b6ce0ac98fa0bfe33b9f8be71391542e03f4c0d8 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Device-to-cloud communication" href="../cloud-protocol/Index.html" />
+    <link rel="prev" title="Connect using a real device" href="Index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> nRF Asset Tracker
+          </a>
+              <div class="version">
+                v2.1.x
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Azure cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">nRF Asset Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Connect using a real device</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memfault/Index.html">Memfault integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">nRF Asset Tracker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Index.html">Connect using a real device</a> &raquo;</li>
+      <li>Troubleshooting</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v2.1.x/docs/devices/TroubleShooting.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline"></a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#connection" id="id1">Connection</a></p>
+<ul>
+<li><p><a class="reference internal" href="#error-code-22" id="id2">Error code -22</a></p></li>
+<li><p><a class="reference internal" href="#getaddrinfo-error-11" id="id3">getaddrinfo, error -11</a></p></li>
+<li><p><a class="reference internal" href="#error-code-128" id="id4">Error code -128</a></p></li>
+<li><p><a class="reference internal" href="#cellular-connection" id="id5">Cellular connection</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#gnss" id="id6">GNSS</a></p>
+<ul>
+<li><p><a class="reference internal" href="#error-nrf-modem-gnss-evt-blocked" id="id7">Error: NRF_MODEM_GNSS_EVT_BLOCKED</a></p></li>
+<li><p><a class="reference internal" href="#gnss-timeout-configuration" id="id8">GNSS timeout configuration</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>This section lists some common errors and possible solutions to them.</p>
+<section id="connection">
+<h2><a class="toc-backref" href="#id1">Connection</a><a class="headerlink" href="#connection" title="Permalink to this headline"></a></h2>
+<section id="error-code-22">
+<h3><a class="toc-backref" href="#id2">Error code -22</a><a class="headerlink" href="#error-code-22" title="Permalink to this headline"></a></h3>
+<p>If you see this error code, verify the client ID, the endpoint, and the certificates.</p>
+</section>
+<section id="getaddrinfo-error-11">
+<h3><a class="toc-backref" href="#id3">getaddrinfo, error -11</a><a class="headerlink" href="#getaddrinfo-error-11" title="Permalink to this headline"></a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;err&gt; aws_iot: getaddrinfo, error -11
+&lt;err&gt; aws_iot: client_broker_init, error: -10
+</pre></div>
+</div>
+<p>If you see this error, verify that your SIM did not run out of data.</p>
+</section>
+<section id="error-code-128">
+<h3><a class="toc-backref" href="#id4">Error code -128</a><a class="headerlink" href="#error-code-128" title="Permalink to this headline"></a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;err&gt; aws_iot: Cloud MQTT input error: -128
+</pre></div>
+</div>
+<p>If you see this error code, verify that you have a policy attached to the thing group in the AWS IoT console.</p>
+</section>
+<section id="cellular-connection">
+<h3><a class="toc-backref" href="#id5">Cellular connection</a><a class="headerlink" href="#cellular-connection" title="Permalink to this headline"></a></h3>
+<p>Since 5G support is currently being deployed by mobile phone network operators, there is a high chance of connection issues in your location.</p>
+<p>Try multiple SIM cards from different vendors if you experience connectivity issues.</p>
+</section>
+</section>
+<section id="gnss">
+<h2><a class="toc-backref" href="#id6">GNSS</a><a class="headerlink" href="#gnss" title="Permalink to this headline"></a></h2>
+<section id="error-nrf-modem-gnss-evt-blocked">
+<h3><a class="toc-backref" href="#id7">Error: NRF_MODEM_GNSS_EVT_BLOCKED</a><a class="headerlink" href="#error-nrf-modem-gnss-evt-blocked" title="Permalink to this headline"></a></h3>
+<p>This error occurs if the network provider does not grant Power Saving Mode (PSM) and the GNSS takes a long time to acquire a fix.
+For more details, see the <a class="reference external" href="https://devzone.nordicsemi.com/f/nordic-q-a/51962/gps-and-lte-issue/210272#210272">DevZone post related to the GNSS and LTE issue</a>.</p>
+<p>Try switching to a SIM card that grants PSM.</p>
+<p>Alternatively, use the nRF Cloud Assisted GPS Location Service to speed up the time to fix.</p>
+</section>
+<section id="gnss-timeout-configuration">
+<h3><a class="toc-backref" href="#id8">GNSS timeout configuration</a><a class="headerlink" href="#gnss-timeout-configuration" title="Permalink to this headline"></a></h3>
+<p>If the nRF Cloud Assisted GPS Location Service is not used, it can take a long time to acquire a GNSS fix.
+Therefore, select a timeout of at least 1000 seconds in the web application.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Index.html" class="btn btn-neutral float-left" title="Connect using a real device" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../cloud-protocol/Index.html" class="btn btn-neutral float-right" title="Device-to-cloud communication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019-2022, Nordic Semiconductor ASA | nordicsemi.no.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

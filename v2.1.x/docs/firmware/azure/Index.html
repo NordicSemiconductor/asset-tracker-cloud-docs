@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firmware for the Azure cloud components &mdash; nRF Asset Tracker b6ce0ac98fa0bfe33b9f8be71391542e03f4c0d8 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Building the project using your local system" href="BuildingUsingLocalSystem.html" />
+    <link rel="prev" title="Continuous integration of firmware" href="../../aws/FirmwareContinuousIntegration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> nRF Asset Tracker
+          </a>
+              <div class="version">
+                v2.1.x
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../project/Index.html">Project overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aws/Index.html">AWS cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../azure/Index.html">Azure cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../app/Index.html">nRF Asset Tracker web application</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Index.html">Firmware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../aws/Index.html">Firmware for the AWS cloud components</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Firmware for the Azure cloud components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BuildingUsingLocalSystem.html">Building the project using your local system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildingUsingDocker.html">Building the project using Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildingUsingGitHub.html">Building the project using GitHub Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../azure/FirmwareContinuousIntegration.html">Continuous integration of firmware</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Programming.html">Programming the firmware</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../devices/Index.html">Connect using a real device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../memfault/Index.html">Memfault integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/Index.html">Guides</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing to the project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">nRF Asset Tracker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../Index.html">Firmware</a> &raquo;</li>
+      <li>Firmware for the Azure cloud components</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v2.1.x/docs/firmware/azure/Index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="firmware-for-the-azure-cloud-components">
+<span id="firmware-azure-index"></span><h1>Firmware for the Azure cloud components<a class="headerlink" href="#firmware-for-the-azure-cloud-components" title="Permalink to this headline"></a></h1>
+<p>The firmware of the <a class="reference internal" href="../../project/Index.html#project"><span class="std std-ref">nRF Asset Tracker</span></a> is the <a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html">nRF9160: Asset Tracker v2</a>, which is a reference application developed using the <a class="reference external" href="https://github.com/nrfconnect/sdk-nrf">nRF Connect SDK</a>.</p>
+<p>It is compatible with the <a class="reference internal" href="../../azure/Index.html#index-azure"><span class="std std-ref">nRF Asset Tracker for Azure</span></a>.</p>
+<p>The <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure">firmware GitHub repository</a> provides an example for using the application as an out-of-tree development copy.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The current firmware-over-the-air (FOTA) update mechanism implemented in nRF Asset Tracker for Azure is based on the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-firmware-update">Microsoft Azure tutorial for implementing a device firmware update process</a>.
+In February 2021, Microsoft released <a class="reference external" href="https://techcommunity.microsoft.com/t5/internet-of-things/streamline-device-management-with-device-update-for-iot-hub-now/ba-p/2167663">a preview of Device Update for IoT Hub</a> which will replace the current mechanism, as soon as it is generally available.
+See the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues/340">Azure Device Update for IoT Hub support issue</a> for details about the ongoing work to implement the new update mechanism.</p>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Subpages:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="BuildingUsingLocalSystem.html">Building the project using your local system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildingUsingDocker.html">Building the project using Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildingUsingGitHub.html">Building the project using GitHub Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../azure/FirmwareContinuousIntegration.html">Continuous integration of firmware</a></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../aws/FirmwareContinuousIntegration.html" class="btn btn-neutral float-left" title="Continuous integration of firmware" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="BuildingUsingLocalSystem.html" class="btn btn-neutral float-right" title="Building the project using your local system" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019-2022, Nordic Semiconductor ASA | nordicsemi.no.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System requirements &mdash; nRF Asset Tracker b6ce0ac98fa0bfe33b9f8be71391542e03f4c0d8 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="License" href="License.html" />
+    <link rel="prev" title="Supported cloud providers" href="SupportedCloudProviders.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> nRF Asset Tracker
+          </a>
+              <div class="version">
+                v2.1.x
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Project overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="CorePrinciples.html">Core principles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SystemOverview.html">System overview and technical considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SupportedCloudProviders.html">Supported cloud providers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">System requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="License.html">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Azure cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">nRF Asset Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memfault/Index.html">Memfault integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">nRF Asset Tracker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Index.html">Project overview</a> &raquo;</li>
+      <li>System requirements</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v2.1.x/docs/project/SystemRequirements.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="system-requirements">
+<span id="id1"></span><h1>System requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline"></a></h1>
+<p>You need a development environment with <a class="reference external" href="https://git-scm.com/">Git</a>, <a class="reference external" href="https://stedolan.github.io/jq/">jq</a>, the <a class="reference external" href="https://nodejs.org/en/about/releases/">LTS release candidate of Node.js</a> (current LTS release is version 16), and <a class="reference external" href="https://github.blog/changelog/2021-10-07-npm-cli-upgraded-to-version-8/">the current stable release of npm (version 8)</a>.</p>
+<p>If you are using Windows, use the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a> with <a class="reference external" href="https://www.microsoft.com/nb-no/p/ubuntu-2004-lts/9n6svws3rx71">Ubuntu 20.04
+LTS</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Windows is not included in the continuous integration tests, and hence if you encounter issues, you can vote in the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/discussions/21">nRF Asset Tracker project discussion</a>.</p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SupportedCloudProviders.html" class="btn btn-neutral float-left" title="Supported cloud providers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="License.html" class="btn btn-neutral float-right" title="License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019-2022, Nordic Semiconductor ASA | nordicsemi.no.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

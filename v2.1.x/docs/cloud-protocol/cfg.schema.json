@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/cfg.schema.json",
+  "description": "Configures the device",
+  "type": "object",
+  "properties": {
+    "act": {
+      "description": "Whether to enable the active mode.",
+      "type": "boolean",
+      "examples": [false]
+    },
+    "actwt": {
+      "description": "In active mode: Wait this amount of seconds until sending the next update. The actual interval will be this time plus the time it takes to get a GNSS fix.",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2147483647,
+      "examples": [60]
+    },
+    "mvres": {
+      "description": "(movement resolution) In passive mode: After detecting movement send an update and wait this amount of time until movement again can trigger the next update.",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2147483647,
+      "examples": [300]
+    },
+    "mvt": {
+      "description": "(movement timeout) In passive mode: Send update at least this often (in seconds).",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2147483647,
+      "examples": [3600]
+    },
+    "gnsst": {
+      "description": "GNSS timeout (in seconds): Timeout for GNSS fix.",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2147483647,
+      "examples": [60]
+    },
+    "accath": {
+      "description": "Accelerometer activity threshold in m/s²: Minimal absolute value for an accelerometer reading to be considered movement.",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 78.4532,
+      "examples": [10.0]
+    },
+    "accith": {
+      "description": "Accelerometer inactivity threshold in m/s²: Maximum absolute value for an accelerometer reading to be considered stillness. Should be lower than the activity threshold.",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 78.4532,
+      "examples": [5.0]
+    },
+    "accito": {
+      "description": "Accelerometer inactivity timeout in s: Hysteresis timeout for stillness detection.",
+      "type": "number",
+      "minimum": 0.08,
+      "maximum": 5242.88,
+      "examples": [1.0]
+    },
+    "nod": {
+      "description": "List of modules which should be disabled when sampling data.",
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "examples": [["gnss"], ["ncell"], ["gnss", "ncell"]]
+    }
+  },
+  "required": [
+    "act",
+    "actwt",
+    "mvres",
+    "mvt",
+    "gnsst",
+    "accath",
+    "accith",
+    "accito",
+    "nod"
+  ]
+}

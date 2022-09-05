@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Server Name Indication &mdash; nRF Asset Tracker b6ce0ac98fa0bfe33b9f8be71391542e03f4c0d8 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Azure cloud components" href="../azure/Index.html" />
+    <link rel="prev" title="Storage of historical data" href="HistoricalData.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> nRF Asset Tracker
+          </a>
+              <div class="version">
+                v2.1.x
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">AWS cloud components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/Index.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Uninstalling.html">Uninstalling the nRF Asset Tracker from AWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousIntegration/Index.html">Continuous integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nRFCloudLocationServices.html">nRF Cloud Location Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UnwiredLabsCellGeolocation.html">Unwired Labs Cell Geolocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">AWS IoT Device Shadow service and MQTT topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LimitingShadowDocumentSize.html">Limiting the shadow document size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HistoricalData.html">Storage of historical data</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Server Name Indication</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Azure cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">nRF Asset Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memfault/Index.html">Memfault integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">nRF Asset Tracker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Index.html">AWS cloud components</a> &raquo;</li>
+      <li>Server Name Indication</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v2.1.x/docs/aws/SNI.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="server-name-indication">
+<span id="sni-readme"></span><h1>Server Name Indication<a class="headerlink" href="#server-name-indication" title="Permalink to this headline"></a></h1>
+<p>According to the <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html">Transport security in AWS IoT</a> documentation, the Server Name Indication (SNI) extension is required for TLS, both in the case of MQTT and HTTPS.</p>
+<p>However, note the following facts:</p>
+<ul class="simple">
+<li><p>SNI is required when connecting using a certificate that is created using the IoT console or the <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificateWithoutCA.html">RegisterCertificateWithoutCA</a> API, which registers the certificate with <code class="docutils literal notranslate"><span class="pre">certificateMode</span></code> <code class="docutils literal notranslate"><span class="pre">SNI_ONLY</span></code>.</p>
+<ul>
+<li><p>The devices that are currently connected to AWS IoT through MQTT and not using SNI, are not affected and such devices continue to work with AWS IoT.</p></li>
+</ul>
+</li>
+<li><p>SNI is not required when connecting to AWS IoT through MQTT, using a CA certificate.</p>
+<ul>
+<li><p>AWS IoT uses the certificates provided in the TLS connection of MQTT to route the request to the right account (not to the endpoint) using the CA certificate.
+This also means that when using a wrong account endpoint to connect to AWS IoT with a certificate that does not belong to that account endpoint, the request is routed to the correct account endpoint.</p></li>
+</ul>
+</li>
+<li><p>HTTP is handled separately and differently from MQTT and it requires that the SNI bit is set.</p></li>
+<li><p>New features such as <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#multiple-account-cert">Multi-Account registration</a> and <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-configurable.html">Configurable endpoints</a>, require SNI bits in MQTT connection.
+The SNI bit is significant when using these features and AWS IoT uses it to route the request properly.</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="HistoricalData.html" class="btn btn-neutral float-left" title="Storage of historical data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../azure/Index.html" class="btn btn-neutral float-right" title="Azure cloud components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019-2022, Nordic Semiconductor ASA | nordicsemi.no.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

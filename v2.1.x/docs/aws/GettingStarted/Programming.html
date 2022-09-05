@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program the device firmware &mdash; nRF Asset Tracker b6ce0ac98fa0bfe33b9f8be71391542e03f4c0d8 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Deploy the nRF Asset Tracker web application" href="Webapp.html" />
+    <link rel="prev" title="Create device credentials" href="DeviceCredentials.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> nRF Asset Tracker
+          </a>
+              <div class="version">
+                v2.1.x
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../project/Index.html">Project overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStarted.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Index.html">AWS cloud components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="Index.html">Getting started</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="WorkingDirectory.html">Create the working directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AWSCredentials.html">Provide your AWS credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Clone.html">Clone the project and install the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Deploy.html">Install the nRF Asset Tracker into your AWS account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FirmwareConfiguration.html">Configure the firmware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Create device credentials</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Program the device firmware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Webapp.html">Deploy the nRF Asset Tracker web application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NextSteps.html">Next steps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Uninstalling.html">Uninstalling the nRF Asset Tracker from AWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ContinuousDeployment.html">Continuous deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ContinuousIntegration/Index.html">Continuous integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nRFCloudLocationServices.html">nRF Cloud Location Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../UnwiredLabsCellGeolocation.html">Unwired Labs Cell Geolocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IoTShadowAndTopics.html">AWS IoT Device Shadow service and MQTT topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LimitingShadowDocumentSize.html">Limiting the shadow document size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HistoricalData.html">Storage of historical data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SNI.html">Server Name Indication</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../azure/Index.html">Azure cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../app/Index.html">nRF Asset Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../firmware/Index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devices/Index.html">Connect using a real device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../memfault/Index.html">Memfault integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/Index.html">Guides</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing to the project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">nRF Asset Tracker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../Index.html">AWS cloud components</a> &raquo;</li>
+          <li><a href="Index.html">Getting started</a> &raquo;</li>
+      <li>Program the device firmware</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v2.1.x/docs/aws/GettingStarted/Programming.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-the-device-firmware">
+<span id="aws-programming"></span><h1>Program the device firmware<a class="headerlink" href="#program-the-device-firmware" title="Permalink to this headline"></a></h1>
+<p>First, make sure you have <a class="reference external" href="https://www.segger.com/downloads/jlink/">Segger JLink</a> installed in your path.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Programming the firmware through CLI is currently not supported on WSL 2 because it lacks support for serial devices.
+For more information, see the <a class="reference external" href="https://github.com/microsoft/WSL/issues/4322">issue on WSL 2</a>.</p>
+</div>
+<p>To program the <span class="xref std std-ref">configured and built firmware</span> using the CLI, run the following command:</p>
+<div class="highlight highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">./</span><span class="n">cli</span><span class="o">.</span><span class="n">sh</span> <span class="n">flash</span><span class="o">-</span><span class="n">firmware</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">firmware</span><span class="o">.</span><span class="n">hex</span>
+ <span class="c1"># default board is the Thingy:91, use --dk to program a DK</span>
+ <span class="c1"># pass --help to see the additional options</span>
+</pre></div>
+</div>
+<p>After the programming of the firmware, the device reboots and connects to the AWS broker, and eventually reports its state to the cloud:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">00</span>:00:35.591,644<span class="o">]</span> &lt;inf&gt; event_manager: CLOUD_EVT_CONNECTED
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="DeviceCredentials.html" class="btn btn-neutral float-left" title="Create device credentials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Webapp.html" class="btn btn-neutral float-right" title="Deploy the nRF Asset Tracker web application" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019-2022, Nordic Semiconductor ASA | nordicsemi.no.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
