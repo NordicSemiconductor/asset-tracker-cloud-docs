@@ -23,6 +23,25 @@
         }
       },
       "required": ["v", "ts"]
+    },
+    "impact": {
+      "description": "The magnitude and time of a motion impact event",
+      "type": "object",
+      "properties": {
+        "v": {
+          "description": "Magnitude of the impact in g",
+          "type": "number",
+          "minimum": 0.0,
+          "examples": [0.5, 300]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC) when the impact was detected",
+          "type": "integer",
+          "minimum": 1234567890123,
+          "examples": [1584533788029]
+        }
+      },
+      "required": ["v", "ts"]
     }
   }
 }
