@@ -24,7 +24,7 @@ Clone the `nRF Asset Tracker web application <https://github.com/NordicSemicondu
 .. parsed-literal::
 
     git clone --branch |version| --single-branch \\
-      https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js.git web-app
+      https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js web-app
     cd web-app
     npm ci
 

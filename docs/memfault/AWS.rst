@@ -30,7 +30,7 @@ To clone the `nRF Asset Tracker Memfault integration for AWS IoT <https://github
 .. parsed-literal::
 
     git clone --branch |version| --single-branch \\
-      https://github.com/NordicSemiconductor/asset-tracker-cloud-memfault-aws-js.git memfault-aws
+      https://github.com/NordicSemiconductor/asset-tracker-cloud-memfault-aws-js memfault-aws
     
     cd memfault-aws 
     
