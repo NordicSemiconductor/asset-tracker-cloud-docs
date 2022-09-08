@@ -26,7 +26,8 @@ This will generate a new key on the device using the ``%KEYGEN`` AT command and 
 The generated certificate is then provisioned onto the device.
 The firmware will use the IMEI of the device as the MQTT client ID.
 
-Flashing the credentials may time out on the Thingy:91 when using USB if it is running an outdated `connectivity bridge <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/connectivity_bridge/README.html>`_ because the CA certificate size is above the internal buffer size of the connectivity bridge.
+Flashing the credentials can time out on the Thingy:91 when using USB if it is running an outdated `Connectivity bridge <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/connectivity_bridge/README.html>`_ application.
+The time-out happens when the CA certificate size is above the internal buffer size of the application.
 Make sure to update to the latest connectivity bridge by following the guide `Updating the firmware in the nRF52840 SoC <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91_gsg.html#updating-the-conn-bridge-52840>`_.
 
 .. body_end
