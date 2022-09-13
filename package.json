@@ -4,9 +4,7 @@
   "description": "The nRF Asset Tracker aims to provide a concrete end-to-end example for an IoT product in the asset tracker space.",
   "scripts": {
     "test": "jest",
-    "postinstall": "husky install",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
