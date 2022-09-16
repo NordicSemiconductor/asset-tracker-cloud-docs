@@ -1,6 +1,6 @@
 /* Display version number in white */
 .wy-side-nav-search > div.version {
-  color: #fff;
+  color: #fafafa;
 }
 
 /* Set background and border for navigation pane */
@@ -10,7 +10,7 @@
 }
 .wy-side-nav-search,
 .wy-nav-top {
-  background-color: #00a9ce;
+  background-color: #fafafa;
 }
 
 /* Light background when expanding as well */
