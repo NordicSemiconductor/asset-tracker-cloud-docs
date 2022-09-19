@@ -186,6 +186,12 @@ kbd {
 
 .ncs-header-nav {
   background-color: rgba(0, 51, 160, 0.6);
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .ncs-header-nav {
+    display: block;
+  }
 }
 
 /* search box */
