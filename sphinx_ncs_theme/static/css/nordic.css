@@ -5,7 +5,8 @@
  * Base
  ******************************************************************************/
 
-body, html {
+body,
+html {
   overflow-x: unset;
 }
 
@@ -129,7 +130,7 @@ kbd {
     border: 1px solid rgb(237, 237, 237);
   }
   .wy-side-scroll::-webkit-scrollbar-track {
-    background: rgb(237, 237, 237)
+    background: rgb(237, 237, 237);
   }
 }
 
@@ -195,8 +196,8 @@ kbd {
   border: none !important;
   border-bottom: 1px solid #fffffff2 !important;
   box-shadow: none !important;
-  color: #ffffff91  !important;
-  font-style:italic;
+  color: #ffffff91 !important;
+  font-style: italic;
   font-size: 100% !important;
   padding-left: 2.375rem !important;
   opacity: 0.8;
@@ -640,7 +641,7 @@ div.figure {
 }
 
 .rst-content table.docutils td p:last-child {
-  font-size: .9rem;
+  font-size: 0.9rem;
   margin-bottom: 0 !important;
 }
 
@@ -649,7 +650,7 @@ div.figure {
   padding-top: 20px;
   line-height: 40px;
 }
-  
+
 .grid-item h2 {
   border: 0px;
   padding-top: 0px;
