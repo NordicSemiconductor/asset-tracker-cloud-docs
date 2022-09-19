@@ -32,13 +32,11 @@ extensions = []
 templates_path = ['_templates']
 
 # These folders are copied to the documentation's HTML output
-html_static_path = ['_static']
+
 
 # These paths are either relative to html_static_path
 # or fully qualified paths (eg. https://...)
-html_css_files = [
-    'common.css',
-]
+
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
