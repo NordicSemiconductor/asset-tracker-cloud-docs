@@ -292,6 +292,7 @@ kbd {
   margin-bottom: unset;
   padding: unset;
   padding-top: 1em;
+  display: none;
 }
 
 .wy-side-nav-search > a.icon-home {
