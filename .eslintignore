@@ -1,0 +1,4 @@
+sphinx_ncs_theme/
+build/
+commitlint.config.js
+dist/

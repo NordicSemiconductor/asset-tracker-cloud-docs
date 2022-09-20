@@ -18,29 +18,25 @@
 # -- Project information ---------------------------------------------------------------------------------------------
 
 project = 'nRF Asset Tracker'
-copyright = '2019-2022, Nordic Semiconductor ASA | nordicsemi.no'
-author = 'Nordic Semiconductor ASA | nordicsemi.no'
+copyright = '2019-2022, Nordic Semiconductor'
+author = 'Nordic Semiconductor'
 
 # -- General configuration -------------------------------------------------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-    'sphinx_rtd_theme',
-]
+extensions = []
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
 # These folders are copied to the documentation's HTML output
-html_static_path = ['_static']
+
 
 # These paths are either relative to html_static_path
 # or fully qualified paths (eg. https://...)
-html_css_files = [
-    'common.css',
-]
+
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -53,7 +49,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_ncs_theme'
+html_theme_path = ["."]
 
 html_theme_options = {
     'logo_only': True
