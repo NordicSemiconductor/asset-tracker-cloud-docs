@@ -298,6 +298,11 @@ kbd {
   margin-bottom: unset;
   padding: unset;
   padding-top: 1em;
+}
+
+/* Hide title and version above navigation */
+.wy-side-nav-search > .icon-home,
+.wy-side-nav-search > .version {
   display: none;
 }
 
