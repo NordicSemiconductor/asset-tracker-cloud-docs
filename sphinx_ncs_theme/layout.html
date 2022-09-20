@@ -47,31 +47,16 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            saga
+            {{ current_github_version }}
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style>
+            {%- for version in github_versions %}
             <a
               class="dropdown-item"
-              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/"
-              >saga</a
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/{{ version }}/"
+              >{{ version }}</a
             >
-            <a
-              class="dropdown-item"
-              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v2.1.x/"
-              >2.1.x</a
-            ><a
-              class="dropdown-item"
-              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.8.x/"
-              >1.8.x</a
-            ><a
-              class="dropdown-item"
-              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.6.x/"
-              >1.6.x</a
-            ><a
-              class="dropdown-item"
-              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.5.x/"
-              >1.5.x</a
-            >
+            {%- endfor -%}
           </div>
         </div>
       </div>

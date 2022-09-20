@@ -61,7 +61,8 @@ html_context = {
     'display_github': True,
     'github_user': 'NordicSemiconductor',
     'github_repo': 'asset-tracker-cloud-docs',
-    'github_version': 'saga'
+    'current_github_version': 'saga',
+    'github_versions': ['saga', 'v2.1.x', 'v1.8.x', 'v1.6.x', 'v1.5.x']
 }
 
 master_doc = 'index'
