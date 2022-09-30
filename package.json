@@ -22,7 +22,7 @@
   "license": "BSD-3-Clause",
   "devDependencies": {
     "@nordicsemiconductor/asset-tracker-cloud-code-style": "11.0.127",
-    "@swc/jest": "0.2.22",
+    "@swc/jest": "0.2.23",
     "@types/ajv": "1.0.0",
     "@types/glob": "8.0.0",
     "@types/jest": "29.1.0",
