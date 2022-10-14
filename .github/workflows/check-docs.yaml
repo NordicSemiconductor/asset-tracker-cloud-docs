@@ -8,7 +8,7 @@ permissions:
 jobs:
   docker:
     name: Prepare Docker image
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     outputs:
       docker_image: ${{ steps.docker-image-tag.outputs.docker_image }}
     steps:
@@ -46,7 +46,7 @@ jobs:
           push: true
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     needs: [docker]
 
@@ -83,7 +83,7 @@ jobs:
           path: build/html/
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - uses: actions/checkout@v3
