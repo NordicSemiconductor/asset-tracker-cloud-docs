@@ -62,6 +62,7 @@ html_context = {
     'github_user': 'NordicSemiconductor',
     'github_repo': 'asset-tracker-cloud-docs',
     'github_version': 'saga',
+    'conf_py_path': '/',
     'github_versions': ['saga', 'v2.1.x', 'v1.8.x', 'v1.6.x', 'v1.5.x']
 }
 
