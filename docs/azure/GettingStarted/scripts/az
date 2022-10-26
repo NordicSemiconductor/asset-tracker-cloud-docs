@@ -8,7 +8,12 @@ for i in "$@"
 do
     if [[ $i =~ $whitespace ]]
     then
-        AZARGS+=(\"$i\")
+        if [[ $i =~ "'" ]]
+        then
+            AZARGS+=(\"$i\")
+        else
+            AZARGS+=(\'$i\')
+        fi
     else
         AZARGS+=($i)
     fi
