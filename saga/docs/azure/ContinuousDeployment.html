@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Continuous deployment &mdash; nRF Asset Tracker v24.0.2 documentation</title>
+  <title>Continuous deployment &mdash; nRF Asset Tracker v24.0.3 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/nordic.css" type="text/css" /> 
   
@@ -254,7 +254,7 @@ Use <code class="docutils literal notranslate"><span class="pre">https://nrfasse
 <p>On the command line, use the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az ad app create --display-name <span class="s1">&#39;https://nrfassettracker.invalid/cd&#39;</span>
 <span class="nb">export</span> <span class="nv">APPLICATION_OBJECT_ID</span><span class="o">=</span><span class="sb">`</span>az ad app list <span class="p">|</span> jq -r <span class="s1">&#39;.[] | select(.displayName==&quot;https://nrfassettracker.invalid/cd&quot;) | .id&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>
-az rest --method POST --uri <span class="s2">&quot;https://graph.microsoft.com/beta/applications/</span><span class="si">${</span><span class="nv">APPLICATION_OBJECT_ID</span><span class="si">}</span><span class="s2">/federatedIdentityCredentials&quot;</span> --body <span class="s1">&#39;{&quot;name&quot;:&quot;GitHub Actions&quot;,&quot;issuer&quot;:&quot;https://token.actions.githubusercontent.com&quot;,&quot;subject&quot;:&quot;repo:NordicSemiconductor/asset-tracker-cloud-azure-js:environment:production&quot;,&quot;description&quot;:&quot;Allow GitHub Actions to modify Azure resources&quot;,&quot;audiences&quot;:[&quot;api://AzureADTokenExchange&quot;]}&#39;</span>
+az rest --method POST --uri <span class="s2">&quot;https://graph.microsoft.com/beta/applications/</span><span class="si">${</span><span class="nv">APPLICATION_OBJECT_ID</span><span class="si">}</span><span class="s2">/federatedIdentityCredentials&quot;</span> --body <span class="s1">&#39;{&quot;name&quot;:&quot;GitHubActions&quot;,&quot;issuer&quot;:&quot;https://token.actions.githubusercontent.com&quot;,&quot;subject&quot;:&quot;repo:NordicSemiconductor/asset-tracker-cloud-azure-js:environment:production&quot;,&quot;description&quot;:&quot;Allow GitHub Actions to modify Azure resources&quot;,&quot;audiences&quot;:[&quot;api://AzureADTokenExchange&quot;]}&#39;</span>
 </pre></div>
 </div>
 <p>Use the organization and repository name of your fork instead of <code class="docutils literal notranslate"><span class="pre">NordicSemiconductor/asset-tracker-cloud-azure-js</span></code> in the command.</p>
