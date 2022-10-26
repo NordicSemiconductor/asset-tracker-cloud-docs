@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Install the Azure CLI &mdash; nRF Asset Tracker ccab65dd86423e53353f6e31ebc1e737a05263fd documentation</title>
+  <title>Install the Azure CLI &mdash; nRF Asset Tracker v24.0.2 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/nordic.css" type="text/css" /> 
   
@@ -252,12 +252,24 @@ Therefore, you need to create an alias, when using the dockerized Azure CLI.</p>
 
 <span class="nb">set</span> -eu
 
-<span class="nv">command</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+<span class="nv">AZARGS</span><span class="o">=()</span>
+<span class="nv">whitespace</span><span class="o">=</span><span class="s2">&quot;[[:space:]]&quot;</span>
+<span class="k">for</span> i <span class="k">in</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+<span class="k">do</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$i</span> <span class="o">=</span>~ <span class="nv">$whitespace</span> <span class="o">]]</span>
+    <span class="k">then</span>
+        <span class="nv">AZARGS</span><span class="o">+=(</span><span class="se">\&quot;</span><span class="nv">$i</span><span class="se">\&quot;</span><span class="o">)</span>
+    <span class="k">else</span>
+        <span class="nv">AZARGS</span><span class="o">+=(</span><span class="nv">$i</span><span class="o">)</span>
+    <span class="k">fi</span>
+<span class="k">done</span>
 
-docker run --rm --volume <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>:/root <span class="se">\</span>
-    --volume <span class="nv">$HOME</span>/.azure:/root/.azure <span class="se">\</span>
-    -w<span class="o">=</span>/root mcr.microsoft.com/azure-cli <span class="se">\</span>
-    az <span class="nv">$command</span>
+<span class="nb">eval</span> <span class="s2">&quot;docker run --rm \</span>
+<span class="s2">    --volume </span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">:/root \</span>
+<span class="s2">    --volume </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.azure:/root/.azure \</span>
+<span class="s2">    -w=/root \</span>
+<span class="s2">    mcr.microsoft.com/azure-cli \</span>
+<span class="s2">    az </span><span class="si">${</span><span class="nv">AZARGS</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </li>
