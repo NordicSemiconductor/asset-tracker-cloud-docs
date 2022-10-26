@@ -2,9 +2,21 @@
 
 set -eu
 
-command="$@"
+AZARGS=()
+whitespace="[[:space:]]"
+for i in "$@"
+do
+    if [[ $i =~ $whitespace ]]
+    then
+        AZARGS+=(\"$i\")
+    else
+        AZARGS+=($i)
+    fi
+done
 
-docker run --rm --volume `pwd`:/root \
-    --volume $HOME/.azure:/root/.azure \
-    -w=/root mcr.microsoft.com/azure-cli \
-    az $command
+eval "docker run --rm \
+    --volume ${PWD}:/root \
+    --volume ${HOME}/.azure:/root/.azure \
+    -w=/root \
+    mcr.microsoft.com/azure-cli \
+    az ${AZARGS[@]}"
