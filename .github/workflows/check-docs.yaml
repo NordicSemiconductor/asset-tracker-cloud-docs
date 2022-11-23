@@ -79,6 +79,7 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
+          if-no-files-found: error
           name: asset-tracker-docs-${{ github.sha }}
           path: build/html/
 
