@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Install the nRF Asset Tracker into your AWS account &mdash; nRF Asset Tracker 73b349599f2b63f6b01766c61cb45aff00be0d3e documentation</title>
+  <title>Install the nRF Asset Tracker into your AWS account &mdash; nRF Asset Tracker v24.0.5 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/nordic.css" type="text/css" /> 
   
@@ -251,10 +251,6 @@ npx cdk -a <span class="s1">&#39;node --loader tsx cdk/cloudformation-sourcecode
 <span class="c1">#   twice (the first is for the main stack, and the second is when deploying the web application stack)</span>
 <span class="c1">#   Both need to be confirmed with &#39;y&#39;</span>
 npx cdk deploy --all
-
-<span class="c1"># This is a fix for a bug with AWS CloudFormation and HTTP APIs</span>
-<span class="c1"># See https://github.com/bifravst/aws/issues/455</span>
- node --loader tsx cdk/helper/addFakeRoute.ts
 </pre></div>
 </div>
 <p>The initial deployment will take a few minutes because it sets up a <a class="reference external" href="https://aws.amazon.com/cloudfront/">CloudFront</a> distribution for the web application.</p>
