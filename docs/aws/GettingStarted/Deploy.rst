@@ -22,10 +22,6 @@ The following commands set up the necessary resources in your AWS account:
     #   Both need to be confirmed with 'y'
     npx cdk deploy --all
 
-    # This is a fix for a bug with AWS CloudFormation and HTTP APIs
-    # See https://github.com/bifravst/aws/issues/455
-     node --loader tsx cdk/helper/addFakeRoute.ts
-
 The initial deployment will take a few minutes because it sets up a `CloudFront <https://aws.amazon.com/cloudfront/>`_ distribution for the web application.
 
 .. note::
