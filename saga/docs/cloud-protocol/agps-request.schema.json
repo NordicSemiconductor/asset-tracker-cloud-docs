@@ -16,8 +16,8 @@
       "type": "integer",
       "description": "Mobile network code.",
       "minimum": 0,
-      "maximum": 99,
-      "examples": [2]
+      "maximum": 999,
+      "examples": [2, 410]
     },
     "cell": {
       "type": "integer",
