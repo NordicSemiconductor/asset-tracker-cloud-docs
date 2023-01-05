@@ -189,8 +189,8 @@
               "type": "integer",
               "description": "Mobile country code and mobile network code",
               "minimum": 10000,
-              "maximum": 99999,
-              "examples": [24202]
+              "maximum": 999999,
+              "examples": [24202, 310410]
             },
             "cell": {
               "type": "integer",
