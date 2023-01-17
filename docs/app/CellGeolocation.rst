@@ -19,15 +19,15 @@ This additional information can be used to improve the accuracy of the location 
 Locating cells based on device data
 ***********************************
 
-GNSS position fixes that are acquired by the devices and the cell information (cell ID, area ID, MCC/MNC) of these devices are stored together and used to `calculate the location of the cell <https://github.com/NordicSemiconductor/cell-geolocation-helpers#cellfromgeolocations>`_.
+GNSS position fixes that are acquired by the devices and the cell information (cell ID, area ID, MCC/MNC) of these devices are stored together and used to `calculate the location of the cell <https://github.com/NordicSemiconductor/cell-geolocation-helpers-js/blob/saga/src/cellFromGeolocations.ts>`_.
 
 The following image demonstrates how the location of a device is calculated using the device geolocation data:
 
 .. figure:: ./images/map.gif
    :alt: Calculating the location of a cell using the device geolocation data
-    
+
    Calculating the location of a cell using the device geolocation data
- 
+
 If there is no device geolocation for the cell from your own devices, third-party services like `Unwired Labs <https://unwiredlabs.com/>`_ or `RXNetworks <https://rxnetworks.com/location.io#!RT-GNSS>`_ provide a database of cell geolocations.
 
 Third-party location APIs
