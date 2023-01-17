@@ -19,7 +19,7 @@ This additional information can be used to improve the accuracy of the location 
 Locating cells based on device data
 ***********************************
 
-GNSS position fixes that are acquired by the devices and the cell information (cell ID, area ID, MCC/MNC) of these devices are stored together and used to `calculate the location of the cell <https://github.com/NordicSemiconductor/cell-geolocation-helpers-js/blob/saga/src/cellFromGeolocations.ts>`_.
+GNSS position fixes that are acquired by the devices and the cell information (cell ID, area ID, MCC/MNC) of these devices are stored together and used to `calculate the location of the cell <https://github.com/NordicSemiconductor/cell-geolocation-helpers-js#cellfromgeolocations>`_.
 
 The following image demonstrates how the location of a device is calculated using the device geolocation data:
 
