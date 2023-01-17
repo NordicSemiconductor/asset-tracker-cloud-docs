@@ -1,6 +1,6 @@
 {
   "cfg": {
-    "gnsst": 720,
+    "loct": 60,
     "act": false,
     "actwt": 60,
     "mvres": 60,
