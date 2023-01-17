@@ -30,8 +30,8 @@
       "maximum": 2147483647,
       "examples": [3600]
     },
-    "gnsst": {
-      "description": "GNSS timeout (in seconds): Timeout for GNSS fix.",
+    "loct": {
+      "description": "Location search timeout (in seconds): Timeout for location search (GNSS fix, cellular, and WiFi positioning).",
       "type": "integer",
       "minimum": 1,
       "maximum": 2147483647,
@@ -74,7 +74,7 @@
     "actwt",
     "mvres",
     "mvt",
-    "gnsst",
+    "loct",
     "accath",
     "accith",
     "accito",
