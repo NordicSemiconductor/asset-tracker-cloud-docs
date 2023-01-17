@@ -207,6 +207,13 @@
                 "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
                 "2001:db8:85a3::8a2e:370:7334"
               ]
+            },
+            "eest": {
+              "type": "integer",
+              "description": "The %CONEVAL AT command returns amongst other data the energy estimate: Relative estimated energy consumption of data transmission compared to nominal consumption. A higher value means smaller energy consumption. 5: Difficulties in setting up connections. Maximum number of repetitions might be needed for data. 6: Poor conditions. Setting up a connection might require retries and a higher number of repetitions for data. 7: Normal conditions for cIoT device. No repetitions for data or only a few repetitions in the worst case. 8: Good conditions. Possibly very good conditions for small amounts of data. 9: Very good conditions. Efficient data transfer estimated also for larger amounts of data.",
+              "minimum": 5,
+              "maximum": 9,
+              "examples": [5, 7]
             }
           },
           "required": ["band", "nw", "rsrp", "area", "mccmnc", "cell", "ip"]
