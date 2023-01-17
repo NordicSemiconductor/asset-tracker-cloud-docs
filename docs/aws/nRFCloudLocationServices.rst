@@ -84,7 +84,7 @@ This will update the StateMachine, which resolves P-GPS request from devices to 
 Ground Fix Services
 *******************
 
-You can enable your devices to request the nearest wi-fi access points using `nRF Cloud's Ground Fix Service API <https://api.nrfcloud.com/v1#tag/Ground-Fix>`_ in your deployment.
+You can enable your devices to request the nearest Wi-Fi access points using `nRF Cloud's Ground Fix Service API <https://api.nrfcloud.com/v1#tag/Ground-Fix>`_ in your deployment.
 
 To use the API, complete the following steps:
 
@@ -101,5 +101,5 @@ Use the following commands:
     ./cli.sh configure context stack nrfCloudGroundFix 1
     npx cdk deploy --all
 
-This will update the StateMachine, which resolves the nearest wi-fi access points request from devices to use the nRF Cloud API as a resolver.
+This will update the StateMachine, which resolves the request for nearest Wi-Fi access points from devices to use the nRF Cloud API as a resolver.
 
