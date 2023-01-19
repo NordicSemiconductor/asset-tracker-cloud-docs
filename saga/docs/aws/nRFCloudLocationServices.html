@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker 886e2354563d02fcd7eacdeeb6675670f9b55434 documentation</title>
+  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker v25.1.0 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/nordic.css" type="text/css" /> 
   
@@ -274,6 +274,21 @@ npx cdk deploy --all</pre>
 ./cli.sh configure context stack nrfcloudPGPS 1
 npx cdk deploy --all</pre>
 <p>This will update the StateMachine, which resolves P-GPS request from devices to use the nRF Cloud API as a resolver.</p>
+</section>
+<section id="ground-fix-services">
+<h2>Ground Fix Services<a class="headerlink" href="#ground-fix-services" title="Permalink to this headline"></a></h2>
+<p>You can enable <a class="reference external" href="https://api.nrfcloud.com/v1#tag/Ground-Fix">nRF Cloud’s Ground Fix Service API</a> to geolocate Wi-Fi site surveys sent by devices in your development.</p>
+<p>To use the API, complete the following steps:</p>
+<ol class="arabic simple">
+<li><p>Configure your service key.</p></li>
+<li><p>Enable the API using the CLI.</p></li>
+<li><p>Redeploy the stack.</p></li>
+</ol>
+<p>Use the following commands:</p>
+<pre class="highlight literal-block">cat <em>location of your Ground Fix Service Key file</em> | ./cli.sh configure thirdParty nrfcloud groundFixServiceKey
+./cli.sh configure context stack nrfCloudGroundFix 1
+npx cdk deploy --all</pre>
+<p>This will setup a StateMachine, which resolves the geolocation for Wi-Fi site surveys sent by devices.</p>
 </section>
 </section>
 
