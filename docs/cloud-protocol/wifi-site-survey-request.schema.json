@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/wifi-site-survey-request.schema.json",
+  "title": "Asset Tracker v2 Wi-Fi site survey request",
+  "description": "Describes the format used by the device to request Wi-Fi site survey data.",
+  "type": "object",
+  "properties": {
+    "v": {
+      "type": "array",
+      "description": "The nearby Wi-Fi access points.",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "properties": {
+          "mac": {
+            "type": "string",
+            "description": "Access point MAC address. String comprised of 6 hexadecimal pairs, separated by colons or dashes",
+            "pattern": "^([A-Fa-f0-9]{2}[:-]){5}[A-Fa-f0-9]{2}$",
+            "examples": ["80:e0:1d:2a:92:f1"]
+          },
+          "ssid": {
+            "type": "string",
+            "description": "Access point SSID.",
+            "examples": ["Telenor_Guest"]
+          },
+          "rssi": {
+            "type": "integer",
+            "description": "Received signal strength indicator is a measurement of how well your device can hear a signal from an access point measured in dBm",
+            "minimum": -128,
+            "maximum": 0,
+            "examples": [-65]
+          },
+          "chan": {
+            "type": "integer",
+            "description": "A Wi-Fi channel is to send and receive data.",
+            "examples": [1]
+          }
+        },
+        "required": ["mac"],
+        "additionalProperties": false
+      }
+    },
+    "ts": {
+      "description": "Timestamp as Unix epoch with millisecond precision (UTC) when the neighboring cell measurement report was received",
+      "type": "integer",
+      "minimum": 1234567890123,
+      "examples": [1584533788029]
+    }
+  },
+  "required": ["v", "ts"],
+  "additionalProperties": false
+}

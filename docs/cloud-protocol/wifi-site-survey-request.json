@@ -1,0 +1,47 @@
+{
+  "v": [
+    {
+      "mac": "40:01:7a:c9:10:22",
+      "ssid": "TnGroup",
+      "rssi": -65,
+      "chan": 1
+    },
+    {
+      "mac": "80:e0:1d:2a:92:f2",
+      "ssid": "TnGroup",
+      "rssi": -70,
+      "chan": 1
+    },
+    {
+      "mac": "40:01:7a:c9:10:21",
+      "ssid": "Telenor_Guest",
+      "rssi": -65,
+      "chan": 1
+    },
+    {
+      "mac": "40:01:7a:c9:10:27",
+      "ssid": "TnNorgeMacOS",
+      "rssi": -65,
+      "chan": 1
+    },
+    {
+      "mac": "80:e0:1d:2a:92:f1",
+      "ssid": "Telenor_Guest",
+      "rssi": -69,
+      "chan": 1
+    },
+    {
+      "mac": "80:e0:1d:2a:92:f5",
+      "ssid": "TnNorge",
+      "rssi": -69,
+      "chan": 1
+    },
+    {
+      "mac": "96:15:44:ac:6c:87",
+      "ssid": "Geotek",
+      "rssi": -71,
+      "chan": 1
+    }
+  ],
+  "ts": 1670591331896
+}
