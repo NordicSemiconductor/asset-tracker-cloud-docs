@@ -36,3 +36,4 @@ The web application offers the following features:
    :caption: Subpages:
 
    CellGeolocation.rst
+   WiFiGeolocation.rst
