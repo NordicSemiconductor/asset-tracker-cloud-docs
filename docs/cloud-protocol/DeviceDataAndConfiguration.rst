@@ -70,8 +70,8 @@ Wi-Fi site survey data
 
 If supported through enabling :ref:`aws-nrf-cloud-location-services`, the device can request Wi-Fi site survey data through MQTT.
 
-The Wi-Fi site survey message published by the device is described in detail in the `Wi-Fi site survey JSON schema file <./wifi-site-survey-request.schema.json>`_.
-See the `Wi-Fi site survey request JSON document <./wifi-site-survey-request.json>`_ for an example request.
+The Wi-Fi site survey message published by the device is described in detail in the `Wi-Fi site survey JSON schema file <./wifi-site-survey.schema.json>`_.
+See the `Wi-Fi site survey request JSON document <./wifi-site-survey.json>`_ for an example request.
 
 .. _batch-messages:
 

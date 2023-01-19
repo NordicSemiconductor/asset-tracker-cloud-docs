@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/wifi-site-survey-request.schema.json",
+  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/wifi-site-survey.schema.json",
   "title": "Asset Tracker v2 Wi-Fi site survey request",
-  "description": "Describes the format used by the device to request Wi-Fi site survey data.",
+  "description": "Describes the format used by the device to publish Wi-Fi site surveys.",
   "type": "object",
   "properties": {
     "v": {

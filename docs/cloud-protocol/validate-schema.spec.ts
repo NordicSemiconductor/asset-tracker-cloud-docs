@@ -28,6 +28,7 @@ describe('schemas', () => {
 		['agps-request', undefined],
 		['pgps-request', undefined],
 		['pgps-response', undefined],
+		['wifi-site-survey', undefined],
 	])('%s should validate', async (schema, example) => {
 		const validate = ajv.getSchema(
 			`https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/${schema}.schema.json`,
