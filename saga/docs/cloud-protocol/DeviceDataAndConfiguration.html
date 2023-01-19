@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Device data and configuration &mdash; nRF Asset Tracker v25.0.1 documentation</title>
+  <title>Device data and configuration &mdash; nRF Asset Tracker 886e2354563d02fcd7eacdeeb6675670f9b55434 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/nordic.css" type="text/css" /> 
   
@@ -219,7 +219,8 @@
 <li><p><a class="reference internal" href="#azure" id="id2">Azure</a></p></li>
 <li><p><a class="reference internal" href="#comparing-state-with-messages" id="id3">Comparing state with messages</a></p></li>
 <li><p><a class="reference internal" href="#a-gps-and-p-gps-data" id="id4">A-GPS and P-GPS data</a></p></li>
-<li><p><a class="reference internal" href="#batch-data" id="id5">Batch data</a></p></li>
+<li><p><a class="reference internal" href="#wi-fi-site-survey-data" id="id5">Wi-Fi site survey data</a></p></li>
+<li><p><a class="reference internal" href="#batch-data" id="id6">Batch data</a></p></li>
 </ul>
 </div>
 <p>The schemas referenced on this page define the data format used by the device to encode data.
@@ -267,8 +268,14 @@ The cloud publishes a link to the data to the <code class="docutils literal notr
 See the <a class="reference external" href="./pgps-response.json">P-GPS response JSON document</a> for an example response.
 The device can then use HTTP or HTTPS to download the P-GPS data.</p>
 </section>
+<section id="wi-fi-site-survey-data">
+<h2><a class="toc-backref" href="#id5">Wi-Fi site survey data</a><a class="headerlink" href="#wi-fi-site-survey-data" title="Permalink to this headline"></a></h2>
+<p>If supported through enabling <a class="reference internal" href="../aws/nRFCloudLocationServices.html#aws-nrf-cloud-location-services"><span class="std std-ref">nRF Cloud Location Services</span></a>, the device can request Wi-Fi site survey data through MQTT.</p>
+<p>The Wi-Fi site survey message published by the device is described in detail in the <a class="reference external" href="./wifi-site-survey.schema.json">Wi-Fi site survey JSON schema file</a>.
+See the <a class="reference external" href="./wifi-site-survey.json">Wi-Fi site survey request JSON document</a> for an example request.</p>
+</section>
 <section id="batch-data">
-<span id="batch-messages"></span><h2><a class="toc-backref" href="#id5">Batch data</a><a class="headerlink" href="#batch-data" title="Permalink to this headline"></a></h2>
+<span id="batch-messages"></span><h2><a class="toc-backref" href="#id6">Batch data</a><a class="headerlink" href="#batch-data" title="Permalink to this headline"></a></h2>
 <p>The firmware may send data as batch, using the schema that is described in the <a class="reference external" href="./batch.schema.json">JSON schema file</a>.
 See the <a class="reference external" href="./batch-message.json">JSON document</a> for an example batch message.</p>
 <p>For sending batched data from the device, the topic <code class="docutils literal notranslate"><span class="pre">&lt;deviceId&gt;/batch</span></code> is used.</p>
