@@ -9,7 +9,6 @@ Wi-Fi geolocation
 
 If Wi-Fi site survey geolocation (Ground Fix service) is implemented, the devices can be shown on the map based on the location of the Wi-Fi access points nearby them.
 
-
 Third-party location APIs
 *************************
 
@@ -22,4 +21,3 @@ These APIs enable calculation of the rough location of a device as soon as it se
 Follow the configuration guide in the respective implementation to enable nRF Cloud's Ground Fix API:
 
 * :ref:`AWS <aws-nrf-cloud-location-services>`
-

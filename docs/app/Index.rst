@@ -17,16 +17,16 @@ The web application offers the following features:
 
 * Listing of asset trackers
 * Viewing of asset trackers
-
+  
   * Current and historical device data, for example
-
+    
     * GNSS location
     * Approximate location using :ref:`nRF Cloud Location Services <app-cellgeolocation>` and other third-party providers
     * Battery voltage
     * Temperature
-
+  
 * Managing the asset trackers, for example
-
+  
   * Updating the real-time configuration
   * Upgrading the firmware overt the air (FOTA)
   * Deleting the asset tracker
