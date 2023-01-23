@@ -1,0 +1,231 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/state.reported.schema.json",
+  "title": "Asset Tracker v2 Device Data and Configuration",
+  "description": "Describes the data published by the device and its configuration options.",
+  "type": "object",
+  "properties": {
+    "cfg": {
+      "$ref": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/cfg.schema.json"
+    },
+    "bat": {
+      "description": "Battery reading in millivolt",
+      "type": "object",
+      "properties": {
+        "v": {
+          "description": "Battery reading read by the modem",
+          "type": "integer",
+          "minimum": 1
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
+        }
+      },
+      "required": ["v", "ts"]
+    },
+    "env": {
+      "description": "Environment sensor readings",
+      "type": "object",
+      "properties": {
+        "v": {
+          "description": "The individual sensor readings",
+          "type": "object",
+          "properties": {
+            "temp": {
+              "description": "Temperature reading from external sensor",
+              "type": "number"
+            },
+            "hum": {
+              "description": "Humidity reading from external sensor",
+              "type": "number",
+              "minimum": 1,
+              "maximum": 100
+            },
+            "atmp": {
+              "description": "Atmospheric pressure reading from external sensor in kPa",
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "required": ["hum", "temp", "atmp"]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
+        }
+      },
+      "required": ["v", "ts"]
+    },
+    "gnss": {
+      "description": "The GNSS reading",
+      "type": "object",
+      "properties": {
+        "v": {
+          "type": "object",
+          "properties": {
+            "lng": {
+              "description": "Longitude",
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180
+            },
+            "lat": {
+              "description": "Latitude",
+              "type": "number",
+              "minimum": -90,
+              "maximum": 90
+            },
+            "acc": {
+              "description": "Accuracy (2D 1-sigma) in meters",
+              "type": "number",
+              "minimum": 0
+            },
+            "alt": {
+              "description": "Altitude above WGS-84 ellipsoid in meters",
+              "type": "number"
+            },
+            "spd": {
+              "description": "Horizontal speed in meters",
+              "type": "number",
+              "minimum": 0
+            },
+            "hdg": {
+              "description": "Heading of movement in degrees",
+              "type": "number",
+              "minimum": 0,
+              "maximum": 360
+            }
+          },
+          "required": ["lng", "lat", "alt", "spd", "hdg"]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
+        }
+      },
+      "required": ["v", "ts"]
+    },
+    "dev": {
+      "description": "Static device information. This information shall be updated by the device once after reboot.",
+      "type": "object",
+      "properties": {
+        "v": {
+          "type": "object",
+          "properties": {
+            "imei": {
+              "type": "string",
+              "description": "Board IMEI",
+              "minLength": 15,
+              "maxLength": 16,
+              "examples": ["352656106111232"]
+            },
+            "iccid": {
+              "type": "string",
+              "description": "SIM ICCID",
+              "minLength": 19,
+              "maxLength": 20,
+              "examples": ["89450421180216216095"]
+            },
+            "modV": {
+              "type": "string",
+              "description": "Modem Firmware Version",
+              "minLength": 1,
+              "examples": ["mfw_nrf9160_1.0.0"]
+            },
+            "brdV": {
+              "type": "string",
+              "description": "Board Version",
+              "minLength": 1,
+              "examples": ["thingy91_nrf9160"]
+            }
+          },
+          "required": ["imei", "iccid", "modV", "brdV"]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
+        }
+      },
+      "required": ["v", "ts"]
+    },
+    "roam": {
+      "description": "Roaming information. This information shall be updated by the device every time it publishes primary application data. It is considered low-priority information so it should always be sent after the primary application data has been published.",
+      "type": "object",
+      "properties": {
+        "v": {
+          "type": "object",
+          "properties": {
+            "band": {
+              "type": "integer",
+              "description": "Band",
+              "minimum": 1,
+              "examples": [3]
+            },
+            "nw": {
+              "type": "string",
+              "description": "Network mode",
+              "minLength": 1,
+              "examples": ["LTE-M", "NB-IoT"]
+            },
+            "rsrp": {
+              "type": "number",
+              "description": "Reference Signal Received Power (RSRP). The average power level in dBm received from a single reference signal in an LTE (Long-term Evolution) network. Typically this value ranges from -140 to -40 dBm.",
+              "minimum": -140,
+              "maximum": -40,
+              "examples": [-97, -104]
+            },
+            "area": {
+              "type": "integer",
+              "description": "Area code.",
+              "minimum": 1,
+              "examples": [12]
+            },
+            "mccmnc": {
+              "type": "integer",
+              "description": "Mobile country code and mobile network code",
+              "minimum": 10000,
+              "maximum": 999999,
+              "examples": [24202, 310410]
+            },
+            "cell": {
+              "type": "integer",
+              "description": "Cell id",
+              "minimum": 1,
+              "examples": [33703719]
+            },
+            "ip": {
+              "type": "string",
+              "description": "IP address",
+              "minLength": 1,
+              "examples": [
+                "10.81.183.99",
+                "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+                "2001:db8:85a3::8a2e:370:7334"
+              ]
+            },
+            "eest": {
+              "type": "integer",
+              "description": "The %CONEVAL AT command returns amongst other data the energy estimate: Relative estimated energy consumption of data transmission compared to nominal consumption. A higher value means smaller energy consumption. 5: Difficulties in setting up connections. Maximum number of repetitions might be needed for data. 6: Poor conditions. Setting up a connection might require retries and a higher number of repetitions for data. 7: Normal conditions for cIoT device. No repetitions for data or only a few repetitions in the worst case. 8: Good conditions. Possibly very good conditions for small amounts of data. 9: Very good conditions. Efficient data transfer estimated also for larger amounts of data.",
+              "minimum": 5,
+              "maximum": 9,
+              "examples": [5, 7]
+            }
+          },
+          "required": ["band", "nw", "rsrp", "area", "mccmnc", "cell", "ip"]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
+        }
+      },
+      "required": ["v", "ts"]
+    }
+  },
+  "required": ["cfg", "dev", "roam"]
+}

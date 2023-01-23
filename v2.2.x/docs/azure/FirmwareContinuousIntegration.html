@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Continuous integration of firmware &mdash; nRF Asset Tracker dd08b9c0e2f5ba410ffb8395bd3c1cd3cdd6019d documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/nordic.css" type="text/css" /> 
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+<script src="../../_static/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Programming the firmware" href="../firmware/Programming.html" />
+    <link rel="prev" title="Building the project using GitHub Actions" href="../firmware/azure/BuildingUsingGitHub.html" />
+<link
+  href="../../_static/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<link
+  rel="shortcut icon"
+  href="../../_static/images/favicon.ico"
+/>
+
+</head>
+
+<body class="wy-body-for-nav">
+<div class="announcement"></div>
+<div class="d-print-none ncs-header">
+  <div class="container-xl ncs-header-top">
+    <div class="row h-100">
+      <div class="d-none d-md-block col-2">
+        <div class="bg-white py-4 px-3 ml-2 ncs-header-logo">
+          <img
+            class="ncs-header-logo"
+            src="../../_static/images/nordic-logo.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div
+        class="col-8 col-md-7 pl-md-4 d-flex align-self-center justify-content-center"
+      >
+        <form class="w-75" action="../../search.html" method="get">
+          <div class="form-group">
+            <input
+              type="text"
+              name="q"
+              class="ncs-search-input form-control"
+              placeholder="Search all docs..."
+            />
+          </div>
+        </form>
+      </div>
+      <div class="col-4 col-md-3 d-md-block p-3 text-end">
+        <div class="dropdown">
+          <button
+            class="btn dropdown-toggle ncs-btn-versions"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            v2.2.x
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style>
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/"
+              >saga</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v2.2.x/"
+              >v2.2.x</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v2.1.x/"
+              >v2.1.x</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.8.x/"
+              >v1.8.x</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.6.x/"
+              >v1.6.x</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.5.x/"
+              >v1.5.x</a
+            ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ncs-header-nav d-none d-md-block">
+    <div class="container-xl">
+      <div class="row">
+        <div class="col col-12 d-flex justify-content">
+          <nav class="navbar navbar-dark navbar-expand-md p-0">
+            <span class="navbar-brand d-block d-md-none py-2 pl-1"
+              >Documentation sets</span
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <ul class="navbar-nav">
+                <li class="nav-item active py-1 px-3">
+                  <a class="nav-link" href="../../../"
+                    >nRF Asset Tracker</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> nRF Asset Tracker
+          </a>
+              <div class="version">
+                v2.2.x
+              </div>
+<div id="searchbox" role="search">
+  <div class="searchformwrapper">
+    <form
+      id="rtd-search-form"
+      class="wy-form"
+      action="../../search.html"
+      method="get"
+    >
+      <input type="text" name="q" placeholder="Search docs" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+  </div>
+</div>
+<script>
+  $("#searchbox").show(0);
+</script>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Index.html">Azure cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">nRF Asset Tracker web application</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../firmware/Index.html">Firmware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../firmware/aws/Index.html">Firmware for the AWS cloud components</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../firmware/azure/Index.html">Firmware for the Azure cloud components</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../firmware/azure/BuildingUsingLocalSystem.html">Building the project using your local system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firmware/azure/BuildingUsingDocker.html">Building the project using Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firmware/azure/BuildingUsingGitHub.html">Building the project using GitHub Actions</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Continuous integration of firmware</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../firmware/Programming.html">Programming the firmware</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memfault/Index.html">Memfault integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">nRF Asset Tracker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../firmware/Index.html">Firmware</a> &raquo;</li>
+          <li><a href="../firmware/azure/Index.html">Firmware for the Azure cloud components</a> &raquo;</li>
+      <li>Continuous integration of firmware</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v2.2.x/docs/azure/FirmwareContinuousIntegration.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="continuous-integration-of-firmware">
+<span id="azure-firmware-ci"></span><h1>Continuous integration of firmware<a class="headerlink" href="#continuous-integration-of-firmware" title="Permalink to this headline"></a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#preparation" id="id3">Preparation</a></p></li>
+<li><p><a class="reference internal" href="#authenticate-github-actions-against-azure-using-openid-connect" id="id4">Authenticate GitHub Actions against Azure using OpenID Connect</a></p></li>
+<li><p><a class="reference internal" href="#firmware-ci-runner-setup" id="id5">Firmware CI runner setup</a></p></li>
+</ul>
+</div>
+<p>The Azure implementation of the nRF Asset Tracker provides the resources for continuous testing of the firmware using real hardware.</p>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<p>Every commit to the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-azure">firmware repository</a> will trigger a CI run.
+The CI run results in the following actions:</p>
+<ol class="arabic simple">
+<li><p>Creating a new device and credentials on AWS IoT.</p></li>
+<li><p>Building a firmware that has the device ID hardcoded for the MQTT client ID.</p></li>
+<li><p>Scheduling a run on a self-hosted GitHub Actions runner. See <a class="reference internal" href="#azure-firmware-ci-runner-setup"><span class="std std-ref">Firmware CI runner setup</span></a>.</p></li>
+<li><p>Observing the firmware CI run until completion.</p></li>
+<li><p>Running assertions against the log result.</p></li>
+</ol>
+<p>The Firmware CI runner is running on a PC connected to GitHub Actions, where it receives the jobs to execute.
+The Firmware CI runner performs the following actions:</p>
+<ol class="arabic simple">
+<li><p>Programming the firmware and the optional credentials using the connected debugger to the connected nRF9160 DK or Thingy:91.</p></li>
+<li><p>Logging all output until one of the following conditions occur:</p>
+<ul class="simple">
+<li><p>A timeout is reached</p></li>
+<li><p>A stop condition is reached. (Wait for a log output to match a string.)</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These devices connect to the existing instance of the nRF Asset Tracker, so the firmware tests will not set up a new empty nRF Asset Tracker Azure environment for every test.
+The test runs against the production environment.
+This is to ensure that the firmware release will work with the existing solution.
+This approach is designed for <a class="reference external" href="https://thinkinglabs.io/talks/feature-branching-considered-evil.html">trunk-based development</a>.</p>
+</div>
+</section>
+<section id="preparation">
+<h2><a class="toc-backref" href="#id3">Preparation</a><a class="headerlink" href="#preparation" title="Permalink to this headline"></a></h2>
+<p>Make sure you have successfully deployed the solution (see <a class="reference internal" href="GettingStarted/Deploy.html#azure-getting-started-deploy"><span class="std std-ref">Getting Started</span></a>).</p>
+</section>
+<section id="authenticate-github-actions-against-azure-using-openid-connect">
+<h2><a class="toc-backref" href="#id4">Authenticate GitHub Actions against Azure using OpenID Connect</a><a class="headerlink" href="#authenticate-github-actions-against-azure-using-openid-connect" title="Permalink to this headline"></a></h2>
+<p>To allow the continuous deployment GitHub Action workflow to authenticate against Azure with short-lived credentials using a service principal, complete the following steps:</p>
+<ol class="arabic" id="azure-firmware-ci-configure-service-principal">
+<li><p>Follow the instructions to <a class="reference external" href="https://github.com/Azure/login#configure-a-service-principal-with-a-federated-credential-to-use-oidc-based-authentication">Configure a service principal with a Federated Credential to use OIDC based authentication</a>.
+Use <code class="docutils literal notranslate"><span class="pre">https://nrfassettracker.invalid/firmware-ci</span></code> as the name.</p>
+<p>On the command line, use the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az ad app create --display-name <span class="s1">&#39;https://nrfassettracker.invalid/firmware-ci&#39;</span>
+<span class="nb">export</span> <span class="nv">APPLICATION_OBJECT_ID</span><span class="o">=</span><span class="sb">`</span>az ad app list <span class="p">|</span> jq -r <span class="s1">&#39;.[] | select(.displayName==&quot;https://nrfassettracker.invalid/firmware-ci&quot;) | .objectId&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>
+<span class="c1"># Spaces replaced with _ because of https://github.com/Azure/azure-cli/issues/22550</span>
+az rest --method POST --uri <span class="s2">&quot;https://graph.microsoft.com/beta/applications/</span><span class="si">${</span><span class="nv">APPLICATION_OBJECT_ID</span><span class="si">}</span><span class="s2">/federatedIdentityCredentials&quot;</span> --body <span class="s1">&#39;{&quot;name&quot;:&quot;GitHub_Actions&quot;,&quot;issuer&quot;:&quot;https://token.actions.githubusercontent.com&quot;,&quot;subject&quot;:&quot;repo:NordicSemiconductor/asset-tracker-cloud-firmware-azure:environment:production&quot;,&quot;description&quot;:&quot;Allow_GitHub_Actions_to_modify_Azure_resources&quot;,&quot;audiences&quot;:[&quot;api://AzureADTokenExchange&quot;]}&#39;</span>
+</pre></div>
+</div>
+<p>Use the organization and repository name of your fork instead of <code class="docutils literal notranslate"><span class="pre">NordicSemiconductor/asset-tracker-cloud-firmware-azure</span></code> in the command.</p>
+</li>
+<li><p>Set the secrets:</p>
+<ul>
+<li><p>Set the secrets using the GitHub UI:</p>
+<p>Set the following <a class="reference external" href="https://docs.github.com/en/rest/reference/actions#secrets">secrets</a> to an <a class="reference external" href="https://docs.github.com/en/actions/reference/environments#creating-an-environment">environment</a> called <code class="docutils literal notranslate"><span class="pre">production</span></code> in your fork of the nRF Asset Tracker for Azure:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AZURE_CLIENT_ID</span></code> - Store the application (client) ID of the service principal app registration created in the previous step.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AZURE_TENANT_ID</span></code> - Store the directory (tenant) ID of the service principal app registration created in the previous step.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AZURE_SUBSCRIPTION_ID</span></code> - Store the ID of the subscription containing the nRF Asset Tracker resources.</p></li>
+</ul>
+<p>Set also the following values from your <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file as secrets:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RESOURCE_GROUP</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LOCATION</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">APP_NAME</span></code></p></li>
+</ul>
+<p>Set the <code class="docutils literal notranslate"><span class="pre">AZURE_IOT_HUB_DPS_ID_SCOPE</span></code> to the output of <code class="docutils literal notranslate"><span class="pre">./cli.sh</span> <span class="pre">info</span> <span class="pre">-o</span> <span class="pre">iotHubDpsIdScope</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ~/nrf-asset-tracker/azure</span>
+
+./cli.sh info -o iotHubDpsIdScope
+</pre></div>
+</div>
+</li>
+<li><p>Alternatively, set the secrets using the <a class="reference external" href="https://cli.github.com/">GitHub CLI</a>:</p>
+<p>You can use the <a class="reference external" href="https://cli.github.com/">GitHub CLI</a>  with the environment settings from above (make sure to create the <code class="docutils literal notranslate"><span class="pre">production</span></code> <a class="reference external" href="https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment">deployment environment</a> in your repository first):</p>
+</li>
+</ul>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ~/nrf-asset-tracker/azure</span>
+
+<span class="nb">export</span> <span class="nv">AZURE_CLIENT_ID</span><span class="o">=</span><span class="sb">`</span>az ad app list <span class="p">|</span> jq -r <span class="s1">&#39;.[] | select(.displayName==&quot;https://nrfassettracker.invalid/firmware-ci&quot;) | .appId&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>
+<span class="nb">export</span> <span class="nv">AZURE_TENANT_ID</span><span class="o">=</span><span class="sb">`</span>az account show <span class="p">|</span> jq -r <span class="s1">&#39;.tenantId&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>
+<span class="nb">export</span> <span class="nv">AZURE_IOT_HUB_DPS_ID_SCOPE</span><span class="o">=</span><span class="sb">`</span>./cli.sh info -o iotHubDpsIdScope<span class="sb">`</span>
+
+<span class="nb">cd</span> ../firmware
+
+<span class="c1"># ~/nrf-asset-tracker/firmware</span>
+
+gh secret <span class="nb">set</span> AZURE_CLIENT_ID --env production --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">AZURE_CLIENT_ID</span><span class="si">}</span><span class="s2">&quot;</span>
+gh secret <span class="nb">set</span> AZURE_TENANT_ID --env production --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">AZURE_TENANT_ID</span><span class="si">}</span><span class="s2">&quot;</span>
+gh secret <span class="nb">set</span> AZURE_IOT_HUB_DPS_ID_SCOPE --env production --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">AZURE_IOT_HUB_DPS_ID_SCOPE</span><span class="si">}</span><span class="s2">&quot;</span>
+gh secret <span class="nb">set</span> AZURE_SUBSCRIPTION_ID --env production --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span><span class="s2">&quot;</span>
+gh secret <span class="nb">set</span> RESOURCE_GROUP --env production --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="si">}</span><span class="s2">&quot;</span>
+gh secret <span class="nb">set</span> LOCATION --env production --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOCATION</span><span class="si">}</span><span class="s2">&quot;</span>
+gh secret <span class="nb">set</span> APP_NAME --env production --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Create a service principal for the application:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ~/nrf-asset-tracker/azure</span>
+
+<span class="nb">export</span> <span class="nv">APPLICATION_OBJECT_ID</span><span class="o">=</span><span class="sb">`</span>az ad sp list <span class="p">|</span> jq -r <span class="s1">&#39;.[] | select(.displayName==&quot;https://nrfassettracker.invalid/firmware-ci&quot;) | .objectId&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>
+az ad sp create --id <span class="nv">$APPLICATION_OBJECT_ID</span>
+</pre></div>
+</div>
+</li>
+<li><p>Grant the application created in <a class="reference internal" href="#azure-firmware-ci-configure-service-principal"><span class="std std-ref">Step 1</span></a> Owner permissions for your resource group:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ~/nrf-asset-tracker/azure</span>
+
+<span class="nb">export</span> <span class="nv">APPLICATION_ID</span><span class="o">=</span><span class="sb">`</span>az ad sp list --display-name https://nrfassettracker.invalid/firmware-ci <span class="p">|</span> jq -r <span class="s1">&#39;.[] | .appId&#39;</span>  <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>
+az role assignment create --role Owner <span class="se">\</span>
+   --assignee <span class="si">${</span><span class="nv">APPLICATION_ID</span><span class="si">}</span> <span class="se">\</span>
+   --scope /subscriptions/<span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span>/resourceGroups/<span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Grant the application created in <a class="reference internal" href="#azure-firmware-ci-configure-service-principal"><span class="std std-ref">Step 1</span></a> IoT Hub Data Contributor permissions for your IoT hub:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ~/nrf-asset-tracker/azure</span>
+
+<span class="nb">export</span> <span class="nv">APPLICATION_ID</span><span class="o">=</span><span class="sb">`</span>az ad sp list --display-name https://nrfassettracker.invalid/firmware-ci <span class="p">|</span> jq -r <span class="s1">&#39;.[] | .appId&#39;</span>  <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>
+ <span class="c1"># role ID 4fc6c259-987e-4a07-842e-c321cc9d413f is &quot;IoT Hub Data Contributor&quot;</span>
+ az role assignment create --role 4fc6c259-987e-4a07-842e-c321cc9d413f <span class="se">\</span>
+   --assignee <span class="si">${</span><span class="nv">APPLICATION_ID</span><span class="si">}</span> <span class="se">\</span>
+   --scope /subscriptions/<span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span>/resourceGroups/<span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>/providers/Microsoft.Devices/IotHubs/<span class="si">${</span><span class="nv">APP_NAME</span><span class="si">}</span>IotHub
+</pre></div>
+</div>
+</li>
+<li><p>Grant the application created in <a class="reference internal" href="#azure-firmware-ci-configure-service-principal"><span class="std std-ref">Step 1</span></a> Storage Blob Data Contributor permissions for your storage account:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ~/nrf-asset-tracker/azure</span>
+
+<span class="nb">export</span> <span class="nv">APPLICATION_ID</span><span class="o">=</span><span class="sb">`</span>az ad sp list --display-name https://nrfassettracker.invalid/firmware-ci <span class="p">|</span> jq -r <span class="s1">&#39;.[] | .appId&#39;</span>  <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>
+<span class="c1"># role ID ba92f5b4-2d11-453d-a403-e96b0029c9fe is &quot;Storage Blob Data Contributor&quot;</span>
+az role assignment create --role ba92f5b4-2d11-453d-a403-e96b0029c9fe <span class="se">\</span>
+--assignee <span class="si">${</span><span class="nv">APPLICATION_ID</span><span class="si">}</span> <span class="se">\</span>
+--scope /subscriptions/<span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span>/resourceGroups/<span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettracker</span><span class="si">}</span>/providers/Microsoft.Storage/storageAccounts/<span class="si">${</span><span class="nv">APP_NAME</span><span class="si">}</span>storage
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="firmware-ci-runner-setup">
+<span id="azure-firmware-ci-runner-setup"></span><h2><a class="toc-backref" href="#id5">Firmware CI runner setup</a><a class="headerlink" href="#firmware-ci-runner-setup" title="Permalink to this headline"></a></h2>
+<p>To set up the Firmware CI runner, complete the following steps:</p>
+<ol class="arabic simple">
+<li><p>Prepare an environment that fulfills the <a class="reference internal" href="../project/SystemRequirements.html#system-requirements"><span class="std std-ref">necessary system requirements</span></a>.</p></li>
+<li><p>Download <a class="reference external" href="https://www.segger.com/downloads/jlink/">JLink</a> for your platform, and ensure that <code class="file docutils literal notranslate"><span class="pre">JLinkExe</span></code> is in your path.</p></li>
+<li><p>Follow <a class="reference external" href="https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners">the instruction about self-hosted runners</a> to set up a runner for your firmware repository.
+Make sure to use <code class="docutils literal notranslate"><span class="pre">firmware-ci</span></code> when prompted for the labels.</p></li>
+</ol>
+<p>The Firmware CI starts to process all the scheduled jobs one after another.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+  <div
+    class="rst-footer-buttons"
+    role="navigation"
+    aria-label="footer navigation"
+  >
+    
+    <a
+      href="../firmware/Programming.html"
+      class="btn btn-neutral float-right"
+      title="Programming the firmware"
+      accesskey="n"
+      rel="next"
+      >Next <span class="fa fa-arrow-circle-right"></span
+    ></a>
+     
+    <a
+      href="../firmware/azure/BuildingUsingGitHub.html"
+      class="btn btn-neutral"
+      title="Building the project using GitHub Actions"
+      accesskey="p"
+      rel="prev"
+      ><span class="fa fa-arrow-circle-left"></span> Previous</a
+    >
+    
+  </div>
+  
+
+  <hr />
+
+  <div role="contentinfo">
+    <table>
+      <tr>
+        <td>
+          <p> &copy; Copyright 2019-2023, Nordic Semiconductor.
+          </p>
+        </td>
+        <td id="nordiclogo">
+          <a href="https://www.nordicsemi.com/"
+            ><img
+              src="../../_static/images/nordic-logo.png"
+              border="0"
+          /></a>
+        </td>
+      </tr>
+    </table>
+  </div> 
+</footer>
+
+<div id="scroll-container">
+  <button type="button" id="scroll-btn" class="btn">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+    >
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" fill="#fff" />
+    </svg>
+  </button>
+</div>
+
+<script>
+  const scrollBtn = document.querySelector("#scroll-btn");
+
+  document.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      scrollBtn.style.visibility = "visible";
+    } else {
+      scrollBtn.style.visibility = "hidden";
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
