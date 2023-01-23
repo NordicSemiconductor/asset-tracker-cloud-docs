@@ -45,7 +45,7 @@ Thingy:91 (PCA20035)
 
 .. code-block:: bash
 
-    docker run --rm -v ${PWD}:/workdir/project nordicplayground/nrfconnect-sdk:main /bin/bash -c 'cd firmware && west init -l && west update --narrow -o=--depth=1 && west build -p always -b thingy91_nrf9160_ns -- -DOVERLAY_CONFIG="overlay-aws.conf;overlay-debug.conf;asset-tracker-cloud-firmware-aws.conf;firmware.conf"'
+    docker run --rm -v ${PWD}/firmware:/workdir/project nordicplayground/nrfconnect-sdk:main west build -p always -b thingy91_nrf9160_ns --build-dir /workdir/project/build -- -DOVERLAY_CONFIG="overlay-aws.conf;overlay-debug.conf;asset-tracker-cloud-firmware-aws.conf;firmware.conf"
     ls -la build/zephyr/merged.hex
 
 nRF9160 DK (PCA10090)
@@ -53,7 +53,7 @@ nRF9160 DK (PCA10090)
 
 .. code-block:: bash
 
-    docker run --rm -v ${PWD}:/workdir/project nordicplayground/nrfconnect-sdk:main /bin/bash -c 'cd firmware && west init -l && west update --narrow -o=--depth=1 && west build -p always -b nrf9160dk_nrf9160_ns -- -DOVERLAY_CONFIG="overlay-aws.conf;overlay-debug.conf;asset-tracker-cloud-firmware-aws.conf;firmware.conf"'
+    docker run --rm -v ${PWD}/firmware:/workdir/project nordicplayground/nrfconnect-sdk:main west build -p always -b nrf9160dk_nrf9160_ns --build-dir /workdir/project/build -- -DOVERLAY_CONFIG="overlay-aws.conf;overlay-debug.conf;asset-tracker-cloud-firmware-aws.conf;firmware.conf"
     ls -la build/zephyr/merged.hex
 
 Location of the HEX file
