@@ -22,3 +22,4 @@ You can use the integration standalone and without an existing instance of :ref:
    :caption: Subpages:
 
    AWS.rst
+   Azure.rst
