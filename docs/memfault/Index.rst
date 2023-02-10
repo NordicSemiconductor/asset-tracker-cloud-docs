@@ -5,7 +5,7 @@ Memfault integration
 
 .. intro_start
 
-The `nRF Connect SDK <https://github.com/nrfconnect/sdk-nrf>`_ provides `integration with Memfault <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/libraries/others/memfault_ncs.html>`_. 
+The `nRF Connect SDK <https://github.com/nrfconnect/sdk-nrf>`_ provides `integration with Memfault <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/external_comp/memfault.html>`_. 
 
 By default, Memfault data is sent using HTTPS.
 Using MQTT is possible and preferred, because it reduces power consumption.
