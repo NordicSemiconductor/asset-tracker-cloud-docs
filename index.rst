@@ -38,4 +38,3 @@ Acknowledgements
 *Satellite* by Casey Fluster from the Noun Project.
 *Cell tower* by Rifai from the Noun Project.
 *Mobile Phone* by Davo Sime from the Noun Project.
-*Unwired Labs*, the Unwired Labs logo are trademarks of Unwired Labs (India) Pvt. Ltd.

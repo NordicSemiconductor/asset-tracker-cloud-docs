@@ -60,7 +60,6 @@ digraph G {
     }
 
         nrfcloud [ label="" labelloc=b tooltip="nRF Cloud" image="./images/nrfcloud.svg" shape="none" width="1" height="1" imagescale=true URL="https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Cloud" ]
-        unwiredlabs [ label="" tooltip="Unwired Labs" image="./images/unwiredlabs.png" shape="none" width="1" height="1" imagescale=true URL="https://unwiredlabs.com/" ]
         phone [ label="" image="./images/phone.svg" shape="none" width="1" height="1" imagescale=true ]
 
     aws_iot -> AWS  [ label=" TLS \n +MQTT \n +JSON " dir=back ltail=cluster1 lhead=cluster0 ]
@@ -76,7 +75,6 @@ digraph G {
     agpscloud -> nrfcloud [ dir=back taillabel=" HTTPs " ltail=cluster4 labeldistance="6"]
     pgpscloud -> nrfcloud [ dir=back ltail=cluster4 ]
     gellceo -> nrfcloud [ dir=back ltail=cluster4 ]
-    gellceo -> unwiredlabs [ dir=back headlabel=" HTTPs " ltail=cluster4 ]
     AWS -> gellceo [ dir=back ltail=cluster0 lhead=cluster4 ]
 
     AWS -> aws_api [ label=" HTTPs " ltail=cluster0 lhead=cluster2 ]

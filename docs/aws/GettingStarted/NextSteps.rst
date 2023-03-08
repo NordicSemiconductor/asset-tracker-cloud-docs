@@ -4,7 +4,7 @@ Next steps
 ##########
 
 You have now completed the initial setup of the nRF Asset Tracker.
-An interesting topic to explore is how to enable Cell Geolocation using either :ref:`nRF Cloud <aws-nrf-cloud-location-services>` or :ref:`Unwired Labs <aws-unwired-labs-cell-geolocation>`.
+An interesting topic to explore is how to enable Cell Geolocation using the :ref:`nRF Cloud <aws-nrf-cloud-location-services>`.
 
 Once you start modifying the firmware, see also the following topics:
 

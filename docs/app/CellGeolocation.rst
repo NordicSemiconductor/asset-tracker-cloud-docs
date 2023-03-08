@@ -28,21 +28,16 @@ The following image demonstrates how the location of a device is calculated usin
 
    Calculating the location of a cell using the device geolocation data
 
-If there is no device geolocation for the cell from your own devices, third-party services like `Unwired Labs <https://unwiredlabs.com/>`_ or `RXNetworks <https://rxnetworks.com/location.io#!RT-GNSS>`_ provide a database of cell geolocations.
+If there is no device geolocation for the cell from your own devices, services like `nRF Cloud <https://nrfcloud.com/>`_ provide a database of cell geolocations.
 
-Third-party location APIs
-*************************
+nRF Cloud Location APIs
+***********************
 
-nRF Asset Tracker implements the following third-party location APIs:
-
- - nRF Cloud Location Services
- - Unwired Labs
-
-These are commercial third-party solutions that provide an API for resolving cell information to geolocation.
+nRF Asset Tracker implements the nRF Cloud Location Services which provide an API for resolving cell information to geolocation.
 This is an optional feature that you can enable.
 
-These APIs enable calculation of the rough location of a device as soon as it sends the roaming information to the cloud.
-They provide the geolocation of nearly every cell tower and with this information, devices can be located within a few kilometers around the location of the cell tower.
+This API enables the calculation of the rough location of a device as soon as it sends the roaming information to the cloud.
+It provides the geolocation of nearly every cell tower and with this information, devices can be located within a few kilometers around the location of the cell tower.
 
 .. note::
 
@@ -52,8 +47,3 @@ Follow the configuration guide in the respective implementation to enable nRF Cl
 
 * :ref:`AWS <aws-nrf-cloud-location-services>`
 * :ref:`Azure <azure-nrf-cloud-location-services>`
-
-Follow the configuration guide in the respective implementation to enable Unwired Labs' cell geolocation API:
-
-* :ref:`AWS <aws-unwired-labs-cell-geolocation>`
-* :ref:`Azure <azure-unwired-labs-cell-geolocation>`
