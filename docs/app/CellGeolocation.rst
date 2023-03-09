@@ -33,7 +33,7 @@ If there is no device geolocation for the cell from your own devices, services l
 nRF Cloud Location APIs
 ***********************
 
-nRF Asset Tracker implements the nRF Cloud Location Services which provide an API for resolving cell information to geolocation.
+nRF Asset Tracker implements the nRF Cloud Location Services that provide an API for resolving cell information to geolocation.
 This is an optional feature that you can enable.
 
 This API enables the calculation of the rough location of a device as soon as it sends the roaming information to the cloud.
