@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/state.desired.azure.schema.json",
-  "title": "Bifravst Firmware Device Data and Configuration for AWS",
-  "description": "Describes the possible properties of the desired device state Azure flavour of Bifravst.",
+  "title": "Device Data and Configuration for AWS",
+  "description": "Describes the possible properties of the desired device state for nRF Asset Tracker for Azure.",
   "type": "object",
   "properties": {
     "cfg": {
