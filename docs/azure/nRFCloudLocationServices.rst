@@ -16,7 +16,7 @@ To use the API, set the ``enableNrfCloudCellLocationService`` parameter to ``tru
     az deployment group create \\
         --resource-group ${RESOURCE_GROUP:-nrfassettracker} \\
         --mode Complete \\
-        --name enable-unwiredlabs \\
+        --name enable-nrfcloud-cell-location \\
         --template-file azuredeploy.json \\
         --parameters \\
             appName=${APP_NAME:-nrfassettracker} \\
@@ -59,7 +59,7 @@ To use the API, set the ``enableNrfCloudAGPSLocationService`` parameter to ``tru
     az deployment group create \\
         --resource-group ${RESOURCE_GROUP:-nrfassettracker} \\
         --mode Complete \\
-        --name enable-unwiredlabs \\
+        --name enable-nrfcloud-agps \\
         --template-file azuredeploy.json \\
         --parameters \\
             appName=${APP_NAME:-nrfassettracker} \\
@@ -101,7 +101,7 @@ To use the API, set the ``enableNrfCloudPGPSLocationService`` parameter to ``tru
     az deployment group create \\
         --resource-group ${RESOURCE_GROUP:-nrfassettracker} \\
         --mode Complete \\
-        --name enable-unwiredlabs \\
+        --name enable-nrfcloud-pgps \\
         --template-file azuredeploy.json \\
         --parameters \\
             appName=${APP_NAME:-nrfassettracker} \\
