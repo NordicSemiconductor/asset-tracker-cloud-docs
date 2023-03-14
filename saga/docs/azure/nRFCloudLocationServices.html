@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker v27.0.1 documentation</title>
+  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker v27.1.0 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/nordic.css" type="text/css" /> 
   
@@ -17,7 +17,7 @@
 
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Unwired Labs Cell Geolocation" href="UnwiredLabsCellGeolocation.html" />
+    <link rel="next" title="Azure IoT Shadow and topics" href="IoTShadowAndTopics.html" />
     <link rel="prev" title="Connect using the simulator" href="Simulator.html" />
 <link
   href="../../_static/css/bootstrap.min.css"
@@ -180,7 +180,6 @@
 <li class="toctree-l2"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">nRF Cloud Location Services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="UnwiredLabsCellGeolocation.html">Unwired Labs Cell Geolocation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">Azure IoT Shadow and topics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="secure-azure-function-apps-with-microsoft-b2c.html">Using Azure Active Directory B2C</a></li>
 </ul>
@@ -234,7 +233,7 @@
 <pre class="highlight literal-block"> az deployment group create \
      --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
      --mode Complete \
-     --name enable-unwiredlabs \
+     --name enable-nrfcloud-cell-location \
      --template-file azuredeploy.json \
      --parameters \
          appName=${APP_NAME:-nrfassettracker} \
@@ -263,7 +262,7 @@ az keyvault secret set --vault-name ${APP_NAME:-nrfassettracker} \
 <pre class="highlight literal-block"> az deployment group create \
      --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
      --mode Complete \
-     --name enable-unwiredlabs \
+     --name enable-nrfcloud-agps \
      --template-file azuredeploy.json \
      --parameters \
          appName=${APP_NAME:-nrfassettracker} \
@@ -291,7 +290,7 @@ az keyvault secret set --vault-name ${APP_NAME:-nrfassettracker} \
 <pre class="highlight literal-block"> az deployment group create \
      --resource-group ${RESOURCE_GROUP:-nrfassettracker} \
      --mode Complete \
-     --name enable-unwiredlabs \
+     --name enable-nrfcloud-pgps \
      --template-file azuredeploy.json \
      --parameters \
          appName=${APP_NAME:-nrfassettracker} \
@@ -326,9 +325,9 @@ az keyvault secret set --vault-name ${APP_NAME:-nrfassettracker} \
   >
     
     <a
-      href="UnwiredLabsCellGeolocation.html"
+      href="IoTShadowAndTopics.html"
       class="btn btn-neutral float-right"
-      title="Unwired Labs Cell Geolocation"
+      title="Azure IoT Shadow and topics"
       accesskey="n"
       rel="next"
       >Next <span class="fa fa-arrow-circle-right"></span

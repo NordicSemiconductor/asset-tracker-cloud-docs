@@ -28,6 +28,5 @@ The :file:`.feature` files in the folder are used to continuously verify the ref
    DeviceCredentials.rst
    Simulator.rst
    nRFCloudLocationServices.rst
-   UnwiredLabsCellGeolocation.rst
    IoTShadowAndTopics.rst
    secure-azure-function-apps-with-microsoft-b2c.rst

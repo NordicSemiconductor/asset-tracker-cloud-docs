@@ -198,8 +198,6 @@ To allow the continuous deployment GitHub Action workflow to authenticate agains
      * ``B2C_TENANT``
      * ``APP_REG_CLIENT_ID``
 
-     If you have enabled the :ref:`azure-unwired-labs-cell-geolocation`, add your API key ``UNWIRED_LABS_API_KEY`` as a secret as well.
-
    - Alternatively, set the secrets using the GitHub CLI:
 
      You can use the `GitHub CLI <https://cli.github.com/>`_  with the environment settings from above (make sure to create the ``ci`` `deployment environment <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>`_ in your repository first):

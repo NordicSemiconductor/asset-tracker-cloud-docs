@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Continuous integration &mdash; nRF Asset Tracker v27.0.1 documentation</title>
+  <title>Continuous integration &mdash; nRF Asset Tracker v27.1.0 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/nordic.css" type="text/css" /> 
   
@@ -180,7 +180,6 @@
 <li class="toctree-l2"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nRFCloudLocationServices.html">nRF Cloud Location Services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="UnwiredLabsCellGeolocation.html">Unwired Labs Cell Geolocation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">Azure IoT Shadow and topics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="secure-azure-function-apps-with-microsoft-b2c.html">Using Azure Active Directory B2C</a></li>
 </ul>
@@ -407,7 +406,6 @@ az rest --method POST --uri <span class="s2">&quot;https://graph.microsoft.com/b
 <li><p><code class="docutils literal notranslate"><span class="pre">B2C_TENANT</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">APP_REG_CLIENT_ID</span></code></p></li>
 </ul>
-<p>If you have enabled the <a class="reference internal" href="UnwiredLabsCellGeolocation.html#azure-unwired-labs-cell-geolocation"><span class="std std-ref">Unwired Labs Cell Geolocation</span></a>, add your API key <code class="docutils literal notranslate"><span class="pre">UNWIRED_LABS_API_KEY</span></code> as a secret as well.</p>
 </li>
 <li><p>Alternatively, set the secrets using the GitHub CLI:</p>
 <p>You can use the <a class="reference external" href="https://cli.github.com/">GitHub CLI</a>  with the environment settings from above (make sure to create the <code class="docutils literal notranslate"><span class="pre">ci</span></code> <a class="reference external" href="https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment">deployment environment</a> in your repository first):</p>
