@@ -54,9 +54,9 @@ An up-to-date cell location database independent of a third-party API is built o
 This database is used as the primary means of geolocating cells in the nRF Asset Tracker.
 The third-party API will be called (if it is enabled) only if a cell has not been geolocated by a device previously.
 
-Geolocating cells using third-party APIs
-========================================
+Geolocating cells using nRF Cloud Location Services
+===================================================
 
-Third-party APIs and services like `UnwiredLabs <https://unwiredlabs.com/>`_ and `CellMapper <https://www.cellmapper.net/>`_ have a database of cell tower locations and provide an API to query their locations.
+`nRF Cloud <https://nrfcloud.com/>`_ has a database of cell tower locations and provide an API to query their locations.
 
-The nRF Asset Tracker implements the optional resolution on the cloud side using :ref:`UnwiredLabs on AWS <aws-unwired-labs-cell-geolocation>` and :ref:`UnwiredLabs on Azure <azure-unwired-labs-cell-geolocation>` for the cells that have not been geolocated by the devices.
+The nRF Asset Tracker implements the optional resolution on the cloud side for :ref:`AWS <aws-nrf-cloud-location-services>` and :ref:`Azure <azure-nrf-cloud-location-services>` for the cells that have not been geolocated by the devices.

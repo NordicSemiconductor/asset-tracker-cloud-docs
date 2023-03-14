@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker 8dc310c29c2d071a477388a3a9defda08698982d documentation</title>
+  <title>nRF Cloud Location Services &mdash; nRF Asset Tracker v27.0.0 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/nordic.css" type="text/css" /> 
   
@@ -17,7 +17,7 @@
 
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Unwired Labs Cell Geolocation" href="UnwiredLabsCellGeolocation.html" />
+    <link rel="next" title="Connect using the simulator" href="Simulator.html" />
     <link rel="prev" title="Continuous integration of the AWS web application" href="ContinuousIntegration/WebApp.html" />
 <link
   href="../../_static/css/bootstrap.min.css"
@@ -177,7 +177,6 @@
 <li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ContinuousIntegration/Index.html">Continuous integration</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">nRF Cloud Location Services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="UnwiredLabsCellGeolocation.html">Unwired Labs Cell Geolocation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Authentication.html">Authentication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">AWS IoT Device Shadow service and MQTT topics</a></li>
@@ -237,7 +236,7 @@
 </section>
 <section id="cell-location-service">
 <h2>Cell Location Service<a class="headerlink" href="#cell-location-service" title="Permalink to this headline"></a></h2>
-<p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for single cells and neighboring cell reports for the application using <a class="reference external" href="https://api.nrfcloud.com/v1#tag/Cell-Position">nRF Cloud’s Cell Location Service API</a> in your deployment.</p>
+<p>You can enable the <a class="reference internal" href="../app/CellGeolocation.html#app-cellgeolocation"><span class="std std-ref">cell geolocation lookup</span></a> for single cells and neighboring cell reports for the application using <a class="reference external" href="https://api.nrfcloud.com/v1#tag/Ground-Fix">nRF Cloud’s Cell Location Service API</a> in your deployment.</p>
 <p>To use the API, complete the following steps:</p>
 <ol class="arabic simple">
 <li><p>Configure your service key.</p></li>
@@ -309,9 +308,9 @@ npx cdk deploy --all</pre>
   >
     
     <a
-      href="UnwiredLabsCellGeolocation.html"
+      href="Simulator.html"
       class="btn btn-neutral float-right"
-      title="Unwired Labs Cell Geolocation"
+      title="Connect using the simulator"
       accesskey="n"
       rel="next"
       >Next <span class="fa fa-arrow-circle-right"></span

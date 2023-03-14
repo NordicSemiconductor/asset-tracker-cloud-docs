@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cell geolocation &mdash; nRF Asset Tracker 8dc310c29c2d071a477388a3a9defda08698982d documentation</title>
+  <title>Cell geolocation &mdash; nRF Asset Tracker v27.0.0 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/nordic.css" type="text/css" /> 
   
@@ -221,7 +221,7 @@
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#locating-cells-based-on-device-data" id="id2">Locating cells based on device data</a></p></li>
-<li><p><a class="reference internal" href="#third-party-location-apis" id="id3">Third-party location APIs</a></p></li>
+<li><p><a class="reference internal" href="#nrf-cloud-location-apis" id="id3">nRF Cloud Location APIs</a></p></li>
 </ul>
 </div>
 <p>If cell geolocation is implemented, the devices can be shown on the map based on the location of their surrounding cells, even before obtaining a GNSS fix.
@@ -241,21 +241,14 @@ This additional information can be used to improve the accuracy of the location 
 <p><span class="caption-text">Calculating the location of a cell using the device geolocation data</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<p>If there is no device geolocation for the cell from your own devices, third-party services like <a class="reference external" href="https://unwiredlabs.com/">Unwired Labs</a> or <a class="reference external" href="https://rxnetworks.com/location.io#!RT-GNSS">RXNetworks</a> provide a database of cell geolocations.</p>
+<p>If there is no device geolocation for the cell from your own devices, services like <a class="reference external" href="https://nrfcloud.com/">nRF Cloud</a> provide a database of cell geolocations.</p>
 </section>
-<section id="third-party-location-apis">
-<h2><a class="toc-backref" href="#id3">Third-party location APIs</a><a class="headerlink" href="#third-party-location-apis" title="Permalink to this headline"></a></h2>
-<p>nRF Asset Tracker implements the following third-party location APIs:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>nRF Cloud Location Services</p></li>
-<li><p>Unwired Labs</p></li>
-</ul>
-</div></blockquote>
-<p>These are commercial third-party solutions that provide an API for resolving cell information to geolocation.
+<section id="nrf-cloud-location-apis">
+<h2><a class="toc-backref" href="#id3">nRF Cloud Location APIs</a><a class="headerlink" href="#nrf-cloud-location-apis" title="Permalink to this headline"></a></h2>
+<p>nRF Asset Tracker implements the nRF Cloud Location Services that provide an API for resolving cell information to geolocation.
 This is an optional feature that you can enable.</p>
-<p>These APIs enable calculation of the rough location of a device as soon as it sends the roaming information to the cloud.
-They provide the geolocation of nearly every cell tower and with this information, devices can be located within a few kilometers around the location of the cell tower.</p>
+<p>This API enables the calculation of the rough location of a device as soon as it sends the roaming information to the cloud.
+It provides the geolocation of nearly every cell tower and with this information, devices can be located within a few kilometers around the location of the cell tower.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Cellular signals can travel many kilometers and <a class="reference external" href="https://www.youtube.com/watch?v=p1_0OAlTcuY">the tests</a> show that a range of 10 km and more is possible in certain conditions.</p>
@@ -264,11 +257,6 @@ They provide the geolocation of nearly every cell tower and with this informatio
 <ul class="simple">
 <li><p><a class="reference internal" href="../aws/nRFCloudLocationServices.html#aws-nrf-cloud-location-services"><span class="std std-ref">AWS</span></a></p></li>
 <li><p><a class="reference internal" href="../azure/nRFCloudLocationServices.html#azure-nrf-cloud-location-services"><span class="std std-ref">Azure</span></a></p></li>
-</ul>
-<p>Follow the configuration guide in the respective implementation to enable Unwired Labs’ cell geolocation API:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="../aws/UnwiredLabsCellGeolocation.html#aws-unwired-labs-cell-geolocation"><span class="std std-ref">AWS</span></a></p></li>
-<li><p><a class="reference internal" href="../azure/UnwiredLabsCellGeolocation.html#azure-unwired-labs-cell-geolocation"><span class="std std-ref">Azure</span></a></p></li>
 </ul>
 </section>
 </section>
