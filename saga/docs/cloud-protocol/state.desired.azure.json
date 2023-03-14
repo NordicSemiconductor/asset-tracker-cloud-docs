@@ -12,10 +12,10 @@
   },
   "firmware": {
     "fwVersion": "1.2.0",
-    "fwPackageURI": "https://bifravstprodfota.blob.core.windows.net/upgrades/79ca833d-f653-48e8-b691-e0c3cfe1400a.bin",
+    "fwPackageURI": "https://fota.blob.core.windows.net/upgrades/79ca833d-f653-48e8-b691-e0c3cfe1400a.bin",
     "fwLocation": {
       "protocol": "https:",
-      "host": "bifravstprodfota.blob.core.windows.net",
+      "host": "fota.blob.core.windows.net",
       "path": "upgrades/79ca833d-f653-48e8-b691-e0c3cfe1400a.bin"
     },
     "fwFragmentSize": 1800
