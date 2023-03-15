@@ -5,39 +5,15 @@
   "description": "Describes the format used by the device to publish Wi-Fi site surveys.",
   "type": "object",
   "properties": {
-    "v": {
+    "aps": {
       "type": "array",
-      "description": "The nearby Wi-Fi access points.",
+      "description": "The MAC addresses of the nearby Wi-Fi access points.",
       "minItems": 2,
       "items": {
-        "type": "object",
-        "properties": {
-          "mac": {
-            "type": "string",
-            "description": "Access point MAC address. String comprised of 6 hexadecimal pairs, separated by colons or dashes",
-            "pattern": "^([A-Fa-f0-9]{2}[:-]){5}[A-Fa-f0-9]{2}$",
-            "examples": ["80:e0:1d:2a:92:f1"]
-          },
-          "ssid": {
-            "type": "string",
-            "description": "Access point SSID.",
-            "examples": ["Telenor_Guest"]
-          },
-          "rssi": {
-            "type": "integer",
-            "description": "Received signal strength indicator is a measurement of how well your device can hear a signal from an access point measured in dBm",
-            "minimum": -128,
-            "maximum": 0,
-            "examples": [-65]
-          },
-          "chan": {
-            "type": "integer",
-            "description": "A Wi-Fi channel is to send and receive data.",
-            "examples": [1]
-          }
-        },
-        "required": ["mac"],
-        "additionalProperties": false
+        "type": "string",
+        "description": "Access point MAC address. String comprised of 6 hexadecimal pairs, without separators",
+        "pattern": "^[A-Fa-f0-9]{12}$",
+        "examples": ["80e01d098f6e"]
       }
     },
     "ts": {
@@ -47,6 +23,6 @@
       "examples": [1584533788029]
     }
   },
-  "required": ["v", "ts"],
+  "required": ["aps", "ts"],
   "additionalProperties": false
 }

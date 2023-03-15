@@ -44,10 +44,10 @@ Button is a UI element and in the case of push buttons, there is no state, which
 The messages published by the device are described in detail in the `messages JSON schema file <./messages.schema.json>`_.
 See the `messages JSON document <./message.json>`_ for an example message.
 
-The neighboring cell measurement report is another piece of data that is not stored in the digital twin of the device.
+The network survey is another piece of data that is not stored in the digital twin of the device.
 It is published through a separate topic, because depending on the cloud platform, its size can exceed the allowed size of the digital twin document.
-The neighboring cell measurement report published by the device is described in detail in the `ncellmeas JSON schema file <./ncellmeas.schema.json>`_.
-See the `ncellmeas JSON document <./ncellmeas.json>`_ for an example report.
+The network survey published by the device is described in detail in the `network survey JSON schema file <./network-survey.schema.json>`_.
+See the `network survey JSON document <./network-survey.json>`_ for an example report.
 
 A-GPS and P-GPS data
 ====================
@@ -64,14 +64,6 @@ See the `P-GPS request JSON document <./pgps-request.json>`_ for an example requ
 The cloud publishes a link to the data to the ``<device Id>/pgps`` topic in the format described in detail in the `P-GPS response JSON schema file <./pgps-response.schema.json>`_.
 See the `P-GPS response JSON document <./pgps-response.json>`_ for an example response.
 The device can then use HTTP or HTTPS to download the P-GPS data.
-
-Wi-Fi site survey data
-======================
-
-If supported through enabling :ref:`aws-nrf-cloud-location-services`, the device can request Wi-Fi site survey data through MQTT.
-
-The Wi-Fi site survey message published by the device is described in detail in the `Wi-Fi site survey JSON schema file <./wifi-site-survey.schema.json>`_.
-See the `Wi-Fi site survey request JSON document <./wifi-site-survey.json>`_ for an example request.
 
 .. _batch-messages:
 
