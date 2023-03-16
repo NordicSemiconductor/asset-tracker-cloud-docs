@@ -3,9 +3,17 @@
   "version": "0.0.0-development",
   "description": "The nRF Asset Tracker aims to provide a concrete end-to-end example for an IoT product in the asset tracker space.",
   "type": "module",
+  "types": "./index.d.ts",
+  "exports": {
+    "./protocol": {
+      "import": "./protocol.js",
+      "node": "./protocol.js"
+    }
+  },
   "scripts": {
     "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prepublish": "npx swc -d dist ./docs/cloud-protocol"
   },
   "repository": {
     "type": "git",
@@ -23,6 +31,7 @@
   "license": "BSD-3-Clause",
   "devDependencies": {
     "@nordicsemiconductor/asset-tracker-cloud-code-style": "12.0.4",
+    "@swc/cli": "0.1.62",
     "@swc/jest": "0.2.24",
     "@types/ajv": "1.0.0",
     "@types/glob": "8.1.0",
@@ -52,12 +61,10 @@
     "branches": [
       "saga"
     ],
-    "remoteTags": true,
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/github"
-    ]
+    "remoteTags": true
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "jest": {
     "transform": {
@@ -67,5 +74,8 @@
     },
     "testRegex": ".+\\.spec\\.ts$"
   },
-  "prettier": "@nordicsemiconductor/asset-tracker-cloud-code-style/.prettierrc"
+  "prettier": "@nordicsemiconductor/asset-tracker-cloud-code-style/.prettierrc",
+  "dependencies": {
+    "@sinclair/typebox": "0.25.24"
+  }
 }

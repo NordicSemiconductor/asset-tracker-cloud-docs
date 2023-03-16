@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/wifi-site-survey.schema.json",
-  "title": "Asset Tracker v2 Wi-Fi site survey request",
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/protocol/0.0.0-development/wifi-site-survey.schema.json",
+  "title": "Asset Tracker v2 Wi-Fi site survey",
   "description": "Describes the format used by the device to publish Wi-Fi site surveys.",
   "type": "object",
   "properties": {
@@ -17,7 +17,7 @@
       }
     },
     "ts": {
-      "description": "Timestamp as Unix epoch with millisecond precision (UTC) when the neighboring cell measurement report was received",
+      "description": "Timestamp as Unix epoch with millisecond precision (UTC) when the Wi-Fi site survey was created",
       "type": "integer",
       "minimum": 1234567890123,
       "examples": [1584533788029]

@@ -1,21 +1,12 @@
-import Ajv from 'ajv'
 import { readFileSync } from 'fs'
-import * as glob from 'glob'
 import * as path from 'path'
+import { ajv } from './ajv'
 
 const f = (name: string): string =>
 	readFileSync(
 		path.resolve(process.cwd(), 'docs', 'cloud-protocol', name),
 		'utf-8',
 	)
-
-const ajv = new Ajv({
-	schemas: glob
-		.sync(
-			`${path.resolve(process.cwd(), 'docs', 'cloud-protocol')}/*.schema.json`,
-		)
-		.map((f) => JSON.parse(readFileSync(f, 'utf-8'))),
-})
 
 describe('schemas', () => {
 	it.each([
@@ -32,7 +23,7 @@ describe('schemas', () => {
 		['network-survey', undefined],
 	])('%s should validate', async (schema, example) => {
 		const validate = ajv.getSchema(
-			`https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/${schema}.schema.json`,
+			`https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/protocol/0.0.0-development/${schema}.schema.json`,
 		)
 		expect(validate).toBeDefined()
 		const json = f(example ?? `${schema}.json`)
