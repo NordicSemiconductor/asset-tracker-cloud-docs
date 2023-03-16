@@ -51,7 +51,7 @@
       "prettier --write"
     ],
     "*.rst": [
-      "node scripts/headline-fixer.mjs"
+      "node scripts/headline-fixer.js"
     ]
   },
   "engines": {
