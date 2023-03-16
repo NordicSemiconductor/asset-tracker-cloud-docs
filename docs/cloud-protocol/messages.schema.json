@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/protocol/0.0.0-development/messages.schema.json",
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/protocol/messages.schema.json",
   "title": "Asset Tracker v2 Messages",
   "description": "Describes the messages published by the device",
   "type": "object",

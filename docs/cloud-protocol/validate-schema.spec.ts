@@ -23,7 +23,7 @@ describe('schemas', () => {
 		['network-survey', undefined],
 	])('%s should validate', async (schema, example) => {
 		const validate = ajv.getSchema(
-			`https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/protocol/0.0.0-development/${schema}.schema.json`,
+			`https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/protocol/${schema}.schema.json`,
 		)
 		expect(validate).toBeDefined()
 		const json = f(example ?? `${schema}.json`)

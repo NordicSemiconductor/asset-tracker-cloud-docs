@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/protocol/0.0.0-development/agps-request.schema.json",
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/protocol/agps-request.schema.json",
   "title": "Asset Tracker v2 A-GPS request",
   "description": "Describes the format used by the device to request A-GPS data.",
   "type": "object",

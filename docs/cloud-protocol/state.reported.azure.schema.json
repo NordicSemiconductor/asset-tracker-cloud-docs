@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/protocol/0.0.0-development/state.reported.azure.schema.json",
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/protocol/state.reported.azure.schema.json",
   "title": "Device Data and Configuration for Azure",
   "description": "Describes the data published by the device and its configuration options for nRF Asset Tracker for Azure.",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/protocol/0.0.0-development/state.reported.schema.json"
+      "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/protocol/state.reported.schema.json"
     },
     {
       "type": "object",

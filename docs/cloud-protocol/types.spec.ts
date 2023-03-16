@@ -39,7 +39,7 @@ describe('@nordicsemiconductor/asset-tracker-cloud-docs/protocol', () => {
 			const json = f(example ?? message)
 			// Make sure the reference schema validates
 			const schemaValidator = ajv.getSchema(
-				`https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/protocol/0.0.0-development/${message}.schema.json`,
+				`https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/protocol/${message}.schema.json`,
 			)
 			expect(schemaValidator).toBeDefined()
 			const validBySchema = await schemaValidator?.(json)
