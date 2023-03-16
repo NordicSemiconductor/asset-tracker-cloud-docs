@@ -12,11 +12,7 @@ docs/project/%.svg: docs/project/%.dot
 RELEASE ?= 0.0.0-development
 VERSION ?= saga
 
-schemas: docs/cloud-protocol/*.ts
-	mkdir -p build/html/protocol
-	npx tsx scripts/generate-schemas.ts
-
-html: Makefile dotincludes docs/project/system-overview.svg schemas
+html: Makefile dotincludes docs/project/system-overview.svg
 	docker run --rm -v ${PWD}:/workdir -e RELEASE=$(RELEASE) -e VERSION=$(VERSION) ${DOCKER_IMAGE} /bin/sphinx.sh
 
 check:

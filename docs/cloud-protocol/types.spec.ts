@@ -1,8 +1,12 @@
 import { readFileSync } from 'fs'
 import path from 'path'
 import { AGPSRequest } from './AGPSRequest'
-import { ajv } from './ajv'
-import { Cfg } from './Cfg'
+import { AWSDesired } from './AWSDesired'
+import { AWSReported } from './AWSReported'
+import { AzureDesired } from './AzureDesired'
+import { AzureFOTA } from './AzureFOTA'
+import { AzureReported } from './AzureReported'
+import { Config } from './Config'
 import { Message } from './Message'
 import { NeighboringCellMeasurements } from './NeighboringCellMeasurements'
 import { NetworkSurvey } from './NetworkSurvey'
@@ -27,7 +31,7 @@ const f = (name: string, isSchema = false): string =>
 describe('@nordicsemiconductor/asset-tracker-cloud-docs/protocol', () => {
 	describe('it should provide the same schema and validate ', () => {
 		it.each([
-			['cfg', Cfg, null],
+			['config', Config, null],
 			['messages', Message, 'message'],
 			['wifi-site-survey', WiFiSiteSurvey, null],
 			['ncellmeas', NeighboringCellMeasurements, null],
@@ -35,22 +39,13 @@ describe('@nordicsemiconductor/asset-tracker-cloud-docs/protocol', () => {
 			['agps-request', AGPSRequest, null],
 			['pgps-request', PGPSRequest, null],
 			['pgps-response', PGPSResponse, null],
+			['azure.fota', AzureFOTA, null],
+			['state.desired.azure', AzureDesired, null],
+			['state.reported.azure', AzureReported, null],
+			['state.desired.aws', AWSDesired, null],
+			['state.reported.aws', AWSReported, null],
 		])(`%s`, async (message, typeDef, example) => {
 			const json = f(example ?? message)
-			// Make sure the reference schema validates
-			const schemaValidator = ajv.getSchema(
-				`https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/protocol/${message}.schema.json`,
-			)
-			expect(schemaValidator).toBeDefined()
-			const validBySchema = await schemaValidator?.(json)
-			expect(schemaValidator?.errors).toBeNull()
-			expect(validBySchema).toBeTruthy()
-
-			// Make sure the type schema is the same
-			expect(JSON.parse(JSON.stringify(typeDef))).toMatchObject(
-				f(message, true),
-			)
-
 			// Make sure the type validates
 			const typeValidator = validateWithType(typeDef)
 			const validByType = typeValidator(json)

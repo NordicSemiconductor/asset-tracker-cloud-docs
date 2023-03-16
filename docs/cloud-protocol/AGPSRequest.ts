@@ -46,6 +46,7 @@ export const AGPSRequest = Type.Object(
 		phycell: Type.Optional(PhysicalCell),
 		types: Type.Array(
 			Type.Unsafe({
+				type: 'integer',
 				enum: [
 					AGPSTypes.UTCParameters,
 					AGPSTypes.Ephemerides,

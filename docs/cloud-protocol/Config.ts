@@ -1,7 +1,7 @@
 import { Type } from '@sinclair/typebox'
 import { $id } from './$id'
 
-export const Cfg = Type.Object(
+export const Config = Type.Object(
 	{
 		act: Type.Boolean({
 			description: 'Whether to enable the active mode.',
@@ -66,7 +66,7 @@ export const Cfg = Type.Object(
 	},
 	{
 		$schema: 'http://json-schema.org/draft-07/schema#',
-		$id: $id('cfg'),
+		$id: $id('config'),
 		description: 'Configures the device',
 	},
 )

@@ -1,7 +1,12 @@
 import type { Static, TSchema } from '@sinclair/typebox'
 import Ajv, { ErrorObject } from 'ajv'
 import { AGPSRequest } from './AGPSRequest'
-import { Cfg } from './Cfg'
+import { AWSDesired } from './AWSDesired'
+import { AWSReported } from './AWSReported'
+import { AzureDesired } from './AzureDesired'
+import { AzureFOTA } from './AzureFOTA'
+import { AzureReported } from './AzureReported'
+import { Config } from './Config'
 import { Message } from './Message'
 import { NeighboringCellMeasurements } from './NeighboringCellMeasurements'
 import { NetworkSurvey } from './NetworkSurvey'
@@ -10,19 +15,22 @@ import { PGPSResponse } from './PGPSResponse'
 import { WiFiSiteSurvey } from './WiFiSiteSurvey'
 
 export const schemas = [
-	Cfg,
-	Message,
-	WiFiSiteSurvey,
-	NeighboringCellMeasurements,
-	NetworkSurvey,
-	AGPSRequest,
 	PGPSRequest,
+	AWSDesired,
+	AzureFOTA,
+	Message,
+	AzureDesired,
+	AWSReported,
 	PGPSResponse,
+	Config,
+	WiFiSiteSurvey,
+	NetworkSurvey,
+	AzureReported,
+	AGPSRequest,
+	NeighboringCellMeasurements,
 ]
 
-const ajv = new Ajv({
-	schemas,
-})
+const ajv = new Ajv()
 // see @https://github.com/sinclairzx81/typebox/issues/51
 ajv.addKeyword('kind')
 ajv.addKeyword('modifier')

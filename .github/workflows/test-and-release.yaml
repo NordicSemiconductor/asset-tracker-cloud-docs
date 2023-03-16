@@ -163,6 +163,8 @@ jobs:
           echo "Updating documentation for version ${{ env.VERSION }} release ${{ env.RELEASE }}...";
           # Generate Documentation
           make html
+          # Generate schema JSON files
+          npx tsx scripts/generate-schemas.ts
           # Clone gh-pages branch
           git clone --single-branch --branch gh-pages https://github.com/${GITHUB_REPOSITORY} asset-tracker-docs
           git -C asset-tracker-docs rm -r ${{ env.VERSION }}/\*

@@ -2,7 +2,7 @@ import { Type } from '@sinclair/typebox'
 import { $id } from './$id'
 import { Timestamp } from './Timestamp'
 
-const RSRP = Type.Number({
+export const RSRP = Type.Number({
 	minimum: -199,
 	maximum: 0,
 	title: 'RSRP',
@@ -10,7 +10,7 @@ const RSRP = Type.Number({
 		'Reference Signal Received Power (RSRP). The average power level in dBm received from a single reference signal in an LTE (Long-term Evolution) network. Typically this value ranges from -140 to -40 dBm. ',
 	examples: [-97, -104],
 })
-const RSRQ = Type.Number({
+export const RSRQ = Type.Number({
 	description:
 		'Reference Signals Received Quality (RSRQ) of the current cell. Typically this value ranges from -19.5 to −3 dBm.',
 	minimum: -99,
@@ -26,7 +26,7 @@ const TimingAdvance = Type.Integer({
 	examples: [80],
 })
 
-const EARFCN = Type.Integer({
+export const EARFCN = Type.Integer({
 	description:
 		'E-UTRA Absolute Radio Frequency Channel Number (EARFCN) of the current cell where the EARFCN is as defined in 3GPP TS 36.101. LTE carrier channel number for unique identification of LTE band and carrier frequency.',
 	minimum: 1,
