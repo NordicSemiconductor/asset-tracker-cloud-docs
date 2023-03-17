@@ -7,13 +7,16 @@ dotincludes:
 DOCKER_IMAGE ?= nordicsemiconductor/asset-tracker-cloud-docs/builder
 
 docs/project/%.svg: docs/project/%.dot 
-	docker run --rm -v ${PWD}:/workdir ${DOCKER_IMAGE} /bin/dot2svg.sh $< $@
+	docker run --rm -v ${PWD}:/workdir ${DOCKER_IMAGE} ./scripts/dot2svg.sh $< $@
 
 RELEASE ?= 0.0.0-development
 VERSION ?= saga
 
-html: Makefile dotincludes docs/project/system-overview.svg
-	docker run --rm -v ${PWD}:/workdir -e RELEASE=$(RELEASE) -e VERSION=$(VERSION) ${DOCKER_IMAGE} /bin/sphinx.sh
+html: Makefile dotincludes docs/project/system-overview.svg schemas
+	docker run --rm -v ${PWD}:/workdir -e RELEASE=$(RELEASE) -e VERSION=$(VERSION) ${DOCKER_IMAGE} ./scripts/sphinx.sh
+
+schemas: docs/cloud-protocol/*.ts
+	docker run --rm -v ${PWD}:/workdir ${DOCKER_IMAGE} /bin/bash -c 'npm ci && npx tsx ./scripts/generate-schemas.ts'
 
 check:
 	docker run --rm -v ${PWD}:/workdir -e RELEASE=$(RELEASE) ${DOCKER_IMAGE} rstcheck -r ./build/html

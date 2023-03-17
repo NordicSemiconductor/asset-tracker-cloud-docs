@@ -18,9 +18,11 @@ RUN \
     apt-get -y install pip && \
     pip install rstcheck
 
-COPY ./scripts/dot2svg.sh /bin
+RUN \
+    apt -y install curl && \
+    curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh && \
+    bash nodesource_setup.sh && \
+    apt -y install nodejs
 
 ARG RELEASE
 ARG VERSION
-
-COPY ./scripts/sphinx.sh /bin
