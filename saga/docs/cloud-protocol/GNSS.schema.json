@@ -1,0 +1,64 @@
+{
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/GNSS.schema.json",
+  "description": "The GNSS reading",
+  "type": "object",
+  "properties": {
+    "v": {
+      "type": "object",
+      "properties": {
+        "lng": {
+          "description": "Longitude",
+          "minimum": -180,
+          "maximum": 180,
+          "type": "number"
+        },
+        "lat": {
+          "description": "Latitude",
+          "minimum": -90,
+          "maximum": 90,
+          "type": "number"
+        },
+        "acc": {
+          "description": "Accuracy (2D 1-sigma) in meters",
+          "minimum": 0,
+          "type": "number"
+        },
+        "alt": {
+          "description": "Altitude above WGS-84 ellipsoid in meters",
+          "type": "number"
+        },
+        "spd": {
+          "description": "Horizontal speed in meters",
+          "minimum": 0,
+          "type": "number"
+        },
+        "hdg": {
+          "description": "Heading of movement in degrees",
+          "minimum": 0,
+          "maximum": 360,
+          "type": "number"
+        }
+      },
+      "required": [
+        "lng",
+        "lat",
+        "acc",
+        "alt",
+        "spd",
+        "hdg"
+      ]
+    },
+    "ts": {
+      "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+      "minimum": 1234567890123,
+      "examples": [
+        1584533788029
+      ],
+      "type": "integer"
+    }
+  },
+  "required": [
+    "v",
+    "ts"
+  ]
+}

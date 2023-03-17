@@ -1,72 +1,99 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/cfg.schema.json",
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/config.schema.json",
   "description": "Configures the device",
   "type": "object",
   "properties": {
     "act": {
       "description": "Whether to enable the active mode.",
-      "type": "boolean",
-      "examples": [false]
+      "examples": [
+        false
+      ],
+      "type": "boolean"
     },
     "actwt": {
       "description": "In active mode: Wait this amount of seconds until sending the next update. The actual interval will be this time plus the time it takes to get a GNSS fix.",
-      "type": "integer",
       "minimum": 1,
       "maximum": 2147483647,
-      "examples": [60]
+      "examples": [
+        60
+      ],
+      "type": "integer"
     },
     "mvres": {
       "description": "Movement resolution (in seconds): After detecting movement in passive mode send an update and wait this amount of time until movement again can trigger the next update.",
-      "type": "integer",
       "minimum": 1,
       "maximum": 2147483647,
-      "examples": [300]
+      "examples": [
+        300
+      ],
+      "type": "integer"
     },
     "mvt": {
       "description": "Movement timeout (in seconds): Send update at least this often in passive mode.",
-      "type": "integer",
       "minimum": 1,
       "maximum": 2147483647,
-      "examples": [3600]
+      "examples": [
+        3600
+      ],
+      "type": "integer"
     },
     "loct": {
       "description": "Location search timeout (in seconds): Timeout for location search (GNSS fix, cellular, and WiFi positioning).",
-      "type": "integer",
       "minimum": 1,
       "maximum": 2147483647,
-      "examples": [60]
+      "examples": [
+        60
+      ],
+      "type": "integer"
     },
     "accath": {
       "description": "Accelerometer activity threshold (in m/s²): Minimal absolute value for an accelerometer reading to be considered movement.",
-      "type": "number",
       "minimum": 0,
       "maximum": 78.4532,
-      "examples": [10.5]
+      "examples": [
+        10.5
+      ],
+      "type": "number"
     },
     "accith": {
       "description": "Accelerometer inactivity threshold (in m/s²): Maximum absolute value for an accelerometer reading to be considered stillness. Must be smaller than the accelerometer activity threshold.",
-      "type": "number",
       "minimum": 0,
       "maximum": 78.4532,
-      "examples": [5.2]
+      "examples": [
+        5.2
+      ],
+      "type": "number"
     },
     "accito": {
       "description": "Accelerometer inactivity timeout (in s): Hysteresis timeout for stillness detection. Must be smaller than the movement resolution.",
-      "type": "number",
       "minimum": 0.08,
       "maximum": 5242.88,
-      "examples": [1.7]
+      "examples": [
+        1.7
+      ],
+      "type": "number"
     },
     "nod": {
       "description": "List of modules which should be disabled when sampling data.",
       "type": "array",
       "minItems": 0,
+      "examples": [
+        [
+          "gnss"
+        ],
+        [
+          "ncell"
+        ],
+        [
+          "gnss",
+          "ncell"
+        ]
+      ],
       "items": {
-        "type": "string",
-        "minLength": 1
-      },
-      "examples": [["gnss"], ["ncell"], ["gnss", "ncell"]]
+        "minLength": 1,
+        "type": "string"
+      }
     }
   },
   "required": [

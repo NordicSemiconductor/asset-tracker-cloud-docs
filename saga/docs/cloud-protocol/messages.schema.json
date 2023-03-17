@@ -1,47 +1,64 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/messages.schema.json",
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/messages.schema.json",
   "title": "Asset Tracker v2 Messages",
   "description": "Describes the messages published by the device",
   "type": "object",
   "properties": {
     "btn": {
+      "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/button.schema.json",
       "description": "The number and the time a button was pushed",
       "type": "object",
       "properties": {
         "v": {
           "description": "ID of the button",
-          "type": "integer",
           "minimum": 1,
-          "examples": [1]
+          "examples": [
+            1
+          ],
+          "type": "integer"
         },
         "ts": {
           "description": "Timestamp as Unix epoch with millisecond precision (UTC) when the button was released",
-          "type": "integer",
           "minimum": 1234567890123,
-          "examples": [1584533788029]
+          "examples": [
+            1584533788029
+          ],
+          "type": "integer"
         }
       },
-      "required": ["v", "ts"]
+      "required": [
+        "v",
+        "ts"
+      ]
     },
     "impact": {
+      "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/impact.schema.json",
       "description": "The magnitude and time of a motion impact event",
       "type": "object",
       "properties": {
         "v": {
           "description": "Magnitude of the impact in g",
-          "type": "number",
-          "minimum": 0.0,
-          "examples": [0.5, 300]
+          "minimum": 0,
+          "examples": [
+            0.5,
+            300
+          ],
+          "type": "number"
         },
         "ts": {
           "description": "Timestamp as Unix epoch with millisecond precision (UTC) when the impact was detected",
-          "type": "integer",
           "minimum": 1234567890123,
-          "examples": [1584533788029]
+          "examples": [
+            1584533788029
+          ],
+          "type": "integer"
         }
       },
-      "required": ["v", "ts"]
+      "required": [
+        "v",
+        "ts"
+      ]
     }
   }
 }

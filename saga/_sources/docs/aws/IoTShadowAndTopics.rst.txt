@@ -23,4 +23,6 @@ See `JSON document <../cloud-protocol/state.reported.aws.json>`_ for a sample de
 Desired state
 *************
 
-The document contains the ``cfg`` object described in the above schema.
+The document is described in the `JSON schema file for the desired state <../cloud-protocol/state.desired.aws.schema.json>`_.
+
+See the `JSON document containing a desired state <../cloud-protocol/state.desired.aws.json>`_ for a sample device state.

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/batch.schema.json",
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/batch.schema.json",
   "title": "Asset Tracker v2 Batch Data",
   "description": "Describes the batch data published by the device.",
   "type": "object",
@@ -9,42 +9,42 @@
       "description": "Battery readings",
       "type": "array",
       "items": {
-        "$ref": "state.reported.schema.json#/properties/bat"
+        "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/battery.schema.json"
       }
     },
     "gnss": {
       "description": "GNSS readings",
       "type": "array",
       "items": {
-        "$ref": "state.reported.schema.json#/properties/gnss"
+        "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/GNSS.schema.json"
       }
     },
     "roam": {
       "description": "Roaming information updates.",
       "type": "array",
       "items": {
-        "$ref": "state.reported.schema.json#/properties/roam"
+        "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/roaming.schema.json"
       }
     },
     "btn": {
       "description": "Button presses.",
       "type": "array",
       "items": {
-        "$ref": "messages.schema.json#/properties/btn"
+        "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/button.schema.json"
       }
     },
     "impact": {
       "description": "Motion impact events.",
       "type": "array",
       "items": {
-        "$ref": "messages.schema.json#/properties/impact"
+        "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/impact.schema.json"
       }
     },
     "env": {
       "description": "Environmental sensors.",
       "type": "array",
       "items": {
-        "$ref": "state.reported.schema.json#/properties/env"
+        "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/environment.schema.json"
       }
     }
   }
