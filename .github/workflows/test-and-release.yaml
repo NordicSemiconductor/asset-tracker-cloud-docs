@@ -116,6 +116,7 @@ jobs:
       - name: Semantic release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         id: semantic-release
         continue-on-error: true
         run: npx semantic-release
