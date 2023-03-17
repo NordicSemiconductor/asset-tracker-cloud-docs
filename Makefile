@@ -16,7 +16,7 @@ html: Makefile dotincludes docs/project/system-overview.svg schemas
 	docker run --rm -v ${PWD}:/workdir -e RELEASE=$(RELEASE) -e VERSION=$(VERSION) ${DOCKER_IMAGE} ./scripts/sphinx.sh
 
 schemas: docs/cloud-protocol/*.ts
-	docker run --rm -v ${PWD}:/workdir ${DOCKER_IMAGE} npx tsx ./scripts/generate-schemas.ts
+	docker run --rm -v ${PWD}:/workdir ${DOCKER_IMAGE} /bin/bash -c 'npm ci && npx tsx ./scripts/generate-schemas.ts'
 
 check:
 	docker run --rm -v ${PWD}:/workdir -e RELEASE=$(RELEASE) ${DOCKER_IMAGE} rstcheck -r ./build/html
