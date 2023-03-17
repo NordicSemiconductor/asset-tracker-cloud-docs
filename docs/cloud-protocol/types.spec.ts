@@ -6,6 +6,7 @@ import { AWSReported } from './AWSReported'
 import { AzureDesired } from './AzureDesired'
 import { AzureFOTA } from './AzureFOTA'
 import { AzureReported } from './AzureReported'
+import { Batch } from './Batch'
 import { Config } from './Config'
 import { Message } from './Message'
 import { NeighboringCellMeasurements } from './NeighboringCellMeasurements'
@@ -44,6 +45,7 @@ describe('@nordicsemiconductor/asset-tracker-cloud-docs/protocol', () => {
 			['state.reported.azure', AzureReported, null],
 			['state.desired.aws', AWSDesired, null],
 			['state.reported.aws', AWSReported, null],
+			['batch', Batch, 'batch-message'],
 		])(`%s`, async (message, typeDef, example) => {
 			const json = f(example ?? message)
 			// Make sure the type validates

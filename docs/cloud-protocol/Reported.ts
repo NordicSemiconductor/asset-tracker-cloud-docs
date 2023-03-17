@@ -1,4 +1,5 @@
 import { Type } from '@sinclair/typebox'
+import { $id } from './$id'
 import { Area, Cell, EARFCN, RSRP } from './NeighboringCellMeasurements'
 import { Timestamp } from './Timestamp'
 
@@ -31,9 +32,9 @@ export const Device = Type.Object(
 		ts: Timestamp(),
 	},
 	{
+		$id: $id('device'),
 		description:
 			'Static device information. This information shall be updated by the device once after reboot.',
-		type: 'object',
 	},
 )
 
@@ -77,6 +78,7 @@ export const RoamingInfo = Type.Object(
 		ts: Timestamp(),
 	},
 	{
+		$id: $id('roaming'),
 		description:
 			'Roaming information. This information shall be updated by the device every time it publishes primary application data. It is considered low-priority information so it should always be sent after the primary application data has been published.',
 	},
@@ -91,6 +93,7 @@ export const Battery = Type.Object(
 		ts: Timestamp(),
 	},
 	{
+		$id: $id('battery'),
 		description: 'Battery reading in millivolt',
 	},
 )
@@ -120,6 +123,7 @@ export const Environment = Type.Object(
 		ts: Timestamp(),
 	},
 	{
+		$id: $id('environment'),
 		description: 'Environment sensor readings',
 	},
 )
@@ -157,6 +161,7 @@ export const GNSS = Type.Object(
 		ts: Timestamp(),
 	},
 	{
+		$id: $id('GNSS'),
 		description: 'The GNSS reading',
 	},
 )
