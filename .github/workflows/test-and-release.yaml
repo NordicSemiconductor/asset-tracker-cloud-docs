@@ -74,6 +74,9 @@ jobs:
       - name: Build docs
         run: make html
 
+      - name: Generate schema JSON files
+        run: npx tsx scripts/generate-schemas.ts
+
       - uses: actions/upload-artifact@v3
         with:
           if-no-files-found: error
