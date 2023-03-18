@@ -35,7 +35,7 @@
     "@swc/jest": "0.2.24",
     "@types/ajv": "1.0.0",
     "@types/glob": "8.1.0",
-    "@types/jest": "29.4.4",
+    "@types/jest": "29.5.0",
     "@types/node": "18.15.3",
     "ajv": "8.12.0",
     "chalk": "5.2.0",
