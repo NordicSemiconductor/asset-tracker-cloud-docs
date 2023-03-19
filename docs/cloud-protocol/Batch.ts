@@ -1,7 +1,7 @@
 import { Type } from '@sinclair/typebox'
-import { $id } from './$id'
-import { ButtonPress, Impact } from './Message'
-import { Battery, Environment, GNSS, RoamingInfo } from './Reported'
+import { $id } from './$id.js'
+import { ButtonPress, Impact } from './Message.js'
+import { Battery, Environment, GNSS, RoamingInfo } from './Reported.js'
 
 export const Batch = Type.Object(
 	{

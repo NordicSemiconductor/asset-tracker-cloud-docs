@@ -73,7 +73,10 @@
         "@swc/jest"
       ]
     },
-    "testRegex": ".+\\.spec\\.ts$"
+    "testRegex": ".+\\.spec\\.ts$",
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    }
   },
   "prettier": "@nordicsemiconductor/asset-tracker-cloud-code-style/.prettierrc",
   "dependencies": {

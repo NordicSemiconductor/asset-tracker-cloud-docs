@@ -1,5 +1,5 @@
 import { Type } from '@sinclair/typebox'
-import { $id } from './$id'
+import { $id } from './$id.js'
 
 export const PGPSRequest = Type.Object(
 	{

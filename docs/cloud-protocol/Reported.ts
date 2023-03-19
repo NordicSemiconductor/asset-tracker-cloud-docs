@@ -1,7 +1,7 @@
 import { Type } from '@sinclair/typebox'
-import { $id } from './$id'
-import { Area, Cell, EARFCN, RSRP } from './NeighboringCellMeasurements'
-import { Timestamp } from './Timestamp'
+import { $id } from './$id.js'
+import { Area, Cell, EARFCN, RSRP } from './NeighboringCellMeasurements.js'
+import { Timestamp } from './Timestamp.js'
 
 export const Device = Type.Object(
 	{

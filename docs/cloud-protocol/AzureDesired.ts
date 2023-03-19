@@ -1,7 +1,7 @@
 import { Type } from '@sinclair/typebox'
-import { $id } from './$id'
-import { AzureFOTA } from './AzureFOTA'
-import { Config } from './Config'
+import { $id } from './$id.js'
+import { AzureFOTA } from './AzureFOTA.js'
+import { Config } from './Config.js'
 
 export const AzureDesired = Type.Object(
 	{

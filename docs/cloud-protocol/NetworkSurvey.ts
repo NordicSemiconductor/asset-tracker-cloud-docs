@@ -1,7 +1,7 @@
 import { Type } from '@sinclair/typebox'
-import { $id } from './$id'
-import { NeighboringCellMeasurements } from './NeighboringCellMeasurements'
-import { WiFiSiteSurvey } from './WiFiSiteSurvey'
+import { $id } from './$id.js'
+import { NeighboringCellMeasurements } from './NeighboringCellMeasurements.js'
+import { WiFiSiteSurvey } from './WiFiSiteSurvey.js'
 
 export const NetworkSurvey = Type.Union(
 	[

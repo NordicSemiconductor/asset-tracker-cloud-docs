@@ -1,7 +1,7 @@
 import { Type } from '@sinclair/typebox'
-import { $id } from './$id'
-import { Config } from './Config'
-import { Battery, Device, Environment, GNSS, RoamingInfo } from './Reported'
+import { $id } from './$id.js'
+import { Config } from './Config.js'
+import { Battery, Device, Environment, GNSS, RoamingInfo } from './Reported.js'
 
 export const AzureReported = Type.Intersect(
 	[

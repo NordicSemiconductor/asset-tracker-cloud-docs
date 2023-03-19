@@ -1,5 +1,5 @@
 import { Static, Type } from '@sinclair/typebox'
-import { validateWithType } from './validateWithType'
+import { validateWithType } from './validateWithType.js'
 
 const typedInputSchema = Type.Object(
 	{

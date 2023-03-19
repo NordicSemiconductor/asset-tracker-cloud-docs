@@ -1,12 +1,12 @@
 import { Type } from '@sinclair/typebox'
-import { $id } from './$id'
+import { $id } from './$id.js'
 import {
 	Area,
 	Cell,
 	MCC,
 	MNC,
 	PhysicalCell,
-} from './NeighboringCellMeasurements'
+} from './NeighboringCellMeasurements.js'
 
 /**
  * The A-GPS data types to return.

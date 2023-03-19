@@ -1,7 +1,7 @@
 import chalk from 'chalk'
 import { mkdirSync, writeFileSync } from 'fs'
 import path from 'path'
-import { schemas } from '../docs/cloud-protocol/schemas'
+import { schemas } from '../docs/cloud-protocol/schemas.js'
 
 try {
 	mkdirSync(path.join(process.cwd(), 'build', 'html', 'docs', 'cloud-protocol'))

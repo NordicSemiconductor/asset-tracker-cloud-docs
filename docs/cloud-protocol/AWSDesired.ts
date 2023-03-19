@@ -1,6 +1,6 @@
 import { Type } from '@sinclair/typebox'
-import { $id } from './$id'
-import { Config } from './Config'
+import { $id } from './$id.js'
+import { Config } from './Config.js'
 
 export const AWSDesired = Type.Object(
 	{

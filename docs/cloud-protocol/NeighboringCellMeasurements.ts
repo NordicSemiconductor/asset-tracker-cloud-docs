@@ -1,6 +1,6 @@
 import { Type } from '@sinclair/typebox'
-import { $id } from './$id'
-import { Timestamp } from './Timestamp'
+import { $id } from './$id.js'
+import { Timestamp } from './Timestamp.js'
 
 export const RSRP = Type.Number({
 	minimum: -199,
