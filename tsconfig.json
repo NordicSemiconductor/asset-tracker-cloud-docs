@@ -18,7 +18,9 @@
     "importsNotUsedAsValues": "error",
     "baseUrl": ".",
     "paths": {
-      "@nordicsemiconductor/asset-tracker-cloud-docs/protocol": ["index.d.ts"]
+      "@nordicsemiconductor/asset-tracker-cloud-docs/protocol": [
+        "protocol.d.ts"
+      ]
     }
   }
 }
