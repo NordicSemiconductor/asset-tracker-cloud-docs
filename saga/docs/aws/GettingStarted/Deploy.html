@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Install the nRF Asset Tracker into your AWS account &mdash; nRF Asset Tracker v28.1.4 documentation</title>
+  <title>Install the nRF Asset Tracker into your AWS account &mdash; nRF Asset Tracker v28.1.5 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/nordic.css" type="text/css" /> 
   
@@ -244,10 +244,7 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ~/nrf-asset-tracker/aws</span>
 
 <span class="c1"># One-time operation to support large CloudFormation templates in CDK</span>
-npx cdk -a <span class="s1">&#39;node --loader tsx cdk/cloudformation-sourcecode.ts&#39;</span> bootstrap aws://<span class="sb">`</span>aws sts get-caller-identity <span class="p">|</span> jq -r <span class="s1">&#39;.Account&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>/<span class="si">${</span><span class="nv">AWS_REGION</span><span class="si">}</span>
-
-<span class="c1"># Create the S3 Bucket for publishing the lambdas</span>
-npx cdk -a <span class="s1">&#39;node --loader tsx cdk/cloudformation-sourcecode.ts&#39;</span> deploy
+npx cdk bootstrap aws://<span class="sb">`</span>aws sts get-caller-identity <span class="p">|</span> jq -r <span class="s1">&#39;.Account&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>/<span class="si">${</span><span class="nv">AWS_REGION</span><span class="si">}</span>
 
 <span class="c1"># Deploy the example (see the note below)</span>
 <span class="c1">#   It will prompt:</span>
