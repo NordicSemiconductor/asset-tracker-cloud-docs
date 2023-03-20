@@ -10,11 +10,8 @@ The following commands set up the necessary resources in your AWS account:
     # ~/nrf-asset-tracker/aws
 
     # One-time operation to support large CloudFormation templates in CDK
-    npx cdk -a 'node --loader tsx cdk/cloudformation-sourcecode.ts' bootstrap aws://`aws sts get-caller-identity | jq -r '.Account' | tr -d '\n'`/${AWS_REGION}
+    npx cdk bootstrap aws://`aws sts get-caller-identity | jq -r '.Account' | tr -d '\n'`/${AWS_REGION}
 
-    # Create the S3 Bucket for publishing the lambdas
-    npx cdk -a 'node --loader tsx cdk/cloudformation-sourcecode.ts' deploy
-    
     # Deploy the example (see the note below)
     #   It will prompt:
     #     Do you wish to deploy these changes (y/n)?
