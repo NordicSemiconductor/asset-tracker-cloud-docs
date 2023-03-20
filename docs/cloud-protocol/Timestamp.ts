@@ -1,4 +1,4 @@
-import { TSchema, Type } from '@sinclair/typebox'
+import { Type, type TSchema } from '@sinclair/typebox'
 
 export const Timestamp = (qualifier?: string): TSchema =>
 	Type.Integer({

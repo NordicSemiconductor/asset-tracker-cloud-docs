@@ -1,5 +1,5 @@
 import type { Static, TSchema } from '@sinclair/typebox'
-import Ajv, { ErrorObject } from 'ajv'
+import Ajv, { type ErrorObject } from 'ajv'
 
 const ajv = new Ajv()
 // see @https://github.com/sinclairzx81/typebox/issues/51
