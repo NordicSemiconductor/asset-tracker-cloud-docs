@@ -121,48 +121,68 @@
       "type": "object",
       "properties": {
         "v": {
-          "type": "object",
-          "properties": {
-            "imei": {
-              "description": "Board IMEI",
-              "minLength": 15,
-              "maxLength": 16,
-              "examples": [
-                "352656106111232"
-              ],
-              "type": "string"
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "appV": {
+                  "description": "Firmware version",
+                  "minLength": 1,
+                  "examples": [
+                    "v1.0.0-rc1-327-g6fc8c16b239f"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "appV"
+              ]
             },
-            "iccid": {
-              "description": "SIM ICCID",
-              "minLength": 19,
-              "maxLength": 20,
-              "examples": [
-                "89450421180216216095"
-              ],
-              "type": "string"
-            },
-            "modV": {
-              "description": "Modem Firmware Version",
-              "minLength": 1,
-              "examples": [
-                "mfw_nrf9160_1.0.0"
-              ],
-              "type": "string"
-            },
-            "brdV": {
-              "description": "Board Version",
-              "minLength": 1,
-              "examples": [
-                "thingy91_nrf9160"
-              ],
-              "type": "string"
+            {
+              "type": "object",
+              "properties": {
+                "imei": {
+                  "description": "Board IMEI",
+                  "minLength": 15,
+                  "maxLength": 16,
+                  "examples": [
+                    "352656106111232"
+                  ],
+                  "type": "string"
+                },
+                "iccid": {
+                  "description": "SIM ICCID",
+                  "minLength": 19,
+                  "maxLength": 20,
+                  "examples": [
+                    "89450421180216216095"
+                  ],
+                  "type": "string"
+                },
+                "modV": {
+                  "description": "Modem Firmware Version",
+                  "minLength": 1,
+                  "examples": [
+                    "mfw_nrf9160_1.0.0"
+                  ],
+                  "type": "string"
+                },
+                "brdV": {
+                  "description": "Board Version",
+                  "minLength": 1,
+                  "examples": [
+                    "thingy91_nrf9160"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "imei",
+                "iccid",
+                "modV",
+                "brdV"
+              ]
             }
-          },
-          "required": [
-            "imei",
-            "iccid",
-            "modV",
-            "brdV"
           ]
         },
         "ts": {
