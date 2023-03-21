@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/state.reported.aws.schema.json",
+  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v2.2.x/docs/cloud-protocol/state.reported.aws.schema.json",
   "title": "Asset Tracker v2 Device Data and Configuration for AWS",
   "description": "Describes the data published by the device and its configuration options of the AWS flavour of the nRF Asset Tracker.",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/state.reported.schema.json"
+      "$ref": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v2.2.x/docs/cloud-protocol/state.reported.schema.json"
     },
     {
       "type": "object",
