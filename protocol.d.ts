@@ -1,7 +1,7 @@
 import { Static } from '@sinclair/typebox'
 import { AGPSRequest } from './docs/cloud-protocol/AGPSRequest'
 import { AWSDesired } from './docs/cloud-protocol/AWSDesired'
-import { AWSReported } from './docs/cloud-protocol/AWSReported'
+import { AWSDevice, AWSReported } from './docs/cloud-protocol/AWSReported'
 import { AzureDesired } from './docs/cloud-protocol/AzureDesired'
 import { AzureFOTA } from './docs/cloud-protocol/AzureFOTA'
 import { AzureReported } from './docs/cloud-protocol/AzureReported'
@@ -56,6 +56,7 @@ export type PGPSResponseData = Static<typeof PGPSResponse>
 export type WiFiSiteSurveyData = Static<typeof WiFiSiteSurvey>
 export type BatteryData = Static<typeof Battery>
 export type DeviceData = Static<typeof Device>
+export type AWSDeviceData = Static<typeof AWSDevice>
 export type EnvironmentData = Static<typeof Environment>
 export type GNSSData = Static<typeof GNSS>
 export type RoamingInfoData = Static<typeof RoamingInfo>

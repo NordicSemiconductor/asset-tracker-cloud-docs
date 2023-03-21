@@ -12,7 +12,7 @@ import { Timestamp } from './Timestamp.js'
 
 export const AWSDevice = Type.Object(
 	{
-		v: Type.Union([
+		v: Type.Intersect([
 			Type.Object({
 				appV: Type.String({
 					description: 'Firmware version',
