@@ -6,8 +6,8 @@ import { WiFiSiteSurvey } from './WiFiSiteSurvey.js'
 export const NetworkSurvey = Type.Object(
 	{
 		// at least one of them will always be set, but this notation simplifies the access
-		lte: Type.Optional(Type.Ref(NeighboringCellMeasurements)),
-		wifi: Type.Optional(Type.Ref(WiFiSiteSurvey)),
+		lte: Type.Optional(NeighboringCellMeasurements),
+		wifi: Type.Optional(WiFiSiteSurvey),
 	},
 	{
 		$schema: 'http://json-schema.org/draft-07/schema#',

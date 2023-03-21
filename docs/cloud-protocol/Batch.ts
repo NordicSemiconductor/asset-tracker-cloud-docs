@@ -6,30 +6,30 @@ import { Battery, Environment, GNSS, RoamingInfo } from './Reported.js'
 export const Batch = Type.Object(
 	{
 		bat: Type.Optional(
-			Type.Array(Type.Ref(Battery), {
+			Type.Array(Battery, {
 				description: 'Battery readings',
 			}),
 		),
 		gnss: Type.Optional(
-			Type.Array(Type.Ref(GNSS), {
+			Type.Array(GNSS, {
 				description: 'GNSS readings',
 			}),
 		),
 		roam: Type.Optional(
-			Type.Array(Type.Ref(RoamingInfo), {
+			Type.Array(RoamingInfo, {
 				description: 'Roaming information updates.',
 			}),
 		),
 		btn: Type.Optional(
-			Type.Array(Type.Ref(ButtonPress), {
+			Type.Array(ButtonPress, {
 				description: 'Button presses.',
 			}),
 		),
 		impact: Type.Optional(
-			Type.Array(Type.Ref(Impact), { description: 'Motion impact events.' }),
+			Type.Array(Impact, { description: 'Motion impact events.' }),
 		),
 		env: Type.Optional(
-			Type.Array(Type.Ref(Environment), {
+			Type.Array(Environment, {
 				description: 'Environmental sensors.',
 			}),
 		),
