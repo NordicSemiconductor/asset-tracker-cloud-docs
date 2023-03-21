@@ -9,42 +9,324 @@
       "description": "Battery readings",
       "type": "array",
       "items": {
-        "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/battery.schema.json"
+        "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/battery.schema.json",
+        "description": "Battery reading in millivolt",
+        "type": "object",
+        "properties": {
+          "v": {
+            "description": "Battery reading read by the modem",
+            "minimum": 1,
+            "type": "integer"
+          },
+          "ts": {
+            "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+            "minimum": 1234567890123,
+            "examples": [
+              1584533788029
+            ],
+            "type": "integer"
+          }
+        },
+        "required": [
+          "v",
+          "ts"
+        ]
       }
     },
     "gnss": {
       "description": "GNSS readings",
       "type": "array",
       "items": {
-        "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/GNSS.schema.json"
+        "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/GNSS.schema.json",
+        "description": "The GNSS reading",
+        "type": "object",
+        "properties": {
+          "v": {
+            "type": "object",
+            "properties": {
+              "lng": {
+                "description": "Longitude",
+                "minimum": -180,
+                "maximum": 180,
+                "type": "number"
+              },
+              "lat": {
+                "description": "Latitude",
+                "minimum": -90,
+                "maximum": 90,
+                "type": "number"
+              },
+              "acc": {
+                "description": "Accuracy (2D 1-sigma) in meters",
+                "minimum": 0,
+                "type": "number"
+              },
+              "alt": {
+                "description": "Altitude above WGS-84 ellipsoid in meters",
+                "type": "number"
+              },
+              "spd": {
+                "description": "Horizontal speed in meters",
+                "minimum": 0,
+                "type": "number"
+              },
+              "hdg": {
+                "description": "Heading of movement in degrees",
+                "minimum": 0,
+                "maximum": 360,
+                "type": "number"
+              }
+            },
+            "required": [
+              "lng",
+              "lat",
+              "acc",
+              "alt",
+              "spd",
+              "hdg"
+            ]
+          },
+          "ts": {
+            "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+            "minimum": 1234567890123,
+            "examples": [
+              1584533788029
+            ],
+            "type": "integer"
+          }
+        },
+        "required": [
+          "v",
+          "ts"
+        ]
       }
     },
     "roam": {
       "description": "Roaming information updates.",
       "type": "array",
       "items": {
-        "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/roaming.schema.json"
+        "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/roaming.schema.json",
+        "description": "Roaming information. This information shall be updated by the device every time it publishes primary application data. It is considered low-priority information so it should always be sent after the primary application data has been published.",
+        "type": "object",
+        "properties": {
+          "v": {
+            "type": "object",
+            "properties": {
+              "band": {
+                "description": "E-UTRA Absolute Radio Frequency Channel Number (EARFCN) of the current cell where the EARFCN is as defined in 3GPP TS 36.101. LTE carrier channel number for unique identification of LTE band and carrier frequency.",
+                "minimum": 1,
+                "examples": [
+                  262143
+                ],
+                "type": "integer"
+              },
+              "nw": {
+                "description": "Network mode",
+                "minLength": 1,
+                "examples": [
+                  "LTE-M",
+                  "NB-IoT"
+                ],
+                "type": "string"
+              },
+              "rsrp": {
+                "minimum": -199,
+                "maximum": 0,
+                "title": "RSRP",
+                "description": "Reference Signal Received Power (RSRP). The average power level in dBm received from a single reference signal in an LTE (Long-term Evolution) network. Typically this value ranges from -140 to -40 dBm. ",
+                "examples": [
+                  -97,
+                  -104
+                ],
+                "type": "number"
+              },
+              "area": {
+                "minimum": 1,
+                "description": "Area code.",
+                "examples": [
+                  12
+                ],
+                "type": "integer"
+              },
+              "mccmnc": {
+                "description": "Mobile country code and mobile network code",
+                "minimum": 10000,
+                "maximum": 999999,
+                "examples": [
+                  24202,
+                  310410
+                ],
+                "type": "integer"
+              },
+              "cell": {
+                "description": "The cell ID the User Equipment (UE) is camped on. 4-byte Evolved Terrestrial Radio Access Network (E-UTRAN) cell ID.",
+                "minimum": 1,
+                "examples": [
+                  33703719
+                ],
+                "type": "integer"
+              },
+              "ip": {
+                "description": "IP address",
+                "minLength": 1,
+                "examples": [
+                  "10.81.183.99",
+                  "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+                  "2001:db8:85a3::8a2e:370:7334"
+                ],
+                "type": "string"
+              },
+              "eest": {
+                "type": "integer",
+                "enum": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "description": "The %CONEVAL AT command returns amongst other data the energy estimate: Relative estimated energy consumption of data transmission compared to nominal consumption. A higher value means smaller energy consumption. 5: Difficulties in setting up connections. Maximum number of repetitions might be needed for data. 6: Poor conditions. Setting up a connection might require retries and a higher number of repetitions for data. 7: Normal conditions for cIoT device. No repetitions for data or only a few repetitions in the worst case. 8: Good conditions. Possibly very good conditions for small amounts of data. 9: Very good conditions. Efficient data transfer estimated also for larger amounts of data.",
+                "examples": [
+                  5,
+                  7
+                ]
+              }
+            },
+            "required": [
+              "band",
+              "nw",
+              "rsrp",
+              "area",
+              "mccmnc",
+              "cell",
+              "ip"
+            ]
+          },
+          "ts": {
+            "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+            "minimum": 1234567890123,
+            "examples": [
+              1584533788029
+            ],
+            "type": "integer"
+          }
+        },
+        "required": [
+          "v",
+          "ts"
+        ]
       }
     },
     "btn": {
       "description": "Button presses.",
       "type": "array",
       "items": {
-        "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/button.schema.json"
+        "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/button.schema.json",
+        "description": "The number and the time a button was pushed",
+        "type": "object",
+        "properties": {
+          "v": {
+            "description": "ID of the button",
+            "minimum": 1,
+            "examples": [
+              1
+            ],
+            "type": "integer"
+          },
+          "ts": {
+            "description": "Timestamp as Unix epoch with millisecond precision (UTC) when the button was released",
+            "minimum": 1234567890123,
+            "examples": [
+              1584533788029
+            ],
+            "type": "integer"
+          }
+        },
+        "required": [
+          "v",
+          "ts"
+        ]
       }
     },
     "impact": {
       "description": "Motion impact events.",
       "type": "array",
       "items": {
-        "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/impact.schema.json"
+        "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/impact.schema.json",
+        "description": "The magnitude and time of a motion impact event",
+        "type": "object",
+        "properties": {
+          "v": {
+            "description": "Magnitude of the impact in g",
+            "minimum": 0,
+            "examples": [
+              0.5,
+              300
+            ],
+            "type": "number"
+          },
+          "ts": {
+            "description": "Timestamp as Unix epoch with millisecond precision (UTC) when the impact was detected",
+            "minimum": 1234567890123,
+            "examples": [
+              1584533788029
+            ],
+            "type": "integer"
+          }
+        },
+        "required": [
+          "v",
+          "ts"
+        ]
       }
     },
     "env": {
       "description": "Environmental sensors.",
       "type": "array",
       "items": {
-        "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/environment.schema.json"
+        "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/environment.schema.json",
+        "description": "Environment sensor readings",
+        "type": "object",
+        "properties": {
+          "v": {
+            "description": "The individual sensor readings",
+            "type": "object",
+            "properties": {
+              "temp": {
+                "description": "Temperature reading from external sensor",
+                "type": "number"
+              },
+              "hum": {
+                "description": "Humidity reading from external sensor",
+                "minimum": 1,
+                "maximum": 100,
+                "type": "number"
+              },
+              "atmp": {
+                "description": "Atmospheric pressure reading from external sensor in kPa",
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "required": [
+              "temp",
+              "hum",
+              "atmp"
+            ]
+          },
+          "ts": {
+            "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+            "minimum": 1234567890123,
+            "examples": [
+              1584533788029
+            ],
+            "type": "integer"
+          }
+        },
+        "required": [
+          "v",
+          "ts"
+        ]
       }
     }
   }
