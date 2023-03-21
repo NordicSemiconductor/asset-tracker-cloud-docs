@@ -3,19 +3,12 @@ import { $id } from './$id.js'
 import { NeighboringCellMeasurements } from './NeighboringCellMeasurements.js'
 import { WiFiSiteSurvey } from './WiFiSiteSurvey.js'
 
-export const NetworkSurvey = Type.Union(
-	[
-		Type.Object({
-			lte: Type.Ref(NeighboringCellMeasurements),
-		}),
-		Type.Object({
-			wifi: Type.Ref(WiFiSiteSurvey),
-		}),
-		Type.Object({
-			lte: Type.Ref(NeighboringCellMeasurements),
-			wifi: Type.Ref(WiFiSiteSurvey),
-		}),
-	],
+export const NetworkSurvey = Type.Object(
+	{
+		// at least one of them will always be set, but this notation simplifies the access
+		lte: Type.Optional(Type.Ref(NeighboringCellMeasurements)),
+		wifi: Type.Optional(Type.Ref(WiFiSiteSurvey)),
+	},
 	{
 		$schema: 'http://json-schema.org/draft-07/schema#',
 		$id: $id('network-survey'),
