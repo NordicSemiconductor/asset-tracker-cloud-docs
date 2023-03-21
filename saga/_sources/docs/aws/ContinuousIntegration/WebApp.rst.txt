@@ -82,7 +82,7 @@ You need to configure AWS credentials as `GitHub environment secrets <https://do
 
    .. code-block:: bash
 
-     ./cli.sh web-app-ci -s
+     ./cli.sh web-app-ci
 
 #. Set the secrets:
 
@@ -91,8 +91,7 @@ You need to configure AWS credentials as `GitHub environment secrets <https://do
     Set the following `secrets <https://docs.github.com/en/rest/reference/actions#secrets>`_ to an `environment <https://docs.github.com/en/actions/reference/environments#creating-an-environment>`_ called ``production`` in your fork of the nRF Asset Tracker for AWS:
 
     - ``AWS_REGION``
-    - ``AWS_ACCESS_KEY_ID``
-    - ``AWS_SECRET_ACCESS_KEY``
+    - ``AWS_ROLE``
     - ``WEBAPP_STACK_NAME``
 
   - Alternatively, set the secrets using the `GitHub CLI <https://cli.github.com/>`_:
@@ -102,6 +101,5 @@ You need to configure AWS credentials as `GitHub environment secrets <https://do
     .. code-block:: bash
 
       gh secret set AWS_REGION --env production --body "${AWS_REGION}"
-      gh secret set AWS_ACCESS_KEY_ID --env production --body "${AWS_ACCESS_KEY_ID}"
-      gh secret set AWS_SECRET_ACCESS_KEY --env production --body "${AWS_SECRET_ACCESS_KEY}"
+      gh secret set AWS_ACCESS_KEY_ID --env production --body "${AWS_ROLE}"
       gh secret set WEBAPP_STACK_NAME --env production --body "${WEBAPP_STACK_NAME}"

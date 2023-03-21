@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Continuous integration of the AWS web application &mdash; nRF Asset Tracker v28.3.6 documentation</title>
+  <title>Continuous integration of the AWS web application &mdash; nRF Asset Tracker v28.4.0 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/nordic.css" type="text/css" /> 
   
@@ -300,7 +300,7 @@ You need to configure AWS credentials as <a class="reference external" href="htt
 </div>
 </li>
 <li><p>Acquire the secrets using the nRF Asset Tracker for AWS CLI:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cli.sh web-app-ci -s
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cli.sh web-app-ci
 </pre></div>
 </div>
 </li>
@@ -312,16 +312,14 @@ You need to configure AWS credentials as <a class="reference external" href="htt
 <p>Set the following <a class="reference external" href="https://docs.github.com/en/rest/reference/actions#secrets">secrets</a> to an <a class="reference external" href="https://docs.github.com/en/actions/reference/environments#creating-an-environment">environment</a> called <code class="docutils literal notranslate"><span class="pre">production</span></code> in your fork of the nRF Asset Tracker for AWS:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">AWS_REGION</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AWS_ACCESS_KEY_ID</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AWS_SECRET_ACCESS_KEY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AWS_ROLE</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">WEBAPP_STACK_NAME</span></code></p></li>
 </ul>
 </li>
 <li><p>Alternatively, set the secrets using the <a class="reference external" href="https://cli.github.com/">GitHub CLI</a>:</p>
 <p>You can use the <a class="reference external" href="https://cli.github.com/">GitHub CLI</a>  with the environment settings from above (make sure to create the <code class="docutils literal notranslate"><span class="pre">production</span></code> <a class="reference external" href="https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment">deployment environment</a> in your repository first):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh secret <span class="nb">set</span> AWS_REGION --env production --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">AWS_REGION</span><span class="si">}</span><span class="s2">&quot;</span>
-gh secret <span class="nb">set</span> AWS_ACCESS_KEY_ID --env production --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">AWS_ACCESS_KEY_ID</span><span class="si">}</span><span class="s2">&quot;</span>
-gh secret <span class="nb">set</span> AWS_SECRET_ACCESS_KEY --env production --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="si">}</span><span class="s2">&quot;</span>
+gh secret <span class="nb">set</span> AWS_ACCESS_KEY_ID --env production --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">AWS_ROLE</span><span class="si">}</span><span class="s2">&quot;</span>
 gh secret <span class="nb">set</span> WEBAPP_STACK_NAME --env production --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">WEBAPP_STACK_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
