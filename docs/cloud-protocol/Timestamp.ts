@@ -1,6 +1,6 @@
-import { Type, type TSchema } from '@sinclair/typebox'
+import { Type, type TInteger } from '@sinclair/typebox'
 
-export const Timestamp = (qualifier?: string): TSchema =>
+export const Timestamp = (qualifier?: string): TInteger =>
 	Type.Integer({
 		description: `Timestamp as Unix epoch with millisecond precision (UTC)${
 			qualifier !== undefined ? ` ${qualifier}` : ''
