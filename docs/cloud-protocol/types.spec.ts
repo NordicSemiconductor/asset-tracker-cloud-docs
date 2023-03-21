@@ -13,8 +13,8 @@ import { NeighboringCellMeasurements } from './NeighboringCellMeasurements.js'
 import { NetworkSurvey } from './NetworkSurvey.js'
 import { PGPSRequest } from './PGPSRequest.js'
 import { PGPSResponse } from './PGPSResponse.js'
-import { validateWithType } from './validateWithType.js'
 import { WiFiSiteSurvey } from './WiFiSiteSurvey.js'
+import { validateWithType } from './validateWithType.js'
 
 const f = (name: string, isSchema = false): string =>
 	JSON.parse(
