@@ -3,43 +3,13 @@
   "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/network-survey.schema.json",
   "title": "Asset Tracker v2 network surveys",
   "description": "Describes the format used by the device to report neighboring cell measurements and Wi-Fi site surveys in one message.",
-  "anyOf": [
-    {
-      "type": "object",
-      "properties": {
-        "lte": {
-          "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/ncellmeas.schema.json"
-        }
-      },
-      "required": [
-        "lte"
-      ]
+  "type": "object",
+  "properties": {
+    "lte": {
+      "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/ncellmeas.schema.json"
     },
-    {
-      "type": "object",
-      "properties": {
-        "wifi": {
-          "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/wifi-site-survey.schema.json"
-        }
-      },
-      "required": [
-        "wifi"
-      ]
-    },
-    {
-      "type": "object",
-      "properties": {
-        "lte": {
-          "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/ncellmeas.schema.json"
-        },
-        "wifi": {
-          "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/wifi-site-survey.schema.json"
-        }
-      },
-      "required": [
-        "lte",
-        "wifi"
-      ]
+    "wifi": {
+      "$ref": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/wifi-site-survey.schema.json"
     }
-  ]
+  }
 }
