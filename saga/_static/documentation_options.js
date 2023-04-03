@@ -1,6 +1,6 @@
 var DOCUMENTATION_OPTIONS = {
     URL_ROOT: document.getElementById("documentation_options").getAttribute('data-url_root'),
-    VERSION: 'df9d4ac7db73d57bf8d92342e37c3b2528a45bd9',
+    VERSION: 'e88e8bd24b1eecbba8749bc6131964f0b4e738e2',
     LANGUAGE: 'None',
     COLLAPSE_INDEX: false,
     BUILDER: 'html',
