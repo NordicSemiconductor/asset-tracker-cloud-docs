@@ -1,0 +1,62 @@
+name: Publish documentation to Zoomin
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: Commit hash you want to deploy
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: Publish the documentation
+
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Download artifact
+        id: download
+        uses: actions/download-artifact@v3
+        with:
+          name: asset-tracker-docs-${{ github.event.inputs.commit }}
+          path: "artifact"
+
+      - name: Install dependencies
+        run: |
+          sudo apt install -y sshpass
+
+      - name: Add custom.properties and zip
+        env:
+          ZOOMIN_TITLE: ${{ vars.ZOOMIN_TITLE }}
+          ZOOMIN_BOOK_TITLE: ${{ vars.ZOOMIN_BOOK_TITLE }}
+        run: |
+          cd ${{ steps.download.outputs.download-path }}
+          touch custom.properties
+          NORMALIZED_ZOOMIN_TITLE=${ZOOMIN_TITLE:-nrf-asset-tracker}
+          NORMALIZED_ZOOMIN_BOOK_TITLE=${ZOOMIN_BOOK_TITLE:-nRF Asset Tracker}
+          echo "manual.title=${NORMALIZED_ZOOMIN_TITLE// /_}" >> custom.properties
+          echo "booktitle=${NORMALIZED_ZOOMIN_BOOK_TITLE}" >> custom.properties
+
+          ZIP_FILENAME=${{ github.workspace }}/zoomin_nrf_asset_tracker_${{ github.sha }}.zip
+          echo "ZIP_FILENAME=${ZIP_FILENAME}" >> $GITHUB_ENV
+          zip -r -q "${ZIP_FILENAME}" .
+
+      - name: Upload Zoomin documentation
+        run: |
+          # Trust server
+          mkdir ~/.ssh
+          ssh-keyscan upload.zoominsoftware.io >> ~/.ssh/known_hosts
+
+          # Prepare key
+          echo "${{ secrets.ZOOMIN_KEY }}" | base64 -d > zoomin_key
+          chmod 600 zoomin_key
+
+          # Upload to Zoomin
+          sftp -v -i zoomin_key nordic@upload.zoominsoftware.io <<EOF
+          cd /nordic-be-dev.zoominsoftware.io/sphinx-html/incoming
+          put ${{ env.ZIP_FILENAME }}
+          quit
+          EOF
