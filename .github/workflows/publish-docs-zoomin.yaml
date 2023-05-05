@@ -1,6 +1,8 @@
 name: Publish documentation to Zoomin
 
 on:
+  push:
+
   workflow_dispatch:
     inputs:
       commit:
