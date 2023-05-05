@@ -1,9 +1,11 @@
 name: PR checks
 
-on: pull_request
+on:
+  pull_request:
 
 permissions:
   packages: write
+  actions: write
 
 jobs:
   docker:
@@ -82,6 +84,12 @@ jobs:
           if-no-files-found: error
           name: asset-tracker-docs-${{ github.sha }}
           path: build/html/
+
+      - name: Trigger publish docs zoomin workflow
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run publish-docs-zoomin.yaml --field name=asset-tracker-docs-${{ github.sha }} --ref ${{ github.ref }}
 
   test:
     runs-on: ubuntu-22.04
