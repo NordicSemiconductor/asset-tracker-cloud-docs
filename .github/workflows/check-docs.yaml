@@ -87,7 +87,7 @@ jobs:
       - name: Trigger publish docs zoomin workflow
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow run publish-docs-zoomin.yaml --field commit ${{ github.sha }}
+        run: gh workflow run publish-docs-zoomin.yaml --field commit=${{ github.sha }}
 
   test:
     runs-on: ubuntu-22.04
