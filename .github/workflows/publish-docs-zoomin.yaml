@@ -38,7 +38,7 @@ jobs:
         run: |
           cd ${{ env.DOWNLOAD_DIR }}
           touch custom.properties
-          echo "manual.title=${ZOOMIN_TITLE// /_}" >> custom.properties
+          echo "manual.name=${ZOOMIN_TITLE// /_}" >> custom.properties
           echo "booktitle=${ZOOMIN_BOOK_TITLE}" >> custom.properties
 
           ZIP_FILENAME=${{ github.workspace }}/zoomin_nrf_asset_tracker_${{ github.sha }}.zip
