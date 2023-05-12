@@ -85,12 +85,6 @@ jobs:
           name: asset-tracker-docs-${{ github.sha }}
           path: build/html/
 
-      - name: Trigger publish docs zoomin workflow
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh workflow run publish-docs-zoomin.yaml --field name=asset-tracker-docs-${{ github.sha }} --ref ${{ github.head_ref }}
-
   test:
     runs-on: ubuntu-22.04
 
