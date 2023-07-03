@@ -47,17 +47,20 @@ jobs:
           zip -r -q "${ZIP_FILENAME}" .
 
       - name: Upload Zoomin documentation
+        env:
+          ZOOMIN_SFTP_SERVER:
+            ${{ vars.ZOOMIN_SFTP_SERVER || 'upload-v1.zoominsoftware.io' }}
         run: |
           # Trust server
           mkdir ~/.ssh
-          ssh-keyscan upload.zoominsoftware.io >> ~/.ssh/known_hosts
+          ssh-keyscan ${ZOOMIN_SFTP_SERVER} >> ~/.ssh/known_hosts
 
           # Prepare key
           echo "${{ secrets.ZOOMIN_KEY }}" | base64 -d > zoomin_key
           chmod 600 zoomin_key
 
           # Upload to Zoomin
-          sftp -v -i zoomin_key nordic@upload.zoominsoftware.io <<EOF
+          sftp -v -i zoomin_key nordic@${ZOOMIN_SFTP_SERVER} <<EOF
           cd /nordic-be-dev.zoominsoftware.io/sphinx-html/incoming
           put ${{ env.ZIP_FILENAME }}
           quit
