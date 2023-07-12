@@ -36,7 +36,7 @@
     "@types/ajv": "1.0.0",
     "@types/glob": "8.1.0",
     "@types/jest": "29.5.3",
-    "@types/node": "20.4.1",
+    "@types/node": "20.4.2",
     "chalk": "5.3.0",
     "glob": "10.3.3",
     "jest": "29.6.1",
