@@ -98,7 +98,7 @@ Use the following commands:
     :class: highlight
 
     cat *location of your Ground Fix Service Key file* | ./cli.sh configure thirdParty nrfcloud groundFixServiceKey
-    ./cli.sh configure context stack nrfCloudGroundFix 1
+    ./cli.sh configure context stack nrfcloudGroundFix 1
     npx cdk deploy --all
 
 This will setup a StateMachine, which resolves the geolocation for Wi-Fi site surveys sent by devices.
