@@ -85,6 +85,15 @@ jobs:
           name: asset-tracker-docs-${{ github.sha }}
           path: build/html/
 
+      - name: Trigger publish docs zoomin workflow
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF##*/}}
+          echo "Branch Name=${BRANCH_NAME}"
+
+          gh workflow run publish-docs-zoomin.yaml --field name=asset-tracker-docs-${{ github.sha }} --field version="${{ github.event.pull_request.title }}" --ref ${BRANCH_NAME}
+
   test:
     runs-on: ubuntu-22.04
 

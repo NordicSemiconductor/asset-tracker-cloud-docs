@@ -6,6 +6,9 @@ on:
       name:
         description: Artifact name to be published to Zoomin
         required: true
+      version:
+        description: If provided, the version will be appended to the title
+        required: false
 
 permissions:
   contents: write
@@ -36,11 +39,19 @@ jobs:
           ZOOMIN_TITLE: ${{ vars.ZOOMIN_TITLE || 'nrf-asset-tracker' }}
           ZOOMIN_BOOK_TITLE:
             ${{ vars.ZOOMIN_BOOK_TITLE || 'nRF Asset Tracker' }}
+          ZOOMIN_DOCS_VERSION: ${{ github.event.inputs.version }}
         run: |
+          [[ -n "$ZOOMIN_DOCS_VERSION" ]] && ZOOMIN_TITLE="${ZOOMIN_TITLE}-${ZOOMIN_DOCS_VERSION}"
+          [[ -n "$ZOOMIN_DOCS_VERSION" ]] && ZOOMIN_BOOK_TITLE="${ZOOMIN_BOOK_TITLE} ${ZOOMIN_DOCS_VERSION}"
+          NORMALIZED_ZOOMIN_TITLE=${ZOOMIN_TITLE// /_}
+
           cd ${{ env.DOWNLOAD_DIR }}
           touch custom.properties
-          echo "manual.name=${ZOOMIN_TITLE// /_}" >> custom.properties
+          echo "manual.name=${NORMALIZED_ZOOMIN_TITLE}" >> custom.properties
           echo "booktitle=${ZOOMIN_BOOK_TITLE}" >> custom.properties
+
+          echo "custom.properties"
+          cat custom.properties
 
           ZIP_FILENAME=${{ github.workspace }}/zoomin_nrf_asset_tracker_${{ github.sha }}.zip
           echo "ZIP_FILENAME=${ZIP_FILENAME}" >> $GITHUB_ENV
@@ -61,7 +72,7 @@ jobs:
 
           # Upload to Zoomin
           sftp -v -i zoomin_key nordic@${ZOOMIN_SFTP_SERVER} <<EOF
-          cd /nordic-be-dev.zoominsoftware.io/sphinx-html/incoming
+          cd nordic-be-dev.zoominsoftware.io/sphinx-html/incoming
           put ${{ env.ZIP_FILENAME }}
           quit
           EOF
