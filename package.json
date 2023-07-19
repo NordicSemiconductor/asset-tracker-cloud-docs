@@ -92,7 +92,7 @@
   },
   "prettier": "@nordicsemiconductor/asset-tracker-cloud-code-style/.prettierrc",
   "dependencies": {
-    "@sinclair/typebox": "0.29.4",
+    "@sinclair/typebox": "0.29.6",
     "ajv": "8.12.0"
   },
   "files": [
