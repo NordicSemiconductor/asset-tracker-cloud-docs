@@ -39,24 +39,9 @@ Thus, an approximate location can be sufficient.
 An approximate position is always better than no location information (if the device cannot acquire a GNSS fix).
 Therefore, it is beneficial to geolocate the current mobile network cell.
 
-Geolocating cells using other devices
-=====================================
-
-Resolving the cell location on the cloud backend has unique advantages over resolving it on the device.
-It removes the limitations caused by the firmware image size and the memory usage on the device and it can attend to other devices after GPS fixes.
-If many devices are closely located, it saves a lot of resources since a cell's geolocation needs to be resolved only once and then it can be made available to all the devices.
-This must be the preferred approach when developing an IoT product that has location-specific features and relies on the approximate location of cell towers to operate.
-If a device knows its cell tower, it is normally safe to assume that it has an internet connection to request the approximate location from the cloud.
-This allows to offload expensive calculations to the cloud and reduce the resource usage on the device.
-
-In the nRF Asset Tracker, whenever a device reports a GNSS fix, the position is stored together with the cell ID.
-An up-to-date cell location database independent of a third-party API is built over time.
-This database is used as the primary means of geolocating cells in the nRF Asset Tracker.
-The third-party API will be called (if it is enabled) only if a cell has not been geolocated by a device previously.
-
 Geolocating cells using nRF Cloud Location Services
 ===================================================
 
 `nRF Cloud <https://nrfcloud.com/>`_ has a database of cell tower locations and provide an API to query their locations.
 
-The nRF Asset Tracker implements the optional resolution on the cloud side for :ref:`AWS <aws-nrf-cloud-location-services>` and :ref:`Azure <azure-nrf-cloud-location-services>` for the cells that have not been geolocated by the devices.
+The nRF Asset Tracker implements the resolution on the cloud side for :ref:`AWS <aws-nrf-cloud-location-services>` and :ref:`Azure <azure-nrf-cloud-location-services>` for the cells that have not been geolocated by the devices.
