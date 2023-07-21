@@ -52,7 +52,7 @@ See the `network survey JSON document <./network-survey.json>`_ for an example r
 A-GPS and P-GPS data
 ====================
 
-Through  :ref:`aws-nrf-cloud-location-services`, the device can request A-GPS and P-GPS data through MQTT.
+Using :ref:`aws-nrf-cloud-location-services`, the device can request A-GPS and P-GPS data through MQTT.
 
 The A-GPS message published by the device is described in detail in the `A-GPS JSON schema file <./agps-request.schema.json>`_. 
 See the `A-GPS request JSON document <./agps-request.json>`_ for an example request. 
