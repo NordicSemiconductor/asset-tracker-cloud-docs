@@ -25,6 +25,8 @@ Before you start setting up the nRF Asset Tracker on AWS, make sure that you ful
    WorkingDirectory.rst
    AWSCredentials.rst
    Clone.rst
+   Bootstrap.rst
+   nRFCloudLocationServices.rst
    Deploy.rst
    FirmwareConfiguration.rst
    DeviceCredentials.rst

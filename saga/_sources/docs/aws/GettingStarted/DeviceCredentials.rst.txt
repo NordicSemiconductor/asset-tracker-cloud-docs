@@ -20,7 +20,7 @@ Generate a CA certificate
 Creating the CA certificate is a one-time operation.
 If you have a directory called :file:`certificates` with a :file:`rootCA.pem` file in it, you have already completed this step.
 
- (`This is the recommended approach <https://docs.aws.amazon.com/iot/latest/developerguide/device-certs-your-own.html>`_) and allows generating device certificates offline.
+ nRF Asset Tracker for AWS follows the recommendation of (`using a custom Certificate Authority (CA) <https://docs.aws.amazon.com/iot/latest/developerguide/device-certs-your-own.html>`_) which allows generating device certificates offline.
 
 Run the following script to generate and register a CA certificate in your AWS account:
 

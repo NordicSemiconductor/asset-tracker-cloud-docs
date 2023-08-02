@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Install the nRF Asset Tracker into your AWS account &mdash; nRF Asset Tracker v28.5.5 documentation</title>
+  <title>Install the nRF Asset Tracker into your AWS account &mdash; nRF Asset Tracker v29.0.0 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/nordic.css" type="text/css" /> 
   
@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Configure the firmware" href="FirmwareConfiguration.html" />
-    <link rel="prev" title="Clone the project and install the dependencies" href="Clone.html" />
+    <link rel="prev" title="nRF Cloud Location Services" href="nRFCloudLocationServices.html" />
 <link
   href="../../../_static/css/bootstrap.min.css"
   rel="stylesheet"
@@ -175,6 +175,8 @@
 <li class="toctree-l3"><a class="reference internal" href="WorkingDirectory.html">Create the working directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AWSCredentials.html">Provide your AWS credentials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Clone.html">Clone the project and install the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Bootstrap.html">Bootstrap your AWS account for AWS CDK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nRFCloudLocationServices.html">nRF Cloud Location Services</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Install the nRF Asset Tracker into your AWS account</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FirmwareConfiguration.html">Configure the firmware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DeviceCredentials.html">Create device credentials</a></li>
@@ -187,7 +189,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../Uninstalling.html">Uninstalling the nRF Asset Tracker from AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ContinuousDeployment.html">Continuous deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ContinuousIntegration/Index.html">Continuous integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nRFCloudLocationServices.html">nRF Cloud Location Services</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Simulator.html">Connect using the simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Authentication.html">Authentication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../IoTShadowAndTopics.html">AWS IoT Device Shadow service and MQTT topics</a></li>
@@ -243,9 +244,6 @@
 <p>The following commands set up the necessary resources in your AWS account:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ~/nrf-asset-tracker/aws</span>
 
-<span class="c1"># One-time operation to support large CloudFormation templates in CDK</span>
-npx cdk bootstrap aws://<span class="sb">`</span>aws sts get-caller-identity <span class="p">|</span> jq -r <span class="s1">&#39;.Account&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>/<span class="si">${</span><span class="nv">AWS_REGION</span><span class="si">}</span>
-
 <span class="c1"># Deploy the example (see the note below)</span>
 <span class="c1">#   It will prompt:</span>
 <span class="c1">#     Do you wish to deploy these changes (y/n)?</span>
@@ -285,9 +283,9 @@ Do this only in standalone accounts for development purposes.</p>
     ></a>
      
     <a
-      href="Clone.html"
+      href="nRFCloudLocationServices.html"
       class="btn btn-neutral"
-      title="Clone the project and install the dependencies"
+      title="nRF Cloud Location Services"
       accesskey="p"
       rel="prev"
       ><span class="fa fa-arrow-circle-left"></span> Previous</a
