@@ -18,7 +18,6 @@ The :file:`.feature` files in the folder are used to continuously verify the ref
    Uninstalling.rst
    ContinuousDeployment.rst
    ContinuousIntegration/Index.rst
-   nRFCloudLocationServices.rst
    Simulator.rst
    Authentication.rst
    IoTShadowAndTopics.rst
