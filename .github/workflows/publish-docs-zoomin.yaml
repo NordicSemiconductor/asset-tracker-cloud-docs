@@ -37,19 +37,19 @@ jobs:
       - name: Generate Zoomin tags.yml
         env:
           ZOOMIN_TITLE: ${{ vars.ZOOMIN_TITLE || 'nrf-asset-tracker' }}
-          ZOOMIN_DOCS_VERSION: ${{ github.event.inputs.version }}
+          ZOOMIN_DOCS_VERSION: ${{ github.event.inputs.version || 'unknown' }}
         run: |
           NORMALIZED_ZOOMIN_TITLE=${ZOOMIN_TITLE// /_}
-          [[ -n "$ZOOMIN_DOCS_VERSION" ]] && ZOOMIN_TITLE="${ZOOMIN_TITLE}-${ZOOMIN_DOCS_VERSION}"
-          NORMALIZED_ZOOMIN_TITLE_VERSION=${ZOOMIN_TITLE// /_}
+          NORMALIZED_DOCS_VERSION=${ZOOMIN_DOCS_VERSION// /_}
 
           cd ${{ env.DOWNLOAD_DIR }}
           echo "# Document tags for Zoomin.
 
           # Tags for all topics:
           mapping_global:
-            - $NORMALIZED_ZOOMIN_TITLE
-            - $NORMALIZED_ZOOMIN_TITLE_VERSION
+            - ${NORMALIZED_ZOOMIN_TITLE}
+            - ${NORMALIZED_ZOOMIN_TITLE}-${NORMALIZED_DOCS_VERSION}
+            - cluster-nrf-at-${NORMALIZED_DOCS_VERSION}
 
           # Tags for individual topics:
           mapping_topics:
@@ -90,6 +90,7 @@ jobs:
         env:
           ZOOMIN_SFTP_SERVER:
             ${{ vars.ZOOMIN_SFTP_SERVER || 'upload-v1.zoominsoftware.io' }}
+          ZOOMIN_SFTP_PATH: ${{ vars.ZOOMIN_SFTP_PATH || '/home/sftp/nordic/nordic-be-dev.zoominsoftware.io/sphinx-html/incoming' }}
         run: |
           # Trust server
           mkdir ~/.ssh
@@ -101,7 +102,7 @@ jobs:
 
           # Upload to Zoomin
           sftp -v -i zoomin_key nordic@${ZOOMIN_SFTP_SERVER} <<EOF
-          cd /home/sftp/nordic/docs-be.nordicsemi.com/sphinx-html/incoming
+          cd ${ZOOMIN_SFTP_PATH}
           put ${{ env.ZIP_FILENAME }}
           quit
           EOF
