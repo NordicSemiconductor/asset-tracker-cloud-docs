@@ -34,6 +34,32 @@ jobs:
         run: |
           sudo apt install -y sshpass
 
+      - name: Generate Zoomin tags.yml
+        env:
+          ZOOMIN_TITLE: ${{ vars.ZOOMIN_TITLE || 'nrf-asset-tracker' }}
+          ZOOMIN_DOCS_VERSION: ${{ github.event.inputs.version }}
+        run: |
+          NORMALIZED_ZOOMIN_TITLE=${ZOOMIN_TITLE// /_}
+          [[ -n "$ZOOMIN_DOCS_VERSION" ]] && ZOOMIN_TITLE="${ZOOMIN_TITLE}-${ZOOMIN_DOCS_VERSION}"
+          NORMALIZED_ZOOMIN_TITLE_VERSION=${ZOOMIN_TITLE// /_}
+
+          cd ${{ env.DOWNLOAD_DIR }}
+          echo "# Document tags for Zoomin.
+
+          # Tags for all topics:
+          mapping_global:
+            - $NORMALIZED_ZOOMIN_TITLE
+            - $NORMALIZED_ZOOMIN_TITLE_VERSION
+
+          # Tags for individual topics:
+          mapping_topics:
+            - docs/*.html: [\"applications\"]
+            - docs/*/*.html: [\"applications\"]
+            - docs/*/*/*.html: [\"applications\"]" > tags.yml
+
+          echo "tags.yml"
+          cat tags.yml
+
       - name: Add custom.properties and zip
         env:
           ZOOMIN_TITLE: ${{ vars.ZOOMIN_TITLE || 'nrf-asset-tracker' }}
@@ -53,6 +79,9 @@ jobs:
           echo "custom.properties"
           cat custom.properties
 
+      - name: Compress Zoomin documentation
+        run: |
+          cd ${{ env.DOWNLOAD_DIR }}
           ZIP_FILENAME=${{ github.workspace }}/zoomin_nrf_asset_tracker_${{ github.sha }}.zip
           echo "ZIP_FILENAME=${ZIP_FILENAME}" >> $GITHUB_ENV
           zip -r -q "${ZIP_FILENAME}" .
