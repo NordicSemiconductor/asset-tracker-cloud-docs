@@ -60,7 +60,7 @@ jobs:
           echo "tags.yml"
           cat tags.yml
 
-      - name: Add custom.properties and zip
+      - name: Generate Zoomin custom.properties
         env:
           ZOOMIN_TITLE: ${{ vars.ZOOMIN_TITLE || 'nrf-asset-tracker' }}
           ZOOMIN_BOOK_TITLE:
@@ -101,7 +101,7 @@ jobs:
 
           # Upload to Zoomin
           sftp -v -i zoomin_key nordic@${ZOOMIN_SFTP_SERVER} <<EOF
-          cd nordic-be-dev.zoominsoftware.io/sphinx-html/incoming
+          cd /home/sftp/nordic/docs-be.nordicsemi.com/sphinx-html/incoming
           put ${{ env.ZIP_FILENAME }}
           quit
           EOF
