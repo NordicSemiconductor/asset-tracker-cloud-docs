@@ -87,7 +87,6 @@
         }
       },
       "required": [
-        "band",
         "nw",
         "rsrp",
         "area",

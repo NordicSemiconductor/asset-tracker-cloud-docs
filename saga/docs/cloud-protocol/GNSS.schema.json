@@ -44,8 +44,7 @@
         "lat",
         "acc",
         "alt",
-        "spd",
-        "hdg"
+        "spd"
       ]
     },
     "ts": {
