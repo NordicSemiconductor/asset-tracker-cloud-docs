@@ -10,12 +10,14 @@ export const DeviceValue = Type.Object({
 		maxLength: 16,
 		examples: ['352656106111232'],
 	}),
-	iccid: Type.String({
-		description: 'SIM ICCID',
-		minLength: 19,
-		maxLength: 20,
-		examples: ['89450421180216216095'],
-	}),
+	iccid: Type.Optional(
+		Type.String({
+			description: 'SIM ICCID',
+			minLength: 19,
+			maxLength: 20,
+			examples: ['89450421180216216095'],
+		}),
+	),
 	modV: Type.String({
 		description: 'Modem Firmware Version',
 		minLength: 1,
@@ -42,7 +44,7 @@ export const Device = Type.Object(
 export const RoamingInfo = Type.Object(
 	{
 		v: Type.Object({
-			band: EARFCN,
+			band: Type.Optional(EARFCN),
 			nw: Type.String({
 				description: 'Network mode',
 				minLength: 1,
@@ -153,11 +155,13 @@ export const GNSS = Type.Object(
 				description: 'Horizontal speed in meters',
 				minimum: 0,
 			}),
-			hdg: Type.Number({
-				description: 'Heading of movement in degrees',
-				minimum: 0,
-				maximum: 360,
-			}),
+			hdg: Type.Optional(
+				Type.Number({
+					description: 'Heading of movement in degrees',
+					minimum: 0,
+					maximum: 360,
+				}),
+			),
 		}),
 		ts: Timestamp(),
 	},
