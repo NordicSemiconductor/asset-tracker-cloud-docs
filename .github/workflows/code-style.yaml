@@ -44,6 +44,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
+          token: ${{ secrets.CR_PAT }}
           commit-message: "style: auto-format source code"
           committer: "github-actions[bot] <actions@example.com>"
           author: "github-actions[bot] <actions@example.com>"
