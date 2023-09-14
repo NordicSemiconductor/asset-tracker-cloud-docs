@@ -90,7 +90,10 @@ jobs:
         env:
           ZOOMIN_SFTP_SERVER:
             ${{ vars.ZOOMIN_SFTP_SERVER || 'upload-v1.zoominsoftware.io' }}
-          ZOOMIN_SFTP_PATH: ${{ vars.ZOOMIN_SFTP_PATH || '/home/sftp/nordic/nordic-be-dev.zoominsoftware.io/sphinx-html/incoming' }}
+          ZOOMIN_SFTP_PATH:
+            ${{ vars.ZOOMIN_SFTP_PATH ||
+            '/home/sftp/nordic/nordic-be-dev.zoominsoftware.io/sphinx-html/incoming'
+            }}
         run: |
           # Trust server
           mkdir ~/.ssh
