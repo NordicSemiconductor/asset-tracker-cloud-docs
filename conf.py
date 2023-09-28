@@ -69,3 +69,20 @@ html_context = {
 master_doc = 'index'
 
 suppress_warnings = ['ref.ref']
+
+def add_announcement_banner(options: dict) -> None:
+    """Add an announcement banner to the top of the page.
+    Args:
+        options: html theme options.
+    """
+
+    msg = "<b>Important: </b>We're excited to introduce our new technical documentation " \
+           "platform <a href=\"http://docs.nordicsemi.com/\">docs.nordicsemi.com</a>, " \
+           "currently in Beta version. We invite you to explore it and share your feedback. " \
+           "Read more on our <a href=\"https://devzone.nordicsemi.com/\">DevZone blog</a>. " \
+
+    options["set_default_announcement"] = True
+    options["default_announcement_message"] = msg
+
+def setup(app):
+    add_announcement_banner(html_theme_options)
