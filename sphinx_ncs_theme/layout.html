@@ -1,4 +1,8 @@
 {% extends "sphinx_rtd_theme/layout.html" %} {% block scripts %} {{ super() }}
+<script
+  type="text/javascript"
+  src="{{ pathto('_static/js/ncs.js', 1) }}"
+></script>
 <script src="{{ pathto('_static/js/bootstrap.bundle.min.js', 1) }}"></script>
 {% endblock %} {% block extrahead %}
 <link
@@ -9,8 +13,45 @@
   rel="shortcut icon"
   href="{{ pathto('_static/images/favicon.ico', 1) }}"
 />
+{% endblock %} {%- block sidebartitle %}
+
+<a href="{{ pathto(root_doc|default(master_doc)) }}">
+  {{ project }}
+</a>
+
+{%- if theme_subtitle %}
+  <div class="ncs-subtitle">
+    {{ theme_subtitle }}
+  </div>
+{%- endif %}
+
+{%- if theme_display_version %}
+  <div class="version">
+    {{ version }}
+  </div>
+{%- endif %}
+
+{%- include "searchbox.html" %}
+
 {% endblock %} {%- block extrabody %}
-<div class="announcement"></div>
+
+{%- if theme_add_gtm|tobool %}
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id={{ theme_gtm_id }}"
+  height="0"
+  width="0"
+  style="display:none;visibility:hidden">
+  </iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+{%- endif %}
+
+<div class="announcement{{ '-fixed' if theme_set_default_announcement|tobool else '' }}">
+  {%- if theme_set_default_announcement|tobool %}
+  {{ theme_default_announcement_message }}
+  {%- endif %}
+</div>
 <div class="d-print-none ncs-header">
   <div class="container-xl ncs-header-top">
     <div class="row h-100">
@@ -47,29 +88,22 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            {{ github_version }}
+            <span class="d-none d-md-inline">nRF Connect SDK</span>
+            <span id="ncsversion" class="d-inline"></span>
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style>
-            {%- for version in github_versions %}
-            <a
-              class="dropdown-item"
-              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/{{ version }}/"
-              >{{ version }}</a
-            >
-            {%- endfor -%}
-          </div>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
         </div>
       </div>
       {%- endif %}
     </div>
   </div>
   {%- if not theme_standalone|tobool %}
-  <div class="ncs-header-nav d-none d-md-block">
+  <div class="ncs-header-nav">
     <div class="container-xl">
       <div class="row">
-        <div class="col col-12 d-flex justify-content">
-          <nav class="navbar navbar-dark navbar-expand-md p-0">
-            <span class="navbar-brand d-block d-md-none py-2 pl-1"
+        <div class="col col-12 d-flex justify-content-center">
+          <nav class="navbar navbar-dark navbar-expand-lg p-0">
+            <span class="navbar-brand d-block d-lg-none py-2 pl-1"
               >Documentation sets</span
             >
             <button
@@ -85,11 +119,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <ul class="navbar-nav">
-                <li class="nav-item active py-1 px-3">
-                  <a class="nav-link" href="{{ pathto('', 1) }}../"
-                    >nRF Asset Tracker</a
+                {%- for name, config in theme_docsets.items() %}
+                <li class="nav-item {{ 'active' if name == theme_docset else '' }} py-1 px-3">
+                  <a
+                    class="nav-link"
+                    href="{{ pathto('', 1) }}../{{ name }}/{{ config[1] }}.html"
+                    >{{ config[0] }}</a
                   >
                 </li>
+                <li><hr class="dropdown-divider" /></li>
+                {%- endfor %}
               </ul>
             </div>
           </nav>
