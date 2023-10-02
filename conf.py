@@ -60,7 +60,7 @@ msg = "<b>Important: </b>We're excited to introduce our new technical documentat
 html_theme_options = {
     'logo_only': True,
     'set_default_announcement': True,
-    'docset': 'nrf',
+    'docset': 'assettracker',
     'docsets': {
         'nrf': ('nRF Connect SDK', 'index', 'manifest'),
         'nrfx': ('nrfx', 'index', 'hal_nordic'),
@@ -69,7 +69,8 @@ html_theme_options = {
         'mcuboot': ('MCUboot', 'wrapper', 'mcuboot'),
         'tfm': ('Trusted Firmware-M', 'index', 'trusted-firmware-m'),
         'matter': ('Matter', 'index', 'matter'),
-        'kconfig': ('Kconfig Reference', 'index', None)
+        'kconfig': ('Kconfig Reference', 'index', None),
+        'assettracker': ('nRF Asset Tracker', 'index', None),
     },
     'default_announcement_message': msg
 }
