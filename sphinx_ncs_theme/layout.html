@@ -88,10 +88,18 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <span class="d-none d-md-inline">nRF Connect SDK</span>
+            <span class="d-none d-md-inline">{{ github_version }}</span>
             <span id="ncsversion" class="d-inline"></span>
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {%- for version in github_versions %}
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/{{ version }}/"
+              >{{ version }}</a
+            >
+            {%- endfor -%}
+          </div>
         </div>
       </div>
       {%- endif %}
