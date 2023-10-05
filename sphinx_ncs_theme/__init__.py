@@ -1,7 +1,7 @@
 import os
 
 
-__version__ = "1.0.13"
+__version__ = "1.0.19"
 
 
 def setup(app):
