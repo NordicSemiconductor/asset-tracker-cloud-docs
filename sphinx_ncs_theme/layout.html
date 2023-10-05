@@ -15,42 +15,32 @@
 />
 {% endblock %} {%- block sidebartitle %}
 
-<a href="{{ pathto(root_doc|default(master_doc)) }}">
-  {{ project }}
-</a>
+<a href="{{ pathto(root_doc|default(master_doc)) }}"> {{ project }} </a>
 
 {%- if theme_subtitle %}
-  <div class="ncs-subtitle">
-    {{ theme_subtitle }}
-  </div>
-{%- endif %}
-
-{%- if theme_display_version %}
-  <div class="version">
-    {{ version }}
-  </div>
-{%- endif %}
-
-{%- include "searchbox.html" %}
-
-{% endblock %} {%- block extrabody %}
-
-{%- if theme_add_gtm|tobool %}
+<div class="ncs-subtitle">{{ theme_subtitle }}</div>
+{%- endif %} {%- if theme_display_version %}
+<div class="version">{{ version }}</div>
+{%- endif %} {%- include "searchbox.html" %} {% endblock %} {%- block extrabody
+%} {%- if theme_add_gtm|tobool %}
 <!-- Google Tag Manager (noscript) -->
 <noscript>
-  <iframe src="https://www.googletagmanager.com/ns.html?id={{ theme_gtm_id }}"
-  height="0"
-  width="0"
-  style="display:none;visibility:hidden">
+  <iframe
+    src="https://www.googletagmanager.com/ns.html?id={{ theme_gtm_id }}"
+    height="0"
+    width="0"
+    style="display: none; visibility: hidden"
+  >
   </iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 {%- endif %}
 
-<div class="announcement{{ '-fixed' if theme_set_default_announcement|tobool else '' }}">
-  {%- if theme_set_default_announcement|tobool %}
-  {{ theme_default_announcement_message }}
-  {%- endif %}
+<div
+  class="announcement{{ '-fixed' if theme_set_default_announcement|tobool else '' }}"
+>
+  {%- if theme_set_default_announcement|tobool %} {{
+  theme_default_announcement_message }} {%- endif %}
 </div>
 <div class="d-print-none ncs-header">
   <div class="container-xl ncs-header-top">
@@ -128,7 +118,9 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <ul class="navbar-nav">
                 {%- for name, config in theme_docsets.items() %}
-                <li class="nav-item {{ 'active' if name == theme_docset else '' }} py-1 px-3">
+                <li
+                  class="nav-item {{ 'active' if name == theme_docset else '' }} py-1 px-3"
+                >
                   <a
                     class="nav-link"
                     href="{{ pathto('', 1) }}../{{ name }}/{{ config[1] }}.html"
