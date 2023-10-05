@@ -5,7 +5,8 @@
  * Base
  ******************************************************************************/
 
-body, html {
+body,
+html {
   overflow-x: unset;
 }
 
@@ -46,13 +47,19 @@ ul {
 
 kbd {
   -moz-border-radius: 3px;
-  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  -moz-box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.2),
+    0 0 0 2px #fff inset;
   -webkit-border-radius: 3px;
-  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  -webkit-box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.2),
+    0 0 0 2px #fff inset;
   background-color: #f7f7f7;
   border: 1px solid #ccc;
   border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.2),
+    0 0 0 2px #fff inset;
   color: #333;
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif;
@@ -129,7 +136,7 @@ kbd {
     border: 1px solid rgb(237, 237, 237);
   }
   .wy-side-scroll::-webkit-scrollbar-track {
-    background: rgb(237, 237, 237)
+    background: rgb(237, 237, 237);
   }
 }
 
@@ -202,8 +209,8 @@ kbd {
   border: none !important;
   border-bottom: 1px solid #fffffff2 !important;
   box-shadow: none !important;
-  color: #ffffff91  !important;
-  font-style:italic;
+  color: #ffffff91 !important;
+  font-style: italic;
   font-size: 100% !important;
   padding-left: 2.375rem !important;
   opacity: 0.8;
@@ -522,8 +529,15 @@ a.reference.internal[href*="#config-"] {
   color: #404040 !important;
   font-weight: 700;
   font-size: 75%;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
-    Courier New, Courier, monospace;
+  font-family:
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    Liberation Mono,
+    Courier New,
+    Courier,
+    monospace;
   border: 1px solid #e1e4e5;
   background-color: white;
 }
@@ -532,8 +546,15 @@ a.reference.internal[href="#sample-config"] {
   color: #404040;
   font-weight: 700;
   font-size: 75%;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
-    Courier New, Courier, monospace;
+  font-family:
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    Liberation Mono,
+    Courier New,
+    Courier,
+    monospace;
   border: 1px solid #e1e4e5;
 }
 
@@ -655,7 +676,7 @@ div.figure {
 }
 
 .rst-content table.docutils td p:last-child {
-  font-size: .9rem;
+  font-size: 0.9rem;
   margin-bottom: 0 !important;
 }
 
@@ -664,7 +685,7 @@ div.figure {
   padding-top: 20px;
   line-height: 40px;
 }
-  
+
 .grid-item h2 {
   border: 0px;
   padding-top: 0px;
