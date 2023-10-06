@@ -5,6 +5,7 @@ import {
 	Battery,
 	DeviceValue,
 	Environment,
+	FuelGauge,
 	GNSS,
 	RoamingInfo,
 } from './Reported.js'
@@ -37,6 +38,7 @@ export const AWSReported = Type.Object(
 		dev: Type.Optional(AWSDevice),
 		roam: Type.Optional(RoamingInfo),
 		bat: Type.Optional(Battery),
+		fg: Type.Optional(FuelGauge),
 		env: Type.Optional(Environment),
 		gnss: Type.Optional(GNSS),
 	},

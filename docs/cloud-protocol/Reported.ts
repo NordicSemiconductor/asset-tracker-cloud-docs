@@ -28,6 +28,13 @@ export const DeviceValue = Type.Object({
 		minLength: 1,
 		examples: ['thingy91_nrf9160'],
 	}),
+	bat: Type.Optional(
+		Type.String({
+			description: 'Battery model',
+			minLength: 1,
+			examples: ['LP302535', 'LP502540', 'LP602760', 'LP803035'],
+		}),
+	),
 })
 export const Device = Type.Object(
 	{
@@ -98,6 +105,54 @@ export const Battery = Type.Object(
 	{
 		$id: $id('battery'),
 		description: 'Battery reading in millivolt',
+	},
+)
+
+/**
+ * @see https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/pmic/native/npm1300_fuel_gauge/README.html#npm1300-fuel-gauge
+ *
+ * Float values are expressed as integers to avoid unneeded transmission of bytes.
+ *
+ * TTE and TTF can't be present at the same time but to keep the schema simple,
+ * this is not reflected in the schema.
+ */
+export const FuelGauge = Type.Object(
+	{
+		v: Type.Object({
+			V: Type.Integer({
+				description: 'Battery voltage in millivolt (mV)',
+				minimum: 1,
+			}),
+			I: Type.Integer({
+				description:
+					'Current in milliampere (mA). Negative value means the device is charging.',
+			}),
+			T: Type.Integer({
+				description: 'Temperature in decidegree Celsius (d°C)',
+			}),
+			SoC: Type.Integer({
+				description: 'State of Charge in percent',
+				minimum: 0,
+				maximum: 100,
+			}),
+			TTE: Type.Optional(
+				Type.Integer({
+					description: 'Time to empty in seconds',
+					minimum: 1,
+				}),
+			),
+			TTF: Type.Optional(
+				Type.Integer({
+					description: 'Time to full in seconds',
+					minimum: 1,
+				}),
+			),
+		}),
+		ts: Timestamp(),
+	},
+	{
+		$id: $id('fuelGauge'),
+		description: 'Fuel gauge readings from e.g. the nPM1300',
 	},
 )
 
