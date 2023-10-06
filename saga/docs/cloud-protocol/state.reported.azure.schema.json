@@ -159,6 +159,17 @@
                     "thingy91_nrf9160"
                   ],
                   "type": "string"
+                },
+                "bat": {
+                  "description": "Battery model",
+                  "minLength": 1,
+                  "examples": [
+                    "LP302535",
+                    "LP502540",
+                    "LP602760",
+                    "LP803035"
+                  ],
+                  "type": "string"
                 }
               },
               "required": [
@@ -301,6 +312,65 @@
               "description": "Battery reading read by the modem",
               "minimum": 1,
               "type": "integer"
+            },
+            "ts": {
+              "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+              "minimum": 1234567890123,
+              "examples": [
+                1584533788029
+              ],
+              "type": "integer"
+            }
+          },
+          "required": [
+            "v",
+            "ts"
+          ]
+        },
+        "fg": {
+          "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/fuelGauge.schema.json",
+          "description": "Fuel gauge readings from e.g. the nPM1300",
+          "type": "object",
+          "properties": {
+            "v": {
+              "type": "object",
+              "properties": {
+                "V": {
+                  "description": "Battery voltage in millivolt (mV)",
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "I": {
+                  "description": "Current in milliampere (mA). Negative value means the device is charging.",
+                  "type": "integer"
+                },
+                "T": {
+                  "description": "Temperature in decidegree Celsius (d°C)",
+                  "type": "integer"
+                },
+                "SoC": {
+                  "description": "State of Charge in percent",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "type": "integer"
+                },
+                "TTE": {
+                  "description": "Time to empty in seconds",
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "TTF": {
+                  "description": "Time to full in seconds",
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "V",
+                "I",
+                "T",
+                "SoC"
+              ]
             },
             "ts": {
               "description": "Timestamp as Unix epoch with millisecond precision (UTC)",

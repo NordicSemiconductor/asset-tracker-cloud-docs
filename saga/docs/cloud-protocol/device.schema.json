@@ -39,6 +39,17 @@
             "thingy91_nrf9160"
           ],
           "type": "string"
+        },
+        "bat": {
+          "description": "Battery model",
+          "minLength": 1,
+          "examples": [
+            "LP302535",
+            "LP502540",
+            "LP602760",
+            "LP803035"
+          ],
+          "type": "string"
         }
       },
       "required": [
