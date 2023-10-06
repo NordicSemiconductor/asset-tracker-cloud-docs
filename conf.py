@@ -55,7 +55,7 @@ html_theme_path = ["."]
 msg = "<b>Important: </b>We're excited to introduce our new technical documentation " \
         "platform <a href=\"http://docs.nordicsemi.com/\">docs.nordicsemi.com</a>, " \
         "currently in Beta version. We invite you to explore it and share your feedback. " \
-        "Read more on our <a href=\"https://devzone.nordicsemi.com/\">DevZone blog</a>. " \
+        "Read more on our <a href=\"https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/introducing-the-unified-documentation-portal\">DevZone blog</a>. " \
 
 html_theme_options = {
     'logo_only': True,
