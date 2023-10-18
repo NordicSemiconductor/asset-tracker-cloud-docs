@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cell geolocations &mdash; nRF Asset Tracker 3c4a2e61ecd2d4d30a4194dc5a6fd30df8d88fea documentation</title>
+  <title>Cell geolocations &mdash; nRF Asset Tracker v32.0.0 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/nordic.css" type="text/css" /> 
   
@@ -238,7 +238,7 @@
 <h1>Cell geolocations<a class="headerlink" href="#cell-geolocations" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#assisted-gps-a-gps" id="id1">Assisted GPS (A-GPS)</a></p></li>
+<li><p><a class="reference internal" href="#assisted-gnss-a-gnss" id="id1">Assisted GNSS (A-GNSS)</a></p></li>
 <li><p><a class="reference internal" href="#geolocating-cells" id="id2">Geolocating cells</a></p>
 <ul>
 <li><p><a class="reference internal" href="#geolocating-cells-using-nrf-cloud-location-services" id="id3">Geolocating cells using nRF Cloud Location Services</a></p></li>
@@ -261,11 +261,11 @@ In this case, only the mobile app that visualizes the location of the nRF Asset 
 <p class="admonition-title">Note</p>
 <p>Since it is efficient to resolve cell geolocations on the cloud, this can be ideally the responsibility of the cloud backend.</p>
 </div>
-<section id="assisted-gps-a-gps">
-<h2><a class="toc-backref" href="#id1">Assisted GPS (A-GPS)</a><a class="headerlink" href="#assisted-gps-a-gps" title="Permalink to this headline"></a></h2>
-<p>The only location-dependent feature of the nRF Asset Tracker is A-GPS, which speeds up the time to acquire the first GNSS fix (seconds instead of minutes).
+<section id="assisted-gnss-a-gnss">
+<h2><a class="toc-backref" href="#id1">Assisted GNSS (A-GNSS)</a><a class="headerlink" href="#assisted-gnss-a-gnss" title="Permalink to this headline"></a></h2>
+<p>The only location-dependent feature of the nRF Asset Tracker is A-GNSS, which speeds up the time to acquire the first GNSS fix (seconds instead of minutes).
 Complex location triangulation based on mobile network cells or Wi-Fi MAC addresses is not required.
-It is sufficient to have an up-to-date <a class="reference external" href="https://en.wikipedia.org/wiki/GPS_signals#Almanac">GPS almanac</a> and an approximate location, which can be derived from the mobile network operator’s country code.
+It is sufficient to have an up-to-date <a class="reference external" href="https://en.wikipedia.org/wiki/GPS_signals#Almanac">Almanac</a> and an approximate location, which can be derived from the mobile network operator’s country code.
 This data enables the GNSS module to calculate a GPS fix quickly.</p>
 </section>
 <section id="geolocating-cells">

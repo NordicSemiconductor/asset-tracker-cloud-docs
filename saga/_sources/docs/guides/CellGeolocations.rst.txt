@@ -22,12 +22,12 @@ In this case, only the mobile app that visualizes the location of the nRF Asset 
 
     Since it is efficient to resolve cell geolocations on the cloud, this can be ideally the responsibility of the cloud backend.
 
-Assisted GPS (A-GPS)
-********************
+Assisted GNSS (A-GNSS)
+**********************
 
-The only location-dependent feature of the nRF Asset Tracker is A-GPS, which speeds up the time to acquire the first GNSS fix (seconds instead of minutes). 
+The only location-dependent feature of the nRF Asset Tracker is A-GNSS, which speeds up the time to acquire the first GNSS fix (seconds instead of minutes). 
 Complex location triangulation based on mobile network cells or Wi-Fi MAC addresses is not required.
-It is sufficient to have an up-to-date `GPS almanac <https://en.wikipedia.org/wiki/GPS_signals#Almanac>`_ and an approximate location, which can be derived from the mobile network operator's country code.
+It is sufficient to have an up-to-date `Almanac <https://en.wikipedia.org/wiki/GPS_signals#Almanac>`_ and an approximate location, which can be derived from the mobile network operator's country code.
 This data enables the GNSS module to calculate a GPS fix quickly.
 
 Geolocating cells

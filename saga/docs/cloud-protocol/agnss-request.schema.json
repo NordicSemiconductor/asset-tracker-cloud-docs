@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/agps-request.schema.json",
-  "title": "Asset Tracker v2 A-GPS request",
-  "description": "Describes the format used by the device to request A-GPS data.",
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/agnss-request.schema.json",
+  "title": "Asset Tracker v2 A-GNSS request",
+  "description": "Describes the format used by the device to request A-GNSS data.",
   "required": [
     "mcc",
     "mnc",
@@ -57,7 +57,7 @@
       "type": "integer"
     },
     "types": {
-      "description": "The A-GPS data types to return. 1: UTC parameters, 2: Ephemerides, 3: Almanac, 4: Klobuchar ionospheric correction parameters, 6: GPS time of week, 7: GPS system clock and time of week, 8: Approximate location, 9: Satellite integrity data",
+      "description": "The A-GNSS data types to return. 1 = GPS UTC, 2 = GPS Ephemerides, 3 = GPS Almanac, 4 = Klobuchar Ionospheric Correction, 5 = Nequick Ionospheric Correction, 6 = GPS Time of Week, 7 = GPS System Clock, 8 = Location (lat/lon of cell), 9 = GPS Integrity, 11 = QZSS Almanac, 12 = QZSS Ephemerides, 13 = QZSS Integrity",
       "minItems": 1,
       "examples": [
         [
@@ -86,12 +86,16 @@
           2,
           3,
           4,
+          5,
           6,
           7,
           8,
-          9
+          9,
+          11,
+          12,
+          13
         ],
-        "description": "A-GPS data type.",
+        "description": "A-GNSS data type.",
         "examples": [
           1
         ]
