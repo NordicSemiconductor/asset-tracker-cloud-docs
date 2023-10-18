@@ -18,7 +18,10 @@ void describe('validateWithType', () => {
 		void it('valid input', () => {
 			const isValid = v({ cell: 42 })
 			assert.equal('errors' in isValid, false)
-			assert.equal((isValid as Static<typeof typedInputSchema>).cell, 42)
+			assert.equal(
+				(isValid as { value: Static<typeof typedInputSchema> }).value.cell,
+				42,
+			)
 		})
 		void it('invalid input', () => {
 			const isInvalid = v({ cell: -42 })
