@@ -1,4 +1,4 @@
-export * from './dist/cloud-protocol/AGPSRequest.js'
+export * from './dist/cloud-protocol/AGNSSRequest.js'
 export * from './dist/cloud-protocol/AWSDesired.js'
 export * from './dist/cloud-protocol/AWSReported.js'
 export * from './dist/cloud-protocol/AzureDesired.js'

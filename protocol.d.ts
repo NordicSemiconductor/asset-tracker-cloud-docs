@@ -1,5 +1,5 @@
 import { Static } from '@sinclair/typebox'
-import { AGPSRequest } from './docs/cloud-protocol/AGPSRequest.js'
+import { AGNSSRequest } from './docs/cloud-protocol/AGNSSRequest.js'
 import { AWSDesired } from './docs/cloud-protocol/AWSDesired.js'
 import { AWSDevice, AWSReported } from './docs/cloud-protocol/AWSReported.js'
 import { AzureDesired } from './docs/cloud-protocol/AzureDesired.js'
@@ -21,7 +21,7 @@ import {
 } from './docs/cloud-protocol/Reported.js'
 import { WiFiSiteSurvey } from './docs/cloud-protocol/WiFiSiteSurvey.js'
 
-export * from './docs/cloud-protocol/AGPSRequest.js'
+export * from './docs/cloud-protocol/AGNSSRequest.js'
 export * from './docs/cloud-protocol/AWSDesired.js'
 export * from './docs/cloud-protocol/AWSReported.js'
 export * from './docs/cloud-protocol/AzureDesired.js'
@@ -38,7 +38,7 @@ export * from './docs/cloud-protocol/Reported.js'
 export * from './docs/cloud-protocol/WiFiSiteSurvey.js'
 export * from './docs/cloud-protocol/validateWithType.js'
 
-export type AGPSRequestData = Static<typeof AGPSRequest>
+export type AGNSSRequestData = Static<typeof AGNSSRequest>
 export type AWSDesiredData = Static<typeof AWSDesired>
 export type AWSReportedData = Static<typeof AWSReported>
 export type AzureDesiredData = Static<typeof AzureDesired>

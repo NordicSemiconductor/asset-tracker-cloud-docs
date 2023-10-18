@@ -33,7 +33,7 @@ digraph G {
         fontsize=16
         bgcolor="#D9E1E2" color="#cccccc" 
         gellceo [ shape=box style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" label="Cell Geolocation" ]
-        agpscloud [ shape=box style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" label="A-GPS" ]
+        agnsscloud [ shape=box style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" label="A-GNSS" ]
         pgpscloud [ shape=box style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" label="P-GPS" ]
     }
 
@@ -45,7 +45,7 @@ digraph G {
         aws_iot [ label="aws iot" width="1.5" shape=box style=filled color="#fe9900" fillcolor="#fe9900" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/aws_iot/README.html" ]
         azure_iot [ label="azure iot" width="1.5" shape=box style=filled color="#0089d7" fillcolor="#0089d7" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/azure_iot_hub/README.html" ]
         asset_tracker_v2 [ label="asset tracker v2" shape=box style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" color="#00A9CE" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html" ]
-        agps [ shape=box width ="1.5" style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/agps/README.html" ]
+        agnss [ shape=box width ="1.5" style=filled color="#00A9CE" fillcolor="#00A9CE" fontcolor="#ffffff" URL="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/agnss/README.html" ]
     }
 
     subgraph cluster2 {
@@ -70,9 +70,9 @@ digraph G {
 
     asset_tracker_v2 -> aws_iot [ dir=back ]
     asset_tracker_v2 -> azure_iot [ dir=back ]
-    asset_tracker_v2 -> agps [ dir=back ]
+    asset_tracker_v2 -> agnss [ dir=back ]
 
-    agpscloud -> nrfcloud [ dir=back taillabel=" HTTPs " ltail=cluster4 labeldistance="6"]
+    agnsscloud -> nrfcloud [ dir=back taillabel=" HTTPs " ltail=cluster4 labeldistance="6"]
     pgpscloud -> nrfcloud [ dir=back ltail=cluster4 ]
     gellceo -> nrfcloud [ dir=back ltail=cluster4 ]
     AWS -> gellceo [ dir=back ltail=cluster0 lhead=cluster4 ]

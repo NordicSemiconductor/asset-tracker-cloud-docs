@@ -49,14 +49,14 @@ It is published through a separate topic, because depending on the cloud platfor
 The network survey published by the device is described in detail in the `network survey JSON schema file <./network-survey.schema.json>`_.
 See the `network survey JSON document <./network-survey.json>`_ for an example report.
 
-A-GPS and P-GPS data
-====================
+A-GNSS and P-GPS data
+=====================
 
-Using :ref:`aws-nrf-cloud-location-services`, the device can request A-GPS and P-GPS data through MQTT.
+Using :ref:`aws-nrf-cloud-location-services`, the device can request A-GNSS and P-GPS data through MQTT.
 
-The A-GPS message published by the device is described in detail in the `A-GPS JSON schema file <./agps-request.schema.json>`_. 
-See the `A-GPS request JSON document <./agps-request.json>`_ for an example request. 
-The cloud publishes the requested types as binary to the ``<device Id>/agps`` topic. 
+The A-GNSS message published by the device is described in detail in the `A-GNSS JSON schema file <./agnss-request.schema.json>`_. 
+See the `A-GNSS request JSON document <./agnss-request.json>`_ for an example request. 
+The cloud publishes the requested types as binary to the ``<device Id>/agnss`` topic. 
 If the device requests ephemerides (type 2), this message is too large to combine with other types and will be published in a separate message.
 
 The P-GPS message published by the device is described in the `P-GPS request JSON schema file <./pgps-request.schema.json>`_. 

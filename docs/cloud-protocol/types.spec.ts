@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs'
 import path from 'path'
-import { AGPSRequest } from './AGPSRequest.js'
+import { AGNSSRequest } from './AGNSSRequest.js'
 import { AWSDesired } from './AWSDesired.js'
 import { AWSReported } from './AWSReported.js'
 import { AzureDesired } from './AzureDesired.js'
@@ -40,7 +40,7 @@ void describe('@nordicsemiconductor/asset-tracker-cloud-docs/protocol', () => {
 			['wifi-site-survey', WiFiSiteSurvey, null],
 			['ncellmeas', NeighboringCellMeasurements, null],
 			['network-survey', NetworkSurvey, null],
-			['agps-request', AGPSRequest, null],
+			['agnss-request', AGNSSRequest, null],
 			['pgps-request', PGPSRequest, null],
 			['pgps-response', PGPSResponse, null],
 			['azure.fota', AzureFOTA, null],

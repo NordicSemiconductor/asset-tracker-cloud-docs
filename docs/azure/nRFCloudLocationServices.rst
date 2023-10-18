@@ -49,9 +49,9 @@ Store the service key into the key vault as follows:
 Assisted GPS Location Service
 *****************************
 
-You can enable your devices to request assisted GPS (A-GPS) data using `nRF Cloud's Assisted GPS Location Service API <https://api.nrfcloud.com/v1#tag/Assisted-GPS>`_ in your deployment.
+You can enable your devices to request assisted GPS (A-GNSS) data using `nRF Cloud's Assisted GNSS Location Service API <https://api.nrfcloud.com/v1#tag/GNSS/operation/GetAssistanceData>`_ in your deployment.
 
-To use the API, set the ``enableNrfCloudAGPSLocationService`` parameter to ``true`` and set the ``nrfCloudTeamId`` parameter to your team ID when deploying the solution.
+To use the API, set the ``enableNrfCloudAGNSSLocationService`` parameter to ``true`` and set the ``nrfCloudTeamId`` parameter to your team ID when deploying the solution.
 
 .. parsed-literal::
    :class: highlight
@@ -59,7 +59,7 @@ To use the API, set the ``enableNrfCloudAGPSLocationService`` parameter to ``tru
     az deployment group create \\
         --resource-group ${RESOURCE_GROUP:-nrfassettracker} \\
         --mode Complete \\
-        --name enable-nrfcloud-agps \\
+        --name enable-nrfcloud-agnss \\
         --template-file azuredeploy.json \\
         --parameters \\
             appName=${APP_NAME:-nrfassettracker} \\
@@ -67,10 +67,10 @@ To use the API, set the ``enableNrfCloudAGPSLocationService`` parameter to ``tru
             appRegistrationClientId=$APP_REG_CLIENT_ID \\
             b2cTenant=${B2C_TENANT:-nrfassettrackerusers} \\
             keyVaultName=${APP_NAME:-nrfassettracker} \\
-            enableNrfCloudAGPSLocationService=true \\
+            enableNrfCloudAGNSSLocationService=true \\
             nrfCloudTeamId=*your team ID*
 
-This command enables the ``agpsQueuedDeviceRequestsHandler`` function to resolve A-GPS requests from devices using the nRF Cloud Assisted GPS Location Service API.
+This command enables the ``agnssQueuedDeviceRequestsHandler`` function to resolve A-GNSS requests from devices using the nRF Cloud Assisted GPS Location Service API.
 
 Store the service key into the key vault as follows:
 
@@ -85,7 +85,7 @@ Store the service key into the key vault as follows:
 
    # Store the API key
    az keyvault secret set --vault-name ${APP_NAME:-nrfassettracker} \\
-     --name nrfCloudAGPSLocationServiceKey \\
+     --name nrfCloudServiceKey \\
      --file *location of your Assisted GPS Location Service Key file*
 
 Predicted GPS Location Service

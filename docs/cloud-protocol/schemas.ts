@@ -1,4 +1,4 @@
-import { AGPSRequest } from './AGPSRequest.js'
+import { AGNSSRequest } from './AGNSSRequest.js'
 import { AWSDesired } from './AWSDesired.js'
 import { AWSReported } from './AWSReported.js'
 import { AzureDesired } from './AzureDesired.js'
@@ -26,7 +26,7 @@ export const schemas = [
 	WiFiSiteSurvey,
 	NetworkSurvey,
 	AzureReported,
-	AGPSRequest,
+	AGNSSRequest,
 	NeighboringCellMeasurements,
 	Batch,
 	ButtonPress,
