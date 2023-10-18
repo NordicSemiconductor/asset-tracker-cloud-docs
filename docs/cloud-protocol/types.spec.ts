@@ -15,6 +15,9 @@ import { PGPSRequest } from './PGPSRequest.js'
 import { PGPSResponse } from './PGPSResponse.js'
 import { WiFiSiteSurvey } from './WiFiSiteSurvey.js'
 import { validateWithType } from './validateWithType.js'
+import { describe, it } from 'node:test'
+import assert from 'node:assert'
+import type { TSchema } from '@sinclair/typebox'
 
 const f = (name: string, isSchema = false): string =>
 	JSON.parse(
@@ -29,9 +32,9 @@ const f = (name: string, isSchema = false): string =>
 		),
 	)
 
-describe('@nordicsemiconductor/asset-tracker-cloud-docs/protocol', () => {
-	describe('it should provide the same schema and validate ', () => {
-		it.each([
+void describe('@nordicsemiconductor/asset-tracker-cloud-docs/protocol', () => {
+	void describe('it should provide the same schema and validate ', () => {
+		for (const [message, typeDef, example] of [
 			['config', Config, null],
 			['messages', Message, 'message'],
 			['wifi-site-survey', WiFiSiteSurvey, null],
@@ -46,12 +49,14 @@ describe('@nordicsemiconductor/asset-tracker-cloud-docs/protocol', () => {
 			['state.desired.aws', AWSDesired, null],
 			['state.reported.aws', AWSReported, null],
 			['batch', Batch, 'batch-message'],
-		])(`%s`, async (message, typeDef, example) => {
-			const json = f(example ?? message)
-			// Make sure the type validates
-			const typeValidator = validateWithType(typeDef)
-			const validByType = typeValidator(json)
-			expect('errors' in validByType).toEqual(false)
-		})
+		] as [string, TSchema, string][]) {
+			void it(message, () => {
+				const json = f(example ?? message)
+				// Make sure the type validates
+				const typeValidator = validateWithType(typeDef)
+				const validByType = typeValidator(json)
+				assert.equal('errors' in (validByType as any), false)
+			})
+		}
 	})
 })

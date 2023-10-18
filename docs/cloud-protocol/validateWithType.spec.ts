@@ -1,5 +1,7 @@
 import { Type, type Static } from '@sinclair/typebox'
 import { validateWithType } from './validateWithType.js'
+import { describe, it } from 'node:test'
+import assert from 'node:assert'
 
 const typedInputSchema = Type.Object(
 	{
@@ -10,17 +12,17 @@ const typedInputSchema = Type.Object(
 	{ additionalProperties: false },
 )
 
-describe('validateWithType', () => {
-	describe('it should validate', () => {
+void describe('validateWithType', () => {
+	void describe('it should validate', () => {
 		const v = validateWithType(typedInputSchema)
-		it('valid input', () => {
+		void it('valid input', () => {
 			const isValid = v({ cell: 42 })
-			expect('errors' in isValid).toEqual(false)
-			expect((isValid as Static<typeof typedInputSchema>).cell).toEqual(42)
+			assert.equal('errors' in isValid, false)
+			assert.equal((isValid as Static<typeof typedInputSchema>).cell, 42)
 		})
-		it('invalid input', () => {
+		void it('invalid input', () => {
 			const isInvalid = v({ cell: -42 })
-			expect('errors' in isInvalid).toEqual(true)
+			assert.equal('errors' in isInvalid, true)
 		})
 	})
 })

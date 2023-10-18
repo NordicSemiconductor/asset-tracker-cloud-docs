@@ -11,7 +11,7 @@
     }
   },
   "scripts": {
-    "test": "jest",
+    "test": "npx tsx --test docs/cloud-protocol/*.spec.ts",
     "prepare": "husky install",
     "prepublishOnly": "npx swc -d dist ./docs/cloud-protocol"
   },
@@ -34,14 +34,12 @@
     "@nordicsemiconductor/asset-tracker-cloud-code-style": "12.0.98",
     "@nordicsemiconductor/eslint-config-asset-tracker-cloud-typescript": "16.0.23",
     "@swc/cli": "0.1.62",
-    "@swc/jest": "0.2.29",
     "@types/ajv": "1.0.0",
     "@types/glob": "8.1.0",
-    "@types/jest": "29.5.6",
     "@types/node": "20.8.7",
     "chalk": "5.3.0",
     "glob": "10.3.10",
-    "jest": "29.7.0",
+    "tsx": "3.14.0",
     "typescript": "5.2.2"
   },
   "lint-staged": {
@@ -80,17 +78,6 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.(t|j)sx?$": [
-        "@swc/jest"
-      ]
-    },
-    "testRegex": ".+\\.spec\\.ts$",
-    "moduleNameMapper": {
-      "^(\\.{1,2}/.*)\\.js$": "$1"
-    }
   },
   "prettier": "@nordicsemiconductor/asset-tracker-cloud-code-style/.prettierrc",
   "dependencies": {
