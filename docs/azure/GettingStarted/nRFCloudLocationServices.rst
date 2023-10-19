@@ -3,7 +3,7 @@
 nRF Cloud Location Services
 ###########################
 
-nRF Cloud Location Services are an essential component of any asset tracking solution and nRF Asset Tracker makes heavy use of them.
+nRF Cloud Location Services is an essential component of any asset tracking solution and nRF Asset Tracker uses these services frequently.
 
 Configuring the Service Key
 ***************************

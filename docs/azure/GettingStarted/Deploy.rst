@@ -126,7 +126,7 @@ To install the nRF Asset Tracker into your Azure account, complete the following
       # add to .envrc
       export NRF_CLOUD_TEAM_ID=...
 
-   You can locate your team ID in your nRF Cloud Account Dashboard.
+   You can find your team ID in your nRF Cloud account dashboard.
 
 #. Run the following command to allow the changed file:
 
