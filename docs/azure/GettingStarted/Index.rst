@@ -26,6 +26,7 @@ Before you start the setup of the nRF Asset Tracker on Azure, make sure that you
    Clone.rst
    AzureCLI.rst
    Deploy.rst
+   nRFCloudLocationServices.rst
    FirmwareConfiguration.rst
    DeviceCredentials.rst
    Programming.rst
