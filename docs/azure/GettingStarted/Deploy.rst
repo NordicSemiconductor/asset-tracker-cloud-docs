@@ -119,6 +119,15 @@ To install the nRF Asset Tracker into your Azure account, complete the following
    
    #. Click :guilabel:`Grant admin consent for <your B2C directory>`.
 
+#. Save the your nRF Cloud team ID to the environment variable ``NRF_CLOUD_TEAM_ID`` in the :file:`.envrc` file:
+
+   .. code-block:: bash
+
+      # add to .envrc
+      export NRF_CLOUD_TEAM_ID=...
+
+   You can find your team ID in your nRF Cloud account dashboard.
+
 #. Run the following command to allow the changed file:
 
    .. code-block:: bash
@@ -138,7 +147,8 @@ To install the nRF Asset Tracker into your Azure account, complete the following
             storageAccountName=${STORAGE_ACCOUNT_NAME:-nrfassettracker} \
             appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=$B2C_TENANT \
-            keyVaultName=${APP_NAME:-nrfassettracker}
+            keyVaultName=${APP_NAME:-nrfassettracker} \
+            nrfCloudTeamId=${NRF_CLOUD_TEAM_ID}
       # Currently it is not possible to enable website hosting through the ARM template
       az storage blob service-properties update \
          --account-name ${STORAGE_ACCOUNT_NAME:-nrfassettracker} \
