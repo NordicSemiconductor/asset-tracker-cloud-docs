@@ -3,7 +3,7 @@
 Running the application locally with Docker
 ###########################################
 
-If your system has a different version of Node.js, you can run the application locally in a `Docker container <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/blob/saga/Dockerfile>`_.
+If your system has a different version of Node.js, you can run the application locally in a `Docker container <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/blob/v2.1.x/Dockerfile>`_.
 
 To run the application locally with Docker, complete the following steps:
 
