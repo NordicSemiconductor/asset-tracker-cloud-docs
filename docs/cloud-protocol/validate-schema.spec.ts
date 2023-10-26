@@ -30,7 +30,7 @@ describe('schemas', () => {
 		['pgps-response', undefined],
 	])('%s should validate', async (schema, example) => {
 		const validate = ajv.getSchema(
-			`https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/${schema}.schema.json`,
+			`https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v2.1.x/docs/cloud-protocol/${schema}.schema.json`,
 		)
 		expect(validate).toBeDefined()
 		const json = f(example ?? `${schema}.json`)
