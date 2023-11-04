@@ -409,6 +409,10 @@
                   "description": "Atmospheric pressure reading from external sensor in kPa",
                   "minimum": 0,
                   "type": "number"
+                },
+                "bsec_iaq": {
+                  "description": "The Bosch BME680 sensor calculates an Air Quality Index. See https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf",
+                  "type": "number"
                 }
               },
               "required": [
