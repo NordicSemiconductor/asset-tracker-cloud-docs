@@ -173,6 +173,12 @@ export const Environment = Type.Object(
 						'Atmospheric pressure reading from external sensor in kPa',
 					minimum: 0,
 				}),
+				bsec_iaq: Type.Optional(
+					Type.Number({
+						description:
+							'The Bosch BME680 sensor calculates an Air Quality Index. See https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf',
+					}),
+				),
 			},
 			{
 				description: 'The individual sensor readings',
