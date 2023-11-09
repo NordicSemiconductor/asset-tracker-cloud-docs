@@ -102,6 +102,15 @@ jobs:
 
       - run: npx tsc
 
+      - name: Compile TypeScript
+        run: npx tsc
+
+      - name: Check source code with eslint
+        run: npx eslint --fix --ext .js,.ts,.jsx,.tsx ./
+
+      - name: Check if source code is properly formatted
+        run: npx prettier -c ./
+
       - run: npm test
 
   release:
