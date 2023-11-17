@@ -119,7 +119,7 @@ To install the nRF Asset Tracker into your Azure account, complete the following
    
    #. Click :guilabel:`Grant admin consent for <your B2C directory>`.
 
-#. Save the your nRF Cloud team ID to the environment variable ``NRF_CLOUD_TEAM_ID`` in the :file:`.envrc` file:
+#. Save your nRF Cloud team ID to the environment variable ``NRF_CLOUD_TEAM_ID`` in the :file:`.envrc` file:
 
    .. code-block:: bash
 
