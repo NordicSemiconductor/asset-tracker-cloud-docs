@@ -3,7 +3,7 @@
 System requirements
 ###################
 
-You need a development environment with
+You need a Linux development environment with
 
 - `Git <https://git-scm.com/>`_
 - `jq <https://stedolan.github.io/jq/>`_
