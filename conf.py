@@ -74,7 +74,7 @@ html_context = {
     'github_repo': 'asset-tracker-cloud-docs',
     'github_version': 'saga',
     'conf_py_path': '/',
-    'github_versions': ['saga', 'v2.2.x', 'v2.1.x', 'v1.8.x', 'v1.6.x', 'v1.5.x']
+    'github_versions': ['saga', 'v2.5.x', 'v2.2.x', 'v2.1.x', 'v1.8.x', 'v1.6.x', 'v1.5.x']
 }
 
 master_doc = 'index'
