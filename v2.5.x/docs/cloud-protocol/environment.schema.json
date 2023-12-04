@@ -1,0 +1,49 @@
+{
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/environment.schema.json",
+  "description": "Environment sensor readings",
+  "type": "object",
+  "properties": {
+    "v": {
+      "description": "The individual sensor readings",
+      "type": "object",
+      "properties": {
+        "temp": {
+          "description": "Temperature reading from external sensor",
+          "type": "number"
+        },
+        "hum": {
+          "description": "Humidity reading from external sensor",
+          "minimum": 1,
+          "maximum": 100,
+          "type": "number"
+        },
+        "atmp": {
+          "description": "Atmospheric pressure reading from external sensor in kPa",
+          "minimum": 0,
+          "type": "number"
+        },
+        "bsec_iaq": {
+          "description": "The Bosch BME680 sensor calculates an Air Quality Index. See https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf",
+          "type": "number"
+        }
+      },
+      "required": [
+        "temp",
+        "hum",
+        "atmp"
+      ]
+    },
+    "ts": {
+      "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+      "minimum": 1234567890123,
+      "examples": [
+        1584533788029
+      ],
+      "type": "integer"
+    }
+  },
+  "required": [
+    "v",
+    "ts"
+  ]
+}

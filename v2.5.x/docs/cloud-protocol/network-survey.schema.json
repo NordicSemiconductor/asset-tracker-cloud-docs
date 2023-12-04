@@ -1,0 +1,201 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/network-survey.schema.json",
+  "title": "Asset Tracker v2 network surveys",
+  "description": "Describes the format used by the device to report neighboring cell measurements and Wi-Fi site surveys in one message.",
+  "type": "object",
+  "properties": {
+    "lte": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/ncellmeas.schema.json",
+      "title": "Asset Tracker v2 neighboring cell measurements report",
+      "description": "Describes the format which is used by the device to report neighboring cell measurements. The report is produced by the %NCELLMEAS AT command. See https://infocenter.nordicsemi.com/topic/ref_at_commands/REF/at_commands/mob_termination_ctrl_status/ncellmeas.html",
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "mcc": {
+          "description": "Mobile country code. In contrast to roaming information (which uses the Modem Information data), neighboring cell measurement reports contain mcc and mnc as separate integers, instead of a string.",
+          "minimum": 100,
+          "maximum": 999,
+          "examples": [
+            242
+          ],
+          "type": "integer"
+        },
+        "mnc": {
+          "description": "Mobile network code.",
+          "minimum": 0,
+          "maximum": 999,
+          "examples": [
+            2,
+            410
+          ],
+          "type": "integer"
+        },
+        "cell": {
+          "description": "The cell ID the User Equipment (UE) is camped on. 4-byte Evolved Terrestrial Radio Access Network (E-UTRAN) cell ID.",
+          "minimum": 1,
+          "examples": [
+            33703719
+          ],
+          "type": "integer"
+        },
+        "area": {
+          "minimum": 1,
+          "description": "Area code.",
+          "examples": [
+            12
+          ],
+          "type": "integer"
+        },
+        "rsrp": {
+          "minimum": -199,
+          "maximum": 0,
+          "title": "RSRP",
+          "description": "Reference Signal Received Power (RSRP). The average power level in dBm received from a single reference signal in an LTE (Long-term Evolution) network. Typically this value ranges from -140 to -40 dBm. ",
+          "examples": [
+            -97,
+            -104
+          ],
+          "type": "number"
+        },
+        "rsrq": {
+          "description": "Reference Signals Received Quality (RSRQ) of the current cell. Typically this value ranges from -19.5 to −3 dBm.",
+          "minimum": -99,
+          "maximum": 0,
+          "examples": [
+            -11,
+            -18
+          ],
+          "type": "number"
+        },
+        "earfcn": {
+          "description": "E-UTRA Absolute Radio Frequency Channel Number (EARFCN) of the current cell where the EARFCN is as defined in 3GPP TS 36.101. LTE carrier channel number for unique identification of LTE band and carrier frequency.",
+          "minimum": 1,
+          "examples": [
+            262143
+          ],
+          "type": "integer"
+        },
+        "adv": {
+          "title": "Timing advance",
+          "description": "Timing advance value (Ts). Time units as specified in 3GPP TS 36.211. (0–20512: When timing advance is valid, 65535: When timing advance is not valid)",
+          "minimum": 0,
+          "maximum": 65535,
+          "examples": [
+            80
+          ],
+          "type": "integer"
+        },
+        "nmr": {
+          "minItems": 1,
+          "description": "The neighboring cells",
+          "type": "array",
+          "items": {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+              "earfcn": {
+                "description": "E-UTRA Absolute Radio Frequency Channel Number (EARFCN) of the current cell where the EARFCN is as defined in 3GPP TS 36.101. LTE carrier channel number for unique identification of LTE band and carrier frequency.",
+                "minimum": 1,
+                "examples": [
+                  262143
+                ],
+                "type": "integer"
+              },
+              "cell": {
+                "description": "Physical cell ID",
+                "minimum": 1,
+                "examples": [
+                  33703719
+                ],
+                "type": "integer"
+              },
+              "rsrp": {
+                "minimum": -199,
+                "maximum": 0,
+                "title": "RSRP",
+                "description": "Reference Signal Received Power (RSRP). The average power level in dBm received from a single reference signal in an LTE (Long-term Evolution) network. Typically this value ranges from -140 to -40 dBm. ",
+                "examples": [
+                  -97,
+                  -104
+                ],
+                "type": "number"
+              },
+              "rsrq": {
+                "description": "Reference Signals Received Quality (RSRQ) of the current cell. Typically this value ranges from -19.5 to −3 dBm.",
+                "minimum": -99,
+                "maximum": 0,
+                "examples": [
+                  -11,
+                  -18
+                ],
+                "type": "number"
+              }
+            },
+            "required": [
+              "earfcn",
+              "cell",
+              "rsrp",
+              "rsrq"
+            ]
+          }
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC) when the neighboring cell measurement report was received",
+          "minimum": 1234567890123,
+          "examples": [
+            1584533788029
+          ],
+          "type": "integer"
+        }
+      },
+      "required": [
+        "mcc",
+        "mnc",
+        "cell",
+        "area",
+        "rsrp",
+        "rsrq",
+        "earfcn",
+        "adv",
+        "ts"
+      ]
+    },
+    "wifi": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/wifi-site-survey.schema.json",
+      "title": "Asset Tracker v2 Wi-Fi site survey",
+      "description": "Describes the format used by the device to publish Wi-Fi site surveys.",
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "aps": {
+          "description": "The MAC addresses of the nearby Wi-Fi access points.",
+          "minItems": 2,
+          "type": "array",
+          "items": {
+            "description": "Access point MAC address. String comprised of 6 hexadecimal pairs, without separators",
+            "examples": [
+              "80e01d098f6e"
+            ],
+            "type": "string",
+            "pattern": "^[A-Fa-f0-9]{12}$"
+          }
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC) when the Wi-Fi site survey was created",
+          "minimum": 1234567890123,
+          "examples": [
+            1584533788029
+          ],
+          "type": "integer"
+        }
+      },
+      "required": [
+        "aps",
+        "ts"
+      ]
+    }
+  }
+}

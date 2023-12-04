@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transport and data protocol &mdash; nRF Asset Tracker 56d572e1783fa5dd98506b04cf58e4550d321707 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/nordic.css" type="text/css" /> 
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+<script
+  type="text/javascript"
+  src="../../_static/js/ncs.js"
+></script>
+<script src="../../_static/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Device data and configuration" href="DeviceDataAndConfiguration.html" />
+    <link rel="prev" title="Device-to-cloud communication" href="Index.html" />
+<link
+  href="../../_static/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<link
+  rel="shortcut icon"
+  href="../../_static/images/favicon.ico"
+/>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+<div
+  class="announcement-fixed"
+> <b>Important: </b>We're excited to introduce our new technical documentation platform <a href="http://docs.nordicsemi.com/">docs.nordicsemi.com</a>, currently in Beta version. We invite you to explore it and share your feedback. Read more on our <a href="https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/introducing-the-unified-documentation-portal">DevZone blog</a>. 
+</div>
+<div class="d-print-none ncs-header">
+  <div class="container-xl ncs-header-top">
+    <div class="row h-100">
+      <div class="d-none d-md-block col-2">
+        <div class="bg-white py-4 px-3 ml-2 ncs-header-logo">
+          <img
+            class="ncs-header-logo"
+            src="../../_static/images/nordic-logo.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div
+        class="col-8 col-md-7 pl-md-4 d-flex align-self-center justify-content-center"
+      >
+        <form class="w-75" action="../../search.html" method="get">
+          <div class="form-group">
+            <input
+              type="text"
+              name="q"
+              class="ncs-search-input form-control"
+              placeholder="Search all docs..."
+            />
+          </div>
+        </form>
+      </div>
+      <div class="col-4 col-md-3 d-md-block p-3 text-end">
+        <div class="dropdown">
+          <button
+            class="btn dropdown-toggle ncs-btn-versions"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <span class="d-none d-md-inline">v2.5.x</span>
+            <span id="ncsversion" class="d-inline"></span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/"
+              >saga</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v2.2.x/"
+              >v2.2.x</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v2.1.x/"
+              >v2.1.x</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.8.x/"
+              >v1.8.x</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.6.x/"
+              >v1.6.x</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.5.x/"
+              >v1.5.x</a
+            ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ncs-header-nav">
+    <div class="container-xl">
+      <div class="row">
+        <div class="col col-12 d-flex justify-content-center">
+          <nav class="navbar navbar-dark navbar-expand-lg p-0">
+            <span class="navbar-brand d-block d-lg-none py-2 pl-1"
+              >Documentation sets</span
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <ul class="navbar-nav">
+                <li
+                  class="nav-item active py-1 px-3"
+                >
+                  <a
+                    class="nav-link"
+                    href="../../../assettracker/index.html"
+                    >nRF Asset Tracker</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+<a href="../../index.html"> nRF Asset Tracker </a>
+<div class="version">v2.5.x</div>
+<div id="searchbox" role="search">
+  <div class="searchformwrapper">
+    <form
+      id="rtd-search-form"
+      class="wy-form"
+      action="../../search.html"
+      method="get"
+    >
+      <input type="text" name="q" placeholder="Search docs" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+  </div>
+</div>
+<script>
+  $("#searchbox").show(0);
+</script> 
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Azure cloud components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">nRF Asset Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Device-to-cloud communication</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Transport and data protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeviceDataAndConfiguration.html">Device data and configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../memfault/Index.html">Memfault integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">nRF Asset Tracker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Index.html">Device-to-cloud communication</a> &raquo;</li>
+      <li>Transport and data protocol</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v2.5.x/docs/cloud-protocol/TransportAndData.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="transport-and-data-protocol">
+<span id="transport-data-protocol"></span><h1>Transport and data protocol<a class="headerlink" href="#transport-and-data-protocol" title="Permalink to this headline"></a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#lte-m-for-the-cellular-connection" id="id1">LTE-M for the cellular connection</a></p></li>
+<li><p><a class="reference internal" href="#mqtt-as-the-transport-protocol" id="id2">MQTT as the transport protocol</a></p></li>
+<li><p><a class="reference internal" href="#json-as-the-data-format" id="id3">JSON as the data format</a></p>
+<ul>
+<li><p><a class="reference internal" href="#possible-optimizations" id="id4">Possible optimizations</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>The nRF Asset Tracker uses LTE-M, MQTT, and JSON as the main communication protocols between the device and the cloud.</p>
+<section id="lte-m-for-the-cellular-connection">
+<h2><a class="toc-backref" href="#id1">LTE-M for the cellular connection</a><a class="headerlink" href="#lte-m-for-the-cellular-connection" title="Permalink to this headline"></a></h2>
+<p>The firmware is configured to operate in LTE-M mode to connect to the cellular network.
+LTE-M provides global roaming capabilities, which is a critical feature for an asset tracker.
+The firmware supports also NB-IoT.</p>
+</section>
+<section id="mqtt-as-the-transport-protocol">
+<h2><a class="toc-backref" href="#id2">MQTT as the transport protocol</a><a class="headerlink" href="#mqtt-as-the-transport-protocol" title="Permalink to this headline"></a></h2>
+<p>The nRF Asset Tracker uses MQTT to connect the device to the cloud provider.
+MQTT is the default protocol used for IoT in the cloud solutions of the various cloud providers.
+This example currently focuses on AWS and Microsoft Azure.</p>
+</section>
+<section id="json-as-the-data-format">
+<span id="json-format"></span><h2><a class="toc-backref" href="#id3">JSON as the data format</a><a class="headerlink" href="#json-as-the-data-format" title="Permalink to this headline"></a></h2>
+<p>The nRF Asset Tracker uses JSON to represent all transferred data.
+It offers very good support in tooling and is human readable.
+JSON verbosity is valuable especially during development.</p>
+<section id="possible-optimizations">
+<h3><a class="toc-backref" href="#id4">Possible optimizations</a><a class="headerlink" href="#possible-optimizations" title="Permalink to this headline"></a></h3>
+<p>For data optimization and power optimization, it is recommended to explore denser data protocols, because a great deal of IoT applications (as in this example, too) always send data in the same structure.
+Only the values change in the data.</p>
+<p>Consider the following GNSS message:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.414394</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">63.430588</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;acc&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">17.127758</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;alt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">221.639832</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;spd&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.320966</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;hdg&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;ts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1566042672382</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>In JSON notation, this document (without newlines) has 114 bytes.
+If the message is to be transferred for example, using <a class="reference external" href="https://developers.google.com/protocol-buffers/">protocol buffers</a>, the data can be encoded with just 62 bytes (an improvement by 46%) (<a class="reference external" href="https://gist.github.com/coderbyheart/34a8e71ffe30af882407544567971efb">source code</a>).</p>
+<p>The savings in transferred data over the lifetime of a device may be significant.
+However, there is an extra cost of maintaining the source code on the device side and on the cloud side.
+The code must enable the use of a protocol, which is not supported natively by the cloud provider.</p>
+<p>See also <a class="reference external" href="http://tutorials.jenkov.com/rion/rion-performance-benchmarks.html">RION Performance Benchmarks</a> .</p>
+<p>Protocol buffers are available in Zephyr using <a class="reference external" href="https://jpa.kapsi.fi/nanopb/">Nanopb</a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+  <div
+    class="rst-footer-buttons"
+    role="navigation"
+    aria-label="footer navigation"
+  >
+    
+    <a
+      href="DeviceDataAndConfiguration.html"
+      class="btn btn-neutral float-right"
+      title="Device data and configuration"
+      accesskey="n"
+      rel="next"
+      >Next <span class="fa fa-arrow-circle-right"></span
+    ></a>
+     
+    <a
+      href="Index.html"
+      class="btn btn-neutral"
+      title="Device-to-cloud communication"
+      accesskey="p"
+      rel="prev"
+      ><span class="fa fa-arrow-circle-left"></span> Previous</a
+    >
+    
+  </div>
+  
+
+  <hr />
+
+  <div role="contentinfo">
+    <table>
+      <tr>
+        <td>
+          <p> &copy; Copyright 2019-2023, Nordic Semiconductor.
+          </p>
+        </td>
+        <td id="nordiclogo">
+          <a href="https://www.nordicsemi.com/"
+            ><img
+              src="../../_static/images/nordic-logo.png"
+              border="0"
+          /></a>
+        </td>
+      </tr>
+    </table>
+  </div> Built with
+  <a href="http://sphinx-doc.org/">Sphinx</a> using a
+  <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by
+  <a href="https://readthedocs.org">Read the Docs</a>. 
+</footer>
+
+<div id="scroll-container">
+  <button type="button" id="scroll-btn" class="btn">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+    >
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" fill="#fff" />
+    </svg>
+  </button>
+</div>
+
+<script>
+  const scrollBtn = document.querySelector("#scroll-btn");
+
+  document.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      scrollBtn.style.visibility = "visible";
+    } else {
+      scrollBtn.style.visibility = "hidden";
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div
+  class="rst-versions"
+  data-toggle="rst-versions"
+  role="note"
+  aria-label="versions"
+>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> nRF Asset Tracker</span>
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions"> 
+    <div class="rst-other-version assettracker">
+      <a href="../../../assettracker/index.html"
+        >nRF Asset Tracker</a
+      >
+    </div>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

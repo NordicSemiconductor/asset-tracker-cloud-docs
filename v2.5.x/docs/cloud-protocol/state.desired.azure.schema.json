@@ -1,0 +1,191 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/state.desired.azure.schema.json",
+  "title": "Device Data and Configuration for Azure",
+  "description": "Describes the possible properties of the desired device state for nRF Asset Tracker for Azure.",
+  "type": "object",
+  "properties": {
+    "cfg": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/config.schema.json",
+      "description": "Configures the device",
+      "type": "object",
+      "properties": {
+        "act": {
+          "description": "Whether to enable the active mode.",
+          "examples": [
+            false
+          ],
+          "type": "boolean"
+        },
+        "actwt": {
+          "description": "In active mode: Wait this amount of seconds until sending the next update. The actual interval will be this time plus the time it takes to get a GNSS fix.",
+          "minimum": 1,
+          "maximum": 2147483647,
+          "examples": [
+            60
+          ],
+          "type": "integer"
+        },
+        "mvres": {
+          "description": "Movement resolution (in seconds): After detecting movement in passive mode send an update and wait this amount of time until movement again can trigger the next update.",
+          "minimum": 1,
+          "maximum": 2147483647,
+          "examples": [
+            300
+          ],
+          "type": "integer"
+        },
+        "mvt": {
+          "description": "Movement timeout (in seconds): Send update at least this often in passive mode.",
+          "minimum": 1,
+          "maximum": 2147483647,
+          "examples": [
+            3600
+          ],
+          "type": "integer"
+        },
+        "loct": {
+          "description": "Location search timeout (in seconds): Timeout for location search (GNSS fix, cellular, and WiFi positioning).",
+          "minimum": 1,
+          "maximum": 2147483647,
+          "examples": [
+            60
+          ],
+          "type": "integer"
+        },
+        "accath": {
+          "description": "Accelerometer activity threshold (in m/s²): Minimal absolute value for an accelerometer reading to be considered movement.",
+          "minimum": 0,
+          "maximum": 78.4532,
+          "examples": [
+            10.5
+          ],
+          "type": "number"
+        },
+        "accith": {
+          "description": "Accelerometer inactivity threshold (in m/s²): Maximum absolute value for an accelerometer reading to be considered stillness. Must be smaller than the accelerometer activity threshold.",
+          "minimum": 0,
+          "maximum": 78.4532,
+          "examples": [
+            5.2
+          ],
+          "type": "number"
+        },
+        "accito": {
+          "description": "Accelerometer inactivity timeout (in s): Hysteresis timeout for stillness detection. Must be smaller than the movement resolution.",
+          "minimum": 0.08,
+          "maximum": 5242.88,
+          "examples": [
+            1.7
+          ],
+          "type": "number"
+        },
+        "nod": {
+          "description": "List of modules which should be disabled when sampling data.",
+          "type": "array",
+          "minItems": 0,
+          "examples": [
+            [
+              "gnss"
+            ],
+            [
+              "ncell"
+            ],
+            [
+              "gnss",
+              "ncell"
+            ]
+          ],
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "act",
+        "actwt",
+        "mvres",
+        "mvt",
+        "loct",
+        "accath",
+        "accith",
+        "accito",
+        "nod"
+      ]
+    },
+    "firmware": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/azure.fota.schema.json",
+      "description": "Schedules a firmware for the device",
+      "type": "object",
+      "properties": {
+        "fwVersion": {
+          "description": "Version of pending Firmware Upgrade (FOTA). Devices may report and empty string.",
+          "minLength": 1,
+          "examples": [
+            "v1.0.1-rc1-327-g6fc8c16b239f"
+          ],
+          "type": "string"
+        },
+        "fwPackageURI": {
+          "pattern": "^https?://.+$",
+          "description": "The public download link for the firmware. May expire after 60 minutes.",
+          "examples": [
+            "https://fw.example.com/upgrades/79ca833d-f653-48e8-b691-e0c3cfe1400a.bin"
+          ],
+          "type": "string"
+        },
+        "fwFragmentSize": {
+          "minimum": 1,
+          "description": "Specifies the maximum fragment size for the file that should be downloaded in each HTTP request. Should be around 1800 when using TLS.",
+          "examples": [
+            1800
+          ],
+          "type": "number"
+        },
+        "fwLocation": {
+          "description": "Parsed version of fwPackageURI",
+          "type": "object",
+          "properties": {
+            "protocol": {
+              "type": "string",
+              "enum": [
+                "https:",
+                "http:"
+              ]
+            },
+            "host": {
+              "pattern": "^[\\.a-z0-9]+$",
+              "examples": [
+                "fw.example.com"
+              ],
+              "description": "The hostname",
+              "type": "string"
+            },
+            "path": {
+              "examples": [
+                "upgrades/79ca833d-f653-48e8-b691-e0c3cfe1400a.bin"
+              ],
+              "description": "The path. Must not include a leading slash.",
+              "type": "string",
+              "pattern": "^[^/]+"
+            }
+          },
+          "required": [
+            "protocol",
+            "host",
+            "path"
+          ]
+        }
+      },
+      "required": [
+        "fwVersion",
+        "fwPackageURI",
+        "fwFragmentSize",
+        "fwLocation"
+      ]
+    }
+  }
+}

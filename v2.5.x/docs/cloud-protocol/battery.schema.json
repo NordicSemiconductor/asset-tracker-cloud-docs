@@ -1,0 +1,24 @@
+{
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/battery.schema.json",
+  "description": "Battery reading in millivolt",
+  "type": "object",
+  "properties": {
+    "v": {
+      "description": "Battery reading read by the modem",
+      "minimum": 1,
+      "type": "integer"
+    },
+    "ts": {
+      "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+      "minimum": 1234567890123,
+      "examples": [
+        1584533788029
+      ],
+      "type": "integer"
+    }
+  },
+  "required": [
+    "v",
+    "ts"
+  ]
+}

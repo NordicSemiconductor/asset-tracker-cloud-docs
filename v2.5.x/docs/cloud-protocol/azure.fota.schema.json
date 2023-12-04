@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/azure.fota.schema.json",
+  "description": "Schedules a firmware for the device",
+  "type": "object",
+  "properties": {
+    "fwVersion": {
+      "description": "Version of pending Firmware Upgrade (FOTA). Devices may report and empty string.",
+      "minLength": 1,
+      "examples": [
+        "v1.0.1-rc1-327-g6fc8c16b239f"
+      ],
+      "type": "string"
+    },
+    "fwPackageURI": {
+      "pattern": "^https?://.+$",
+      "description": "The public download link for the firmware. May expire after 60 minutes.",
+      "examples": [
+        "https://fw.example.com/upgrades/79ca833d-f653-48e8-b691-e0c3cfe1400a.bin"
+      ],
+      "type": "string"
+    },
+    "fwFragmentSize": {
+      "minimum": 1,
+      "description": "Specifies the maximum fragment size for the file that should be downloaded in each HTTP request. Should be around 1800 when using TLS.",
+      "examples": [
+        1800
+      ],
+      "type": "number"
+    },
+    "fwLocation": {
+      "description": "Parsed version of fwPackageURI",
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "string",
+          "enum": [
+            "https:",
+            "http:"
+          ]
+        },
+        "host": {
+          "pattern": "^[\\.a-z0-9]+$",
+          "examples": [
+            "fw.example.com"
+          ],
+          "description": "The hostname",
+          "type": "string"
+        },
+        "path": {
+          "examples": [
+            "upgrades/79ca833d-f653-48e8-b691-e0c3cfe1400a.bin"
+          ],
+          "description": "The path. Must not include a leading slash.",
+          "type": "string",
+          "pattern": "^[^/]+"
+        }
+      },
+      "required": [
+        "protocol",
+        "host",
+        "path"
+      ]
+    }
+  },
+  "required": [
+    "fwVersion",
+    "fwPackageURI",
+    "fwFragmentSize",
+    "fwLocation"
+  ]
+}

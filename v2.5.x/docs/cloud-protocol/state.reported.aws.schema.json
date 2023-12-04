@@ -1,0 +1,520 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/state.reported.aws.schema.json",
+  "title": "Device Data and Configuration for AWS",
+  "description": "Describes the data published by the device and its configuration options for nRF Asset Tracker for AWS.",
+  "type": "object",
+  "properties": {
+    "cfg": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/config.schema.json",
+      "description": "Configures the device",
+      "type": "object",
+      "properties": {
+        "act": {
+          "description": "Whether to enable the active mode.",
+          "examples": [
+            false
+          ],
+          "type": "boolean"
+        },
+        "actwt": {
+          "description": "In active mode: Wait this amount of seconds until sending the next update. The actual interval will be this time plus the time it takes to get a GNSS fix.",
+          "minimum": 1,
+          "maximum": 2147483647,
+          "examples": [
+            60
+          ],
+          "type": "integer"
+        },
+        "mvres": {
+          "description": "Movement resolution (in seconds): After detecting movement in passive mode send an update and wait this amount of time until movement again can trigger the next update.",
+          "minimum": 1,
+          "maximum": 2147483647,
+          "examples": [
+            300
+          ],
+          "type": "integer"
+        },
+        "mvt": {
+          "description": "Movement timeout (in seconds): Send update at least this often in passive mode.",
+          "minimum": 1,
+          "maximum": 2147483647,
+          "examples": [
+            3600
+          ],
+          "type": "integer"
+        },
+        "loct": {
+          "description": "Location search timeout (in seconds): Timeout for location search (GNSS fix, cellular, and WiFi positioning).",
+          "minimum": 1,
+          "maximum": 2147483647,
+          "examples": [
+            60
+          ],
+          "type": "integer"
+        },
+        "accath": {
+          "description": "Accelerometer activity threshold (in m/s²): Minimal absolute value for an accelerometer reading to be considered movement.",
+          "minimum": 0,
+          "maximum": 78.4532,
+          "examples": [
+            10.5
+          ],
+          "type": "number"
+        },
+        "accith": {
+          "description": "Accelerometer inactivity threshold (in m/s²): Maximum absolute value for an accelerometer reading to be considered stillness. Must be smaller than the accelerometer activity threshold.",
+          "minimum": 0,
+          "maximum": 78.4532,
+          "examples": [
+            5.2
+          ],
+          "type": "number"
+        },
+        "accito": {
+          "description": "Accelerometer inactivity timeout (in s): Hysteresis timeout for stillness detection. Must be smaller than the movement resolution.",
+          "minimum": 0.08,
+          "maximum": 5242.88,
+          "examples": [
+            1.7
+          ],
+          "type": "number"
+        },
+        "nod": {
+          "description": "List of modules which should be disabled when sampling data.",
+          "type": "array",
+          "minItems": 0,
+          "examples": [
+            [
+              "gnss"
+            ],
+            [
+              "ncell"
+            ],
+            [
+              "gnss",
+              "ncell"
+            ]
+          ],
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "act",
+        "actwt",
+        "mvres",
+        "mvt",
+        "loct",
+        "accath",
+        "accith",
+        "accito",
+        "nod"
+      ]
+    },
+    "dev": {
+      "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/device.schema.json",
+      "description": "Static device information. This information shall be updated by the device once after reboot.",
+      "type": "object",
+      "properties": {
+        "v": {
+          "type": "object",
+          "allOf": [
+            {
+              "type": "object",
+              "properties": {
+                "appV": {
+                  "description": "Firmware version",
+                  "minLength": 1,
+                  "examples": [
+                    "v1.0.0-rc1-327-g6fc8c16b239f"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "appV"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "imei": {
+                  "description": "Board IMEI",
+                  "minLength": 15,
+                  "maxLength": 16,
+                  "examples": [
+                    "352656106111232"
+                  ],
+                  "type": "string"
+                },
+                "iccid": {
+                  "description": "SIM ICCID",
+                  "minLength": 19,
+                  "maxLength": 20,
+                  "examples": [
+                    "89450421180216216095"
+                  ],
+                  "type": "string"
+                },
+                "modV": {
+                  "description": "Modem Firmware Version",
+                  "minLength": 1,
+                  "examples": [
+                    "mfw_nrf9160_1.0.0"
+                  ],
+                  "type": "string"
+                },
+                "brdV": {
+                  "description": "Board Version",
+                  "minLength": 1,
+                  "examples": [
+                    "thingy91_nrf9160"
+                  ],
+                  "type": "string"
+                },
+                "bat": {
+                  "description": "Battery model",
+                  "minLength": 1,
+                  "examples": [
+                    "LP302535",
+                    "LP502540",
+                    "LP602760",
+                    "LP803035"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "imei",
+                "modV",
+                "brdV"
+              ]
+            }
+          ]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "minimum": 1234567890123,
+          "examples": [
+            1584533788029
+          ],
+          "type": "integer"
+        }
+      },
+      "required": [
+        "v",
+        "ts"
+      ]
+    },
+    "roam": {
+      "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/roaming.schema.json",
+      "description": "Roaming information. This information shall be updated by the device every time it publishes primary application data. It is considered low-priority information so it should always be sent after the primary application data has been published.",
+      "type": "object",
+      "properties": {
+        "v": {
+          "type": "object",
+          "properties": {
+            "band": {
+              "description": "E-UTRA Absolute Radio Frequency Channel Number (EARFCN) of the current cell where the EARFCN is as defined in 3GPP TS 36.101. LTE carrier channel number for unique identification of LTE band and carrier frequency.",
+              "minimum": 1,
+              "examples": [
+                262143
+              ],
+              "type": "integer"
+            },
+            "nw": {
+              "description": "Network mode",
+              "minLength": 1,
+              "examples": [
+                "LTE-M",
+                "NB-IoT"
+              ],
+              "type": "string"
+            },
+            "rsrp": {
+              "minimum": -199,
+              "maximum": 0,
+              "title": "RSRP",
+              "description": "Reference Signal Received Power (RSRP). The average power level in dBm received from a single reference signal in an LTE (Long-term Evolution) network. Typically this value ranges from -140 to -40 dBm. ",
+              "examples": [
+                -97,
+                -104
+              ],
+              "type": "number"
+            },
+            "area": {
+              "minimum": 1,
+              "description": "Area code.",
+              "examples": [
+                12
+              ],
+              "type": "integer"
+            },
+            "mccmnc": {
+              "description": "Mobile country code and mobile network code",
+              "minimum": 10000,
+              "maximum": 999999,
+              "examples": [
+                24202,
+                310410
+              ],
+              "type": "integer"
+            },
+            "cell": {
+              "description": "The cell ID the User Equipment (UE) is camped on. 4-byte Evolved Terrestrial Radio Access Network (E-UTRAN) cell ID.",
+              "minimum": 1,
+              "examples": [
+                33703719
+              ],
+              "type": "integer"
+            },
+            "ip": {
+              "description": "IP address",
+              "minLength": 1,
+              "examples": [
+                "10.81.183.99",
+                "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+                "2001:db8:85a3::8a2e:370:7334"
+              ],
+              "type": "string"
+            },
+            "eest": {
+              "type": "integer",
+              "enum": [
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "description": "The %CONEVAL AT command returns amongst other data the energy estimate: Relative estimated energy consumption of data transmission compared to nominal consumption. A higher value means smaller energy consumption. 5: Difficulties in setting up connections. Maximum number of repetitions might be needed for data. 6: Poor conditions. Setting up a connection might require retries and a higher number of repetitions for data. 7: Normal conditions for cIoT device. No repetitions for data or only a few repetitions in the worst case. 8: Good conditions. Possibly very good conditions for small amounts of data. 9: Very good conditions. Efficient data transfer estimated also for larger amounts of data.",
+              "examples": [
+                5,
+                7
+              ]
+            }
+          },
+          "required": [
+            "nw",
+            "rsrp",
+            "area",
+            "mccmnc",
+            "cell",
+            "ip"
+          ]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "minimum": 1234567890123,
+          "examples": [
+            1584533788029
+          ],
+          "type": "integer"
+        }
+      },
+      "required": [
+        "v",
+        "ts"
+      ]
+    },
+    "bat": {
+      "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/battery.schema.json",
+      "description": "Battery reading in millivolt",
+      "type": "object",
+      "properties": {
+        "v": {
+          "description": "Battery reading read by the modem",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "minimum": 1234567890123,
+          "examples": [
+            1584533788029
+          ],
+          "type": "integer"
+        }
+      },
+      "required": [
+        "v",
+        "ts"
+      ]
+    },
+    "fg": {
+      "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/fuelGauge.schema.json",
+      "description": "Fuel gauge readings from e.g. the nPM1300",
+      "type": "object",
+      "properties": {
+        "v": {
+          "type": "object",
+          "properties": {
+            "V": {
+              "description": "Battery voltage in millivolt (mV)",
+              "minimum": 1,
+              "type": "integer"
+            },
+            "I": {
+              "description": "Current in milliampere (mA). Negative value means the device is charging.",
+              "type": "integer"
+            },
+            "T": {
+              "description": "Temperature in decidegree Celsius (d°C)",
+              "type": "integer"
+            },
+            "SoC": {
+              "description": "State of Charge in percent",
+              "minimum": 0,
+              "maximum": 100,
+              "type": "integer"
+            },
+            "TTE": {
+              "description": "Time to empty in seconds",
+              "minimum": 1,
+              "type": "integer"
+            },
+            "TTF": {
+              "description": "Time to full in seconds",
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "V",
+            "I",
+            "T",
+            "SoC"
+          ]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "minimum": 1234567890123,
+          "examples": [
+            1584533788029
+          ],
+          "type": "integer"
+        }
+      },
+      "required": [
+        "v",
+        "ts"
+      ]
+    },
+    "env": {
+      "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/environment.schema.json",
+      "description": "Environment sensor readings",
+      "type": "object",
+      "properties": {
+        "v": {
+          "description": "The individual sensor readings",
+          "type": "object",
+          "properties": {
+            "temp": {
+              "description": "Temperature reading from external sensor",
+              "type": "number"
+            },
+            "hum": {
+              "description": "Humidity reading from external sensor",
+              "minimum": 1,
+              "maximum": 100,
+              "type": "number"
+            },
+            "atmp": {
+              "description": "Atmospheric pressure reading from external sensor in kPa",
+              "minimum": 0,
+              "type": "number"
+            },
+            "bsec_iaq": {
+              "description": "The Bosch BME680 sensor calculates an Air Quality Index. See https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf",
+              "type": "number"
+            }
+          },
+          "required": [
+            "temp",
+            "hum",
+            "atmp"
+          ]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "minimum": 1234567890123,
+          "examples": [
+            1584533788029
+          ],
+          "type": "integer"
+        }
+      },
+      "required": [
+        "v",
+        "ts"
+      ]
+    },
+    "gnss": {
+      "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/GNSS.schema.json",
+      "description": "The GNSS reading",
+      "type": "object",
+      "properties": {
+        "v": {
+          "type": "object",
+          "properties": {
+            "lng": {
+              "description": "Longitude",
+              "minimum": -180,
+              "maximum": 180,
+              "type": "number"
+            },
+            "lat": {
+              "description": "Latitude",
+              "minimum": -90,
+              "maximum": 90,
+              "type": "number"
+            },
+            "acc": {
+              "description": "Accuracy (2D 1-sigma) in meters",
+              "minimum": 0,
+              "type": "number"
+            },
+            "alt": {
+              "description": "Altitude above WGS-84 ellipsoid in meters",
+              "type": "number"
+            },
+            "spd": {
+              "description": "Horizontal speed in meters",
+              "minimum": 0,
+              "type": "number"
+            },
+            "hdg": {
+              "description": "Heading of movement in degrees",
+              "minimum": 0,
+              "maximum": 360,
+              "type": "number"
+            }
+          },
+          "required": [
+            "lng",
+            "lat",
+            "acc",
+            "alt",
+            "spd"
+          ]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "minimum": 1234567890123,
+          "examples": [
+            1584533788029
+          ],
+          "type": "integer"
+        }
+      },
+      "required": [
+        "v",
+        "ts"
+      ]
+    }
+  }
+}

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using Azure Active Directory B2C &mdash; nRF Asset Tracker 56d572e1783fa5dd98506b04cf58e4550d321707 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/nordic.css" type="text/css" /> 
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+<script
+  type="text/javascript"
+  src="../../_static/js/ncs.js"
+></script>
+<script src="../../_static/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="nRF Asset Tracker web application" href="../app/Index.html" />
+    <link rel="prev" title="Azure IoT Shadow and topics" href="IoTShadowAndTopics.html" />
+<link
+  href="../../_static/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<link
+  rel="shortcut icon"
+  href="../../_static/images/favicon.ico"
+/>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+<div
+  class="announcement-fixed"
+> <b>Important: </b>We're excited to introduce our new technical documentation platform <a href="http://docs.nordicsemi.com/">docs.nordicsemi.com</a>, currently in Beta version. We invite you to explore it and share your feedback. Read more on our <a href="https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/introducing-the-unified-documentation-portal">DevZone blog</a>. 
+</div>
+<div class="d-print-none ncs-header">
+  <div class="container-xl ncs-header-top">
+    <div class="row h-100">
+      <div class="d-none d-md-block col-2">
+        <div class="bg-white py-4 px-3 ml-2 ncs-header-logo">
+          <img
+            class="ncs-header-logo"
+            src="../../_static/images/nordic-logo.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div
+        class="col-8 col-md-7 pl-md-4 d-flex align-self-center justify-content-center"
+      >
+        <form class="w-75" action="../../search.html" method="get">
+          <div class="form-group">
+            <input
+              type="text"
+              name="q"
+              class="ncs-search-input form-control"
+              placeholder="Search all docs..."
+            />
+          </div>
+        </form>
+      </div>
+      <div class="col-4 col-md-3 d-md-block p-3 text-end">
+        <div class="dropdown">
+          <button
+            class="btn dropdown-toggle ncs-btn-versions"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <span class="d-none d-md-inline">v2.5.x</span>
+            <span id="ncsversion" class="d-inline"></span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/"
+              >saga</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v2.2.x/"
+              >v2.2.x</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v2.1.x/"
+              >v2.1.x</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.8.x/"
+              >v1.8.x</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.6.x/"
+              >v1.6.x</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.5.x/"
+              >v1.5.x</a
+            ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ncs-header-nav">
+    <div class="container-xl">
+      <div class="row">
+        <div class="col col-12 d-flex justify-content-center">
+          <nav class="navbar navbar-dark navbar-expand-lg p-0">
+            <span class="navbar-brand d-block d-lg-none py-2 pl-1"
+              >Documentation sets</span
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <ul class="navbar-nav">
+                <li
+                  class="nav-item active py-1 px-3"
+                >
+                  <a
+                    class="nav-link"
+                    href="../../../assettracker/index.html"
+                    >nRF Asset Tracker</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+<a href="../../index.html"> nRF Asset Tracker </a>
+<div class="version">v2.5.x</div>
+<div id="searchbox" role="search">
+  <div class="searchformwrapper">
+    <form
+      id="rtd-search-form"
+      class="wy-form"
+      action="../../search.html"
+      method="get"
+    >
+      <input type="text" name="q" placeholder="Search docs" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+  </div>
+</div>
+<script>
+  $("#searchbox").show(0);
+</script> 
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Azure cloud components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/Index.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousIntegration.html">Continuous integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RunningInDocker.html">Running the application locally with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">Azure IoT Shadow and topics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using Azure Active Directory B2C</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">nRF Asset Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memfault/Index.html">Memfault integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">nRF Asset Tracker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Index.html">Azure cloud components</a> &raquo;</li>
+      <li>Using Azure Active Directory B2C</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v2.5.x/docs/azure/secure-azure-function-apps-with-microsoft-b2c.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-azure-active-directory-b2c">
+<span id="azure-adb2c"></span><h1>Using Azure Active Directory B2C<a class="headerlink" href="#using-azure-active-directory-b2c" title="Permalink to this headline"></a></h1>
+<p>To secure access to your Azure Function Apps and to allow access only to authenticated users, you can use Azure Active Directory B2C.
+It allows users to create their own accounts or sign in with credentials provided by a social identity provider.
+Users can access the Function Apps only after a successful authentication.</p>
+<p>To configure Azure AD B2C as the identity provider for your Function Apps, complete the following steps:</p>
+<ol class="arabic">
+<li><p>Log in to the <a class="reference external" href="https://portal.azure.com/#home">Azure portal</a>.</p></li>
+<li><p>Click <span class="guilabel">Create a resource</span> to create your Azure Function App.</p>
+<ol class="loweralpha">
+<li><p>Search for <code class="docutils literal notranslate"><span class="pre">function</span> <span class="pre">app</span></code>.</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">Function</span> <span class="pre">App</span></code>, click <span class="guilabel">Create</span>.</p>
+<figure class="align-default" id="id1">
+<img alt="Function App" src="../../_images/functionapp.png" />
+<figcaption>
+<p><span class="caption-text">Function App</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+</li>
+<li><p>Enter a unique name for your Function App, and fill the remaining information.
+You must fill the information in the <span class="guilabel">Basics</span> tab, and can then either fill in the information in the other tabs or go straight to the <span class="guilabel">Review + Create</span> tab.
+Check that all information is correct and click <span class="guilabel">Create</span>.</p>
+<p>Wait for the Function App to be deployed, then click <span class="guilabel">Go to resource</span> to view it.</p>
+</li>
+<li><p>Note the URL shown in the <span class="guilabel">Overview</span> section for your newly deployed app.</p></li>
+<li><p>Create a new B2C application.</p>
+<ol class="loweralpha">
+<li><p>In the Azure portal, click <span class="guilabel">More services</span>.</p></li>
+<li><p>Click <span class="guilabel">Identity</span> in the sidebar, then select <span class="guilabel">Azure AD B2C</span>.
+The <span class="guilabel">New Application</span> blade opens.</p>
+<figure class="align-default" id="id2">
+<img alt="App Service Authentication" src="../../_images/azureadb2c.png" />
+<figcaption>
+<p><span class="caption-text">App Service Authentication</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Configure the following options:</p>
+<ul>
+<li><p>Provide the app name.</p></li>
+<li><p>Click <span class="guilabel">Yes</span> for the <span class="guilabel">Web App/ Web API</span> option.</p></li>
+<li><p>In the <span class="guilabel">Reply Url</span> field, enter the unique Azure Function App URL that you noted in Step 4 and append  <code class="docutils literal notranslate"><span class="pre">/.auth/login/aad/callback</span></code> to it.
+For example:</p>
+<pre class="highlight literal-block"><a class="reference external" href="https://">https://</a><em>functionappname</em>.azurewebsites.net/.auth/login/aad/callback.</pre>
+</li>
+</ul>
+</li>
+<li><p>Click <span class="guilabel">Create</span>.</p></li>
+</ol>
+</li>
+<li><p>Determine the <em>B2C Application ID</em>:</p>
+<ol class="loweralpha simple">
+<li><p>In the Azure portal, select the <span class="guilabel">Azure AD B2C</span> blade.</p></li>
+<li><p>Click on <span class="guilabel">Applications</span> and then click on the entry for your newly created application to open the application profile.</p></li>
+<li><p>Obtain the <em>Application ID</em> from the <span class="guilabel">Properties</span> blade of the application.</p></li>
+</ol>
+<p>This ID is used to complete the Azure Function configuration.</p>
+</li>
+<li><p>Determine the <em>B2C OpenID Connect Metadata URL</em> endpoint:</p>
+<ol class="loweralpha">
+<li><p>In the Azure portal, select the <span class="guilabel">Azure AD B2C</span> blade.</p></li>
+<li><p>Under <span class="guilabel">Policies</span>, select <span class="guilabel">User flows</span>.</p></li>
+<li><p>Select the <span class="guilabel">Sign up and sign in</span> policy (or any other policy that you have created) and click <span class="guilabel">Run user flow</span>.</p>
+<p>The <span class="guilabel">Run user flow</span> blade opens.</p>
+</li>
+<li><p>Copy the OpenID Metadata URL endpoint that is displayed in the top right corner.</p></li>
+</ol>
+</li>
+<li><p>Select <span class="guilabel">Authentication (classic)</span> in the sidebar.</p></li>
+<li><p>Toggle <span class="guilabel">App Service Authentication</span> to <code class="docutils literal notranslate"><span class="pre">On</span></code>.
+Several authentication provider configurations are now displayed.</p>
+<p>The default action when a request is not authenticated is <code class="docutils literal notranslate"><span class="pre">Allow</span> <span class="pre">Anonymous</span> <span class="pre">request</span></code>.
+This allows any user to access your Function App.</p>
+<figure class="align-default" id="id3">
+<img alt="App Service Authentication" src="../../_images/appserviceauthentication.png" />
+<figcaption>
+<p><span class="caption-text">App Service Authentication</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Select <span class="guilabel">Log in with Azure Active Directory</span> in the <span class="guilabel">Action to take when request is not authenticated</span> dropdown.</p></li>
+<li><p>Select <span class="guilabel">Azure Active Directory</span> under the <span class="guilabel">Authentication Providers</span> list.</p>
+<p>This opens <span class="guilabel">Azure Active Directory Settings</span>.</p>
+</li>
+<li><p>Set the <span class="guilabel">Management mode</span> as <span class="guilabel">Advanced</span>, then fill in <span class="guilabel">Client ID</span> and <span class="guilabel">Issuer Url</span>.</p>
+<ol class="loweralpha">
+<li><p>Enter the B2C Application ID from Step 6 into the <span class="guilabel">Client ID</span> field.</p></li>
+<li><p>Enter the B2C Open ID Connect metadata URL from Step 7 into the <span class="guilabel">Issuer Url</span> field.</p>
+<figure class="align-default" id="id4">
+<img alt="Active Directory Settings" src="../../_images/activedirectorysettings.png" />
+<figcaption>
+<p><span class="caption-text">Active Directory Settings</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>If you wish to fill in <span class="guilabel">Client Secret</span>, click <span class="guilabel">Show secret</span> to display the appropriate field.
+You can fill in <span class="guilabel">Allowed Token Audiences</span> if you wish as well.</p></li>
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</li>
+</ol>
+<p>The configuration for B2C application and the Azure Function is now complete.</p>
+<p>To validate the configurations, you must perform tests.</p>
+<p>Confirm that users without authentication gets prompted to complete their B2C sign-in before being allowed access to your Function App:</p>
+<ol class="arabic">
+<li><p>In the <span class="guilabel">Azure AD B2C</span> blade, navigate to <span class="guilabel">User flows</span> under <span class="guilabel">Policies</span> and click the <span class="guilabel">Run user flow</span> button for each B2C User flow policy.</p>
+<p>The <span class="guilabel">Run user flow</span> blade opens for the selected user flow.</p>
+</li>
+<li><p>Select the entry that corresponds to your Azure Function App in the <span class="guilabel">Application</span> field.</p></li>
+<li><p>Select the associated <span class="guilabel">Reply Url</span>.
+In some cases you might have more than one reply URL.</p></li>
+<li><p>Click the <span class="guilabel">Run user flow</span> button.</p></li>
+</ol>
+<p>Also complete the following tests:</p>
+<ul class="simple">
+<li><p>Clear the browser session cookies and confirm that the user needs to authenticate during an attempt to access your Azure Function.
+After a successful access to the Function App, open a separate browser tab and validate that you can automatically sign in.</p></li>
+<li><p>Run other user flows, such as password reset or profile edit, with your Azure Function.
+After the users complete these flows, they are redirected to the Azure Function App.</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+  <div
+    class="rst-footer-buttons"
+    role="navigation"
+    aria-label="footer navigation"
+  >
+    
+    <a
+      href="../app/Index.html"
+      class="btn btn-neutral float-right"
+      title="nRF Asset Tracker web application"
+      accesskey="n"
+      rel="next"
+      >Next <span class="fa fa-arrow-circle-right"></span
+    ></a>
+     
+    <a
+      href="IoTShadowAndTopics.html"
+      class="btn btn-neutral"
+      title="Azure IoT Shadow and topics"
+      accesskey="p"
+      rel="prev"
+      ><span class="fa fa-arrow-circle-left"></span> Previous</a
+    >
+    
+  </div>
+  
+
+  <hr />
+
+  <div role="contentinfo">
+    <table>
+      <tr>
+        <td>
+          <p> &copy; Copyright 2019-2023, Nordic Semiconductor.
+          </p>
+        </td>
+        <td id="nordiclogo">
+          <a href="https://www.nordicsemi.com/"
+            ><img
+              src="../../_static/images/nordic-logo.png"
+              border="0"
+          /></a>
+        </td>
+      </tr>
+    </table>
+  </div> Built with
+  <a href="http://sphinx-doc.org/">Sphinx</a> using a
+  <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by
+  <a href="https://readthedocs.org">Read the Docs</a>. 
+</footer>
+
+<div id="scroll-container">
+  <button type="button" id="scroll-btn" class="btn">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+    >
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" fill="#fff" />
+    </svg>
+  </button>
+</div>
+
+<script>
+  const scrollBtn = document.querySelector("#scroll-btn");
+
+  document.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      scrollBtn.style.visibility = "visible";
+    } else {
+      scrollBtn.style.visibility = "hidden";
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div
+  class="rst-versions"
+  data-toggle="rst-versions"
+  role="note"
+  aria-label="versions"
+>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> nRF Asset Tracker</span>
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions"> 
+    <div class="rst-other-version assettracker">
+      <a href="../../../assettracker/index.html"
+        >nRF Asset Tracker</a
+      >
+    </div>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

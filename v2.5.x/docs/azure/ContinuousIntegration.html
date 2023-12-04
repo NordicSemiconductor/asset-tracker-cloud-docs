@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Continuous integration &mdash; nRF Asset Tracker 56d572e1783fa5dd98506b04cf58e4550d321707 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/nordic.css" type="text/css" /> 
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+<script
+  type="text/javascript"
+  src="../../_static/js/ncs.js"
+></script>
+<script src="../../_static/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Running the application locally with Docker" href="RunningInDocker.html" />
+    <link rel="prev" title="Continuous deployment" href="ContinuousDeployment.html" />
+<link
+  href="../../_static/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<link
+  rel="shortcut icon"
+  href="../../_static/images/favicon.ico"
+/>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+<div
+  class="announcement-fixed"
+> <b>Important: </b>We're excited to introduce our new technical documentation platform <a href="http://docs.nordicsemi.com/">docs.nordicsemi.com</a>, currently in Beta version. We invite you to explore it and share your feedback. Read more on our <a href="https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/introducing-the-unified-documentation-portal">DevZone blog</a>. 
+</div>
+<div class="d-print-none ncs-header">
+  <div class="container-xl ncs-header-top">
+    <div class="row h-100">
+      <div class="d-none d-md-block col-2">
+        <div class="bg-white py-4 px-3 ml-2 ncs-header-logo">
+          <img
+            class="ncs-header-logo"
+            src="../../_static/images/nordic-logo.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div
+        class="col-8 col-md-7 pl-md-4 d-flex align-self-center justify-content-center"
+      >
+        <form class="w-75" action="../../search.html" method="get">
+          <div class="form-group">
+            <input
+              type="text"
+              name="q"
+              class="ncs-search-input form-control"
+              placeholder="Search all docs..."
+            />
+          </div>
+        </form>
+      </div>
+      <div class="col-4 col-md-3 d-md-block p-3 text-end">
+        <div class="dropdown">
+          <button
+            class="btn dropdown-toggle ncs-btn-versions"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <span class="d-none d-md-inline">v2.5.x</span>
+            <span id="ncsversion" class="d-inline"></span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/"
+              >saga</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v2.2.x/"
+              >v2.2.x</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v2.1.x/"
+              >v2.1.x</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.8.x/"
+              >v1.8.x</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.6.x/"
+              >v1.6.x</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.5.x/"
+              >v1.5.x</a
+            ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ncs-header-nav">
+    <div class="container-xl">
+      <div class="row">
+        <div class="col col-12 d-flex justify-content-center">
+          <nav class="navbar navbar-dark navbar-expand-lg p-0">
+            <span class="navbar-brand d-block d-lg-none py-2 pl-1"
+              >Documentation sets</span
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <ul class="navbar-nav">
+                <li
+                  class="nav-item active py-1 px-3"
+                >
+                  <a
+                    class="nav-link"
+                    href="../../../assettracker/index.html"
+                    >nRF Asset Tracker</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+<a href="../../index.html"> nRF Asset Tracker </a>
+<div class="version">v2.5.x</div>
+<div id="searchbox" role="search">
+  <div class="searchformwrapper">
+    <form
+      id="rtd-search-form"
+      class="wy-form"
+      action="../../search.html"
+      method="get"
+    >
+      <input type="text" name="q" placeholder="Search docs" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+  </div>
+</div>
+<script>
+  $("#searchbox").show(0);
+</script> 
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../project/Index.html">Project overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">AWS cloud components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Azure cloud components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted/Index.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Continuous integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RunningInDocker.html">Running the application locally with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">Azure IoT Shadow and topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secure-azure-function-apps-with-microsoft-b2c.html">Using Azure Active Directory B2C</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">nRF Asset Tracker web application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud-protocol/Index.html">Device-to-cloud communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memfault/Index.html">Memfault integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Index.html">Guides</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&amp;type=repositories">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to the project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">nRF Asset Tracker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Index.html">Azure cloud components</a> &raquo;</li>
+      <li>Continuous integration</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v2.5.x/docs/azure/ContinuousIntegration.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="continuous-integration">
+<span id="azure-continuous-integration"></span><h1>Continuous integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline"></a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#prepare-your-azure-account" id="id1">Prepare your Azure account</a></p>
+<ul>
+<li><p><a class="reference internal" href="#log-in-and-create-the-resource-group" id="id2">Log in and create the resource group</a></p></li>
+<li><p><a class="reference internal" href="#create-a-secondary-tenant-azure-active-directory-b2c" id="id3">Create a secondary tenant (Azure Active Directory B2C)</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#fork-the-nrf-asset-tracker-repositories" id="id4">Fork the nRF Asset Tracker repositories</a></p></li>
+<li><p><a class="reference internal" href="#set-up-continuous-integration-on-github" id="id5">Set up continuous integration on GitHub</a></p></li>
+<li><p><a class="reference internal" href="#commit-and-push-a-change" id="id6">Commit and push a change</a></p></li>
+<li><p><a class="reference internal" href="#running-the-solution-during-development" id="id7">Running the solution during development</a></p></li>
+<li><p><a class="reference internal" href="#more-information" id="id8">More information</a></p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is an advanced topic that is closely tied with the further development and customization of the nRF Asset Tracker for your purposes.
+See the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js">GitHub project page of the nRF Asset Tracker for Azure</a> for an implementation of the process outlined in this section.</p>
+</div>
+<p>Continuous integration involves the following actions:</p>
+<ul class="simple">
+<li><p>Every change to the project is tested against an Azure account, which must be manually prepared.</p></li>
+<li><p>A Behavior Driven Development (BDD) test suite of end-to-end tests is run. The test suite is written in <a class="reference external" href="https://cucumber.io/docs/gherkin/">Gherkin</a>, which describes the tests in English.</p></li>
+</ul>
+<p>In this way, the tests are not tied to the implementation and you cannot accidentally drop tests during refactoring.
+Tests written for test runners like <a class="reference external" href="https://jestjs.io/">Jest</a> tend to be closely tied to the API of the source code implementation.
+In the case of a larger refactoring, the tests often need to be refactored as well.
+Since the BDD tests are purely testing based on the public API of the project (which is a mix of the native Azure API and a custom REST API), they can be kept unchanged during refactoring.</p>
+<section id="prepare-your-azure-account">
+<h2><a class="toc-backref" href="#id1">Prepare your Azure account</a><a class="headerlink" href="#prepare-your-azure-account" title="Permalink to this headline"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The setup process in Azure is more complicated when compared to the <a class="reference internal" href="../aws/ContinuousIntegration/Index.html#aws-continuous-integration"><span class="std std-ref">AWS continuous integration setup</span></a> since it involves many manual steps, which cannot be automated.
+If you have ideas to simplify the process, <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1">provide your input</a>.</p>
+</div>
+<section id="log-in-and-create-the-resource-group">
+<h3><a class="toc-backref" href="#id2">Log in and create the resource group</a><a class="headerlink" href="#log-in-and-create-the-resource-group" title="Permalink to this headline"></a></h3>
+<p>To create the resource group for the CI resources, complete the following steps:</p>
+<ol class="arabic">
+<li><p>Log in to the shell:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az login
+</pre></div>
+</div>
+</li>
+<li><p>Export the identifier of the subscription that contains the nRF Asset Tracker resources:</p>
+<pre class="highlight literal-block">export SUBSCRIPTION_ID=&quot;<em>subscription id</em>&quot;</pre>
+</li>
+<li><p>Make sure that you have enabled the correct subscription by using the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az account <span class="nb">set</span> --subscription <span class="nv">$SUBSCRIPTION_ID</span>
+<span class="c1"># Verify that it is set to default</span>
+az account list --output table
+</pre></div>
+</div>
+</li>
+<li><p>Choose a resource group name for the solution and export it as <code class="docutils literal notranslate"><span class="pre">RESOURCE_GROUP</span></code>.
+In this example, <code class="docutils literal notranslate"><span class="pre">nrfassettrackerci</span></code> is used as the resource group name.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">RESOURCE_GROUP</span><span class="o">=</span><span class="s2">&quot;nrfassettrackerci&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Choose a name for the solution and export it as <code class="docutils literal notranslate"><span class="pre">APP_NAME</span></code>.
+Use a short name (not more than 16 characters) composed of numbers and lowercase letters only.
+In this example, <code class="docutils literal notranslate"><span class="pre">nrfassettrackerci</span></code> is used as the application name.</p>
+<div class="highlight highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">APP_NAME</span><span class="o">=</span><span class="s2">&quot;nrfassettrackerci&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Configure your preferred location (you can list the locations using <code class="docutils literal notranslate"><span class="pre">az</span> <span class="pre">account</span> <span class="pre">list-locations</span></code>) and export it on the environment variable <code class="docutils literal notranslate"><span class="pre">LOCATION</span></code>.
+In this example, <code class="docutils literal notranslate"><span class="pre">northeurope</span></code> is used as the location name.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LOCATION</span><span class="o">=</span><span class="s2">&quot;northeurope&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Create a resource group for the CI resources:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az group create --name <span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettrackerci</span><span class="si">}</span> --location <span class="si">${</span><span class="nv">LOCATION</span><span class="k">:-</span><span class="nv">northeurope</span><span class="si">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="create-a-secondary-tenant-azure-active-directory-b2c">
+<h3><a class="toc-backref" href="#id3">Create a secondary tenant (Azure Active Directory B2C)</a><a class="headerlink" href="#create-a-secondary-tenant-azure-active-directory-b2c" title="Permalink to this headline"></a></h3>
+<ol class="arabic">
+<li><p>Create an Azure Active Directory B2C. Currently, it is not possible to create an Active Directory B2C and application through the ARM template (see <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/issues/1">GitHub issue</a>).</p>
+<ol class="loweralpha">
+<li><p>Follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant">tutorial for creating an Azure Active Directory B2C tenant</a> and create a B2C tenant.</p></li>
+<li><p>Follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/add-ropc-policy?tabs=app-reg-ga&amp;pivots=b2c-user-flow#register-an-application">tutorial for setting up a resource owner password credentials flow in Azure Active Directory B2C</a> and register an application.
+Make sure to set the following parameters:</p>
+<ul>
+<li><p>Set the <span class="guilabel">Supported account types</span> to <span class="guilabel">All users</span></p></li>
+<li><p>Update the Azure Active Directory app manifest and allow implicit grant flow for OAuth2:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;oauth2AllowImplicitFlow&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Export the initial domain name that you used:</p>
+<pre class="highlight literal-block">export B2C_TENANT=&quot;<em>Initial domain name</em>&quot; # For example, &quot;nrfassettrackerciusers&quot;</pre>
+</li>
+<li><p>Export the <span class="guilabel">Application (client) ID</span> and the <span class="guilabel">Directory (tenant) ID</span> of the created Active Directory B2C App:</p>
+<pre class="highlight literal-block">export APP_REG_CLIENT_ID=&quot;<em>Application (client) id</em>&quot;
+export B2C_TENANT_ID=&quot;<em>Directory (tenant) ID</em>&quot;</pre>
+</li>
+<li><p>For enabling the test-runner to programmatically log in users, enable <a class="reference external" href="https://docs.microsoft.com/EN-US/azure/active-directory-b2c/configure-ropc?tabs=app-reg-ga">the resource owner password credentials (ROPC) flow</a> with the following settings on the Active Directory B2C:</p>
+<ol class="loweralpha simple">
+<li><p>Name - <code class="docutils literal notranslate"><span class="pre">B2C_1_developer</span></code>.</p></li>
+<li><p>Click <span class="guilabel">Application claims</span>, select <span class="guilabel">Show more …</span> and then mark <span class="guilabel">Email Addresses</span> as a return claim.</p></li>
+</ol>
+</li>
+<li><p>Grant the B2C directory API permissions for authenticating users:</p>
+<ol class="loweralpha simple">
+<li><p>In the left menu, under <span class="guilabel">Manage</span>, select <span class="guilabel">API permissions</span>. Add the permission to manage user accounts (<span class="guilabel">Microsoft Graph</span> -&gt; <span class="guilabel">Application permission</span> -&gt; <span class="guilabel">User.ReadWrite.All</span>).</p></li>
+</ol>
+</li>
+<li><p>Grant the B2C directory API permissions for the function app:</p>
+<ol class="loweralpha simple">
+<li><p>Click <span class="guilabel">Expose an API</span> and  set the <span class="guilabel">Application ID URI</span> field to <code class="docutils literal notranslate"><span class="pre">api</span></code>.</p></li>
+<li><p>Click <span class="guilabel">+ Add a scope</span> and create a new scope with the following values and click <span class="guilabel">Add a scope</span>:</p>
+<ul class="simple">
+<li><p>Scope name - <code class="docutils literal notranslate"><span class="pre">nrfassettracker.admin</span></code></p></li>
+<li><p>Admin consent display name - Administrator access to the nRF Asset Tracker API</p></li>
+<li><p>Admin consent description - Allows administrator access to all resources exposed through the nRF Asset Tracker API</p></li>
+</ul>
+</li>
+<li><p>Click <span class="guilabel">API permissions</span> and then click <span class="guilabel">+ Add a permission</span>. Under <span class="guilabel">My APIs</span>, select the app registration.</p></li>
+<li><p>Enable the <code class="docutils literal notranslate"><span class="pre">nrfassettracker.admin</span></code> permission and click <span class="guilabel">Add permission</span>.</p></li>
+</ol>
+</li>
+<li><p>Click <span class="guilabel">Grant admin consent for &lt;your B2C directory&gt;</span>.</p></li>
+<li><p>Create a new client secret for the App registration (for example, <code class="docutils literal notranslate"><span class="pre">12OzW72ie-U.vlmzik-eO5gX.x26jLTI6U</span></code>) and note it down.</p>
+<pre class="highlight literal-block">export B2C_CLIENT_SECRET=&quot;<em>client secret</em>&quot;</pre>
+</li>
+<li><p>Link this Azure AD B2C tenant to the subscription for CI by following the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/billing#link-an-azure-ad-b2c-tenant-to-a-subscription">Billing guide</a>.</p></li>
+</ol>
+</section>
+</section>
+<section id="fork-the-nrf-asset-tracker-repositories">
+<h2><a class="toc-backref" href="#id4">Fork the nRF Asset Tracker repositories</a><a class="headerlink" href="#fork-the-nrf-asset-tracker-repositories" title="Permalink to this headline"></a></h2>
+<p>To enable continuous deployment, complete the following steps:</p>
+<ol class="arabic simple">
+<li><p>Fork the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js">nRF Asset Tracker for Azure repository</a>.</p></li>
+<li><p>Fork the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-app-js">nRF Asset Tracker web application repository</a>.</p></li>
+<li><p>Update the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-azure-js/blob/fd3777cde331286faf10e481bdf1a30327882008/package.json#L111">deploy.webApp.repository</a> in the <code class="file docutils literal notranslate"><span class="pre">package.json</span></code> file of your nRF Asset Tracker for Azure fork. It must point to the repository URL of your fork of the nRF Asset Tracker web application.</p></li>
+</ol>
+</section>
+<section id="set-up-continuous-integration-on-github">
+<h2><a class="toc-backref" href="#id5">Set up continuous integration on GitHub</a><a class="headerlink" href="#set-up-continuous-integration-on-github" title="Permalink to this headline"></a></h2>
+<p>To allow the continuous deployment GitHub Action workflow to authenticate against Azure with short-lived credentials using a service principal, complete the following steps:</p>
+<ol class="arabic" id="azure-continuous-integration-configure-service-principal">
+<li><p>Follow the instructions to <a class="reference external" href="https://github.com/Azure/login#configure-a-service-principal-with-a-federated-credential-to-use-oidc-based-authentication">Configure a service principal with a Federated Credential to use OIDC based authentication</a>.
+Use <code class="docutils literal notranslate"><span class="pre">https://nrfassettracker.invalid/ci</span></code> as the name.</p>
+<p>From the command line this can be achieved using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az ad app create --display-name <span class="s1">&#39;https://nrfassettracker.invalid/ci&#39;</span>
+<span class="nb">export</span> <span class="nv">APPLICATION_OBJECT_ID</span><span class="o">=</span><span class="sb">`</span>az ad app list <span class="p">|</span> jq -r <span class="s1">&#39;.[] | select(.displayName==&quot;https://nrfassettracker.invalid/ci&quot;) | .id&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>
+az rest --method POST --uri <span class="s2">&quot;https://graph.microsoft.com/beta/applications/</span><span class="si">${</span><span class="nv">APPLICATION_OBJECT_ID</span><span class="si">}</span><span class="s2">/federatedIdentityCredentials&quot;</span> --body <span class="s1">&#39;{&quot;name&quot;:&quot;GitHubActions&quot;,&quot;issuer&quot;:&quot;https://token.actions.githubusercontent.com&quot;,&quot;subject&quot;:&quot;repo:NordicSemiconductor/asset-tracker-cloud-azure-js:environment:ci&quot;,&quot;description&quot;:&quot;Allow GitHub Actions to modify Azure resources&quot;,&quot;audiences&quot;:[&quot;api://AzureADTokenExchange&quot;]}&#39;</span>
+</pre></div>
+</div>
+<p>Make sure to use the organization and repository name of your fork instead of <code class="docutils literal notranslate"><span class="pre">NordicSemiconductor/asset-tracker-cloud-azure-js</span></code> in the command above.</p>
+</li>
+<li><p>Set the secrets:</p>
+<ul>
+<li><p>Set the secrets using the GitHub UI:</p>
+<p>Set the following <a class="reference external" href="https://docs.github.com/en/rest/reference/actions#secrets">secrets</a> through the GitHub UI to an <a class="reference external" href="https://docs.github.com/en/actions/reference/environments#creating-an-environment">environment</a> called <code class="docutils literal notranslate"><span class="pre">production</span></code> in your fork of the nRF Asset Tracker for Azure:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AZURE_CLIENT_ID</span></code> - Store the application (client) ID of the service principal app registration created in step in the above step.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AZURE_TENANT_ID</span></code> - Store the directory (tenant) ID of the service principal app registration created in step in the above step.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AZURE_SUBSCRIPTION_ID</span></code> - Store the ID of the subscription which contains the nRF Asset Tracker resources.</p></li>
+</ul>
+<p>Set the following following values from your <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file as secrets as well:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RESOURCE_GROUP</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LOCATION</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">APP_NAME</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">B2C_TENANT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">APP_REG_CLIENT_ID</span></code></p></li>
+</ul>
+</li>
+<li><p>Alternatively, set the secrets using the GitHub CLI:</p>
+<p>You can use the <a class="reference external" href="https://cli.github.com/">GitHub CLI</a>  with the environment settings from above (make sure to create the <code class="docutils literal notranslate"><span class="pre">ci</span></code> <a class="reference external" href="https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment">deployment environment</a> in your repository first):</p>
+</li>
+</ul>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">AZURE_CLIENT_ID</span><span class="o">=</span><span class="sb">`</span>az ad app list <span class="p">|</span> jq -r <span class="s1">&#39;.[] | select(.displayName==&quot;https://nrfassettracker.invalid/ci&quot;) | .appId&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>
+<span class="nb">export</span> <span class="nv">AZURE_TENANT_ID</span><span class="o">=</span><span class="sb">`</span>az ad sp show --id <span class="si">${</span><span class="nv">AZURE_CLIENT_ID</span><span class="si">}</span> <span class="p">|</span> jq -r <span class="s1">&#39;.appOwnerOrganizationId&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>
+gh secret <span class="nb">set</span> AZURE_CLIENT_ID --env ci --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">AZURE_CLIENT_ID</span><span class="si">}</span><span class="s2">&quot;</span>
+gh secret <span class="nb">set</span> AZURE_TENANT_ID --env ci --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">AZURE_TENANT_ID</span><span class="si">}</span><span class="s2">&quot;</span>
+gh secret <span class="nb">set</span> AZURE_SUBSCRIPTION_ID --env ci --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span><span class="s2">&quot;</span>
+gh secret <span class="nb">set</span> RESOURCE_GROUP --env ci --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="si">}</span><span class="s2">&quot;</span>
+gh secret <span class="nb">set</span> LOCATION --env ci --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOCATION</span><span class="si">}</span><span class="s2">&quot;</span>
+gh secret <span class="nb">set</span> APP_NAME --env ci --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
+gh secret <span class="nb">set</span> B2C_TENANT --env ci --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">B2C_TENANT</span><span class="si">}</span><span class="s2">&quot;</span>
+gh secret <span class="nb">set</span> APP_REG_CLIENT_ID --env ci --body <span class="s2">&quot;</span><span class="si">${</span><span class="nv">APP_REG_CLIENT_ID</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Grant the application created in <a class="reference internal" href="#azure-continuous-integration-configure-service-principal"><span class="std std-ref">step 1</span></a> Owner permissions for your subscription:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">AZURE_CLIENT_ID</span><span class="o">=</span><span class="sb">`</span>az ad app list <span class="p">|</span> jq -r <span class="s1">&#39;.[] | select(.displayName==&quot;https://nrfassettracker.invalid/ci&quot;) | .appId&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>
+az role assignment create --role Owner <span class="se">\</span>
+   --assignee <span class="si">${</span><span class="nv">AZURE_CLIENT_ID</span><span class="si">}</span> <span class="se">\</span>
+   --scope /subscriptions/<span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Grant the application created in <a class="reference internal" href="#azure-continuous-integration-configure-service-principal"><span class="std std-ref">step 1</span></a> “Key Vault Secrets Officer” to the KeyVault:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">AZURE_CLIENT_ID</span><span class="o">=</span><span class="sb">`</span>az ad app list <span class="p">|</span> jq -r <span class="s1">&#39;.[] | select(.displayName==&quot;https://nrfassettracker.invalid/ci&quot;) | .appId&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="sb">`</span>
+az role assignment create --role <span class="s2">&quot;Key Vault Secrets Officer&quot;</span> <span class="se">\</span>
+   --assignee <span class="si">${</span><span class="nv">AZURE_CLIENT_ID</span><span class="si">}</span> <span class="se">\</span>
+   --scope /subscriptions/<span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span>/resourceGroups/<span class="si">${</span><span class="nv">RESOURCE_GROUP</span><span class="k">:-</span><span class="nv">nrfassettrackerci</span><span class="si">}</span>/providers/Microsoft.KeyVault/vaults/<span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">nrfassettrackerci</span><span class="si">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="commit-and-push-a-change">
+<h2><a class="toc-backref" href="#id6">Commit and push a change</a><a class="headerlink" href="#commit-and-push-a-change" title="Permalink to this headline"></a></h2>
+<p>Now, commit and push a change to your repository.
+This will trigger the CI run.</p>
+<p>You can also manually trigger a deployment on the Test and Release workflow.</p>
+</section>
+<section id="running-the-solution-during-development">
+<h2><a class="toc-backref" href="#id7">Running the solution during development</a><a class="headerlink" href="#running-the-solution-during-development" title="Permalink to this headline"></a></h2>
+<p>To run the end-to-end tests against the solution during development, run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install dependencies</span>
+npm ci
+
+<span class="c1"># One time operation: create an intermediate CA certificate</span>
+./cli.sh create-ca-root
+./cli.sh proof-ca-root-possession
+./cli.sh create-ca-intermediate
+
+<span class="c1"># Run tests</span>
+npm run test:e2e
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Azure functions allow only one Client ID and Issuer URL in the Active Directory authentication configuration.
+You cannot interact with this instance from the end-to-end tests and the web application, because the user flow names are different (<code class="docutils literal notranslate"><span class="pre">B2C_1_developer</span></code> for end-to-end tests and <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code> for the web application) and it is part of the Issuer URL (for example, <code class="docutils literal notranslate"><span class="pre">https://${TENANT_DOMAIN}.b2clogin.com/${TENANT_DOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_developer</span></code>).</p>
+</div>
+</section>
+<section id="more-information">
+<h2><a class="toc-backref" href="#id8">More information</a><a class="headerlink" href="#more-information" title="Permalink to this headline"></a></h2>
+<p>You can read more about how GitHub Actions uses OIDC on <a class="reference external" href="https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect">About security hardening with OpenID Connect</a> in the GitHub Actions documentation.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+  <div
+    class="rst-footer-buttons"
+    role="navigation"
+    aria-label="footer navigation"
+  >
+    
+    <a
+      href="RunningInDocker.html"
+      class="btn btn-neutral float-right"
+      title="Running the application locally with Docker"
+      accesskey="n"
+      rel="next"
+      >Next <span class="fa fa-arrow-circle-right"></span
+    ></a>
+     
+    <a
+      href="ContinuousDeployment.html"
+      class="btn btn-neutral"
+      title="Continuous deployment"
+      accesskey="p"
+      rel="prev"
+      ><span class="fa fa-arrow-circle-left"></span> Previous</a
+    >
+    
+  </div>
+  
+
+  <hr />
+
+  <div role="contentinfo">
+    <table>
+      <tr>
+        <td>
+          <p> &copy; Copyright 2019-2023, Nordic Semiconductor.
+          </p>
+        </td>
+        <td id="nordiclogo">
+          <a href="https://www.nordicsemi.com/"
+            ><img
+              src="../../_static/images/nordic-logo.png"
+              border="0"
+          /></a>
+        </td>
+      </tr>
+    </table>
+  </div> Built with
+  <a href="http://sphinx-doc.org/">Sphinx</a> using a
+  <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by
+  <a href="https://readthedocs.org">Read the Docs</a>. 
+</footer>
+
+<div id="scroll-container">
+  <button type="button" id="scroll-btn" class="btn">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+    >
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" fill="#fff" />
+    </svg>
+  </button>
+</div>
+
+<script>
+  const scrollBtn = document.querySelector("#scroll-btn");
+
+  document.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      scrollBtn.style.visibility = "visible";
+    } else {
+      scrollBtn.style.visibility = "hidden";
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div
+  class="rst-versions"
+  data-toggle="rst-versions"
+  role="note"
+  aria-label="versions"
+>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> nRF Asset Tracker</span>
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions"> 
+    <div class="rst-other-version assettracker">
+      <a href="../../../assettracker/index.html"
+        >nRF Asset Tracker</a
+      >
+    </div>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

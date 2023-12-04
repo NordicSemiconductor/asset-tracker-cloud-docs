@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/wifi-site-survey.schema.json",
+  "title": "Asset Tracker v2 Wi-Fi site survey",
+  "description": "Describes the format used by the device to publish Wi-Fi site surveys.",
+  "additionalProperties": false,
+  "type": "object",
+  "properties": {
+    "aps": {
+      "description": "The MAC addresses of the nearby Wi-Fi access points.",
+      "minItems": 2,
+      "type": "array",
+      "items": {
+        "description": "Access point MAC address. String comprised of 6 hexadecimal pairs, without separators",
+        "examples": [
+          "80e01d098f6e"
+        ],
+        "type": "string",
+        "pattern": "^[A-Fa-f0-9]{12}$"
+      }
+    },
+    "ts": {
+      "description": "Timestamp as Unix epoch with millisecond precision (UTC) when the Wi-Fi site survey was created",
+      "minimum": 1234567890123,
+      "examples": [
+        1584533788029
+      ],
+      "type": "integer"
+    }
+  },
+  "required": [
+    "aps",
+    "ts"
+  ]
+}

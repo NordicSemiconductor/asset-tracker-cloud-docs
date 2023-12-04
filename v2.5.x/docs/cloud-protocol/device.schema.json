@@ -1,0 +1,74 @@
+{
+  "$id": "https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/docs/cloud-protocol/device.schema.json",
+  "description": "Static device information. This information shall be updated by the device once after reboot.",
+  "type": "object",
+  "properties": {
+    "v": {
+      "type": "object",
+      "properties": {
+        "imei": {
+          "description": "Board IMEI",
+          "minLength": 15,
+          "maxLength": 16,
+          "examples": [
+            "352656106111232"
+          ],
+          "type": "string"
+        },
+        "iccid": {
+          "description": "SIM ICCID",
+          "minLength": 19,
+          "maxLength": 20,
+          "examples": [
+            "89450421180216216095"
+          ],
+          "type": "string"
+        },
+        "modV": {
+          "description": "Modem Firmware Version",
+          "minLength": 1,
+          "examples": [
+            "mfw_nrf9160_1.0.0"
+          ],
+          "type": "string"
+        },
+        "brdV": {
+          "description": "Board Version",
+          "minLength": 1,
+          "examples": [
+            "thingy91_nrf9160"
+          ],
+          "type": "string"
+        },
+        "bat": {
+          "description": "Battery model",
+          "minLength": 1,
+          "examples": [
+            "LP302535",
+            "LP502540",
+            "LP602760",
+            "LP803035"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "imei",
+        "modV",
+        "brdV"
+      ]
+    },
+    "ts": {
+      "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+      "minimum": 1234567890123,
+      "examples": [
+        1584533788029
+      ],
+      "type": "integer"
+    }
+  },
+  "required": [
+    "v",
+    "ts"
+  ]
+}
