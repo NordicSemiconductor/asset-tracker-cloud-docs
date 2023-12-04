@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Connect using the simulator &mdash; nRF Asset Tracker 56d572e1783fa5dd98506b04cf58e4550d321707 documentation</title>
+  <title>Connect using the simulator &mdash; nRF Asset Tracker 3f4b861230269df871715dfaf61c115f60794a01 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/nordic.css" type="text/css" /> 
   
@@ -83,6 +83,11 @@
               class="dropdown-item"
               href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/"
               >saga</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v2.5.x/"
+              >v2.5.x</a
             >
             <a
               class="dropdown-item"
@@ -241,14 +246,8 @@
 <span id="simulator-aws"></span><h1>Connect using the simulator<a class="headerlink" href="#connect-using-the-simulator" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#creating-certificates-for-the-device" id="id2">Creating certificates for the device</a></p></li>
-<li><p><a class="reference internal" href="#running-the-device-simulator" id="id3">Running the device simulator</a></p></li>
-<li><p><a class="reference internal" href="#using-the-device-simulator-ui" id="id4">Using the device simulator UI</a></p>
-<ul>
-<li><p><a class="reference internal" href="#clone-the-project-and-install-dependencies" id="id5">Clone the project and install dependencies</a></p></li>
-<li><p><a class="reference internal" href="#run-the-device-simulator-ui" id="id6">Run the device simulator UI</a></p></li>
-</ul>
-</li>
+<li><p><a class="reference internal" href="#creating-certificates-for-the-device" id="id1">Creating certificates for the device</a></p></li>
+<li><p><a class="reference internal" href="#running-the-device-simulator" id="id2">Running the device simulator</a></p></li>
 </ul>
 </div>
 <p>The CLI provides a software implementation of a nRF9160-based asset tracker for testing purposes.
@@ -261,44 +260,17 @@ This feature is also used for testing the nRF Asset Tracker using continuous int
 <li><p>Use the device simulator UI to control the simulated device.</p></li>
 </ul>
 <section id="creating-certificates-for-the-device">
-<h2><a class="toc-backref" href="#id2">Creating certificates for the device</a><a class="headerlink" href="#creating-certificates-for-the-device" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id1">Creating certificates for the device</a><a class="headerlink" href="#creating-certificates-for-the-device" title="Permalink to this headline"></a></h2>
 <p>To create certificates for a simulated device, run the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cli.sh create-simulator-cert
 </pre></div>
 </div>
 </section>
 <section id="running-the-device-simulator">
-<h2><a class="toc-backref" href="#id3">Running the device simulator</a><a class="headerlink" href="#running-the-device-simulator" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id2">Running the device simulator</a><a class="headerlink" href="#running-the-device-simulator" title="Permalink to this headline"></a></h2>
 <p>To run a simulated device using the generated certificate, run the following command:</p>
 <pre class="highlight literal-block"> npm exec -- &#64;nordicsemiconductor/asset-tracker-cloud-device-simulator-aws \
      &quot;<em>/path/to/certificate.json</em>&quot;</pre>
-<p>The device simulator will print an endpoint to use with the device simulator UI.</p>
-</section>
-<section id="using-the-device-simulator-ui">
-<h2><a class="toc-backref" href="#id4">Using the device simulator UI</a><a class="headerlink" href="#using-the-device-simulator-ui" title="Permalink to this headline"></a></h2>
-<p>The <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js">device-ui</a> project provides a browser-based UI to control the simulated device.</p>
-<figure class="align-default" id="id1">
-<img alt="Device simulator UI" src="../../_images/device-simulator.png" />
-<figcaption>
-<p><span class="caption-text">Device simulator UI</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
-</figcaption>
-</figure>
-<section id="clone-the-project-and-install-dependencies">
-<h3><a class="toc-backref" href="#id5">Clone the project and install dependencies</a><a class="headerlink" href="#clone-the-project-and-install-dependencies" title="Permalink to this headline"></a></h3>
-<p>Clone the device-ui project and install the dependencies:</p>
-<pre class="literal-block">git clone --branch v2.5.x --single-branch \
-  <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js">https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui-js</a> device-ui
-cd device-ui
-npm ci</pre>
-</section>
-<section id="run-the-device-simulator-ui">
-<h3><a class="toc-backref" href="#id6">Run the device simulator UI</a><a class="headerlink" href="#run-the-device-simulator-ui" title="Permalink to this headline"></a></h3>
-<p>To run the device simulator UI, use the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm start
-</pre></div>
-</div>
-<p>After executing the above command, copy the endpoint printed above (for example, <code class="docutils literal notranslate"><span class="pre">http://localhost:25336</span></code>) and use it in the simulator UI.</p>
-</section>
 </section>
 </section>
 
