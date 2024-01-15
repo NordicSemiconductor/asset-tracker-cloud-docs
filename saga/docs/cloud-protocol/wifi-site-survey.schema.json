@@ -11,12 +11,12 @@
       "minItems": 2,
       "type": "array",
       "items": {
+        "pattern": "^[A-Fa-f0-9]{12}$",
         "description": "Access point MAC address. String comprised of 6 hexadecimal pairs, without separators",
         "examples": [
           "80e01d098f6e"
         ],
-        "type": "string",
-        "pattern": "^[A-Fa-f0-9]{12}$"
+        "type": "string"
       }
     },
     "ts": {
