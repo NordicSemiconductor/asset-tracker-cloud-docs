@@ -5,7 +5,8 @@ import { Timestamp } from './Timestamp.js'
 export const WiFiSiteSurvey = Type.Object(
 	{
 		aps: Type.Array(
-			Type.RegEx(/^[A-Fa-f0-9]{12}$/, {
+			Type.String({
+				pattern: '^[A-Fa-f0-9]{12}$',
 				description:
 					'Access point MAC address. String comprised of 6 hexadecimal pairs, without separators',
 				examples: ['80e01d098f6e'],

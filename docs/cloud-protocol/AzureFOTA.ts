@@ -34,7 +34,8 @@ export const AzureFOTA = Type.Object(
 					examples: ['fw.example.com'],
 					description: 'The hostname',
 				}),
-				path: Type.RegEx(/^[^/]+/, {
+				path: Type.String({
+					pattern: '^[^/]+',
 					examples: ['upgrades/79ca833d-f653-48e8-b691-e0c3cfe1400a.bin'],
 					description: 'The path. Must not include a leading slash.',
 				}),
