@@ -85,7 +85,7 @@
   },
   "prettier": "@nordicsemiconductor/asset-tracker-cloud-code-style/.prettierrc",
   "dependencies": {
-    "@sinclair/typebox": "0.32.9"
+    "@sinclair/typebox": "0.32.12"
   },
   "files": [
     "protocol.js",
