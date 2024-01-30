@@ -1,61 +1,33 @@
 {
-  "name": "@nordicsemiconductor/asset-tracker-cloud-docs",
+  "name": "@nordicsemiconductor/asset-tracker-cloud-code-style",
   "version": "0.0.0-development",
-  "description": "The nRF Asset Tracker aims to provide a concrete end-to-end example for an IoT product in the asset tracker space.",
-  "type": "module",
-  "types": "./protocol.d.ts",
-  "exports": {
-    "./protocol": {
-      "import": "./protocol.js",
-      "node": "./protocol.js"
-    }
-  },
-  "scripts": {
-    "test": "npx tsx --test docs/cloud-protocol/*.spec.ts",
-    "prepare": "husky install",
-    "prepublishOnly": "npx swc -d dist ./docs/cloud-protocol"
-  },
+  "description": "Code style definitions for all nRF Asset Tracker projects.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NordicSemiconductor/asset-tracker-cloud-docs.git"
+    "url": "git+https://github.com/NordicSemiconductor/asset-tracker-cloud-code-style-js.git"
   },
   "bugs": {
-    "url": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues"
+    "url": "https://github.com/NordicSemiconductor/asset-tracker-cloud-code-style-js/issues"
   },
-  "homepage": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs#readme",
+  "homepage": "https://github.com/NordicSemiconductor/asset-tracker-cloud-code-style-js#readme",
   "keywords": [
     "nrf-asset-tracker",
     "iot"
   ],
   "author": "Nordic Semiconductor ASA | nordicsemi.no",
   "license": "BSD-3-Clause",
-  "devDependencies": {
-    "@commitlint/config-conventional": "18.6.0",
-    "@nordicsemiconductor/asset-tracker-cloud-code-style": "13.1.12",
-    "@nordicsemiconductor/eslint-config-asset-tracker-cloud-typescript": "17.0.0",
-    "@swc/cli": "0.3.5",
-    "@types/glob": "8.1.0",
-    "@types/node": "20.11.6",
-    "@typescript-eslint/eslint-plugin": "6.20.0",
-    "chalk": "5.3.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-import": "2.29.1",
-    "eslint-plugin-prefer-arrow": "1.2.3",
-    "eslint-plugin-unicorn": "50.0.1",
-    "glob": "10.3.10",
-    "tsx": "4.7.0",
+  "dependencies": {
+    "@commitlint/cli": "18.6.0",
+    "eslint": "8.56.0",
+    "lint-staged": "15.2.0",
+    "pinst": "3.0.0",
+    "prettier": "3.2.4",
+    "prettier-plugin-organize-imports": "3.2.4",
     "typescript": "5.3.3"
   },
   "lint-staged": {
-    "*.ts": [
-      "prettier --write",
-      "eslint --ext .js,.ts"
-    ],
-    "*.{md,json,yaml,yml}": [
-      "prettier --write"
-    ],
-    "*.rst": [
-      "node scripts/headline-fixer.js"
+    "*.{yml,md,js,json}": [
+      "prettier --write --config .prettierrc.js"
     ]
   },
   "engines": {
@@ -83,18 +55,21 @@
   "publishConfig": {
     "access": "public"
   },
-  "prettier": "@nordicsemiconductor/asset-tracker-cloud-code-style/.prettierrc",
-  "dependencies": {
-    "@sinclair/typebox": "0.32.13"
-  },
   "files": [
-    "protocol.js",
-    "protocol.d.ts",
-    "dist",
-    "src",
     "package-lock.json",
+    "index.js",
     "LICENSE",
     "README.md",
-    "docs/cloud-protocol/*.ts"
-  ]
+    ".prettierrc.js",
+    "tsconfig.json",
+    "templates"
+  ],
+  "scripts": {
+    "prepare": "husky",
+    "test": "npm exec -- renovate-config-validator"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "18.6.0",
+    "husky": "9.0.7"
+  }
 }
