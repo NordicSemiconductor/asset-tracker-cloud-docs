@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "npx tsx --test docs/cloud-protocol/*.spec.ts",
-    "prepare": "husky install",
+    "prepare": "husky",
     "prepublishOnly": "npx swc -d dist ./docs/cloud-protocol"
   },
   "repository": {
@@ -43,6 +43,7 @@
     "eslint-plugin-prefer-arrow": "1.2.3",
     "eslint-plugin-unicorn": "50.0.1",
     "glob": "10.3.10",
+    "husky": "9.0.7",
     "tsx": "4.7.0",
     "typescript": "5.3.3"
   },
