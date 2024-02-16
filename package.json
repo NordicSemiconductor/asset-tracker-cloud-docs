@@ -84,7 +84,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "prettier": "@nordicsemiconductor/asset-tracker-cloud-code-style/.prettierrc",
+  "prettier": "@bifravst/prettier-config",
   "dependencies": {
     "@sinclair/typebox": "0.32.14"
   },
