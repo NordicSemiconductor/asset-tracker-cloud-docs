@@ -19,8 +19,8 @@
     "baseUrl": ".",
     "paths": {
       "@nordicsemiconductor/asset-tracker-cloud-docs/protocol": [
-        "protocol.d.ts",
-      ],
-    },
-  },
+        "protocol.d.ts"
+      ]
+    }
+  }
 }
