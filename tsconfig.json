@@ -16,6 +16,7 @@
     "noUnusedLocals": true,
     "noEmit": true,
     "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
       "@nordicsemiconductor/asset-tracker-cloud-docs/protocol": [
