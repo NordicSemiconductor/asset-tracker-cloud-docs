@@ -13,7 +13,7 @@
   "scripts": {
     "test": "npx tsx --test docs/cloud-protocol/*.spec.ts",
     "prepare": "husky",
-    "prepublishOnly": "npx swc -d dist ./docs/cloud-protocol"
+    "prepublishOnly": "npx swc --strip-leading-paths -d dist ./docs/cloud-protocol"
   },
   "repository": {
     "type": "git",
