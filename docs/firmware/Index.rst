@@ -3,7 +3,7 @@
 Firmware
 ########
 
-The firmware of the :ref:`nRF Asset Tracker <project>` is the `nRF9160: Asset Tracker v2 <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html>`_, which is a reference application developed using the `nRF Connect SDK <https://github.com/nrfconnect/sdk-nrf>`_.
+The firmware of the :ref:`nRF Asset Tracker <project>` is the `Asset Tracker v2 <https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/applications/asset_tracker_v2/README.html>`_, which is a reference application developed using the `nRF Connect SDK <https://github.com/nrfconnect/sdk-nrf>`_.
 
 It is compatible with the :ref:`nRF Asset Tracker for AWS <index_aws>` and the :ref:`nRF Asset Tracker for Azure <index_azure>`.
 
