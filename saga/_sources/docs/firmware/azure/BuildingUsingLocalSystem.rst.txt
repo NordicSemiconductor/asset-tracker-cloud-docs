@@ -16,7 +16,7 @@ Before building the project using your local system, complete the following step
 Prepare your system
 *******************
 
-Follow the `Getting started documentation <http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html>`_ of the nRF Connect SDK to set up your system for building the project.
+Follow the `installation instructions <https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/installation.html>`_ of the nRF Connect SDK to set up your system for building the project.
 
 Clone the project and install the dependencies
 **********************************************
