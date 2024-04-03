@@ -26,8 +26,8 @@ The nRF Asset Tracker is an application that aims to provide a concrete end-to-e
    docs/guides/Index.rst
    GitHub <https://github.com/search?q=org%3ANordicSemiconductor+nrf-asset-tracker&type=repositories>
    docs/Support.rst
-   CODE_OF_CONDUCT.rst
-   CONTRIBUTING.rst
+   Code of Conduct <https://github.com/bifravst/.github/blob/saga/CODE_OF_CONDUCT.md>
+   Contributing <https://github.com/bifravst/.github/blob/saga/CONTRIBUTING.md>
 
 Acknowledgements
 ****************
