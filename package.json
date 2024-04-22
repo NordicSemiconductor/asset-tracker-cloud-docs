@@ -79,10 +79,6 @@
     "access": "public"
   },
   "prettier": "@bifravst/prettier-config",
-  "dependencies": {
-    "@sinclair/typebox": "0.32.22",
-    "ajv": "8.12.0"
-  },
   "files": [
     "protocol.js",
     "protocol.d.ts",
@@ -91,5 +87,9 @@
     "LICENSE",
     "README.md",
     "docs/cloud-protocol/*.ts"
-  ]
+  ],
+  "peerDependencies": {
+    "@sinclair/typebox": "^0.32.22",
+    "ajv": "^8.12.0"
+  }
 }
