@@ -20,11 +20,11 @@ Running end-to-end tests during development
 
 The end-to-end tests run against an instance of the :ref:`nRF Asset Tracker for AWS <index_aws>`.
 
-Use either the credentials you created, :ref:`when setting up the solution <aws-getting-started>`, or enable the Web App CI feature and use the dedicated credentials created for this task.
+Use either the existing authentication :ref:`from setting up the solution <aws-getting-started>`, or enable the Web App CI feature and use the dedicated credentials created for this task.
 The latter option is the recommended approach since it limits the permissions to only the ones needed.
 You can also use the credentials to :ref:`run the end-to-end tests on GitHub Actions <aws-continuous-integration-web-app-github>`.
 
-1. Add the following environment variables to your :file:`.envrc` file:
+1. Add the following environment variables to a new :file:`.envrc` file (:ref:`used with direnv <about-direnv>`), as shown in the following code:
 
    .. parsed-literal::
        :class: highlight

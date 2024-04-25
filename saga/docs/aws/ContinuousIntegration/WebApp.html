@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Continuous integration of the AWS web application &mdash; nRF Asset Tracker 2cb4b3300bc3e603557d44c58efc4a96c6f4fc83 documentation</title>
+  <title>Continuous integration of the AWS web application &mdash; nRF Asset Tracker 7b83c883826093a500f3b8ed66f599b5a0a609da documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/nordic.css" type="text/css" /> 
   
@@ -269,11 +269,11 @@ This ensures that all dependencies of the web application work as intended and p
 <section id="running-end-to-end-tests-during-development">
 <h2><a class="toc-backref" href="#id3">Running end-to-end tests during development</a><a class="headerlink" href="#running-end-to-end-tests-during-development" title="Permalink to this headline"></a></h2>
 <p>The end-to-end tests run against an instance of the <a class="reference internal" href="../Index.html#index-aws"><span class="std std-ref">nRF Asset Tracker for AWS</span></a>.</p>
-<p>Use either the credentials you created, <a class="reference internal" href="../GettingStarted/Index.html#aws-getting-started"><span class="std std-ref">when setting up the solution</span></a>, or enable the Web App CI feature and use the dedicated credentials created for this task.
+<p>Use either the existing authentication <a class="reference internal" href="../GettingStarted/Index.html#aws-getting-started"><span class="std std-ref">from setting up the solution</span></a>, or enable the Web App CI feature and use the dedicated credentials created for this task.
 The latter option is the recommended approach since it limits the permissions to only the ones needed.
 You can also use the credentials to <a class="reference internal" href="#aws-continuous-integration-web-app-github"><span class="std std-ref">run the end-to-end tests on GitHub Actions</span></a>.</p>
 <ol class="arabic">
-<li><p>Add the following environment variables to your <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file:</p>
+<li><p>Add the following environment variables to a new <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file (<a class="reference internal" href="../../guides/Direnv.html#about-direnv"><span class="std std-ref">used with direnv</span></a>), as shown in the following code:</p>
 <pre class="highlight literal-block"># add to .envrc
 export AWS_REGION=&quot;<em>your preferred AWS region</em>&quot;
 export AWS_ACCESS_KEY_ID=&quot;<em>value of Access key ID</em>&quot;
