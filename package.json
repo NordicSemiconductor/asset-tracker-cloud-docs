@@ -89,7 +89,7 @@
     "docs/cloud-protocol/*.ts"
   ],
   "peerDependencies": {
-    "@sinclair/typebox": "^0.32.22",
+    "@sinclair/typebox": "^0.32.27",
     "ajv": "^8.12.0"
   }
 }
