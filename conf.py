@@ -52,6 +52,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 html_theme = 'sphinx_ncs_theme'
 html_theme_path = ["."]
 
+msg = "<b>Important: </b>This website will be taken offline by 2024-06-18 and replaced with <a href=\"https://docs.nordicsemi.com/\">docs.nordicsemi.com</a>, where all Nordic technical documentation is already accessible."
+
 html_theme_options = {
     'logo_only': True
 }
