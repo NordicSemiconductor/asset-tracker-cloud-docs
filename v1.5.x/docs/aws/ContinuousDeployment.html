@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Continuous deployment &mdash; nRF Asset Tracker f2fff594bcd6650f0e8b2764f10aeefbaf71e70c documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
+  <title>Continuous deployment &mdash; nRF Asset Tracker a44250a2db211660f3ec99c77369795a97208031 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/common.css?v=eda83ccd" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=05f4994b"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -28,14 +31,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> nRF Asset Tracker
+
+          
+          
+          <a href="../../index.html">
+            
           </a>
               <div class="version">
                 v1.5.x
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -88,9 +95,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="Index.html">AWS cloud components</a> &raquo;</li>
-      <li>Continuous deployment</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Index.html">AWS cloud components</a></li>
+      <li class="breadcrumb-item active">Continuous deployment</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v1.5.x/docs/aws/ContinuousDeployment.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -101,8 +108,8 @@
            <div itemprop="articleBody">
              
   <section id="continuous-deployment">
-<span id="aws-continuous-deployment"></span><h1>Continuous deployment<a class="headerlink" href="#continuous-deployment" title="Permalink to this headline"></a></h1>
-<div class="contents local topic" id="contents">
+<span id="aws-continuous-deployment"></span><h1>Continuous deployment<a class="headerlink" href="#continuous-deployment" title="Link to this heading"></a></h1>
+<nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#fork-the-nrf-asset-tracker-repositories" id="id2">Fork the nRF Asset Tracker repositories</a></p></li>
 <li><p><a class="reference internal" href="#provide-github-credentials" id="id3">Provide GitHub credentials</a></p></li>
@@ -110,14 +117,14 @@
 <li><p><a class="reference internal" href="#trigger-a-deployment" id="id5">Trigger a deployment</a></p></li>
 <li><p><a class="reference internal" href="#check-the-status-of-the-continuous-deployment" id="id6">Check the status of the continuous deployment</a></p></li>
 </ul>
-</div>
+</nav>
 <p>You can automatically deploy all changes that you make to a fork of the nRF Asset Tracker for AWS.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is optional to keep the deployment in your AWS account automatically synchronized with your fork’s source code repository.</p>
 </div>
 <section id="fork-the-nrf-asset-tracker-repositories">
-<h2><a class="toc-backref" href="#id2">Fork the nRF Asset Tracker repositories</a><a class="headerlink" href="#fork-the-nrf-asset-tracker-repositories" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Fork the nRF Asset Tracker repositories</a><a class="headerlink" href="#fork-the-nrf-asset-tracker-repositories" title="Link to this heading"></a></h2>
 <p>To enable continuous deployment, complete the following steps:</p>
 <ol class="arabic simple">
 <li><p>Fork the <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-aws-js">nRF Asset Tracker for AWS repository</a>.</p></li>
@@ -127,7 +134,7 @@
 </ol>
 </section>
 <section id="provide-github-credentials">
-<h2><a class="toc-backref" href="#id3">Provide GitHub credentials</a><a class="headerlink" href="#provide-github-credentials" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Provide GitHub credentials</a><a class="headerlink" href="#provide-github-credentials" title="Link to this heading"></a></h2>
 <p>Enabling continuous deployment creates an AWS CodePipeline project.
 You need to provide it with GitHub credentials to be able to register a webhook in the GitHub repository of your fork to be notified about changes.
 This is a manual one-time step.</p>
@@ -140,10 +147,10 @@ This is a manual one-time step.</p>
 <pre class="highlight literal-block"> node cli configure-api codebuild github token &quot;<em>Github Token</em>&quot;</pre>
 </section>
 <section id="enable-continuous-deployment">
-<h2><a class="toc-backref" href="#id4">Enable continuous deployment</a><a class="headerlink" href="#enable-continuous-deployment" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Enable continuous deployment</a><a class="headerlink" href="#enable-continuous-deployment" title="Link to this heading"></a></h2>
 <p>After providing the GitHub credentials, set up the continuous deployment by enabling it before deploying the stack:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli configure-api context stack <span class="nb">cd</span> <span class="m">1</span>
-npx cdk deploy <span class="s1">&#39;*&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node<span class="w"> </span>cli<span class="w"> </span>configure-api<span class="w"> </span>context<span class="w"> </span>stack<span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="m">1</span>
+npx<span class="w"> </span>cdk<span class="w"> </span>deploy<span class="w"> </span><span class="s1">&#39;*&#39;</span>
 </pre></div>
 </div>
 <p>This sets up an AWS CodePipeline, which triggers an AWS CodeBuild project for every push to the <code class="docutils literal notranslate"><span class="pre">saga</span></code> branch.
@@ -153,20 +160,20 @@ It triggers a CodeBuild project for every push to the <code class="file docutils
 Configure the repository URL and the branch for the web application in the <code class="docutils literal notranslate"><span class="pre">deploy.webApp</span></code> property of the <code class="file docutils literal notranslate"><span class="pre">package.json</span></code> file of your nRF Asset Tracker for AWS fork.</p>
 </section>
 <section id="trigger-a-deployment">
-<h2><a class="toc-backref" href="#id5">Trigger a deployment</a><a class="headerlink" href="#trigger-a-deployment" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Trigger a deployment</a><a class="headerlink" href="#trigger-a-deployment" title="Link to this heading"></a></h2>
 <p>Commit a change to your fork to trigger a deployment.</p>
 </section>
 <section id="check-the-status-of-the-continuous-deployment">
-<h2><a class="toc-backref" href="#id6">Check the status of the continuous deployment</a><a class="headerlink" href="#check-the-status-of-the-continuous-deployment" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Check the status of the continuous deployment</a><a class="headerlink" href="#check-the-status-of-the-continuous-deployment" title="Link to this heading"></a></h2>
 <p>To check the status of the continuous deployment after you have made the changes, use the following CLI command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli <span class="nb">cd</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node<span class="w"> </span>cli<span class="w"> </span><span class="nb">cd</span>
 </pre></div>
 </div>
 <p>The following image shows a sample output generated by the command:</p>
 <figure class="align-default" id="id1">
 <img alt="Output of node cli cd" src="../../_images/cli-cd.png" />
 <figcaption>
-<p><span class="caption-text">Output of the <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">cli</span> <span class="pre">cd</span></code> command</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Output of the <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">cli</span> <span class="pre">cd</span></code> command</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>

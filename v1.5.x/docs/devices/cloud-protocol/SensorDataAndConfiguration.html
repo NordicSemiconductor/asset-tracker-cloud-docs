@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Device data and configuration &mdash; nRF Asset Tracker f2fff594bcd6650f0e8b2764f10aeefbaf71e70c documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
+  <title>Device data and configuration &mdash; nRF Asset Tracker a44250a2db211660f3ec99c77369795a97208031 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/common.css?v=eda83ccd" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=05f4994b"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -28,14 +31,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../index.html" class="icon icon-home"> nRF Asset Tracker
+
+          
+          
+          <a href="../../../index.html">
+            
           </a>
               <div class="version">
                 v1.5.x
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -81,10 +88,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../Index.html">Connect using a real device</a> &raquo;</li>
-          <li><a href="Index.html">Device-to-cloud communication</a> &raquo;</li>
-      <li>Device data and configuration</li>
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Index.html">Connect using a real device</a></li>
+          <li class="breadcrumb-item"><a href="Index.html">Device-to-cloud communication</a></li>
+      <li class="breadcrumb-item active">Device data and configuration</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v1.5.x/docs/devices/cloud-protocol/SensorDataAndConfiguration.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -95,19 +102,19 @@
            <div itemprop="articleBody">
              
   <section id="device-data-and-configuration">
-<span id="device-data-configuration"></span><h1>Device data and configuration<a class="headerlink" href="#device-data-and-configuration" title="Permalink to this headline"></a></h1>
-<div class="contents local topic" id="contents">
+<span id="device-data-configuration"></span><h1>Device data and configuration<a class="headerlink" href="#device-data-and-configuration" title="Link to this heading"></a></h1>
+<nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#comparing-state-with-messages" id="id1">Comparing state with messages</a></p></li>
 <li><p><a class="reference internal" href="#batch-data" id="id2">Batch data</a></p></li>
 </ul>
-</div>
+</nav>
 <p>Sending and receiving data is different for each cloud operator.</p>
 <p>The data published by the device and the configuration options are described in detail in the <a class="reference external" href="./state.reported.aws.schema.json">state JSON schema file for AWS</a>.
 See the <a class="reference external" href="./state.reported.aws.json">state JSON document for an AWS example</a>.</p>
 <p>See <a class="reference internal" href="../../aws/IoTShadowAndTopics.html#aws-iot-shadow-topics"><span class="std std-ref">AWS IoT Device Shadow service and MQTT topics</span></a> for the implementation details for AWS.</p>
 <section id="comparing-state-with-messages">
-<h2><a class="toc-backref" href="#id1">Comparing state with messages</a><a class="headerlink" href="#comparing-state-with-messages" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Comparing state with messages</a><a class="headerlink" href="#comparing-state-with-messages" title="Link to this heading"></a></h2>
 <p>Most of the data is stored in the digital twin of the device.
 This is useful for a quick query of the last known data from the device.
 However, some data does not fit well into this model because of its ephemeral nature.
@@ -117,7 +124,7 @@ Button is a UI element and in the case of push buttons, there is no state, which
 For more information, see the <a class="reference external" href="./message.json">messages JSON document</a> for an example device state.</p>
 </section>
 <section id="batch-data">
-<span id="batch-messages"></span><h2><a class="toc-backref" href="#id2">Batch data</a><a class="headerlink" href="#batch-data" title="Permalink to this headline"></a></h2>
+<span id="batch-messages"></span><h2><a class="toc-backref" href="#id2" role="doc-backlink">Batch data</a><a class="headerlink" href="#batch-data" title="Link to this heading"></a></h2>
 <p>The firmware may send data as batch, using the schema that is described in the <a class="reference external" href="./batch.schema.json">JSON schema file</a>.
 See the <a class="reference external" href="./batch-message.json">JSON document</a> for an example batch message.</p>
 <p>For sending batched data from the device, the topic <code class="docutils literal notranslate"><span class="pre">&lt;deviceId&gt;/batch</span></code> is used.</p>

@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Limiting the shadow document size &mdash; nRF Asset Tracker f2fff594bcd6650f0e8b2764f10aeefbaf71e70c documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/common.css" type="text/css" />
+  <title>Limiting the shadow document size &mdash; nRF Asset Tracker a44250a2db211660f3ec99c77369795a97208031 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/common.css?v=eda83ccd" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=05f4994b"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -28,14 +31,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> nRF Asset Tracker
+
+          
+          
+          <a href="../../index.html">
+            
           </a>
               <div class="version">
                 v1.5.x
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -88,9 +95,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="Index.html">AWS cloud components</a> &raquo;</li>
-      <li>Limiting the shadow document size</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Index.html">AWS cloud components</a></li>
+      <li class="breadcrumb-item active">Limiting the shadow document size</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v1.5.x/docs/aws/LimitingShadowDocumentSize.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -101,13 +108,13 @@
            <div itemprop="articleBody">
              
   <section id="limiting-the-shadow-document-size">
-<span id="limit-shadow-size"></span><h1>Limiting the shadow document size<a class="headerlink" href="#limiting-the-shadow-document-size" title="Permalink to this headline"></a></h1>
+<span id="limit-shadow-size"></span><h1>Limiting the shadow document size<a class="headerlink" href="#limiting-the-shadow-document-size" title="Link to this heading"></a></h1>
 <p>The nRF9160 DK has a size limit of 2303 bytes for receiving TLS packages.
 See the following contents of the <code class="file docutils literal notranslate"><span class="pre">mfw_nrf9160_1.2.0_release_notes.txt</span></code> file in <a class="reference external" href="https://www.nordicsemi.com/-/media/Software-and-other-downloads/Dev-Kits/nRF9160-DK/nRF9160-modem-FW/mfwnrf9160120.zip">nRF9160 modem firmware binaries (v1.2.0)</a> for reference.</p>
 <figure class="align-default" id="id1">
 <img alt="nRF9160 Modem firmware 1.2.0 release notes content" src="../../_images/mfw_1.2.0_release_notes.png" />
 <figcaption>
-<p><span class="caption-text">nRF9160 Modem firmware 1.2.0 release notes content</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-text">nRF9160 Modem firmware 1.2.0 release notes content</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The nRF Asset Tracker sets up an IoT rule, which only publishes the <code class="docutils literal notranslate"><span class="pre">cfg</span></code> section of the <a class="reference external" href="../devices/cloud-protocol/state.reported.aws.json">shadow document</a> to a separate topic <code class="docutils literal notranslate"><span class="pre">$aws/things/&lt;thing</span> <span class="pre">name&gt;/shadow/get/accepted/desired/cfg</span></code> when devices receive their state after publishing an empty message to <a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#get-pub-sub-topic">$aws/things/&lt;thing name&gt;/shadow/get</a>.</p>
@@ -117,15 +124,15 @@ See the following contents of the <code class="file docutils literal notranslate
 </div>
 <p>Otherwise, the message contains a top-level key <code class="docutils literal notranslate"><span class="pre">cfg</span></code> and the desired device configuration as shown below:</p>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;cfg&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;gpst&quot;</span><span class="p">:</span> <span class="mi">720</span><span class="p">,</span>
-    <span class="nt">&quot;celt&quot;</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span>
-    <span class="nt">&quot;act&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;actwt&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
-    <span class="nt">&quot;mvres&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
-    <span class="nt">&quot;mvt&quot;</span><span class="p">:</span> <span class="mi">3600</span><span class="p">,</span>
-    <span class="nt">&quot;acct&quot;</span><span class="p">:</span> <span class="mf">1.2</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="nt">&quot;cfg&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;gpst&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">720</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;celt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;act&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;actwt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;mvres&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;mvt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;acct&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>

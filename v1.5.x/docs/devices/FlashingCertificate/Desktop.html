@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Provisioning using nRF Connect for Desktop &mdash; nRF Asset Tracker f2fff594bcd6650f0e8b2764f10aeefbaf71e70c documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/common.css" type="text/css" />
+  <title>Provisioning using nRF Connect for Desktop &mdash; nRF Asset Tracker a44250a2db211660f3ec99c77369795a97208031 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/common.css?v=eda83ccd" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=05f4994b"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -28,14 +31,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../index.html" class="icon icon-home"> nRF Asset Tracker
+
+          
+          
+          <a href="../../../index.html">
+            
           </a>
               <div class="version">
                 v1.5.x
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -81,10 +88,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../Index.html">Connect using a real device</a> &raquo;</li>
-          <li><a href="Index.html">Provisioning the certificate</a> &raquo;</li>
-      <li>Provisioning using nRF Connect for Desktop</li>
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Index.html">Connect using a real device</a></li>
+          <li class="breadcrumb-item"><a href="Index.html">Provisioning the certificate</a></li>
+      <li class="breadcrumb-item active">Provisioning using nRF Connect for Desktop</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/v1.5.x/docs/devices/FlashingCertificate/Desktop.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -95,7 +102,7 @@
            <div itemprop="articleBody">
              
   <section id="provisioning-using-nrf-connect-for-desktop">
-<span id="devices-provisioning-certificate-desktop"></span><h1>Provisioning using nRF Connect for Desktop<a class="headerlink" href="#provisioning-using-nrf-connect-for-desktop" title="Permalink to this headline"></a></h1>
+<span id="devices-provisioning-certificate-desktop"></span><h1>Provisioning using nRF Connect for Desktop<a class="headerlink" href="#provisioning-using-nrf-connect-for-desktop" title="Link to this heading"></a></h1>
 <p>You can use the <code class="file docutils literal notranslate"><span class="pre">certificates/device-&lt;deviceId&gt;.json</span></code> file with <span class="guilabel">Certificate manager</span> in <a class="reference external" href="https://infocenter.nordicsemi.com/topic/ug_link_monitor/UG/link_monitor/lm_intro.html">LTE Link Monitor</a> (an application implemented as part of <a class="reference external" href="https://infocenter.nordicsemi.com/topic/struct_nrftools/struct/nrftools_nrfconnect.html">nRF Connect for Desktop</a>), to provision the certificate to the device.</p>
 <p><span class="guilabel">Certificate manager</span> uses AT commands to write the certificate information to the secure storage of the modem.
 You need to program your device with a firmware that has the AT command host enabled.</p>
@@ -105,7 +112,7 @@ You need to program your device with a firmware that has the AT command host ena
 <figure class="align-default" id="id1">
 <img alt="nRF Connect for Desktop Programmer" src="../../../_images/programmer-desktop.png" />
 <figcaption>
-<p><span class="caption-text">nRF Connect for Desktop Programmer</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-text">nRF Connect for Desktop Programmer</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Use the following files:</p>
@@ -119,7 +126,7 @@ You need to program your device with a firmware that has the AT command host ena
 <figure class="align-default" id="id2">
 <img alt="nRF Connect for Desktop LTE Link Monitor" src="../../../_images/lte-link-monitor-desktop.png" />
 <figcaption>
-<p><span class="caption-text">nRF Connect for Desktop - LTE Link Monitor</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-text">nRF Connect for Desktop - LTE Link Monitor</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -138,7 +145,7 @@ You need to program your device with a firmware that has the AT command host ena
 <figure class="align-default" id="id3">
 <img alt="nRF Connect for Desktop Certificate manager" src="../../../_images/certificate-manager-desktop.png" />
 <figcaption>
-<p><span class="caption-text">LTE Link Monitor - Certificate manager</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+<p><span class="caption-text">LTE Link Monitor - Certificate manager</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
