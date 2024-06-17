@@ -45,7 +45,7 @@ jobs:
 
       - name: Build Docker image
         if: steps.check-docker-image.outcome == 'failure'
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           tags: ${{ env.DOCKER_IMAGE }}
