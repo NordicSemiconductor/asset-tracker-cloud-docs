@@ -12,7 +12,7 @@ try {
 for (const schemaType of schemas) {
 	const schema = JSON.parse(JSON.stringify(schemaType))
 	const target = schema.$id.replace(
-		`https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/${
+		`https://docs.nordicsemi.com/bundle/nrf-asset-tracker-saga/${
 			process.env.VERSION ?? 'saga'
 		}/`,
 		'',

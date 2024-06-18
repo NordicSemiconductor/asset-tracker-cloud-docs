@@ -10,7 +10,7 @@
 The nRF Asset Tracker aims to provide a concrete end-to-end example for an
 ultra-low power cellular IoT product in the asset tracker space.
 
-> [Read the complete nRF Asset Tracker documentation](https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/).
+> [Read the complete nRF Asset Tracker documentation](https://docs.nordicsemi.com/bundle/nrf-asset-tracker-saga/).
 
 ## Building the docs locally
 
