@@ -1,25 +1,28 @@
-import { Static } from '@sinclair/typebox'
-import { AGNSSRequest } from './docs/cloud-protocol/AGNSSRequest.js'
-import { AWSDesired } from './docs/cloud-protocol/AWSDesired.js'
-import { AWSDevice, AWSReported } from './docs/cloud-protocol/AWSReported.js'
-import { AzureDesired } from './docs/cloud-protocol/AzureDesired.js'
-import { AzureFOTA } from './docs/cloud-protocol/AzureFOTA.js'
-import { AzureReported } from './docs/cloud-protocol/AzureReported.js'
-import { Batch } from './docs/cloud-protocol/Batch.js'
-import { Config } from './docs/cloud-protocol/Config.js'
-import { Message } from './docs/cloud-protocol/Message.js'
-import { NeighboringCellMeasurements } from './docs/cloud-protocol/NeighboringCellMeasurements.js'
-import { NetworkSurvey } from './docs/cloud-protocol/NetworkSurvey.js'
-import { PGPSRequest } from './docs/cloud-protocol/PGPSRequest.js'
-import { PGPSResponse } from './docs/cloud-protocol/PGPSResponse.js'
-import {
+import type { Static } from '@sinclair/typebox'
+import type { AGNSSRequest } from './docs/cloud-protocol/AGNSSRequest.js'
+import type { AWSDesired } from './docs/cloud-protocol/AWSDesired.js'
+import type {
+	AWSDevice,
+	AWSReported,
+} from './docs/cloud-protocol/AWSReported.js'
+import type { AzureDesired } from './docs/cloud-protocol/AzureDesired.js'
+import type { AzureFOTA } from './docs/cloud-protocol/AzureFOTA.js'
+import type { AzureReported } from './docs/cloud-protocol/AzureReported.js'
+import type { Batch } from './docs/cloud-protocol/Batch.js'
+import type { Config } from './docs/cloud-protocol/Config.js'
+import type { Message } from './docs/cloud-protocol/Message.js'
+import type { NeighboringCellMeasurements } from './docs/cloud-protocol/NeighboringCellMeasurements.js'
+import type { NetworkSurvey } from './docs/cloud-protocol/NetworkSurvey.js'
+import type { PGPSRequest } from './docs/cloud-protocol/PGPSRequest.js'
+import type { PGPSResponse } from './docs/cloud-protocol/PGPSResponse.js'
+import type {
 	Battery,
 	Device,
 	Environment,
 	GNSS,
 	RoamingInfo,
 } from './docs/cloud-protocol/Reported.js'
-import { WiFiSiteSurvey } from './docs/cloud-protocol/WiFiSiteSurvey.js'
+import type { WiFiSiteSurvey } from './docs/cloud-protocol/WiFiSiteSurvey.js'
 
 export * from './docs/cloud-protocol/AGNSSRequest.js'
 export * from './docs/cloud-protocol/AWSDesired.js'
